@@ -1,0 +1,16 @@
+{
+  "name": "social-casino-index",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Static site build for socialcasinoindex.com (11ty, flat HTML output to docs/ for GitHub Pages).",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "content:validate": "node scripts/validate-content.mjs",
+    "release": "npm run content:validate && npm run build"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  },
+  "type": "module"
+}

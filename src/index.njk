@@ -1,0 +1,134 @@
+---
+layout: base.njk
+title: "Social Casino Index"
+description: "Independent redemption times, verification requirements, and payout research for US sweepstakes casinos."
+permalink: "/"
+ogType: "website"
+eleventyComputed:
+  jsonld:
+    "@context": "https://schema.org"
+    "@graph":
+      - "@type": "Organization"
+        "@id": "https://socialcasinoindex.com/#org"
+        name: "Social Casino Index"
+        url: "https://socialcasinoindex.com/"
+        description: "Independent US sweepstakes casino research covering redemption times, verification requirements and payout terms."
+      - "@type": "WebSite"
+        "@id": "https://socialcasinoindex.com/#site"
+        url: "https://socialcasinoindex.com/"
+        name: "Social Casino Index"
+        publisher:
+          "@id": "https://socialcasinoindex.com/#org"
+      - "@type": "Person"
+        "@id": "https://socialcasinoindex.com/#alex-rowan"
+        name: "Alex Rowan"
+        url: "https://socialcasinoindex.com/authors/alex-rowan/"
+        description: "Editorial pen name used by the Social Casino Index research team."
+        worksFor:
+          "@id": "https://socialcasinoindex.com/#org"
+      - "@type": "WebPage"
+        "@id": "https://socialcasinoindex.com/#page"
+        url: "https://socialcasinoindex.com/"
+        name: "Social Casino Index"
+        description: "Independent redemption times, verification requirements, and payout research for US sweepstakes casinos."
+        isPartOf:
+          "@id": "https://socialcasinoindex.com/#site"
+        about:
+          - "@type": "Thing"
+            name: "Sweepstakes casino"
+          - "@type": "Thing"
+            name: "Casino redemption times"
+---
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <h1>Social Casino Index</h1>
+    <p class="lede">{{ site.tagline }}</p>
+    <p class="lede" style="font-size:17px;">We read operator terms, fund our own accounts, request redemptions as ordinary players, and time how long the money takes to arrive. Every figure carries a date, a method and a source. Where we have not tested an operator yet, we say so.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <section aria-labelledby="research-index">
+    <h2 id="research-index">Current research</h2>
+
+    <div class="card">
+      <div class="card-head">
+        <h2 style="font-size:1.5rem;">Redemption times at five major operators</h2>
+        <p>Official published terms, September 2026. Funded-test results in progress.</p>
+      </div>
+      <div class="table-scroll" style="border-top:0;margin-top:0.5rem;">
+        <table class="data">
+          <caption>Published redemption terms from operator terms of service. Observed columns are filled only after a funded test completes. <a href="/research/sweepstakes-casino-redemption-times/">Read the full article</a>.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Operator</th>
+              <th scope="col">Published estimate</th>
+              <th scope="col">Observed (funded test)</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for op in operators %}
+            <tr>
+              <th scope="row">{{ op.name }}</th>
+              <td>{{ op.publishedEstimate }}</td>
+              <td>{% if op.observedResult %}{{ op.observedResult }}{% else %}&mdash;{% endif %}</td>
+              <td><span class="badge {{ op.testStatus }}">{% if op.testStatus == "pending" %}Pending{% elif op.testStatus == "completed" %}Completed{% else %}Not tested{% endif %}</span></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="card-foot">
+        <p>Source: operator terms of service, access dates in the <a href="/research/sweepstakes-casino-redemption-times/#sources">article sources</a>.</p>
+        <p>We do not publish a "fastest" ranking until at least three comparable funded tests have completed.</p>
+      </div>
+    </div>
+
+    <p><a href="/research/sweepstakes-casino-redemption-times/">How long do sweepstakes casino redemptions take? Read the full article</a>.</p>
+  </section>
+
+  <section class="eligibility" aria-labelledby="eligibility-heading">
+    <h2 id="eligibility-heading">Check availability in your state</h2>
+    <p>All research on this site is public in every state. Commercial offers are shown only after you select a state, and never for states where the category is closed.</p>
+    <div class="js-only">
+      <label for="state-picker" style="display:block;font-size:14px;font-weight:600;color:var(--ink-dim);margin-bottom:0.375rem;">Your state</label>
+      <select id="state-picker" data-state-picker>
+        {% for s in states %}<option value="{{ s.code }}"{% if not s.code %} disabled selected{% endif %}>{{ s.name }}</option>{% endfor %}
+      </select>
+      <p class="eligibility-note">Stored on your device for 30 days. Nothing is sent to us. Current selection: <strong data-state-echo>not selected</strong>.</p>
+    </div>
+    <noscript><p class="eligibility-note">State selection requires JavaScript. The <a href="/availability/">state availability list</a> works without it.</p></noscript>
+  </section>
+
+  <section aria-labelledby="how-we-work">
+    <h2 id="how-we-work">How this site works</h2>
+    <div class="signposts">
+      <div class="signpost">
+        <h3>Methodology</h3>
+        <p>How we fund accounts, time redemptions, label test status, and decide when a ranking is allowed to exist.</p>
+        <p><a href="/methodology/">Read the methodology</a></p>
+      </div>
+      <div class="signpost">
+        <h3>State availability</h3>
+        <p>Which states are open, which are closed by statute or enforcement, and when each rule last changed.</p>
+        <p><a href="/availability/">Check your state</a></p>
+      </div>
+      <div class="signpost">
+        <h3>Disclosure</h3>
+        <p>How we are paid, what affiliate links do and do not influence, and how the eligibility gate works.</p>
+        <p><a href="/disclosure/">Read the disclosure</a></p>
+      </div>
+      <div class="signpost">
+        <h3>About the author</h3>
+        <p>Alex Rowan is a disclosed editorial pen name for the Social Casino Index research team. No invented credentials.</p>
+        <p><a href="/authors/alex-rowan/">About Alex Rowan</a></p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>

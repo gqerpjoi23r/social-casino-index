@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} | {{ site.name }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{%- if noindex %}
+<meta name="robots" content="noindex, nofollow">
+{%- endif %}
+<meta property="og:type" content="{{ ogType or 'website' }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+{#
+  Analytics placeholders. Create the containers under business-owned accounts, then:
+  1. Paste the Google Tag Manager snippet here (head) and its <noscript> at body start.
+  2. Consent default + Cookiebot script go above GTM.
+  3. Events used by this build: state_selected, article_view, comparison_interaction,
+     source_click, methodology_click, affiliate_click_attempt, affiliate_click_allowed,
+     affiliate_click_blocked. No evidence, account, payment or KYC data goes to GA4.
+#}
+{% if jsonld %}
+<script type="application/ld+json">{{ jsonld | json | safe }}</script>
+{% endif %}
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="brand" href="/">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+        <circle cx="13" cy="13" r="12" fill="none" stroke="#C9A24B" stroke-width="2"/>
+        <circle cx="13" cy="13" r="5.5" fill="none" stroke="#C9A24B" stroke-width="2"/>
+        <path d="M13 1v4M13 21v4M1 13h4M21 13h4" stroke="#C9A24B" stroke-width="2"/>
+      </svg>
+      {{ site.name }}
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/research/sweepstakes-casino-redemption-times/">Redemption times</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/availability/">State availability</a>
+      <a href="/authors/alex-rowan/">About the author</a>
+    </nav>
+  </div>
+</header>
+
+{{ content | safe }}
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="age-badge">21+ or 18+ depending on your state</span>
+    <h2>About this site</h2>
+    <p>Social Casino Index is an independent research site covering US sweepstakes casinos. We measure redemption times, verification requirements and payout terms, and publish what we find with dates and sources.</p>
+    <p><strong>Affiliate disclosure.</strong> Some links on this site are affiliate links. If you sign up through one, we may be paid a commission at no cost to you. Compensation never affects a rating, a ranking or a measured figure. Read the <a href="/disclosure/">full disclosure</a>.</p>
+    <p><strong>Not legal or tax advice.</strong> State law in this category changes frequently. Confirm the current rules for your state, and speak to a licensed attorney or CPA about your own situation.</p>
+    <p><strong>Play responsibly.</strong> If gambling stops being fun, call 1-800-GAMBLER or text 800GAM to 800662. Support is free, confidential and available around the clock.</p>
+    <p class="fine">
+      <a href="/methodology/">Methodology</a> ·
+      <a href="/disclosure/">Disclosure</a> ·
+      <a href="/privacy/">Privacy</a> ·
+      <a href="/availability/">State availability</a> ·
+      <a href="/authors/alex-rowan/">Alex Rowan</a>
+    </p>
+    <p class="fine">&copy; {{ site.buildYear }} Social Casino Index.</p>
+  </div>
+</footer>
+
+<script src="/assets/eligibility.js" defer></script>
+</body>
+</html>
