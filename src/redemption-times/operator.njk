@@ -49,7 +49,11 @@ eleventyComputed:
   </div>
   {% endif %}
   <h2>Sources and verification</h2>
-  <p>Status: <span class="badge {% if operator.verificationStatus == 'verified' %}complete{% else %}pending{% endif %}">{{ operator.verificationLabel }}</span>. Last checked {{ operator.verifiedAt | readableDate }}. Fields that could not be confirmed are labeled as not publicly verified.</p>
+  <p>
+    <span class="badge {% if operator.verificationStatus == 'verified' %}complete{% else %}pending{% endif %}"><i class="ph ph-seal-check" aria-hidden="true"></i> {{ operator.verificationLabel }}</span>
+    <span class="badge nottested"><i class="ph ph-clock-clockwise" aria-hidden="true"></i> Last checked {{ operator.verifiedAt | readableDate }}</span>
+  </p>
+  <p class="text-sm text-base-content/60"><strong class="text-base-content/80">Coverage</strong> (the first badge) shows how much of this record we confirmed from the operator's public terms or sweepstakes rules. <strong class="text-base-content/80">Freshness</strong> (the second badge) is when it was last re-verified. Fields that could not be confirmed are labeled as not publicly verified.</p>
   <ol class="sources">{% for source in operator.sources %}<li>{{ source.label }}. <a href="{{ source.url }}" rel="noopener">{{ source.url | replace("https://", "") }}</a>. <span class="accessed">Accessed {{ source.accessed | readableDate }}.</span></li>{% endfor %}</ol>
   <p class="byline mt-8"><a href="/redemption-times/">Compare all operators</a> · <a href="/methodology/">Methodology</a> · <a href="/disclosure/">Affiliate disclosure</a></p>
 </article></main>

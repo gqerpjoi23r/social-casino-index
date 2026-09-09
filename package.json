@@ -7,10 +7,11 @@
     "build:icons": "node scripts/build-icons.mjs",
     "build:csv": "node scripts/build-csv.mjs",
     "build:css": "tailwindcss -i src/css/input.css -o src/assets/site.css --minify",
-    "build": "npm run build:icons && npm run build:csv && npm run build:css && eleventy",
+    "build": "npm run build:icons && npm run build:csv && npm run build:css && eleventy && npm run sitemap:validate",
     "serve": "npm run build:css && eleventy --serve",
     "content:validate": "node scripts/validate-content.mjs",
     "content:touch": "node scripts/content-touch.mjs",
+    "sitemap:validate": "node scripts/validate-sitemap.mjs",
     "release": "npm run content:validate && npm run build"
   },
   "devDependencies": {
