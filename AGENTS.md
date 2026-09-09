@@ -10,6 +10,16 @@ short entry to `CHANGELOG.md` (newest on top): what changed, why, and
 anything the next agent must know. Keep it to a few bullets - behavior, not
 file lists. Read it before starting so you don't collide with in-flight work.
 
+## Branching (required)
+
+Work on a short-lived branch, never directly on `main`. One branch per task,
+named for the change (for example `state-pages` or `social-card`). Commit
+only the files your task touched - do not `git add -A` over a shared
+worktree, or you will sweep up another agent's in-flight work under your
+commit message. Open a PR (or merge) back to `main` when your release build
+is green. Rebase or merge `main` into your branch before finishing if it has
+moved.
+
 ## Build & validate
 
     npm run release    # content:validate + build + sitemap:validate + seo:validate
