@@ -137,23 +137,38 @@ table.data th:last-child, table.data td:last-child { width: 7rem; }
 
 /* ---------- Badges ---------- */
 @utility badge {
-  @apply inline-block whitespace-nowrap rounded border border-base-300 px-2 py-0.5 text-[12.5px] font-semibold text-base-content/60;
+  @apply inline-flex h-6 items-center justify-center gap-1 whitespace-nowrap rounded-full border border-base-content/25 bg-transparent px-2.5 text-[12px] font-semibold leading-none text-base-content/70;
 }
-.badge.pending { @apply border-accent text-accent; }
-.badge.complete, .badge.completed { @apply border-win text-win; }
-.badge.nottested { @apply border-base-300 text-base-content/40; }
+/* Tailwind v4 emits bare utility rules before DaisyUI, so repeat the base as a plain class override. */
+.badge {
+  @apply inline-flex h-6 items-center justify-center gap-1 whitespace-nowrap rounded-full border border-base-content/25 bg-transparent px-2.5 text-[12px] font-semibold leading-none text-base-content/70;
+}
+.badge.pending { @apply border-accent/60 text-accent; }
+.badge.complete, .badge.completed { @apply border-win/60 text-win; }
+.badge.nottested { @apply border-base-content/20 text-base-content/45; }
 
 @utility age-badge {
-  @apply mb-3 inline-block rounded-md border border-accent px-2.5 py-0.5 text-[13.5px] font-semibold text-accent;
+  @apply mb-3 inline-block rounded-full border border-base-content/20 px-3 py-1 text-[13px] font-semibold leading-none text-base-content/70;
+}
+
+/* DaisyUI badge modifiers still add filled backgrounds for badge-success/warning. */
+.badge.badge-success {
+  @apply border-win/60 bg-transparent text-win;
+}
+.badge.badge-warning {
+  @apply border-accent/60 bg-transparent text-accent;
+}
+.badge.badge-sm {
+  @apply px-2 text-[11.5px];
 }
 
 /* ---------- Cards & stat panels ---------- */
 @utility card {
   @apply overflow-hidden rounded-lg border border-base-300 bg-base-200 shadow;
 }
-@utility card-head { @apply px-6 pt-5; }
-.card-head h2 { @apply m-0 font-serif text-2xl font-semibold text-base-content; }
-.card-head p { @apply mt-1.5 text-[14.5px] text-base-content/60; }
+@utility card-head { @apply px-6 pb-5 pt-5; }
+.card-head h2 { @apply m-0 mt-3 font-serif text-2xl font-semibold text-base-content; }
+.card-head p { @apply mt-2 text-[14.5px] text-base-content/60; }
 @utility card-foot { @apply mt-4 border-t border-base-300 px-6 py-4 text-sm text-base-content/60; }
 .card-foot p { @apply mb-1.5; }
 .card-foot p:last-child { @apply mb-0; }

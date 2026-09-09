@@ -3,6 +3,46 @@ layout: base.njk
 title: "State Availability"
 description: "Which US states are open or closed to sweepstakes casinos, and how the commercial-offer gate on this site works."
 permalink: "/availability/"
+publishedAt: "2026-09-09"
+updatedAt: "2026-09-09"
+ogType: "article"
+eleventyComputed:
+  jsonld:
+    "@context": "https://schema.org"
+    "@graph":
+      - "@type": "Article"
+        "@id": "https://socialcasinoindex.com/availability/#article"
+        headline: "State Availability"
+        description: "Which US states are open or closed to sweepstakes casinos, and how the commercial-offer gate on this site works."
+        datePublished: "2026-09-09"
+        dateModified: "2026-09-09"
+        mainEntityOfPage: "https://socialcasinoindex.com/availability/"
+        author:
+          "@id": "https://socialcasinoindex.com/#alex-rowan"
+        publisher:
+          "@id": "https://socialcasinoindex.com/#org"
+      - "@type": "BreadcrumbList"
+        itemListElement:
+          - "@type": "ListItem"
+            position: 1
+            name: "Home"
+            item: "https://socialcasinoindex.com/"
+          - "@type": "ListItem"
+            position: 2
+            name: "State availability"
+      - "@type": "FAQPage"
+        "@id": "https://socialcasinoindex.com/availability/#faq"
+        mainEntity:
+          - "@type": "Question"
+            name: "How many states are open to sweepstakes casinos?"
+            acceptedAnswer:
+              "@type": "Answer"
+              text: "About 36 states plus the District of Columbia are treated as open on this site. Fourteen states are closed: eleven by statute (California, New York, Connecticut, Indiana, Louisiana, Maine, Montana, Nevada, New Jersey, Oklahoma and Tennessee) and three by enforcement (Idaho, Michigan and Washington)."
+          - "@type": "Question"
+            name: "When did California close to sweepstakes casinos?"
+            acceptedAnswer:
+              "@type": "Answer"
+              text: "California closed on 1 January 2026 under Assembly Bill 831, which was signed on 11 October 2025. It is the most significant recent state closure in this category."
 ---
 
 <main>
@@ -18,6 +58,7 @@ permalink: "/availability/"
 
   <div class="answer-first">
     <span class="af-label">In short</span>
+    <p><strong>About 36 states plus DC are treated as open to sweepstakes casinos; 14 are closed.</strong> Eleven are closed by statute (California, New York, Connecticut, Indiana, Louisiana, Maine, Montana, Nevada, New Jersey, Oklahoma and Tennessee) and three by enforcement (Idaho, Michigan and Washington). California closed most recently, on 1 January 2026 under AB 831.</p>
     <p>All research on this site is public everywhere. Commercial offers appear only after you select a state, and are blocked for states where sweepstakes casinos are closed by statute or enforcement.</p>
   </div>
 
@@ -37,11 +78,11 @@ permalink: "/availability/"
     <noscript><p class="eligibility-note">State selection requires JavaScript.</p></noscript>
   </section>
 
-  <h2>Closed states</h2>
+  <h2 id="closed-states">Closed states</h2>
   <p>The following states are treated as closed on this site, and commercial offers are blocked for them. This list reflects operator availability policy, not legal advice; state law in this category changes frequently.</p>
   <ul class="tick-list">
-    <li class="bad"><b>Closed by statute.</b> California, New York, Connecticut, Indiana, Louisiana, Maine, Montana, Nevada, New Jersey, Oklahoma, Tennessee.</li>
-    <li class="bad"><b>Closed by enforcement.</b> Idaho, Michigan, Washington. No sweepstakes-specific law, but regulators apply existing gambling statutes.</li>
+    <li class="bad"><b>Closed by statute.</b> {% for s in collections.statuteStates %}<a href="/availability/{{ s.slug }}/">{{ s.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.</li>
+    <li class="bad"><b>Closed by enforcement.</b> {% for s in collections.enforcementStates %}<a href="/availability/{{ s.slug }}/">{{ s.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}. No sweepstakes-specific law, but regulators apply existing gambling statutes.</li>
   </ul>
   <p>California is the most significant recent change: AB 831 was signed on 11 October 2025 and took effect on 1 January 2026.</p>
 

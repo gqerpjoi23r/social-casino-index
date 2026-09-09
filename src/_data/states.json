@@ -1,29 +1,128 @@
 [
   { "code": "", "name": "Select your state..." },
-  { "code": "AL", "name": "Alabama" }, { "code": "AK", "name": "Alaska" },
-  { "code": "AZ", "name": "Arizona" }, { "code": "AR", "name": "Arkansas" },
-  { "code": "CA", "name": "California" }, { "code": "CO", "name": "Colorado" },
-  { "code": "CT", "name": "Connecticut" }, { "code": "DE", "name": "Delaware" },
-  { "code": "FL", "name": "Florida" }, { "code": "GA", "name": "Georgia" },
-  { "code": "HI", "name": "Hawaii" }, { "code": "ID", "name": "Idaho" },
-  { "code": "IL", "name": "Illinois" }, { "code": "IN", "name": "Indiana" },
-  { "code": "IA", "name": "Iowa" }, { "code": "KS", "name": "Kansas" },
-  { "code": "KY", "name": "Kentucky" }, { "code": "LA", "name": "Louisiana" },
-  { "code": "ME", "name": "Maine" }, { "code": "MD", "name": "Maryland" },
-  { "code": "MA", "name": "Massachusetts" }, { "code": "MI", "name": "Michigan" },
-  { "code": "MN", "name": "Minnesota" }, { "code": "MS", "name": "Mississippi" },
-  { "code": "MO", "name": "Missouri" }, { "code": "MT", "name": "Montana" },
-  { "code": "NE", "name": "Nebraska" }, { "code": "NV", "name": "Nevada" },
-  { "code": "NH", "name": "New Hampshire" }, { "code": "NJ", "name": "New Jersey" },
-  { "code": "NM", "name": "New Mexico" }, { "code": "NY", "name": "New York" },
-  { "code": "NC", "name": "North Carolina" }, { "code": "ND", "name": "North Dakota" },
-  { "code": "OH", "name": "Ohio" }, { "code": "OK", "name": "Oklahoma" },
-  { "code": "OR", "name": "Oregon" }, { "code": "PA", "name": "Pennsylvania" },
-  { "code": "RI", "name": "Rhode Island" }, { "code": "SC", "name": "South Carolina" },
-  { "code": "SD", "name": "South Dakota" }, { "code": "TN", "name": "Tennessee" },
-  { "code": "TX", "name": "Texas" }, { "code": "UT", "name": "Utah" },
-  { "code": "VT", "name": "Vermont" }, { "code": "VA", "name": "Virginia" },
-  { "code": "WA", "name": "Washington" }, { "code": "WV", "name": "West Virginia" },
-  { "code": "WI", "name": "Wisconsin" }, { "code": "WY", "name": "Wyoming" },
-  { "code": "DC", "name": "District of Columbia" }
+  { "code": "AL", "name": "Alabama", "status": "open" }, { "code": "AK", "name": "Alaska", "status": "open" },
+  { "code": "AZ", "name": "Arizona", "status": "open" }, { "code": "AR", "name": "Arkansas", "status": "open" },
+  {
+    "code": "CA", "name": "California", "status": "statute",
+    "slug": "california",
+    "statusShort": "Closed by statute (AB 831, effective 1 January 2026)",
+    "statusDate": "2026-01-01",
+    "basis": "Assembly Bill 831 was signed on 11 October 2025 and took effect on 1 January 2026, prohibiting online sweepstakes that use a dual-currency model to simulate casino-style play.",
+    "answer": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category."
+  },
+  { "code": "CO", "name": "Colorado", "status": "open" },
+  {
+    "code": "CT", "name": "Connecticut", "status": "statute",
+    "slug": "connecticut",
+    "statusShort": "Closed by statute",
+    "basis": "Connecticut is treated as closed by statute on this site.",
+    "answer": "No. Connecticut is closed by statute to sweepstakes casinos. State law in this category changes frequently, so confirm the current rules before you play."
+  },
+  { "code": "DE", "name": "Delaware", "status": "open" },
+  { "code": "FL", "name": "Florida", "status": "open" }, { "code": "GA", "name": "Georgia", "status": "open" },
+  { "code": "HI", "name": "Hawaii", "status": "open" },
+  {
+    "code": "ID", "name": "Idaho", "status": "enforcement",
+    "slug": "idaho",
+    "statusShort": "Closed by enforcement",
+    "basis": "Idaho has no sweepstakes-specific law, but regulators apply existing gambling statutes to sweepstakes casinos.",
+    "answer": "No, not in practice. Idaho has no sweepstakes-specific law, but regulators apply existing gambling statutes, so sweepstakes casinos do not serve the state."
+  },
+  { "code": "IL", "name": "Illinois", "status": "open" },
+  {
+    "code": "IN", "name": "Indiana", "status": "statute",
+    "slug": "indiana",
+    "statusShort": "Closed by statute",
+    "basis": "Indiana is treated as closed by statute on this site.",
+    "answer": "No. Indiana is closed by statute to sweepstakes casinos. State law in this category changes frequently, so confirm the current rules before you play."
+  },
+  { "code": "IA", "name": "Iowa", "status": "open" }, { "code": "KS", "name": "Kansas", "status": "open" },
+  { "code": "KY", "name": "Kentucky", "status": "open" },
+  {
+    "code": "LA", "name": "Louisiana", "status": "statute",
+    "slug": "louisiana",
+    "statusShort": "Closed by statute",
+    "basis": "Louisiana is treated as closed by statute on this site.",
+    "answer": "No. Louisiana is closed by statute to sweepstakes casinos. State law in this category changes frequently, so confirm the current rules before you play."
+  },
+  {
+    "code": "ME", "name": "Maine", "status": "statute",
+    "slug": "maine",
+    "statusShort": "Closed by statute",
+    "basis": "Maine is treated as closed by statute on this site.",
+    "answer": "No. Maine is closed by statute to sweepstakes casinos. State law in this category changes frequently, so confirm the current rules before you play."
+  },
+  { "code": "MD", "name": "Maryland", "status": "open" },
+  { "code": "MA", "name": "Massachusetts", "status": "open" },
+  {
+    "code": "MI", "name": "Michigan", "status": "enforcement",
+    "slug": "michigan",
+    "statusShort": "Closed by enforcement",
+    "basis": "Michigan has no sweepstakes-specific law, but regulators apply existing gambling statutes to sweepstakes casinos.",
+    "answer": "No, not in practice. Michigan has no sweepstakes-specific law, but regulators apply existing gambling statutes, so sweepstakes casinos do not serve the state."
+  },
+  { "code": "MN", "name": "Minnesota", "status": "open" }, { "code": "MS", "name": "Mississippi", "status": "open" },
+  { "code": "MO", "name": "Missouri", "status": "open" },
+  {
+    "code": "MT", "name": "Montana", "status": "statute",
+    "slug": "montana",
+    "statusShort": "Closed by statute",
+    "basis": "Montana is treated as closed by statute on this site.",
+    "answer": "No. Montana is closed by statute to sweepstakes casinos. State law in this category changes frequently, so confirm the current rules before you play."
+  },
+  { "code": "NE", "name": "Nebraska", "status": "open" },
+  {
+    "code": "NV", "name": "Nevada", "status": "statute",
+    "slug": "nevada",
+    "statusShort": "Closed by statute",
+    "basis": "Nevada is treated as closed by statute on this site.",
+    "answer": "No. Nevada is closed by statute to sweepstakes casinos. State law in this category changes frequently, so confirm the current rules before you play."
+  },
+  { "code": "NH", "name": "New Hampshire", "status": "open" },
+  {
+    "code": "NJ", "name": "New Jersey", "status": "statute",
+    "slug": "new-jersey",
+    "statusShort": "Closed by statute",
+    "basis": "New Jersey is treated as closed by statute on this site.",
+    "answer": "No. New Jersey is closed by statute to sweepstakes casinos. State law in this category changes frequently, so confirm the current rules before you play."
+  },
+  { "code": "NM", "name": "New Mexico", "status": "open" },
+  {
+    "code": "NY", "name": "New York", "status": "statute",
+    "slug": "new-york",
+    "statusShort": "Closed by statute",
+    "basis": "New York is treated as closed by statute on this site.",
+    "answer": "No. New York is closed by statute to sweepstakes casinos. State law in this category changes frequently, so confirm the current rules before you play."
+  },
+  { "code": "NC", "name": "North Carolina", "status": "open" }, { "code": "ND", "name": "North Dakota", "status": "open" },
+  { "code": "OH", "name": "Ohio", "status": "open" },
+  {
+    "code": "OK", "name": "Oklahoma", "status": "statute",
+    "slug": "oklahoma",
+    "statusShort": "Closed by statute",
+    "basis": "Oklahoma is treated as closed by statute on this site.",
+    "answer": "No. Oklahoma is closed by statute to sweepstakes casinos. State law in this category changes frequently, so confirm the current rules before you play."
+  },
+  { "code": "OR", "name": "Oregon", "status": "open" }, { "code": "PA", "name": "Pennsylvania", "status": "open" },
+  { "code": "RI", "name": "Rhode Island", "status": "open" }, { "code": "SC", "name": "South Carolina", "status": "open" },
+  { "code": "SD", "name": "South Dakota", "status": "open" },
+  {
+    "code": "TN", "name": "Tennessee", "status": "statute",
+    "slug": "tennessee",
+    "statusShort": "Closed by statute",
+    "basis": "Tennessee is treated as closed by statute on this site.",
+    "answer": "No. Tennessee is closed by statute to sweepstakes casinos. State law in this category changes frequently, so confirm the current rules before you play."
+  },
+  { "code": "TX", "name": "Texas", "status": "open" }, { "code": "UT", "name": "Utah", "status": "open" },
+  { "code": "VT", "name": "Vermont", "status": "open" }, { "code": "VA", "name": "Virginia", "status": "open" },
+  {
+    "code": "WA", "name": "Washington", "status": "enforcement",
+    "slug": "washington",
+    "statusShort": "Closed by enforcement",
+    "basis": "Washington has no sweepstakes-specific law, but regulators apply existing gambling statutes to sweepstakes casinos.",
+    "answer": "No, not in practice. Washington has no sweepstakes-specific law, but regulators apply existing gambling statutes, so sweepstakes casinos do not serve the state."
+  },
+  { "code": "WV", "name": "West Virginia", "status": "open" },
+  { "code": "WI", "name": "Wisconsin", "status": "open" }, { "code": "WY", "name": "Wyoming", "status": "open" },
+  { "code": "DC", "name": "District of Columbia", "status": "open" }
 ]

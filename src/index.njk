@@ -59,7 +59,6 @@ eleventyComputed:
 <main>
 <section class="hero-bg relative -mt-px flex min-h-[64vh] items-center">
   <div class="wrap py-16">
-    <span class="badge complete mb-4"><i class="ph ph-chart-bar" aria-hidden="true"></i> 10 operator records · checked September 2026</span>
     <h1 class="mb-5 max-w-3xl font-serif text-[2.6rem] font-semibold leading-[1.06] text-white sm:text-[3.4rem]">Compare what social casinos actually give players - and how fast they pay.</h1>
     <p class="mb-8 max-w-2xl text-lg leading-relaxed text-white/85">Offers, games, redemption methods, payout timing, minimums and restrictions in one dated, source-linked index. Unknown terms stay marked as unknown.</p>
     <div class="answer-first mb-8 max-w-2xl">
@@ -74,6 +73,31 @@ eleventyComputed:
 </section>
 
 <div class="wrap py-2">
+  <section class="py-9" aria-labelledby="latest-guides-heading">
+    <div class="mb-5 flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <h2 id="latest-guides-heading" class="section-title">Latest guides</h2>
+        <p class="m-0 text-base-content/60">The most recent research and operator guides from the site.</p>
+      </div>
+      <a class="btn btn-sm btn-outline" href="/guides/">View all guides</a>
+    </div>
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {% for item in collections.guides | sortByDateDesc | limit(3) %}
+      <a href="{{ item.url }}" class="card group no-underline transition hover:border-brand">
+        <div class="card-head">
+          <span class="badge {% if item.data.guideType == 'Benchmark' %}complete{% else %}pending{% endif %}">{{ item.data.guideType or "Article" }}</span>
+          <h2 class="mt-3 !text-xl group-hover:text-brand">{{ item.data.title }}</h2>
+          <p>{{ item.data.description }}</p>
+        </div>
+        <div class="card-foot">
+          <p><i class="ph ph-calendar-blank" aria-hidden="true"></i> {{ item.data.publishedAt | readableDate }}</p>
+          <p class="text-brand">Read <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
   <section id="compare" class="scroll-mt-20 py-10" aria-labelledby="compare-heading">
     <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
       <div>
@@ -102,7 +126,7 @@ eleventyComputed:
           <div><dt>Games</dt><dd>{{ op.games }}</dd></div>
         </dl>
         <div class="operator-actions">
-          <span class="badge badge-sm {% if op.verificationStatus == 'verified' %}badge-success{% else %}badge-warning{% endif %}">{{ op.verificationLabel }}</span>
+          <span class="badge badge-sm {% if op.verificationStatus == 'verified' %}complete{% else %}pending{% endif %}">{{ op.verificationLabel }}</span>
           <span class="operator-full-terms">Full terms <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
         </div>
       </article>

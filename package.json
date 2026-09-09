@@ -5,6 +5,7 @@
   "description": "Static site build for socialcasinoindex.com (11ty, flat HTML output to docs/ for GitHub Pages).",
   "scripts": {
     "build:icons": "node scripts/build-icons.mjs",
+    "build:social-card": "node scripts/build-social-card.mjs --from-source",
     "build:csv": "node scripts/build-csv.mjs",
     "build:css": "tailwindcss -i src/css/input.css -o src/assets/site.css --minify",
     "build": "npm run build:icons && npm run build:csv && npm run build:css && eleventy && npm run sitemap:validate",
@@ -12,7 +13,8 @@
     "content:validate": "node scripts/validate-content.mjs",
     "content:touch": "node scripts/content-touch.mjs",
     "sitemap:validate": "node scripts/validate-sitemap.mjs",
-    "release": "npm run content:validate && npm run build"
+    "seo:validate": "node scripts/validate-seo.mjs",
+    "release": "npm run content:validate && npm run build && npm run seo:validate"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",

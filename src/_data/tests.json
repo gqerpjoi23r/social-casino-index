@@ -1,0 +1,5 @@
+{
+  "version": "2026.1",
+  "description": "Append-only log of funded redemption tests. One entry per test run. An operator ranking may only be published once at least three comparable entries (same operator, same redemption type, and where possible the same payment method) have status \"completed\". Figures recorded here are our own measurements, kept separate from published operator terms.",
+  "entries": []
+}

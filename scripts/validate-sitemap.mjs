@@ -41,6 +41,7 @@ function walk(dir, urls = []) {
   return urls;
 }
 const pageUrls = walk(join(root, "docs")).filter((u) => !u.startsWith("/go/"));
+const datedPaths = ["/guides/", "/research/", "/redemption-times/", "/availability/"];
 const inSitemap = new Set(locs.map((u) => u.replace(/^https?:\/\/[^/]+/, "")));
 for (const u of pageUrls) {
   if (!inSitemap.has(u)) fail(`page missing from sitemap: ${u}`);
@@ -48,7 +49,6 @@ for (const u of pageUrls) {
 
 // 4. Freshness: dated content (guides, research, operator records) must carry
 //    a <lastmod>.
-const datedPaths = ["/guides/", "/research/", "/redemption-times/"];
 const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => m[1]);
 for (const e of entries) {
   const loc = (e.match(/<loc>([^<]+)<\/loc>/) || [])[1] || "";

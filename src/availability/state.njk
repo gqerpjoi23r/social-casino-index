@@ -1,0 +1,101 @@
+---
+pagination:
+  data: collections.closedStates
+  size: 1
+  alias: state
+permalink: "/availability/{{ state.slug }}/index.html"
+layout: base.njk
+tags: ["statePages"]
+ogType: "article"
+publishedAt: "2026-09-09"
+updatedAt: "2026-09-09"
+eleventyComputed:
+  title: "Are Sweepstakes Casinos Legal in {{ state.name }}?"
+  description: "{{ state.name }} sweepstakes casino status: {{ state.statusShort | lower }}. Which operators restrict the state, and what that means for players. Not legal advice."
+  jsonld:
+    "@context": "https://schema.org"
+    "@graph":
+      - "@type": "Article"
+        "@id": "https://socialcasinoindex.com/availability/{{ state.slug }}/#article"
+        headline: "Are Sweepstakes Casinos Legal in {{ state.name }}?"
+        description: "{{ state.name }} sweepstakes casino status: {{ state.statusShort | lower }}. Operator restrictions and player guidance. Not legal advice."
+        datePublished: "2026-09-09"
+        dateModified: "2026-09-09"
+        mainEntityOfPage: "https://socialcasinoindex.com/availability/{{ state.slug }}/"
+        author:
+          "@id": "https://socialcasinoindex.com/#alex-rowan"
+        publisher:
+          "@id": "https://socialcasinoindex.com/#org"
+      - "@type": "BreadcrumbList"
+        itemListElement:
+          - "@type": "ListItem"
+            position: 1
+            name: "Home"
+            item: "https://socialcasinoindex.com/"
+          - "@type": "ListItem"
+            position: 2
+            name: "State availability"
+            item: "https://socialcasinoindex.com/availability/"
+          - "@type": "ListItem"
+            position: 3
+            name: "{{ state.name }}"
+      - "@type": "FAQPage"
+        "@id": "https://socialcasinoindex.com/availability/{{ state.slug }}/#faq"
+        mainEntity:
+          - "@type": "Question"
+            name: "Are sweepstakes casinos legal in {{ state.name }}?"
+            acceptedAnswer:
+              "@type": "Answer"
+              text: "{{ state.answer }} This page reflects operator availability policy and public reporting, not legal advice."
+          - "@type": "Question"
+            name: "Can I claim a sweepstakes casino bonus in {{ state.name }}?"
+            acceptedAnswer:
+              "@type": "Answer"
+              text: "No commercial offers for {{ state.name }} are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including {{ state.name }}."
+---
+<main><article class="wrap py-10">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/availability/">State availability</a></li><li><span aria-current="page">{{ state.name }}</span></li></ol></nav>
+  <p class="eyebrow">State record · {{ state.statusShort }}</p>
+  <h1 class="page-title">Are Sweepstakes Casinos Legal in {{ state.name }}?</h1>
+  <p class="lede">{{ state.name }} is treated as closed to sweepstakes casinos{% if state.status == "statute" %} by statute{% else %} by enforcement{% endif %}. This page shows what that means for players and which operators restrict the state.</p>
+  <div class="answer-first">
+    <span class="af-label">Direct answer</span>
+    <p><strong>{{ state.answer }}</strong></p>
+    <p class="text-sm">This reflects operator availability policy and public reporting, not legal advice.</p>
+  </div>
+
+  <h2>Status at a glance</h2>
+  <dl class="detail-grid">
+    <div><dt>Status</dt><dd>{{ state.statusShort }}</dd></div>
+    <div><dt>Category</dt><dd>{% if state.status == "statute" %}Closed by statute{% else %}Closed by enforcement{% endif %}</dd></div>
+{% if state.statusDate %}<div><dt>Effective date</dt><dd>{{ state.statusDate | readableDate }}</dd></div>{% endif %}
+    <div><dt>Offers on this site</dt><dd>Blocked for {{ state.name }}</dd></div>
+  </dl>
+
+  <h2>Why {{ state.name }} is treated as closed</h2>
+  <p>{{ state.basis }} This classification reflects operator availability policy, not legal advice; state law in this category changes frequently.</p>
+
+  <h2>Operators that restrict {{ state.name }}</h2>
+  <p>The table below lists each operator whose reviewed terms name {{ state.name }} ({{ state.code }}) as a restricted state. Operators without a published restriction are marked as not published; that does not mean they accept {{ state.name }} players.</p>
+  <div class="table-scroll">
+    <table class="data">
+      <thead><tr><th>Operator</th><th>{{ state.code }} status in reviewed terms</th><th>Record</th></tr></thead>
+      <tbody>
+{% for op in operators %}
+        <tr>
+          <th>{{ op.name }}</th>
+          <td>{% if state.code in op.restrictedStates %}Restricted in published terms{% else %}No published restriction found{% endif %}</td>
+          <td><a href="/redemption-times/{{ op.slug }}/">Full terms</a></td>
+        </tr>
+{% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>What this means for players</h2>
+  <p>All research on this site remains public in {{ state.name }}; only commercial offers are blocked. If you live in {{ state.name }}, do not try to sign up with an operator that restricts the state: accounts created against the terms can be closed and balances forfeited. Confirm the current rules with the operator and, for your own situation, a licensed attorney.</p>
+
+  <h2>Not legal advice</h2>
+  <p>This page is general information for readers. Confirm the current rules for your state before you play, and speak to a licensed attorney about your own situation.</p>
+  <p class="byline mt-8"><a href="/availability/">All states</a> · <a href="/redemption-times/">Compare operators</a> · <a href="/methodology/">Methodology</a></p>
+</article></main>

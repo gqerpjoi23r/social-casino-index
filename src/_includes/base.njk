@@ -14,6 +14,18 @@
 <meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}/assets/social-card.jpg">
+<meta property="og:image:secure_url" content="{{ site.url }}/assets/social-card.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Social Casino Index: independent research on US sweepstakes casino redemption times and payout methods.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{ social.twitterHandle }}">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:image" content="{{ site.url }}/assets/social-card.jpg">
+<meta name="twitter:image:alt" content="Social Casino Index: independent research on US sweepstakes casino redemption times and payout methods.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
@@ -53,11 +65,7 @@
 <header class="sticky top-0 z-40 border-b border-base-300 bg-base-100/90 backdrop-blur">
   <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 px-6 py-3">
     <a class="flex items-center gap-2.5 font-serif text-[22px] font-semibold text-base-content no-underline" href="/">
-      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true" class="flex-none">
-        <circle cx="13" cy="13" r="12" fill="none" stroke="#60A5FA" stroke-width="2"/>
-        <circle cx="13" cy="13" r="5.5" fill="none" stroke="#60A5FA" stroke-width="2"/>
-        <path d="M13 1v4M13 21v4M1 13h4M21 13h4" stroke="#60A5FA" stroke-width="2"/>
-      </svg>
+      <i class="ph ph-crown-simple flex-none text-[30px] leading-none text-accent" aria-hidden="true"></i>
       {{ site.name }}
     </a>
     <nav class="flex flex-wrap items-center gap-x-5 gap-y-1 text-[14.5px] text-base-content/60" aria-label="Main">
