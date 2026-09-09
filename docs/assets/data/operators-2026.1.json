@@ -1,0 +1,623 @@
+{
+  "version": "2026.1",
+  "generatedAt": "2026-09-09T00:00:00.000Z",
+  "records": [
+    {
+      "slug": "jackpota",
+      "name": "Jackpota",
+      "parent": "Silver Social Operations Limited (Isle of Man registration 021651V)",
+      "partner": true,
+      "position": 1,
+      "bestFor": "Players who want entertainment-only casino games and daily free Gold Coins",
+      "summary": "Jackpota is a Gold Coin-only entertainment platform under the terms reviewed. It offers daily free coins and paid coin packages, but it does not provide standard prize redemption.",
+      "offer": "100% more coins plus 75 free spins for new players",
+      "dailyValue": "Free Gold Coins are available every 24 hours",
+      "packageValue": "Gold Coin packages range from $1.99 to $99.99",
+      "games": "More than 1,500 social casino games are advertised, including slots, blackjack, roulette, live-dealer games and Slingo.",
+      "publishedEstimate": "Not applicable; no standard prize redemption",
+      "firstRedemption": "Not applicable; Gold Coins are entertainment-only",
+      "repeatRedemption": "Not applicable; Gold Coins are entertainment-only",
+      "methods": "No standard prize-redemption method",
+      "minRedemption": "Not applicable",
+      "playthrough": "Not applicable to prize redemption under the terms reviewed",
+      "kyc": "Account verification can require a government-issued ID.",
+      "limits": "Gold Coins have no cash value and are not redeemable for prizes.",
+      "support": "24/7 online support and payment-related phone support are advertised.",
+      "restrictedStates": [
+        "AL",
+        "CT",
+        "DE",
+        "ID",
+        "IN",
+        "KY",
+        "LA",
+        "ME",
+        "MD",
+        "MI",
+        "MT",
+        "NV",
+        "NJ",
+        "NY",
+        "TN",
+        "WA",
+        "WV"
+      ],
+      "availability": "Unavailable in Alabama, Connecticut, Delaware, Idaho, Indiana, Kentucky, Louisiana, Maine, Maryland, Michigan, Montana, Nevada, New Jersey, New York, Tennessee, Washington, and West Virginia under the terms reviewed.",
+      "verificationStatus": "verified",
+      "verificationLabel": "Terms verified",
+      "verifiedAt": "2026-09-09",
+      "termsEffective": null,
+      "testStatus": "pending",
+      "observedResult": null,
+      "strengths": [
+        "Daily free Gold Coins and packages from $1.99 provide clear entertainment value",
+        "More than 1,500 games and a published welcome offer"
+      ],
+      "tradeoffs": [
+        "No standard prize redemption under the terms reviewed",
+        "Unavailable in 17 states"
+      ],
+      "sources": [
+        {
+          "label": "Jackpota terms of service",
+          "url": "https://jackpota.com/terms-of-service",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "Jackpota homepage",
+          "url": "https://www.jackpota.com/",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "Jackpota welcome rewards",
+          "url": "https://support.jackpota.com/hc/en-us/articles/14738283511324-What-is-the-welcome-rewards-for-new-players",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "Jackpota Gold Coin packages",
+          "url": "https://support.jackpota.com/hc/en-us/articles/12669339478812-Gold-Coin-Packages",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "Jackpota account verification requirements",
+          "url": "https://support.jackpota.com/hc/en-us/articles/12669414473884-Requirements-for-account-verification",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        }
+      ]
+    },
+    {
+      "slug": "lucky-bunny",
+      "name": "Lucky Bunny",
+      "parent": "Not publicly confirmed",
+      "partner": true,
+      "position": 2,
+      "bestFor": "Players assessing a newer dual-currency social casino",
+      "summary": "Lucky Bunny presents a dual-currency, 21+ social-casino experience, but its terms and sweepstakes-rule documents could not be reached at a stable public URL.",
+      "offer": "Current welcome and recurring offers require a live account check.",
+      "dailyValue": "Not publicly verified",
+      "packageValue": "Not publicly verified",
+      "games": "Social-casino game lobby; exact game and provider counts are not included until independently verified.",
+      "publishedEstimate": "Not publicly reachable",
+      "firstRedemption": "Not publicly verified",
+      "repeatRedemption": "Not publicly verified",
+      "methods": "Not publicly verified",
+      "minRedemption": "Not publicly verified",
+      "playthrough": "Not publicly verified",
+      "kyc": "Account registration references identity and eligibility requirements; the full redemption check is not publicly verified.",
+      "limits": "Not publicly verified",
+      "support": "On-site support options require a live account check.",
+      "restrictedStates": [],
+      "availability": "State restrictions are not independently verified because the sweepstakes rules are not publicly reachable.",
+      "verificationStatus": "partial",
+      "verificationLabel": "Some terms unverified",
+      "verifiedAt": "2026-09-08",
+      "termsEffective": null,
+      "testStatus": "pending",
+      "observedResult": null,
+      "strengths": [
+        "Dual-currency model is confirmed in registration copy",
+        "Commercial offer is available through a partner route where eligible"
+      ],
+      "tradeoffs": [
+        "Redemption documents are not reachable at a stable public URL",
+        "Payout economics and availability remain unverified"
+      ],
+      "sources": [
+        {
+          "label": "Lucky Bunny website and registration copy",
+          "url": "https://luckybunny.fun/",
+          "accessed": "2026-09-08",
+          "sourceType": "operator"
+        }
+      ]
+    },
+    {
+      "slug": "yay-casino",
+      "name": "YAY Casino",
+      "parent": "Social Gaming LLC",
+      "partner": true,
+      "position": 3,
+      "bestFor": "Players comparing cash and cryptocurrency redemptions with a large game library",
+      "summary": "YAY Casino offers more than 1,300 games, cash and cryptocurrency redemption options, and a 50 SC minimum. Most requests are reviewed in 24-72 hours, although review can take up to seven days.",
+      "offer": "Up to 120,000 GC, 12 SC and 20 free spins for new players",
+      "dailyValue": "Not publicly verified",
+      "packageValue": "Not publicly verified",
+      "games": "More than 1,300 social casino games",
+      "publishedEstimate": "Review usually takes 24-72 hours and can take up to 7 days",
+      "firstRedemption": "Usually reviewed in 24-72 hours after required verification; review can take up to 7 days",
+      "repeatRedemption": "Usually reviewed in 24-72 hours; review can take up to 7 days",
+      "methods": "USD cash, cryptocurrency, and a Visa virtual card where offered",
+      "minRedemption": "50 SC",
+      "playthrough": "1x by default before Sweeps Coins become redeemable",
+      "kyc": "Identity, eligibility and payment checks can apply before redemption.",
+      "limits": "Minimum 50 SC per request; maximum 9,550 SC per day",
+      "support": "Operator support is available through the site; response-time benchmarks are not yet measured.",
+      "restrictedStates": [
+        "CA",
+        "CT",
+        "DE",
+        "ID",
+        "IL",
+        "IN",
+        "LA",
+        "ME",
+        "MI",
+        "MT",
+        "NV",
+        "NJ",
+        "NY",
+        "TN",
+        "WA"
+      ],
+      "availability": "Unavailable in California, Connecticut, Delaware, Idaho, Illinois, Indiana, Louisiana, Maine, Michigan, Montana, Nevada, New Jersey, New York, Tennessee, and Washington under the rules reviewed.",
+      "verificationStatus": "verified",
+      "verificationLabel": "Terms verified",
+      "verifiedAt": "2026-09-09",
+      "termsEffective": null,
+      "testStatus": "pending",
+      "observedResult": null,
+      "strengths": [
+        "Cash and cryptocurrency redemption options",
+        "50 SC minimum and a published review window"
+      ],
+      "tradeoffs": [
+        "Review can extend to seven days",
+        "Visa virtual card availability can vary"
+      ],
+      "sources": [
+        {
+          "label": "YAY Casino terms and conditions",
+          "url": "https://www.yaycasino.com/terms-and-conditions",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "YAY Casino sweepstakes rules",
+          "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "YAY Casino homepage",
+          "url": "https://www.yaycasino.com/",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        }
+      ]
+    },
+    {
+      "slug": "dorados",
+      "name": "Dorados",
+      "parent": "Rafflefy Limited",
+      "partner": true,
+      "position": 4,
+      "bestFor": "Players comfortable accumulating at least 100 redeemable Sweeps Coins",
+      "summary": "Dorados publishes a 100 SC minimum and a named-payment-account requirement. Its public rules do not state a delivery timeframe or a complete payment-method list.",
+      "offer": "Current welcome and recurring offers require a live account check.",
+      "dailyValue": "Not publicly verified",
+      "packageValue": "Not publicly verified",
+      "games": "Social-casino lobby; exact game and provider counts are not included until independently verified.",
+      "publishedEstimate": "Not stated in public rules",
+      "firstRedemption": "Timing not publicly verified",
+      "repeatRedemption": "Timing not publicly verified",
+      "methods": "A designated payment method or another financial account in the player's name",
+      "minRedemption": "100 SC",
+      "playthrough": "Only redeemable Sweeps Coins qualify; check the current rules before each request.",
+      "kyc": "Identity and payment-account checks can apply before a prize is released.",
+      "limits": "Not publicly verified beyond the 100 SC minimum",
+      "support": "Operator support is available through the site; response-time benchmarks are not yet measured.",
+      "restrictedStates": [
+        "CA",
+        "CT",
+        "ID",
+        "IN",
+        "IA",
+        "LA",
+        "ME",
+        "MI",
+        "MT",
+        "NV",
+        "NJ",
+        "NY",
+        "TN",
+        "WA"
+      ],
+      "availability": "Unavailable in 14 states under the terms reviewed.",
+      "verificationStatus": "verified",
+      "verificationLabel": "Rules verified",
+      "verifiedAt": "2026-09-08",
+      "termsEffective": "2026-02-01",
+      "testStatus": "pending",
+      "observedResult": null,
+      "strengths": [
+        "The 100 SC redemption threshold is published",
+        "Rules identify the sponsor and restricted jurisdictions"
+      ],
+      "tradeoffs": [
+        "The 100 SC threshold is higher than some documented alternatives",
+        "Payment options and timing are not fully published"
+      ],
+      "sources": [
+        {
+          "label": "Dorados sweepstakes rules",
+          "url": "https://dorados.com/en/sweepstakes-rules",
+          "accessed": "2026-09-08",
+          "sourceType": "operator"
+        },
+        {
+          "label": "Dorados terms and conditions",
+          "url": "https://dorados.com/en/terms-and-conditions",
+          "accessed": "2026-09-08",
+          "sourceType": "operator"
+        }
+      ]
+    },
+    {
+      "slug": "zonko",
+      "name": "Zonko",
+      "parent": "Mamba Limited / Forever Winning LLC",
+      "partner": true,
+      "position": 5,
+      "bestFor": "Players comparing a newer Gold Coin social-casino platform",
+      "summary": "Zonko publishes a 100 SC cash-redemption minimum and allows lower gift-card thresholds where offered. Identity and address checks are documented, but payout timing and state exclusions remain unverified.",
+      "offer": "Current welcome and recurring offers require a live account check.",
+      "dailyValue": "Not publicly verified",
+      "packageValue": "Not publicly verified",
+      "games": "Gold Coin social-casino lobby; exact game and provider counts are not included until independently verified.",
+      "publishedEstimate": "Not publicly reachable",
+      "firstRedemption": "Not publicly verified",
+      "repeatRedemption": "Not publicly verified",
+      "methods": "Not publicly verified",
+      "minRedemption": "100 SC for cash; gift-card minimums may be lower",
+      "playthrough": "Not publicly verified",
+      "kyc": "Verification can require government-issued ID, a utility bill, and evidence of funds. Requested documents must be supplied within 40 days.",
+      "limits": "Not publicly verified",
+      "support": "On-site support options require a live account check.",
+      "restrictedStates": [],
+      "availability": "State exclusions were not independently verified in the sources reviewed.",
+      "verificationStatus": "terms-only",
+      "verificationLabel": "Redemption rules unverified",
+      "verifiedAt": "2026-09-09",
+      "termsEffective": null,
+      "testStatus": "pending",
+      "observedResult": null,
+      "strengths": [
+        "100 SC cash minimum is published",
+        "Gift cards may have a lower redemption threshold"
+      ],
+      "tradeoffs": [
+        "Payout timing remains unverified",
+        "State exclusions remain unverified"
+      ],
+      "sources": [
+        {
+          "label": "Zonko terms",
+          "url": "https://www.zonko.com/help/terms/",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "Zonko play rules",
+          "url": "https://www.zonko.com/help/play-rules/",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "Zonko FAQ",
+          "url": "https://www.zonko.com/help/faq/",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        }
+      ]
+    },
+    {
+      "slug": "chumba",
+      "name": "Chumba Casino",
+      "parent": "VGW",
+      "partner": false,
+      "position": 6,
+      "bestFor": "Players who want documented bank-transfer and gift-card options",
+      "summary": "Chumba Casino states that approved redemptions are processed within two days. First requests can take longer because enhanced identity verification runs before approval.",
+      "offer": "Current welcome and recurring offers require a live account check.",
+      "dailyValue": "Not included until independently verified",
+      "packageValue": "Not included until independently verified",
+      "games": "Established slots and table-game lobby; exact live counts change and are not frozen in this edition.",
+      "publishedEstimate": "Processed within 2 days after approval; enhanced identity verification can add time",
+      "firstRedemption": "Slower because full identity verification runs before the first payment",
+      "repeatRedemption": "Processed within 2 days after approval under the published terms",
+      "methods": "Bank transfer, gift card",
+      "minRedemption": "Check the cashier and current terms",
+      "playthrough": "Promotional Sweeps Coins must become redeemable before cash-out.",
+      "kyc": "Enhanced identity verification may require identity, address, and payment evidence.",
+      "limits": "Check the cashier and current terms",
+      "support": "Operator help center and account support; response-time benchmarks are not yet measured.",
+      "restrictedStates": [],
+      "availability": "State availability changes and must be confirmed against current operator terms.",
+      "verificationStatus": "verified",
+      "verificationLabel": "Terms verified",
+      "verifiedAt": "2026-09-07",
+      "termsEffective": "2026-02-18",
+      "testStatus": "pending",
+      "observedResult": null,
+      "strengths": [
+        "Published processing commitment after approval",
+        "Bank-transfer and gift-card redemption options"
+      ],
+      "tradeoffs": [
+        "The published two-day figure starts after approval, not at request",
+        "First-redemption verification can add time"
+      ],
+      "sources": [
+        {
+          "label": "Chumba Casino terms of service",
+          "url": "https://www.chumbacasino.com/terms-of-service",
+          "accessed": "2026-09-07",
+          "sourceType": "operator"
+        }
+      ]
+    },
+    {
+      "slug": "pulsz",
+      "name": "Pulsz",
+      "parent": "Yellow Social Interactive",
+      "partner": false,
+      "position": 7,
+      "bestFor": "Players choosing between bank transfer and Skrill",
+      "summary": "Pulsz publishes a 3-7 business-day first-redemption window and supports Trustly bank transfer and Skrill. Later requests can still include up to 72 hours of internal processing.",
+      "offer": "Current welcome and recurring offers require a live account check.",
+      "dailyValue": "Not included until independently verified",
+      "packageValue": "Not included until independently verified",
+      "games": "Large slots-led lobby; exact live counts change and are not frozen in this edition.",
+      "publishedEstimate": "First redemption takes 3-7 business days; processing can take up to 72 hours before delivery",
+      "firstRedemption": "3-7 business days including verification",
+      "repeatRedemption": "Up to 72 hours of processing plus payment delivery time",
+      "methods": "Trustly bank transfer, Skrill",
+      "minRedemption": "Check the cashier and current terms",
+      "playthrough": "Sweeps Coins must meet the operator's redeemability conditions before cash-out.",
+      "kyc": "The first redemption includes identity verification.",
+      "limits": "Check the cashier and current terms",
+      "support": "Operator help center and account support; response-time benchmarks are not yet measured.",
+      "restrictedStates": [],
+      "availability": "State availability changes and must be confirmed against current operator terms.",
+      "verificationStatus": "verified",
+      "verificationLabel": "Terms verified",
+      "verifiedAt": "2026-09-07",
+      "termsEffective": "2025-12-18",
+      "testStatus": "pending",
+      "observedResult": null,
+      "strengths": [
+        "First-redemption window is published",
+        "Choice of bank transfer or Skrill"
+      ],
+      "tradeoffs": [
+        "Business-day timing excludes weekends and holidays",
+        "Payment delivery time can follow the internal processing window"
+      ],
+      "sources": [
+        {
+          "label": "Pulsz terms of service",
+          "url": "https://www.pulsz.com/terms-of-service",
+          "accessed": "2026-09-07",
+          "sourceType": "operator"
+        }
+      ]
+    },
+    {
+      "slug": "stake-us",
+      "name": "Stake.us",
+      "parent": "Medium Rare",
+      "partner": false,
+      "position": 8,
+      "bestFor": "Players who prefer crypto-native redemption",
+      "summary": "Stake.us uses cryptocurrency for redemptions. Its published identity-verification stage typically takes 2-3 business days before crypto delivery.",
+      "offer": "Current welcome and recurring offers require a live account check.",
+      "dailyValue": "Not included until independently verified",
+      "packageValue": "Not included until independently verified",
+      "games": "Crypto-native slots, live games, and originals; exact live counts change and are not frozen in this edition.",
+      "publishedEstimate": "Crypto redemptions; identity verification typically takes 2-3 business days",
+      "firstRedemption": "Identity verification typically takes 2-3 business days before payout",
+      "repeatRedemption": "Crypto delivery follows internal review",
+      "methods": "Cryptocurrency",
+      "minRedemption": "40 SC",
+      "playthrough": "Sweeps Coins must be eligible for redemption under the current rules.",
+      "kyc": "Identity verification typically takes 2-3 business days.",
+      "limits": "Check the cashier and current terms",
+      "support": "Operator help center and account support; response-time benchmarks are not yet measured.",
+      "restrictedStates": [],
+      "availability": "State availability changes and must be confirmed against current operator terms.",
+      "verificationStatus": "verified",
+      "verificationLabel": "Terms verified",
+      "verifiedAt": "2026-09-07",
+      "termsEffective": "2026-01-30",
+      "testStatus": "pending",
+      "observedResult": null,
+      "strengths": [
+        "Crypto-native redemption",
+        "Published 40 SC minimum"
+      ],
+      "tradeoffs": [
+        "Crypto introduces wallet and network considerations",
+        "Identity verification can dominate the first cash-out timeline"
+      ],
+      "sources": [
+        {
+          "label": "Stake.us terms of service",
+          "url": "https://stake.us/terms-of-service",
+          "accessed": "2026-09-07",
+          "sourceType": "operator"
+        }
+      ]
+    },
+    {
+      "slug": "wow-vegas",
+      "name": "WOW Vegas",
+      "parent": "MW Services",
+      "partner": false,
+      "position": 9,
+      "bestFor": "Players comparing operators by playthrough requirement",
+      "summary": "WOW Vegas confirms a 1x playthrough requirement for Sweeps Coins. A public payout-time commitment was not found in a form we could verify.",
+      "offer": "Current welcome and recurring offers require a live account check.",
+      "dailyValue": "Not included until independently verified",
+      "packageValue": "Not included until independently verified",
+      "games": "Slots-led social-casino lobby; exact live counts change and are not frozen in this edition.",
+      "publishedEstimate": "No payout timeframe found in a form we could verify",
+      "firstRedemption": "Not publicly verified",
+      "repeatRedemption": "Not publicly verified",
+      "methods": "Check the cashier and current terms",
+      "minRedemption": "Check the cashier and current terms",
+      "playthrough": "1x wagering requirement on Sweeps Coins",
+      "kyc": "Identity verification can apply before redemption; the timing is not stated in the source record.",
+      "limits": "Check the cashier and current terms",
+      "support": "Operator help center and account support; response-time benchmarks are not yet measured.",
+      "restrictedStates": [],
+      "availability": "State availability changes and must be confirmed against current operator terms.",
+      "verificationStatus": "verified",
+      "verificationLabel": "Terms verified",
+      "verifiedAt": "2026-09-07",
+      "termsEffective": null,
+      "testStatus": "pending",
+      "observedResult": null,
+      "strengths": [
+        "The 1x playthrough requirement is publicly documented",
+        "The requirement is straightforward to compare"
+      ],
+      "tradeoffs": [
+        "No verified public payout-time commitment",
+        "Cashier methods and minimums require a current account check"
+      ],
+      "sources": [
+        {
+          "label": "WOW Vegas terms of service",
+          "url": "https://www.wowvegas.com/terms-of-service",
+          "accessed": "2026-09-07",
+          "sourceType": "operator"
+        }
+      ]
+    },
+    {
+      "slug": "mcluck",
+      "name": "McLuck",
+      "parent": "B-Two Operations Limited (B2Services is the payment agent)",
+      "partner": false,
+      "position": 10,
+      "bestFor": "Players who want a low gift-card threshold or documented bank timing",
+      "summary": "McLuck publishes 2-5 day bank delivery after up to 72 hours of processing, with a 75 SC bank minimum and a lower 10 SC gift-card minimum.",
+      "offer": "5,000 GC plus a 150% extra first-store offer",
+      "dailyValue": "Free daily rewards are available every 24 hours",
+      "packageValue": "Gold Coin packages range from $1.99 to $99.99",
+      "games": "Large slots-led social-casino lobby; exact live counts change and are not frozen in this edition.",
+      "publishedEstimate": "Bank transfer takes 2-5 days and can take up to 10; internal processing can take up to 72 hours",
+      "firstRedemption": "Up to 72 hours of processing plus 2-5 days of bank delivery",
+      "repeatRedemption": "2-5 days by bank transfer once verified, after any internal processing",
+      "methods": "Bank transfer, gift card",
+      "minRedemption": "75 SC bank / 10 SC gift card",
+      "playthrough": "Sweeps Coins must meet the operator's redeemability conditions before cash-out.",
+      "kyc": "Identity verification can apply before the first payment; McLuck states that submitted verification is reviewed within 48 hours.",
+      "limits": "10,000 SC per day; 4,900 SC in Florida and New York",
+      "support": "Operator help center and account support; response-time benchmarks are not yet measured.",
+      "restrictedStates": [
+        "CA",
+        "CT",
+        "DE",
+        "ID",
+        "IN",
+        "KY",
+        "LA",
+        "ME",
+        "MD",
+        "MI",
+        "MT",
+        "NV",
+        "NJ",
+        "NY",
+        "TN",
+        "WA",
+        "WV"
+      ],
+      "availability": "Available in 33 states and Washington, DC. Unavailable in California, Connecticut, Delaware, Idaho, Indiana, Kentucky, Louisiana, Maine, Maryland, Michigan, Montana, Nevada, New Jersey, New York, Tennessee, Washington, and West Virginia under the terms reviewed.",
+      "verificationStatus": "verified",
+      "verificationLabel": "Terms verified",
+      "verifiedAt": "2026-09-09",
+      "termsEffective": null,
+      "testStatus": "pending",
+      "observedResult": null,
+      "strengths": [
+        "Published bank-delivery range and verification review target",
+        "Daily rewards, low-cost packages, and a 10 SC gift-card minimum"
+      ],
+      "tradeoffs": [
+        "Internal processing can add up to 72 hours before delivery",
+        "Bank delivery can extend to 10 days"
+      ],
+      "sources": [
+        {
+          "label": "McLuck terms of service",
+          "url": "https://www.mcluck.com/terms-of-service",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "McLuck ownership and payment agent",
+          "url": "https://support.mcluck.com/hc/en-us/articles/20028415989533-Who-is-B2Services",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "McLuck welcome rewards",
+          "url": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "McLuck free Gold Coins",
+          "url": "https://support.mcluck.com/hc/en-us/articles/9498201194653-How-do-I-get-free-Gold-Coins",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "McLuck Gold Coin prices",
+          "url": "https://support.mcluck.com/hc/en-us/articles/9181629062045-How-much-do-Gold-Coins-cost",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "McLuck account verification",
+          "url": "https://support.mcluck.com/hc/en-us/articles/9182613650461-How-do-I-verify-my-McLuck-Account",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        },
+        {
+          "label": "McLuck location availability",
+          "url": "https://support.mcluck.com/hc/en-us/articles/8837446177693-Can-I-play-from-anywhere",
+          "accessed": "2026-09-09",
+          "sourceType": "operator"
+        }
+      ]
+    }
+  ]
+}

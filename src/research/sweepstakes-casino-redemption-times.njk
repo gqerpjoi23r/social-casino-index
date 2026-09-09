@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "How Long Do Sweepstakes Casino Redemptions Take?"
-description: "Published redemption times, verification requirements, and minimums for Stake.us, WOW Vegas, McLuck, Chumba Casino and Pulsz, with funded-test results in progress."
+description: "Published redemption times, verification requirements, methods and minimums across ten social casinos, with source-linked operator records."
 permalink: "/research/sweepstakes-casino-redemption-times/"
 tags: ["guides"]
 guideType: "Article"
@@ -25,7 +25,7 @@ eleventyComputed:
       - "@type": "Article"
         "@id": "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/#article"
         headline: "How Long Do Sweepstakes Casino Redemptions Take?"
-        description: "Published redemption times, verification requirements, and minimums for Stake.us, WOW Vegas, McLuck, Chumba Casino and Pulsz, with funded-test results in progress."
+        description: "Published redemption times, verification requirements, methods and minimums across ten social casinos, with source-linked operator records."
         datePublished: "2026-09-08"
         dateModified: "2026-09-09"
         mainEntityOfPage: "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/"
@@ -170,7 +170,14 @@ eleventyComputed:
     </table>
   </div>
 
-  <p>We do not rank a "fastest" operator until at least three comparable funded tests have completed. Terms effective dates: Chumba Casino {{ operators[0].termsEffective | readableDate }}, Pulsz {{ operators[1].termsEffective | readableDate }}, Stake.us {{ operators[2].termsEffective | readableDate }}.</p>
+  <p>We do not rank a "fastest" operator until at least three comparable funded tests have completed. The table separates operator claims from observed results so a short processing promise is not presented as a complete end-to-end payout time.</p>
+
+  <h3>Terms effective dates</h3>
+  <ul class="compact-list">
+    {% for op in operators %}
+      {% if op.termsEffective %}<li><strong>{{ op.name }}:</strong> {{ op.termsEffective | readableDate }}</li>{% endif %}
+    {% endfor %}
+  </ul>
 
   <h2 id="stages">The four stages of a redemption</h2>
   <p>Every redemption moves through the same four stages. The published number from an operator usually covers only one of them, which is why real wait times run longer than the marketing figure.</p>
@@ -205,7 +212,7 @@ eleventyComputed:
   {% include "redemption-times-faq.inc.njk" %}
 
   <h2 id="methodology">How these figures were produced</h2>
-  <p>This edition of the index is based on <strong>{{ operators | length }} published operator terms documents</strong>, retrieved and read in full during the week of {{ updatedAt | readableDate }}. Of these, <strong>4 operators state a verifiable redemption timeframe</strong>; WOW Vegas does not state a timeframe in a form we could verify. No funded-test observations are included yet — every operator is labeled <span class="badge pending">Pending</span> until a funded redemption completes under the site <a href="/methodology/">methodology</a>.</p>
+  <p>This edition contains <strong>{{ operators | length }} operator records</strong> built from public terms, sweepstakes rules, help-center material and operator pages checked through {{ updatedAt | readableDate }}. Some operators publish a complete timing window; others publish only one stage or no stable timeframe. No funded-test observations are included yet. Every operator remains labeled <span class="badge pending">Pending</span> until a funded redemption completes under the site <a href="/methodology/">methodology</a>.</p>
   <p>Funded testing follows the site <a href="/methodology/">methodology</a>: we fund accounts with our own money, request redemptions as ordinary players, and record the time from request to funds received, split into the four stages above. No operator is told it is being tested. When funded tests complete, their observed timings are added to the comparison table and to the downloadable dataset as separate rows.</p>
 
   <h2 id="versions">Versions and data</h2>
@@ -253,7 +260,7 @@ eleventyComputed:
 
   <h2 id="change-log">Change log</h2>
   <ul class="changelog">
-    <li>{{ updatedAt | readableDate }}: Published. Official-source comparison for Chumba Casino, Pulsz, Stake.us, WOW Vegas and McLuck. Funded-testing dataset in progress; all operators labeled pending.</li>
+    <li>{{ updatedAt | readableDate }}: Expanded the official-source comparison to ten operators and added individual, source-linked operator records. Funded testing remains in progress.</li>
   </ul>
 
   <p class="byline mt-8"><a href="/disclosure/">Affiliate disclosure</a> · <a href="/methodology/">Site methodology</a> · Written by <a href="/authors/alex-rowan/">Alex Rowan</a></p>

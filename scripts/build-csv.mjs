@@ -51,10 +51,24 @@ const outDir = join(root, "src/assets/data");
 mkdirSync(outDir, { recursive: true });
 const outFile = join(outDir, `redemption-times-${version}.csv`);
 writeFileSync(outFile, csv);
+const jsonFile = join(outDir, `operators-${version}.json`);
+const editionDate = operators
+  .flatMap((op) => [
+    op.verifiedAt,
+    ...(Array.isArray(op.sources) ? op.sources.map((source) => source.accessed) : []),
+  ])
+  .filter(Boolean)
+  .sort()
+  .at(-1);
+writeFileSync(jsonFile, JSON.stringify({
+  version,
+  generatedAt: editionDate ? `${editionDate}T00:00:00.000Z` : null,
+  records: operators,
+}, null, 2) + "\n");
 
 // Validation: one row per (operator × source); at least one row per operator.
 if (rows.length < operators.length) {
   console.error(`FAIL: CSV has ${rows.length} rows for ${operators.length} operators`);
   process.exit(1);
 }
-console.log(`Wrote ${outFile.replace(root + "/", "")}: ${rows.length} data rows, ${operators.length} operators, version ${version}`);
+console.log(`Wrote CSV and JSON: ${rows.length} source rows, ${operators.length} operators, version ${version}`);

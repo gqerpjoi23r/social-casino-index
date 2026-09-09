@@ -27,6 +27,16 @@
 @utility lede {
   @apply text-lg leading-relaxed text-base-content/70 max-w-xl;
 }
+@utility page-title {
+  @apply mb-4 mt-0 max-w-3xl font-serif text-4xl font-semibold leading-tight text-base-content sm:text-[2.8rem];
+}
+@utility section-title {
+  @apply mb-1 mt-0 font-serif text-[2.05rem] font-semibold leading-tight text-base-content;
+}
+@utility eyebrow {
+  @apply mb-2 text-[12px] font-bold uppercase text-brand;
+  letter-spacing: 0;
+}
 @utility byline {
   @apply text-sm text-base-content/50 mb-6;
 }
@@ -102,6 +112,26 @@ table.data th:first-child, table.data td:first-child { width: 8.5rem; }
 table.data th:last-child, table.data td:last-child { width: 7rem; }
 @media (max-width: 560px) { table.data { min-width: 34rem; } }
 
+/* ---------- Operator comparisons ---------- */
+@utility comparison-grid { @apply grid grid-cols-1 gap-4 lg:grid-cols-2; }
+@utility operator-card { @apply rounded-lg border border-base-300 bg-base-200 p-5; }
+.operator-card h3 { @apply m-0 font-serif text-2xl font-semibold; }
+.operator-card h3 a { @apply text-base-content no-underline hover:text-brand; }
+.operator-fit { @apply mt-2 text-[15px] text-base-content/70; }
+@utility fact-grid { @apply my-4 grid grid-cols-1 gap-px overflow-hidden rounded-md border border-base-300 bg-base-300 sm:grid-cols-2; }
+.fact-grid div { @apply min-w-0 bg-base-100 p-3; }
+.fact-grid dt, .detail-grid dt { @apply text-[12px] font-bold uppercase text-base-content/45; letter-spacing: 0; }
+.fact-grid dd { @apply mt-1 text-[14px] leading-snug text-base-content/80; overflow-wrap: anywhere; }
+@utility operator-actions { @apply flex min-h-9 flex-wrap items-center gap-2; }
+@utility value-links { @apply grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-base-300 bg-base-300 sm:grid-cols-2; }
+.value-links a { @apply flex min-w-0 items-start gap-3 bg-base-200 p-5 text-base-content no-underline hover:bg-base-300; }
+.value-links i { @apply mt-0.5 flex-none text-2xl text-brand; }
+.value-links strong { @apply block; }
+.value-links small { @apply mt-1 block text-sm leading-snug text-base-content/55; }
+@utility detail-grid { @apply my-5 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-base-300 bg-base-300 sm:grid-cols-2; }
+.detail-grid div { @apply min-w-0 bg-base-200 p-4; }
+.detail-grid dd { @apply mt-1 text-[15px] text-base-content/80; overflow-wrap: anywhere; }
+
 /* ---------- Badges ---------- */
 @utility badge {
   @apply inline-block whitespace-nowrap rounded border border-base-300 px-2 py-0.5 text-[12.5px] font-semibold text-base-content/60;
@@ -143,6 +173,7 @@ ul.stats { @apply m-0 mt-4 grid list-none grid-cols-1 gap-2.5 px-6 pb-1 sm:grid-
 /* ---------- Sources / changelog ---------- */
 ol.sources { @apply pl-5 text-[15px] text-base-content/70; }
 ol.sources li { @apply mb-2.5; }
+ol.sources a { overflow-wrap: anywhere; }
 ol.sources .accessed { @apply text-sm text-base-content/40; }
 @utility accessed { @apply text-sm text-base-content/40; }
 @utility changelog { @apply text-[14.5px] text-base-content/70; }

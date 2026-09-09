@@ -1,0 +1,38 @@
+---
+layout: base.njk
+title: "Sweepstakes Casino Redemption Times Compared"
+description: "Compare published payout times, first-redemption checks, payment methods and minimum redemptions across ten social casinos."
+permalink: "/redemption-times/"
+tags: ["guides"]
+guideType: "Comparison"
+status: "published"
+publishedAt: "2026-09-09"
+updatedAt: "2026-09-09"
+authorId: "alex-rowan"
+reviewer: "Social Casino Index research team"
+primaryQuery: "sweepstakes casino redemption times"
+disclosure: "affiliate"
+---
+<main><article class="wrap py-10">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Redemption times</span></li></ol></nav>
+  <p class="eyebrow">10-operator payout index</p>
+  <h1 class="page-title">Sweepstakes Casino Redemption Times</h1>
+  <p class="lede">Compare the full payout path: published timing, first-redemption verification, payment rail and minimum request. Each row links to a dated operator record.</p>
+  <div class="answer-first"><span class="af-label">What the data shows</span><p>Published payout language is not directly comparable unless you separate approval, processing and delivery. Chumba publishes processing within two days after approval, Pulsz publishes 3-7 business days for a first redemption, and McLuck publishes 2-5 days for bank delivery after internal processing. Several newer operators do not publish a complete timeframe.</p></div>
+  <div class="table-scroll">
+    <table class="data">
+      <caption>Operator terms accessed September 2026. “Not publicly verified” means the field was not available in a stable public source.</caption>
+      <thead><tr><th>Operator</th><th>Published timing</th><th>First redemption</th><th>Methods</th><th>Minimum</th></tr></thead>
+      <tbody>{% for op in operators %}<tr><th><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></th><td>{{ op.publishedEstimate }}</td><td>{{ op.firstRedemption }}</td><td>{{ op.methods }}</td><td>{{ op.minRedemption }}</td></tr>{% endfor %}</tbody>
+    </table>
+  </div>
+  <h2>How to choose</h2>
+  <div class="signposts">
+    <div class="signpost"><h3>First payout</h3><p>Prioritize clear identity-check requirements and a published first-redemption window.</p></div>
+    <div class="signpost"><h3>Repeat payouts</h3><p>Compare operator processing separately from bank or wallet delivery time.</p></div>
+    <div class="signpost"><h3>Small balances</h3><p>Check the minimum before playing. Published thresholds in this index range from method-specific minimums to 100 SC.</p></div>
+    <div class="signpost"><h3>Payment preference</h3><p><a href="/guides/sweepstakes-casino-redemption-methods/">Compare bank, gift-card and crypto methods</a>.</p></div>
+  </div>
+  <h2>Download and methodology</h2>
+  <p>Download the <a href="/assets/data/operators-2026.1.json">JSON dataset</a> or <a href="/assets/data/redemption-times-2026.1.csv">CSV dataset</a>. Read the <a href="/research/sweepstakes-casino-redemption-times/">full redemption research</a> for process details and the source register.</p>
+</article></main>

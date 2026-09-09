@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: "Social Casino Index"
-description: "Independent redemption times, verification requirements, and payout research for US sweepstakes casinos."
+title: "Best Social Casinos: Offers, Games and Redemptions Compared"
+description: "Compare social casinos by redemption time, methods, minimums, game selection, availability and current player value. Every field is dated and sourced."
 permalink: "/"
 ogType: "website"
 eleventyComputed:
@@ -12,267 +12,131 @@ eleventyComputed:
         "@id": "https://socialcasinoindex.com/#org"
         name: "Social Casino Index"
         url: "https://socialcasinoindex.com/"
-        description: "Independent US sweepstakes casino research covering redemption times, verification requirements and payout terms."
       - "@type": "WebSite"
         "@id": "https://socialcasinoindex.com/#site"
         url: "https://socialcasinoindex.com/"
         name: "Social Casino Index"
         publisher:
           "@id": "https://socialcasinoindex.com/#org"
-      - "@type": "Person"
-        "@id": "https://socialcasinoindex.com/#alex-rowan"
-        name: "Alex Rowan"
-        url: "https://socialcasinoindex.com/authors/alex-rowan/"
-        email: "alex@socialcasinoindex.com"
-        description: "Researcher covering US sweepstakes casino redemption times, verification requirements, and payout terms for Social Casino Index."
-        worksFor:
-          "@id": "https://socialcasinoindex.com/#org"
-      - "@type": "WebPage"
-        "@id": "https://socialcasinoindex.com/#page"
-        url: "https://socialcasinoindex.com/"
-        name: "Social Casino Index"
-        description: "Independent redemption times, verification requirements, and payout research for US sweepstakes casinos."
-        isPartOf:
-          "@id": "https://socialcasinoindex.com/#site"
-        about:
-          - "@type": "Thing"
-            name: "Sweepstakes casino"
-          - "@type": "Thing"
-            name: "Casino redemption times"
+      - "@type": "ItemList"
+        name: "Social casino comparison"
+        numberOfItems: 10
+        itemListElement:
+          - "@type": "ListItem"
+            position: 1
+            url: "https://socialcasinoindex.com/redemption-times/jackpota/"
+          - "@type": "ListItem"
+            position: 2
+            url: "https://socialcasinoindex.com/redemption-times/lucky-bunny/"
+          - "@type": "ListItem"
+            position: 3
+            url: "https://socialcasinoindex.com/redemption-times/yay-casino/"
 ---
 <main>
-<!-- Hero -->
-<section class="hero-bg relative -mt-px flex min-h-[68vh] items-center">
+<section class="hero-bg relative -mt-px flex min-h-[64vh] items-center">
   <div class="wrap py-16">
-    <span class="badge complete mb-4"><i class="ph ph-shield-check" aria-hidden="true"></i> Independent &amp; player-first</span>
-    <h1 class="mb-5 max-w-3xl font-serif text-[2.6rem] font-semibold leading-[1.06] text-white sm:text-[3.4rem]">Find trusted payout data and the best social casino deals.</h1>
-    <p class="mb-8 max-w-xl text-lg leading-relaxed text-white/85">We time real redemptions, verify operator terms, and track who actually pays out — so you can pick a social casino with confidence. Every figure is dated and sourced.</p>
+    <span class="badge complete mb-4"><i class="ph ph-chart-bar" aria-hidden="true"></i> 10 operators compared</span>
+    <h1 class="mb-5 max-w-3xl font-serif text-[2.6rem] font-semibold leading-[1.06] text-white sm:text-[3.4rem]">Compare what social casinos actually give players.</h1>
+    <p class="mb-8 max-w-2xl text-lg leading-relaxed text-white/85">Offers, games, redemption methods, payout timing, minimums and restrictions in one dated, source-linked index. Unknown terms stay marked as unknown.</p>
     <div class="flex flex-wrap gap-3">
-      <a href="#deals" class="btn btn-primary"><i class="ph ph-cards" aria-hidden="true"></i> See top deals</a>
-      <a href="/guides/" class="btn btn-outline border-white/40 text-white hover:bg-white/10 hover:border-white/60"><i class="ph ph-book-open" aria-hidden="true"></i> Read the research</a>
+      <a href="#compare" class="btn btn-primary"><i class="ph ph-scales" aria-hidden="true"></i> Compare casinos</a>
+      <a href="/redemption-times/" class="btn btn-outline border-white/40 text-white hover:border-white/60 hover:bg-white/10"><i class="ph ph-clock" aria-hidden="true"></i> Compare payouts</a>
     </div>
   </div>
 </section>
 
 <div class="wrap py-2">
-
-  <!-- Best deals & terms -->
-  <section id="deals" class="scroll-mt-20 py-10" aria-labelledby="deals-heading">
-    <div class="mb-6 flex items-end justify-between gap-4">
+  <section id="compare" class="scroll-mt-20 py-10" aria-labelledby="compare-heading">
+    <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
       <div>
-        <h2 id="deals-heading" class="mb-1 mt-0 font-serif text-[2.05rem] font-semibold leading-tight text-base-content">Best deals &amp; terms</h2>
-        <p class="m-0 text-base-content/60">Our partner operators, with the terms we have verified. Offers appear only where available in your state.</p>
+        <h2 id="compare-heading" class="section-title">Social casino comparison</h2>
+        <p class="m-0 max-w-2xl text-base-content/60">Start with the player outcome that matters to you. Partner status never changes the underlying data or verification label.</p>
       </div>
-      <span class="badge pending hidden sm:inline-block">Updated Sep 2026</span>
+      <span class="badge pending">Verified September 2026</span>
     </div>
 
-    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      <div class="card flex flex-col">
-        <div class="card-head">
-          <div class="mb-2 flex items-center justify-between">
-            <i class="ph ph-coins text-3xl text-brand" aria-hidden="true"></i>
-            <span class="badge pending">Partner</span>
+    <div class="comparison-grid">
+      {% for op in operators %}
+      <article class="operator-card">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <p class="eyebrow">#{{ op.position }}</p>
+            <h3><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></h3>
           </div>
-          <h2 class="!text-xl">Jackpota</h2>
-          <p>Social casino with a large slot library. Redemption terms are not published publicly yet.</p>
+          <span class="badge {% if op.verificationStatus == 'verified' %}complete{% else %}pending{% endif %}">{{ op.verificationLabel }}</span>
         </div>
-        <div class="card-foot mt-auto">
-          <p>Verification: <span class="badge pending">Partial</span></p>
-          <div class="cta-box !my-2 !border-0 !bg-transparent !p-0" data-cta-operator="jackpota">
-            <p class="cta-msg text-sm">Check availability in your state to see the current offer.</p>
-            <a class="cta-btn btn btn-primary btn-sm" href="/go/jackpota/">Visit Jackpota <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        <p class="operator-fit">{{ op.bestFor }}</p>
+        <dl class="fact-grid">
+          <div><dt>Redemption</dt><dd>{{ op.publishedEstimate }}</dd></div>
+          <div><dt>Methods</dt><dd>{{ op.methods }}</dd></div>
+          <div><dt>Minimum</dt><dd>{{ op.minRedemption }}</dd></div>
+          <div><dt>Games</dt><dd>{{ op.games }}</dd></div>
+        </dl>
+        <div class="operator-actions">
+          <a class="btn btn-sm btn-outline" href="/redemption-times/{{ op.slug }}/">Full terms</a>
+          {% if op.partner %}
+          <div class="cta-box !m-0 !border-0 !bg-transparent !p-0" data-cta-operator="{{ op.slug }}">
+            <p class="cta-msg sr-only">Check state availability before visiting.</p>
+            <a class="cta-btn btn btn-primary btn-sm" href="/go/{{ op.slug }}/">Visit {{ op.name }} <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
           </div>
+          {% endif %}
         </div>
-      </div>
-
-      <div class="card flex flex-col">
-        <div class="card-head">
-          <div class="mb-2 flex items-center justify-between">
-            <i class="ph ph-rabbit text-3xl text-brand" aria-hidden="true"></i>
-            <span class="badge pending">Partner</span>
-          </div>
-          <h2 class="!text-xl">Lucky Bunny</h2>
-          <p>Newer social casino on a dual-currency model, 21+. Terms are not publicly reachable yet.</p>
-        </div>
-        <div class="card-foot mt-auto">
-          <p>Verification: <span class="badge pending">Partial</span></p>
-          <div class="cta-box !my-2 !border-0 !bg-transparent !p-0" data-cta-operator="lucky-bunny">
-            <p class="cta-msg text-sm">Check availability in your state to see the current offer.</p>
-            <a class="cta-btn btn btn-primary btn-sm" href="/go/lucky-bunny/">Visit Lucky Bunny <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card flex flex-col">
-        <div class="card-head">
-          <div class="mb-2 flex items-center justify-between">
-            <i class="ph ph-currency-btc text-3xl text-brand" aria-hidden="true"></i>
-            <span class="badge pending">Partner</span>
-          </div>
-          <h2 class="!text-xl">YAY Casino</h2>
-          <p>Crypto-only redemptions. Excludes WA, ID, CA, NY, MI. Run by Social Gaming LLC (Delaware).</p>
-        </div>
-        <div class="card-foot mt-auto">
-          <p>Verification: <span class="badge complete">Verified T&amp;C</span></p>
-          <div class="cta-box !my-2 !border-0 !bg-transparent !p-0" data-cta-operator="yay-casino">
-            <p class="cta-msg text-sm">Check availability in your state to see the current offer.</p>
-            <a class="cta-btn btn btn-primary btn-sm" href="/go/yay-casino/">Visit YAY Casino <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card flex flex-col">
-        <div class="card-head">
-          <div class="mb-2 flex items-center justify-between">
-            <i class="ph ph-treasure-chest text-3xl text-brand" aria-hidden="true"></i>
-            <span class="badge pending">Partner</span>
-          </div>
-          <h2 class="!text-xl">Dorados</h2>
-          <p>Minimum redemption 100 SC. Restricted in 14 states incl. CA, NY, MI, NV. Sponsor Rafflefy Ltd.</p>
-        </div>
-        <div class="card-foot mt-auto">
-          <p>Verification: <span class="badge complete">Verified</span></p>
-          <div class="cta-box !my-2 !border-0 !bg-transparent !p-0" data-cta-operator="dorados">
-            <p class="cta-msg text-sm">Check availability in your state to see the current offer.</p>
-            <a class="cta-btn btn btn-primary btn-sm" href="/go/dorados/">Visit Dorados <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card flex flex-col">
-        <div class="card-head">
-          <div class="mb-2 flex items-center justify-between">
-            <i class="ph ph-sparkle text-3xl text-brand" aria-hidden="true"></i>
-            <span class="badge pending">Partner</span>
-          </div>
-          <h2 class="!text-xl">Zonko</h2>
-          <p>Newest US social casino. Restricted in 14 states incl. CA, NY, MI, NV. Gold Coin purchases.</p>
-        </div>
-        <div class="card-foot mt-auto">
-          <p>Verification: <span class="badge complete">Terms only</span></p>
-          <div class="cta-box !my-2 !border-0 !bg-transparent !p-0" data-cta-operator="zonko">
-            <p class="cta-msg text-sm">Check availability in your state to see the current offer.</p>
-            <a class="cta-btn btn btn-primary btn-sm" href="/go/zonko/">Visit Zonko <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card flex flex-col border-dashed">
-        <div class="card-head">
-          <div class="mb-2 flex items-center justify-between">
-            <i class="ph ph-map-pin text-3xl text-base-content/50" aria-hidden="true"></i>
-          </div>
-          <h2 class="!text-xl">Check your state first</h2>
-          <p>Offers depend on where you play. Select your state to see which deals are available to you.</p>
-        </div>
-        <div class="card-foot mt-auto">
-          <p><a class="text-brand no-underline hover:underline" href="#eligibility-heading">Select your state <i class="ph ph-arrow-down" aria-hidden="true"></i></a></p>
-        </div>
-      </div>
-    </div>
-    <p class="mt-4 text-sm text-base-content/50"><i class="ph ph-info" aria-hidden="true"></i> We may earn a commission on partner links, at no cost to you. It never changes a verified figure. <a class="text-brand" href="/disclosure/">How we're paid</a>.</p>
-  </section>
-
-  <!-- Latest research -->
-  <section class="py-10" aria-labelledby="latest-heading">
-    <div class="mb-6 flex items-end justify-between gap-4">
-      <h2 id="latest-heading" class="mb-0 mt-0 font-serif text-[2.05rem] font-semibold leading-tight text-base-content">Latest research</h2>
-      <a class="text-brand no-underline hover:underline" href="/guides/">All guides <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-    </div>
-    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {% for item in collections.guides | reverse | slice(0, 3) %}
-      <a href="{{ item.url }}" class="card group no-underline transition hover:border-brand">
-        <div class="card-head">
-          <span class="badge {% if item.data.guideType == 'Benchmark' %}complete{% else %}pending{% endif %}">{{ item.data.guideType or "Article" }}</span>
-          <h2 class="mt-3 !text-xl group-hover:text-brand">{{ item.data.title }}</h2>
-          <p>{{ item.data.description }}</p>
-        </div>
-        <div class="card-foot mt-auto">
-          <p><i class="ph ph-calendar-blank" aria-hidden="true"></i> {{ item.data.publishedAt | readableDate }}</p>
-        </div>
-      </a>
+      </article>
       {% endfor %}
     </div>
+    <p class="mt-4 text-sm text-base-content/50">Partner links may earn us a commission. Data fields come from the cited operator sources and are not upgraded because of compensation.</p>
+    <p class="mt-2 text-sm text-base-content/50"><i class="ph ph-seal-check" aria-hidden="true"></i> <strong class="text-base-content/70">What the verification badge means:</strong> it shows how much of an operator's row we confirmed from its public terms or sweepstakes rules — not a rating or recommendation. "Terms verified" or "Rules verified" means we read the source document; "Some terms unverified" or "Redemption rules unverified" means part of the row could not be confirmed and is marked accordingly.</p>
   </section>
 
-  <!-- Redemption times table -->
-  <section class="py-10" aria-labelledby="research-index">
-    <h2 id="research-index" class="mb-4 mt-0 font-serif text-[2.05rem] font-semibold leading-tight text-base-content">Redemption times at five major operators</h2>
-
-    <div class="card">
-      <div class="card-head">
-        <p>Official published terms, September 2026. Funded-test results in progress.</p>
-      </div>
-      <div class="table-scroll !mt-2 !border-t-0">
-        <table class="data">
-          <caption>Published redemption terms from operator terms of service. Observed columns are filled only after a funded test completes. <a href="/research/sweepstakes-casino-redemption-times/">Read the full article</a>.</caption>
-          <thead>
-            <tr>
-              <th scope="col">Operator</th>
-              <th scope="col">Published estimate</th>
-              <th scope="col">Observed (funded test)</th>
-              <th scope="col">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for op in operators %}
-            <tr>
-              <th scope="row">{{ op.name }}</th>
-              <td>{{ op.publishedEstimate }}</td>
-              <td>{% if op.observedResult %}{{ op.observedResult }}{% else %}&mdash;{% endif %}</td>
-              <td><span class="badge {{ op.testStatus }}">{% if op.testStatus == "pending" %}Pending{% elif op.testStatus == "completed" %}Completed{% else %}Not tested{% endif %}</span></td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-      <div class="card-foot">
-        <p>Source: operator terms of service, access dates in the <a href="/research/sweepstakes-casino-redemption-times/#sources">article sources</a>.</p>
-        <p>We do not publish a "fastest" ranking until at least three comparable funded tests have completed.</p>
-      </div>
+  <section class="py-10" aria-labelledby="choose-heading">
+    <h2 id="choose-heading" class="section-title">Choose by player value</h2>
+    <div class="value-links">
+      <a href="/redemption-times/"><i class="ph ph-timer" aria-hidden="true"></i><span><strong>Fast and predictable redemptions</strong><small>Compare timing, minimums, methods and first-payout checks.</small></span></a>
+      <a href="/guides/sweepstakes-casino-redemption-methods/"><i class="ph ph-bank" aria-hidden="true"></i><span><strong>Bank, gift card or crypto</strong><small>Match the payout rail to your priorities.</small></span></a>
+      <a href="/guides/sweepstakes-casino-real-prizes-rules/"><i class="ph ph-trophy" aria-hidden="true"></i><span><strong>How real-prize play works</strong><small>Understand currencies, playthrough and redemption.</small></span></a>
+      <a href="/taxes/"><i class="ph ph-receipt" aria-hidden="true"></i><span><strong>Prize record keeping</strong><small>Track redemptions and prepare useful records for tax time.</small></span></a>
     </div>
   </section>
 
-  <!-- State eligibility -->
+  <section class="py-10" aria-labelledby="data-heading">
+    <div class="mb-5 flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <h2 id="data-heading" class="section-title">The data behind the comparison</h2>
+        <p class="m-0 text-base-content/60">One normalized record per operator, with field-level facts, access dates and primary sources.</p>
+      </div>
+      <div class="flex gap-2">
+        <a class="btn btn-sm btn-outline" href="/assets/data/operators-2026.1.json" download>JSON</a>
+        <a class="btn btn-sm btn-outline" href="/assets/data/redemption-times-2026.1.csv" download>CSV</a>
+      </div>
+    </div>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>Operator</th><th>Published timing</th><th>Methods</th><th>Minimum</th><th>Verified</th></tr></thead>
+        <tbody>
+          {% for op in operators %}
+          <tr>
+            <th><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></th>
+            <td>{{ op.publishedEstimate }}</td>
+            <td>{{ op.methods }}</td>
+            <td>{{ op.minRedemption }}</td>
+            <td>{{ op.verifiedAt | readableDate }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <section class="eligibility scroll-mt-20" aria-labelledby="eligibility-heading">
     <h2 id="eligibility-heading"><i class="ph ph-map-pin" aria-hidden="true"></i> Check availability in your state</h2>
-    <p>All research on this site is public in every state. Commercial offers are shown only after you select a state, and never for states where the category is closed.</p>
+    <p>Select your state before following a commercial link. Each operator can apply additional restrictions.</p>
     <div class="js-only">
       <label for="state-picker" class="mb-1.5 block text-sm font-semibold text-base-content/60">Your state</label>
       <select id="state-picker" data-state-picker>
         {% for s in states %}<option value="{{ s.code }}"{% if not s.code %} disabled selected{% endif %}>{{ s.name }}</option>{% endfor %}
       </select>
-      <p class="eligibility-note">Stored on your device for 30 days. Nothing is sent to us. Current selection: <strong data-state-echo>not selected</strong>.</p>
-    </div>
-    <noscript><p class="eligibility-note">State selection requires JavaScript. The <a href="/availability/">state availability list</a> works without it.</p></noscript>
-  </section>
-
-  <!-- How this site works -->
-  <section class="py-10" aria-labelledby="how-we-work">
-    <h2 id="how-we-work" class="mb-4 mt-0 font-serif text-[2.05rem] font-semibold leading-tight text-base-content">How this site works</h2>
-    <div class="signposts">
-      <div class="signpost">
-        <h3><i class="ph ph-flask text-brand" aria-hidden="true"></i> Methodology</h3>
-        <p>How we fund accounts, time redemptions, label test status, and decide when a ranking is allowed to exist.</p>
-        <p><a href="/methodology/">Read the methodology</a></p>
-      </div>
-      <div class="signpost">
-        <h3><i class="ph ph-map-trifold text-brand" aria-hidden="true"></i> State availability</h3>
-        <p>Which states are open, which are closed by statute or enforcement, and when each rule last changed.</p>
-        <p><a href="/availability/">Check your state</a></p>
-      </div>
-      <div class="signpost">
-        <h3><i class="ph ph-handshake text-brand" aria-hidden="true"></i> Disclosure</h3>
-        <p>How we are paid, what affiliate links do and do not influence, and how the eligibility gate works.</p>
-        <p><a href="/disclosure/">Read the disclosure</a></p>
-      </div>
-      <div class="signpost">
-        <h3><i class="ph ph-user text-brand" aria-hidden="true"></i> About the author</h3>
-        <p>Alex Rowan researches and writes the redemption-time and payout coverage on this site.</p>
-        <p><a href="/authors/alex-rowan/">About Alex Rowan</a></p>
-      </div>
+      <p class="eligibility-note">Stored on this device for 30 days. Current selection: <strong data-state-echo>not selected</strong>.</p>
     </div>
   </section>
-
 </div>
 </main>

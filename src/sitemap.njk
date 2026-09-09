@@ -4,11 +4,12 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://socialcasinoindex.com/</loc><lastmod>2026-09-08</lastmod></url>
-  <url><loc>https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/</loc><lastmod>2026-09-08</lastmod></url>
-  <url><loc>https://socialcasinoindex.com/methodology/</loc><lastmod>2026-09-08</lastmod></url>
-  <url><loc>https://socialcasinoindex.com/disclosure/</loc><lastmod>2026-09-08</lastmod></url>
-  <url><loc>https://socialcasinoindex.com/privacy/</loc><lastmod>2026-09-08</lastmod></url>
-  <url><loc>https://socialcasinoindex.com/availability/</loc><lastmod>2026-09-08</lastmod></url>
-  <url><loc>https://socialcasinoindex.com/authors/alex-rowan/</loc><lastmod>2026-09-08</lastmod></url>
+{% for item in collections.all %}
+  {% if item.url and not item.data.noindex and not item.data.pagination and item.url != "/sitemap.xml" %}
+  <url><loc>{{ site.url }}{{ item.url }}</loc>{% if item.data.updatedAt %}<lastmod>{{ item.data.updatedAt | isoDate }}</lastmod>{% elif item.data.publishedAt %}<lastmod>{{ item.data.publishedAt | isoDate }}</lastmod>{% endif %}</url>
+  {% endif %}
+{% endfor %}
+{% for op in operators %}
+  <url><loc>{{ site.url }}/redemption-times/{{ op.slug }}/</loc><lastmod>{{ op.verifiedAt | isoDate }}</lastmod></url>
+{% endfor %}
 </urlset>
