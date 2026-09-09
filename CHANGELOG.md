@@ -19,6 +19,10 @@ Format:
 - Connected GTM-NTLVFVB7 to GA4 G-E3Y4MKKS6Q; removed unconsented state-selection events and corrected the privacy policy.
 - Search Console domain ownership and sitemap submission are configured in the owner's Google account.
 
+## 2026-09-10 - Homepage leads with player value
+- Homepage hero and "In short" block now open with player outcomes (bonus size, payout speed, state legality) and frame the dated, source-linked records as the method.
+- Homepage SEO title/description updated to lead with bonuses, payouts and availability.
+
 ## 2026-09-09 - Homepage positioning: transparency service
 - Homepage now positions the site as a maintained transparency service: human-readable records, structured metadata, JSON/CSV downloads, no operator count claim.
 - Updated homepage SEO title/description and social-card copy to match the service framing; build regenerates `docs/`.
