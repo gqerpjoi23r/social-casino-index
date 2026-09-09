@@ -1,0 +1,62 @@
+---
+layout: base.njk
+title: "About Social Casino Index"
+description: "Why Social Casino Index publishes dated, source-linked social casino comparisons for players and machine-readable research."
+permalink: "/about/"
+publishedAt: "2026-09-09"
+updatedAt: "2026-09-09"
+eleventyComputed:
+  jsonld:
+    "@context": "https://schema.org"
+    "@graph":
+      - "@type": "AboutPage"
+        "@id": "https://socialcasinoindex.com/about/#page"
+        url: "https://socialcasinoindex.com/about/"
+        name: "About Social Casino Index"
+        isPartOf:
+          "@id": "https://socialcasinoindex.com/#site"
+        about:
+          "@id": "https://socialcasinoindex.com/#org"
+      - "@type": "BreadcrumbList"
+        itemListElement:
+          - "@type": "ListItem"
+            position: 1
+            name: "Home"
+            item: "https://socialcasinoindex.com/"
+          - "@type": "ListItem"
+            position: 2
+            name: "About"
+---
+<main>
+<article class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><span aria-current="page">About</span></li>
+    </ol>
+  </nav>
+
+  <h1 class="mb-5 mt-0 font-serif text-4xl font-semibold leading-tight text-base-content sm:text-[2.8rem]">About Social Casino Index</h1>
+
+  <div class="answer-first">
+    <span class="af-label">Our mission</span>
+    <p><strong>We make social casino offers, games, redemption terms, minimums and restrictions easier to compare.</strong> We turn fragmented and often JavaScript-heavy operator information into readable, structured records with dates and source links.</p>
+  </div>
+
+  <h2>Who the index serves</h2>
+  <p>The index is for players comparing practical value before they choose an operator. Its normalized records also give search and AI engines clear, citable facts that can be difficult to extract from operator websites.</p>
+
+  <h2>How records stay useful</h2>
+  <p>Each operator record shows when we last checked it. Its source list shows when each source was accessed. When a term cannot be confirmed, we mark it as unknown or unverified instead of filling the gap with an assumption.</p>
+  <p>Operator terms can change after our review. Readers should use the dates and source links to judge freshness. We update records as new research is completed, and we record material article corrections in a change log where one is present.</p>
+
+  <h2>What verification means</h2>
+  <p>A verification badge describes how much of an operator record we confirmed from public terms or sweepstakes rules. It is not a rating or recommendation. A partial or unverified label means that some facts could not be confirmed from the sources reviewed.</p>
+
+  <h2>Commercial independence</h2>
+  <p>Some links may earn us a commission at no cost to the player. Compensation does not change an operator's facts, verification status or measured results. Read the <a href="/disclosure/">affiliate disclosure</a> for details.</p>
+
+  <h2>Research standards</h2>
+  <p>Our <a href="/methodology/">methodology</a> explains how we distinguish published terms from measured results, apply status labels and handle corrections. Research and articles are attributed to <a href="/authors/alex-rowan/">Alex Rowan</a>.</p>
+</article>
+</main>
