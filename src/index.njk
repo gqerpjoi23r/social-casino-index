@@ -60,8 +60,12 @@ eleventyComputed:
 <section class="hero-bg relative -mt-px flex min-h-[64vh] items-center">
   <div class="wrap py-16">
     <span class="badge complete mb-4"><i class="ph ph-chart-bar" aria-hidden="true"></i> 10 operator records · checked September 2026</span>
-    <h1 class="mb-5 max-w-3xl font-serif text-[2.6rem] font-semibold leading-[1.06] text-white sm:text-[3.4rem]">Compare what social casinos actually give players.</h1>
+    <h1 class="mb-5 max-w-3xl font-serif text-[2.6rem] font-semibold leading-[1.06] text-white sm:text-[3.4rem]">Compare what social casinos actually give players - and how fast they pay.</h1>
     <p class="mb-8 max-w-2xl text-lg leading-relaxed text-white/85">Offers, games, redemption methods, payout timing, minimums and restrictions in one dated, source-linked index. Unknown terms stay marked as unknown.</p>
+    <div class="answer-first mb-8 max-w-2xl">
+      <span class="af-label">In short</span>
+      <p>By published terms, most social casino redemptions take 2-7 business days, and first redemptions are often slower because identity verification runs first. We compare 10 operators with dated, source-linked records. <a href="/research/sweepstakes-casino-redemption-times/">Read the full redemption research</a>.</p>
+    </div>
     <div class="flex flex-wrap gap-3">
       <a href="#compare" class="btn btn-primary"><i class="ph ph-scales" aria-hidden="true"></i> Compare casinos</a>
       <a href="/redemption-times/" class="btn btn-outline border-white/40 text-white hover:border-white/60 hover:bg-white/10"><i class="ph ph-clock" aria-hidden="true"></i> Compare payouts</a>
@@ -145,19 +149,6 @@ eleventyComputed:
         </tbody>
       </table>
     </div>
-  </section>
-
-  <section class="eligibility scroll-mt-20" aria-labelledby="eligibility-heading">
-    <h2 id="eligibility-heading"><i class="ph ph-map-pin" aria-hidden="true"></i> Check availability in your state</h2>
-    <p>Select your state before following a commercial link. Each operator can apply additional restrictions.</p>
-    <div class="js-only">
-      <label for="state-picker" class="mb-1.5 block text-sm font-semibold text-base-content/60">Your state</label>
-      <select id="state-picker" data-state-picker>
-        {% for s in states %}<option value="{{ s.code }}"{% if not s.code %} disabled selected{% endif %}>{{ s.name }}</option>{% endfor %}
-      </select>
-      <p class="eligibility-note">Stored on this device for 30 days. Current selection: <strong data-state-echo>not selected</strong>.</p>
-    </div>
-    <noscript><p class="eligibility-note">State selection requires JavaScript. The <a href="/availability/">state availability list</a> works without it.</p></noscript>
   </section>
 </div>
 </main>

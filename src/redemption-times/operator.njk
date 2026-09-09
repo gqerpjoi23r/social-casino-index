@@ -6,9 +6,50 @@ pagination:
 permalink: "/redemption-times/{{ operator.slug }}/index.html"
 layout: base.njk
 tags: ["operatorPages"]
+ogType: "article"
 eleventyComputed:
   title: "{{ operator.name }} Redemption Time, Methods and Minimum"
   description: "{{ operator.name }} redemption methods, published payout timing, minimum, verification, availability and source-linked terms."
+  jsonld:
+    "@context": "https://schema.org"
+    "@graph":
+      - "@type": "Article"
+        "@id": "https://socialcasinoindex.com/redemption-times/{{ operator.slug }}/#article"
+        headline: "{{ operator.name }} Redemption Time and Player Terms"
+        description: "{{ operator.name }} redemption methods, published payout timing, minimum, verification, availability and source-linked terms."
+        datePublished: "{{ operator.verifiedAt }}"
+        dateModified: "{{ operator.verifiedAt }}"
+        mainEntityOfPage: "https://socialcasinoindex.com/redemption-times/{{ operator.slug }}/"
+        author:
+          "@id": "https://socialcasinoindex.com/#alex-rowan"
+        publisher:
+          "@id": "https://socialcasinoindex.com/#org"
+      - "@type": "BreadcrumbList"
+        itemListElement:
+          - "@type": "ListItem"
+            position: 1
+            name: "Home"
+            item: "https://socialcasinoindex.com/"
+          - "@type": "ListItem"
+            position: 2
+            name: "Redemption times"
+            item: "https://socialcasinoindex.com/redemption-times/"
+          - "@type": "ListItem"
+            position: 3
+            name: "{{ operator.name }}"
+      - "@type": "FAQPage"
+        "@id": "https://socialcasinoindex.com/redemption-times/{{ operator.slug }}/#faq"
+        mainEntity:
+          - "@type": "Question"
+            name: "How long does a {{ operator.name }} redemption take?"
+            acceptedAnswer:
+              "@type": "Answer"
+              text: "Published timing: {{ operator.publishedEstimate }}. First redemption: {{ operator.firstRedemption }}. These are published terms, not measured results; Social Casino Index has not yet completed a funded redemption test with {{ operator.name }}."
+          - "@type": "Question"
+            name: "What is the minimum redemption at {{ operator.name }}?"
+            acceptedAnswer:
+              "@type": "Answer"
+              text: "Minimum: {{ operator.minRedemption }}. Methods: {{ operator.methods }}."
 ---
 <main><article class="wrap py-10">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/redemption-times/">Redemption times</a></li><li><span aria-current="page">{{ operator.name }}</span></li></ol></nav>
@@ -20,6 +61,24 @@ eleventyComputed:
     <p><strong>{{ operator.bestFor }}.</strong></p>
     <p>Published timing: {{ operator.publishedEstimate }}. Minimum: {{ operator.minRedemption }}. Methods: {{ operator.methods }}.</p>
   </div>
+  <h2>Funded test status</h2>
+  <p>
+{% if operator.testStatus == "completed" %}
+    <span class="badge completed"><i class="ph ph-seal-check" aria-hidden="true"></i> Completed funded test</span>
+{% elif operator.testStatus == "pending" %}
+    <span class="badge pending"><i class="ph ph-hourglass-medium" aria-hidden="true"></i> Funded test in progress</span>
+{% else %}
+    <span class="badge nottested"><i class="ph ph-clock-clockwise" aria-hidden="true"></i> Not tested yet</span>
+{% endif %}
+  </p>
+{% if operator.testStatus == "completed" and operator.observedResult %}
+  <p>We funded an account and timed a real redemption: {{ operator.observedResult.type }} redemption by {{ operator.observedResult.method }}, requested {{ operator.observedResult.requestedAt | readableDate }}, received {{ operator.observedResult.receivedAt | readableDate }} ({{ operator.observedResult.businessDays }} business days){% if operator.observedResult.notes %}. {{ operator.observedResult.notes }}{% endif %}.</p>
+  <p class="text-sm text-base-content/60">Observed figures come from our own funded test and are shown separately from the operator's published terms below. A single test does not make a ranking; see the <a href="/methodology/">methodology</a>.</p>
+{% elif operator.testStatus == "pending" %}
+  <p>A funded redemption test with {{ operator.name }} is in progress. Until it completes, every figure on this page is a published term from the operator's own documents, not a measured result. <a href="/methodology/">How funded testing works</a>.</p>
+{% else %}
+  <p>We have not funded an account with {{ operator.name }} yet. Every figure on this page is a published term from the operator's own documents, not a measured result. <a href="/methodology/">How funded testing works</a>.</p>
+{% endif %}
   <h2>Player value snapshot</h2>
   <dl class="detail-grid">
     <div><dt>Current offer</dt><dd>{{ operator.offer }}</dd></div>
@@ -41,6 +100,9 @@ eleventyComputed:
   <h2>Availability</h2>
   <p>{{ operator.availability }}</p>
   {% if operator.restrictedStates.length %}<p><strong>Restricted states in the reviewed source:</strong> {{ operator.restrictedStates | join(", ") }}.</p>{% endif %}
+  <p>See how each closed state treats sweepstakes casinos in the <a href="/availability/#closed-states">state availability index</a>.</p>
+  <h2>Compare payout methods</h2>
+  <p>{{ operator.name }} redemption methods: {{ operator.methods }}. Compare the rails in detail: <a href="/guides/redemption-methods/bank-transfer/">bank transfer</a>, <a href="/guides/redemption-methods/gift-card/">gift card</a> and <a href="/guides/redemption-methods/crypto/">cryptocurrency</a>, or read the <a href="/research/sweepstakes-casino-redemption-times/">full redemption-time research</a>.</p>
   {% if operator.partner %}
   <div class="cta-box" data-cta-operator="{{ operator.slug }}">
     <p class="cta-title">Check {{ operator.name }}</p>

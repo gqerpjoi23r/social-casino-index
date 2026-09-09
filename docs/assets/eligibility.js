@@ -1,7 +1,9 @@
 /* Client-side eligibility gate (flat-host replacement for /api/eligibility).
    Stores the visitor-selected state in a 30-day cookie. Editorial content is
    always visible; commercial CTAs stay hidden until a state is selected and
-   are blocked for states on the closed list. */
+   are blocked for states on the closed list. A top banner offers the state
+   selector on every page; it disappears once a state is chosen or the banner
+   is dismissed (both remembered in the cookie). Content is never gated. */
 (function () {
   "use strict";
   document.documentElement.classList.add("js");
@@ -24,6 +26,17 @@
     return m ? decodeURIComponent(m[1]) : null;
   }
 
+  /* Dismissal is stored alongside the state as a flag so a visitor who closes
+     the banner without picking a state is not nagged on every page. */
+  var DISMISSED = "__dismissed";
+
+  function syncBanner(state) {
+    var banner = document.querySelector("[data-state-banner]");
+    if (!banner) return;
+    var show = !state; // show only when nothing stored (no state, not dismissed)
+    banner.hidden = !show;
+  }
+
   function applyState(state) {
     var known = !!state;
     var closed = known && CLOSED_STATES.indexOf(state) !== -1;
@@ -43,10 +56,15 @@
     document.querySelectorAll("[data-state-echo]").forEach(function (el) {
       el.textContent = known ? state : "not selected";
     });
+    // keep every picker on the page in sync
+    document.querySelectorAll("select[data-state-picker]").forEach(function (s) {
+      if (known && s.value !== state) s.value = state;
+    });
   }
 
   var current = getCookie();
   applyState(current);
+  syncBanner(current);
 
   document.querySelectorAll("select[data-state-picker]").forEach(function (sel) {
     if (current) sel.value = current;
@@ -55,9 +73,17 @@
       if (!v) return;
       setCookie(v);
       applyState(v);
+      syncBanner(v);
       if (window.dataLayer) {
         window.dataLayer.push({ event: "state_selected", state: v });
       }
+    });
+  });
+
+  document.querySelectorAll("[data-state-banner-close]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      setCookie(DISMISSED);
+      syncBanner(DISMISSED);
     });
   });
 })();

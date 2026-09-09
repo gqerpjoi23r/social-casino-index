@@ -10,9 +10,26 @@
 <body class="bg-base-100 text-base-content">
 <main class="wrap pt-16">
   <h1 class="mb-4 mt-0 font-serif text-3xl font-semibold text-base-content">Checking availability</h1>
-  <p>Affiliate destinations are gated by state. You are being taken to the <a href="/availability/">state availability page</a>, where you can select your state.</p>
+  <p data-go-msg>Confirming availability for your state&hellip;</p>
   <noscript><p><a href="/availability/">Continue to state availability</a>.</p></noscript>
 </main>
-<script>window.location.replace("/availability/");</script>
+<script>(function(){
+  var DEST="https://stake.us/";
+  var CLOSED=["CA","NY","CT","IN","LA","ME","MT","NV","NJ","OK","TN","ID","MI","WA"];
+  var m=document.cookie.match(/(?:^|; )sci_state=([^;]*)/);
+  var state=m?decodeURIComponent(m[1]):null;
+  var msg=document.querySelector("[data-go-msg]");
+  function go(url){window.location.replace(url);}
+  if(state&&CLOSED.indexOf(state)===-1){
+    if(msg)msg.innerHTML="Available in your state. Taking you to the operator&hellip; <a href=""+DEST+"" rel="nofollow noopener">Continue</a>.";
+    go(DEST);
+  } else if(state){
+    if(msg)msg.innerHTML="This operator is not available in your state. See <a href="/availability/">state availability</a>.";
+    setTimeout(function(){go("/availability/");},1200);
+  } else {
+    if(msg)msg.innerHTML="Select your state first on the <a href="/availability/">state availability page</a>.";
+    setTimeout(function(){go("/availability/");},800);
+  }
+})();</script>
 </body>
 </html>

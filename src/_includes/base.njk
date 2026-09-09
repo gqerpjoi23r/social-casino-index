@@ -34,6 +34,22 @@
 </head>
 <body class="bg-base-100 font-sans text-[17px] leading-relaxed text-base-content antialiased">
 
+<div class="state-banner js-only" data-state-banner hidden>
+  <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-6 py-2">
+    <p class="m-0 flex items-center gap-2 text-[13.5px] text-base-content/70">
+      <i class="ph ph-map-pin text-base text-brand" aria-hidden="true"></i>
+      <span data-state-banner-text>Sweepstakes casino availability varies by state. Select yours for accurate offers.</span>
+    </p>
+    <div class="flex items-center gap-2">
+      <label class="sr-only" for="state-picker-banner">Your state</label>
+      <select id="state-picker-banner" class="select select-bordered select-sm w-auto" data-state-picker>
+        {% for s in states %}<option value="{{ s.code }}"{% if not s.code %} disabled selected{% endif %}>{{ s.name }}</option>{% endfor %}
+      </select>
+      <button type="button" class="btn btn-ghost btn-sm btn-square" data-state-banner-close aria-label="Dismiss state banner"><i class="ph ph-x" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</div>
+
 <header class="sticky top-0 z-40 border-b border-base-300 bg-base-100/90 backdrop-blur">
   <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 px-6 py-3">
     <a class="flex items-center gap-2.5 font-serif text-[22px] font-semibold text-base-content no-underline" href="/">
