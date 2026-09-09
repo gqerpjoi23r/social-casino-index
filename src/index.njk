@@ -87,7 +87,7 @@ eleventyComputed:
             <p class="eyebrow">#{{ op.position }}</p>
             <h3><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></h3>
           </div>
-          <span class="badge {% if op.verificationStatus == 'verified' %}complete{% else %}pending{% endif %}">{{ op.verificationLabel }}</span>
+          <img class="operator-favicon" src="/assets/favicons/{{ op.slug }}{{ op.faviconExt }}" width="32" height="32" alt="{{ op.name }} logo" loading="lazy" decoding="async">
         </div>
         <p class="operator-fit">{{ op.bestFor }}</p>
         <dl class="fact-grid">
@@ -97,13 +97,16 @@ eleventyComputed:
           <div><dt>Games</dt><dd>{{ op.games }}</dd></div>
         </dl>
         <div class="operator-actions">
-          <a class="btn btn-sm btn-outline" href="/redemption-times/{{ op.slug }}/">Full terms</a>
+          <span class="badge {% if op.verificationStatus == 'verified' %}complete{% else %}pending{% endif %}">{{ op.verificationLabel }}</span>
+          <span class="operator-actions-right">
+            <a class="btn btn-sm btn-outline" href="/redemption-times/{{ op.slug }}/">Full terms</a>
 {% if op.partner %}
-          <div class="cta-box !m-0 !border-0 !bg-transparent !p-0" data-cta-operator="{{ op.slug }}">
-            <p class="cta-msg sr-only">Check state availability before visiting.</p>
-            <a class="cta-btn btn btn-primary btn-sm" href="/go/{{ op.slug }}/">Visit {{ op.name }} <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          </div>
+            <div class="cta-box !m-0 !border-0 !bg-transparent !p-0" data-cta-operator="{{ op.slug }}">
+              <p class="cta-msg sr-only">Check state availability before visiting.</p>
+              <a class="cta-btn btn btn-primary btn-sm" href="/go/{{ op.slug }}/">Visit {{ op.name }} <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            </div>
 {% endif %}
+          </span>
         </div>
       </article>
 {% endfor %}

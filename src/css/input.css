@@ -114,15 +114,17 @@ table.data th:last-child, table.data td:last-child { width: 7rem; }
 
 /* ---------- Operator comparisons ---------- */
 @utility comparison-grid { @apply grid grid-cols-1 gap-4 lg:grid-cols-2; }
-@utility operator-card { @apply rounded-lg border border-base-300 bg-base-200 p-5; }
+@utility operator-card { @apply flex flex-col rounded-lg border border-base-300 bg-base-200 p-5; }
 .operator-card h3 { @apply m-0 font-serif text-2xl font-semibold; }
 .operator-card h3 a { @apply text-base-content no-underline hover:text-brand; }
+.operator-favicon { @apply h-8 w-8 flex-none rounded-md; }
 .operator-fit { @apply mt-2 text-[15px] text-base-content/70; }
 @utility fact-grid { @apply my-4 grid grid-cols-1 gap-px overflow-hidden rounded-md border border-base-300 bg-base-300 sm:grid-cols-2; }
 .fact-grid div { @apply min-w-0 bg-base-100 p-3; }
 .fact-grid dt, .detail-grid dt { @apply text-[12px] font-bold uppercase text-base-content/45; letter-spacing: 0; }
 .fact-grid dd { @apply mt-1 text-[14px] leading-snug text-base-content/80; overflow-wrap: anywhere; }
-@utility operator-actions { @apply flex min-h-9 flex-wrap items-center gap-2; }
+@utility operator-actions { @apply mt-auto flex min-h-9 flex-wrap items-center justify-between gap-2 pt-2; }
+.operator-actions-right { @apply flex flex-wrap items-center gap-2; }
 @utility value-links { @apply grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-base-300 bg-base-300 sm:grid-cols-2; }
 .value-links a { @apply flex min-w-0 items-start gap-3 bg-base-200 p-5 text-base-content no-underline hover:bg-base-300; }
 .value-links i { @apply mt-0.5 flex-none text-2xl text-brand; }

@@ -85,7 +85,8 @@
         "accessed": "2026-09-09",
         "sourceType": "operator"
       }
-    ]
+    ],
+    "faviconExt": ".png"
   },
   {
     "slug": "lucky-bunny",
@@ -131,7 +132,8 @@
         "accessed": "2026-09-08",
         "sourceType": "operator"
       }
-    ]
+    ],
+    "faviconExt": ".ico"
   },
   {
     "slug": "yay-casino",
@@ -205,7 +207,8 @@
         "accessed": "2026-09-09",
         "sourceType": "operator"
       }
-    ]
+    ],
+    "faviconExt": ".ico"
   },
   {
     "slug": "dorados",
@@ -272,7 +275,8 @@
         "accessed": "2026-09-08",
         "sourceType": "operator"
       }
-    ]
+    ],
+    "faviconExt": ".jpg"
   },
   {
     "slug": "zonko",
@@ -330,7 +334,8 @@
         "accessed": "2026-09-09",
         "sourceType": "operator"
       }
-    ]
+    ],
+    "faviconExt": ".png"
   },
   {
     "slug": "chumba",
@@ -376,7 +381,8 @@
         "accessed": "2026-09-07",
         "sourceType": "operator"
       }
-    ]
+    ],
+    "faviconExt": ".png"
   },
   {
     "slug": "pulsz",
@@ -422,7 +428,8 @@
         "accessed": "2026-09-07",
         "sourceType": "operator"
       }
-    ]
+    ],
+    "faviconExt": ".png"
   },
   {
     "slug": "stake-us",
@@ -468,7 +475,8 @@
         "accessed": "2026-09-07",
         "sourceType": "operator"
       }
-    ]
+    ],
+    "faviconExt": ".png"
   },
   {
     "slug": "wow-vegas",
@@ -514,7 +522,8 @@
         "accessed": "2026-09-07",
         "sourceType": "operator"
       }
-    ]
+    ],
+    "faviconExt": ".png"
   },
   {
     "slug": "mcluck",
@@ -614,6 +623,7 @@
         "accessed": "2026-09-09",
         "sourceType": "operator"
       }
-    ]
+    ],
+    "faviconExt": ".jpg"
   }
 ]
