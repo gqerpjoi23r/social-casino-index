@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-09 - Homepage positioning: transparency service
+- Homepage now positions the site as a maintained transparency service: human-readable records, structured metadata, JSON/CSV downloads, no operator count claim.
+- Updated homepage SEO title/description and social-card copy to match the service framing; build regenerates `docs/`.
+
+## 2026-09-09 - Brand mark and social sharing metadata
 ## 2026-09-09 - Brand mark and social sharing metadata
 - Replaced the top-nav geometric mark with the gold Phosphor `crown-simple` icon.
 - Added Open Graph and Twitter large-image metadata, plus a tracked 1200x630 social card that states the site's actual purpose.

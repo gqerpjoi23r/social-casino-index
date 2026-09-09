@@ -81,13 +81,13 @@ draw.text((86, 280), headline, font=headline_font, fill=WHITE)
 detail_font = ImageFont.truetype(sans_regular, 31)
 draw.text(
     (86, 375),
-    "Compare redemption times, payout methods and current player value",
+    "Dated, source-linked records, structured data and downloads",
     font=detail_font,
     fill=SUBTLE,
 )
 draw.text(
     (86, 424),
-    "in one dated, source-linked index.",
+    "so players and AI search engines can read the same facts.",
     font=detail_font,
     fill=SUBTLE,
 )
