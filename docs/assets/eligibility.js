@@ -74,9 +74,6 @@
       setCookie(v);
       applyState(v);
       syncBanner(v);
-      if (window.dataLayer) {
-        window.dataLayer.push({ event: "state_selected", state: v });
-      }
     });
   });
 
