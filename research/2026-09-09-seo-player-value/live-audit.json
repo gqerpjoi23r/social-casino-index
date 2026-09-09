@@ -1,0 +1,4083 @@
+{
+  "retrievedAt": "2026-09-09T21:55:49.719Z",
+  "scope": "HTTP and DOM parsing; no field performance, index coverage, legal verification, or ranking measurement.",
+  "sitemap": {
+    "status": 200,
+    "errors": [],
+    "entries": [
+      {
+        "url": "https://socialcasinoindex.com/",
+        "lastmod": "2026-09-10"
+      },
+      {
+        "url": "https://socialcasinoindex.com/about/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/authors/alex-rowan/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/disclaimer/"
+      },
+      {
+        "url": "https://socialcasinoindex.com/disclosure/"
+      },
+      {
+        "url": "https://socialcasinoindex.com/guides/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/guides/redemption-methods/bank-transfer/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/guides/redemption-methods/crypto/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/guides/redemption-methods/gift-card/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/guides/sweepstakes-casino-real-prizes-rules/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/guides/sweepstakes-casino-redemption-methods/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/methodology/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/privacy/"
+      },
+      {
+        "url": "https://socialcasinoindex.com/redemption-times/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/research/operator-benchmark/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/taxes/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/redemption-times/jackpota/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/redemption-times/lucky-bunny/",
+        "lastmod": "2026-09-08"
+      },
+      {
+        "url": "https://socialcasinoindex.com/redemption-times/yay-casino/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/redemption-times/dorados/",
+        "lastmod": "2026-09-08"
+      },
+      {
+        "url": "https://socialcasinoindex.com/redemption-times/zonko/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/redemption-times/chumba/",
+        "lastmod": "2026-09-07"
+      },
+      {
+        "url": "https://socialcasinoindex.com/redemption-times/pulsz/",
+        "lastmod": "2026-09-07"
+      },
+      {
+        "url": "https://socialcasinoindex.com/redemption-times/stake-us/",
+        "lastmod": "2026-09-07"
+      },
+      {
+        "url": "https://socialcasinoindex.com/redemption-times/wow-vegas/",
+        "lastmod": "2026-09-07"
+      },
+      {
+        "url": "https://socialcasinoindex.com/redemption-times/mcluck/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/california/",
+        "lastmod": "2026-01-01"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/connecticut/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/idaho/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/indiana/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/louisiana/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/maine/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/michigan/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/montana/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/nevada/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/new-jersey/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/new-york/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/oklahoma/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/tennessee/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "url": "https://socialcasinoindex.com/availability/washington/",
+        "lastmod": "2026-09-09"
+      }
+    ]
+  },
+  "robots": {
+    "status": 200,
+    "text": "User-agent: *\nAllow: /\n\nSitemap: https://socialcasinoindex.com/sitemap.xml\n"
+  },
+  "pages": [
+    {
+      "requestedUrl": "https://socialcasinoindex.com/",
+      "url": "https://socialcasinoindex.com/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Compare Social Casino Bonuses, Payouts and Availability | Social Casino Index",
+      "description": "See which social casino has the biggest bonus, fastest redemption and availability in your state. Dated, source-linked records keep offers, games, minimums and restrictions comparable. Unknown terms stay unknown.",
+      "canonical": [
+        "https://socialcasinoindex.com/"
+      ],
+      "h1": [
+        "The transparency layer for social gaming."
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://socialcasinoindex.com/#org",
+                "name": "Social Casino Index",
+                "legalName": "Sweeps Brief LLC",
+                "url": "https://socialcasinoindex.com/"
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://socialcasinoindex.com/#site",
+                "url": "https://socialcasinoindex.com/",
+                "name": "Social Casino Index",
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "ItemList",
+                "name": "Social casino comparison",
+                "numberOfItems": 10,
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "url": "https://socialcasinoindex.com/redemption-times/jackpota/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "url": "https://socialcasinoindex.com/redemption-times/lucky-bunny/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "url": "https://socialcasinoindex.com/redemption-times/yay-casino/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "url": "https://socialcasinoindex.com/redemption-times/dorados/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 5,
+                    "url": "https://socialcasinoindex.com/redemption-times/zonko/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 6,
+                    "url": "https://socialcasinoindex.com/redemption-times/chumba/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 7,
+                    "url": "https://socialcasinoindex.com/redemption-times/pulsz/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 8,
+                    "url": "https://socialcasinoindex.com/redemption-times/stake-us/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 9,
+                    "url": "https://socialcasinoindex.com/redemption-times/wow-vegas/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 10,
+                    "url": "https://socialcasinoindex.com/redemption-times/mcluck/"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/research/sweepstakes-casino-redemption-times/",
+        "/redemption-times/",
+        "/guides/",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/crypto/",
+        "/guides/redemption-methods/gift-card/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/guides/sweepstakes-casino-redemption-methods/",
+        "/guides/sweepstakes-casino-real-prizes-rules/",
+        "/taxes/",
+        "/assets/data/operators-2026.1.json",
+        "/assets/data/redemption-times-2026.1.csv"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 7401
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/about/",
+      "url": "https://socialcasinoindex.com/about/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "About Social Casino Index | Social Casino Index",
+      "description": "Why Social Casino Index publishes dated, source-linked social casino comparisons for players and machine-readable research.",
+      "canonical": [
+        "https://socialcasinoindex.com/about/"
+      ],
+      "h1": [
+        "About Social Casino Index"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "AboutPage",
+                "@id": "https://socialcasinoindex.com/about/#page",
+                "url": "https://socialcasinoindex.com/about/",
+                "name": "About Social Casino Index",
+                "isPartOf": {
+                  "@id": "https://socialcasinoindex.com/#site"
+                },
+                "about": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "About"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/disclosure/",
+        "/methodology/",
+        "/authors/alex-rowan/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 1696
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/authors/alex-rowan/",
+      "url": "https://socialcasinoindex.com/authors/alex-rowan/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Alex Rowan | Social Casino Index",
+      "description": "Alex Rowan is the researcher behind Social Casino Index. Role, methodology, disclosures, contact, and update policy.",
+      "canonical": [
+        "https://socialcasinoindex.com/authors/alex-rowan/"
+      ],
+      "h1": [
+        "Alex Rowan"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Person",
+                "@id": "https://socialcasinoindex.com/#alex-rowan",
+                "name": "Alex Rowan",
+                "url": "https://socialcasinoindex.com/authors/alex-rowan/",
+                "email": "alex@socialcasinoindex.com",
+                "jobTitle": "iGaming Compliance Analyst",
+                "sameAs": [
+                  "https://www.linkedin.com/in/alex-williams-464708435/"
+                ],
+                "description": "iGaming industry analyst with 6 years of experience focused on compliance, covering US sweepstakes casino redemption times, verification requirements, and payout terms for Social Casino Index.",
+                "worksFor": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Alex Rowan"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/methodology/",
+        "/disclosure/",
+        "/research/sweepstakes-casino-redemption-times/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2130
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/",
+      "url": "https://socialcasinoindex.com/availability/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "State Availability | Social Casino Index",
+      "description": "Which US states are open or closed to sweepstakes casinos, and how the commercial-offer gate on this site works.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/"
+      ],
+      "h1": [
+        "State Availability"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/#article",
+                "headline": "State Availability",
+                "description": "Which US states are open or closed to sweepstakes casinos, and how the commercial-offer gate on this site works.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How many states are open to sweepstakes casinos?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "About 36 states plus the District of Columbia are treated as open on this site. Fourteen states are closed: eleven by statute (California, New York, Connecticut, Indiana, Louisiana, Maine, Montana, Nevada, New Jersey, Oklahoma and Tennessee) and three by enforcement (Idaho, Michigan and Washington)."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "When did California close to sweepstakes casinos?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "California closed on 1 January 2026 under Assembly Bill 831, which was signed on 11 October 2025. It is the most significant recent state closure in this category."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/california/",
+        "/availability/connecticut/",
+        "/availability/indiana/",
+        "/availability/louisiana/",
+        "/availability/maine/",
+        "/availability/montana/",
+        "/availability/nevada/",
+        "/availability/new-jersey/",
+        "/availability/new-york/",
+        "/availability/oklahoma/",
+        "/availability/tennessee/",
+        "/availability/idaho/",
+        "/availability/michigan/",
+        "/availability/washington/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2427
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/disclaimer/",
+      "url": "https://socialcasinoindex.com/disclaimer/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Disclaimer | Social Casino Index",
+      "description": "Affiliate disclosure, sweepstakes availability, eligibility and legal notices for Social Casino Index.",
+      "canonical": [
+        "https://socialcasinoindex.com/disclaimer/"
+      ],
+      "h1": [
+        "Disclaimer"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 5093
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/disclosure/",
+      "url": "https://socialcasinoindex.com/disclosure/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Affiliate Disclosure | Social Casino Index",
+      "description": "How Social Casino Index is paid, what affiliate links do and do not influence, and how the state eligibility gate works.",
+      "canonical": [
+        "https://socialcasinoindex.com/disclosure/"
+      ],
+      "h1": [
+        "Affiliate Disclosure"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/",
+        "/disclaimer/",
+        "/methodology/",
+        "/availability/",
+        "/authors/alex-rowan/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 1906
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/guides/",
+      "url": "https://socialcasinoindex.com/guides/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Guides | Social Casino Index",
+      "description": "All Social Casino Index research, benchmarks and operator guides in one place.",
+      "canonical": [
+        "https://socialcasinoindex.com/guides/"
+      ],
+      "h1": [
+        "Guides & research"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/crypto/",
+        "/guides/redemption-methods/gift-card/",
+        "/guides/sweepstakes-casino-real-prizes-rules/",
+        "/guides/sweepstakes-casino-redemption-methods/",
+        "/redemption-times/",
+        "/taxes/",
+        "/research/operator-benchmark/",
+        "/research/sweepstakes-casino-redemption-times/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2098
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/guides/redemption-methods/bank-transfer/",
+      "url": "https://socialcasinoindex.com/guides/redemption-methods/bank-transfer/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Sweepstakes Casino Bank Transfer Redemptions | Social Casino Index",
+      "description": "How bank-transfer redemptions work at sweepstakes casinos: published timing, minimums, account-name checks and which operators support them.",
+      "canonical": [
+        "https://socialcasinoindex.com/guides/redemption-methods/bank-transfer/"
+      ],
+      "h1": [
+        "Sweepstakes Casino Bank Transfer Redemptions"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/guides/redemption-methods/bank-transfer/#article",
+                "headline": "Sweepstakes Casino Bank Transfer Redemptions",
+                "description": "How bank-transfer redemptions work at sweepstakes casinos: published timing, minimums, account-name checks and which operators support them.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/guides/redemption-methods/bank-transfer/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Guides",
+                    "item": "https://socialcasinoindex.com/guides/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Bank transfer redemptions"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/guides/redemption-methods/bank-transfer/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does a bank-transfer redemption take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "By published terms, bank transfers are the slowest common rail: McLuck quotes 2-5 days by bank transfer after up to 72 hours of processing, and Chumba processes within 2 days of approval before bank delivery. Delivery settles on banking days, so weekends and holidays add time."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Which sweepstakes casinos pay out by bank transfer?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Among the operators documented on this site, Chumba Casino (bank transfer and gift card), Pulsz (Trustly bank transfer and Skrill) and McLuck (bank transfer and gift card) support bank-transfer redemptions."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/guides/",
+        "/guides/sweepstakes-casino-redemption-methods/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/mcluck/",
+        "/guides/redemption-methods/crypto/",
+        "/guides/redemption-methods/gift-card/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/redemption-times/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 1912
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/guides/redemption-methods/crypto/",
+      "url": "https://socialcasinoindex.com/guides/redemption-methods/crypto/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Sweepstakes Casino Crypto Redemptions | Social Casino Index",
+      "description": "How cryptocurrency redemptions work at sweepstakes casinos: settlement speed, wallet handling, asset-value risk and which operators support them.",
+      "canonical": [
+        "https://socialcasinoindex.com/guides/redemption-methods/crypto/"
+      ],
+      "h1": [
+        "Sweepstakes Casino Crypto Redemptions"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/guides/redemption-methods/crypto/#article",
+                "headline": "Sweepstakes Casino Crypto Redemptions",
+                "description": "How cryptocurrency redemptions work at sweepstakes casinos: settlement speed, wallet handling, asset-value risk and which operators support them.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/guides/redemption-methods/crypto/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Guides",
+                    "item": "https://socialcasinoindex.com/guides/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Crypto redemptions"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/guides/redemption-methods/crypto/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Which sweepstakes casinos pay out in crypto?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Among the operators documented on this site, Stake.us (cryptocurrency) and YAY Casino (USD cash, cryptocurrency and a Visa virtual card where offered) support cryptocurrency redemptions."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Are crypto redemptions faster?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Crypto settles fastest at the delivery stage, but operator review still runs first. Stake.us verifies identity in 2-3 business days before payout, and YAY Casino quotes a 24-72 hour review that can take up to 7 days."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/guides/",
+        "/guides/sweepstakes-casino-redemption-methods/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/yay-casino/",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/gift-card/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/redemption-times/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 1568
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/guides/redemption-methods/gift-card/",
+      "url": "https://socialcasinoindex.com/guides/redemption-methods/gift-card/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Sweepstakes Casino Gift Card Redemptions | Social Casino Index",
+      "description": "How gift-card redemptions work at sweepstakes casinos: lower minimums, retail restrictions and which operators support them.",
+      "canonical": [
+        "https://socialcasinoindex.com/guides/redemption-methods/gift-card/"
+      ],
+      "h1": [
+        "Sweepstakes Casino Gift Card Redemptions"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/guides/redemption-methods/gift-card/#article",
+                "headline": "Sweepstakes Casino Gift Card Redemptions",
+                "description": "How gift-card redemptions work at sweepstakes casinos: lower minimums, retail restrictions and which operators support them.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/guides/redemption-methods/gift-card/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Guides",
+                    "item": "https://socialcasinoindex.com/guides/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Gift card redemptions"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/guides/redemption-methods/gift-card/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Which sweepstakes casinos pay out by gift card?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Among the operators documented on this site, Chumba Casino (bank transfer and gift card) and McLuck (bank transfer and gift card) support gift-card redemptions."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Is a gift-card redemption the same as cash?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. A gift card is locked to a retailer or card network, so it is not equivalent to unrestricted cash. The tradeoff is a lower minimum: McLuck requires 10 SC for a gift card versus 75 SC for a bank transfer."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/guides/",
+        "/guides/sweepstakes-casino-redemption-methods/",
+        "/redemption-times/chumba/",
+        "/redemption-times/mcluck/",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/crypto/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/redemption-times/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 1631
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/guides/sweepstakes-casino-real-prizes-rules/",
+      "url": "https://socialcasinoindex.com/guides/sweepstakes-casino-real-prizes-rules/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "How Sweepstakes Casinos Pay Real Prizes | Social Casino Index",
+      "description": "A practical guide to Gold Coins, Sweeps Coins, playthrough, verification and redeeming real prizes at sweepstakes casinos.",
+      "canonical": [
+        "https://socialcasinoindex.com/guides/sweepstakes-casino-real-prizes-rules/"
+      ],
+      "h1": [
+        "How Sweepstakes Casinos Pay Real Prizes"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/guides/sweepstakes-casino-real-prizes-rules/#article",
+                "headline": "How Sweepstakes Casinos Pay Real Prizes",
+                "description": "A practical guide to Gold Coins, Sweeps Coins, playthrough, verification and redeeming real prizes at sweepstakes casinos.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/guides/sweepstakes-casino-real-prizes-rules/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Guides",
+                    "item": "https://socialcasinoindex.com/guides/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Real prizes"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/guides/sweepstakes-casino-real-prizes-rules/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Do sweepstakes casinos pay real prizes?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, under the operator's rules. Sweepstakes casinos usually separate free-play Gold Coins from promotional Sweeps Coins. Eligible Sweeps Coins can be played, become redeemable under the operator rules, and then be exchanged for a cash-equivalent prize through the available payment methods."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the difference between Gold Coins and Sweeps Coins?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Gold Coins are free-play currency with no cash value and are not redeemable for prizes. Sweeps Coins are the promotional currency that can become redeemable under the operator rules and be exchanged for a prize."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How do Sweeps Coins become a prize?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Receive eligible promotional currency under the operator's current rules, complete any stated playthrough requirement, pass identity and account checks, then request at least the published minimum through an available method. Approval, processing and payment delivery are separate stages."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/guides/",
+        "/redemption-times/",
+        "/guides/sweepstakes-casino-redemption-methods/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 1867
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/guides/sweepstakes-casino-redemption-methods/",
+      "url": "https://socialcasinoindex.com/guides/sweepstakes-casino-redemption-methods/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Sweepstakes Casino Redemption Methods Compared | Social Casino Index",
+      "description": "Compare bank transfer, gift card and cryptocurrency redemptions by speed, minimums, flexibility and verification requirements.",
+      "canonical": [
+        "https://socialcasinoindex.com/guides/sweepstakes-casino-redemption-methods/"
+      ],
+      "h1": [
+        "Sweepstakes Casino Redemption Methods Compared"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/guides/sweepstakes-casino-redemption-methods/#article",
+                "headline": "Sweepstakes Casino Redemption Methods Compared",
+                "description": "Compare bank transfer, gift card and cryptocurrency redemptions by speed, minimums, flexibility and verification requirements.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/guides/sweepstakes-casino-redemption-methods/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Guides",
+                    "item": "https://socialcasinoindex.com/guides/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Redemption methods"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/guides/",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/gift-card/",
+        "/guides/redemption-methods/crypto/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2522
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/methodology/",
+      "url": "https://socialcasinoindex.com/methodology/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Methodology | Social Casino Index",
+      "description": "How Social Casino Index funds accounts, times redemptions, labels test status, and decides when an operator ranking is allowed to exist.",
+      "canonical": [
+        "https://socialcasinoindex.com/methodology/"
+      ],
+      "h1": [
+        "Methodology"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 1853
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/privacy/",
+      "url": "https://socialcasinoindex.com/privacy/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Privacy Policy | Social Casino Index",
+      "description": "What Social Casino Index collects, what the state cookie stores, and what analytics events record.",
+      "canonical": [
+        "https://socialcasinoindex.com/privacy/"
+      ],
+      "h1": [
+        "Privacy Policy"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2298
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/redemption-times/",
+      "url": "https://socialcasinoindex.com/redemption-times/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Sweepstakes Casino Redemption Times Compared | Social Casino Index",
+      "description": "Compare published payout times, first-redemption checks, payment methods and minimum redemptions across ten social casinos.",
+      "canonical": [
+        "https://socialcasinoindex.com/redemption-times/"
+      ],
+      "h1": [
+        "Sweepstakes Casino Redemption Times"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/guides/sweepstakes-casino-redemption-methods/",
+        "/assets/data/operators-2026.1.json",
+        "/assets/data/redemption-times-2026.1.csv",
+        "/research/sweepstakes-casino-redemption-times/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 3030
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/research/operator-benchmark/",
+      "url": "https://socialcasinoindex.com/research/operator-benchmark/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Operator Benchmark: Partners and Major US Sweepstakes Casinos | Social Casino Index",
+      "description": "Verified published terms, restricted states, and verification status for the five Social Casino Index partners and five major US sweepstakes casinos.",
+      "canonical": [
+        "https://socialcasinoindex.com/research/operator-benchmark/"
+      ],
+      "h1": [
+        "Operator Benchmark"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/",
+        "/guides/",
+        "/authors/alex-rowan/",
+        "/disclosure/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 6301
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/",
+      "url": "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "How Long Do Sweepstakes Casino Redemptions Take? | Social Casino Index",
+      "description": "Published redemption times, verification requirements, methods and minimums across ten social casinos, with source-linked operator records.",
+      "canonical": [
+        "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/"
+      ],
+      "h1": [
+        "How Long Do Sweepstakes Casino Redemptions Take?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/#article",
+                "headline": "How Long Do Sweepstakes Casino Redemptions Take?",
+                "description": "Published redemption times, verification requirements, methods and minimums across ten social casinos, with source-linked operator records.",
+                "datePublished": "2026-09-08",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Research",
+                    "item": "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "How Long Do Sweepstakes Casino Redemptions Take?"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does a sweepstakes casino redemption take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "By published terms, roughly 2 days to 7 business days depending on operator and method. Chumba Casino processes within 2 days of approval, Pulsz quotes 3-7 business days for a first redemption, and McLuck quotes 2-5 days by bank transfer after up to 72 hours of processing. First redemptions are slower because verification runs first."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Why is my first redemption slower?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "It triggers identity verification. The operator checks your ID against your registered details and payment method before releasing funds; verified accounts skip most of this on later redemptions."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the minimum redemption at each operator?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Stake.us requires a minimum of 40 SC. McLuck requires 75 SC for bank transfer or 10 SC for a gift card. Minimums for other operators are listed in their terms of service."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What delays a sweepstakes casino redemption?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "The common causes are incomplete identity verification, a name or address mismatch between your ID and your account, an incomplete wagering requirement on Sweeps Coins, and requests made over weekends or holidays when payment rails do not settle."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Has Social Casino Index tested these redemptions?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Not yet. The funded-testing dataset is in progress. This article currently compares official published terms only, and each operator is labeled pending until a funded test completes. We will not publish a ranking until at least three comparable tests have finished."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/authors/alex-rowan/",
+        "/methodology/",
+        "/assets/data/redemption-times-2026.1.csv",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 12624
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/taxes/",
+      "url": "https://socialcasinoindex.com/taxes/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Sweepstakes Casino Taxes and Prize Records | Social Casino Index",
+      "description": "A practical record-keeping guide for sweepstakes casino prizes, redemptions, account statements and tax preparation.",
+      "canonical": [
+        "https://socialcasinoindex.com/taxes/"
+      ],
+      "h1": [
+        "Sweepstakes Casino Taxes and Prize Records"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/taxes/#article",
+                "headline": "Sweepstakes Casino Taxes and Prize Records",
+                "description": "A practical record-keeping guide for sweepstakes casino prizes, redemptions, account statements and tax preparation.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/taxes/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Taxes"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 1271
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/redemption-times/jackpota/",
+      "url": "https://socialcasinoindex.com/redemption-times/jackpota/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Jackpota Redemption Time, Methods and Minimum | Social Casino Index",
+      "description": "Jackpota redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+      "canonical": [
+        "https://socialcasinoindex.com/redemption-times/jackpota/"
+      ],
+      "h1": [
+        "Jackpota Redemption Time and Player Terms"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#article",
+                "headline": "Jackpota Redemption Time and Player Terms",
+                "description": "Jackpota redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/redemption-times/jackpota/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Redemption times",
+                    "item": "https://socialcasinoindex.com/redemption-times/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Jackpota"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does a Jackpota redemption take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Published timing: Not applicable; no standard prize redemption. First redemption: Not applicable; Gold Coins are entertainment-only. These are published terms, not measured results; Social Casino Index has not yet completed a funded redemption test with Jackpota."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the minimum redemption at Jackpota?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Minimum: Not applicable. Methods: No standard prize-redemption method."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/redemption-times/",
+        "/methodology/",
+        "/availability/#closed-states",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/gift-card/",
+        "/guides/redemption-methods/crypto/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/go/jackpota/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 3479
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/redemption-times/lucky-bunny/",
+      "url": "https://socialcasinoindex.com/redemption-times/lucky-bunny/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Lucky Bunny Redemption Time, Methods and Minimum | Social Casino Index",
+      "description": "Lucky Bunny redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+      "canonical": [
+        "https://socialcasinoindex.com/redemption-times/lucky-bunny/"
+      ],
+      "h1": [
+        "Lucky Bunny Redemption Time and Player Terms"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#article",
+                "headline": "Jackpota Redemption Time and Player Terms",
+                "description": "Jackpota redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/redemption-times/jackpota/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Redemption times",
+                    "item": "https://socialcasinoindex.com/redemption-times/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Jackpota"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does a Jackpota redemption take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Published timing: Not applicable; no standard prize redemption. First redemption: Not applicable; Gold Coins are entertainment-only. These are published terms, not measured results; Social Casino Index has not yet completed a funded redemption test with Jackpota."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the minimum redemption at Jackpota?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Minimum: Not applicable. Methods: No standard prize-redemption method."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/redemption-times/",
+        "/methodology/",
+        "/availability/#closed-states",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/gift-card/",
+        "/guides/redemption-methods/crypto/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/go/lucky-bunny/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2582
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/redemption-times/yay-casino/",
+      "url": "https://socialcasinoindex.com/redemption-times/yay-casino/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "YAY Casino Redemption Time, Methods and Minimum | Social Casino Index",
+      "description": "YAY Casino redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+      "canonical": [
+        "https://socialcasinoindex.com/redemption-times/yay-casino/"
+      ],
+      "h1": [
+        "YAY Casino Redemption Time and Player Terms"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#article",
+                "headline": "Jackpota Redemption Time and Player Terms",
+                "description": "Jackpota redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/redemption-times/jackpota/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Redemption times",
+                    "item": "https://socialcasinoindex.com/redemption-times/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Jackpota"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does a Jackpota redemption take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Published timing: Not applicable; no standard prize redemption. First redemption: Not applicable; Gold Coins are entertainment-only. These are published terms, not measured results; Social Casino Index has not yet completed a funded redemption test with Jackpota."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the minimum redemption at Jackpota?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Minimum: Not applicable. Methods: No standard prize-redemption method."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/redemption-times/",
+        "/methodology/",
+        "/availability/#closed-states",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/gift-card/",
+        "/guides/redemption-methods/crypto/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/go/yay-casino/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 3122
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/redemption-times/dorados/",
+      "url": "https://socialcasinoindex.com/redemption-times/dorados/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Dorados Redemption Time, Methods and Minimum | Social Casino Index",
+      "description": "Dorados redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+      "canonical": [
+        "https://socialcasinoindex.com/redemption-times/dorados/"
+      ],
+      "h1": [
+        "Dorados Redemption Time and Player Terms"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#article",
+                "headline": "Jackpota Redemption Time and Player Terms",
+                "description": "Jackpota redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/redemption-times/jackpota/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Redemption times",
+                    "item": "https://socialcasinoindex.com/redemption-times/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Jackpota"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does a Jackpota redemption take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Published timing: Not applicable; no standard prize redemption. First redemption: Not applicable; Gold Coins are entertainment-only. These are published terms, not measured results; Social Casino Index has not yet completed a funded redemption test with Jackpota."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the minimum redemption at Jackpota?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Minimum: Not applicable. Methods: No standard prize-redemption method."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/redemption-times/",
+        "/methodology/",
+        "/availability/#closed-states",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/gift-card/",
+        "/guides/redemption-methods/crypto/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/go/dorados/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2876
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/redemption-times/zonko/",
+      "url": "https://socialcasinoindex.com/redemption-times/zonko/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Zonko Redemption Time, Methods and Minimum | Social Casino Index",
+      "description": "Zonko redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+      "canonical": [
+        "https://socialcasinoindex.com/redemption-times/zonko/"
+      ],
+      "h1": [
+        "Zonko Redemption Time and Player Terms"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#article",
+                "headline": "Jackpota Redemption Time and Player Terms",
+                "description": "Jackpota redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/redemption-times/jackpota/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Redemption times",
+                    "item": "https://socialcasinoindex.com/redemption-times/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Jackpota"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does a Jackpota redemption take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Published timing: Not applicable; no standard prize redemption. First redemption: Not applicable; Gold Coins are entertainment-only. These are published terms, not measured results; Social Casino Index has not yet completed a funded redemption test with Jackpota."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the minimum redemption at Jackpota?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Minimum: Not applicable. Methods: No standard prize-redemption method."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/redemption-times/",
+        "/methodology/",
+        "/availability/#closed-states",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/gift-card/",
+        "/guides/redemption-methods/crypto/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/go/zonko/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2650
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/redemption-times/chumba/",
+      "url": "https://socialcasinoindex.com/redemption-times/chumba/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Chumba Casino Redemption Time, Methods and Minimum | Social Casino Index",
+      "description": "Chumba Casino redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+      "canonical": [
+        "https://socialcasinoindex.com/redemption-times/chumba/"
+      ],
+      "h1": [
+        "Chumba Casino Redemption Time and Player Terms"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#article",
+                "headline": "Jackpota Redemption Time and Player Terms",
+                "description": "Jackpota redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/redemption-times/jackpota/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Redemption times",
+                    "item": "https://socialcasinoindex.com/redemption-times/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Jackpota"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does a Jackpota redemption take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Published timing: Not applicable; no standard prize redemption. First redemption: Not applicable; Gold Coins are entertainment-only. These are published terms, not measured results; Social Casino Index has not yet completed a funded redemption test with Jackpota."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the minimum redemption at Jackpota?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Minimum: Not applicable. Methods: No standard prize-redemption method."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/redemption-times/",
+        "/methodology/",
+        "/availability/#closed-states",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/gift-card/",
+        "/guides/redemption-methods/crypto/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2718
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/redemption-times/pulsz/",
+      "url": "https://socialcasinoindex.com/redemption-times/pulsz/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Pulsz Redemption Time, Methods and Minimum | Social Casino Index",
+      "description": "Pulsz redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+      "canonical": [
+        "https://socialcasinoindex.com/redemption-times/pulsz/"
+      ],
+      "h1": [
+        "Pulsz Redemption Time and Player Terms"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#article",
+                "headline": "Jackpota Redemption Time and Player Terms",
+                "description": "Jackpota redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/redemption-times/jackpota/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Redemption times",
+                    "item": "https://socialcasinoindex.com/redemption-times/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Jackpota"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does a Jackpota redemption take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Published timing: Not applicable; no standard prize redemption. First redemption: Not applicable; Gold Coins are entertainment-only. These are published terms, not measured results; Social Casino Index has not yet completed a funded redemption test with Jackpota."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the minimum redemption at Jackpota?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Minimum: Not applicable. Methods: No standard prize-redemption method."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/redemption-times/",
+        "/methodology/",
+        "/availability/#closed-states",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/gift-card/",
+        "/guides/redemption-methods/crypto/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2593
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/redemption-times/stake-us/",
+      "url": "https://socialcasinoindex.com/redemption-times/stake-us/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Stake.us Redemption Time, Methods and Minimum | Social Casino Index",
+      "description": "Stake.us redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+      "canonical": [
+        "https://socialcasinoindex.com/redemption-times/stake-us/"
+      ],
+      "h1": [
+        "Stake.us Redemption Time and Player Terms"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#article",
+                "headline": "Jackpota Redemption Time and Player Terms",
+                "description": "Jackpota redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/redemption-times/jackpota/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Redemption times",
+                    "item": "https://socialcasinoindex.com/redemption-times/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Jackpota"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does a Jackpota redemption take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Published timing: Not applicable; no standard prize redemption. First redemption: Not applicable; Gold Coins are entertainment-only. These are published terms, not measured results; Social Casino Index has not yet completed a funded redemption test with Jackpota."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the minimum redemption at Jackpota?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Minimum: Not applicable. Methods: No standard prize-redemption method."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/redemption-times/",
+        "/methodology/",
+        "/availability/#closed-states",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/gift-card/",
+        "/guides/redemption-methods/crypto/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2498
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/redemption-times/wow-vegas/",
+      "url": "https://socialcasinoindex.com/redemption-times/wow-vegas/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "WOW Vegas Redemption Time, Methods and Minimum | Social Casino Index",
+      "description": "WOW Vegas redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+      "canonical": [
+        "https://socialcasinoindex.com/redemption-times/wow-vegas/"
+      ],
+      "h1": [
+        "WOW Vegas Redemption Time and Player Terms"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#article",
+                "headline": "Jackpota Redemption Time and Player Terms",
+                "description": "Jackpota redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/redemption-times/jackpota/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Redemption times",
+                    "item": "https://socialcasinoindex.com/redemption-times/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Jackpota"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does a Jackpota redemption take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Published timing: Not applicable; no standard prize redemption. First redemption: Not applicable; Gold Coins are entertainment-only. These are published terms, not measured results; Social Casino Index has not yet completed a funded redemption test with Jackpota."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the minimum redemption at Jackpota?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Minimum: Not applicable. Methods: No standard prize-redemption method."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/redemption-times/",
+        "/methodology/",
+        "/availability/#closed-states",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/gift-card/",
+        "/guides/redemption-methods/crypto/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2530
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/redemption-times/mcluck/",
+      "url": "https://socialcasinoindex.com/redemption-times/mcluck/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "McLuck Redemption Time, Methods and Minimum | Social Casino Index",
+      "description": "McLuck redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+      "canonical": [
+        "https://socialcasinoindex.com/redemption-times/mcluck/"
+      ],
+      "h1": [
+        "McLuck Redemption Time and Player Terms"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#article",
+                "headline": "Jackpota Redemption Time and Player Terms",
+                "description": "Jackpota redemption methods, published payout timing, minimum, verification, availability and source-linked terms.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/redemption-times/jackpota/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Redemption times",
+                    "item": "https://socialcasinoindex.com/redemption-times/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Jackpota"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/redemption-times/jackpota/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does a Jackpota redemption take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Published timing: Not applicable; no standard prize redemption. First redemption: Not applicable; Gold Coins are entertainment-only. These are published terms, not measured results; Social Casino Index has not yet completed a funded redemption test with Jackpota."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the minimum redemption at Jackpota?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Minimum: Not applicable. Methods: No standard prize-redemption method."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/redemption-times/",
+        "/methodology/",
+        "/availability/#closed-states",
+        "/guides/redemption-methods/bank-transfer/",
+        "/guides/redemption-methods/gift-card/",
+        "/guides/redemption-methods/crypto/",
+        "/research/sweepstakes-casino-redemption-times/",
+        "/disclosure/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 3839
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/california/",
+      "url": "https://socialcasinoindex.com/availability/california/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in California? | Social Casino Index",
+      "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/california/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in California?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2488
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/connecticut/",
+      "url": "https://socialcasinoindex.com/availability/connecticut/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in Connecticut? | Social Casino Index",
+      "description": "Connecticut sweepstakes casino status: closed by statute. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/connecticut/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in Connecticut?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2263
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/idaho/",
+      "url": "https://socialcasinoindex.com/availability/idaho/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in Idaho? | Social Casino Index",
+      "description": "Idaho sweepstakes casino status: closed by enforcement. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/idaho/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in Idaho?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2274
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/indiana/",
+      "url": "https://socialcasinoindex.com/availability/indiana/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in Indiana? | Social Casino Index",
+      "description": "Indiana sweepstakes casino status: closed by statute. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/indiana/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in Indiana?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2215
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/louisiana/",
+      "url": "https://socialcasinoindex.com/availability/louisiana/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in Louisiana? | Social Casino Index",
+      "description": "Louisiana sweepstakes casino status: closed by statute. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/louisiana/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in Louisiana?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2239
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/maine/",
+      "url": "https://socialcasinoindex.com/availability/maine/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in Maine? | Social Casino Index",
+      "description": "Maine sweepstakes casino status: closed by statute. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/maine/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in Maine?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2191
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/michigan/",
+      "url": "https://socialcasinoindex.com/availability/michigan/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in Michigan? | Social Casino Index",
+      "description": "Michigan sweepstakes casino status: closed by enforcement. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/michigan/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in Michigan?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2310
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/montana/",
+      "url": "https://socialcasinoindex.com/availability/montana/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in Montana? | Social Casino Index",
+      "description": "Montana sweepstakes casino status: closed by statute. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/montana/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in Montana?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2215
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/nevada/",
+      "url": "https://socialcasinoindex.com/availability/nevada/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in Nevada? | Social Casino Index",
+      "description": "Nevada sweepstakes casino status: closed by statute. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/nevada/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in Nevada?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2203
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/new-jersey/",
+      "url": "https://socialcasinoindex.com/availability/new-jersey/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in New Jersey? | Social Casino Index",
+      "description": "New Jersey sweepstakes casino status: closed by statute. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/new-jersey/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in New Jersey?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2251
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/new-york/",
+      "url": "https://socialcasinoindex.com/availability/new-york/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in New York? | Social Casino Index",
+      "description": "New York sweepstakes casino status: closed by statute. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/new-york/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in New York?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2227
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/oklahoma/",
+      "url": "https://socialcasinoindex.com/availability/oklahoma/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in Oklahoma? | Social Casino Index",
+      "description": "Oklahoma sweepstakes casino status: closed by statute. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/oklahoma/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in Oklahoma?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2231
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/tennessee/",
+      "url": "https://socialcasinoindex.com/availability/tennessee/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in Tennessee? | Social Casino Index",
+      "description": "Tennessee sweepstakes casino status: closed by statute. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/tennessee/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in Tennessee?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2239
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/availability/washington/",
+      "url": "https://socialcasinoindex.com/availability/washington/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Are Sweepstakes Casinos Legal in Washington? | Social Casino Index",
+      "description": "Washington sweepstakes casino status: closed by enforcement. Which operators restrict the state, and what that means for players. Not legal advice.",
+      "canonical": [
+        "https://socialcasinoindex.com/availability/washington/"
+      ],
+      "h1": [
+        "Are Sweepstakes Casinos Legal in Washington?"
+      ],
+      "jsonld": [
+        {
+          "valid": true,
+          "value": {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://socialcasinoindex.com/availability/california/#article",
+                "headline": "Are Sweepstakes Casinos Legal in California?",
+                "description": "California sweepstakes casino status: closed by statute (ab 831, effective 1 january 2026). Operator restrictions and player guidance. Not legal advice.",
+                "datePublished": "2026-09-09",
+                "dateModified": "2026-09-09",
+                "mainEntityOfPage": "https://socialcasinoindex.com/availability/california/",
+                "author": {
+                  "@id": "https://socialcasinoindex.com/#alex-rowan"
+                },
+                "publisher": {
+                  "@id": "https://socialcasinoindex.com/#org"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://socialcasinoindex.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "State availability",
+                    "item": "https://socialcasinoindex.com/availability/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "California"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://socialcasinoindex.com/availability/california/#faq",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are sweepstakes casinos legal in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No. California closed to sweepstakes casinos on 1 January 2026 under AB 831, signed on 11 October 2025. It is the most significant recent state closure in this category. This page reflects operator availability policy and public reporting, not legal advice."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I claim a sweepstakes casino bonus in California?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No commercial offers for California are shown on this site. Social Casino Index blocks affiliate offers for states treated as closed, including California."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        "/",
+        "/availability/",
+        "/redemption-times/jackpota/",
+        "/redemption-times/lucky-bunny/",
+        "/redemption-times/yay-casino/",
+        "/redemption-times/dorados/",
+        "/redemption-times/zonko/",
+        "/redemption-times/chumba/",
+        "/redemption-times/pulsz/",
+        "/redemption-times/stake-us/",
+        "/redemption-times/wow-vegas/",
+        "/redemption-times/mcluck/",
+        "/redemption-times/",
+        "/methodology/"
+      ],
+      "scriptErrors": [],
+      "mainTextCharacters": 2334
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/go/jackpota/",
+      "url": "https://socialcasinoindex.com/go/jackpota/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Checking availability | Social Casino Index",
+      "canonical": [],
+      "robots": "noindex, nofollow",
+      "h1": [
+        "Checking availability"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/availability/"
+      ],
+      "scriptErrors": [
+        {
+          "index": 0,
+          "error": "Unexpected string"
+        }
+      ],
+      "mainTextCharacters": 93
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/go/lucky-bunny/",
+      "url": "https://socialcasinoindex.com/go/lucky-bunny/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Checking availability | Social Casino Index",
+      "canonical": [],
+      "robots": "noindex, nofollow",
+      "h1": [
+        "Checking availability"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/availability/"
+      ],
+      "scriptErrors": [
+        {
+          "index": 0,
+          "error": "Unexpected string"
+        }
+      ],
+      "mainTextCharacters": 93
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/go/yay-casino/",
+      "url": "https://socialcasinoindex.com/go/yay-casino/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Checking availability | Social Casino Index",
+      "canonical": [],
+      "robots": "noindex, nofollow",
+      "h1": [
+        "Checking availability"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/availability/"
+      ],
+      "scriptErrors": [
+        {
+          "index": 0,
+          "error": "Unexpected string"
+        }
+      ],
+      "mainTextCharacters": 93
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/go/dorados/",
+      "url": "https://socialcasinoindex.com/go/dorados/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Checking availability | Social Casino Index",
+      "canonical": [],
+      "robots": "noindex, nofollow",
+      "h1": [
+        "Checking availability"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/availability/"
+      ],
+      "scriptErrors": [
+        {
+          "index": 0,
+          "error": "Unexpected string"
+        }
+      ],
+      "mainTextCharacters": 93
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/go/zonko/",
+      "url": "https://socialcasinoindex.com/go/zonko/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Checking availability | Social Casino Index",
+      "canonical": [],
+      "robots": "noindex, nofollow",
+      "h1": [
+        "Checking availability"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/availability/"
+      ],
+      "scriptErrors": [
+        {
+          "index": 0,
+          "error": "Unexpected string"
+        }
+      ],
+      "mainTextCharacters": 93
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/go/chumba/",
+      "url": "https://socialcasinoindex.com/go/chumba/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Checking availability | Social Casino Index",
+      "canonical": [],
+      "robots": "noindex, nofollow",
+      "h1": [
+        "Checking availability"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/availability/"
+      ],
+      "scriptErrors": [
+        {
+          "index": 0,
+          "error": "Unexpected string"
+        }
+      ],
+      "mainTextCharacters": 93
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/go/pulsz/",
+      "url": "https://socialcasinoindex.com/go/pulsz/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Checking availability | Social Casino Index",
+      "canonical": [],
+      "robots": "noindex, nofollow",
+      "h1": [
+        "Checking availability"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/availability/"
+      ],
+      "scriptErrors": [
+        {
+          "index": 0,
+          "error": "Unexpected string"
+        }
+      ],
+      "mainTextCharacters": 93
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/go/stake-us/",
+      "url": "https://socialcasinoindex.com/go/stake-us/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Checking availability | Social Casino Index",
+      "canonical": [],
+      "robots": "noindex, nofollow",
+      "h1": [
+        "Checking availability"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/availability/"
+      ],
+      "scriptErrors": [
+        {
+          "index": 0,
+          "error": "Unexpected string"
+        }
+      ],
+      "mainTextCharacters": 93
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/go/wow-vegas/",
+      "url": "https://socialcasinoindex.com/go/wow-vegas/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Checking availability | Social Casino Index",
+      "canonical": [],
+      "robots": "noindex, nofollow",
+      "h1": [
+        "Checking availability"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/availability/"
+      ],
+      "scriptErrors": [
+        {
+          "index": 0,
+          "error": "Unexpected string"
+        }
+      ],
+      "mainTextCharacters": 93
+    },
+    {
+      "requestedUrl": "https://socialcasinoindex.com/go/mcluck/",
+      "url": "https://socialcasinoindex.com/go/mcluck/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 21:22:30 GMT",
+      "title": "Checking availability | Social Casino Index",
+      "canonical": [],
+      "robots": "noindex, nofollow",
+      "h1": [
+        "Checking availability"
+      ],
+      "jsonld": [],
+      "internalLinks": [
+        "/availability/"
+      ],
+      "scriptErrors": [
+        {
+          "index": 0,
+          "error": "Unexpected string"
+        }
+      ],
+      "mainTextCharacters": 93
+    }
+  ],
+  "summary": {
+    "sitemapUrls": 42,
+    "pagesChecked": 52,
+    "non200": [],
+    "invalidJsonld": [],
+    "inlineScriptErrors": [
+      "https://socialcasinoindex.com/go/jackpota/",
+      "https://socialcasinoindex.com/go/lucky-bunny/",
+      "https://socialcasinoindex.com/go/yay-casino/",
+      "https://socialcasinoindex.com/go/dorados/",
+      "https://socialcasinoindex.com/go/zonko/",
+      "https://socialcasinoindex.com/go/chumba/",
+      "https://socialcasinoindex.com/go/pulsz/",
+      "https://socialcasinoindex.com/go/stake-us/",
+      "https://socialcasinoindex.com/go/wow-vegas/",
+      "https://socialcasinoindex.com/go/mcluck/"
+    ],
+    "canonicalMismatch": [],
+    "nonSingleH1": []
+  }
+}

@@ -1,0 +1,401 @@
+{
+  "retrievedAt": "2026-09-09T21:55:49.719Z",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Google Search: AI features",
+      "requestedUrl": "https://developers.google.com/search/docs/appearance/ai-features?hl=en",
+      "url": "https://developers.google.com/search/docs/appearance/ai-features?hl=en",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 10 Dec 2025 18:38:05 GMT",
+      "pageTitle": "AI Features and Your Website | Google Search Central  |  Documentation  |  Google for Developers",
+      "termChecks": [
+        {
+          "term": "special",
+          "found": true
+        },
+        {
+          "term": "structured data",
+          "found": true
+        },
+        {
+          "term": "indexed",
+          "found": true
+        },
+        {
+          "term": "Search Console",
+          "found": true
+        },
+        {
+          "term": "robots",
+          "found": true
+        },
+        {
+          "term": "snippet",
+          "found": true
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "Google Search: high quality reviews",
+      "requestedUrl": "https://developers.google.com/search/docs/specialty/ecommerce/write-high-quality-reviews",
+      "url": "https://developers.google.com/search/docs/specialty/ecommerce/write-high-quality-reviews",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 10 Dec 2025 18:38:05 GMT",
+      "pageTitle": "How To Write Reviews | Google Search Central  |  Documentation  |  Google for Developers",
+      "termChecks": [
+        {
+          "term": "evidence",
+          "found": true
+        },
+        {
+          "term": "measurements",
+          "found": true
+        },
+        {
+          "term": "benefits",
+          "found": true
+        },
+        {
+          "term": "drawbacks",
+          "found": true
+        },
+        {
+          "term": "best",
+          "found": true
+        },
+        {
+          "term": "decision",
+          "found": true
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "Google Search: structured data policies",
+      "requestedUrl": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Fri, 10 Jul 2026 11:55:22 GMT",
+      "pageTitle": "General Structured Data Guidelines | Google Search Central  |  Documentation  |  Google for Developers",
+      "termChecks": [
+        {
+          "term": "visible",
+          "found": true
+        },
+        {
+          "term": "misleading",
+          "found": true
+        },
+        {
+          "term": "up-to-date",
+          "found": true
+        },
+        {
+          "term": "represent",
+          "found": true
+        },
+        {
+          "term": "guarantee",
+          "found": true
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "Google Search: FAQ documentation redirect and documentation updates",
+      "requestedUrl": "https://developers.google.com/search/docs/appearance/structured-data/faqpage?hl=en",
+      "url": "https://developers.google.com/search/updates?hl=en",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Tue, 08 Sep 2026 11:00:29 GMT",
+      "pageTitle": "Latest Google Search Documentation Updates | Google Search Central  |  What's new  |  Google for Developers",
+      "termChecks": [
+        {
+          "term": "FAQ",
+          "found": true
+        },
+        {
+          "term": "May 7",
+          "found": true
+        },
+        {
+          "term": "May 2026",
+          "found": true
+        }
+      ]
+    },
+    {
+      "id": "S5",
+      "title": "Google Search: Dataset structured data",
+      "requestedUrl": "https://developers.google.com/search/docs/appearance/structured-data/dataset",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/dataset",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Tue, 08 Sep 2026 11:00:29 GMT",
+      "pageTitle": "Dataset Structured Data | Google Search Central  |  Documentation  |  Google for Developers",
+      "termChecks": [
+        {
+          "term": "license",
+          "found": true
+        },
+        {
+          "term": "distribution",
+          "found": true
+        },
+        {
+          "term": "creator",
+          "found": true
+        },
+        {
+          "term": "citation",
+          "found": true
+        },
+        {
+          "term": "download",
+          "found": true
+        },
+        {
+          "term": "temporal",
+          "found": true
+        }
+      ]
+    },
+    {
+      "id": "S6",
+      "title": "Google Trends: data FAQ",
+      "requestedUrl": "https://support.google.com/trends/answer/4365533?hl=en",
+      "url": "https://support.google.com/trends/answer/4365533?hl=en",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "xRobotsTag": null,
+      "lastModified": null,
+      "pageTitle": "FAQ about Google Trends data - Trends Help",
+      "termChecks": [
+        {
+          "term": "normalized",
+          "found": true
+        },
+        {
+          "term": "sample",
+          "found": true
+        },
+        {
+          "term": "100",
+          "found": true
+        },
+        {
+          "term": "0",
+          "found": true
+        },
+        {
+          "term": "relative",
+          "found": true
+        },
+        {
+          "term": "search volume",
+          "found": true
+        }
+      ]
+    },
+    {
+      "id": "S7",
+      "title": "Google Ads: historical keyword metrics",
+      "requestedUrl": "https://developers.google.com/google-ads/api/docs/keyword-planning/generate-historical-metrics?hl=en",
+      "url": "https://developers.google.com/google-ads/api/docs/keyword-planning/generate-historical-metrics?hl=en",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 19 Aug 2026 16:04:40 GMT",
+      "pageTitle": "Generate Historical Metrics  |  Google Ads API  |  Google for Developers",
+      "termChecks": [
+        {
+          "term": "geo",
+          "found": true
+        },
+        {
+          "term": "language",
+          "found": true
+        },
+        {
+          "term": "network",
+          "found": true
+        },
+        {
+          "term": "close",
+          "found": true
+        },
+        {
+          "term": "competition",
+          "found": true
+        },
+        {
+          "term": "monthly",
+          "found": true
+        }
+      ]
+    },
+    {
+      "id": "S8",
+      "title": "Google Ads: gambling and games policy",
+      "requestedUrl": "https://support.google.com/adspolicy/answer/6018017?hl=en",
+      "url": "https://support.google.com/adspolicy/answer/15132179?hl=en&visit_id=639245877608018010-2992737999&rd=1",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "xRobotsTag": null,
+      "lastModified": null,
+      "pageTitle": "Gambling and games - Advertising Policies Help",
+      "termChecks": [
+        {
+          "term": "simulate",
+          "found": true
+        },
+        {
+          "term": "sweepstakes casino",
+          "found": false
+        },
+        {
+          "term": "affiliate",
+          "found": true
+        },
+        {
+          "term": "certification",
+          "found": true
+        },
+        {
+          "term": "prizes",
+          "found": true
+        }
+      ]
+    },
+    {
+      "id": "S9",
+      "title": "Google Search: spam policies",
+      "requestedUrl": "https://developers.google.com/search/docs/essentials/spam-policies",
+      "url": "https://developers.google.com/search/docs/essentials/spam-policies",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Fri, 28 Aug 2026 04:59:56 GMT",
+      "pageTitle": "Spam Policies for Google Web Search | Google Search Central  |  Documentation  |  Google for Developers",
+      "termChecks": [
+        {
+          "term": "scaled content",
+          "found": true
+        },
+        {
+          "term": "doorway",
+          "found": true
+        },
+        {
+          "term": "affiliate",
+          "found": true
+        },
+        {
+          "term": "sponsored",
+          "found": true
+        },
+        {
+          "term": "value",
+          "found": true
+        }
+      ]
+    },
+    {
+      "id": "S10",
+      "title": "Google Search: build a sitemap",
+      "requestedUrl": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 08 Jul 2026 15:47:49 GMT",
+      "pageTitle": "Build and Submit a Sitemap | Google Search Central  |  Documentation  |  Google for Developers",
+      "termChecks": [
+        {
+          "term": "lastmod",
+          "found": true
+        },
+        {
+          "term": "accurate",
+          "found": true
+        },
+        {
+          "term": "significant",
+          "found": true
+        },
+        {
+          "term": "guarantee",
+          "found": true
+        }
+      ]
+    },
+    {
+      "id": "S11",
+      "title": "OpenAI crawler documentation",
+      "requestedUrl": "https://platform.openai.com/docs/bots",
+      "url": "https://developers.openai.com/api/docs/bots",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": "Wed, 09 Sep 2026 20:56:01 GMT",
+      "pageTitle": "Overview of OpenAI Crawlers",
+      "termChecks": [
+        {
+          "term": "OAI-SearchBot",
+          "found": true
+        },
+        {
+          "term": "GPTBot",
+          "found": true
+        },
+        {
+          "term": "ChatGPT-User",
+          "found": true
+        },
+        {
+          "term": "search results",
+          "found": true
+        }
+      ]
+    },
+    {
+      "id": "S12",
+      "title": "Jackpota terms of service",
+      "requestedUrl": "https://jackpota.com/terms-of-service",
+      "url": "https://www.jackpota.com/terms-of-service",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "xRobotsTag": null,
+      "lastModified": null,
+      "pageTitle": "Terms of Service of Jackpota.com - Read our Terms Here",
+      "termChecks": [
+        {
+          "term": "Gold Coins",
+          "found": false
+        },
+        {
+          "term": "prizes",
+          "found": false
+        },
+        {
+          "term": "redeem",
+          "found": false
+        },
+        {
+          "term": "cash value",
+          "found": false
+        }
+      ]
+    }
+  ]
+}

@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-09 - SEO and player-value research plan
+- Audited live crawl metadata, outbound routing, eligibility behavior, and offer-data completeness; recovered the earlier Google Ads and Bright Data research.
+- Added a cited review and capped $200 research plan for bonuses, daily rewards, packages, games, and transparency, with implementation acceptance criteria.
+- Planning only: no production changes or paid jobs. Fix outbound syntax and eligibility together before promoting offers; global keyword volumes are not US sweepstakes demand.
+
 ## 2026-09-09 - Consent-controlled Google measurement
 - Added optional analytics with explicit acceptance, rejection and withdrawal; GTM is the only Google tag loader.
 - Connected GTM-NTLVFVB7 to GA4 G-E3Y4MKKS6Q; removed unconsented state-selection events and corrected the privacy policy.

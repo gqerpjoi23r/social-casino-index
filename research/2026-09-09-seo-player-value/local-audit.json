@@ -1,0 +1,140 @@
+{
+  "checkedAt": "2026-09-09T22:16:29.045Z",
+  "scope": "Repository gate logic with a minimal DOM fixture, inline script syntax, and data completeness. Not an end-to-end browser test.",
+  "gateCases": [
+    {
+      "label": "no selection",
+      "expectedBlocked": true,
+      "observedBlocked": true,
+      "error": null,
+      "message": "Select your state to see whether this offer is available to you."
+    },
+    {
+      "label": "dismissed then reload",
+      "expectedBlocked": true,
+      "observedBlocked": false,
+      "error": null,
+      "message": "Available in your state."
+    },
+    {
+      "label": "invalid state",
+      "expectedBlocked": true,
+      "observedBlocked": false,
+      "error": null,
+      "message": "Available in your state."
+    },
+    {
+      "label": "Jackpota-specific exclusion",
+      "expectedBlocked": true,
+      "observedBlocked": false,
+      "error": null,
+      "message": "Available in your state."
+    },
+    {
+      "label": "global closed state",
+      "expectedBlocked": true,
+      "observedBlocked": true,
+      "error": null,
+      "message": "This operator is not available in your state. The research below remains public."
+    },
+    {
+      "label": "malformed encoding",
+      "expectedBlocked": true,
+      "observedBlocked": false,
+      "error": "URI malformed",
+      "message": ""
+    }
+  ],
+  "redirects": [
+    {
+      "slug": "jackpota",
+      "syntaxError": "Unexpected string"
+    },
+    {
+      "slug": "lucky-bunny",
+      "syntaxError": "Unexpected string"
+    },
+    {
+      "slug": "yay-casino",
+      "syntaxError": "Unexpected string"
+    },
+    {
+      "slug": "dorados",
+      "syntaxError": "Unexpected string"
+    },
+    {
+      "slug": "zonko",
+      "syntaxError": "Unexpected string"
+    },
+    {
+      "slug": "chumba",
+      "syntaxError": "Unexpected string"
+    },
+    {
+      "slug": "pulsz",
+      "syntaxError": "Unexpected string"
+    },
+    {
+      "slug": "stake-us",
+      "syntaxError": "Unexpected string"
+    },
+    {
+      "slug": "wow-vegas",
+      "syntaxError": "Unexpected string"
+    },
+    {
+      "slug": "mcluck",
+      "syntaxError": "Unexpected string"
+    }
+  ],
+  "completeness": {
+    "operators": 10,
+    "offerPlaceholders": [
+      "lucky-bunny",
+      "dorados",
+      "zonko",
+      "chumba",
+      "pulsz",
+      "stake-us",
+      "wow-vegas"
+    ],
+    "dailyPlaceholders": [
+      "lucky-bunny",
+      "yay-casino",
+      "dorados",
+      "zonko",
+      "chumba",
+      "pulsz",
+      "stake-us",
+      "wow-vegas"
+    ],
+    "packagePlaceholders": [
+      "lucky-bunny",
+      "yay-casino",
+      "dorados",
+      "zonko",
+      "chumba",
+      "pulsz",
+      "stake-us",
+      "wow-vegas"
+    ],
+    "pendingTestRecords": [
+      "jackpota",
+      "lucky-bunny",
+      "yay-casino",
+      "dorados",
+      "zonko",
+      "chumba",
+      "pulsz",
+      "stake-us",
+      "wow-vegas",
+      "mcluck"
+    ],
+    "testLog": {
+      "version": "2026.1",
+      "description": "Append-only log of funded redemption tests. One entry per test run. An operator ranking may only be published once at least three comparable entries (same operator, same redemption type, and where possible the same payment method) have status \"completed\". Figures recorded here are our own measurements, kept separate from published operator terms.",
+      "entries": []
+    },
+    "firstFiveAllPartners": true
+  }
+}
