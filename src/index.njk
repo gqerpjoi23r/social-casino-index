@@ -82,10 +82,11 @@ eleventyComputed:
     <div class="comparison-grid">
 {% for op in operators %}
       <article class="operator-card">
+        <a class="operator-card-link" href="/redemption-times/{{ op.slug }}/" aria-label="{{ op.name }}: full record"></a>
         <div class="flex items-start justify-between gap-3">
           <div>
             <p class="eyebrow">#{{ op.position }}</p>
-            <h3><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></h3>
+            <h3>{{ op.name }}</h3>
           </div>
           <img class="operator-favicon" src="/assets/favicons/{{ op.slug }}{{ op.faviconExt }}" width="32" height="32" alt="{{ op.name }} logo" loading="lazy" decoding="async">
         </div>
@@ -97,16 +98,8 @@ eleventyComputed:
           <div><dt>Games</dt><dd>{{ op.games }}</dd></div>
         </dl>
         <div class="operator-actions">
-          <span class="badge {% if op.verificationStatus == 'verified' %}complete{% else %}pending{% endif %}">{{ op.verificationLabel }}</span>
-          <span class="operator-actions-right">
-            <a class="btn btn-sm btn-outline" href="/redemption-times/{{ op.slug }}/">Full terms</a>
-{% if op.partner %}
-            <div class="cta-box !m-0 !border-0 !bg-transparent !p-0" data-cta-operator="{{ op.slug }}">
-              <p class="cta-msg sr-only">Check state availability before visiting.</p>
-              <a class="cta-btn btn btn-primary btn-sm" href="/go/{{ op.slug }}/">Visit {{ op.name }} <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-            </div>
-{% endif %}
-          </span>
+          <span class="badge badge-sm {% if op.verificationStatus == 'verified' %}badge-success{% else %}badge-warning{% endif %}">{{ op.verificationLabel }}</span>
+          <span class="operator-full-terms">Full terms <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
         </div>
       </article>
 {% endfor %}
