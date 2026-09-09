@@ -15,6 +15,14 @@
   --color-lose: #F87171;
 }
 
+/* DaisyUI's dark theme ships a green accent; restore our golden accent so the
+   brand crown and accent badges read correctly on the dark background. */
+[data-theme="dark"],
+:root {
+  --color-accent: #FBBF24;
+  --color-accent-content: #1A1200;
+}
+
 /* ---------- Layout primitives ---------- */
 @utility wrap {
   @apply mx-auto w-full max-w-5xl px-6;
