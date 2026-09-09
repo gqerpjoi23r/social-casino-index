@@ -1,0 +1,139 @@
+---
+layout: base.njk
+title: "Operator Benchmark: Partners and Major US Sweepstakes Casinos"
+description: "Verified published terms, restricted states, and verification status for the five Social Casino Index partners and five major US sweepstakes casinos."
+permalink: "/research/operator-benchmark/"
+tags: ["guides"]
+guideType: "Benchmark"
+ogType: "article"
+status: "published"
+publishedAt: "2026-09-08"
+updatedAt: "2026-09-08"
+authorId: "alex-rowan"
+reviewer: "Social Casino Index research team"
+primaryQuery: "sweepstakes casino operator comparison"
+disclosure: "affiliate"
+noindex: false
+---
+
+<main>
+<article class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><span aria-current="page">Operator benchmark</span></li>
+    </ol>
+  </nav>
+
+  <h1 class="mb-5 mt-0 font-serif text-4xl font-semibold leading-tight text-base-content sm:text-[2.8rem]">Operator Benchmark</h1>
+
+  <p class="byline">
+    By <a href="/authors/alex-rowan/">Alex Rowan</a> ·
+    Published {{ publishedAt | readableDate }} · Last updated {{ updatedAt | readableDate }} ·
+    <a href="mailto:alex@socialcasinoindex.com">alex@socialcasinoindex.com</a>
+  </p>
+
+  <div class="answer-first">
+    <span class="af-label">What this is</span>
+    <p>This benchmark records what we could verify about each operator we track, and — just as important — what we could not. Every field carries a verification status. Where a partner's terms are not publicly reachable, we say so rather than fill the gap with assumptions.</p>
+  </div>
+
+  <h2 id="partners">Partners</h2>
+  <p>These five operators hold affiliate agreements with Social Casino Index (see the <a href="/disclosure/">disclosure</a>). They appear first in our comparison tables.</p>
+
+  <div class="table-scroll">
+    <table class="data">
+      <caption>Partner terms and verification status, September 2026. "Unverified" means we could not confirm the field from a public source.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Partner</th>
+          <th scope="col">Published timing</th>
+          <th scope="col">Min redemption</th>
+          <th scope="col">Restricted states</th>
+          <th scope="col">Verification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Jackpota</th>
+          <td>Not published publicly</td>
+          <td>Unverified</td>
+          <td>Unverified</td>
+          <td><span class="badge pending">Partial</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Lucky Bunny</th>
+          <td>Not publicly reachable</td>
+          <td>Unverified</td>
+          <td>Unverified</td>
+          <td><span class="badge pending">Partial</span></td>
+        </tr>
+        <tr>
+          <th scope="row">YAY Casino</th>
+          <td>Not stated in T&amp;C</td>
+          <td>Unverified</td>
+          <td>WA, ID, CA, NY, MI</td>
+          <td><span class="badge complete">Verified (T&amp;C)</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Dorados</th>
+          <td>Not stated in rules</td>
+          <td>100 SC</td>
+          <td>CA, CT, ID, IN, IA, LA, ME, MI, MT, NV, NJ, NY, TN, WA</td>
+          <td><span class="badge complete">Verified</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Zonko</th>
+          <td>Not publicly reachable</td>
+          <td>Unverified</td>
+          <td>WA, ID, LA, MI, NV, MT, DE, CT, NJ, NY, CA, TN, IN, ME</td>
+          <td><span class="badge complete">Terms only</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="context">Context operators</h2>
+  <p>These major operators are covered because readers search for them by name. They carry no affiliate links on this site.</p>
+
+  <div class="table-scroll">
+    <table class="data">
+      <thead>
+        <tr>
+          <th scope="col">Operator</th>
+          <th scope="col">Published estimate</th>
+          <th scope="col">Methods</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for op in operators %}
+        <tr>
+          <th scope="row">{{ op.name }}</th>
+          <td>{{ op.publishedEstimate }}</td>
+          <td>{{ op.methods }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="methodology">How we verify</h2>
+  <p>Each operator's terms and sweepstakes rules are fetched directly, or via a US-located scrape when the operator blocks our region. Fields we cannot confirm from a public document are marked <em>unverified</em> — never filled in from assumption. Verification access dates are recorded in the dataset and updated on re-check.</p>
+
+  <h2 id="sources">Source register</h2>
+  <ol class="sources">
+    {% for op in operators %}
+      {% for s in op.sources %}
+      <li><strong>{{ op.name }}</strong> — {{ s.label }}. <a href="{{ s.url }}" rel="noopener">{{ s.url | replace("https://", "") | replace("http://", "") }}</a>. <span class="accessed">Accessed {{ s.accessed | readableDate }}.</span></li>
+      {% endfor %}
+    {% endfor %}
+    <li><strong>Dorados</strong> — Sweepstakes Rules and Terms and Conditions. <a href="https://dorados.com/en/sweepstakes-rules" rel="noopener">dorados.com/en/sweepstakes-rules</a>. <span class="accessed">Accessed September 8, 2026 (via US scrape).</span></li>
+    <li><strong>Zonko</strong> — Terms. <a href="https://www.zonko.com/help/terms/" rel="noopener">zonko.com/help/terms</a>. <span class="accessed">Accessed September 8, 2026 (via US scrape).</span></li>
+    <li><strong>YAY Casino</strong> — Terms and Conditions. <a href="https://www.yaycasino.com/terms-and-conditions" rel="noopener">yaycasino.com/terms-and-conditions</a>. <span class="accessed">Accessed September 8, 2026.</span></li>
+  </ol>
+
+  <p class="byline mt-8"><a href="/disclosure/">Affiliate disclosure</a> · <a href="/methodology/">Site methodology</a> · Written by <a href="/authors/alex-rowan/">Alex Rowan</a></p>
+
+</article>
+</main>

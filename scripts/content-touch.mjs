@@ -17,6 +17,11 @@ text = text
   .replace(/^updatedAt:\s*"?\d{4}-\d{2}-\d{2}"?/m, `updatedAt: "${today}"`)
   .replace(/dateModified:\s*"\d{4}-\d{2}-\d{2}"/, `dateModified: "${today}"`);
 
+const hadDate = /^updatedAt:\s*"?\d{4}-\d{2}-\d{2}"?/m.test(before);
+if (hadDate && text === before) {
+  console.log(`${file}: updatedAt/dateModified already ${today} (no change needed)`);
+  process.exit(0);
+}
 if (text === before) {
   console.error(`No updatedAt/dateModified found in ${file}`);
   process.exit(1);

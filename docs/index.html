@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/phosphor/style.css">
 <script>document.documentElement.classList.add('js');</script>
 
 
@@ -72,19 +73,20 @@
 }</script>
 
 </head>
-<body class="bg-white font-sans text-[17px] leading-relaxed text-slate-800 antialiased">
+<body class="bg-base-100 font-sans text-[17px] leading-relaxed text-base-content antialiased">
 
-<header class="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+<header class="sticky top-0 z-40 border-b border-base-300 bg-base-100/90 backdrop-blur">
   <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 px-6 py-3">
-    <a class="flex items-center gap-2.5 font-serif text-[22px] font-semibold text-slate-900 no-underline" href="/">
+    <a class="flex items-center gap-2.5 font-serif text-[22px] font-semibold text-base-content no-underline" href="/">
       <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true" class="flex-none">
-        <circle cx="13" cy="13" r="12" fill="none" stroke="#1D4ED8" stroke-width="2"/>
-        <circle cx="13" cy="13" r="5.5" fill="none" stroke="#1D4ED8" stroke-width="2"/>
-        <path d="M13 1v4M13 21v4M1 13h4M21 13h4" stroke="#1D4ED8" stroke-width="2"/>
+        <circle cx="13" cy="13" r="12" fill="none" stroke="#60A5FA" stroke-width="2"/>
+        <circle cx="13" cy="13" r="5.5" fill="none" stroke="#60A5FA" stroke-width="2"/>
+        <path d="M13 1v4M13 21v4M1 13h4M21 13h4" stroke="#60A5FA" stroke-width="2"/>
       </svg>
       Social Casino Index
     </a>
-    <nav class="flex flex-wrap items-center gap-x-5 gap-y-1 text-[14.5px] text-slate-500" aria-label="Main">
+    <nav class="flex flex-wrap items-center gap-x-5 gap-y-1 text-[14.5px] text-base-content/60" aria-label="Main">
+      <a class="no-underline hover:text-brand" href="/guides/">Guides</a>
       <a class="no-underline hover:text-brand" href="/research/sweepstakes-casino-redemption-times/">Redemption times</a>
       <a class="no-underline hover:text-brand" href="/methodology/">Methodology</a>
       <a class="no-underline hover:text-brand" href="/availability/">State availability</a>
@@ -93,24 +95,156 @@
   </div>
 </header>
 
-
 <main>
-<section class="border-b border-slate-200 bg-slate-50 pt-8 pb-10">
-  <div class="wrap">
-    <h1 class="mb-5 font-serif text-[2.6rem] font-semibold leading-[1.06] text-slate-900 sm:text-[3.4rem]">Social Casino Index</h1>
-    <p class="lede mb-4">Independent redemption times, verification requirements, and payout research for US sweepstakes casinos.</p>
-    <p class="max-w-xl text-[17px] leading-relaxed text-slate-600">We read operator terms, fund our own accounts, request redemptions as ordinary players, and time how long the money takes to arrive. Every figure carries a date, a method and a source. Where we have not tested an operator yet, we say so.</p>
+<!-- Hero -->
+<section class="hero-bg relative -mt-px flex min-h-[68vh] items-center">
+  <div class="wrap py-16">
+    <span class="badge complete mb-4"><i class="ph ph-shield-check" aria-hidden="true"></i> Independent &amp; player-first</span>
+    <h1 class="mb-5 max-w-3xl font-serif text-[2.6rem] font-semibold leading-[1.06] text-white sm:text-[3.4rem]">Find trusted payout data and the best social casino deals.</h1>
+    <p class="mb-8 max-w-xl text-lg leading-relaxed text-white/85">We time real redemptions, verify operator terms, and track who actually pays out — so you can pick a social casino with confidence. Every figure is dated and sourced.</p>
+    <div class="flex flex-wrap gap-3">
+      <a href="#deals" class="btn btn-primary"><i class="ph ph-cards" aria-hidden="true"></i> See top deals</a>
+      <a href="/guides/" class="btn btn-outline border-white/40 text-white hover:bg-white/10 hover:border-white/60"><i class="ph ph-book-open" aria-hidden="true"></i> Read the research</a>
+    </div>
   </div>
 </section>
 
 <div class="wrap py-2">
 
-  <section class="py-8" aria-labelledby="research-index">
-    <h2 id="research-index" class="mb-4 mt-0 font-serif text-[2.05rem] font-semibold leading-tight text-slate-900">Current research</h2>
+  <!-- Best deals & terms -->
+  <section id="deals" class="scroll-mt-20 py-10" aria-labelledby="deals-heading">
+    <div class="mb-6 flex items-end justify-between gap-4">
+      <div>
+        <h2 id="deals-heading" class="mb-1 mt-0 font-serif text-[2.05rem] font-semibold leading-tight text-base-content">Best deals &amp; terms</h2>
+        <p class="m-0 text-base-content/60">Our partner operators, with the terms we have verified. Offers appear only where available in your state.</p>
+      </div>
+      <span class="badge pending hidden sm:inline-block">Updated Sep 2026</span>
+    </div>
+
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="card flex flex-col">
+        <div class="card-head">
+          <div class="mb-2 flex items-center justify-between">
+            <i class="ph ph-coins text-3xl text-brand" aria-hidden="true"></i>
+            <span class="badge pending">Partner</span>
+          </div>
+          <h2 class="!text-xl">Jackpota</h2>
+          <p>Social casino with a large slot library. Redemption terms are not published publicly yet.</p>
+        </div>
+        <div class="card-foot mt-auto">
+          <p>Verification: <span class="badge pending">Partial</span></p>
+          <div class="cta-box !my-2 !border-0 !bg-transparent !p-0" data-cta-operator="jackpota">
+            <p class="cta-msg text-sm">Check availability in your state to see the current offer.</p>
+            <a class="cta-btn btn btn-primary btn-sm" href="/go/jackpota/">Visit Jackpota <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flex flex-col">
+        <div class="card-head">
+          <div class="mb-2 flex items-center justify-between">
+            <i class="ph ph-rabbit text-3xl text-brand" aria-hidden="true"></i>
+            <span class="badge pending">Partner</span>
+          </div>
+          <h2 class="!text-xl">Lucky Bunny</h2>
+          <p>Newer social casino on a dual-currency model, 21+. Terms are not publicly reachable yet.</p>
+        </div>
+        <div class="card-foot mt-auto">
+          <p>Verification: <span class="badge pending">Partial</span></p>
+          <div class="cta-box !my-2 !border-0 !bg-transparent !p-0" data-cta-operator="lucky-bunny">
+            <p class="cta-msg text-sm">Check availability in your state to see the current offer.</p>
+            <a class="cta-btn btn btn-primary btn-sm" href="/go/lucky-bunny/">Visit Lucky Bunny <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flex flex-col">
+        <div class="card-head">
+          <div class="mb-2 flex items-center justify-between">
+            <i class="ph ph-currency-btc text-3xl text-brand" aria-hidden="true"></i>
+            <span class="badge pending">Partner</span>
+          </div>
+          <h2 class="!text-xl">YAY Casino</h2>
+          <p>Crypto-only redemptions. Excludes WA, ID, CA, NY, MI. Run by Social Gaming LLC (Delaware).</p>
+        </div>
+        <div class="card-foot mt-auto">
+          <p>Verification: <span class="badge complete">Verified T&amp;C</span></p>
+          <div class="cta-box !my-2 !border-0 !bg-transparent !p-0" data-cta-operator="yay-casino">
+            <p class="cta-msg text-sm">Check availability in your state to see the current offer.</p>
+            <a class="cta-btn btn btn-primary btn-sm" href="/go/yay-casino/">Visit YAY Casino <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flex flex-col">
+        <div class="card-head">
+          <div class="mb-2 flex items-center justify-between">
+            <i class="ph ph-treasure-chest text-3xl text-brand" aria-hidden="true"></i>
+            <span class="badge pending">Partner</span>
+          </div>
+          <h2 class="!text-xl">Dorados</h2>
+          <p>Minimum redemption 100 SC. Restricted in 14 states incl. CA, NY, MI, NV. Sponsor Rafflefy Ltd.</p>
+        </div>
+        <div class="card-foot mt-auto">
+          <p>Verification: <span class="badge complete">Verified</span></p>
+          <div class="cta-box !my-2 !border-0 !bg-transparent !p-0" data-cta-operator="dorados">
+            <p class="cta-msg text-sm">Check availability in your state to see the current offer.</p>
+            <a class="cta-btn btn btn-primary btn-sm" href="/go/dorados/">Visit Dorados <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flex flex-col">
+        <div class="card-head">
+          <div class="mb-2 flex items-center justify-between">
+            <i class="ph ph-sparkle text-3xl text-brand" aria-hidden="true"></i>
+            <span class="badge pending">Partner</span>
+          </div>
+          <h2 class="!text-xl">Zonko</h2>
+          <p>Newest US social casino. Restricted in 14 states incl. CA, NY, MI, NV. Gold Coin purchases.</p>
+        </div>
+        <div class="card-foot mt-auto">
+          <p>Verification: <span class="badge complete">Terms only</span></p>
+          <div class="cta-box !my-2 !border-0 !bg-transparent !p-0" data-cta-operator="zonko">
+            <p class="cta-msg text-sm">Check availability in your state to see the current offer.</p>
+            <a class="cta-btn btn btn-primary btn-sm" href="/go/zonko/">Visit Zonko <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flex flex-col border-dashed">
+        <div class="card-head">
+          <div class="mb-2 flex items-center justify-between">
+            <i class="ph ph-map-pin text-3xl text-base-content/50" aria-hidden="true"></i>
+          </div>
+          <h2 class="!text-xl">Check your state first</h2>
+          <p>Offers depend on where you play. Select your state to see which deals are available to you.</p>
+        </div>
+        <div class="card-foot mt-auto">
+          <p><a class="text-brand no-underline hover:underline" href="#eligibility-heading">Select your state <i class="ph ph-arrow-down" aria-hidden="true"></i></a></p>
+        </div>
+      </div>
+    </div>
+    <p class="mt-4 text-sm text-base-content/50"><i class="ph ph-info" aria-hidden="true"></i> We may earn a commission on partner links, at no cost to you. It never changes a verified figure. <a class="text-brand" href="/disclosure/">How we're paid</a>.</p>
+  </section>
+
+  <!-- Latest research -->
+  <section class="py-10" aria-labelledby="latest-heading">
+    <div class="mb-6 flex items-end justify-between gap-4">
+      <h2 id="latest-heading" class="mb-0 mt-0 font-serif text-[2.05rem] font-semibold leading-tight text-base-content">Latest research</h2>
+      <a class="text-brand no-underline hover:underline" href="/guides/">All guides <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      
+    </div>
+  </section>
+
+  <!-- Redemption times table -->
+  <section class="py-10" aria-labelledby="research-index">
+    <h2 id="research-index" class="mb-4 mt-0 font-serif text-[2.05rem] font-semibold leading-tight text-base-content">Redemption times at five major operators</h2>
 
     <div class="card">
       <div class="card-head">
-        <h2 class="!text-2xl">Redemption times at five major operators</h2>
         <p>Official published terms, September 2026. Funded-test results in progress.</p>
       </div>
       <div class="table-scroll !mt-2 !border-t-0">
@@ -169,15 +303,14 @@
         <p>We do not publish a "fastest" ranking until at least three comparable funded tests have completed.</p>
       </div>
     </div>
-
-    <p><a href="/research/sweepstakes-casino-redemption-times/">How long do sweepstakes casino redemptions take? Read the full article</a>.</p>
   </section>
 
-  <section class="eligibility" aria-labelledby="eligibility-heading">
-    <h2 id="eligibility-heading">Check availability in your state</h2>
+  <!-- State eligibility -->
+  <section class="eligibility scroll-mt-20" aria-labelledby="eligibility-heading">
+    <h2 id="eligibility-heading"><i class="ph ph-map-pin" aria-hidden="true"></i> Check availability in your state</h2>
     <p>All research on this site is public in every state. Commercial offers are shown only after you select a state, and never for states where the category is closed.</p>
     <div class="js-only">
-      <label for="state-picker" class="mb-1.5 block text-sm font-semibold text-slate-500">Your state</label>
+      <label for="state-picker" class="mb-1.5 block text-sm font-semibold text-base-content/60">Your state</label>
       <select id="state-picker" data-state-picker>
         <option value="" disabled selected>Select your state...</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="DC">District of Columbia</option>
       </select>
@@ -186,27 +319,28 @@
     <noscript><p class="eligibility-note">State selection requires JavaScript. The <a href="/availability/">state availability list</a> works without it.</p></noscript>
   </section>
 
-  <section aria-labelledby="how-we-work">
-    <h2 id="how-we-work">How this site works</h2>
+  <!-- How this site works -->
+  <section class="py-10" aria-labelledby="how-we-work">
+    <h2 id="how-we-work" class="mb-4 mt-0 font-serif text-[2.05rem] font-semibold leading-tight text-base-content">How this site works</h2>
     <div class="signposts">
       <div class="signpost">
-        <h3>Methodology</h3>
+        <h3><i class="ph ph-flask text-brand" aria-hidden="true"></i> Methodology</h3>
         <p>How we fund accounts, time redemptions, label test status, and decide when a ranking is allowed to exist.</p>
         <p><a href="/methodology/">Read the methodology</a></p>
       </div>
       <div class="signpost">
-        <h3>State availability</h3>
+        <h3><i class="ph ph-map-trifold text-brand" aria-hidden="true"></i> State availability</h3>
         <p>Which states are open, which are closed by statute or enforcement, and when each rule last changed.</p>
         <p><a href="/availability/">Check your state</a></p>
       </div>
       <div class="signpost">
-        <h3>Disclosure</h3>
+        <h3><i class="ph ph-handshake text-brand" aria-hidden="true"></i> Disclosure</h3>
         <p>How we are paid, what affiliate links do and do not influence, and how the eligibility gate works.</p>
         <p><a href="/disclosure/">Read the disclosure</a></p>
       </div>
       <div class="signpost">
-        <h3>About the author</h3>
-        <p>Alex Rowan researches and writes the redemption-time and payout coverage on this site. No invented credentials.</p>
+        <h3><i class="ph ph-user text-brand" aria-hidden="true"></i> About the author</h3>
+        <p>Alex Rowan researches and writes the redemption-time and payout coverage on this site.</p>
         <p><a href="/authors/alex-rowan/">About Alex Rowan</a></p>
       </div>
     </div>
@@ -216,22 +350,24 @@
 </main>
 
 
-<footer class="mt-14 border-t border-slate-200 bg-slate-50 text-[14.5px] text-slate-600">
+<footer class="mt-14 border-t border-base-300 bg-base-200 text-[14.5px] text-base-content/70">
   <div class="mx-auto w-full max-w-5xl px-6 py-10">
     <span class="age-badge">21+ or 18+ depending on your state</span>
-    <h2 class="mb-2.5 font-serif text-xl font-semibold text-slate-900">About this site</h2>
+    <h2 class="mb-2.5 font-serif text-xl font-semibold text-base-content">About this site</h2>
     <p class="mb-3 max-w-xl">Social Casino Index is an independent research site covering US sweepstakes casinos. We measure redemption times, verification requirements and payout terms, and publish what we find with dates and sources.</p>
-    <p class="mb-3 max-w-xl"><strong class="font-semibold text-slate-800">Affiliate disclosure.</strong> Some links on this site are affiliate links. If you sign up through one, we may be paid a commission at no cost to you. Compensation never affects a rating, a ranking or a measured figure. Read the <a class="text-brand" href="/disclosure/">full disclosure</a>.</p>
-    <p class="mb-3 max-w-xl"><strong class="font-semibold text-slate-800">Not legal or tax advice.</strong> State law in this category changes frequently. Confirm the current rules for your state, and speak to a licensed attorney or CPA about your own situation.</p>
-    <p class="mb-3 max-w-xl"><strong class="font-semibold text-slate-800">Play responsibly.</strong> If gambling stops being fun, call 1-800-GAMBLER or text 800GAM to 800662. Support is free, confidential and available around the clock.</p>
+    <p class="mb-3 max-w-xl"><strong class="font-semibold text-base-content">Affiliate disclosure.</strong> Some links on this site are affiliate links. If you sign up through one, we may be paid a commission at no cost to you. Compensation never affects a rating, a ranking or a measured figure. Read the <a class="text-brand" href="/disclosure/">full disclosure</a>.</p>
+    <p class="mb-3 max-w-xl"><strong class="font-semibold text-base-content">Not legal or tax advice.</strong> State law in this category changes frequently. Confirm the current rules for your state, and speak to a licensed attorney or CPA about your own situation.</p>
+    <p class="mb-3 max-w-xl"><strong class="font-semibold text-base-content">Play responsibly.</strong> If gambling stops being fun, call 1-800-GAMBLER or text 800GAM to 800662. Support is free, confidential and available around the clock.</p>
     <p class="fine mb-3">
-      <a class="text-slate-700 no-underline hover:text-brand" href="/methodology/">Methodology</a> ·
-      <a class="text-slate-700 no-underline hover:text-brand" href="/disclosure/">Disclosure</a> ·
-      <a class="text-slate-700 no-underline hover:text-brand" href="/disclaimer/">Disclaimer</a> ·
-      <a class="text-slate-700 no-underline hover:text-brand" href="/privacy/">Privacy</a> ·
-      <a class="text-slate-700 no-underline hover:text-brand" href="/availability/">State availability</a> ·
-      <a class="text-slate-700 no-underline hover:text-brand" href="/authors/alex-rowan/">Alex Rowan</a>
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/guides/">Guides</a> ·
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/methodology/">Methodology</a> ·
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/disclosure/">Disclosure</a> ·
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/disclaimer/">Disclaimer</a> ·
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/privacy/">Privacy</a> ·
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/availability/">State availability</a> ·
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/authors/alex-rowan/">Alex Rowan</a>
     </p>
+    <p class="fine mb-3">Hero photo via <a class="text-base-content/60 underline hover:text-brand" href="https://unsplash.com/" rel="noopener">Unsplash</a>.</p>
     <p class="fine">&copy; 2026 Social Casino Index.</p>
   </div>
 </footer>

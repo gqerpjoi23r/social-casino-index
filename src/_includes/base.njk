@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/phosphor/style.css">
 <script>document.documentElement.classList.add('js');</script>
 {#
   Analytics placeholders. Create the containers under business-owned accounts, then:
@@ -31,19 +32,20 @@
 <script type="application/ld+json">{{ jsonld | json | safe }}</script>
 {% endif %}
 </head>
-<body class="bg-white font-sans text-[17px] leading-relaxed text-slate-800 antialiased">
+<body class="bg-base-100 font-sans text-[17px] leading-relaxed text-base-content antialiased">
 
-<header class="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+<header class="sticky top-0 z-40 border-b border-base-300 bg-base-100/90 backdrop-blur">
   <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 px-6 py-3">
-    <a class="flex items-center gap-2.5 font-serif text-[22px] font-semibold text-slate-900 no-underline" href="/">
+    <a class="flex items-center gap-2.5 font-serif text-[22px] font-semibold text-base-content no-underline" href="/">
       <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true" class="flex-none">
-        <circle cx="13" cy="13" r="12" fill="none" stroke="#1D4ED8" stroke-width="2"/>
-        <circle cx="13" cy="13" r="5.5" fill="none" stroke="#1D4ED8" stroke-width="2"/>
-        <path d="M13 1v4M13 21v4M1 13h4M21 13h4" stroke="#1D4ED8" stroke-width="2"/>
+        <circle cx="13" cy="13" r="12" fill="none" stroke="#60A5FA" stroke-width="2"/>
+        <circle cx="13" cy="13" r="5.5" fill="none" stroke="#60A5FA" stroke-width="2"/>
+        <path d="M13 1v4M13 21v4M1 13h4M21 13h4" stroke="#60A5FA" stroke-width="2"/>
       </svg>
       {{ site.name }}
     </a>
-    <nav class="flex flex-wrap items-center gap-x-5 gap-y-1 text-[14.5px] text-slate-500" aria-label="Main">
+    <nav class="flex flex-wrap items-center gap-x-5 gap-y-1 text-[14.5px] text-base-content/60" aria-label="Main">
+      <a class="no-underline hover:text-brand" href="/guides/">Guides</a>
       <a class="no-underline hover:text-brand" href="/research/sweepstakes-casino-redemption-times/">Redemption times</a>
       <a class="no-underline hover:text-brand" href="/methodology/">Methodology</a>
       <a class="no-underline hover:text-brand" href="/availability/">State availability</a>
@@ -54,22 +56,24 @@
 
 {{ content | safe }}
 
-<footer class="mt-14 border-t border-slate-200 bg-slate-50 text-[14.5px] text-slate-600">
+<footer class="mt-14 border-t border-base-300 bg-base-200 text-[14.5px] text-base-content/70">
   <div class="mx-auto w-full max-w-5xl px-6 py-10">
     <span class="age-badge">21+ or 18+ depending on your state</span>
-    <h2 class="mb-2.5 font-serif text-xl font-semibold text-slate-900">About this site</h2>
+    <h2 class="mb-2.5 font-serif text-xl font-semibold text-base-content">About this site</h2>
     <p class="mb-3 max-w-xl">Social Casino Index is an independent research site covering US sweepstakes casinos. We measure redemption times, verification requirements and payout terms, and publish what we find with dates and sources.</p>
-    <p class="mb-3 max-w-xl"><strong class="font-semibold text-slate-800">Affiliate disclosure.</strong> Some links on this site are affiliate links. If you sign up through one, we may be paid a commission at no cost to you. Compensation never affects a rating, a ranking or a measured figure. Read the <a class="text-brand" href="/disclosure/">full disclosure</a>.</p>
-    <p class="mb-3 max-w-xl"><strong class="font-semibold text-slate-800">Not legal or tax advice.</strong> State law in this category changes frequently. Confirm the current rules for your state, and speak to a licensed attorney or CPA about your own situation.</p>
-    <p class="mb-3 max-w-xl"><strong class="font-semibold text-slate-800">Play responsibly.</strong> If gambling stops being fun, call 1-800-GAMBLER or text 800GAM to 800662. Support is free, confidential and available around the clock.</p>
+    <p class="mb-3 max-w-xl"><strong class="font-semibold text-base-content">Affiliate disclosure.</strong> Some links on this site are affiliate links. If you sign up through one, we may be paid a commission at no cost to you. Compensation never affects a rating, a ranking or a measured figure. Read the <a class="text-brand" href="/disclosure/">full disclosure</a>.</p>
+    <p class="mb-3 max-w-xl"><strong class="font-semibold text-base-content">Not legal or tax advice.</strong> State law in this category changes frequently. Confirm the current rules for your state, and speak to a licensed attorney or CPA about your own situation.</p>
+    <p class="mb-3 max-w-xl"><strong class="font-semibold text-base-content">Play responsibly.</strong> If gambling stops being fun, call 1-800-GAMBLER or text 800GAM to 800662. Support is free, confidential and available around the clock.</p>
     <p class="fine mb-3">
-      <a class="text-slate-700 no-underline hover:text-brand" href="/methodology/">Methodology</a> ·
-      <a class="text-slate-700 no-underline hover:text-brand" href="/disclosure/">Disclosure</a> ·
-      <a class="text-slate-700 no-underline hover:text-brand" href="/disclaimer/">Disclaimer</a> ·
-      <a class="text-slate-700 no-underline hover:text-brand" href="/privacy/">Privacy</a> ·
-      <a class="text-slate-700 no-underline hover:text-brand" href="/availability/">State availability</a> ·
-      <a class="text-slate-700 no-underline hover:text-brand" href="/authors/alex-rowan/">Alex Rowan</a>
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/guides/">Guides</a> ·
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/methodology/">Methodology</a> ·
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/disclosure/">Disclosure</a> ·
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/disclaimer/">Disclaimer</a> ·
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/privacy/">Privacy</a> ·
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/availability/">State availability</a> ·
+      <a class="text-base-content/70 no-underline hover:text-brand" href="/authors/alex-rowan/">Alex Rowan</a>
     </p>
+    <p class="fine mb-3">Hero photo via <a class="text-base-content/60 underline hover:text-brand" href="https://unsplash.com/" rel="noopener">Unsplash</a>.</p>
     <p class="fine">&copy; {{ site.buildYear }} Social Casino Index.</p>
   </div>
 </footer>

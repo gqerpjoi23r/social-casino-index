@@ -42,7 +42,11 @@ function checkStaleUpdatedAt(file) {
   // updatedAt date is unchanged, the "Last updated" date is stale.
   const prevBody = prev.replace(/^---\n[\s\S]*?\n---/, "").trim();
   const curBody = cur.replace(/^---\n[\s\S]*?\n---/, "").trim();
-  if (prevBody !== curBody && prevUpdated === curUpdated) {
+  const today = new Date().toISOString().slice(0, 10);
+  // Fail only if the body changed AND updatedAt was neither advanced past the
+  // committed value NOR set to today (a same-day re-edit is still "updated
+  // today", which is accurate for readers and crawlers).
+  if (prevBody !== curBody && prevUpdated === curUpdated && curUpdated !== today) {
     console.error(`FAIL ${file}: content changed but "updatedAt" was not bumped (still ${curUpdated}). Run: npm run content:touch -- ${file}`);
     failures++;
   }

@@ -14,7 +14,7 @@ permalink: "/availability/"
     </ol>
   </nav>
 
-  <h1 class="mb-5 mt-0 font-serif text-4xl font-semibold leading-tight text-slate-900 sm:text-[2.8rem]">State Availability</h1>
+  <h1 class="mb-5 mt-0 font-serif text-4xl font-semibold leading-tight text-base-content sm:text-[2.8rem]">State Availability</h1>
 
   <div class="answer-first">
     <span class="af-label">In short</span>
@@ -28,7 +28,7 @@ permalink: "/availability/"
     <h2>Your state</h2>
     <p>Stored locally for 30 days. Nothing is sent to us.</p>
     <div class="js-only">
-      <label for="state-picker" class="mb-1.5 block text-sm font-semibold text-slate-500">State</label>
+      <label for="state-picker" class="mb-1.5 block text-sm font-semibold text-base-content/60">State</label>
       <select id="state-picker" data-state-picker>
         {% for s in states %}<option value="{{ s.code }}"{% if not s.code %} disabled selected{% endif %}>{{ s.name }}</option>{% endfor %}
       </select>
