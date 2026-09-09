@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+@theme {
+  --font-sans: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Newsreader", ui-serif, Georgia, serif;
+  --color-brand: #1D4ED8;        /* blue-700 editorial accent */
+  --color-brand-dark: #1E3A8A;   /* blue-900 */
+  --color-accent: #B45309;       /* amber-700 (kept for badges/age) */
+  --color-win: #047857;          /* emerald-700 */
+  --color-lose: #B91C1C;         /* red-700 */
+}
+
+/* ---------- Layout primitives ---------- */
+@utility wrap {
+  @apply mx-auto w-full max-w-2xl px-6;
+}
+@utility wrap-wide {
+  @apply mx-auto w-full max-w-4xl px-6;
+}
+
+/* ---------- Typography helpers ---------- */
+@utility lede {
+  @apply text-lg leading-relaxed text-slate-600 max-w-xl;
+}
+@utility byline {
+  @apply text-sm text-slate-500 mb-6;
+}
+@utility fine {
+  @apply text-slate-500;
+}
+@utility num {
+  font-variant-numeric: tabular-nums;
+  @apply whitespace-nowrap;
+}
+
+/* ---------- Breadcrumbs ---------- */
+@utility crumbs {
+  @apply text-sm text-slate-400 mb-6;
+}
+.crumbs ol { @apply m-0 flex list-none flex-wrap gap-2 p-0; }
+.crumbs li { @apply flex items-center gap-2; }
+.crumbs li + li::before { content: "/"; @apply text-slate-300; }
+.crumbs a { @apply text-slate-500 no-underline hover:text-brand; }
+.crumbs [aria-current] { @apply text-slate-400; }
+
+/* ---------- Answer-first callout ---------- */
+@utility answer-first {
+  @apply my-6 rounded-r-lg border-l-4 border-brand bg-blue-50 p-5;
+}
+.answer-first p { @apply mb-2 text-slate-700; }
+.answer-first p:last-child { @apply mb-0; }
+.answer-first .af-label { @apply mb-2 block text-[13px] font-bold uppercase tracking-wider text-brand-dark; }
+@utility af-label {
+  @apply mb-2 block text-[13px] font-bold uppercase tracking-wider text-brand-dark;
+}
+
+/* ---------- Table of contents ---------- */
+@utility toc {
+  @apply my-6 rounded-lg border border-slate-200 bg-slate-50 p-5 text-[15px];
+}
+.toc h2 { @apply m-0 mb-2 font-sans text-[13px] font-bold uppercase tracking-wider text-slate-500; }
+.toc ol { @apply m-0 pl-5; }
+.toc li { @apply my-1; }
+.toc a { @apply text-slate-700 no-underline hover:text-brand hover:underline; }
+
+/* ---------- FAQ / question blocks ---------- */
+.qa h3 { @apply mt-7 border-l-[3px] border-brand pl-4 font-serif text-xl font-semibold text-slate-900; }
+.qa p { @apply pl-4 text-slate-700; }
+
+/* ---------- Tick / status lists ---------- */
+ul.tick-list { @apply mb-5 list-none p-0; }
+ul.tick-list li { @apply mb-2 border-l-[3px] border-slate-200 py-2 pl-4 text-slate-700; }
+ul.tick-list li.good { @apply border-win; }
+ul.tick-list li.bad { @apply border-lose; }
+ul.tick-list b { @apply font-semibold text-slate-900; }
+
+/* ---------- Data tables ---------- */
+@utility table-scroll {
+  @apply my-5 max-w-full overflow-x-auto border-t-2 border-brand;
+}
+table.data { @apply w-full table-fixed border-collapse text-[15.5px]; }
+table.data caption { @apply pt-3 pb-1 text-left text-[14.5px] text-slate-500; caption-side: bottom; }
+table.data th, table.data td { @apply border-b border-slate-200 py-2.5 pr-3 pl-0 text-left align-top; }
+table.data thead th { @apply text-sm font-semibold text-slate-500; }
+table.data tbody th { @apply font-sans text-[15.5px] font-semibold text-slate-900; }
+table.data td, table.data th { overflow-wrap: break-word; word-break: break-word; }
+table.data th:first-child, table.data td:first-child { width: 8.5rem; }
+table.data th:last-child, table.data td:last-child { width: 7rem; }
+@media (max-width: 560px) { table.data { min-width: 34rem; } }
+
+/* ---------- Badges ---------- */
+@utility badge {
+  @apply inline-block whitespace-nowrap rounded border border-slate-300 px-2 py-0.5 text-[12.5px] font-semibold text-slate-500;
+}
+.badge.pending { @apply border-accent text-accent; }
+.badge.complete, .badge.completed { @apply border-win text-win; }
+.badge.nottested { @apply border-slate-300 text-slate-400; }
+
+@utility age-badge {
+  @apply mb-3 inline-block rounded-md border border-accent px-2.5 py-0.5 text-[13.5px] font-semibold text-accent;
+}
+
+/* ---------- Cards & stat panels ---------- */
+@utility card {
+  @apply overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm;
+}
+@utility card-head { @apply px-6 pt-5; }
+.card-head h2 { @apply m-0 font-serif text-2xl font-semibold text-slate-900; }
+.card-head p { @apply mt-1.5 text-[14.5px] text-slate-500; }
+@utility card-foot { @apply mt-4 border-t border-slate-200 px-6 py-4 text-sm text-slate-500; }
+.card-foot p { @apply mb-1.5; }
+.card-foot p:last-child { @apply mb-0; }
+
+ul.stats { @apply m-0 mt-4 grid list-none grid-cols-1 gap-2.5 px-6 pb-1 sm:grid-cols-2; }
+.stat { @apply rounded-r-md border-l-4 border-brand bg-slate-50 px-3.5 py-2.5; }
+.stat.win { @apply border-win; }
+.stat.lose { @apply border-lose; }
+.stat-label { @apply block text-sm font-semibold text-slate-500; }
+.stat-value { @apply block font-serif text-3xl font-semibold leading-tight text-slate-900; font-variant-numeric: tabular-nums; }
+.stat-note { @apply mt-0.5 block text-[13.5px] text-slate-400; }
+
+/* ---------- Signposts ---------- */
+@utility signposts { @apply my-6 grid grid-cols-1 gap-3.5 sm:grid-cols-2; }
+@utility signpost { @apply border-t-2 border-brand pt-3.5; }
+.signpost h3 { @apply m-0 mb-1.5 font-serif text-xl font-semibold text-slate-900; }
+.signpost p { @apply mb-2 text-base text-slate-500; }
+.signpost a { @apply text-brand no-underline hover:underline; }
+
+/* ---------- Sources / changelog ---------- */
+ol.sources { @apply pl-5 text-[15px] text-slate-600; }
+ol.sources li { @apply mb-2.5; }
+ol.sources .accessed { @apply text-sm text-slate-400; }
+@utility accessed { @apply text-sm text-slate-400; }
+@utility changelog { @apply text-[14.5px] text-slate-600; }
+.changelog li { @apply mb-1.5; }
+
+/* ---------- Eligibility / state picker ---------- */
+@utility eligibility {
+  @apply my-6 rounded-lg border border-brand bg-blue-50 p-5;
+}
+.eligibility h2 { @apply m-0 mb-1.5 font-sans text-[15px] font-bold text-slate-900; }
+.eligibility p { @apply mb-3 text-[14.5px] text-slate-600; }
+.eligibility select { @apply max-w-full rounded-md border border-slate-300 bg-white px-2.5 py-2 text-[15px] text-slate-900; }
+.eligibility .eligibility-note { @apply mt-2 text-[13.5px] text-slate-500; }
+@utility eligibility-note { @apply mt-2 text-[13.5px] text-slate-500; }
+.js-only { display: none; }
+.js .js-only { display: block; }
+
+/* ---------- CTA (affiliate) ---------- */
+.cta-box { @apply my-4 rounded-lg border border-slate-200 bg-slate-50 p-5; }
+.cta-box .cta-title { @apply mb-1 font-semibold text-slate-900; }
+.cta-box .cta-msg { @apply mb-2.5 text-[14.5px] text-slate-600; }
+.cta-box a.cta-btn { @apply inline-block rounded-md bg-brand px-4 py-2 text-[15px] font-bold text-white no-underline hover:bg-brand-dark; }
+.cta-box.is-blocked a.cta-btn { display: none; }
+.cta-box.is-blocked .cta-when-allowed { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
