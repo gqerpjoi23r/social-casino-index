@@ -20,7 +20,7 @@ updatedAt: "2026-09-09"
   <p class="lede mb-10">Benchmarks, payout research and operator guides. Every piece is dated, sourced, and labeled with what we have and have not verified.</p>
 
   <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-    {% for item in collections.guides | reverse %}
+    {% for item in collections.guides | sortByDateDesc %}
     <a href="{{ item.url }}" class="card group no-underline transition hover:border-brand">
       <div class="card-head">
         <span class="badge {% if item.data.guideType == 'Benchmark' %}complete{% else %}pending{% endif %}">{{ item.data.guideType or "Article" }}</span>

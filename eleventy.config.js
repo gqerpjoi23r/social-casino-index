@@ -21,6 +21,19 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value, null, 2));
 
+  eleventyConfig.addFilter("sortByDateDesc", (items = []) =>
+    [...items].sort((a, b) => {
+      const aDate = a.data?.publishedAt || a.date || 0;
+      const bDate = b.data?.publishedAt || b.date || 0;
+      const dateOrder = new Date(bDate) - new Date(aDate);
+      return dateOrder || (a.url || "").localeCompare(b.url || "");
+    }),
+  );
+
+  eleventyConfig.addFilter("sortByUrl", (items = []) =>
+    [...items].sort((a, b) => (a.url || "").localeCompare(b.url || "")),
+  );
+
   return {
     dir: {
       input: "src",

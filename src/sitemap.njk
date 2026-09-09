@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for item in collections.all %}
+{%- for item in collections.all | sortByUrl %}
   {%- if item.url and item.url != "/sitemap.xml" and not item.data.noindex and not item.data.pagination and "/go/" not in item.url %}
   <url><loc>{{ site.url }}{{ item.url }}</loc>{% if item.data.updatedAt %}<lastmod>{{ item.data.updatedAt | isoDate }}</lastmod>{% elif item.data.publishedAt %}<lastmod>{{ item.data.publishedAt | isoDate }}</lastmod>{% endif %}</url>
   {%- endif %}
