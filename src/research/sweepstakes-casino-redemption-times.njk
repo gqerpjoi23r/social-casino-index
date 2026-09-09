@@ -6,7 +6,7 @@ permalink: "/research/sweepstakes-casino-redemption-times/"
 ogType: "article"
 status: "published"
 publishedAt: "2026-09-08"
-updatedAt: "2026-09-08"
+updatedAt: "2026-09-09"
 authorId: "alex-rowan"
 reviewer: "Social Casino Index research team"
 primaryQuery: "how long do sweepstakes casino redemptions take"
@@ -25,7 +25,7 @@ eleventyComputed:
         headline: "How Long Do Sweepstakes Casino Redemptions Take?"
         description: "Published redemption times, verification requirements, and minimums for Stake.us, WOW Vegas, McLuck, Chumba Casino and Pulsz, with funded-test results in progress."
         datePublished: "2026-09-08"
-        dateModified: "2026-09-08"
+        dateModified: "2026-09-09"
         mainEntityOfPage: "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/"
         author:
           "@id": "https://socialcasinoindex.com/#alex-rowan"
@@ -103,8 +103,9 @@ eleventyComputed:
   <h1 class="mb-5 mt-0 font-serif text-4xl font-semibold leading-tight text-slate-900 sm:text-[2.8rem]">How Long Do Sweepstakes Casino Redemptions Take?</h1>
 
   <p class="byline">
-    By <a href="/authors/alex-rowan/">Alex Rowan</a> (editorial pen name, Social Casino Index research team).
-    Published {{ publishedAt | readableDate }}. Last updated {{ updatedAt | readableDate }}.
+    By <a href="/authors/alex-rowan/">Alex Rowan</a> ·
+    Published {{ publishedAt | readableDate }} · Last updated {{ updatedAt | readableDate }} ·
+    <a href="mailto:alex@socialcasinoindex.com">alex@socialcasinoindex.com</a> ·
     <a href="#change-log">Change log</a>.
   </p>
 
@@ -122,8 +123,10 @@ eleventyComputed:
       <li><a href="#first-vs-repeat">First redemption vs repeat redemption</a></li>
       <li><a href="#delays">Why redemptions get delayed</a></li>
       <li><a href="#troubleshooting">Pending redemption troubleshooting</a></li>
-      <li><a href="#methodology">Methodology</a></li>
-      <li><a href="#sources">Sources</a></li>
+      <li><a href="#methodology">How these figures were produced</a></li>
+      <li><a href="#versions">Versions and data</a></li>
+      <li><a href="#cite">Cite this index</a></li>
+      <li><a href="#sources">Source register</a></li>
       <li><a href="#change-log">Change log</a></li>
     </ol>
   </nav>
@@ -199,14 +202,49 @@ eleventyComputed:
 
   {% include "redemption-times-faq.inc.njk" %}
 
-  <h2 id="methodology">Methodology</h2>
-  <p>This article currently compares official published terms only. Each operator's terms of service was read in full during the week of {{ updatedAt | readableDate }}, and the access date for every source is listed below. Funded testing follows the site <a href="/methodology/">methodology</a>: we fund accounts with our own money, request redemptions as ordinary players, and record the time from request to funds received, split into the four stages above. No operator is told it is being tested.</p>
+  <h2 id="methodology">How these figures were produced</h2>
+  <p>This edition of the index is based on <strong>{{ operators | length }} published operator terms documents</strong>, retrieved and read in full during the week of {{ updatedAt | readableDate }}. Of these, <strong>4 operators state a verifiable redemption timeframe</strong>; WOW Vegas does not state a timeframe in a form we could verify. No funded-test observations are included yet — every operator is labeled <span class="badge pending">Pending</span> until a funded redemption completes under the site <a href="/methodology/">methodology</a>.</p>
+  <p>Funded testing follows the site <a href="/methodology/">methodology</a>: we fund accounts with our own money, request redemptions as ordinary players, and record the time from request to funds received, split into the four stages above. No operator is told it is being tested. When funded tests complete, their observed timings are added to the comparison table and to the downloadable dataset as separate rows.</p>
 
-  <h2 id="sources">Sources</h2>
+  <h2 id="versions">Versions and data</h2>
+  <p>The underlying published-terms dataset is available as CSV. Each edition is versioned by date; the current edition is listed first.</p>
+  <div class="table-scroll">
+    <table class="data">
+      <thead>
+        <tr>
+          <th scope="col">Version</th>
+          <th scope="col">Published</th>
+          <th scope="col">Records</th>
+          <th scope="col">Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">2026.1</th>
+          <td>{{ updatedAt | readableDate }}</td>
+          <td class="num">{{ operators | length }} published terms</td>
+          <td><a href="/assets/data/redemption-times-2026.1.csv" download>Download CSV</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="cite">Cite this index</h2>
+  <div class="card">
+    <div class="card-head">
+      <p style="margin:0;">Alex Rowan, Social Casino Index (2026). <cite>“How Long Do Sweepstakes Casino Redemptions Take?”</cite> Version 2026.1. <a href="https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/">https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/</a></p>
+    </div>
+    <div class="card-foot">
+      <p>Data: <a href="/assets/data/redemption-times-2026.1.csv" download>redemption-times-2026.1.csv</a> (published terms, retrieved {{ updatedAt | readableDate }}).</p>
+    </div>
+  </div>
+
+  <h2 id="sources">Source register</h2>
+  <p>Every figure in this index traces to one of the operator documents below, with the date we accessed it.</p>
   <ol class="sources">
     {% for op in operators %}
       {% for s in op.sources %}
-      <li>{{ op.name }}: <a href="{{ s.url }}" rel="noopener">{{ s.label }}</a>. <span class="accessed">Accessed {{ s.accessed | readableDate }}.</span>{% if op.termsEffective %} Terms effective {{ op.termsEffective | readableDate }}.{% endif %}</li>
+      <li><strong>{{ op.name }}</strong> — {{ s.label }}. <a href="{{ s.url }}" rel="noopener">{{ s.url | replace("https://", "") | replace("http://", "") }}</a>. <span class="accessed">Accessed {{ s.accessed | readableDate }}.</span>{% if op.termsEffective %} Terms effective {{ op.termsEffective | readableDate }}.{% endif %}</li>
       {% endfor %}
     {% endfor %}
   </ol>

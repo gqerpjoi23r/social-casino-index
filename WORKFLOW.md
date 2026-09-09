@@ -34,6 +34,23 @@
    dates) at the bottom.
 4. Run `npm run content:validate`, fix any failures, then build and push.
 
+## Updating an existing article (dates are enforced)
+
+Any time you change an article's body, you must also advance its "last
+updated" date — this is the `dateModified` signal search engines and AI
+crawlers use. `npm run content:validate` fails the build if a tracked article
+changed but `updatedAt` was not bumped.
+
+1. Make your content edits.
+2. Stamp the date (sets `updatedAt` in front matter and `dateModified` in the
+   JSON-LD to today):
+
+       npm run content:touch -- src/research/<slug>.njk
+
+3. For a material correction, also add a dated entry to the article's change
+   log. Typos and formatting do not need a change-log entry.
+4. Run `npm run content:validate`, then build and push.
+
 ## Rules that are enforced by convention (not yet by CI)
 
 - Never publish a "fastest" or "best" ranking until at least three comparable
