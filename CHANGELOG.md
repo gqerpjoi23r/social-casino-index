@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-10 - Phase-gated player-value plan
+- Replaced the unenforceable dollar-allocation dispatch with a mandatory scope gate.
+- Phase 1 now builds the shared evidence and engineering foundation, completes Jackpota, Lucky Bunny, and YAY Casino, and then stops for owner evaluation.
+- The remaining seven operators are listed but cannot be researched without explicit approval after the Phase 1 review.
+
 ## 2026-09-09 - SEO and player-value research plan
 - Audited live crawl metadata, outbound routing, eligibility behavior, and offer-data completeness; recovered the earlier Google Ads and Bright Data research.
 - Added a cited review and capped $200 research plan for bonuses, daily rewards, packages, games, and transparency, with implementation acceptance criteria.
