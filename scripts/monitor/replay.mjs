@@ -22,7 +22,10 @@ try {
   }
   const replayed = read(join(work, "numeric.json"));
   assert.deepEqual(changeSignals(original, replayed), []);
-  assert.deepEqual(replayed.events, original.events);
+  // Re-extraction timestamps are execution metadata, not operator changes.
+  const stableEvents = events => JSON.parse(JSON.stringify(events, (key, value) =>
+    key === "extractedAt" ? undefined : value));
+  assert.deepEqual(stableEvents(replayed.events), stableEvents(original.events));
   const evaluation = read(join(work, "numeric-evaluation.json"));
   assert.equal(evaluation.modelCalls, 0);
   assert.equal(evaluation.modelErrors.length, 0);

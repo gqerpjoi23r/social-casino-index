@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-10 - Live archive review and numeric publication
+- The ten-operator Actions run completed; review now separates semantic correctness from quote grounding.
+- Fix offline event replay to ignore extraction timestamps and preserve readable captures when fallback fails.
+- Keep automated numeric records private; promotion requires explicit source-backed review.
+
 ## 2026-09-10 - Numeric monitor completion and live evaluation
 - Correct AWS trust to the repository's verified immutable OIDC subject; add archive-only model re-extraction and bounded authentication retries.
 - Remove dollar-ledger enforcement; retain request bounds, raw capture provenance, model tokens and reported Firecrawl credits.

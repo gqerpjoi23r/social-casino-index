@@ -75,6 +75,28 @@ test("schema rejects invented fields and wrong unit/field combinations", () => {
   data.facts[0].invented = true;
   assert.throws(() => checkExtraction(data, input), /invalid_extraction_schema/);
 });
+test("explicit million amounts are grounded without inventing arithmetic", () => {
+  const input = pages("Buy this package for $9.99 and receive 30 SC plus 1.5 million Gold Coins.");
+  const data = deterministicExtract(input);
+  data.offers[0].goldCoins = 1500000;
+  assert.equal(checkExtraction(data, input).accepted.offers.length, 1);
+  data.offers[0].goldCoins = 1500001;
+  assert.equal(checkExtraction(data, input).rejected[0].reason, "number_not_in_quote");
+});
+test("months and strict ages cannot pass as days and inclusive ages", () => {
+  const data = deterministicExtract(pages("The minimum redemption is 50 SC for eligible players."));
+  const fact = data.facts[0];
+  Object.assign(fact, { field: "redemption_time", value: 1, unit: "days_unspecified",
+    quote: "Our verification process may take up to one (1) month." });
+  assert.equal(checkExtraction(data, pages(fact.quote)).rejected[0].reason, "month_unit_mismatch");
+  fact.unit = "months";
+  assert.equal(checkExtraction(data, pages(fact.quote)).accepted.facts.length, 1);
+  Object.assign(fact, { field: "minimum_age", value: 21, unit: "years",
+    quote: "You are over twenty-one (21) years of age." });
+  assert.equal(checkExtraction(data, pages(fact.quote)).rejected[0].reason, "strict_age_boundary");
+  fact.comparison = "greater_than";
+  assert.equal(checkExtraction(data, pages(fact.quote)).accepted.facts.length, 1);
+});
 test("archive retains HTML and Markdown and detects corruption", () => {
   const directory = mkdtempSync(join(tmpdir(), "sci-test-"));
   try {

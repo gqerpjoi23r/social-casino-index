@@ -6,6 +6,7 @@ const decimal = "(\\d[\\d,]*(?:\\.\\d+)?)";
 const blankOffer = {
   priceUsd: null, immediateSc: null, totalSc: null, goldCoins: null,
   advertisedExtraPercent: null, durationDays: null, intervalHours: null,
+  advertisedDiscountPercent: null, extraPercentComparison: null,
   purchaseRequired: null, promoCode: null, conditions: [],
 };
 
@@ -79,15 +80,18 @@ export function checkExtraction(data, pages) {
         !item.conditions.length) reason = "missing_offer_qualifiers";
     if (kind === "facts" && item.upperValue !== null && item.upperValue < item.value) reason = "invalid_range";
     const units = { redemption_minimum: ["SC", "USD"], redemption_cap: ["SC", "USD"],
-      redemption_time: ["hours", "business_days", "calendar_days", "days_unspecified"], playthrough: ["multiplier"], minimum_age: ["years"] };
+      redemption_time: ["hours", "business_days", "calendar_days", "days_unspecified", "months"], playthrough: ["multiplier"], minimum_age: ["years"] };
     if (kind === "facts" && !units[item.field].includes(item.unit)) reason = "wrong_unit";
     // This is a grounding check, not a semantic accuracy claim.
     const numericValues = kind === "offers" ?
-      ["priceUsd", "immediateSc", "totalSc", "goldCoins", "advertisedExtraPercent", "durationDays", "intervalHours"].map(key => item[key]) :
+      ["priceUsd", "immediateSc", "totalSc", "goldCoins", "advertisedExtraPercent", "advertisedDiscountPercent", "durationDays", "intervalHours"].map(key => item[key]) :
       kind === "facts" ? [item.value, item.upperValue] : [];
     const normalizedQuote = normalize(item.quote).replace(/(\d),(?=\d)/g, "$1")
       .replace(/\bonce\b|\bone time\b/gi, "1").replace(/\btwice\b/gi, "2").replace(/\bthree times\b/gi, "3");
     const supportedNumbers = [...normalizedQuote.matchAll(/\d+(?:\.\d+)?/g)].map(match => Number(match[0]));
+    for (const match of normalizedQuote.matchAll(/(\d+(?:\.\d+)?)\s*(million|thousand)\b/gi)) {
+      supportedNumbers.push(Number(match[1]) * (match[2].toLowerCase() === "million" ? 1000000 : 1000));
+    }
     if (numericValues.some(value => value !== null && !supportedNumbers.includes(value) &&
         !(kind === "offers" && value === 24 && item.intervalHours === 24 && /daily|every day/i.test(item.quote)))) {
       reason = "number_not_in_quote";
@@ -98,6 +102,13 @@ export function checkExtraction(data, pages) {
       if (discounts.some(match => Number(match[1]) === item.advertisedExtraPercent)) {
         reason = "discount_is_not_extra_coins";
       }
+    }
+    if (kind === "facts" && item.field === "minimum_age" && /you are over|over (?:twenty|eighteen|\d)/i.test(item.quote) &&
+        item.comparison !== "greater_than") reason = "strict_age_boundary";
+    if (kind === "facts" && item.field === "redemption_time" && /\bmonth\b/i.test(item.quote) &&
+        !/\bdays?\b|\bhours?\b/i.test(item.quote) && item.unit !== "months") reason = "month_unit_mismatch";
+    if (kind === "offers" && /handwritten|by mail|mail code/i.test(item.quote) && item.immediateSc !== null) {
+      reason = "mail_credit_not_immediate";
     }
     if (reason) rejected.push({ kind, item, reason });
     else accepted[kind].push({ ...item, quote: normalize(item.quote) });

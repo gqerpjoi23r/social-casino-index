@@ -4,9 +4,23 @@ import { join } from "node:path";
 const directory = process.argv[2];
 if (!directory) throw new Error("Usage: node scripts/monitor/report.mjs <capture directory>");
 const read = name => JSON.parse(readFileSync(join(directory, name), "utf8"));
+const manifest = read("manifest.json");
+if (!existsSync(join(directory, "numeric.json")) || !existsSync(join(directory, "numeric-evaluation.json"))) {
+  const lines = [
+    "# Operator Monitor: Incomplete Run", "",
+    `Run: ${manifest.runId}. Started: ${manifest.startedAt}.`,
+    `Collection completed: ${manifest.completedAt || "no"}.`,
+    `Archived captures: ${manifest.captures.length}.`,
+    "Numeric extraction did not complete. No numeric results are approved for publication.",
+    "Successful partial captures remain available for recovery and model re-extraction.", "",
+    ...manifest.sources.map(source => `- ${source.operatorId}: ${source.id}: ${source.status}`),
+  ];
+  writeFileSync(join(directory, "results.md"), lines.join("\n") + "\n");
+  console.log(join(directory, "results.md"));
+  process.exit(0);
+}
 const numeric = read("numeric.json");
 const evaluation = read("numeric-evaluation.json");
-const manifest = read("manifest.json");
 const summary = read("summary.json");
 const cell = value => String(value ?? "unknown").replace(/\|/g, "\\|").replace(/\s+/g, " ");
 const numberFields = ["priceUsd", "immediateSc", "totalSc", "goldCoins", "advertisedExtraPercent", "durationDays", "intervalHours"];

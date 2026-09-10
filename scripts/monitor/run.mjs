@@ -38,6 +38,7 @@ for (const operator of operators) {
     if (!/^https:\/\//.test(url)) throw new Error(`Invalid source URL: ${source.id}`);
     const attempts = [];
     let result;
+    let readableResult;
     let provider;
     const options = ["direct"];
     if (process.env.FIRECRAWL_API_KEY) options.push("firecrawl");
@@ -55,6 +56,7 @@ for (const operator of operators) {
           ...config.sourceOptions?.[source.id], ...(attemptProvider === "firecrawl_full" ? { onlyMainContent: false } : {}),
         });
         usage.record(provider, result);
+        if (result.status === "ok") readableResult = result;
         // Preserve public source text, including dotted terms-clause numbers.
         // Request headers and credentials are never added to the capture.
         attempts.push({ provider, status: result.status });
@@ -74,6 +76,7 @@ for (const operator of operators) {
         result.status === "ok" && !/\b(?:\d+(?:\.\d+)?\s*(?:SC|coins|%)|bonus|offer)\b/i.test(result.text);
       if ((result.status === "ok" && !omitted) || result.status === "login_required") break;
     }
+    result = readableResult || result;
     const record = { id: source.id, url, finalUrl: result?.finalUrl || url, checkedAt: observedAt,
       purpose: source.purpose || pagePurpose(source), discoveredFrom: source.discoveredFrom || null,
       offerCoverage: "not_established_by_readability",
