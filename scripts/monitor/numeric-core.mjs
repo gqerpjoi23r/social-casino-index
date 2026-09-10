@@ -73,6 +73,10 @@ export function checkExtraction(data, pages) {
     let reason = !page ? "unknown_source" : !normalize(page.text).includes(normalize(item.quote)) ? "unsupported_quote" : null;
     if (kind === "offers" && item.immediateSc !== null && item.totalSc !== null && item.immediateSc > item.totalSc) reason = "immediate_exceeds_total";
     if (kind === "offers" && item.priceUsd === 0 && item.purchaseRequired === true) reason = "purchase_with_zero_price";
+    if (kind === "offers" && /over\s+\d+\s+days|first\s+\d+\s+days/i.test(item.quote) &&
+        item.kind === "recurring_daily") reason = "staged_is_not_recurring";
+    if (kind === "offers" && /eligible|verification|new players|new customers|first purchase/i.test(item.quote) &&
+        !item.conditions.length) reason = "missing_offer_qualifiers";
     if (kind === "facts" && item.upperValue !== null && item.upperValue < item.value) reason = "invalid_range";
     const units = { redemption_minimum: ["SC", "USD"], redemption_cap: ["SC", "USD"],
       redemption_time: ["hours", "business_days", "calendar_days", "days_unspecified"], playthrough: ["multiplier"], minimum_age: ["years"] };

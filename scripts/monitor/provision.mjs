@@ -12,6 +12,7 @@ const region = "eu-north-1";
 const bucket = `socialcasinoindex-monitor-${account}`;
 const role = "socialcasinoindex-monitor-github";
 const repository = "gqerpjoi23r/social-casino-index";
+const subjectPrefix = "repo:gqerpjoi23r@325744822/social-casino-index@1361204036";
 const parameter = "/socialcasinoindex/monitor/model-key";
 const trust = {
   Version: "2012-10-17",
@@ -19,7 +20,7 @@ const trust = {
     Action: "sts:AssumeRoleWithWebIdentity",
     Condition: { StringEquals: { "token.actions.githubusercontent.com:aud": "sts.amazonaws.com" },
       StringLike: { "token.actions.githubusercontent.com:sub": [
-        `repo:${repository}:ref:refs/heads/main`, `repo:${repository}:ref:refs/heads/codex/s3-numeric-monitor`,
+        `${subjectPrefix}:ref:refs/heads/main`, `${subjectPrefix}:ref:refs/heads/codex/s3-numeric-monitor`,
       ] } } }],
 };
 const policy = {

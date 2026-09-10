@@ -15,6 +15,7 @@ Format:
 ---
 
 ## 2026-09-10 - Numeric monitor completion and live evaluation
+- Correct AWS trust to the repository's verified immutable OIDC subject; add archive-only model re-extraction and bounded authentication retries.
 - Remove dollar-ledger enforcement; retain request bounds, raw capture provenance, model tokens and reported Firecrawl credits.
 - Isolate branch baselines, verify S3 uploads by download and hash, retain failed-source values, and distinguish wording, numeric and extractor changes.
 - Correct prior access diagnosis: the repository-scoped credential has push/admin access. The global `sunmer` login remains unchanged.

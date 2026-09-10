@@ -25,6 +25,16 @@ test("paid staged total cannot be used as immediate daily reward", () => {
   assert.equal(data.offers[0].immediateSc, null);
   assert.equal(comparableOffer(data.offers[0]), false);
 });
+test("staged classification and omitted offer qualifiers are rejected", () => {
+  const input = pages("$44 purchase provides 144 SC over 30 days.");
+  const data = deterministicExtract(input);
+  data.offers[0].kind = "recurring_daily";
+  assert.equal(checkExtraction(data, input).rejected[0].reason, "staged_is_not_recurring");
+  const qualified = pages("Buy this package for $20 and receive 40 SC for new players after verification.");
+  const omitted = deterministicExtract(qualified);
+  omitted.offers[0].conditions = [];
+  assert.equal(checkExtraction(omitted, qualified).rejected[0].reason, "missing_offer_qualifiers");
+});
 test("cap is not a daily bonus and multi-amount welcome is not flattened", () => {
   assert.equal(deterministicExtract(pages("Daily redemption rewards have a maximum limit of 9,550 SC.")).offers.length, 0);
   assert.equal(deterministicExtract(pages("Your welcome offer: $20 purchase = 40 SC plus 25 SC over 8 days.")).offers.length, 0);
