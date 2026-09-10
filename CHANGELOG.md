@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-10 - Daily public-source monitor
+- Add bounded daily collection for the existing ten operators, direct retrieval with Firecrawl fallback, evidence snapshots, stale-data retention and wording-change history.
+- Publish automated observations separately from reviewed comparison facts at /updates/ with a JSON export. No measured payout or new-offer claims.
+- GitHub Actions runs tests and release validation before committing observations and deploying. Paid request allowances are estimates, not verified billing ceilings. Model and Bright Data adapters remain disabled.
+
 ## 2026-09-10 - Player-first homepage benchmarks
 - Lead with signup SC, first-purchase price/SC and redemption minimums/playthrough. Move timing, games and verification details below; alphabetical listings are not rankings.
 - Publish the primary-source review with scoped conditions and explicit unknowns; separate entertainment-only Jackpota. Remove unsupported legacy amounts instead of substituting industry averages.
