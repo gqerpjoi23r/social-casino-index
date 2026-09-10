@@ -1,0 +1,43 @@
+---
+layout: base.njk
+title: "Daily operator source checks"
+description: "Dated source passages and collection status for ten social casino operators. Published terms, missing evidence and wording changes, separate from verified outcomes."
+permalink: "/updates/"
+publishedAt: "2026-09-10"
+jsonld:
+  "@context": "https://schema.org"
+  "@type": "CollectionPage"
+  name: "Daily operator source checks"
+  url: "https://socialcasinoindex.com/updates/"
+---
+<main><article class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li>Daily checks</li></ol></nav>
+  <h1>Daily operator source checks</h1>
+  <p>Automated readings of public operator pages. These passages are not reviewed facts, measured payout results or confirmation of eligibility. A wording change is not necessarily a changed offer.</p>
+  {% if monitor.summary %}
+  <p><strong>Last run: <time>{{ monitor.lastAttemptedAt | escape }}</time>.</strong> {{ monitor.summary.metrics.readable }} of {{ monitor.summary.metrics.attempted }} sources readable; {{ monitor.summary.coveredFields }} of {{ monitor.summary.totalFields }} topic fields contained matching passages.</p>
+  <p><a href="/updates/data.json">Download observations (JSON)</a> · <a href="{{ monitor.summary.githubRunUrl | escape }}" rel="noopener">Run and capture artifacts</a></p>
+  <h2>Recent signals</h2>
+  <p>First observations establish a baseline. Missing passages do not prove a feature was removed. Source wording changes require review before comparison values change.</p>
+  {% for event in monitor.events | limit(30) %}
+  <details><summary>{{ event.observedAt | escape }} · {{ event.operator | escape }} · {{ event.label | escape }} · {{ event.type | escape }}</summary>
+    {% if event.type != "baseline" %}<h3>Previously</h3>{% for quote in event.before %}<p>{{ quote.quote | escape }}</p>{% endfor %}{% endif %}
+    <h3>Collected</h3>{% for quote in event.after %}<p>{{ quote.quote | escape }} <a href="{{ quote.url | escape }}" rel="noopener">Source</a></p>{% endfor %}
+  </details>
+  {% else %}<p>No new signals in the stored history.</p>{% endfor %}
+  <h2>Operator readouts</h2>
+  {% for record in monitor.operators %}
+  <section id="{{ record.slug | escape }}">
+    <h2><a href="/redemption-times/{{ record.slug | escape }}/">{{ record.name | escape }}</a></h2>
+    {% if record.productMode == "entertainment_only" %}<p><strong>Entertainment-only product. Do not interpret coin amounts as redeemable prizes.</strong></p>{% endif %}
+    {% for key, field in record.fields %}
+    <details><summary>{{ field.label | escape }} · {{ field.status | escape }}</summary>
+      <p>{{ field.note | escape }} Checked: {{ field.checkedAt | escape }}.</p>
+      {% for quote in field.quotes %}<blockquote><p>{{ quote.quote | escape }}</p></blockquote><p>Observed: {{ quote.observedAt | escape }} · <a href="{{ quote.url | escape }}" rel="noopener">Operator source</a></p>{% endfor %}
+    </details>
+    {% endfor %}
+    <details><summary>Source availability</summary><ul>{% for source in record.sources %}<li><a href="{{ source.url | escape }}" rel="noopener">{{ source.id | escape }}</a>: {{ source.status | escape }}{% if source.provider %} ({{ source.provider | escape }}){% endif %}</li>{% endfor %}</ul></details>
+  </section>
+  {% endfor %}
+  {% else %}<p>The first collection has not completed.</p>{% endif %}
+</article></main>

@@ -1,0 +1,11 @@
+{
+  "sourceOverrides": {
+    "zonko-notice": "https://www.zonko.com/help/faq/",
+    "chumba-notice": "https://www.chumbacasino.com/getting-started/redeem-prizes"
+  },
+  "costUpperBounds": {
+    "firecrawl": 0.10,
+    "brightdata": 0.10,
+    "model": 0.50
+  }
+}

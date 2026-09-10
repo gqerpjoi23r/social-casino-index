@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "description": "Static site build for socialcasinoindex.com (11ty, flat HTML output to docs/ for GitHub Pages).",
   "scripts": {
+    "monitor:run": "node scripts/monitor/run.mjs",
+    "monitor:test": "node --test scripts/monitor/test.mjs",
     "build:icons": "node scripts/build-icons.mjs",
     "build:social-card": "node scripts/build-social-card.mjs --from-source",
     "build:csv": "node scripts/build-csv.mjs",
@@ -22,6 +24,7 @@
     "@phosphor-icons/web": "^2.1.1",
     "@tailwindcss/cli": "^4.3.3",
     "@tailwindcss/typography": "^0.5.20",
+    "cheerio": "^1.1.2",
     "daisyui": "^5.7.32",
     "tailwindcss": "^4.3.3"
   },
