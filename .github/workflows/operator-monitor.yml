@@ -28,9 +28,14 @@ jobs:
       - run: npm ci
       - run: npm run monitor:test
       - name: Collect public sources
+        id: capture
         env:
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
         run: npm run monitor:run
+      - name: Check evidence and identical replay
+        env:
+          CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
+        run: node scripts/monitor/evaluate.mjs "$CAPTURE_PATH"
       - name: Preserve captures and evaluation
         if: always()
         uses: actions/upload-artifact@v4

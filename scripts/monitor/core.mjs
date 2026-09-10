@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { load } from "cheerio";
 
-export const VERSION = "1.1.0";
+export const VERSION = "1.1.1";
 export const FIELDS = {
   welcome: "Welcome offer",
   daily: "Recurring daily reward",
@@ -57,17 +57,17 @@ const rules = {
     /\$\s*\d|\d+(?:\.\d+)?\s*(?:USD|dollars)/i,
   ],
   playthrough: [
-    /play[\s-]?through|roll[\s-]?over|wager|redemption progress|played (?:at least|through)|play.{0,50}(?:once|three times)/i,
+    /play[\s-]?through|roll[\s-]?over|wager|redemption progress|played (?:at least|through)/i,
     /\d|once|twice|three times|one time/i,
   ],
   minimum: [
     /redeem|redemption|cash.?out|prize/i,
     /\bminimum\b|\bmaximum\b|at least|up to|\bthreshold\b|\blimits?\b|\bcaps?\b/i,
-    /\$\s*[\d,.]+|[\d,.]+\s*(?:SC\b|sweeps? coins?|USD\b|dollars)/i,
+    /\$\s*[\d,.]+|\bSC\s*[\d,.]+|[\d,.]+\s*(?:SC\b|sweeps? coins?|USD\b|dollars)/i,
   ],
   timing: [
     /redeem|redemption|prize|payout/i,
-    /business days|working days|hours|minutes|processing|processed|Skrill|Trustly|Prizeout|MassPay|crypto|bank transfer|gift card/i,
+    /business days|working days|hours|minutes|Skrill|Trustly|Prizeout|MassPay|crypto|bank transfer|gift card/i,
   ],
   verification: [
     /verif|identity|identification|\bKYC\b|proof of|social security|\bSSN\b/i,
@@ -91,11 +91,14 @@ export function extract(text) {
   }).filter(line => line.length >= 30 && line.length <= 600);
   const result = {};
   for (const [key, patterns] of Object.entries(rules)) {
-    let candidates = [...new Set(units)].filter(line => patterns.every(pattern => pattern.test(line)));
+    let candidates = [...new Set(units)].filter(line =>
+      patterns.every(pattern => pattern.test(line)) && !line.endsWith("?") &&
+      !/\.(?:png|webp|jpg)\?|^.{0,5}(?:How|What|When|Where|Can|Do)\b.*\?/i.test(line));
     if (key === "daily") candidates = /sign[\s-]?up bonus.{0,10}how it works/i.test(text.slice(0, 1000)) ? [] : candidates.filter(line =>
       !/first (?:three|3|seven|7) days|day (?:one|1)|2nd|3rd|welcome|sign[\s-]?up/i.test(line));
     if (key === "verification") candidates = candidates.filter(line => !line.endsWith("?"));
     if (key === "minimum") candidates = candidates.filter(line => !/roll[\s-]?over|for example/i.test(line));
+    if (key === "purchase") candidates = candidates.filter(line => !/maximum.{0,40}purchase|purchase.{0,40}maximum/i.test(line));
     candidates.sort((a, b) => {
       const score = value => (/\d/.test(value) ? 3 : 0) + (/must|required|minimum|receive|eligible/i.test(value) ? 2 : 0);
       return score(b) - score(a) || a.length - b.length;

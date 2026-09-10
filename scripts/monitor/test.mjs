@@ -22,6 +22,9 @@ test("timing, statement and purchase text do not become unrelated facts", () => 
   assert.equal(extract("Purchase payment processing takes 24 hours.").timing.length, 0);
   assert.equal(extract("Discover your real identity with exciting games.").verification.length, 0);
   assert.equal(extract("What documents are required for identity verification?").verification.length, 0);
+  assert.equal(extract("They earn every month they play, not just once.").playthrough.length, 0);
+  assert.equal(extract("The maximum Gold Coin purchase is USD $9,000 per day.").purchase.length, 0);
+  assert.ok(extract("The minimum redemption amount for cash prize is SC 50.").minimum.length);
 });
 test("staged signup instructions do not become daily rewards", () => {
   assert.equal(extract("Sign-Up Bonus - How It Works\nClaim your daily reward of 0.5 SC every day.").daily.length, 0);
