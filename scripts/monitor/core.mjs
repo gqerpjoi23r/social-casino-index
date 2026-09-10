@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { load } from "cheerio";
 
-export const VERSION = "1.0.0";
+export const VERSION = "1.1.0";
 export const FIELDS = {
   welcome: "Welcome offer",
   daily: "Recurring daily reward",
@@ -62,20 +62,20 @@ const rules = {
   ],
   minimum: [
     /redeem|redemption|cash.?out|prize/i,
-    /minimum|maximum|at least|up to|threshold|limit|cap\b/i,
-    /\d/,
+    /\bminimum\b|\bmaximum\b|at least|up to|\bthreshold\b|\blimits?\b|\bcaps?\b/i,
+    /\$\s*[\d,.]+|[\d,.]+\s*(?:SC\b|sweeps? coins?|USD\b|dollars)/i,
   ],
   timing: [
-    /redeem|redemption|prize|payment|payout|bank transfer|gift card/i,
+    /redeem|redemption|prize|payout/i,
     /business days|working days|hours|minutes|processing|processed|Skrill|Trustly|Prizeout|MassPay|crypto|bank transfer|gift card/i,
   ],
   verification: [
     /verif|identity|identification|\bKYC\b|proof of|social security|\bSSN\b/i,
-    /document|passport|licen[cs]e|address|government|photo|identity|identification|social security|\bSSN\b/i,
+    /document|passport|licen[cs]e|address|government|photo|social security|\bSSN\b/i,
   ],
   restrictions: [
     /(?:not|no longer).{0,50}(?:availab|eligib|permit)|exclud|restrict|prohibit|residen|eligible states/i,
-    /state|United States|California|New York|Florida|Nebraska|Washington|Idaho|Michigan|Montana|Nevada|years of age|years old/i,
+    /\bstates?\b|United States|California|New York|Florida|Nebraska|Washington|Idaho|Michigan|Montana|Nevada|years of age|years old/i,
   ],
 };
 
@@ -84,7 +84,7 @@ const rules = {
 export function extract(text) {
   const lines = text.split("\n").map(normalize).filter(Boolean);
   const units = lines.flatMap((line, index) => {
-    const sentences = line.match(/[^.!?]+(?:[.!?](?=\s+[A-Z]|\s*$)|$)/g) || [line];
+    const sentences = line.split(/(?<=[.!?])\s+(?=[A-Z])/);
     const candidates = line.length <= 600 ? [line] : sentences.map(normalize);
     if (line.length < 90 && lines[index + 1]) candidates.push(`${line} ${lines[index + 1]}`);
     return candidates;
@@ -92,8 +92,10 @@ export function extract(text) {
   const result = {};
   for (const [key, patterns] of Object.entries(rules)) {
     let candidates = [...new Set(units)].filter(line => patterns.every(pattern => pattern.test(line)));
-    if (key === "daily") candidates = candidates.filter(line =>
-      !/first (?:three|3|seven|7) days|day (?:one|1)|welcome|sign[\s-]?up/i.test(line));
+    if (key === "daily") candidates = /sign[\s-]?up bonus.{0,10}how it works/i.test(text.slice(0, 1000)) ? [] : candidates.filter(line =>
+      !/first (?:three|3|seven|7) days|day (?:one|1)|2nd|3rd|welcome|sign[\s-]?up/i.test(line));
+    if (key === "verification") candidates = candidates.filter(line => !line.endsWith("?"));
+    if (key === "minimum") candidates = candidates.filter(line => !/roll[\s-]?over|for example/i.test(line));
     candidates.sort((a, b) => {
       const score = value => (/\d/.test(value) ? 3 : 0) + (/must|required|minimum|receive|eligible/i.test(value) ? 2 : 0);
       return score(b) - score(a) || a.length - b.length;

@@ -69,6 +69,8 @@ export async function retrieve(url, provider, env = process.env) {
       writeFileSync(join(directory, "source.pdf"), bytes);
       text = execFileSync("pdftotext", ["-layout", join(directory, "source.pdf"), "-"], { encoding: "utf8", timeout: 20000, maxBuffer: 8_000_000 });
       body = text;
+      // PDF line wrapping is presentation, not a semantic passage boundary.
+      text = text.split(/\n\s*\n/).map(block => block.replace(/\s+/g, " ").trim()).filter(Boolean).join("\n");
     } finally { rmSync(directory, { recursive: true, force: true }); }
   } else {
     body = bytes.toString();

@@ -116,6 +116,7 @@ const latest = {
 write("src/_data/monitor.json", latest);
 write(`data/monitor/runs/${runId}.json`, { summary, events, operators: records });
 write(join(output, "summary.json"), summary);
+write(join(output, "monitor.json"), latest);
 if (!metrics.readable) process.exitCode = 1;
 const report = [
   "# Daily operator collection", "",

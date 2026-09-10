@@ -16,6 +16,20 @@ test("semantic passages survive changed wrappers and classes", () => {
 test("welcome rewards are not recurring daily rewards", () => {
   assert.equal(extract("Welcome reward: claim 1 SC daily for the first three days.").daily.length, 0);
 });
+test("timing, statement and purchase text do not become unrelated facts", () => {
+  assert.equal(extract("Prize redemption may take up to 72 hours to process.").minimum.length, 0);
+  assert.equal(extract("This statement restricts our liability for purchases.").restrictions.length, 0);
+  assert.equal(extract("Purchase payment processing takes 24 hours.").timing.length, 0);
+  assert.equal(extract("Discover your real identity with exciting games.").verification.length, 0);
+  assert.equal(extract("What documents are required for identity verification?").verification.length, 0);
+});
+test("staged signup instructions do not become daily rewards", () => {
+  assert.equal(extract("Sign-Up Bonus - How It Works\nClaim your daily reward of 0.5 SC every day.").daily.length, 0);
+});
+test("sentence splitting preserves decimal amounts", () => {
+  const result = extract(`${"Unrelated content. ".repeat(40)}The minimum redemption is 50.5 SC for eligible players.`);
+  assert.ok(result.minimum.some(quote => quote.includes("50.5 SC")));
+});
 test("untrusted model output must be an exact source passage", () => {
   assert.equal(validQuotes(text, { minimum: ["The minimum redemption is 100 SC for eligible players."] }).minimum.length, 0);
 });
