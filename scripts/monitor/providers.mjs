@@ -3,18 +3,36 @@ import { execFileSync } from "node:child_process";
 import { writeFileSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { load } from "cheerio";
+
+export function linksFromHtml(html, url) {
+  const $ = load(html || "");
+  return [...new Set($("a[href]").map((_, element) => {
+    try {
+      const link = new URL($(element).attr("href"), url);
+      link.hash = "";
+      return link.protocol === "https:" ? link.href : null;
+    } catch { return null; }
+  }).get().filter(Boolean))];
+}
+
+export function firecrawlOptions(url, onlyMainContent = true) {
+  return { url, formats: ["markdown", "html", "rawHtml", "links"], onlyMainContent,
+    maxAge: 0, timeout: 60000, location: { country: "US" }, proxy: "basic" };
+}
 
 export class Budget {
-  constructor(previous = [], date = new Date().toISOString().slice(0, 10)) {
+  constructor(previous = [], date = new Date().toISOString().slice(0, 10), limits = {}) {
     this.date = date;
     this.entries = previous.filter(entry => new Date(date) - new Date(entry.date) < 7 * 86400000);
     this.calls = { firecrawl: 0, brightdata: 0, model: 0 };
+    this.limits = { dailyUsd: 5, weeklyUsd: 25, ...limits };
   }
   reserve(provider, upperBound) {
     const daily = this.entries.filter(entry => entry.date === this.date).reduce((n, entry) => n + entry.reservedUsd, 0);
     const weekly = this.entries.reduce((n, entry) => n + entry.reservedUsd, 0);
     const caps = { firecrawl: 35, brightdata: 10, model: 12 };
-    if (!(upperBound > 0) || daily + upperBound > 5 || weekly + upperBound > 25 || this.calls[provider] >= caps[provider]) return false;
+    if (!(upperBound > 0) || daily + upperBound > this.limits.dailyUsd || weekly + upperBound > this.limits.weeklyUsd || this.calls[provider] >= caps[provider]) return false;
     this.calls[provider]++;
     this.entries.push({ date: this.date, provider, reservedUsd: upperBound });
     return true;
@@ -32,7 +50,7 @@ async function responseBody(response) {
   return Buffer.concat(chunks);
 }
 
-export async function retrieve(url, provider, env = process.env) {
+export async function retrieve(url, provider, env = process.env, options = {}) {
   let response;
   const signal = AbortSignal.timeout(provider === "direct" ? 25000 : 70000);
   if (provider === "direct") {
@@ -43,8 +61,7 @@ export async function retrieve(url, provider, env = process.env) {
   } else if (provider === "firecrawl") {
     response = await fetch("https://api.firecrawl.dev/v2/scrape", {
       method: "POST", signal, headers: { "Content-Type": "application/json", Authorization: `Bearer ${env.FIRECRAWL_API_KEY}` },
-      body: JSON.stringify({ url, formats: ["markdown"], onlyMainContent: true,
-        maxAge: 0, timeout: 60000, location: { country: "US" }, proxy: "basic" }),
+      body: JSON.stringify(firecrawlOptions(url, options.onlyMainContent ?? true)),
     });
     if (!response.ok) throw new Error(`firecrawl_http_${response.status}`);
     const data = JSON.parse((await responseBody(response)).toString());
@@ -52,7 +69,14 @@ export async function retrieve(url, provider, env = process.env) {
     const body = data.data.markdown;
     const finalUrl = data.data.metadata?.url || data.data.metadata?.sourceURL || url;
     const text = readableText(body, "text/markdown");
-    return { body, text, finalUrl, contentType: "text/markdown", status: accessStatus(text, finalUrl, data.data.metadata?.statusCode || 200) };
+    return { body, text, finalUrl, contentType: "text/markdown",
+      markdown: data.data.markdown, html: data.data.html ?? null, rawHtml: data.data.rawHtml ?? null,
+      links: [...new Set([...(data.data.links || []), ...linksFromHtml(data.data.rawHtml || data.data.html, finalUrl)])],
+      metadata: { title: data.data.metadata?.title ?? null, statusCode: data.data.metadata?.statusCode ?? null,
+        creditsUsed: data.data.metadata?.creditsUsed ?? null },
+      requestOptions: firecrawlOptions(url, options.onlyMainContent ?? true),
+      httpStatus: data.data.metadata?.statusCode ?? null,
+      status: accessStatus(text, finalUrl, data.data.metadata?.statusCode || 200) };
   } else {
     response = await fetch("https://api.brightdata.com/request", {
       method: "POST", signal, headers: { "Content-Type": "application/json", Authorization: `Bearer ${env.BRIGHTDATA_API_KEY}` },
@@ -63,10 +87,12 @@ export async function retrieve(url, provider, env = process.env) {
   const contentType = response.headers.get("content-type") || "text/html";
   let text;
   let body;
+  let pdfBase64 = null;
   if (contentType.includes("pdf") || bytes.subarray(0, 4).toString() === "%PDF") {
     const directory = mkdtempSync(join(tmpdir(), "sci-pdf-"));
     try {
       writeFileSync(join(directory, "source.pdf"), bytes);
+      pdfBase64 = bytes.toString("base64");
       text = execFileSync("pdftotext", ["-layout", join(directory, "source.pdf"), "-"], { encoding: "utf8", timeout: 20000, maxBuffer: 8_000_000 });
       body = text;
       // PDF line wrapping is presentation, not a semantic passage boundary.
@@ -77,7 +103,10 @@ export async function retrieve(url, provider, env = process.env) {
     text = readableText(body, contentType);
   }
   const finalUrl = provider === "direct" ? response.url : url;
-  return { body, text, contentType, finalUrl, status: accessStatus(text, finalUrl, response.status) };
+  return { body, text, contentType, finalUrl, pdfBase64, httpStatus: response.status,
+    html: contentType.includes("html") ? body : null,
+    links: contentType.includes("html") ? linksFromHtml(body, finalUrl) : [],
+    status: accessStatus(text, finalUrl, response.status) };
 }
 
 export async function modelExtract(text, fields, env = process.env) {

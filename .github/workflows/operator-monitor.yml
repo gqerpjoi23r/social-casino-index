@@ -18,6 +18,12 @@ jobs:
   collect:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    env:
+      AWS_REGION: eu-north-1
+      MONITOR_BUCKET: socialcasinoindex-monitor-349131272959
+      MONITOR_USE_MODEL: "true"
+      MONITOR_MODEL: gpt-5.6-terra
+      MONITOR_MODEL_URL: https://autorank-coding-ai.openai.azure.com/openai/v1/chat/completions
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -27,6 +33,19 @@ jobs:
       - run: sudo apt-get update -qq && sudo apt-get install -y poppler-utils
       - run: npm ci
       - run: npm run monitor:test
+      - name: Authenticate archive access
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::349131272959:role/socialcasinoindex-monitor-github
+          aws-region: eu-north-1
+      - name: Validate identity and load model key
+        run: |
+          aws sts get-caller-identity
+          key="$(aws ssm get-parameter --name /socialcasinoindex/monitor/model-key --with-decryption --query Parameter.Value --output text)"
+          echo "::add-mask::$key"
+          echo "MONITOR_MODEL_KEY=$key" >> "$GITHUB_ENV"
+      - name: Restore private daily baseline
+        run: node scripts/monitor/state.mjs restore
       - name: Collect public sources
         id: capture
         env:
@@ -36,14 +55,19 @@ jobs:
         env:
           CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
         run: node scripts/monitor/evaluate.mjs "$CAPTURE_PATH"
-      - name: Preserve captures and evaluation
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: operator-captures-${{ github.run_id }}
-          path: .monitor/
-          include-hidden-files: true
-          retention-days: 14
+      - name: Extract numeric offers and policies
+        env:
+          CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
+        run: npm run monitor:numeric -- "$CAPTURE_PATH"
+      - name: Write readable numeric results
+        env:
+          CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
+        run: npm run monitor:report -- "$CAPTURE_PATH"
+      - name: Preserve private captures and evaluation
+        if: always() && steps.capture.outputs.capture_path != ''
+        env:
+          CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
+        run: node scripts/monitor/state.mjs finish "$CAPTURE_PATH"
       - run: npm run release
       - name: Commit validated observations
         if: github.ref == 'refs/heads/main'

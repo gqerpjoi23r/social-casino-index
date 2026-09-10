@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-10 - Private captures and staged numeric extraction
+- Archive source responses, Firecrawl Markdown/HTML, model responses and numeric records in private S3; GitHub Actions uses AWS OIDC and an SSM model key, without Lambda.
+- Extract typed offer amounts and policy values with exact evidence, units, scope, explicit unknowns and review-required change signals. Cached replay needs no new scrape or model call.
+- Add readable per-run results with all source URLs, values, evidence and rejected records; use one parallel directory transfer for final archiving.
+- Numeric records remain private and unreviewed; production comparison facts are unchanged. Local S3 upload/restore verified with 49 grounded numeric fields and 20 rejected records. Tests and release pass; GitHub push/dispatch is blocked by the active account's read-only repository access.
+
 ## 2026-09-10 - Simplify navigation and identify the publisher
 - Remove Methodology, Payout methods and Redemption times from the main menu; preserve all existing pages, operator attributes and data exports.
 - Add a SweepsBrief footer link and identify Sweeps Brief LLC on About using the shared legal name.

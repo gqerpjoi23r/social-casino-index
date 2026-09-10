@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync } fr
 import { join } from "node:path";
 import { FIELDS, VERSION, hash, extract, validQuotes, aggregate } from "./core.mjs";
 import { Budget, retrieve, modelExtract } from "./providers.mjs";
+import { archiveCapture, saveJson, uploadDirectory } from "./archive.mjs";
 
 const root = process.cwd();
 const read = (path, fallback) => existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : fallback;
@@ -10,15 +11,17 @@ const observedAt = new Date().toISOString();
 const runId = `${observedAt.replace(/[:.]/g, "-")}-${process.env.GITHUB_RUN_ID || "local"}`;
 const output = join(root, ".monitor", runId);
 mkdirSync(output, { recursive: true });
+if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, `capture_path=${output}\n`);
+const manifest = { schemaVersion: 1, runId, startedAt: observedAt, captures: [], sources: [] };
 mkdirSync("data/monitor/runs", { recursive: true });
 const operators = read("src/_data/operators.json", []);
-const previous = read("src/_data/monitor.json", { operators: [], sources: {}, spending: [], runs: [] });
-const budget = new Budget(previous.spending, observedAt.slice(0, 10));
+const previous = read(process.env.MONITOR_PREVIOUS_STATE || "src/_data/monitor.json", { operators: [], sources: {}, spending: [], runs: [] });
+const config = read("data/monitor/config.json", {});
+const budget = new Budget(previous.spending, observedAt.slice(0, 10), config.budget);
 const sourceCache = { ...(previous.sources || {}) };
 const records = [];
 const events = [];
 const metrics = { attempted: 0, readable: 0, failed: 0, deterministicFields: 0, modelFields: 0, cached: 0 };
-const config = read("data/monitor/config.json", {});
 let count = 0;
 
 for (const operator of operators) {
@@ -40,19 +43,25 @@ for (const operator of operators) {
         attempts.push({ provider, status: "budget_or_price_limit" });
         continue;
       }
+      if (provider !== "direct") saveJson(output, "budget.json", budget.entries);
       try {
-        result = await retrieve(url, provider);
-        // Never publish request headers, cookies or provider credentials.
-        result.body = result.body.replace(/\b(?:\d{1,3}\.){3}\d{1,3}\b/g, "[IP redacted]");
-        result.text = result.text.replace(/\b(?:\d{1,3}\.){3}\d{1,3}\b/g, "[IP redacted]");
+        result = await retrieve(url, provider, process.env, config.sourceOptions?.[source.id] || {});
+        // Preserve public source text, including dotted terms-clause numbers.
+        // Request headers and credentials are never added to the capture.
         attempts.push({ provider, status: result.status });
         writeFileSync(join(output, `${source.id}-${provider}.txt`), result.text);
         writeFileSync(join(output, `${source.id}-${provider}.source.txt`), result.body);
-        if (result.status === "ok" || result.status === "login_required") break;
       } catch (error) {
         attempts.push({ provider, status: "error", error: error.name === "TimeoutError" ? "timeout" :
           /^[a-z_]+\d*$/.test(error.message) ? error.message : "request_failed" });
+        result = undefined;
+        continue;
       }
+      // Storage failure is fatal: do not extract or publish uncaptured evidence.
+      const capture = archiveCapture(output, { id: source.id, operatorId: operator.slug, url }, provider, result);
+      manifest.captures.push(capture);
+      saveJson(output, "manifest.json", manifest);
+      if (result.status === "ok" || result.status === "login_required") break;
     }
     const record = { id: source.id, url, finalUrl: result?.finalUrl || url, checkedAt: observedAt,
       status: result?.status || "failed", provider: attempts.findLast(attempt => attempt.status === "ok")?.provider || null, attempts };
@@ -68,7 +77,7 @@ for (const operator of operators) {
         record.fields = validQuotes(result.text, extract(result.text));
         record.extractor = "deterministic";
         metrics.deterministicFields += Object.values(record.fields).filter(quotes => quotes.length).length;
-        if (process.env.MONITOR_USE_MODEL === "true" && process.env.MONITOR_MODEL_URL &&
+        if (process.env.MONITOR_USE_PASSAGE_MODEL === "true" && process.env.MONITOR_MODEL_URL &&
             process.env.MONITOR_MODEL_KEY && process.env.MONITOR_MODEL &&
             Object.values(record.fields).filter(quotes => quotes.length).length < 2 &&
             budget.reserve("model", config.costUpperBounds?.model)) {
@@ -88,6 +97,7 @@ for (const operator of operators) {
         extractor: record.extractor, extractorVersion: VERSION };
     } else { metrics.failed++; }
     sources.push(record);
+    manifest.sources.push({ operatorId: operator.slug, ...record });
     console.log(`${operator.slug} ${source.id}: ${record.status} (${record.provider || "no readable response"})`);
   }
   const result = aggregate(operator, sources, previous.operators.find(record => record.slug === operator.slug), observedAt);
@@ -113,10 +123,13 @@ const latest = {
   events: [...events, ...(previous.events || [])].slice(0, 500),
   runs: [summary, ...(previous.runs || [])].slice(0, 90),
 };
-write("src/_data/monitor.json", latest);
-write(`data/monitor/runs/${runId}.json`, { summary, events, operators: records });
+if (process.env.MONITOR_STAGE_ONLY !== "true") {
+  write("src/_data/monitor.json", latest);
+  write(`data/monitor/runs/${runId}.json`, { summary, events, operators: records });
+}
 write(join(output, "summary.json"), summary);
 write(join(output, "monitor.json"), latest);
+saveJson(output, "manifest.json", { ...manifest, completedAt: new Date().toISOString() });
 if (!metrics.readable) process.exitCode = 1;
 const report = [
   "# Daily operator collection", "",
@@ -129,9 +142,10 @@ const report = [
   "| --- | ---: | ---: |",
   ...records.map(record => `| ${record.name} | ${record.sources.filter(source => source.status === "ok").length}/${record.sources.length} | ${Object.values(record.fields).filter(field => ["observed", "partial"].includes(field.status)).length}/${Object.keys(FIELDS).length} |`),
   "", "Extraction coverage is not factual accuracy. Source passages are not independently verified outcomes.",
-  "Full source captures are Actions artifacts, accessible according to repository permissions. They are not published as site pages.",
+  "Full source captures are stored in the private S3 archive. They are not published as site pages or public Actions artifacts.",
 ];
 writeFileSync(join(output, "evaluation.md"), report.join("\n") + "\n");
+uploadDirectory(output);
 if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, report.join("\n") + "\n");
 if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, `capture_path=${output}\nreadable=${metrics.readable}\n`);
 console.log(JSON.stringify(summary, null, 2));

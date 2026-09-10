@@ -1,0 +1,95 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { readableText } from "./core.mjs";
+import { archiveCapture, readCapture, uploadFile } from "./archive.mjs";
+import { deterministicExtract, checkExtraction, comparableOffer, changeSignals } from "./numeric-core.mjs";
+import { firecrawlOptions } from "./providers.mjs";
+
+const pages = text => [{ sourceId: "faq", text }];
+test("numeric extraction survives HTML wrapper changes", () => {
+  const text = "Buy this package for $20 and receive 40 SC.";
+  const a = deterministicExtract(pages(readableText(`<main><p>${text}</p></main>`)));
+  const b = deterministicExtract(pages(readableText(`<article class="new"><div>${text}</div></article>`)));
+  assert.deepEqual(a, b);
+  assert.equal(a.offers[0].priceUsd, 20);
+  assert.equal(a.offers[0].immediateSc, 40);
+  assert.equal(checkExtraction(a, pages(text)).rejected.length, 0);
+});
+test("paid staged total cannot be used as immediate daily reward", () => {
+  const data = deterministicExtract(pages("$44 purchase provides 144 SC over 30 days."));
+  assert.equal(data.offers[0].totalSc, 144);
+  assert.equal(data.offers[0].immediateSc, null);
+  assert.equal(comparableOffer(data.offers[0]), false);
+});
+test("cap is not a daily bonus and multi-amount welcome is not flattened", () => {
+  assert.equal(deterministicExtract(pages("Daily redemption rewards have a maximum limit of 9,550 SC.")).offers.length, 0);
+  assert.equal(deterministicExtract(pages("Your welcome offer: $20 purchase = 40 SC plus 25 SC over 8 days.")).offers.length, 0);
+});
+test("grounding rejects invented numeric values even when quote matches", () => {
+  const input = pages("The minimum redemption is 50 SC for eligible players.");
+  const data = deterministicExtract(input);
+  data.facts[0].value = 100;
+  const result = checkExtraction(data, input);
+  assert.equal(result.accepted.facts.length, 0);
+  assert.equal(result.rejected[0].reason, "number_not_in_quote");
+});
+test("playthrough written as one time supports a numeric multiplier", () => {
+  const input = pages("Sweeps Coins must be played once before redemption.");
+  const data = deterministicExtract(input);
+  const quote = "Sweeps Coins must be played one time before redemption.";
+  data.facts[0].quote = quote;
+  assert.equal(checkExtraction(data, pages(quote)).accepted.facts[0].value, 1);
+});
+test("price discounts cannot be classified as extra coin percentages", () => {
+  for (const suffix of ["67% discount on first purchase.", "67 percent off."]) {
+    const input = pages(`Buy this package for $9.99 and receive 30 SC. ${suffix}`);
+    const data = deterministicExtract(input);
+    data.offers[0].advertisedExtraPercent = 67;
+    assert.equal(checkExtraction(data, input).rejected[0].reason, "discount_is_not_extra_coins");
+    assert.equal(checkExtraction(data, input).accepted.offers.length, 0);
+  }
+  const input = pages("Buy this package for $9.99 and receive 30 SC with 67% extra coins.");
+  const data = deterministicExtract(input);
+  data.offers[0].advertisedExtraPercent = 67;
+  assert.equal(checkExtraction(data, input).accepted.offers.length, 1);
+});
+test("schema rejects invented fields and wrong unit/field combinations", () => {
+  const input = pages("The minimum redemption is 50 SC for eligible players.");
+  const data = deterministicExtract(input);
+  data.facts[0].unit = "hours";
+  assert.equal(checkExtraction(data, input).rejected[0].reason, "wrong_unit");
+  data.facts[0].invented = true;
+  assert.throws(() => checkExtraction(data, input), /invalid_extraction_schema/);
+});
+test("archive retains HTML and Markdown and detects corruption", () => {
+  const directory = mkdtempSync(join(tmpdir(), "sci-test-"));
+  try {
+    const entry = archiveCapture(directory, { id: "faq", operatorId: "example", url: "https://example.com" }, "firecrawl",
+      { text: "Content", body: "Content", html: "<main>Content</main>", rawHtml: "<body>Content</body>",
+        markdown: "Content", status: "ok", capturedAt: "2026-09-01T00:00:00Z" }, {});
+    const capture = readCapture(directory, entry);
+    assert.equal(capture.html, "<main>Content</main>");
+    assert.equal(capture.markdown, "Content");
+    assert.equal(capture.capturedAt, "2026-09-01T00:00:00Z");
+    writeFileSync(join(directory, entry.path), "corrupted");
+    assert.throws(() => readCapture(directory, entry), /capture_hash_mismatch/);
+    assert.throws(() => uploadFile(directory, join(directory, entry.path), { CI: "true" }), /archive_bucket_required/);
+  } finally { rmSync(directory, { recursive: true, force: true }); }
+});
+test("Firecrawl returns both replayable original HTML and main-content Markdown", () => {
+  assert.deepEqual(firecrawlOptions("https://example.com").formats, ["markdown", "html", "rawHtml", "links"]);
+  assert.equal(firecrawlOptions("https://example.com").onlyMainContent, true);
+  assert.equal(firecrawlOptions("https://example.com", false).onlyMainContent, false);
+  assert.equal(firecrawlOptions("https://example.com").maxAge, 0);
+});
+test("identical replay ignores extraction timestamps; missing is not expired", () => {
+  const current = { operators: [{ slug: "example", offers: [{ name: "offer", capturedAt: "old" }], facts: [], statements: [] }] };
+  const next = structuredClone(current);
+  next.operators[0].offers[0].capturedAt = "new";
+  assert.deepEqual(changeSignals(current, next), []);
+  next.operators[0].offers = [];
+  assert.equal(changeSignals(current, next)[0].type, "not_reconfirmed");
+});

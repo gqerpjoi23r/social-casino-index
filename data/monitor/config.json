@@ -1,4 +1,5 @@
 {
+  "budget": { "dailyUsd": 12, "weeklyUsd": 50 },
   "sourceOverrides": {
     "zonko-notice": "https://www.zonko.com/help/faq/",
     "chumba-notice": "https://www.chumbacasino.com/getting-started/redeem-prizes"
