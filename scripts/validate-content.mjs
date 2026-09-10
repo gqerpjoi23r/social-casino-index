@@ -136,6 +136,25 @@ for (const [index, operator] of operators.entries()) {
     failures++;
   }
   slugs.add(operator.slug);
+  const pv = operator.playerValue;
+  const sourceIds = new Set(operator.sources?.map(source => source.id));
+  for (const key of ["signup", "daily", "firstPurchase", "cashMinimum", "giftCardMinimum", "playthrough"]) {
+    const field = pv?.[key];
+    if (!field?.display ||
+        !["operator_stated", "unverified", "conflicting", "not_applicable"].includes(field.status) ||
+        !Array.isArray(field.sourceIds) ||
+        field.sourceIds.some(id => !sourceIds.has(id)) ||
+        (field.status === "operator_stated" && (field.value == null || !field.sourceIds.length)) ||
+        (field.status !== "operator_stated" && field.value != null)) {
+      console.error(`FAIL operators.json ${operator.slug}: invalid playerValue.${key}`);
+      failures++;
+    }
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(pv?.checkedAt || "") ||
+      !["sweepstakes", "unverified", "entertainment_only"].includes(pv?.productMode)) {
+    console.error(`FAIL operators.json ${operator.slug}: invalid playerValue metadata`);
+    failures++;
+  }
   if (!/^\d{4}-\d{2}-\d{2}$/.test(operator.verifiedAt || "")) {
     console.error(`FAIL operators.json ${operator.slug}: verifiedAt must be an ISO date`);
     failures++;

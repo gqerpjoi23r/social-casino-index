@@ -121,11 +121,29 @@ table.data th:last-child, table.data td:last-child { width: 7rem; }
 @media (max-width: 560px) { table.data { min-width: 34rem; } }
 
 /* ---------- Operator comparisons ---------- */
-@utility comparison-grid { @apply grid grid-cols-1 gap-4 lg:grid-cols-2; }
+@utility comparison-grid { @apply grid grid-cols-1 gap-4; }
 @utility operator-card { @apply relative flex flex-col rounded-lg border border-base-300 bg-base-200 p-5 transition-colors hover:border-brand/60; }
-.operator-card-link { @apply absolute inset-0 z-10 rounded-lg; }
 .operator-card h3 { @apply m-0 font-serif text-2xl font-semibold; }
 .operator-card h3 a { @apply text-base-content no-underline hover:text-brand; }
+.operator-heading { @apply flex flex-wrap items-center justify-between gap-3; }
+.product-note { @apply mb-0 mt-3 text-sm text-accent; }
+.player-values { @apply my-5 grid grid-cols-1 gap-5 md:grid-cols-3; }
+.value-group { @apply min-w-0 border-t border-base-content/15 pt-3; }
+.value-group h3, .operator-card .value-group h3 { @apply m-0 mb-4 flex items-center gap-2 font-sans text-base font-semibold; }
+.value-group h3 i { @apply text-brand; }
+.value-field + .value-field { @apply mt-4; }
+.value-field dt, .operator-secondary dt { @apply text-xs font-semibold text-base-content/65; }
+.value-field dd { @apply m-0 mt-1; }
+.value-number { @apply block text-lg font-semibold leading-snug; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.value-unknown { @apply text-base font-medium text-base-content/60; }
+.value-condition { @apply mt-1 block text-sm leading-relaxed text-base-content/70; }
+.value-sources { @apply mt-1 block text-xs; }
+.operator-details { @apply border-t border-base-content/15 pt-3 text-sm; }
+.operator-details summary { @apply cursor-pointer text-base-content/70; }
+.operator-details summary:focus-visible { @apply outline-2 outline-offset-4 outline-brand; }
+.operator-details p { @apply mt-3 text-base-content/65; }
+.operator-secondary { @apply mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2; }
+.operator-secondary dd { @apply mt-1 text-base-content/80; overflow-wrap: anywhere; }
 .operator-favicon { @apply h-8 w-8 flex-none rounded-md; }
 .operator-fit { @apply mt-2 text-[15px] text-base-content/70; }
 @utility fact-grid { @apply my-4 grid grid-cols-1 gap-px overflow-hidden rounded-md border border-base-300 bg-base-300 sm:grid-cols-2; }

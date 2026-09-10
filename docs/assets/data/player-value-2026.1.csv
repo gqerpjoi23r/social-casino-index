@@ -1,0 +1,61 @@
+operator,product_mode,checked_at,attribute,display,value_json,status,conditions,source_urls
+Jackpota,entertainment_only,2026-09-10,signup,Not applicable,null,not_applicable,Ordinary Gold Coin play has no prize redemption.,https://www.jackpota.com/terms-of-service
+Jackpota,entertainment_only,2026-09-10,daily,Not applicable,null,not_applicable,Free Gold Coins every 24 hours; amount not verified. Gold Coins have no cash value.,https://www.jackpota.com/terms-of-service | https://www.jackpota.com/
+Jackpota,entertainment_only,2026-09-10,firstPurchase,Not applicable,null,not_applicable,Ordinary Gold Coin play has no prize redemption.,https://www.jackpota.com/terms-of-service
+Jackpota,entertainment_only,2026-09-10,cashMinimum,Not applicable,null,not_applicable,Ordinary Gold Coin play has no prize redemption.,https://www.jackpota.com/terms-of-service
+Jackpota,entertainment_only,2026-09-10,giftCardMinimum,Not applicable,null,not_applicable,Ordinary Gold Coin play has no prize redemption.,https://www.jackpota.com/terms-of-service
+Jackpota,entertainment_only,2026-09-10,playthrough,Not applicable,null,not_applicable,Ordinary Gold Coin play has no prize redemption.,https://www.jackpota.com/terms-of-service
+Lucky Bunny,unverified,2026-09-10,signup,Not verified,null,unverified,,
+Lucky Bunny,unverified,2026-09-10,daily,Not verified,null,unverified,,
+Lucky Bunny,unverified,2026-09-10,firstPurchase,Not verified,null,unverified,Public Quick Buy packages are not a verified first-purchase promotion.,
+Lucky Bunny,unverified,2026-09-10,cashMinimum,Not verified,null,unverified,,
+Lucky Bunny,unverified,2026-09-10,giftCardMinimum,Not verified,null,unverified,,
+Lucky Bunny,unverified,2026-09-10,playthrough,Not verified,null,unverified,,
+YAY Casino,sweepstakes,2026-09-10,signup,Conflicting offers,null,conflicting,Homepage: 12 SC. Promotions page: 8 SC. No-purchase signup; verification required. Neither amount is confirmed.,https://www.yaycasino.com/ | https://www.yaycasino.com/promotions
+YAY Casino,sweepstakes,2026-09-10,daily,1 SC first claim,"{""firstClaimSc"":1,""intervalHours"":24}",operator_stated,"Claims every 24 hours, subject to an unpublished SC-balance threshold. Later streak amounts are not verified.",https://www.yaycasino.com/promotions | https://www.yaycasino.com/promotions/promo/online-casino-daily-login-bonus | https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf
+YAY Casino,sweepstakes,2026-09-10,firstPurchase,Not verified,null,unverified,,
+YAY Casino,sweepstakes,2026-09-10,cashMinimum,50 SC,"{""amountSc"":50}",operator_stated,Rules describe a minimum redeemable per day.,https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf
+YAY Casino,sweepstakes,2026-09-10,giftCardMinimum,Not verified,null,unverified,,
+YAY Casino,sweepstakes,2026-09-10,playthrough,"1x, with exceptions","{""multiplier"":1}",operator_stated,"Guide figure; rules allow variation by game, promotion and region. WAR does not contribute.",https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/ | https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf
+Dorados,sweepstakes,2026-09-10,signup,Not verified,null,unverified,,
+Dorados,sweepstakes,2026-09-10,daily,Not verified,null,unverified,,
+Dorados,sweepstakes,2026-09-10,firstPurchase,Promotion-specific,null,unverified,New participants; selected offer's conditions apply. Price and SC amount not publicly confirmed.,https://dorados.com/en/help-centre/bonuses-and-promotions/is-there-a-welcome-offer-for-new-players
+Dorados,sweepstakes,2026-09-10,cashMinimum,100 SC,"{""amountSc"":100}",operator_stated,General prize-redemption minimum in the rules.,https://www.dorados.com/en/sweepstakes-rules
+Dorados,sweepstakes,2026-09-10,giftCardMinimum,Not verified,null,unverified,,
+Dorados,sweepstakes,2026-09-10,playthrough,At least 1x,"{""minimumMultiplier"":1}",operator_stated,Operator may require more playthrough under section 9.3.,https://www.dorados.com/en/sweepstakes-rules
+Zonko,unverified,2026-09-10,signup,Not verified,null,unverified,,
+Zonko,unverified,2026-09-10,daily,Not verified,null,unverified,,
+Zonko,unverified,2026-09-10,firstPurchase,Not verified,null,unverified,,
+Zonko,unverified,2026-09-10,cashMinimum,Not verified,null,unverified,,
+Zonko,unverified,2026-09-10,giftCardMinimum,Not verified,null,unverified,,
+Zonko,unverified,2026-09-10,playthrough,Not verified,null,unverified,,
+Chumba Casino,sweepstakes,2026-09-10,signup,Not verified,null,unverified,,
+Chumba Casino,sweepstakes,2026-09-10,daily,Account eligibility applies,null,unverified,Daily login reward is for eligible players; amount and eligibility criteria are not publicly confirmed.,https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize
+Chumba Casino,sweepstakes,2026-09-10,firstPurchase,$10 + 30 SC,"{""priceUsd"":10,""amountSc"":30}",operator_stated,Advertised first-time Gold Coin package with free SC. Eligibility and checkout terms apply.,https://www.chumbacasino.com/
+Chumba Casino,sweepstakes,2026-09-10,cashMinimum,100 SC,"{""amountSc"":100}",operator_stated,Identity and bank verification required.,https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize
+Chumba Casino,sweepstakes,2026-09-10,giftCardMinimum,10 SC,"{""amountSc"":10}",operator_stated,,https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize
+Chumba Casino,sweepstakes,2026-09-10,playthrough,Not verified,null,unverified,,
+Pulsz,unverified,2026-09-10,signup,Not verified,null,unverified,,
+Pulsz,unverified,2026-09-10,daily,Not verified,null,unverified,,
+Pulsz,unverified,2026-09-10,firstPurchase,Promotion-specific,null,unverified,Offer eligibility and terms vary. Public price/SC pair not confirmed.,https://www.pulsz.com/terms-of-use
+Pulsz,unverified,2026-09-10,cashMinimum,Not verified,null,unverified,Help describes bank redemption but gives no minimum; promotional scope unresolved.,https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking | https://www.pulsz.com/terms-of-use
+Pulsz,unverified,2026-09-10,giftCardMinimum,Not verified,null,unverified,Help describes gift cards but gives no minimum; promotional scope unresolved.,https://support.pulsz.com/hc/en-us/articles/24820902593169-How-do-I-redeem-via-Gift-Card | https://www.pulsz.com/terms-of-use
+Pulsz,unverified,2026-09-10,playthrough,Not verified,null,unverified,,
+Stake.us,sweepstakes,2026-09-10,signup,Not verified,null,unverified,,
+Stake.us,sweepstakes,2026-09-10,daily,Daily; amount unverified,null,unverified,"Free daily Stake Cash is described, but a numeric amount is not established.",https://help.stake.us/en/articles/6453222-redeeming-rewards | https://help.stake.us/en/articles/6389246-sweep-coins-stake-cash
+Stake.us,sweepstakes,2026-09-10,firstPurchase,Not verified,null,unverified,,
+Stake.us,sweepstakes,2026-09-10,cashMinimum,Not verified,null,unverified,,
+Stake.us,sweepstakes,2026-09-10,giftCardMinimum,Not verified,null,unverified,,
+Stake.us,sweepstakes,2026-09-10,playthrough,3x purchase-linked SC,"{""multiplier"":3}",operator_stated,Only Stake Cash received with Gold Coin purchases; not a verified rule for all bonuses.,https://help.stake.us/en/articles/6465093-redemption-progress
+WOW Vegas,sweepstakes,2026-09-10,signup,2 SC on day one,"{""amountSc"":2,""purchaseRequired"":false}",operator_stated,"5 SC total over three days: 2 SC, then 1.5 SC on each of days two and three. Separate claims required.",https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works
+WOW Vegas,sweepstakes,2026-09-10,daily,Not verified,null,unverified,The three-day welcome sequence is not an ongoing daily bonus.,
+WOW Vegas,sweepstakes,2026-09-10,firstPurchase,$9.99 + 30 SC,"{""priceUsd"":9.99,""amountSc"":30,""promoCode"":""WOWBONUS2026""}",operator_stated,Code WOWBONUS2026; first purchase. Still advertised on a January 2026-labelled page checked September 10; checkout availability not verified.,https://www.wowvegas.com/promo-code
+WOW Vegas,sweepstakes,2026-09-10,cashMinimum,50 SC,"{""amountSc"":50}",operator_stated,,https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem
+WOW Vegas,sweepstakes,2026-09-10,giftCardMinimum,20 SC,"{""amountSc"":20}",operator_stated,,https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem
+WOW Vegas,sweepstakes,2026-09-10,playthrough,Not verified,null,unverified,Separate SC rules require login.,
+McLuck,unverified,2026-09-10,signup,SC amount not stated,null,unverified,Welcome help lists Gold Coins only. This does not establish a zero-SC offer.,https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players
+McLuck,unverified,2026-09-10,daily,Not verified,null,unverified,,
+McLuck,unverified,2026-09-10,firstPurchase,Account / promotion-specific,null,unverified,"Selected-customer eligibility, qualifying purchases and offer dates apply. No public price/SC pair confirmed.",https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players | https://support.mcluck.com/hc/en-us/articles/38182149192221-Why-am-I-not-eligible-for-a-promotion | https://www.mcluck.com/terms-of-service
+McLuck,unverified,2026-09-10,cashMinimum,Not verified,null,unverified,,
+McLuck,unverified,2026-09-10,giftCardMinimum,Not verified,null,unverified,,
+McLuck,unverified,2026-09-10,playthrough,Not verified,null,unverified,,

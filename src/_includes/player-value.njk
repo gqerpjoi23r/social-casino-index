@@ -1,0 +1,53 @@
+{% macro field(label, item, sourceLinks=false) %}
+<div class="value-field">
+  <dt>{{ label }}</dt>
+  <dd>
+    <strong class="value-number{% if item.status != 'operator_stated' %} value-unknown{% endif %}">{{ item.display }}</strong>
+    {% if item.conditions %}<span class="value-condition">{{ item.conditions }}</span>{% endif %}
+    {% if sourceLinks and item.sourceIds.length %}<span class="value-sources">{% for id in item.sourceIds %}<a href="#source-{{ id }}">Source {{ loop.index }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</span>{% endif %}
+  </dd>
+</div>
+{% endmacro %}
+
+{% macro benchmarks(op, sourceLinks=false) %}
+<div class="player-values">
+  <section class="value-group" aria-label="Free Sweeps Coins">
+    <h3><i class="ph ph-gift" aria-hidden="true"></i> Free SC</h3>
+    <dl>{{ field("No-purchase signup", op.playerValue.signup, sourceLinks) }}</dl>
+  </section>
+  <section class="value-group" aria-label="First-purchase offer">
+    <h3><i class="ph ph-coins" aria-hidden="true"></i> First purchase</h3>
+    <dl>{{ field("Package price + bonus SC", op.playerValue.firstPurchase, sourceLinks) }}</dl>
+  </section>
+  <section class="value-group" aria-label="Redemption requirements">
+    <h3><i class="ph ph-bank" aria-hidden="true"></i> Redemption</h3>
+    <dl>{{ field("Cash minimum", op.playerValue.cashMinimum, sourceLinks) }}{{ field("Gift-card minimum", op.playerValue.giftCardMinimum, sourceLinks) }}{{ field("Playthrough", op.playerValue.playthrough, sourceLinks) }}</dl>
+  </section>
+</div>
+{% endmacro %}
+
+{% macro operatorCard(op) %}
+<article class="operator-card">
+  <header class="operator-heading">
+    <div class="flex items-center gap-3">
+      <img class="operator-favicon" src="/assets/favicons/{{ op.slug }}{{ op.faviconExt }}" width="32" height="32" alt="" loading="lazy" decoding="async">
+      <h3><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></h3>
+    </div>
+    <a class="operator-full-terms" href="/redemption-times/{{ op.slug }}/">Full record <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+  </header>
+  {% if op.playerValue.productMode == "unverified" %}<p class="product-note">Prize-redemption model not verified from accessible current rules.</p>{% endif %}
+  {{ benchmarks(op) }}
+  <details class="operator-details">
+    <summary>Daily rewards, timing and source notes</summary>
+    <dl class="operator-secondary">
+      <div><dt>Daily reward</dt><dd>{{ op.playerValue.daily.display }}{% if op.playerValue.daily.conditions %}. {{ op.playerValue.daily.conditions }}{% endif %}</dd></div>
+      <div><dt>Published timing</dt><dd>{{ op.publishedEstimate }}</dd></div>
+      <div><dt>Methods</dt><dd>{{ op.methods }}</dd></div>
+      <div><dt>Games</dt><dd>{{ op.games }}</dd></div>
+      <div><dt>Identity checks</dt><dd>{{ op.kyc }}</dd></div>
+    </dl>
+    <p>{{ op.availability }}</p>
+    <p>Record reviewed {{ op.playerValue.checkedAt | readableDate }}. Published claims, not funded test results. <a href="/redemption-times/{{ op.slug }}/#sources">Sources and access limits</a>.</p>
+  </details>
+</article>
+{% endmacro %}

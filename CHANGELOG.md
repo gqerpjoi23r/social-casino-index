@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-10 - Player-first homepage benchmarks
+- Lead with signup SC, first-purchase price/SC and redemption minimums/playthrough. Move timing, games and verification details below; alphabetical listings are not rankings.
+- Publish the primary-source review with scoped conditions and explicit unknowns; separate entertainment-only Jackpota. Remove unsupported legacy amounts instead of substituting industry averages.
+- Operator pages and JSON share the same field-level evidence; add a player-value CSV while preserving the redemption CSV format. Existing eligibility routing remains unchanged.
+- Save first-party claim differences and unresolved product scopes in the dated internal research register; US public-page retrieval is not player eligibility verification.
+
 ## 2026-09-10 - Restore automatic Google Analytics
 - Restored GTM/GA4 tracking on every page after it was removed by mistake.
 - Kept the bottom analytics notice, consent panel and settings control removed.

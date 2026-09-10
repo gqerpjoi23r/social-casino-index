@@ -51,6 +51,22 @@ const outDir = join(root, "src/assets/data");
 mkdirSync(outDir, { recursive: true });
 const outFile = join(outDir, `redemption-times-${version}.csv`);
 writeFileSync(outFile, csv);
+const valueHeader = [
+  "operator", "product_mode", "checked_at", "attribute", "display",
+  "value_json", "status", "conditions", "source_urls",
+];
+const valueRows = operators.flatMap(op =>
+  ["signup", "daily", "firstPurchase", "cashMinimum", "giftCardMinimum", "playthrough"].map(key => {
+    const field = op.playerValue[key];
+    return [
+      op.name, op.playerValue.productMode, op.playerValue.checkedAt, key,
+      field.display, JSON.stringify(field.value), field.status, field.conditions,
+      field.sourceIds.map(id => op.sources.find(source => source.id === id).url).join(" | "),
+    ];
+  }),
+);
+writeFileSync(join(outDir, `player-value-${version}.csv`),
+  [valueHeader, ...valueRows].map(row => row.map(esc).join(",")).join("\n") + "\n");
 const jsonFile = join(outDir, `operators-${version}.json`);
 const editionDate = operators
   .flatMap((op) => [

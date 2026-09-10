@@ -8,15 +8,15 @@ layout: base.njk
 tags: ["operatorPages"]
 ogType: "article"
 eleventyComputed:
-  title: "{{ operator.name }} Redemption Time, Methods and Minimum"
-  description: "{{ operator.name }} redemption methods, published payout timing, minimum, verification, availability and source-linked terms."
+  title: "{{ operator.name }} Free SC, Offers and Redemption Requirements"
+  description: "{{ operator.name }} signup SC, first-purchase offer, redemption minimums and playthrough, with source-linked conditions and published payout terms."
   jsonld:
     "@context": "https://schema.org"
     "@graph":
       - "@type": "Article"
         "@id": "https://socialcasinoindex.com/redemption-times/{{ operator.slug }}/#article"
-        headline: "{{ operator.name }} Redemption Time and Player Terms"
-        description: "{{ operator.name }} redemption methods, published payout timing, minimum, verification, availability and source-linked terms."
+        headline: "{{ operator.name }} Offers and Redemption Requirements"
+        description: "{{ operator.name }} signup SC, first-purchase offer, redemption minimums and playthrough, with source-linked conditions."
         datePublished: "{{ operator.verifiedAt }}"
         dateModified: "{{ operator.verifiedAt }}"
         mainEntityOfPage: "https://socialcasinoindex.com/redemption-times/{{ operator.slug }}/"
@@ -51,22 +51,20 @@ eleventyComputed:
               "@type": "Answer"
               text: "Minimum: {{ operator.minRedemption }}. Methods: {{ operator.methods }}."
 ---
+{% from "player-value.njk" import benchmarks %}
 <main><article class="wrap py-10">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/redemption-times/">Redemption times</a></li><li><span aria-current="page">{{ operator.name }}</span></li></ol></nav>
-  <p class="eyebrow">Operator record · Verified {{ operator.verifiedAt | readableDate }}</p>
-  <h1 class="page-title">{{ operator.name }} Redemption Time and Player Terms</h1>
+  <p class="eyebrow">Operator record · Reviewed {{ operator.verifiedAt | readableDate }}</p>
+  <h1 class="page-title">{{ operator.name }} Offers and Redemption Requirements</h1>
   <p class="lede">{{ operator.summary }}</p>
-  <div class="answer-first">
-    <span class="af-label">Best for</span>
-    <p><strong>{{ operator.bestFor }}.</strong></p>
-    <p>Published timing: {{ operator.publishedEstimate }}. Minimum: {{ operator.minRedemption }}. Methods: {{ operator.methods }}.</p>
-  </div>
+  {{ benchmarks(operator, true) }}
+  <p class="text-sm text-base-content/60">Published claims, not measured results. “Not verified” does not mean zero. Offers and eligibility can change.</p>
   <h2>Funded test status</h2>
   <p>
 {% if operator.testStatus == "completed" %}
     <span class="badge completed"><i class="ph ph-seal-check" aria-hidden="true"></i> Completed funded test</span>
 {% elif operator.testStatus == "pending" %}
-    <span class="badge pending"><i class="ph ph-hourglass-medium" aria-hidden="true"></i> Funded test in progress</span>
+    <span class="badge pending"><i class="ph ph-hourglass-medium" aria-hidden="true"></i> Funded test pending</span>
 {% else %}
     <span class="badge nottested"><i class="ph ph-clock-clockwise" aria-hidden="true"></i> Not tested yet</span>
 {% endif %}
@@ -75,31 +73,25 @@ eleventyComputed:
   <p>We funded an account and timed a real redemption: {{ operator.observedResult.type }} redemption by {{ operator.observedResult.method }}, requested {{ operator.observedResult.requestedAt | readableDate }}, received {{ operator.observedResult.receivedAt | readableDate }} ({{ operator.observedResult.businessDays }} business days){% if operator.observedResult.notes %}. {{ operator.observedResult.notes }}{% endif %}.</p>
   <p class="text-sm text-base-content/60">Observed figures come from our own funded test and are shown separately from the operator's published terms below. A single test does not make a ranking; see the <a href="/methodology/">methodology</a>.</p>
 {% elif operator.testStatus == "pending" %}
-  <p>A funded redemption test with {{ operator.name }} is in progress. Until it completes, every figure on this page is a published term from the operator's own documents, not a measured result. <a href="/methodology/">How funded testing works</a>.</p>
+  <p>A funded redemption test with {{ operator.name }} is pending. No measured result is available. <a href="/methodology/">How funded testing works</a>.</p>
 {% else %}
   <p>We have not funded an account with {{ operator.name }} yet. Every figure on this page is a published term from the operator's own documents, not a measured result. <a href="/methodology/">How funded testing works</a>.</p>
 {% endif %}
-  <h2>Player value snapshot</h2>
+  <h2>Timing and other terms</h2>
   <dl class="detail-grid">
-    <div><dt>Current offer</dt><dd>{{ operator.offer }}</dd></div>
-    <div><dt>Daily value</dt><dd>{{ operator.dailyValue }}</dd></div>
-    <div><dt>Package value</dt><dd>{{ operator.packageValue }}</dd></div>
+    <div><dt>Daily reward</dt><dd>{{ operator.playerValue.daily.display }}{% if operator.playerValue.daily.conditions %}. {{ operator.playerValue.daily.conditions }}{% endif %}</dd></div>
+    <div><dt>Other package notes</dt><dd>{{ operator.packageValue }}</dd></div>
     <div><dt>Games</dt><dd>{{ operator.games }}</dd></div>
     <div><dt>First redemption</dt><dd>{{ operator.firstRedemption }}</dd></div>
     <div><dt>Repeat redemption</dt><dd>{{ operator.repeatRedemption }}</dd></div>
-    <div><dt>Playthrough</dt><dd>{{ operator.playthrough }}</dd></div>
     <div><dt>Identity checks</dt><dd>{{ operator.kyc }}</dd></div>
     <div><dt>Limits</dt><dd>{{ operator.limits }}</dd></div>
     <div><dt>Support</dt><dd>{{ operator.support }}</dd></div>
   </dl>
-  <h2>Strengths and tradeoffs</h2>
-  <div class="grid gap-5 sm:grid-cols-2">
-    <div><h3>Strengths</h3><ul class="tick-list">{% for item in operator.strengths %}<li class="good">{{ item }}</li>{% endfor %}</ul></div>
-    <div><h3>Tradeoffs</h3><ul class="tick-list">{% for item in operator.tradeoffs %}<li class="bad">{{ item }}</li>{% endfor %}</ul></div>
-  </div>
+  {% if operator.tradeoffs.length %}<h2>Limitations</h2><ul>{% for item in operator.tradeoffs %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
   <h2>Availability</h2>
   <p>{{ operator.availability }}</p>
-  {% if operator.restrictedStates.length %}<p><strong>Restricted states in the reviewed source:</strong> {{ operator.restrictedStates | join(", ") }}.</p>{% endif %}
+  {% if operator.restrictedStates.length %}<p><strong>Existing exclusions retained by the site's state gate:</strong> {{ operator.restrictedStates | join(", ") }}. This list was not reverified in the offer review and does not establish availability elsewhere.</p>{% endif %}
   <p>See how each closed state treats sweepstakes casinos in the <a href="/availability/#closed-states">state availability index</a>.</p>
   <h2>Compare payout methods</h2>
   <p>{{ operator.name }} redemption methods: {{ operator.methods }}. Compare the rails in detail: <a href="/guides/redemption-methods/bank-transfer/">bank transfer</a>, <a href="/guides/redemption-methods/gift-card/">gift card</a> and <a href="/guides/redemption-methods/crypto/">cryptocurrency</a>, or read the <a href="/research/sweepstakes-casino-redemption-times/">full redemption-time research</a>.</p>
@@ -110,12 +102,12 @@ eleventyComputed:
     <a class="cta-btn" href="/go/{{ operator.slug }}/">Visit {{ operator.name }} <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
   </div>
   {% endif %}
-  <h2>Sources and verification</h2>
+  <h2 id="sources">Sources and verification</h2>
   <p>
     <span class="badge {% if operator.verificationStatus == 'verified' %}complete{% else %}pending{% endif %}"><i class="ph ph-seal-check" aria-hidden="true"></i> {{ operator.verificationLabel }}</span>
     <span class="badge nottested"><i class="ph ph-clock-clockwise" aria-hidden="true"></i> Last checked {{ operator.verifiedAt | readableDate }}</span>
   </p>
-  <p class="text-sm text-base-content/60"><strong class="text-base-content/80">Coverage</strong> (the first badge) shows how much of this record we confirmed from the operator's public terms or sweepstakes rules. <strong class="text-base-content/80">Freshness</strong> (the second badge) is when it was last re-verified. Fields that could not be confirmed are labeled as not publicly verified.</p>
-  <ol class="sources">{% for source in operator.sources %}<li>{{ source.label }}. <a href="{{ source.url }}" rel="noopener">{{ source.url | replace("https://", "") }}</a>. <span class="accessed">Accessed {{ source.accessed | readableDate }}.</span></li>{% endfor %}</ol>
+  <p class="text-sm text-base-content/60">The review date records the evidence check, not a guarantee that every field was verified. Some public pages were retrieved from a US location to resolve regional access blocks; this does not establish player eligibility. Blocked pages document an evidence gap and do not support numeric claims.</p>
+  <ol class="sources">{% for source in operator.sources %}<li id="source-{{ source.id }}">{{ source.label }}. <a href="{{ source.url }}" rel="noopener">{{ source.url | replace("https://", "") }}</a>. <span class="accessed">Checked {{ source.accessed | readableDate }}.{% if source.access == "bot_blocked" %} Access blocked.{% elif source.access == "region_notice_only" %} Availability notice only; substantive terms unavailable.{% elif source.access == "login_required" %} Login required; rules not reviewed.{% endif %}</span></li>{% endfor %}</ol>
   <p class="byline mt-8"><a href="/redemption-times/">Compare all operators</a> · <a href="/methodology/">Methodology</a> · <a href="/disclosure/">Affiliate disclosure</a></p>
 </article></main>

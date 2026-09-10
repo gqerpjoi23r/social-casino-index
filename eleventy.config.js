@@ -67,6 +67,16 @@ export default function (eleventyConfig) {
     loadStates().filter((s) => s.status === "enforcement" && s.slug),
   );
 
+  const loadOperators = () =>
+    JSON.parse(readFileSync(new URL("./src/_data/operators.json", import.meta.url), "utf8"));
+  eleventyConfig.addCollection("comparisonOperators", () =>
+    loadOperators().filter((op) => op.playerValue.productMode !== "entertainment_only")
+      .sort((a, b) => a.name.localeCompare(b.name)),
+  );
+  eleventyConfig.addCollection("entertainmentOperators", () =>
+    loadOperators().filter((op) => op.playerValue.productMode === "entertainment_only"),
+  );
+
   return {
     dir: {
       input: "src",
