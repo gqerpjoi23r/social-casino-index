@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-10 - Ten-operator player-value evidence
+- Extended the authorized public-evidence pass from the first three operators to all ten indexed operators.
+- Added normalized attribute values, field-level sources and evidence statuses, plus a human-readable comparison matrix.
+- No accounts, purchases, funded tests, paid research, or production content changes; conflicts and unavailable numeric values remain explicit.
+
 ## 2026-09-10 - Phase-gated player-value plan
 - Replaced the unenforceable dollar-allocation dispatch with a mandatory scope gate.
 - Phase 1 now builds the shared evidence and engineering foundation, completes Jackpota, Lucky Bunny, and YAY Casino, and then stops for owner evaluation.

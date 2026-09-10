@@ -4,11 +4,11 @@
 
 Deliver a US-focused, evidence-backed comparison framework covering bonuses, daily rewards, packages, games, eligibility, account experience, and redemptions.
 
-Phase 1 establishes the shared research and engineering foundation, then completes records for the first three operators only: Jackpota, Lucky Bunny, and YAY Casino. Stop after the Phase 1 review package. Do not begin research for the remaining seven operators without explicit owner approval after evaluation.
+Phase 1 established the shared research foundation and completed the first three operator records: Jackpota, Lucky Bunny, and YAY Casino. The owner then authorized Phase 2 research for the remaining seven operators. The current evidence pass now covers all ten operators.
 
 Read `audit.md` for findings, citations, limitations, and recovered research. The priorities below are recommendations, not measured keyword rankings.
 
-Do not represent model or provider spending as reliably capped unless the execution environment enforces a real limit. Record observed usage and charges when available, but control Phase 1 through scope and a mandatory stop instead of a dollar allocation.
+Do not represent model or provider spending as reliably capped unless the execution environment enforces a real limit. Record observed usage and charges when available. Control work through explicit scope: complete the ten-operator public-evidence pass, deliver it for review, and stop before funded testing, paid research, expanded demand collection, or production implementation.
 
 No paid research was launched during the audit. Do not create accounts, accept operator terms, purchase packages, impersonate players, or send operator outreach without separate authorization.
 
@@ -23,24 +23,24 @@ The sequence below is operational only. It is not a ranking, endorsement, market
 | 1 | Jackpota | Phase 1 |
 | 2 | Lucky Bunny | Phase 1 |
 | 3 | YAY Casino | Phase 1 |
-| 4 | Dorados | Deferred |
-| 5 | Zonko | Deferred |
-| 6 | Chumba Casino | Deferred |
-| 7 | Pulsz | Deferred |
-| 8 | Stake.us | Deferred |
-| 9 | WOW Vegas | Deferred |
-| 10 | McLuck | Deferred |
+| 4 | Dorados | Phase 2 |
+| 5 | Zonko | Phase 2 |
+| 6 | Chumba Casino | Phase 2 |
+| 7 | Pulsz | Phase 2 |
+| 8 | Stake.us | Phase 2 |
+| 9 | WOW Vegas | Phase 2 |
+| 10 | McLuck | Phase 2 |
 
 ### Phase 1A: Foundation
 
 Complete these shared foundations before operator research:
 
 1. Inspect and index the recovered August 17 research and the September 9 audit evidence.
-2. Confirm the ten-operator roster, stable IDs, known product category, official domains, and unresolved classification questions. This is an inventory pass, not full research for operators 4-10.
+2. Confirm the ten-operator roster, stable IDs, known product category, official domains, and unresolved classification questions.
 3. Create the normalized operator, offer, condition, daily schedule, source, and claim contracts defined below.
 4. Establish evidence statuses, field-level source attachment, capture naming, hashes, retrieval timestamps, conflict handling, and freshness fields.
 5. Create the human-readable comparison matrix, conflict register, content-brief template, QA checklist, and execution-usage log.
-6. Define the full US query panel, then limit live collection to category-level foundation queries and brand modifiers for the first three operators.
+6. Define the full US query panel. Keep demand collection separate from the authorized ten-operator public-evidence pass.
 7. Reproduce ENG-01 and specify the shared eligibility data needed by all operators. Repair and test ENG-01 before any commercial routing is released.
 8. Resolve or explicitly hold the Phase 1 portions of ENG-02: funded-test status, product classification, neutral ordering, relationship disclosure, and author identity.
 
@@ -48,13 +48,17 @@ Complete these shared foundations before operator research:
 
 Complete the full record contract and player-benchmark fields for Jackpota, Lucky Bunny, and YAY Casino. Record inaccessible, account-specific, conflicting, and unknown fields explicitly. Apply the independent review requirements to all three records.
 
-Produce operator-specific briefs and a Phase 1 synthesis. Three records are insufficient for the plan's five-record cross-operator publication gate, so Phase 1 must not publish a market-wide bonuses or daily-rewards ranking.
+Produce the first three complete records and review the method before expanding it.
 
-### Mandatory Stop
+### Phase 2: Remaining Seven Operators
 
-After Phase 1, deliver the research records, raw-source inventory, conflict register, QA results, briefs, implementation status, actual elapsed time, request counts, token usage, and known charges. Then stop.
+After owner authorization, apply the same record contract to Dorados, Zonko, Chumba Casino, Pulsz, Stake.us, WOW Vegas, and McLuck. Preserve unknown values and conflicts rather than filling gaps from weak or account-specific claims.
 
-Do not research operators 4-10, expand the live query batch, create additional comparison pages, or consume more paid services until the owner reviews Phase 1 and explicitly authorizes the next phase. Allow at most one bounded retry per failed source. Do not silently switch providers or buy a subscription.
+### Current Review Stop
+
+The ten-operator public-evidence pass is complete. Deliver the normalized records, source inventory, comparison matrix, conflicts, limitations, QA result, implementation status, and known usage or charges. Then stop.
+
+Do not expand the live query batch, create accounts, fund tests, create comparison pages, change production data, or consume paid services without a new owner instruction. Allow at most one bounded retry per failed source. Do not silently switch providers or buy a subscription.
 
 ## A. Demand and Competitive Evidence
 
@@ -66,7 +70,7 @@ If the workflow uses GCP credentials, inspect the active identity with `gcloud a
 
 ### Keyword Panel
 
-Start with the following intent families. Define and deduplicate approximately 50 canonical queries for the long-term panel. During Phase 1, execute only the category-level foundation sample and operator-name modifiers for Jackpota, Lucky Bunny, and YAY Casino.
+Start with the following intent families. Define and deduplicate approximately 50 canonical queries for the long-term panel. Demand collection remains outside the completed ten-operator evidence pass unless separately authorized.
 
 | Family | Seed queries | Category / intent treatment |
 |---|---|---|
@@ -86,7 +90,7 @@ For Ads historical metrics use US geography, English, and Google Search network 
 
 For Trends, define the long-term design around anchored topic groups over 12 months and the latest 90 days. During Phase 1, run only a bounded foundation sample. Preserve geography, query/topic identity, timeframe, category, and search property. Use a shared anchor within connected groups; do not compare raw 0-100 values from independently normalized requests. Do not report a short-term spike as established durable demand.
 
-For Phase 1 SERPs, document the proposed full-panel design but run only the smallest batch needed to validate category intent, select competitor pages, and assess the first three operators. Record the exact request count and stop before broad state-localized or repeat collection. Use provider-supported location identifiers and record them. Do not claim state localization from `gl=us` alone.
+For a future SERP pass, run only the smallest batch needed to validate category intent and select competitor pages. Record the exact request count and stop before broad state-localized or repeat collection. Use provider-supported location identifiers and record them. Do not claim state localization from `gl=us` alone.
 
 Capture organic top ten, ads separately, PAA, related searches, and AI overview presence/citations when the response actually exposes them. Missing AI fields mean unavailable evidence, not "no AI overview." Preserve request settings, timestamps, response IDs, result URLs, and provider errors.
 
@@ -104,7 +108,7 @@ Output a query-to-page map with intent, category, geography, metric scope, obser
 
 ## B. Offer Evidence
 
-Phase 1 covers Jackpota, Lucky Bunny, and YAY Casino only. Use their existing source lists for discovery, then check current official rules, help pages, offer pages, and public lobbies. Partner status must not affect coverage depth. Do not begin field research for Dorados, Zonko, Chumba Casino, Pulsz, Stake.us, WOW Vegas, or McLuck during Phase 1.
+The completed evidence pass covers all ten operators. Use existing source lists for discovery, then check current official rules, help pages, offer pages, and public lobbies. Partner status must not affect coverage depth.
 
 For inaccessible public terms, record `not_publicly_accessible`. For personalized/account-only offers, record `account_specific` or `unverified` until legitimately available evidence exists. Do not create a player account, bypass access/location controls, or treat an affiliate headline as primary proof.
 
@@ -125,11 +129,11 @@ Use a status enum such as `operator_stated`, `observed`, `independently_tested`,
 
 Capture dated screenshots/document hashes where permitted. Keep raw pages, access tokens, and any private account material outside the public site repository. No identity documents or player financial records belong in public evidence files.
 
-**Acceptance:** three complete Phase 1 operator rows; every critical offer field either source-backed or explicitly unknown; all offer amounts distinguish currencies; all purchase requirements are visible; no claim implies guaranteed cash or profit; account-specific offers are never universalized.
+**Acceptance:** ten operator rows; every critical offer field either source-backed or explicitly unknown; all offer amounts distinguish currencies; all purchase requirements are visible; no claim implies guaranteed cash or profit; account-specific offers are never universalized.
 
 ## C. Other Player Benchmarks
 
-For the first three operators, record published game providers and a reproducible lobby sample rather than accepting an advertised total as an observed count. Capture device/mode and region when relevant. Do not imply all games share the same RTP or availability.
+For all ten operators, record published game/provider information and a reproducible public-lobby sample when accessible rather than accepting an advertised total as an observed count. Capture device/mode and region when relevant. Do not imply all games share the same RTP or availability.
 
 Record redemption minimum and fees by method, published support channels/hours, verification requirements, account closure/appeal routes, and published spending/session/exclusion controls. Label response time and successful closure as untested unless actually observed under authorized conditions.
 
@@ -152,7 +156,7 @@ Proposed publication service levels:
 - Check state exits and legal deadlines immediately before publication; review active deadlines daily.
 - Expire offers automatically at known end times. If the source disappears or freshness cannot be maintained, show stale/unverified status and remove current-offer promotion.
 
-These are future operating requirements, not work included in Phase 1. Estimate maintenance effort separately before promising a continuously maintained service. Preserve `checkedAt`, `effectiveAt`, `expiresAt`, and `updatedAt` as different concepts.
+These are future operating requirements, not work included in this evidence pass. Estimate maintenance effort separately before promising a continuously maintained service. Preserve `checkedAt`, `effectiveAt`, `expiresAt`, and `updatedAt` as different concepts.
 
 ## E. Editorial Backlog
 
@@ -225,10 +229,10 @@ Acceptance: baseline or explicitly unavailable status; no unsupported traffic/ci
 
 ## Delivery and Release Gates
 
-Phase 1 research delivery consists of the execution-usage log, scoped demand outputs, three operator/offer/source/claim records, comparison matrix, conflict register, operator briefs, and a review acceptance summary. The reviewer must approve critical claims before production use.
+The current research delivery consists of ten operator records, field-level source references, a comparison matrix, conflict and limitation notes, and a review acceptance summary. The reviewer must approve critical claims before production use.
 
 Implementation runs `npm run release` plus the new browser and data-consistency tests. Use a short-lived branch, update `CHANGELOG.md`, and commit only task files. Generate `docs/` through the build. Do not publish new rankings or legal assertions simply because release validation passes.
 
-Phase 1 implementation target: fix ENG-01 and the Phase 1 portions of ENG-02. Phase 1 research target: complete current records for Jackpota, Lucky Bunny, and YAY Casino using the shared foundation.
+The next implementation target remains ENG-01 and ENG-02. The completed research target is a public-evidence record for each of the ten operators using the shared foundation.
 
-Stop after the Phase 1 review package. The owner will decide whether to continue, change the method, reorder operators, or end the project.
+Stop after the ten-operator review package. The owner will decide whether to fund tests, change the method, authorize implementation, or end the project.
