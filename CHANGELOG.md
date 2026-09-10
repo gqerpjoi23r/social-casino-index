@@ -18,6 +18,7 @@ Format:
 - Fix publication staging of an ignored CSS source; keep normalized observations with capture artifacts for independent evaluation.
 - Tighten passage categories after first-run review, preserve decimal values and join PDF-wrapped paragraphs.
 - Add false-match regression tests and an exact-evidence / identical-replay evaluation. These checks do not establish semantic accuracy.
+- Gate subsequent publication on evidence/replay checks; update the monitor sitemap date from its latest readable run.
 
 ## 2026-09-10 - Daily public-source monitor
 - Add bounded daily collection for the existing ten operators, direct retrieval with Firecrawl fallback, evidence snapshots, stale-data retention and wording-change history.
