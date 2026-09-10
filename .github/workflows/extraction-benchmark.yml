@@ -1,0 +1,33 @@
+name: Offline extraction benchmark
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, codex/extraction-benchmark]
+    paths:
+      - "scripts/monitor/**"
+      - "data/monitor/benchmark/**"
+      - ".github/workflows/extraction-benchmark.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run monitor:test
+      - run: npm run monitor:benchmark
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extraction-benchmark
+          path: .monitor/benchmark/
+          include-hidden-files: true
+          retention-days: 30

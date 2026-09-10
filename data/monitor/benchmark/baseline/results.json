@@ -1,0 +1,382 @@
+{
+  "fixtureHash": "02ae0028afe8fb6e8f3d3be115b2e731fe3bc238b09936f9d21812a8a0ee7a86",
+  "captureRun": "2026-09-10T16-23-45-610Z-34501765851",
+  "extractor": "deterministic-1.1.1",
+  "scope": "Manually labelled excerpt topic and qualifier checks, not full-page recall or independently verified operator facts.",
+  "totals": {
+    "tp": 11,
+    "fp": 2,
+    "fn": 1,
+    "unsupported": 0,
+    "qualifiers": 30,
+    "retained": 28
+  },
+  "passed": 9,
+  "total": 12,
+  "precision": 0.8461538461538461,
+  "recall": 0.9166666666666666,
+  "cases": [
+    {
+      "id": "jackpota-documents",
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "unsupported": 0,
+      "qualifiers": 3,
+      "retained": 3,
+      "pass": true,
+      "errors": [],
+      "output": {
+        "welcome": [],
+        "daily": [],
+        "purchase": [],
+        "playthrough": [],
+        "minimum": [],
+        "timing": [],
+        "verification": [
+          "8.3** The documents required may include, but are not limited to, photo identification, such as a government issued passport or driver’s license; a utility bill that matches the address registered on Your User Account; and source of wealth or source of funds documentation such as a payslip or bank statement."
+        ],
+        "restrictions": []
+      }
+    },
+    {
+      "id": "lucky-bunny-shell",
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "unsupported": 0,
+      "qualifiers": 0,
+      "retained": 0,
+      "pass": true,
+      "errors": [],
+      "output": {
+        "welcome": [],
+        "daily": [],
+        "purchase": [],
+        "playthrough": [],
+        "minimum": [],
+        "timing": [],
+        "verification": [],
+        "restrictions": []
+      }
+    },
+    {
+      "id": "yay-daily-cap",
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "unsupported": 0,
+      "qualifiers": 3,
+      "retained": 3,
+      "pass": false,
+      "errors": [
+        "Unexpected topic: daily"
+      ],
+      "output": {
+        "welcome": [],
+        "daily": [
+          "The maximum daily limit of Sweeps Coins that yyou can request to redeem is less than equal to 9,550 Sweeps Coins."
+        ],
+        "purchase": [],
+        "playthrough": [],
+        "minimum": [
+          "The maximum daily limit of Sweeps Coins that yyou can request to redeem is less than equal to 9,550 Sweeps Coins."
+        ],
+        "timing": [],
+        "verification": [],
+        "restrictions": []
+      }
+    },
+    {
+      "id": "yay-hypothetical",
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "unsupported": 0,
+      "qualifiers": 0,
+      "retained": 0,
+      "pass": false,
+      "errors": [
+        "Unexpected topic: playthrough"
+      ],
+      "output": {
+        "welcome": [],
+        "daily": [],
+        "purchase": [],
+        "playthrough": [
+          "For example, if a Participant receives 100 Sweeps Coins and those Sweeps Coins have a Playthrough Requirement multiplier of 2x, a Participant must play games to an aggregate of 200 Sweeps Coins prior to those Sweeps Coins being eligible for redemption as a Prize."
+        ],
+        "minimum": [],
+        "timing": [],
+        "verification": [],
+        "restrictions": []
+      }
+    },
+    {
+      "id": "dorados-state-cap",
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "unsupported": 0,
+      "qualifiers": 3,
+      "retained": 3,
+      "pass": true,
+      "errors": [],
+      "output": {
+        "welcome": [],
+        "daily": [],
+        "purchase": [],
+        "playthrough": [],
+        "minimum": [
+          "12.2 If you are located in Florida, the maximum value of any single Prize you may redeem is limited to US$5,000. Any redemption request exceeding this amount will be adjusted so that the total value does not surpass US$5,000."
+        ],
+        "timing": [],
+        "verification": [],
+        "restrictions": []
+      }
+    },
+    {
+      "id": "zonko-paid-month",
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "unsupported": 0,
+      "qualifiers": 3,
+      "retained": 3,
+      "pass": true,
+      "errors": [],
+      "output": {
+        "welcome": [],
+        "daily": [],
+        "purchase": [
+          "$44 purchase → 144 SC over 30 days"
+        ],
+        "playthrough": [],
+        "minimum": [],
+        "timing": [],
+        "verification": [],
+        "restrictions": []
+      }
+    },
+    {
+      "id": "chumba-method-minimums",
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "unsupported": 0,
+      "qualifiers": 5,
+      "retained": 5,
+      "pass": true,
+      "errors": [],
+      "output": {
+        "welcome": [],
+        "daily": [],
+        "purchase": [],
+        "playthrough": [],
+        "minimum": [
+          "Minimum redemption threshold of 100 SC applies to the \"Cash Prize\" Redemption option.<br>- Minimum redemption threshold of 10 SC applies to the Gift Card Redemption option."
+        ],
+        "timing": [
+          "Minimum redemption threshold of 100 SC applies to the \"Cash Prize\" Redemption option.<br>- Minimum redemption threshold of 10 SC applies to the Gift Card Redemption option."
+        ],
+        "verification": [],
+        "restrictions": []
+      }
+    },
+    {
+      "id": "pulsz-gift-method",
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "unsupported": 0,
+      "qualifiers": 1,
+      "retained": 1,
+      "pass": true,
+      "errors": [],
+      "output": {
+        "welcome": [],
+        "daily": [],
+        "purchase": [],
+        "playthrough": [],
+        "minimum": [],
+        "timing": [
+          "Step 2**. Select “Redeem as Gift Card”"
+        ],
+        "verification": [],
+        "restrictions": []
+      }
+    },
+    {
+      "id": "stake-purchase-limit",
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "unsupported": 0,
+      "qualifiers": 0,
+      "retained": 0,
+      "pass": true,
+      "errors": [],
+      "output": {
+        "welcome": [],
+        "daily": [],
+        "purchase": [],
+        "playthrough": [],
+        "minimum": [],
+        "timing": [],
+        "verification": [],
+        "restrictions": []
+      }
+    },
+    {
+      "id": "wow-staged-welcome",
+      "tp": 1,
+      "fp": 0,
+      "fn": 1,
+      "unsupported": 0,
+      "qualifiers": 5,
+      "retained": 3,
+      "pass": false,
+      "errors": [
+        "Missing topic: welcome",
+        "Missing qualifier: welcome: SC 5",
+        "Missing qualifier: welcome: first three days"
+      ],
+      "output": {
+        "welcome": [],
+        "daily": [],
+        "purchase": [
+          "Your sign-up bonus of 250,000 WOW Coins + SC 5 Free will be credited automatically over your first three days. To unlock the additional 1,500,000 WOW Coins + FREE SC 30, make your first purchase of just $9.99."
+        ],
+        "playthrough": [],
+        "minimum": [],
+        "timing": [],
+        "verification": [],
+        "restrictions": []
+      }
+    },
+    {
+      "id": "wow-method-minimums",
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "unsupported": 0,
+      "qualifiers": 5,
+      "retained": 5,
+      "pass": true,
+      "errors": [],
+      "output": {
+        "welcome": [],
+        "daily": [],
+        "purchase": [],
+        "playthrough": [],
+        "minimum": [
+          "Check your balance – The minimum redemption amount for cash prize is SC 50 and SC 20 for gift cards."
+        ],
+        "timing": [
+          "Check your balance – The minimum redemption amount for cash prize is SC 50 and SC 20 for gift cards."
+        ],
+        "verification": [],
+        "restrictions": []
+      }
+    },
+    {
+      "id": "mcluck-gold-welcome",
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "unsupported": 0,
+      "qualifiers": 2,
+      "retained": 2,
+      "pass": true,
+      "errors": [],
+      "output": {
+        "welcome": [
+          "New players also qualify for a 150% EXTRA offer in our online store.",
+          "To say “welcome” to the McLuck.com family, we give you 5,000 Gold Coins."
+        ],
+        "daily": [],
+        "purchase": [],
+        "playthrough": [],
+        "minimum": [],
+        "timing": [],
+        "verification": [],
+        "restrictions": []
+      }
+    }
+  ],
+  "provenance": [
+    {
+      "id": "jackpota-documents",
+      "source": "jackpota-terms-firecrawl.txt",
+      "captureHash": "5c9c4eb21a7f3f1d96dbad51525df45e4c77db5e615f23ea9069c8dac79d38f4",
+      "excerptHash": "e04cfec7300bb0633114cc00d61e689ad873df45ac9adbf82c63d8d5403e3c4b"
+    },
+    {
+      "id": "lucky-bunny-shell",
+      "source": "lucky-bunny-home-firecrawl.txt",
+      "captureHash": "f699b1984e3d41c100b656553f09b239e342ba0b357d7b3a5a4b1073ea183f5b",
+      "excerptHash": "ca41f2ce44c556679d463f7067d20b1d9695542ddba7d597f95e2d8bc145bc51"
+    },
+    {
+      "id": "yay-daily-cap",
+      "source": "yay-rules-direct.txt",
+      "captureHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
+      "excerptHash": "20beacacd772d42fe996350be6819f40b4ffa65db68c08cef8ba9b42c3f34d9e"
+    },
+    {
+      "id": "yay-hypothetical",
+      "source": "yay-rules-direct.txt",
+      "captureHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
+      "excerptHash": "12d7d85d5d71d1a8bb0faf6cbb3641e47d767b81c11023ef7c79fbfc4582d5a6"
+    },
+    {
+      "id": "dorados-state-cap",
+      "source": "dorados-rules-firecrawl.txt",
+      "captureHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
+      "excerptHash": "6af3cb50582001d43dbe238df77e8899fe3cbe6a2141907f7455f25ceb438442"
+    },
+    {
+      "id": "zonko-paid-month",
+      "source": "zonko-notice-direct.txt",
+      "captureHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
+      "excerptHash": "813f3376c69659f5f2761329e2cb494b773fda39f4ccdb49493fe6397cd9f4c0"
+    },
+    {
+      "id": "chumba-method-minimums",
+      "source": "chumba-redeem-firecrawl.txt",
+      "captureHash": "c44aa52897cb07733b2dc521c0a0794e37df79b5f80ec0120e4445295c10eaa0",
+      "excerptHash": "f4f89d502833aad9f74cd876b9b5c9a6d7ab3dc788a1830c0d8422618bd41c11"
+    },
+    {
+      "id": "pulsz-gift-method",
+      "source": "pulsz-gift-firecrawl.txt",
+      "captureHash": "bcbf845524cef8d4ba836f9e6c29a59819113edb558219a3c13850993aac38c7",
+      "excerptHash": "810ef90980682b4998f582f4ea93029aee5c266876b11391c7e6b5d3541f9e7f"
+    },
+    {
+      "id": "stake-purchase-limit",
+      "source": "stake-terms-firecrawl.txt",
+      "captureHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
+      "excerptHash": "d4ccae8675f8ffa39627967c59a5bf8640f4f89683455cc8670707efaec128d7"
+    },
+    {
+      "id": "wow-staged-welcome",
+      "source": "wow-promo-direct.txt",
+      "captureHash": "b2df71304f65934e3fb60cb183faa0cafd9e684af7066906e90b3d7c9d1b71c6",
+      "excerptHash": "50de4891092e24e34164e32c7b5322198b668bc552b4d381bb5090801f603ce3"
+    },
+    {
+      "id": "wow-method-minimums",
+      "source": "wow-redeem-direct.txt",
+      "captureHash": "5dd3d2591dccc00242ef97378fa3142e45b47adadd0e3420186eadc0729110f5",
+      "excerptHash": "bcca5c5a9085ed5b12d7330b0ebc157eab225710b18032bda533e4b5aa13db59"
+    },
+    {
+      "id": "mcluck-gold-welcome",
+      "source": "mcluck-welcome-firecrawl.txt",
+      "captureHash": "c0c34b6e21ea35f22fdfa8e524f1d9ed64ad7cc18b8d4214dc08ed4c8d4ee1d6",
+      "excerptHash": "7cc14d8f79f763c1883ce5eeb4d609c2f977d566643e455822fc0f64fd5906ce"
+    }
+  ],
+  "provenanceChecked": true
+}

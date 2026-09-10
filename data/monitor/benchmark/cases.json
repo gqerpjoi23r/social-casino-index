@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "captureRun": "2026-09-10T16-23-45-610Z-34501765851",
+  "scope": "Manually labelled excerpt topic and qualifier checks, not full-page recall or independently verified operator facts.",
+  "cases": [
+    {
+      "id": "jackpota-documents",
+      "operator": "jackpota",
+      "source": "jackpota-terms-firecrawl.txt",
+      "text": "8.3** The documents required may include, but are not limited to, photo identification, such as a government issued passport or driver\u2019s license; a utility bill that matches the address registered on Your User Account; and source of wealth or source of funds documentation such as a payslip or bank statement.",
+      "expected": {"verification": ["may include", "utility bill", "source of wealth"]}
+    },
+    {
+      "id": "lucky-bunny-shell",
+      "operator": "lucky-bunny",
+      "source": "lucky-bunny-home-firecrawl.txt",
+      "text": "HomeVIP TiersAchievementsRefer a FriendProviders\nGet PackagesBoost Up Your Play!\nLobby\nLucky Bunny Choice\nBGaming Highlights\nHacksaw Collection",
+      "expected": {}
+    },
+    {
+      "id": "yay-daily-cap",
+      "operator": "yay",
+      "source": "yay-rules-direct.txt",
+      "text": "The maximum daily limit of Sweeps Coins that yyou can request to redeem is less than equal to 9,550 Sweeps Coins.",
+      "expected": {"minimum": ["maximum daily limit", "redeem", "9,550"]}
+    },
+    {
+      "id": "yay-hypothetical",
+      "operator": "yay",
+      "source": "yay-rules-direct.txt",
+      "text": "For example, if a Participant receives 100 Sweeps Coins and those Sweeps Coins have a Playthrough Requirement multiplier of 2x, a Participant must play games to an aggregate of 200 Sweeps Coins prior to those Sweeps Coins being eligible for redemption as a Prize.",
+      "expected": {},
+      "note": "An illustrative multiplier does not establish the actual playthrough requirement."
+    },
+    {
+      "id": "dorados-state-cap",
+      "operator": "dorados",
+      "source": "dorados-rules-firecrawl.txt",
+      "text": "12.2 If you are located in Florida, the maximum value of any single Prize you may redeem is limited to US$5,000. Any redemption request exceeding this amount will be adjusted so that the total value does not surpass US$5,000.",
+      "expected": {"minimum": ["Florida", "single Prize", "US$5,000"]}
+    },
+    {
+      "id": "zonko-paid-month",
+      "operator": "zonko",
+      "source": "zonko-notice-direct.txt",
+      "text": "$44 purchase \u2192 144 SC over 30 days",
+      "expected": {"purchase": ["$44", "144 SC", "over 30 days"]}
+    },
+    {
+      "id": "chumba-method-minimums",
+      "operator": "chumba",
+      "source": "chumba-redeem-firecrawl.txt",
+      "text": "Minimum redemption threshold of 100 SC applies to the \"Cash Prize\" Redemption option.<br>- Minimum redemption threshold of 10 SC applies to the Gift Card Redemption option.",
+      "expected": {"minimum": ["100 SC", "Cash Prize", "10 SC", "Gift Card"], "timing": ["Gift Card"]}
+    },
+    {
+      "id": "pulsz-gift-method",
+      "operator": "pulsz",
+      "source": "pulsz-gift-firecrawl.txt",
+      "text": "Step 2**. Select \u201cRedeem as Gift Card\u201d",
+      "expected": {"timing": ["Redeem as Gift Card"]}
+    },
+    {
+      "id": "stake-purchase-limit",
+      "operator": "stake",
+      "source": "stake-terms-firecrawl.txt",
+      "text": "g) The maximum Gold Coin purchase that can be made is USD $ 9,000 (nine thousand US dollars) per day.",
+      "expected": {},
+      "note": "A purchase ceiling is not a public purchase package."
+    },
+    {
+      "id": "wow-staged-welcome",
+      "operator": "wow",
+      "source": "wow-promo-direct.txt",
+      "text": "Your sign-up bonus of 250,000 WOW Coins + SC 5 Free will be credited automatically over your first three days. To unlock the additional 1,500,000 WOW Coins + FREE SC 30, make your first purchase of just $9.99.",
+      "expected": {"welcome": ["SC 5", "first three days"], "purchase": ["SC 30", "first purchase", "$9.99"]}
+    },
+    {
+      "id": "wow-method-minimums",
+      "operator": "wow",
+      "source": "wow-redeem-direct.txt",
+      "text": "Check your balance \u2013 The minimum redemption amount for cash prize is SC 50 and SC 20 for gift cards.",
+      "expected": {"minimum": ["cash prize", "SC 50", "SC 20", "gift cards"], "timing": ["gift cards"]}
+    },
+    {
+      "id": "mcluck-gold-welcome",
+      "operator": "mcluck",
+      "source": "mcluck-welcome-firecrawl.txt",
+      "text": "To say \u201cwelcome\u201d to the McLuck.com family, we give you 5,000 Gold Coins.\nNew players also qualify for a 150% EXTRA offer in our online store.",
+      "expected": {"welcome": ["5,000 Gold Coins", "150% EXTRA"]},
+      "note": "No numeric SC amount or package price is supported."
+    }
+  ]
+}
