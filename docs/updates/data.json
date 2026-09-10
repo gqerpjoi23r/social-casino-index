@@ -1,26 +1,26 @@
 {
   "schemaVersion": 1,
-  "lastAttemptedAt": "2026-09-10T16:19:55.046Z",
-  "lastReadableRunAt": "2026-09-10T16:19:55.046Z",
+  "lastAttemptedAt": "2026-09-10T16:23:45.610Z",
+  "lastReadableRunAt": "2026-09-10T16:23:45.610Z",
   "summary": {
-    "id": "2026-09-10T16-19-55-046Z-34501349086",
-    "observedAt": "2026-09-10T16:19:55.046Z",
-    "extractorVersion": "1.1.0",
-    "githubRunUrl": "https://github.com/gqerpjoi23r/social-casino-index/actions/runs/34501349086",
+    "id": "2026-09-10T16-23-45-610Z-34501765851",
+    "observedAt": "2026-09-10T16:23:45.610Z",
+    "extractorVersion": "1.1.1",
+    "githubRunUrl": "https://github.com/gqerpjoi23r/social-casino-index/actions/runs/34501765851",
     "metrics": {
       "attempted": 34,
-      "readable": 32,
-      "failed": 2,
-      "deterministicFields": 64,
+      "readable": 33,
+      "failed": 1,
+      "deterministicFields": 63,
       "modelFields": 0,
       "cached": 0
     },
     "operators": 10,
     "coveredFields": 48,
     "totalFields": 80,
-    "changes": 0,
-    "baselines": 48,
-    "spendingReservedUsd": 2.2000000000000006,
+    "changes": 10,
+    "baselines": 2,
+    "spendingReservedUsd": 4.4,
     "providerCalls": {
       "firecrawl": 22,
       "brightdata": 0,
@@ -32,12 +32,12 @@
       "slug": "jackpota",
       "name": "Jackpota",
       "productMode": "entertainment_only",
-      "checkedAt": "2026-09-10T16:19:55.046Z",
+      "checkedAt": "2026-09-10T16:23:45.610Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
-          "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "status": "stale",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": "2026-09-10T16:19:55.046Z",
           "quotes": [
             {
@@ -49,28 +49,28 @@
               "extractor": "deterministic"
             }
           ],
-          "note": "Operator source passages, not independently verified outcomes."
+          "note": "Previous evidence retained; not confirmed in this run."
         },
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "jackpota-home",
               "url": "https://www.jackpota.com/",
               "quote": "Our exclusive Gold Coins are up for grabs every day. You can get free Gold Coins by simply logging into your account every 24 hours, referring friends to our site, joining our community on social media, and more!",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "9457c96c6eff7d7ea310bc21cce25046ae3da59192cef1c7b7934857f2bb4228",
+              "observedAt": "2026-09-10T16:23:45.610Z",
+              "textHash": "881d09ee4b9e70bef499a670c093d7c61682b56047105ced28233d61ddcd3b51",
               "extractor": "deterministic"
             },
             {
               "sourceId": "jackpota-home",
               "url": "https://www.jackpota.com/",
               "quote": "“I got free coins every day just for logging in. Their games are legit, i've had some small wins, hoping to hit something big soon. I play with my husband, we both recommend Jackpota”",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "9457c96c6eff7d7ea310bc21cce25046ae3da59192cef1c7b7934857f2bb4228",
+              "observedAt": "2026-09-10T16:23:45.610Z",
+              "textHash": "881d09ee4b9e70bef499a670c093d7c61682b56047105ced28233d61ddcd3b51",
               "extractor": "deterministic"
             }
           ],
@@ -79,14 +79,14 @@
         "purchase": {
           "label": "Public purchase packages",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "jackpota-packages",
               "url": "https://support.jackpota.com/hc/en-us/articles/12669339478812-Gold-Coin-Packages",
               "quote": "Starting at $1.99:** Our packages begin at an affordable $1.99, providing accessible options for those who want to start with a smaller budget.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "9cf5e71fc093691c6ca31602170d50c129652979697ca8123daff23632b8c3b2",
               "extractor": "deterministic"
             },
@@ -94,7 +94,7 @@
               "sourceId": "jackpota-packages",
               "url": "https://support.jackpota.com/hc/en-us/articles/12669339478812-Gold-Coin-Packages",
               "quote": "Up to $99.99:** For our dedicated and enthusiastic gamers, we offer ultimate packages priced up to $99.99, delivering a premium gaming experience.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "9cf5e71fc093691c6ca31602170d50c129652979697ca8123daff23632b8c3b2",
               "extractor": "deterministic"
             }
@@ -104,7 +104,7 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -112,7 +112,7 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -120,7 +120,7 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -128,14 +128,14 @@
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "jackpota-terms",
               "url": "https://www.jackpota.com/terms-of-service",
               "quote": "8.3** The documents required may include, but are not limited to, photo identification, such as a government issued passport or driver’s license; a utility bill that matches the address registered on Your User Account; and source of wealth or source of funds documentation such as a payslip or bank statement.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "5c9c4eb21a7f3f1d96dbad51525df45e4c77db5e615f23ea9069c8dac79d38f4",
               "extractor": "deterministic"
             },
@@ -143,7 +143,7 @@
               "sourceId": "jackpota-terms",
               "url": "https://www.jackpota.com/terms-of-service",
               "quote": "4.4** You are required to keep Your personal details up to date. If You change Your address, email, phone number or any other contact details or personal information, please contact Customer Support, via the email provided herein. The name that You provide to us at registration must match any identification You provide for Your User Account verification.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "5c9c4eb21a7f3f1d96dbad51525df45e4c77db5e615f23ea9069c8dac79d38f4",
               "extractor": "deterministic"
             }
@@ -153,14 +153,14 @@
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "jackpota-terms",
               "url": "https://www.jackpota.com/terms-of-service",
               "quote": "3.4** You do not access the Games or Service from the states of Alabama, Connecticut, Delaware, Idaho, Indiana, Kentucky, Louisiana, Maine, Maryland, Michigan, Montana, Nevada, New Jersey, New York, Tennessee, Washington, West Virginia, or any jurisdiction outside the United States or as otherwise posted within these Terms or on the Platform (the “Prohibited Territories”). Certain promotions may have additional eligibility requirements which will be set forth in the respective promotion rules;",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "5c9c4eb21a7f3f1d96dbad51525df45e4c77db5e615f23ea9069c8dac79d38f4",
               "extractor": "deterministic"
             }
@@ -173,7 +173,7 @@
           "id": "jackpota-home",
           "url": "https://www.jackpota.com/",
           "finalUrl": "https://www.jackpota.com/",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -186,14 +186,14 @@
               "status": "ok"
             }
           ],
-          "textHash": "9457c96c6eff7d7ea310bc21cce25046ae3da59192cef1c7b7934857f2bb4228",
+          "textHash": "881d09ee4b9e70bef499a670c093d7c61682b56047105ced28233d61ddcd3b51",
           "extractor": "deterministic"
         },
         {
           "id": "jackpota-terms",
           "url": "https://www.jackpota.com/terms-of-service",
           "finalUrl": "https://www.jackpota.com/terms-of-service",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -213,7 +213,7 @@
           "id": "jackpota-packages",
           "url": "https://support.jackpota.com/hc/en-us/articles/12669339478812-Gold-Coin-Packages",
           "finalUrl": "https://support.jackpota.com/hc/en-us/articles/12669339478812-Gold-Coin-Packages",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -235,12 +235,12 @@
       "slug": "lucky-bunny",
       "name": "Lucky Bunny",
       "productMode": "unverified",
-      "checkedAt": "2026-09-10T16:19:55.046Z",
+      "checkedAt": "2026-09-10T16:23:45.610Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -248,7 +248,7 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -256,7 +256,7 @@
         "purchase": {
           "label": "Public purchase packages",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -264,7 +264,7 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -272,7 +272,7 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -280,7 +280,7 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -288,7 +288,7 @@
         "verification": {
           "label": "Verification requirements",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -296,7 +296,7 @@
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -307,7 +307,7 @@
           "id": "lucky-bunny-home",
           "url": "https://luckybunny.fun/",
           "finalUrl": "https://luckybunny.fun/",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -329,27 +329,27 @@
       "slug": "yay-casino",
       "name": "YAY Casino",
       "productMode": "sweepstakes",
-      "checkedAt": "2026-09-10T16:19:55.046Z",
+      "checkedAt": "2026-09-10T16:23:45.610Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "yay-promotions",
               "url": "https://www.yaycasino.com/promotions",
               "quote": "When you sign up at Yay Casino, in the lobby page search for the Yay Devil Fire 2 game. Click on the game and you will be able to play the 20 free spins. Note: the 20 free spins are eligible only for the Yay Devil Fire 2 game",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "8806c765b4b0290716055b067b3e740a35691f0fa3daea73dd7e62f51b8ff0d4",
               "extractor": "deterministic"
             },
             {
               "sourceId": "yay-promotions",
               "url": "https://www.yaycasino.com/promotions",
-              "quote": "How do I claim my 20 free spins from the Yay Casino sign up bonus?",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "quote": "Log in and claim your sign-up bonus offer: 80,000 GC + 8 SC and 20 free spins (value of 0.1 SC/spin) on Yay Devil Fire 2",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "8806c765b4b0290716055b067b3e740a35691f0fa3daea73dd7e62f51b8ff0d4",
               "extractor": "deterministic"
             }
@@ -359,14 +359,14 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "yay-home",
               "url": "https://www.yaycasino.com/",
               "quote": "Log in to our social casino platform daily to collect your free Gold Coins and Sweeps Coins.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "11c2d3ad4b29e429801d5023418ac5a574599a74920223ff9a29d40ff84a277c",
               "extractor": "deterministic"
             },
@@ -374,7 +374,7 @@
               "sourceId": "yay-promotions",
               "url": "https://www.yaycasino.com/promotions",
               "quote": "Collect your first daily bonus of 10,000 GC and 1 SC for free.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "8806c765b4b0290716055b067b3e740a35691f0fa3daea73dd7e62f51b8ff0d4",
               "extractor": "deterministic"
             },
@@ -382,7 +382,7 @@
               "sourceId": "yay-promotions",
               "url": "https://www.yaycasino.com/promotions",
               "quote": "Daily bonuses are available once per day, every 24 hours. Just log in and visit the Promotions section to collect yours.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "8806c765b4b0290716055b067b3e740a35691f0fa3daea73dd7e62f51b8ff0d4",
               "extractor": "deterministic"
             },
@@ -390,7 +390,7 @@
               "sourceId": "yay-daily",
               "url": "https://www.yaycasino.com/promotions/promo/online-casino-daily-login-bonus",
               "quote": "Claim Your Daily Bonus! Last Updated on: July, 2025",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "3c1030dac332b2eb8fa7999cc87278015152b50f9aa8b4539acc2348309f39ca",
               "extractor": "deterministic"
             },
@@ -398,7 +398,7 @@
               "sourceId": "yay-daily",
               "url": "https://www.yaycasino.com/promotions/promo/online-casino-daily-login-bonus",
               "quote": "🎁 Progressive Daily Bonuses – Free coins that grow every 24 hours (up to 7 days)",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "3c1030dac332b2eb8fa7999cc87278015152b50f9aa8b4539acc2348309f39ca",
               "extractor": "deterministic"
             },
@@ -406,7 +406,7 @@
               "sourceId": "yay-rules",
               "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
               "quote": "Daily entitlement (“Daily Bonus”); 4.5.4.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
               "extractor": "deterministic"
             },
@@ -414,7 +414,7 @@
               "sourceId": "yay-rules",
               "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
               "quote": "The maximum daily limit of Sweeps Coins that yyou can request to redeem is less than equal to 9,550 Sweeps Coins. 5.16.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
               "extractor": "deterministic"
             }
@@ -424,38 +424,22 @@
         "purchase": {
           "label": "Public purchase packages",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
         },
         "playthrough": {
           "label": "Playthrough",
-          "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "status": "partial",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
-            {
-              "sourceId": "yay-home",
-              "url": "https://www.yaycasino.com/",
-              "quote": "earn every month they play, not just once.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "11c2d3ad4b29e429801d5023418ac5a574599a74920223ff9a29d40ff84a277c",
-              "extractor": "deterministic"
-            },
-            {
-              "sourceId": "yay-home",
-              "url": "https://www.yaycasino.com/",
-              "quote": "they play, not just once. The more friends, the more you earn.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "11c2d3ad4b29e429801d5023418ac5a574599a74920223ff9a29d40ff84a277c",
-              "extractor": "deterministic"
-            },
             {
               "sourceId": "yay-rules",
               "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
               "quote": "We may, in our sole discretion, require that any Sweeps Coins be subject to a Playthrough Requirement before becoming eligible for redemption towards real Prizes. 4.14.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
               "extractor": "deterministic"
             },
@@ -463,7 +447,7 @@
               "sourceId": "yay-rules",
               "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
               "quote": "For example, if a Participant receives 100 Sweeps Coins and those Sweeps Coins have a Playthrough Requirement multiplier of 2x, a Participant must play games to an aggregate of 200 Sweeps Coins prior to those Sweeps Coins being eligible for redemption as a Prize.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
               "extractor": "deterministic"
             },
@@ -471,7 +455,7 @@
               "sourceId": "yay-redemption-guide",
               "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
               "quote": "You can see how smooth the redemption process is at Yay Casino. Just remember to verify your identity before making your first request. Once you meet the 1x playthrough condition and have the minimum redeemable SC, you’re good to go!",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
               "extractor": "deterministic"
             },
@@ -479,24 +463,24 @@
               "sourceId": "yay-redemption-guide",
               "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
               "quote": "First, there are playthrough requirements to satisfy. Then, you must have a minimum of redeemable Sweeps Coins and verify your identity before making your first request. Once you have checked the right boxes, exchanging SC becomes easy.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
               "extractor": "deterministic"
             }
           ],
-          "note": "Operator source passages, not independently verified outcomes."
+          "note": "Some previously supporting sources were not reconfirmed."
         },
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "yay-rules",
               "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
               "quote": "You may redeem a minimum of 50 Sweeps Coins per day. 5.4.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
               "extractor": "deterministic"
             },
@@ -504,8 +488,16 @@
               "sourceId": "yay-rules",
               "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
               "quote": "The maximum daily limit of Sweeps Coins that yyou can request to redeem is less than equal to 9,550 Sweeps Coins. 5.16.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
+              "extractor": "deterministic"
+            },
+            {
+              "sourceId": "yay-redemption-guide",
+              "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
+              "quote": "You can see how smooth the redemption process is at Yay Casino. Just remember to verify your identity before making your first request. Once you meet the 1x playthrough condition and have the minimum redeemable SC, you’re good to go!",
+              "observedAt": "2026-09-10T16:23:45.610Z",
+              "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
               "extractor": "deterministic"
             }
           ],
@@ -514,22 +506,22 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "yay-rules",
               "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
               "quote": "Prizes Redemption 5.2.1 Prize being redeemed for cash by an Eligible Participant will be paid in USD. 5.2.2 Prizes redeemed in cryptocurrency will be calculated based on the market value of the selected cryptocurrency in USD at the time of redemption, as determined by the third-party crypto wallet provider engaged through the Crypto Payment Administration. 5.2.3 Virtual Card Eligible Participants who have selected a non-cryptocurrency method of payment for their Account may also have the option to redeem Sweeps Coins using Visa® Virtual Cards.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
               "extractor": "deterministic"
             },
             {
               "sourceId": "yay-rules",
               "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
-              "quote": "Before any Prizes are processed, we will review your play for any irregular playing patterns.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "quote": "When you choose to redeem a Prize for cash or cryptocurrency, it is your sole responsibility to ensure that your financial institution or crypto wallet will accept payment from us into your bank account or wallet.",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
               "extractor": "deterministic"
             },
@@ -537,7 +529,7 @@
               "sourceId": "yay-redemption-guide",
               "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
               "quote": "Confirm and Receive Your Wins: After submitting your redemption request, be patient. Wait for at least 24 hours for Yay Casino to approve and process your request.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
               "extractor": "deterministic"
             },
@@ -545,7 +537,7 @@
               "sourceId": "yay-redemption-guide",
               "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
               "quote": "Yay Casino also supports more than 10 cryptocurrencies. If you prefer crypto, you can select any supported coin and follow the same steps above to redeem SC.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
               "extractor": "deterministic"
             }
@@ -555,14 +547,14 @@
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "yay-rules",
               "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
               "quote": "Documents showing proof of residence, such as a utility statement; 5.11.4.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
               "extractor": "deterministic"
             },
@@ -570,7 +562,7 @@
               "sourceId": "yay-rules",
               "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
               "quote": "Copy of photo identification, such as a passport or driver’s licence; 5.11.3.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
               "extractor": "deterministic"
             },
@@ -578,7 +570,7 @@
               "sourceId": "yay-redemption-guide",
               "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
               "quote": "Prepare Your Documents: Have your photo ID, proof of address, and a recent bank statement ready. The bank statement must show that you own the bank account used for redemption and be dated within the last 3 months.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
               "extractor": "deterministic"
             },
@@ -586,7 +578,7 @@
               "sourceId": "yay-redemption-guide",
               "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
               "quote": "When uploading verification documents, make sure:",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
               "extractor": "deterministic"
             }
@@ -596,14 +588,14 @@
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "yay-rules",
               "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
               "quote": "PARTICIPATION IS VOID WHERE PROHIBITED BY LAW. 1.1.12. “Restricted Jurisdictions” mean the States of Florida where the maximum win for a single sweepstakes play within a game is restricted to less than 5000 Sweeps Coins. 1.1.13. “Service” means any of the services available through our Website or Mobile Applications;",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
               "extractor": "deterministic"
             },
@@ -611,7 +603,7 @@
               "sourceId": "yay-rules",
               "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
               "quote": "Except where prohibited, participation in these Promotions constitutes your consent to us and any of our agents to use your full name, likeness, photo, voice, opinion(s) and/or hometown and state/province/territory for promotional purposes in any media, worldwide, without further payment, notice or consideration. 8.2.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
               "extractor": "deterministic"
             }
@@ -624,7 +616,7 @@
           "id": "yay-home",
           "url": "https://www.yaycasino.com/",
           "finalUrl": "https://www.yaycasino.com/",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "direct",
           "attempts": [
@@ -640,7 +632,7 @@
           "id": "yay-promotions",
           "url": "https://www.yaycasino.com/promotions",
           "finalUrl": "https://www.yaycasino.com/promotions",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "direct",
           "attempts": [
@@ -656,7 +648,7 @@
           "id": "yay-daily",
           "url": "https://www.yaycasino.com/promotions/promo/online-casino-daily-login-bonus",
           "finalUrl": "https://www.yaycasino.com/promotions/promo/online-casino-daily-login-bonus",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "direct",
           "attempts": [
@@ -672,7 +664,7 @@
           "id": "yay-rules",
           "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
           "finalUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "direct",
           "attempts": [
@@ -688,7 +680,7 @@
           "id": "yay-redemption-guide",
           "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
           "finalUrl": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "direct",
           "attempts": [
@@ -706,12 +698,12 @@
       "slug": "dorados",
       "name": "Dorados",
       "productMode": "sweepstakes",
-      "checkedAt": "2026-09-10T16:19:55.046Z",
+      "checkedAt": "2026-09-10T16:23:45.610Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -719,14 +711,14 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "dorados-home",
               "url": "https://dorados.com/en",
               "quote": "5\\. Explore your way With daily rewards, giveaways, alternative entry methods, and so much more, there is always something new to explore. We designed this social casino experience to let you play entirely at your own pace while enjoying available rewards.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "6957297d1c93a43b17dc4f81cfbf57928f784ec2ece8e736a77b17c3dec6cf57",
               "extractor": "deterministic"
             },
@@ -734,7 +726,7 @@
               "sourceId": "dorados-home",
               "url": "https://dorados.com/en",
               "quote": "Daily Rewards, Giveaways, and More to Explore",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "6957297d1c93a43b17dc4f81cfbf57928f784ec2ece8e736a77b17c3dec6cf57",
               "extractor": "deterministic"
             }
@@ -744,7 +736,7 @@
         "purchase": {
           "label": "Public purchase packages",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -752,14 +744,14 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "dorados-rules",
               "url": "https://www.dorados.com/en/sweepstakes-rules",
               "quote": "9.3 Please note that: (i) Sweepstakes Credits granted to you cannot be directly redeemed for real Prizes and must be played at least once on the relevant Game before real Prizes can be obtained by using Redeemable Sweeps Coins, subject to the threshold set out in Section 12 of these Sweepstakes Rules; however, at our discretion, we may require that any Sweepstakes Credits granted to you must be played a greater number of times in any combination of Game play before real Prizes can be obtained by using Redeemable Sweeps Coins (the “Play Through Requirements”).",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
               "extractor": "deterministic"
             },
@@ -767,7 +759,7 @@
               "sourceId": "dorados-rules",
               "url": "https://www.dorados.com/en/sweepstakes-rules",
               "quote": "Play Through Requirements shall have the meaning provided in Section 9.3.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
               "extractor": "deterministic"
             }
@@ -777,14 +769,14 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "dorados-rules",
               "url": "https://www.dorados.com/en/sweepstakes-rules",
               "quote": "12.2 If you are located in Florida, the maximum value of any single Prize you may redeem is limited to US$5,000. Any redemption request exceeding this amount will be adjusted so that the total value does not surpass US$5,000.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
               "extractor": "deterministic"
             }
@@ -794,22 +786,14 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "dorados-rules",
               "url": "https://www.dorados.com/en/sweepstakes-rules",
-              "quote": "(c) Extended processing times required to complete fraud prevention reviews. 14.6 All Prize redemptions will be processed in U.S. dollars.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
-              "extractor": "deterministic"
-            },
-            {
-              "sourceId": "dorados-rules",
-              "url": "https://www.dorados.com/en/sweepstakes-rules",
-              "quote": "18.1 We may apply processing fees in connection with the receipt of Prizes.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "quote": "14.4 If you elect to redeem a Prize, you acknowledge and accept that: (a) The processing of the prize payment to your Payment Method (or alternative financial account nominated in accordance with Section 11) may take up to ten (10) Business Days; and (b) We may, at our discretion, fulfill the Prize redemption through multiple payments over several days, rather than in a single transaction.",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
               "extractor": "deterministic"
             }
@@ -819,14 +803,14 @@
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "dorados-rules",
               "url": "https://www.dorados.com/en/sweepstakes-rules",
               "quote": "1. Your full name, as shown on your government-issued identification;",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
               "extractor": "deterministic"
             },
@@ -834,7 +818,7 @@
               "sourceId": "dorados-rules",
               "url": "https://www.dorados.com/en/sweepstakes-rules",
               "quote": "14.8 BEFORE ANY PRIZE IS REDEEMED, WE MAY REQUIRE YOU TO SUBMIT A COPY OF YOUR GOVERNMENT-ISSUED IDENTIFICATION VIA THE PLATFORM.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
               "extractor": "deterministic"
             }
@@ -844,14 +828,14 @@
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "dorados-rules",
               "url": "https://www.dorados.com/en/sweepstakes-rules",
               "quote": "3. The Request must be mailed from the same U.S. state as the residential address registered to your Account.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
               "extractor": "deterministic"
             },
@@ -859,7 +843,7 @@
               "sourceId": "dorados-rules",
               "url": "https://www.dorados.com/en/sweepstakes-rules",
               "quote": "(a) you are at least 21 years old or have reached the legal age of majority in your usual place of residence, whichever is greater;",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
               "extractor": "deterministic"
             }
@@ -872,7 +856,7 @@
           "id": "dorados-home",
           "url": "https://dorados.com/en",
           "finalUrl": "https://dorados.com/en/",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -892,7 +876,7 @@
           "id": "dorados-rules",
           "url": "https://www.dorados.com/en/sweepstakes-rules",
           "finalUrl": "https://dorados.com/en/sweepstakes-rules",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -912,7 +896,7 @@
           "id": "dorados-welcome",
           "url": "https://dorados.com/en/help-centre/bonuses-and-promotions/is-there-a-welcome-offer-for-new-players",
           "finalUrl": "https://dorados.com/en/help-centre/bonuses-and-promotions/is-there-a-welcome-offer-for-new-players",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -934,12 +918,12 @@
       "slug": "zonko",
       "name": "Zonko",
       "productMode": "unverified",
-      "checkedAt": "2026-09-10T16:19:55.046Z",
+      "checkedAt": "2026-09-10T16:23:45.610Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -947,14 +931,14 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "zonko-notice",
               "url": "https://www.zonko.com/help/faq/",
               "quote": "$44 purchase → 144 SC over 30 days You’ll receive daily scratch cards with bonus SC.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
               "extractor": "deterministic"
             },
@@ -962,7 +946,7 @@
               "sourceId": "zonko-notice",
               "url": "https://www.zonko.com/help/faq/",
               "quote": "The Prime Pass is a one-time monthly purchase that rewards you daily over 30 days.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
               "extractor": "deterministic"
             }
@@ -972,14 +956,14 @@
         "purchase": {
           "label": "Public purchase packages",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "zonko-notice",
               "url": "https://www.zonko.com/help/faq/",
               "quote": "$44 purchase → 144 SC over 30 days You’ll receive daily scratch cards with bonus SC.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
               "extractor": "deterministic"
             },
@@ -987,7 +971,7 @@
               "sourceId": "zonko-notice",
               "url": "https://www.zonko.com/help/faq/",
               "quote": "The Prime Pass is a one-time monthly purchase that rewards you daily over 30 days. $44 purchase → 144 SC over 30 days",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
               "extractor": "deterministic"
             }
@@ -997,7 +981,7 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1005,7 +989,7 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1013,14 +997,14 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "zonko-notice",
               "url": "https://www.zonko.com/help/faq/",
               "quote": "The redemption period is typically up to 72 hours - this includes the weekends. Once your redemption is approved, you’ll receive an email confirming it’s ready to be processed. The prize should then be with you soon after, depending on your banks processing times.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
               "extractor": "deterministic"
             }
@@ -1030,14 +1014,14 @@
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "zonko-notice",
               "url": "https://www.zonko.com/help/faq/",
-              "quote": "What documents are required for redemption? You’ll need to provide: A valid ID (passport or driving licence), Proof of address (e.g. utility bill or bank statement showing your name and address) and any payment methods linked to your account. For security, please mask the middle 8 digits of your card when uploading.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "quote": "You’ll need to provide: A valid ID (passport or driving licence), Proof of address (e.g. utility bill or bank statement showing your name and address) and any payment methods linked to your account. For security, please mask the middle 8 digits of your card when uploading.",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
               "extractor": "deterministic"
             },
@@ -1045,7 +1029,7 @@
               "sourceId": "zonko-notice",
               "url": "https://www.zonko.com/help/faq/",
               "quote": "Sweepstakes entries can be redeemed for chances to win real prizes. Follow the instructions on our website to enter sweepstakes and redeem your entries. Before redeeming, you must fully verify A valid ID, Proof of address and Your payment method(s).",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
               "extractor": "deterministic"
             }
@@ -1055,14 +1039,14 @@
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "zonko-notice",
               "url": "https://www.zonko.com/help/faq/",
               "quote": "Are there any age restrictions to play on Zonko? Yes, you must be at least 18 years old to participate in Zonko’s games and sweepstakes.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
               "extractor": "deterministic"
             }
@@ -1075,7 +1059,7 @@
           "id": "zonko-notice",
           "url": "https://www.zonko.com/help/faq/",
           "finalUrl": "https://www.zonko.com/help/faq/",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "direct",
           "attempts": [
@@ -1093,12 +1077,12 @@
       "slug": "chumba",
       "name": "Chumba Casino",
       "productMode": "sweepstakes",
-      "checkedAt": "2026-09-10T16:19:55.046Z",
+      "checkedAt": "2026-09-10T16:23:45.610Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1106,23 +1090,15 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "chumba-home",
               "url": "https://www.chumbacasino.com/",
-              "quote": ".png?mw=359&w=750&q=75&f=webp) Dig your daily bonus",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "18fd1c67cb53d43aed84d4f0eb79f7c7ec5662c0442ce8531128009d3762c701",
-              "extractor": "deterministic"
-            },
-            {
-              "sourceId": "chumba-home",
-              "url": "https://www.chumbacasino.com/",
               "quote": "Collect your daily bonus and start spinning!",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "18fd1c67cb53d43aed84d4f0eb79f7c7ec5662c0442ce8531128009d3762c701",
+              "observedAt": "2026-09-10T16:23:45.610Z",
+              "textHash": "a83a93a7bcf3aed414a858e382d2a7764a56ce42c064257b2a35926bd915b599",
               "extractor": "deterministic"
             }
           ],
@@ -1131,7 +1107,7 @@
         "purchase": {
           "label": "Public purchase packages",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1139,7 +1115,7 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1147,14 +1123,14 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "chumba-redeem",
               "url": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
               "quote": "| - If it is your first time to redeem, you need to re-verify your phone number.<br>- Minimum redemption threshold of 100 SC applies to the \"Cash Prize\" Redemption option.<br>- Minimum redemption threshold of 10 SC applies to the Gift Card Redemption option.<br>- In addition to the verification process of your identity, please also be advised that we are also required to validate your banking information to allow you to redeem your prize(s).",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "c44aa52897cb07733b2dc521c0a0794e37df79b5f80ec0120e4445295c10eaa0",
               "extractor": "deterministic"
             }
@@ -1164,22 +1140,14 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "chumba-redeem",
               "url": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
               "quote": "| - If it is your first time to redeem, you need to re-verify your phone number.<br>- Minimum redemption threshold of 100 SC applies to the \"Cash Prize\" Redemption option.<br>- Minimum redemption threshold of 10 SC applies to the Gift Card Redemption option.<br>- In addition to the verification process of your identity, please also be advised that we are also required to validate your banking information to allow you to redeem your prize(s).",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "c44aa52897cb07733b2dc521c0a0794e37df79b5f80ec0120e4445295c10eaa0",
-              "extractor": "deterministic"
-            },
-            {
-              "sourceId": "chumba-redeem",
-              "url": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-              "quote": "| We **DO NOT** charge fees when processing prize redemption requests. However, we reserve the right to charge fees for processing the redemption of Prizes to you and to set a minimum redemption threshold. |",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "c44aa52897cb07733b2dc521c0a0794e37df79b5f80ec0120e4445295c10eaa0",
               "extractor": "deterministic"
             }
@@ -1189,23 +1157,23 @@
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "chumba-notice",
               "url": "https://www.chumbacasino.com/getting-started/redeem-prizes",
               "quote": "Some tips to remember when submitting your documents for address and bank account verification:",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "816b5f178b6f1875f8e1274992e9dc100d2b52ee8bc2f26a2467a2a11d49c226",
+              "observedAt": "2026-09-10T16:23:45.610Z",
+              "textHash": "d62c8159c75afef2635c2e3462fa734908693202678da7c577a58414bdb3f9ff",
               "extractor": "deterministic"
             },
             {
               "sourceId": "chumba-notice",
               "url": "https://www.chumbacasino.com/getting-started/redeem-prizes",
               "quote": "\\*Note: Ensure you update your bank and personal details to match your documents before you try to verify.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "816b5f178b6f1875f8e1274992e9dc100d2b52ee8bc2f26a2467a2a11d49c226",
+              "observedAt": "2026-09-10T16:23:45.610Z",
+              "textHash": "d62c8159c75afef2635c2e3462fa734908693202678da7c577a58414bdb3f9ff",
               "extractor": "deterministic"
             }
           ],
@@ -1214,7 +1182,7 @@
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1225,7 +1193,7 @@
           "id": "chumba-notice",
           "url": "https://www.chumbacasino.com/getting-started/redeem-prizes",
           "finalUrl": "https://www.chumbacasino.com/getting-started/redeem-prizes",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -1238,14 +1206,14 @@
               "status": "ok"
             }
           ],
-          "textHash": "816b5f178b6f1875f8e1274992e9dc100d2b52ee8bc2f26a2467a2a11d49c226",
+          "textHash": "d62c8159c75afef2635c2e3462fa734908693202678da7c577a58414bdb3f9ff",
           "extractor": "deterministic"
         },
         {
           "id": "chumba-home",
           "url": "https://www.chumbacasino.com/",
           "finalUrl": "https://www.chumbacasino.com/",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -1258,14 +1226,14 @@
               "status": "ok"
             }
           ],
-          "textHash": "18fd1c67cb53d43aed84d4f0eb79f7c7ec5662c0442ce8531128009d3762c701",
+          "textHash": "a83a93a7bcf3aed414a858e382d2a7764a56ce42c064257b2a35926bd915b599",
           "extractor": "deterministic"
         },
         {
           "id": "chumba-redeem",
           "url": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
           "finalUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -1287,19 +1255,19 @@
       "slug": "pulsz",
       "name": "Pulsz",
       "productMode": "unverified",
-      "checkedAt": "2026-09-10T16:19:55.046Z",
+      "checkedAt": "2026-09-10T16:23:45.610Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "pulsz-home",
               "url": "https://www.pulsz.com/",
               "quote": "Login Register GET 200%+ Extra",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "cf1fc3fe943a74d37b3830a87caf66d48f40f572f82278aeb1c1939deb7da031",
               "extractor": "deterministic"
             },
@@ -1307,7 +1275,7 @@
               "sourceId": "pulsz-home",
               "url": "https://www.pulsz.com/",
               "quote": "5,000 Gold Coins for free When you sign up within...",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "cf1fc3fe943a74d37b3830a87caf66d48f40f572f82278aeb1c1939deb7da031",
               "extractor": "deterministic"
             }
@@ -1317,14 +1285,14 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "pulsz-home",
               "url": "https://www.pulsz.com/",
               "quote": "Pulsz: \\#1 for Social Casino Gaming with Daily Coin Rewards",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "cf1fc3fe943a74d37b3830a87caf66d48f40f572f82278aeb1c1939deb7da031",
               "extractor": "deterministic"
             },
@@ -1332,7 +1300,7 @@
               "sourceId": "pulsz-home",
               "url": "https://www.pulsz.com/",
               "quote": "Daily rewards, big giveaways & real prizes to win:** start with 5,000 Free Gold Coins and claim daily login prizes!",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "cf1fc3fe943a74d37b3830a87caf66d48f40f572f82278aeb1c1939deb7da031",
               "extractor": "deterministic"
             }
@@ -1342,7 +1310,7 @@
         "purchase": {
           "label": "Public purchase packages",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1350,7 +1318,7 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1358,38 +1326,22 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
         },
         "timing": {
           "label": "Published redemption timing and methods",
-          "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "status": "partial",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
-            {
-              "sourceId": "pulsz-terms",
-              "url": "https://www.pulsz.com/terms-of-use",
-              "quote": "6.12.4. We reserve the right to decline, cancel, or reverse redemption requests that are incomplete, inactive, or non-compliant with these Terms of Use. All determinations regarding redemption eligibility, processing, and status are final and binding.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "567578b0d637e986b3f813ae0bd84f6aa59aae487872dcad4d0509058b5296f8",
-              "extractor": "deterministic"
-            },
             {
               "sourceId": "pulsz-bank",
               "url": "https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking",
               "quote": "Step 2.** Select “Redeem Cash Prize” Step 3**. Enter the amount into one of the Bank Transfers options.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "67978ad3c635c1b8dd55733f37fe678a7a957f45bbe30e1e68358f3ba14c6906",
-              "extractor": "deterministic"
-            },
-            {
-              "sourceId": "pulsz-bank",
-              "url": "https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking",
-              "quote": "How do I redeem via Gift Card?",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "67978ad3c635c1b8dd55733f37fe678a7a957f45bbe30e1e68358f3ba14c6906",
               "extractor": "deterministic"
             },
@@ -1397,32 +1349,24 @@
               "sourceId": "pulsz-gift",
               "url": "https://support.pulsz.com/hc/en-us/articles/24820902593169-How-do-I-redeem-via-Gift-Card",
               "quote": "Step 2**. Select “Redeem as Gift Card”",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "bcbf845524cef8d4ba836f9e6c29a59819113edb558219a3c13850993aac38c7",
-              "extractor": "deterministic"
-            },
-            {
-              "sourceId": "pulsz-gift",
-              "url": "https://support.pulsz.com/hc/en-us/articles/24820902593169-How-do-I-redeem-via-Gift-Card",
-              "quote": "How do I redeem via Gift Card?",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "bcbf845524cef8d4ba836f9e6c29a59819113edb558219a3c13850993aac38c7",
               "extractor": "deterministic"
             }
           ],
-          "note": "Operator source passages, not independently verified outcomes."
+          "note": "Some previously supporting sources were not reconfirmed."
         },
         "verification": {
           "label": "Verification requirements",
-          "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "status": "partial",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "pulsz-terms",
               "url": "https://www.pulsz.com/terms-of-use",
               "quote": "4.4. You are required to keep Your personal details up to date. If You would like to update Your address, email, phone number or any other contact details or personal information, please contact customer support, details of which are mentioned under Section 1.3 in these Terms. The name that You provide to us at registration must match any identification You provide for Your User Account verification.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "567578b0d637e986b3f813ae0bd84f6aa59aae487872dcad4d0509058b5296f8",
               "extractor": "deterministic"
             },
@@ -1430,32 +1374,24 @@
               "sourceId": "pulsz-terms",
               "url": "https://www.pulsz.com/terms-of-use",
               "quote": "8.3. In the event that any verification check cannot be completed for any reason, including Your failure to provide any requested documentation within a provided timeframe, then We may, in our sole discretion, terminate, suspend, deactivate or otherwise restrict Your User Account.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "567578b0d637e986b3f813ae0bd84f6aa59aae487872dcad4d0509058b5296f8",
-              "extractor": "deterministic"
-            },
-            {
-              "sourceId": "pulsz-bank",
-              "url": "https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking",
-              "quote": "What documents do I need to provide for identity verification? Make a purchase with Bank Transfer",
-              "observedAt": "2026-09-10T16:19:55.046Z",
-              "textHash": "67978ad3c635c1b8dd55733f37fe678a7a957f45bbe30e1e68358f3ba14c6906",
               "extractor": "deterministic"
             }
           ],
-          "note": "Operator source passages, not independently verified outcomes."
+          "note": "Some previously supporting sources were not reconfirmed."
         },
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "pulsz-terms",
               "url": "https://www.pulsz.com/terms-of-use",
               "quote": "3.4. You will not access the Games or Service from the states of Washington, Idaho, Michigan, Montana, Nevada, Alabama, Tennessee, Connecticut, New York, West Virginia, Louisiana, Maryland, California and Arizona or any jurisdiction outside the United States or as otherwise posted within these Terms or on the Site (the “Restricted Territories”). In addition, if you are based in Mississippi, New Jersey, Indiana, Maine and Oklahoma certain promotions shall be limited for you;",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "567578b0d637e986b3f813ae0bd84f6aa59aae487872dcad4d0509058b5296f8",
               "extractor": "deterministic"
             }
@@ -1468,7 +1404,7 @@
           "id": "pulsz-terms",
           "url": "https://www.pulsz.com/terms-of-use",
           "finalUrl": "https://www.pulsz.com/terms-of-use",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -1488,7 +1424,7 @@
           "id": "pulsz-home",
           "url": "https://www.pulsz.com/",
           "finalUrl": "https://www.pulsz.com/",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -1508,7 +1444,7 @@
           "id": "pulsz-bank",
           "url": "https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking",
           "finalUrl": "https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -1528,7 +1464,7 @@
           "id": "pulsz-gift",
           "url": "https://support.pulsz.com/hc/en-us/articles/24820902593169-How-do-I-redeem-via-Gift-Card",
           "finalUrl": "https://support.pulsz.com/hc/en-us/articles/24820902593169-How-do-I-redeem-via-Gift-Card",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -1550,12 +1486,12 @@
       "slug": "stake-us",
       "name": "Stake.us",
       "productMode": "sweepstakes",
-      "checkedAt": "2026-09-10T16:19:55.046Z",
+      "checkedAt": "2026-09-10T16:23:45.610Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1563,14 +1499,14 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "stake-redeem",
               "url": "https://help.stake.us/en/articles/6453222-redeeming-rewards",
               "quote": "Simply log in every day and collect your free Daily Bonus. Stake.us operates with 2 (two) virtual tokens - Gold Coins (GC) and Stake Cash (SC).",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "ea70a13e7ad579080b136ab7341b5d08fc6ab8a56482a2550b39c74e81a81031",
               "extractor": "deterministic"
             },
@@ -1578,7 +1514,7 @@
               "sourceId": "stake-coins",
               "url": "https://help.stake.us/en/articles/6389246-sweep-coins-stake-cash",
               "quote": "You may receive it as a free bonus with a Gold Coin bundle purchase, or obtain it up through cool promotions we offer on the platform. Not to forget the daily bonuses!",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "f90e0d3d80ef8ad13734983d5d95a62c8bc47af467237055f7af383948e1620d",
               "extractor": "deterministic"
             },
@@ -1586,7 +1522,7 @@
               "sourceId": "stake-terms",
               "url": "https://stake.us/policies/terms",
               "quote": "i. Daily Bonus– You can claim Gold Coins once per day, through logging into your Customer Account and claiming your daily bonus.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
               "extractor": "deterministic"
             },
@@ -1594,7 +1530,7 @@
               "sourceId": "stake-terms",
               "url": "https://stake.us/policies/terms",
               "quote": "i. Daily Login Bonus – You can claim Stake Cash once per day, through logging into your Customer Account and claiming your daily bonus.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
               "extractor": "deterministic"
             }
@@ -1603,8 +1539,8 @@
         },
         "purchase": {
           "label": "Public purchase packages",
-          "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "status": "stale",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": "2026-09-10T16:19:55.046Z",
           "quotes": [
             {
@@ -1616,19 +1552,19 @@
               "extractor": "deterministic"
             }
           ],
-          "note": "Operator source passages, not independently verified outcomes."
+          "note": "Previous evidence retained; not confirmed in this run."
         },
         "playthrough": {
           "label": "Playthrough",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "stake-rollover",
               "url": "https://help.stake.us/en/articles/6465093-redemption-progress",
               "quote": "If you purchase Gold coins and receive 10 Stake cash as a bonus, you are required to play through with at least 30 Stake cash before redemptions are available.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "7511559aa00eaf29ec22ca763fb08eccd3cd604cb0a38a761fe6dde3d558c550",
               "extractor": "deterministic"
             },
@@ -1636,7 +1572,7 @@
               "sourceId": "stake-rollover",
               "url": "https://help.stake.us/en/articles/6465093-redemption-progress",
               "quote": "After you complete the rollover you are free to redeem prizes with those funds, however if you, in the meantime, receive more SC alongside a new purchase Redemption section will still be locked until that amount of SC is played through 3X.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "7511559aa00eaf29ec22ca763fb08eccd3cd604cb0a38a761fe6dde3d558c550",
               "extractor": "deterministic"
             }
@@ -1646,14 +1582,14 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "stake-terms",
               "url": "https://stake.us/policies/terms",
               "quote": "b) In Florida, the maximum redemption value of Stake Cash won on any Game or play, via a Customer’s participation in the Sweepstakes, is USD $5,000 (five thousand US dollars) per day. Any redemption of a Prize valued in excess of USD $5,000 (five thousand US dollars) per day will not be allocated or paid.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
               "extractor": "deterministic"
             }
@@ -1663,30 +1599,30 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "stake-coins",
               "url": "https://help.stake.us/en/articles/6389246-sweep-coins-stake-cash",
               "quote": "Oh, and guess what? Stake Cash isn't just a token; you can redeem it for crypto prizes. ✨",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "f90e0d3d80ef8ad13734983d5d95a62c8bc47af467237055f7af383948e1620d",
               "extractor": "deterministic"
             },
             {
               "sourceId": "stake-terms",
               "url": "https://stake.us/policies/terms",
-              "quote": "13.3. Limits and Fees a) Stake reserves the right to charge fees for processing the redemption of Prizes to you and to set a minimum redemption threshold for Prize redemptions.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "quote": "13.4. Redeeming for Cryptocurrency a) When you elect to redeem Stake Cash for cryptocurrency, you must select your “Wallet” account, press “Redeem,” and choose the cryptocurrency to which you wish to redeem for.",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
               "extractor": "deterministic"
             },
             {
               "sourceId": "stake-terms",
               "url": "https://stake.us/policies/terms",
-              "quote": "13.4. Redeeming for Cryptocurrency a) When you elect to redeem Stake Cash for cryptocurrency, you must select your “Wallet” account, press “Redeem,” and choose the cryptocurrency to which you wish to redeem for.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "quote": "d) You can only redeem your Stake Cash using the same cryptocurrency you used when purchasing Gold Coins on the Platform. You will only be permitted to redeem Stake Cash in cryptocurrency if you have satisfied the conditions in clause 7.3(c) of these Terms.",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
               "extractor": "deterministic"
             }
@@ -1696,14 +1632,14 @@
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "stake-terms",
               "url": "https://stake.us/policies/terms",
               "quote": "22.2. TO PROTECT YOUR PRIVACY AND SO THAT OUR SUPPORT TEAM CAN VERIFY YOUR ACCOUNT, ALL EMAIL COMMUNICATIONS BETWEEN YOU AND STAKE SHOULD BE CARRIED OUT USING THE EMAIL ADDRESS THAT YOU HAVE REGISTERED ON YOUR CUSTOMER ACCOUNT. FAILURE TO DO SO WILL RESULT IN OUR SUPPORT TEAM REQUESTING YOU COMMUNICATE FROM THE EMAIL ADDRESS REGISTERED ON YOUR ACCOUNT.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
               "extractor": "deterministic"
             },
@@ -1711,7 +1647,7 @@
               "sourceId": "stake-terms",
               "url": "https://stake.us/policies/terms",
               "quote": "c) Where any identification, credit or other verification check we require cannot be completed to our satisfaction, because you have not provided any document we request from you in the form that we require within 30 days’ of the date the document was first requested, then we are under no obligation to continue with the verification check and we may, in our sole discretion, deactivate or otherwise restrict your Customer Account in any manner that we may reasonably deem appropriate.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
               "extractor": "deterministic"
             }
@@ -1721,14 +1657,14 @@
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "stake-terms",
               "url": "https://stake.us/policies/terms",
               "quote": "j) you are not over 21 years of age or such higher minimum legal age of majority as stipulated in the jurisdiction of your residence;",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
               "extractor": "deterministic"
             },
@@ -1736,7 +1672,7 @@
               "sourceId": "stake-terms",
               "url": "https://stake.us/policies/terms",
               "quote": "2.5. ONLY CUSTOMERS IN THE CONTINENTAL UNITED STATES AND HAWAII (EXCEPT FOR THE EXCLUDED TERRITORIES) ARE ELIGIBLE TO ACCESS AND USE THE PLATFORM, CREATE A CUSTOMER ACCOUNT, AND PLAY THE GAMES.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
               "extractor": "deterministic"
             }
@@ -1749,7 +1685,7 @@
           "id": "stake-redeem",
           "url": "https://help.stake.us/en/articles/6453222-redeeming-rewards",
           "finalUrl": "https://help.stake.us/en/articles/6453222-redeeming-rewards",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "direct",
           "attempts": [
@@ -1765,7 +1701,7 @@
           "id": "stake-coins",
           "url": "https://help.stake.us/en/articles/6389246-sweep-coins-stake-cash",
           "finalUrl": "https://help.stake.us/en/articles/6389246-sweep-coins-stake-cash",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "direct",
           "attempts": [
@@ -1781,7 +1717,7 @@
           "id": "stake-rollover",
           "url": "https://help.stake.us/en/articles/6465093-redemption-progress",
           "finalUrl": "https://help.stake.us/en/articles/6465093-redemption-progress",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "direct",
           "attempts": [
@@ -1797,7 +1733,7 @@
           "id": "stake-terms",
           "url": "https://stake.us/policies/terms",
           "finalUrl": "https://stake.us/policies/terms",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -1819,19 +1755,19 @@
       "slug": "wow-vegas",
       "name": "WOW Vegas",
       "productMode": "sweepstakes",
-      "checkedAt": "2026-09-10T16:19:55.046Z",
+      "checkedAt": "2026-09-10T16:23:45.610Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "wow-signup",
               "url": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
               "quote": "Enjoy exclusive discounted coin packs for your first purchase, including the popular 30 SC + 1.5 million WOW Coins offer available in the Coin Store.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "4329b8672099bd14ef5397daa2c79948fc06408b506aa0439e4141443dee3031",
               "extractor": "deterministic"
             },
@@ -1839,7 +1775,7 @@
               "sourceId": "wow-promo",
               "url": "https://www.wowvegas.com/promo-code",
               "quote": "67% discount on first purchase",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b2df71304f65934e3fb60cb183faa0cafd9e684af7066906e90b3d7c9d1b71c6",
               "extractor": "deterministic"
             }
@@ -1849,7 +1785,7 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1857,14 +1793,14 @@
         "purchase": {
           "label": "Public purchase packages",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "wow-promo",
               "url": "https://www.wowvegas.com/promo-code",
               "quote": "Only $9.99 (normally $29.99) 67% discount on first purchase",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b2df71304f65934e3fb60cb183faa0cafd9e684af7066906e90b3d7c9d1b71c6",
               "extractor": "deterministic"
             },
@@ -1872,7 +1808,7 @@
               "sourceId": "wow-promo",
               "url": "https://www.wowvegas.com/promo-code",
               "quote": "The WOW Vegas promo code for 2026 is WOWBONUS2026. Use this code when signing up to claim your welcome bonus of 1,750,000 WOW Coins and SC 35 FREE. The bonus is split between a no-purchase sign-up bonus (250,000 WOW Coins + SC 5) and a first purchase bonus (1,500,000 WOW Coins + FREE SC 30 for only $9.99).",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b2df71304f65934e3fb60cb183faa0cafd9e684af7066906e90b3d7c9d1b71c6",
               "extractor": "deterministic"
             }
@@ -1882,38 +1818,47 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
         },
         "minimum": {
           "label": "Redemption minimums and caps",
-          "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": null,
-          "quotes": [],
-          "note": "No supported passage collected. This does not mean the feature is absent."
-        },
-        "timing": {
-          "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "wow-redeem",
               "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
               "quote": "Check your balance – The minimum redemption amount for cash prize is SC 50 and SC 20 for gift cards.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
+              "textHash": "5dd3d2591dccc00242ef97378fa3142e45b47adadd0e3420186eadc0729110f5",
+              "extractor": "deterministic"
+            }
+          ],
+          "note": "Operator source passages, not independently verified outcomes."
+        },
+        "timing": {
+          "label": "Published redemption timing and methods",
+          "status": "observed",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
+          "quotes": [
+            {
+              "sourceId": "wow-redeem",
+              "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+              "quote": "Check your balance – The minimum redemption amount for cash prize is SC 50 and SC 20 for gift cards.",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "5dd3d2591dccc00242ef97378fa3142e45b47adadd0e3420186eadc0729110f5",
               "extractor": "deterministic"
             },
             {
               "sourceId": "wow-redeem",
               "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-              "quote": "3. Confirmation & Processing If your redemption request is successful, you’ll receive an email confirmation.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "quote": "Prizeout (More options, including cards, are coming soon!)",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "5dd3d2591dccc00242ef97378fa3142e45b47adadd0e3420186eadc0729110f5",
               "extractor": "deterministic"
             }
@@ -1923,14 +1868,14 @@
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "wow-redeem",
               "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
               "quote": "Expedite verification by uploading your documents here: Verify Identity 2. Initiate Redemption",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "5dd3d2591dccc00242ef97378fa3142e45b47adadd0e3420186eadc0729110f5",
               "extractor": "deterministic"
             },
@@ -1938,7 +1883,7 @@
               "sourceId": "wow-redeem",
               "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
               "quote": "Before redeeming, your account must be fully verified. Expedite verification by uploading your documents here: Verify Identity",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "5dd3d2591dccc00242ef97378fa3142e45b47adadd0e3420186eadc0729110f5",
               "extractor": "deterministic"
             },
@@ -1946,7 +1891,7 @@
               "sourceId": "wow-terms",
               "url": "https://www.wowvegas.com/terms-and-conditions",
               "quote": "4. You are required to always keep your registration details up to date. If you change your address, email, phone number or any other contact details or personal information, contact Customer Support via email at support@wowvegas.com in order to update your details. The name that you provide to us at registration must be identical to that listed on your government issued identification. Please note that any changes to your personal details may result in you having to resubmit any government issued identification in order to verify your identity.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "274ecd1efe274d8a648762a8575a7ce160a238df90ccf99b9a066ed5ab4f26b3",
               "extractor": "deterministic"
             },
@@ -1954,7 +1899,7 @@
               "sourceId": "wow-terms",
               "url": "https://www.wowvegas.com/terms-and-conditions",
               "quote": "5. You consent to Sumsub collecting your data upon document verification in accordance to its privacy policy.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "274ecd1efe274d8a648762a8575a7ce160a238df90ccf99b9a066ed5ab4f26b3",
               "extractor": "deterministic"
             }
@@ -1964,14 +1909,14 @@
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "wow-promo",
               "url": "https://www.wowvegas.com/promo-code",
               "quote": "SC promotional play is available in 37 US states, excluding Maryland, New Jersey, Michigan, Montana, Louisiana, Connecticut, New York, Tennessee, Illinois, and California. Registration unavailable in Idaho, Nevada, and Washington. Also available in Canada, excluding Quebec. Must be 18+ to play.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b2df71304f65934e3fb60cb183faa0cafd9e684af7066906e90b3d7c9d1b71c6",
               "extractor": "deterministic"
             },
@@ -1979,7 +1924,7 @@
               "sourceId": "wow-terms",
               "url": "https://www.wowvegas.com/terms-and-conditions",
               "quote": "You are over 18 years of age or such higher minimum legal age of majority as stipulated in the jurisdiction of your residence and are, under the laws applicable to you, legally allowed to participate in the Games offered on the Platform;",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "274ecd1efe274d8a648762a8575a7ce160a238df90ccf99b9a066ed5ab4f26b3",
               "extractor": "deterministic"
             }
@@ -1992,7 +1937,7 @@
           "id": "wow-signup",
           "url": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
           "finalUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "direct",
           "attempts": [
@@ -2008,7 +1953,7 @@
           "id": "wow-promo",
           "url": "https://www.wowvegas.com/promo-code",
           "finalUrl": "https://www.wowvegas.com/promo-code",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "direct",
           "attempts": [
@@ -2024,7 +1969,7 @@
           "id": "wow-redeem",
           "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
           "finalUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "direct",
           "attempts": [
@@ -2040,7 +1985,7 @@
           "id": "wow-terms",
           "url": "https://www.wowvegas.com/terms-and-conditions",
           "finalUrl": "https://www.wowvegas.com/terms-and-conditions",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -2060,7 +2005,7 @@
           "id": "wow-rules",
           "url": "https://www.wowvegas.com/sc-game-rules",
           "finalUrl": "https://www.wowvegas.com/login?redirect=/sc-game-rules",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "login_required",
           "provider": null,
           "attempts": [
@@ -2080,19 +2025,19 @@
       "slug": "mcluck",
       "name": "McLuck",
       "productMode": "unverified",
-      "checkedAt": "2026-09-10T16:19:55.046Z",
+      "checkedAt": "2026-09-10T16:23:45.610Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "mcluck-welcome",
               "url": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
               "quote": "New players also qualify for a 150% EXTRA offer in our online store.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "c0c34b6e21ea35f22fdfa8e524f1d9ed64ad7cc18b8d4214dc08ed4c8d4ee1d6",
               "extractor": "deterministic"
             },
@@ -2100,7 +2045,7 @@
               "sourceId": "mcluck-welcome",
               "url": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
               "quote": "To say “welcome” to the McLuck.com family, we give you 5,000 Gold Coins.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "c0c34b6e21ea35f22fdfa8e524f1d9ed64ad7cc18b8d4214dc08ed4c8d4ee1d6",
               "extractor": "deterministic"
             }
@@ -2110,14 +2055,14 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "mcluck-home",
               "url": "https://www.mcluck.com/",
               "quote": "Log in daily to claim free coins",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b4713805486ee604b759299212b6c8d4223d70e985573fd0fc9df688e5c75b49",
               "extractor": "deterministic"
             },
@@ -2125,7 +2070,7 @@
               "sourceId": "mcluck-home",
               "url": "https://www.mcluck.com/",
               "quote": "Tailored rewards exclusively for you Daily Free Gold Coins",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b4713805486ee604b759299212b6c8d4223d70e985573fd0fc9df688e5c75b49",
               "extractor": "deterministic"
             }
@@ -2135,7 +2080,7 @@
         "purchase": {
           "label": "Public purchase packages",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -2143,7 +2088,7 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -2151,7 +2096,7 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -2159,14 +2104,14 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
             {
               "sourceId": "mcluck-home",
               "url": "https://www.mcluck.com/",
               "quote": "Established in 2023, McLuck is a leading online social casino, where players can enjoy free-to-play casino-style games including slots, Plinko, live social casino, and more. You can play with Gold Coins (GC) for fun or with free Sweepstakes Coins (SC) for a chance to redeem real cash prizes and gift cards, no purchase necessary.",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "b4713805486ee604b759299212b6c8d4223d70e985573fd0fc9df688e5c75b49",
               "extractor": "deterministic"
             }
@@ -2175,23 +2120,56 @@
         },
         "verification": {
           "label": "Verification requirements",
-          "status": "unavailable",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": null,
-          "quotes": [],
-          "note": "No supported passage collected. This does not mean the feature is absent."
+          "status": "observed",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
+          "quotes": [
+            {
+              "sourceId": "mcluck-notice",
+              "url": "https://www.mcluck.com/terms-of-service",
+              "quote": "8.4** The documents required may include, but are not limited to, photo identification, such as a government issued passport or driver’s license; a utility bill that matches the address registered on your Customer Account; and source of wealth or source of funds documentation such as a payslip or bank statement.",
+              "observedAt": "2026-09-10T16:23:45.610Z",
+              "textHash": "d6f9cd88d7ede2dcad3ce43c107308ca0fe8b2dd32890bb13529c14ceb7eb578",
+              "extractor": "deterministic"
+            },
+            {
+              "sourceId": "mcluck-notice",
+              "url": "https://www.mcluck.com/terms-of-service",
+              "quote": "4.4** You are required to keep your personal details up to date. If You change your address, email, phone number or any other contact details or personal information, contact Customer Support and provide the necessary supporting documents in order to support the change. The name You provide to us at registration must match that on your government issued identification.",
+              "observedAt": "2026-09-10T16:23:45.610Z",
+              "textHash": "d6f9cd88d7ede2dcad3ce43c107308ca0fe8b2dd32890bb13529c14ceb7eb578",
+              "extractor": "deterministic"
+            }
+          ],
+          "note": "Operator source passages, not independently verified outcomes."
         },
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "lastObservedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "lastObservedAt": "2026-09-10T16:23:45.610Z",
           "quotes": [
+            {
+              "sourceId": "mcluck-notice",
+              "url": "https://www.mcluck.com/terms-of-service",
+              "quote": "PLEASE FURTHER NOTE THAT WE DO NOT OFFER ANY OF THE SERVICES IN THE FOLLOWING STATES: CONNECTICUT, DELAWARE, IDAHO, INDIANA, KENTUCKY, LOUISIANA, MAINE, MARYLAND, MICHIGAN, MONTANA, NEVADA, NEW JERSEY, NEW YORK,** **TENNESSEE,** **WASHINGTON, WEST VIRGINIA AND ANY OTHER JURISDICTION OUTSIDE THE UNITED STATES OF AMERICA (“THE PROHIBITED TERRITORIES”). THIS ALSO INCLUDES ANY ADDITIONAL STATES OR JURISDICTIONS THAT MAY BE RESTRICTED BY OUR GAME SUPPLIERS PURSUANT TO CLAUSE 5.1.**",
+              "observedAt": "2026-09-10T16:23:45.610Z",
+              "textHash": "d6f9cd88d7ede2dcad3ce43c107308ca0fe8b2dd32890bb13529c14ceb7eb578",
+              "extractor": "deterministic"
+            },
+            {
+              "sourceId": "mcluck-notice",
+              "url": "https://www.mcluck.com/terms-of-service",
+              "quote": "The list shows the states where specific suppliers restrict access to their games in addition to the Prohibited Territories.",
+              "observedAt": "2026-09-10T16:23:45.610Z",
+              "textHash": "d6f9cd88d7ede2dcad3ce43c107308ca0fe8b2dd32890bb13529c14ceb7eb578",
+              "extractor": "deterministic"
+            },
             {
               "sourceId": "mcluck-welcome",
               "url": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
               "quote": "Not available outside the United States of America and within the US states where we do not offer our services",
-              "observedAt": "2026-09-10T16:19:55.046Z",
+              "observedAt": "2026-09-10T16:23:45.610Z",
               "textHash": "c0c34b6e21ea35f22fdfa8e524f1d9ed64ad7cc18b8d4214dc08ed4c8d4ee1d6",
               "extractor": "deterministic"
             }
@@ -2204,9 +2182,9 @@
           "id": "mcluck-notice",
           "url": "https://www.mcluck.com/terms-of-service",
           "finalUrl": "https://www.mcluck.com/terms-of-service",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
-          "status": "blocked",
-          "provider": null,
+          "checkedAt": "2026-09-10T16:23:45.610Z",
+          "status": "ok",
+          "provider": "firecrawl",
           "attempts": [
             {
               "provider": "direct",
@@ -2214,15 +2192,17 @@
             },
             {
               "provider": "firecrawl",
-              "status": "blocked"
+              "status": "ok"
             }
-          ]
+          ],
+          "textHash": "d6f9cd88d7ede2dcad3ce43c107308ca0fe8b2dd32890bb13529c14ceb7eb578",
+          "extractor": "deterministic"
         },
         {
           "id": "mcluck-home",
           "url": "https://www.mcluck.com/",
           "finalUrl": "https://www.mcluck.com/",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -2242,7 +2222,7 @@
           "id": "mcluck-support",
           "url": "https://support.mcluck.com/hc/en-us",
           "finalUrl": "https://support.mcluck.com/hc/en-us",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -2262,7 +2242,7 @@
           "id": "mcluck-welcome",
           "url": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
           "finalUrl": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -2282,7 +2262,7 @@
           "id": "mcluck-eligibility",
           "url": "https://support.mcluck.com/hc/en-us/articles/38182149192221-Why-am-I-not-eligible-for-a-promotion",
           "finalUrl": "https://support.mcluck.com/hc/en-us/articles/38182149192221-Why-am-I-not-eligible-for-a-promotion",
-          "checkedAt": "2026-09-10T16:19:55.046Z",
+          "checkedAt": "2026-09-10T16:23:45.610Z",
           "status": "ok",
           "provider": "firecrawl",
           "attempts": [
@@ -2303,11 +2283,9 @@
   ],
   "sources": {
     "jackpota-home": {
-      "textHash": "9457c96c6eff7d7ea310bc21cce25046ae3da59192cef1c7b7934857f2bb4228",
+      "textHash": "881d09ee4b9e70bef499a670c093d7c61682b56047105ced28233d61ddcd3b51",
       "fields": {
-        "welcome": [
-          "7,500 GOLD COINS FOR FREE When you sign up within..."
-        ],
+        "welcome": [],
         "daily": [
           "Our exclusive Gold Coins are up for grabs every day. You can get free Gold Coins by simply logging into your account every 24 hours, referring friends to our site, joining our community on social media, and more!",
           "“I got free coins every day just for logging in. Their games are legit, i've had some small wins, hoping to hit something big soon. I play with my husband, we both recommend Jackpota”"
@@ -2320,7 +2298,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "jackpota-terms": {
       "textHash": "5c9c4eb21a7f3f1d96dbad51525df45e4c77db5e615f23ea9069c8dac79d38f4",
@@ -2340,7 +2318,7 @@
         ]
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "jackpota-packages": {
       "textHash": "9cf5e71fc093691c6ca31602170d50c129652979697ca8123daff23632b8c3b2",
@@ -2358,7 +2336,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "lucky-bunny-home": {
       "textHash": "f699b1984e3d41c100b656553f09b239e342ba0b357d7b3a5a4b1073ea183f5b",
@@ -2373,7 +2351,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "yay-home": {
       "textHash": "11c2d3ad4b29e429801d5023418ac5a574599a74920223ff9a29d40ff84a277c",
@@ -2383,24 +2361,21 @@
           "Log in to our social casino platform daily to collect your free Gold Coins and Sweeps Coins."
         ],
         "purchase": [],
-        "playthrough": [
-          "earn every month they play, not just once.",
-          "they play, not just once. The more friends, the more you earn."
-        ],
+        "playthrough": [],
         "minimum": [],
         "timing": [],
         "verification": [],
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "yay-promotions": {
       "textHash": "8806c765b4b0290716055b067b3e740a35691f0fa3daea73dd7e62f51b8ff0d4",
       "fields": {
         "welcome": [
           "When you sign up at Yay Casino, in the lobby page search for the Yay Devil Fire 2 game. Click on the game and you will be able to play the 20 free spins. Note: the 20 free spins are eligible only for the Yay Devil Fire 2 game",
-          "How do I claim my 20 free spins from the Yay Casino sign up bonus?"
+          "Log in and claim your sign-up bonus offer: 80,000 GC + 8 SC and 20 free spins (value of 0.1 SC/spin) on Yay Devil Fire 2"
         ],
         "daily": [
           "Collect your first daily bonus of 10,000 GC and 1 SC for free.",
@@ -2414,7 +2389,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "yay-daily": {
       "textHash": "3c1030dac332b2eb8fa7999cc87278015152b50f9aa8b4539acc2348309f39ca",
@@ -2432,7 +2407,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "yay-rules": {
       "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
@@ -2453,7 +2428,7 @@
         ],
         "timing": [
           "Prizes Redemption 5.2.1 Prize being redeemed for cash by an Eligible Participant will be paid in USD. 5.2.2 Prizes redeemed in cryptocurrency will be calculated based on the market value of the selected cryptocurrency in USD at the time of redemption, as determined by the third-party crypto wallet provider engaged through the Crypto Payment Administration. 5.2.3 Virtual Card Eligible Participants who have selected a non-cryptocurrency method of payment for their Account may also have the option to redeem Sweeps Coins using Visa® Virtual Cards.",
-          "Before any Prizes are processed, we will review your play for any irregular playing patterns."
+          "When you choose to redeem a Prize for cash or cryptocurrency, it is your sole responsibility to ensure that your financial institution or crypto wallet will accept payment from us into your bank account or wallet."
         ],
         "verification": [
           "Documents showing proof of residence, such as a utility statement; 5.11.4.",
@@ -2465,7 +2440,7 @@
         ]
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "yay-redemption-guide": {
       "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
@@ -2477,7 +2452,9 @@
           "You can see how smooth the redemption process is at Yay Casino. Just remember to verify your identity before making your first request. Once you meet the 1x playthrough condition and have the minimum redeemable SC, you’re good to go!",
           "First, there are playthrough requirements to satisfy. Then, you must have a minimum of redeemable Sweeps Coins and verify your identity before making your first request. Once you have checked the right boxes, exchanging SC becomes easy."
         ],
-        "minimum": [],
+        "minimum": [
+          "You can see how smooth the redemption process is at Yay Casino. Just remember to verify your identity before making your first request. Once you meet the 1x playthrough condition and have the minimum redeemable SC, you’re good to go!"
+        ],
         "timing": [
           "Confirm and Receive Your Wins: After submitting your redemption request, be patient. Wait for at least 24 hours for Yay Casino to approve and process your request.",
           "Yay Casino also supports more than 10 cryptocurrencies. If you prefer crypto, you can select any supported coin and follow the same steps above to redeem SC."
@@ -2489,7 +2466,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "dorados-home": {
       "textHash": "6957297d1c93a43b17dc4f81cfbf57928f784ec2ece8e736a77b17c3dec6cf57",
@@ -2507,7 +2484,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "dorados-rules": {
       "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
@@ -2523,8 +2500,7 @@
           "12.2 If you are located in Florida, the maximum value of any single Prize you may redeem is limited to US$5,000. Any redemption request exceeding this amount will be adjusted so that the total value does not surpass US$5,000."
         ],
         "timing": [
-          "(c) Extended processing times required to complete fraud prevention reviews. 14.6 All Prize redemptions will be processed in U.S. dollars.",
-          "18.1 We may apply processing fees in connection with the receipt of Prizes."
+          "14.4 If you elect to redeem a Prize, you acknowledge and accept that: (a) The processing of the prize payment to your Payment Method (or alternative financial account nominated in accordance with Section 11) may take up to ten (10) Business Days; and (b) We may, at our discretion, fulfill the Prize redemption through multiple payments over several days, rather than in a single transaction."
         ],
         "verification": [
           "1. Your full name, as shown on your government-issued identification;",
@@ -2536,7 +2512,7 @@
         ]
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "dorados-welcome": {
       "textHash": "ffb78f2329a1dbf32fb13a9eeb1e4ae8f61d6f6032efc2bd1084b83458d4717f",
@@ -2551,7 +2527,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "zonko-notice": {
       "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
@@ -2571,7 +2547,7 @@
           "The redemption period is typically up to 72 hours - this includes the weekends. Once your redemption is approved, you’ll receive an email confirming it’s ready to be processed. The prize should then be with you soon after, depending on your banks processing times."
         ],
         "verification": [
-          "What documents are required for redemption? You’ll need to provide: A valid ID (passport or driving licence), Proof of address (e.g. utility bill or bank statement showing your name and address) and any payment methods linked to your account. For security, please mask the middle 8 digits of your card when uploading.",
+          "You’ll need to provide: A valid ID (passport or driving licence), Proof of address (e.g. utility bill or bank statement showing your name and address) and any payment methods linked to your account. For security, please mask the middle 8 digits of your card when uploading.",
           "Sweepstakes entries can be redeemed for chances to win real prizes. Follow the instructions on our website to enter sweepstakes and redeem your entries. Before redeeming, you must fully verify A valid ID, Proof of address and Your payment method(s)."
         ],
         "restrictions": [
@@ -2579,10 +2555,10 @@
         ]
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "chumba-notice": {
-      "textHash": "816b5f178b6f1875f8e1274992e9dc100d2b52ee8bc2f26a2467a2a11d49c226",
+      "textHash": "d62c8159c75afef2635c2e3462fa734908693202678da7c577a58414bdb3f9ff",
       "fields": {
         "welcome": [],
         "daily": [],
@@ -2597,14 +2573,13 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "chumba-home": {
-      "textHash": "18fd1c67cb53d43aed84d4f0eb79f7c7ec5662c0442ce8531128009d3762c701",
+      "textHash": "a83a93a7bcf3aed414a858e382d2a7764a56ce42c064257b2a35926bd915b599",
       "fields": {
         "welcome": [],
         "daily": [
-          ".png?mw=359&w=750&q=75&f=webp) Dig your daily bonus",
           "Collect your daily bonus and start spinning!"
         ],
         "purchase": [],
@@ -2615,7 +2590,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "chumba-redeem": {
       "textHash": "c44aa52897cb07733b2dc521c0a0794e37df79b5f80ec0120e4445295c10eaa0",
@@ -2628,14 +2603,13 @@
           "| - If it is your first time to redeem, you need to re-verify your phone number.<br>- Minimum redemption threshold of 100 SC applies to the \"Cash Prize\" Redemption option.<br>- Minimum redemption threshold of 10 SC applies to the Gift Card Redemption option.<br>- In addition to the verification process of your identity, please also be advised that we are also required to validate your banking information to allow you to redeem your prize(s)."
         ],
         "timing": [
-          "| - If it is your first time to redeem, you need to re-verify your phone number.<br>- Minimum redemption threshold of 100 SC applies to the \"Cash Prize\" Redemption option.<br>- Minimum redemption threshold of 10 SC applies to the Gift Card Redemption option.<br>- In addition to the verification process of your identity, please also be advised that we are also required to validate your banking information to allow you to redeem your prize(s).",
-          "| We **DO NOT** charge fees when processing prize redemption requests. However, we reserve the right to charge fees for processing the redemption of Prizes to you and to set a minimum redemption threshold. |"
+          "| - If it is your first time to redeem, you need to re-verify your phone number.<br>- Minimum redemption threshold of 100 SC applies to the \"Cash Prize\" Redemption option.<br>- Minimum redemption threshold of 10 SC applies to the Gift Card Redemption option.<br>- In addition to the verification process of your identity, please also be advised that we are also required to validate your banking information to allow you to redeem your prize(s)."
         ],
         "verification": [],
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "pulsz-terms": {
       "textHash": "567578b0d637e986b3f813ae0bd84f6aa59aae487872dcad4d0509058b5296f8",
@@ -2645,9 +2619,7 @@
         "purchase": [],
         "playthrough": [],
         "minimum": [],
-        "timing": [
-          "6.12.4. We reserve the right to decline, cancel, or reverse redemption requests that are incomplete, inactive, or non-compliant with these Terms of Use. All determinations regarding redemption eligibility, processing, and status are final and binding."
-        ],
+        "timing": [],
         "verification": [
           "4.4. You are required to keep Your personal details up to date. If You would like to update Your address, email, phone number or any other contact details or personal information, please contact customer support, details of which are mentioned under Section 1.3 in these Terms. The name that You provide to us at registration must match any identification You provide for Your User Account verification.",
           "8.3. In the event that any verification check cannot be completed for any reason, including Your failure to provide any requested documentation within a provided timeframe, then We may, in our sole discretion, terminate, suspend, deactivate or otherwise restrict Your User Account."
@@ -2657,7 +2629,7 @@
         ]
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "pulsz-home": {
       "textHash": "cf1fc3fe943a74d37b3830a87caf66d48f40f572f82278aeb1c1939deb7da031",
@@ -2678,7 +2650,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "pulsz-bank": {
       "textHash": "67978ad3c635c1b8dd55733f37fe678a7a957f45bbe30e1e68358f3ba14c6906",
@@ -2689,16 +2661,13 @@
         "playthrough": [],
         "minimum": [],
         "timing": [
-          "Step 2.** Select “Redeem Cash Prize” Step 3**. Enter the amount into one of the Bank Transfers options.",
-          "How do I redeem via Gift Card?"
+          "Step 2.** Select “Redeem Cash Prize” Step 3**. Enter the amount into one of the Bank Transfers options."
         ],
-        "verification": [
-          "What documents do I need to provide for identity verification? Make a purchase with Bank Transfer"
-        ],
+        "verification": [],
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "pulsz-gift": {
       "textHash": "bcbf845524cef8d4ba836f9e6c29a59819113edb558219a3c13850993aac38c7",
@@ -2709,14 +2678,13 @@
         "playthrough": [],
         "minimum": [],
         "timing": [
-          "Step 2**. Select “Redeem as Gift Card”",
-          "How do I redeem via Gift Card?"
+          "Step 2**. Select “Redeem as Gift Card”"
         ],
         "verification": [],
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "stake-redeem": {
       "textHash": "ea70a13e7ad579080b136ab7341b5d08fc6ab8a56482a2550b39c74e81a81031",
@@ -2733,7 +2701,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "stake-coins": {
       "textHash": "f90e0d3d80ef8ad13734983d5d95a62c8bc47af467237055f7af383948e1620d",
@@ -2752,7 +2720,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "stake-rollover": {
       "textHash": "7511559aa00eaf29ec22ca763fb08eccd3cd604cb0a38a761fe6dde3d558c550",
@@ -2770,7 +2738,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "stake-terms": {
       "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
@@ -2780,16 +2748,14 @@
           "i. Daily Bonus– You can claim Gold Coins once per day, through logging into your Customer Account and claiming your daily bonus.",
           "i. Daily Login Bonus – You can claim Stake Cash once per day, through logging into your Customer Account and claiming your daily bonus."
         ],
-        "purchase": [
-          "g) The maximum Gold Coin purchase that can be made is USD $ 9,000 (nine thousand US dollars) per day."
-        ],
+        "purchase": [],
         "playthrough": [],
         "minimum": [
           "b) In Florida, the maximum redemption value of Stake Cash won on any Game or play, via a Customer’s participation in the Sweepstakes, is USD $5,000 (five thousand US dollars) per day. Any redemption of a Prize valued in excess of USD $5,000 (five thousand US dollars) per day will not be allocated or paid."
         ],
         "timing": [
-          "13.3. Limits and Fees a) Stake reserves the right to charge fees for processing the redemption of Prizes to you and to set a minimum redemption threshold for Prize redemptions.",
-          "13.4. Redeeming for Cryptocurrency a) When you elect to redeem Stake Cash for cryptocurrency, you must select your “Wallet” account, press “Redeem,” and choose the cryptocurrency to which you wish to redeem for."
+          "13.4. Redeeming for Cryptocurrency a) When you elect to redeem Stake Cash for cryptocurrency, you must select your “Wallet” account, press “Redeem,” and choose the cryptocurrency to which you wish to redeem for.",
+          "d) You can only redeem your Stake Cash using the same cryptocurrency you used when purchasing Gold Coins on the Platform. You will only be permitted to redeem Stake Cash in cryptocurrency if you have satisfied the conditions in clause 7.3(c) of these Terms."
         ],
         "verification": [
           "22.2. TO PROTECT YOUR PRIVACY AND SO THAT OUR SUPPORT TEAM CAN VERIFY YOUR ACCOUNT, ALL EMAIL COMMUNICATIONS BETWEEN YOU AND STAKE SHOULD BE CARRIED OUT USING THE EMAIL ADDRESS THAT YOU HAVE REGISTERED ON YOUR CUSTOMER ACCOUNT. FAILURE TO DO SO WILL RESULT IN OUR SUPPORT TEAM REQUESTING YOU COMMUNICATE FROM THE EMAIL ADDRESS REGISTERED ON YOUR ACCOUNT.",
@@ -2801,7 +2767,7 @@
         ]
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "wow-signup": {
       "textHash": "4329b8672099bd14ef5397daa2c79948fc06408b506aa0439e4141443dee3031",
@@ -2818,7 +2784,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "wow-promo": {
       "textHash": "b2df71304f65934e3fb60cb183faa0cafd9e684af7066906e90b3d7c9d1b71c6",
@@ -2840,7 +2806,7 @@
         ]
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "wow-redeem": {
       "textHash": "5dd3d2591dccc00242ef97378fa3142e45b47adadd0e3420186eadc0729110f5",
@@ -2849,10 +2815,12 @@
         "daily": [],
         "purchase": [],
         "playthrough": [],
-        "minimum": [],
+        "minimum": [
+          "Check your balance – The minimum redemption amount for cash prize is SC 50 and SC 20 for gift cards."
+        ],
         "timing": [
           "Check your balance – The minimum redemption amount for cash prize is SC 50 and SC 20 for gift cards.",
-          "3. Confirmation & Processing If your redemption request is successful, you’ll receive an email confirmation."
+          "Prizeout (More options, including cards, are coming soon!)"
         ],
         "verification": [
           "Expedite verification by uploading your documents here: Verify Identity 2. Initiate Redemption",
@@ -2861,7 +2829,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "wow-terms": {
       "textHash": "274ecd1efe274d8a648762a8575a7ce160a238df90ccf99b9a066ed5ab4f26b3",
@@ -2881,7 +2849,7 @@
         ]
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "mcluck-home": {
       "textHash": "b4713805486ee604b759299212b6c8d4223d70e985573fd0fc9df688e5c75b49",
@@ -2901,7 +2869,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "mcluck-support": {
       "textHash": "ca4caf845c25ff995f8c01e725304d1bd4aac233b0dfbd30b829349eb520783e",
@@ -2916,7 +2884,7 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "mcluck-welcome": {
       "textHash": "c0c34b6e21ea35f22fdfa8e524f1d9ed64ad7cc18b8d4214dc08ed4c8d4ee1d6",
@@ -2936,7 +2904,7 @@
         ]
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
     },
     "mcluck-eligibility": {
       "textHash": "8c10f96e6e7521b66f2ca858c7387bbe56cece3fc2a681f7660e03bc7d42720d",
@@ -2951,7 +2919,28 @@
         "restrictions": []
       },
       "extractor": "deterministic",
-      "extractorVersion": "1.1.0"
+      "extractorVersion": "1.1.1"
+    },
+    "mcluck-notice": {
+      "textHash": "d6f9cd88d7ede2dcad3ce43c107308ca0fe8b2dd32890bb13529c14ceb7eb578",
+      "fields": {
+        "welcome": [],
+        "daily": [],
+        "purchase": [],
+        "playthrough": [],
+        "minimum": [],
+        "timing": [],
+        "verification": [
+          "8.4** The documents required may include, but are not limited to, photo identification, such as a government issued passport or driver’s license; a utility bill that matches the address registered on your Customer Account; and source of wealth or source of funds documentation such as a payslip or bank statement.",
+          "4.4** You are required to keep your personal details up to date. If You change your address, email, phone number or any other contact details or personal information, contact Customer Support and provide the necessary supporting documents in order to support the change. The name You provide to us at registration must match that on your government issued identification."
+        ],
+        "restrictions": [
+          "PLEASE FURTHER NOTE THAT WE DO NOT OFFER ANY OF THE SERVICES IN THE FOLLOWING STATES: CONNECTICUT, DELAWARE, IDAHO, INDIANA, KENTUCKY, LOUISIANA, MAINE, MARYLAND, MICHIGAN, MONTANA, NEVADA, NEW JERSEY, NEW YORK,** **TENNESSEE,** **WASHINGTON, WEST VIRGINIA AND ANY OTHER JURISDICTION OUTSIDE THE UNITED STATES OF AMERICA (“THE PROHIBITED TERRITORIES”). THIS ALSO INCLUDES ANY ADDITIONAL STATES OR JURISDICTIONS THAT MAY BE RESTRICTED BY OUR GAME SUPPLIERS PURSUANT TO CLAUSE 5.1.**",
+          "The list shows the states where specific suppliers restrict access to their games in addition to the Prohibited Territories."
+        ]
+      },
+      "extractor": "deterministic",
+      "extractorVersion": "1.1.1"
     }
   },
   "spending": [
@@ -3064,9 +3053,625 @@
       "date": "2026-09-10",
       "provider": "firecrawl",
       "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
+    },
+    {
+      "date": "2026-09-10",
+      "provider": "firecrawl",
+      "reservedUsd": 0.1
     }
   ],
   "events": [
+    {
+      "operator": "yay-casino",
+      "field": "welcome",
+      "label": "Welcome offer",
+      "type": "source_wording_changed",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "before": [
+        {
+          "sourceId": "yay-promotions",
+          "url": "https://www.yaycasino.com/promotions",
+          "quote": "When you sign up at Yay Casino, in the lobby page search for the Yay Devil Fire 2 game. Click on the game and you will be able to play the 20 free spins. Note: the 20 free spins are eligible only for the Yay Devil Fire 2 game",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "8806c765b4b0290716055b067b3e740a35691f0fa3daea73dd7e62f51b8ff0d4",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "yay-promotions",
+          "url": "https://www.yaycasino.com/promotions",
+          "quote": "How do I claim my 20 free spins from the Yay Casino sign up bonus?",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "8806c765b4b0290716055b067b3e740a35691f0fa3daea73dd7e62f51b8ff0d4",
+          "extractor": "deterministic"
+        }
+      ],
+      "after": [
+        {
+          "sourceId": "yay-promotions",
+          "url": "https://www.yaycasino.com/promotions",
+          "quote": "When you sign up at Yay Casino, in the lobby page search for the Yay Devil Fire 2 game. Click on the game and you will be able to play the 20 free spins. Note: the 20 free spins are eligible only for the Yay Devil Fire 2 game",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "8806c765b4b0290716055b067b3e740a35691f0fa3daea73dd7e62f51b8ff0d4",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "yay-promotions",
+          "url": "https://www.yaycasino.com/promotions",
+          "quote": "Log in and claim your sign-up bonus offer: 80,000 GC + 8 SC and 20 free spins (value of 0.1 SC/spin) on Yay Devil Fire 2",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "8806c765b4b0290716055b067b3e740a35691f0fa3daea73dd7e62f51b8ff0d4",
+          "extractor": "deterministic"
+        }
+      ]
+    },
+    {
+      "operator": "yay-casino",
+      "field": "minimum",
+      "label": "Redemption minimums and caps",
+      "type": "source_wording_changed",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "before": [
+        {
+          "sourceId": "yay-rules",
+          "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "quote": "You may redeem a minimum of 50 Sweeps Coins per day. 5.4.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "yay-rules",
+          "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "quote": "The maximum daily limit of Sweeps Coins that yyou can request to redeem is less than equal to 9,550 Sweeps Coins. 5.16.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
+          "extractor": "deterministic"
+        }
+      ],
+      "after": [
+        {
+          "sourceId": "yay-rules",
+          "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "quote": "You may redeem a minimum of 50 Sweeps Coins per day. 5.4.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "yay-rules",
+          "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "quote": "The maximum daily limit of Sweeps Coins that yyou can request to redeem is less than equal to 9,550 Sweeps Coins. 5.16.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "yay-redemption-guide",
+          "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
+          "quote": "You can see how smooth the redemption process is at Yay Casino. Just remember to verify your identity before making your first request. Once you meet the 1x playthrough condition and have the minimum redeemable SC, you’re good to go!",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
+          "extractor": "deterministic"
+        }
+      ]
+    },
+    {
+      "operator": "yay-casino",
+      "field": "timing",
+      "label": "Published redemption timing and methods",
+      "type": "source_wording_changed",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "before": [
+        {
+          "sourceId": "yay-rules",
+          "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "quote": "Prizes Redemption 5.2.1 Prize being redeemed for cash by an Eligible Participant will be paid in USD. 5.2.2 Prizes redeemed in cryptocurrency will be calculated based on the market value of the selected cryptocurrency in USD at the time of redemption, as determined by the third-party crypto wallet provider engaged through the Crypto Payment Administration. 5.2.3 Virtual Card Eligible Participants who have selected a non-cryptocurrency method of payment for their Account may also have the option to redeem Sweeps Coins using Visa® Virtual Cards.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "yay-rules",
+          "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "quote": "Before any Prizes are processed, we will review your play for any irregular playing patterns.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "yay-redemption-guide",
+          "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
+          "quote": "Confirm and Receive Your Wins: After submitting your redemption request, be patient. Wait for at least 24 hours for Yay Casino to approve and process your request.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "yay-redemption-guide",
+          "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
+          "quote": "Yay Casino also supports more than 10 cryptocurrencies. If you prefer crypto, you can select any supported coin and follow the same steps above to redeem SC.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
+          "extractor": "deterministic"
+        }
+      ],
+      "after": [
+        {
+          "sourceId": "yay-rules",
+          "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "quote": "Prizes Redemption 5.2.1 Prize being redeemed for cash by an Eligible Participant will be paid in USD. 5.2.2 Prizes redeemed in cryptocurrency will be calculated based on the market value of the selected cryptocurrency in USD at the time of redemption, as determined by the third-party crypto wallet provider engaged through the Crypto Payment Administration. 5.2.3 Virtual Card Eligible Participants who have selected a non-cryptocurrency method of payment for their Account may also have the option to redeem Sweeps Coins using Visa® Virtual Cards.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "yay-rules",
+          "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "quote": "When you choose to redeem a Prize for cash or cryptocurrency, it is your sole responsibility to ensure that your financial institution or crypto wallet will accept payment from us into your bank account or wallet.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "b34330b986000457e317e933b71c094a1b587fbeb0868cbe5941c82bb89fbe80",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "yay-redemption-guide",
+          "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
+          "quote": "Confirm and Receive Your Wins: After submitting your redemption request, be patient. Wait for at least 24 hours for Yay Casino to approve and process your request.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "yay-redemption-guide",
+          "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
+          "quote": "Yay Casino also supports more than 10 cryptocurrencies. If you prefer crypto, you can select any supported coin and follow the same steps above to redeem SC.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "3c258b41426e356a8b240c2a7454b657139810e0608db1c3ab9a27b03dddb69a",
+          "extractor": "deterministic"
+        }
+      ]
+    },
+    {
+      "operator": "dorados",
+      "field": "timing",
+      "label": "Published redemption timing and methods",
+      "type": "source_wording_changed",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "before": [
+        {
+          "sourceId": "dorados-rules",
+          "url": "https://www.dorados.com/en/sweepstakes-rules",
+          "quote": "(c) Extended processing times required to complete fraud prevention reviews. 14.6 All Prize redemptions will be processed in U.S. dollars.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "dorados-rules",
+          "url": "https://www.dorados.com/en/sweepstakes-rules",
+          "quote": "18.1 We may apply processing fees in connection with the receipt of Prizes.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
+          "extractor": "deterministic"
+        }
+      ],
+      "after": [
+        {
+          "sourceId": "dorados-rules",
+          "url": "https://www.dorados.com/en/sweepstakes-rules",
+          "quote": "14.4 If you elect to redeem a Prize, you acknowledge and accept that: (a) The processing of the prize payment to your Payment Method (or alternative financial account nominated in accordance with Section 11) may take up to ten (10) Business Days; and (b) We may, at our discretion, fulfill the Prize redemption through multiple payments over several days, rather than in a single transaction.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "abf595308bc77951813eeedf687ae77ddb99d392553ddb41fef8451c77bfb6b9",
+          "extractor": "deterministic"
+        }
+      ]
+    },
+    {
+      "operator": "zonko",
+      "field": "verification",
+      "label": "Verification requirements",
+      "type": "source_wording_changed",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "before": [
+        {
+          "sourceId": "zonko-notice",
+          "url": "https://www.zonko.com/help/faq/",
+          "quote": "What documents are required for redemption? You’ll need to provide: A valid ID (passport or driving licence), Proof of address (e.g. utility bill or bank statement showing your name and address) and any payment methods linked to your account. For security, please mask the middle 8 digits of your card when uploading.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "zonko-notice",
+          "url": "https://www.zonko.com/help/faq/",
+          "quote": "Sweepstakes entries can be redeemed for chances to win real prizes. Follow the instructions on our website to enter sweepstakes and redeem your entries. Before redeeming, you must fully verify A valid ID, Proof of address and Your payment method(s).",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
+          "extractor": "deterministic"
+        }
+      ],
+      "after": [
+        {
+          "sourceId": "zonko-notice",
+          "url": "https://www.zonko.com/help/faq/",
+          "quote": "You’ll need to provide: A valid ID (passport or driving licence), Proof of address (e.g. utility bill or bank statement showing your name and address) and any payment methods linked to your account. For security, please mask the middle 8 digits of your card when uploading.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "zonko-notice",
+          "url": "https://www.zonko.com/help/faq/",
+          "quote": "Sweepstakes entries can be redeemed for chances to win real prizes. Follow the instructions on our website to enter sweepstakes and redeem your entries. Before redeeming, you must fully verify A valid ID, Proof of address and Your payment method(s).",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "0a70fe6411d8751aab004bf98bce5be6e9ff7e4bef1e9c1fc124246aceb40779",
+          "extractor": "deterministic"
+        }
+      ]
+    },
+    {
+      "operator": "chumba",
+      "field": "daily",
+      "label": "Recurring daily reward",
+      "type": "source_wording_changed",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "before": [
+        {
+          "sourceId": "chumba-home",
+          "url": "https://www.chumbacasino.com/",
+          "quote": ".png?mw=359&w=750&q=75&f=webp) Dig your daily bonus",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "18fd1c67cb53d43aed84d4f0eb79f7c7ec5662c0442ce8531128009d3762c701",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "chumba-home",
+          "url": "https://www.chumbacasino.com/",
+          "quote": "Collect your daily bonus and start spinning!",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "18fd1c67cb53d43aed84d4f0eb79f7c7ec5662c0442ce8531128009d3762c701",
+          "extractor": "deterministic"
+        }
+      ],
+      "after": [
+        {
+          "sourceId": "chumba-home",
+          "url": "https://www.chumbacasino.com/",
+          "quote": "Collect your daily bonus and start spinning!",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "a83a93a7bcf3aed414a858e382d2a7764a56ce42c064257b2a35926bd915b599",
+          "extractor": "deterministic"
+        }
+      ]
+    },
+    {
+      "operator": "chumba",
+      "field": "timing",
+      "label": "Published redemption timing and methods",
+      "type": "source_wording_changed",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "before": [
+        {
+          "sourceId": "chumba-redeem",
+          "url": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "quote": "| - If it is your first time to redeem, you need to re-verify your phone number.<br>- Minimum redemption threshold of 100 SC applies to the \"Cash Prize\" Redemption option.<br>- Minimum redemption threshold of 10 SC applies to the Gift Card Redemption option.<br>- In addition to the verification process of your identity, please also be advised that we are also required to validate your banking information to allow you to redeem your prize(s).",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "c44aa52897cb07733b2dc521c0a0794e37df79b5f80ec0120e4445295c10eaa0",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "chumba-redeem",
+          "url": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "quote": "| We **DO NOT** charge fees when processing prize redemption requests. However, we reserve the right to charge fees for processing the redemption of Prizes to you and to set a minimum redemption threshold. |",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "c44aa52897cb07733b2dc521c0a0794e37df79b5f80ec0120e4445295c10eaa0",
+          "extractor": "deterministic"
+        }
+      ],
+      "after": [
+        {
+          "sourceId": "chumba-redeem",
+          "url": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "quote": "| - If it is your first time to redeem, you need to re-verify your phone number.<br>- Minimum redemption threshold of 100 SC applies to the \"Cash Prize\" Redemption option.<br>- Minimum redemption threshold of 10 SC applies to the Gift Card Redemption option.<br>- In addition to the verification process of your identity, please also be advised that we are also required to validate your banking information to allow you to redeem your prize(s).",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "c44aa52897cb07733b2dc521c0a0794e37df79b5f80ec0120e4445295c10eaa0",
+          "extractor": "deterministic"
+        }
+      ]
+    },
+    {
+      "operator": "stake-us",
+      "field": "timing",
+      "label": "Published redemption timing and methods",
+      "type": "source_wording_changed",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "before": [
+        {
+          "sourceId": "stake-coins",
+          "url": "https://help.stake.us/en/articles/6389246-sweep-coins-stake-cash",
+          "quote": "Oh, and guess what? Stake Cash isn't just a token; you can redeem it for crypto prizes. ✨",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "f90e0d3d80ef8ad13734983d5d95a62c8bc47af467237055f7af383948e1620d",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "stake-terms",
+          "url": "https://stake.us/policies/terms",
+          "quote": "13.3. Limits and Fees a) Stake reserves the right to charge fees for processing the redemption of Prizes to you and to set a minimum redemption threshold for Prize redemptions.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "stake-terms",
+          "url": "https://stake.us/policies/terms",
+          "quote": "13.4. Redeeming for Cryptocurrency a) When you elect to redeem Stake Cash for cryptocurrency, you must select your “Wallet” account, press “Redeem,” and choose the cryptocurrency to which you wish to redeem for.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
+          "extractor": "deterministic"
+        }
+      ],
+      "after": [
+        {
+          "sourceId": "stake-coins",
+          "url": "https://help.stake.us/en/articles/6389246-sweep-coins-stake-cash",
+          "quote": "Oh, and guess what? Stake Cash isn't just a token; you can redeem it for crypto prizes. ✨",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "f90e0d3d80ef8ad13734983d5d95a62c8bc47af467237055f7af383948e1620d",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "stake-terms",
+          "url": "https://stake.us/policies/terms",
+          "quote": "13.4. Redeeming for Cryptocurrency a) When you elect to redeem Stake Cash for cryptocurrency, you must select your “Wallet” account, press “Redeem,” and choose the cryptocurrency to which you wish to redeem for.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "stake-terms",
+          "url": "https://stake.us/policies/terms",
+          "quote": "d) You can only redeem your Stake Cash using the same cryptocurrency you used when purchasing Gold Coins on the Platform. You will only be permitted to redeem Stake Cash in cryptocurrency if you have satisfied the conditions in clause 7.3(c) of these Terms.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "64ccf003254d24ebcaa48464cb54ad8365ebb5ed4867be9299bd9f9213f936a2",
+          "extractor": "deterministic"
+        }
+      ]
+    },
+    {
+      "operator": "wow-vegas",
+      "field": "minimum",
+      "label": "Redemption minimums and caps",
+      "type": "baseline",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "before": [],
+      "after": [
+        {
+          "sourceId": "wow-redeem",
+          "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+          "quote": "Check your balance – The minimum redemption amount for cash prize is SC 50 and SC 20 for gift cards.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "5dd3d2591dccc00242ef97378fa3142e45b47adadd0e3420186eadc0729110f5",
+          "extractor": "deterministic"
+        }
+      ]
+    },
+    {
+      "operator": "wow-vegas",
+      "field": "timing",
+      "label": "Published redemption timing and methods",
+      "type": "source_wording_changed",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "before": [
+        {
+          "sourceId": "wow-redeem",
+          "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+          "quote": "Check your balance – The minimum redemption amount for cash prize is SC 50 and SC 20 for gift cards.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "5dd3d2591dccc00242ef97378fa3142e45b47adadd0e3420186eadc0729110f5",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "wow-redeem",
+          "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+          "quote": "3. Confirmation & Processing If your redemption request is successful, you’ll receive an email confirmation.",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "5dd3d2591dccc00242ef97378fa3142e45b47adadd0e3420186eadc0729110f5",
+          "extractor": "deterministic"
+        }
+      ],
+      "after": [
+        {
+          "sourceId": "wow-redeem",
+          "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+          "quote": "Check your balance – The minimum redemption amount for cash prize is SC 50 and SC 20 for gift cards.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "5dd3d2591dccc00242ef97378fa3142e45b47adadd0e3420186eadc0729110f5",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "wow-redeem",
+          "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+          "quote": "Prizeout (More options, including cards, are coming soon!)",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "5dd3d2591dccc00242ef97378fa3142e45b47adadd0e3420186eadc0729110f5",
+          "extractor": "deterministic"
+        }
+      ]
+    },
+    {
+      "operator": "mcluck",
+      "field": "verification",
+      "label": "Verification requirements",
+      "type": "baseline",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "before": [],
+      "after": [
+        {
+          "sourceId": "mcluck-notice",
+          "url": "https://www.mcluck.com/terms-of-service",
+          "quote": "8.4** The documents required may include, but are not limited to, photo identification, such as a government issued passport or driver’s license; a utility bill that matches the address registered on your Customer Account; and source of wealth or source of funds documentation such as a payslip or bank statement.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "d6f9cd88d7ede2dcad3ce43c107308ca0fe8b2dd32890bb13529c14ceb7eb578",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "mcluck-notice",
+          "url": "https://www.mcluck.com/terms-of-service",
+          "quote": "4.4** You are required to keep your personal details up to date. If You change your address, email, phone number or any other contact details or personal information, contact Customer Support and provide the necessary supporting documents in order to support the change. The name You provide to us at registration must match that on your government issued identification.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "d6f9cd88d7ede2dcad3ce43c107308ca0fe8b2dd32890bb13529c14ceb7eb578",
+          "extractor": "deterministic"
+        }
+      ]
+    },
+    {
+      "operator": "mcluck",
+      "field": "restrictions",
+      "label": "Operator-stated restrictions",
+      "type": "source_wording_changed",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "before": [
+        {
+          "sourceId": "mcluck-welcome",
+          "url": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
+          "quote": "Not available outside the United States of America and within the US states where we do not offer our services",
+          "observedAt": "2026-09-10T16:19:55.046Z",
+          "textHash": "c0c34b6e21ea35f22fdfa8e524f1d9ed64ad7cc18b8d4214dc08ed4c8d4ee1d6",
+          "extractor": "deterministic"
+        }
+      ],
+      "after": [
+        {
+          "sourceId": "mcluck-notice",
+          "url": "https://www.mcluck.com/terms-of-service",
+          "quote": "PLEASE FURTHER NOTE THAT WE DO NOT OFFER ANY OF THE SERVICES IN THE FOLLOWING STATES: CONNECTICUT, DELAWARE, IDAHO, INDIANA, KENTUCKY, LOUISIANA, MAINE, MARYLAND, MICHIGAN, MONTANA, NEVADA, NEW JERSEY, NEW YORK,** **TENNESSEE,** **WASHINGTON, WEST VIRGINIA AND ANY OTHER JURISDICTION OUTSIDE THE UNITED STATES OF AMERICA (“THE PROHIBITED TERRITORIES”). THIS ALSO INCLUDES ANY ADDITIONAL STATES OR JURISDICTIONS THAT MAY BE RESTRICTED BY OUR GAME SUPPLIERS PURSUANT TO CLAUSE 5.1.**",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "d6f9cd88d7ede2dcad3ce43c107308ca0fe8b2dd32890bb13529c14ceb7eb578",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "mcluck-notice",
+          "url": "https://www.mcluck.com/terms-of-service",
+          "quote": "The list shows the states where specific suppliers restrict access to their games in addition to the Prohibited Territories.",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "d6f9cd88d7ede2dcad3ce43c107308ca0fe8b2dd32890bb13529c14ceb7eb578",
+          "extractor": "deterministic"
+        },
+        {
+          "sourceId": "mcluck-welcome",
+          "url": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
+          "quote": "Not available outside the United States of America and within the US states where we do not offer our services",
+          "observedAt": "2026-09-10T16:23:45.610Z",
+          "textHash": "c0c34b6e21ea35f22fdfa8e524f1d9ed64ad7cc18b8d4214dc08ed4c8d4ee1d6",
+          "extractor": "deterministic"
+        }
+      ]
+    },
     {
       "operator": "jackpota",
       "field": "welcome",
@@ -4405,6 +5010,31 @@
     }
   ],
   "runs": [
+    {
+      "id": "2026-09-10T16-23-45-610Z-34501765851",
+      "observedAt": "2026-09-10T16:23:45.610Z",
+      "extractorVersion": "1.1.1",
+      "githubRunUrl": "https://github.com/gqerpjoi23r/social-casino-index/actions/runs/34501765851",
+      "metrics": {
+        "attempted": 34,
+        "readable": 33,
+        "failed": 1,
+        "deterministicFields": 63,
+        "modelFields": 0,
+        "cached": 0
+      },
+      "operators": 10,
+      "coveredFields": 48,
+      "totalFields": 80,
+      "changes": 10,
+      "baselines": 2,
+      "spendingReservedUsd": 4.4,
+      "providerCalls": {
+        "firecrawl": 22,
+        "brightdata": 0,
+        "model": 0
+      }
+    },
     {
       "id": "2026-09-10T16-19-55-046Z-34501349086",
       "observedAt": "2026-09-10T16:19:55.046Z",
