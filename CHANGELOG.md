@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-10 - Frozen extraction benchmark
+- Add twelve source-checked, manually labelled excerpts across ten operators, qualifier checks, and an offline GitHub evaluation job.
+- Preserve the initial deterministic baseline: 9/12 cases pass; two wrong topics and one missed topic despite all quotations being source-supported.
+- Add label-free model inputs and saved-response scoring. Live model comparison is blocked by expired Azure authentication; no model calls, new scraping, or publication changes.
+
 ## 2026-09-10 - Monitor first-run corrections
 - Fix publication staging of an ignored CSS source; keep normalized observations with capture artifacts for independent evaluation.
 - Tighten passage categories after first-run review, preserve decimal values and join PDF-wrapped paragraphs.
