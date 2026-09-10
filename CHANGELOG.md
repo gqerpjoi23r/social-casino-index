@@ -18,6 +18,7 @@ Format:
 - Replaced secondary and legacy support with operator-owned public evidence; corrected product/offer interpretations and removed unsupported values.
 - Kept technical provenance outside the main comparison tables. Dropped account-only attributes and noncomparable columns; hands-on experience is deferred TODO only.
 - Research schema v2 preserves operator IDs, renames `kyc` to `verificationPolicy`, and attaches field-level source locators. No screenshots, accounts, production edits or deployment.
+- Regenerated the committed CSS artifact required by CI after Tailwind scanned the new research files.
 
 ## 2026-09-10 - Ten-operator player-value evidence
 - Extended the authorized public-evidence pass from the first three operators to all ten indexed operators.
