@@ -12,9 +12,10 @@
     "serve": "npm run build:css && eleventy --serve",
     "content:validate": "node scripts/validate-content.mjs",
     "content:touch": "node scripts/content-touch.mjs",
+    "analytics:validate": "node --test scripts/test-analytics.mjs",
     "sitemap:validate": "node scripts/validate-sitemap.mjs",
     "seo:validate": "node scripts/validate-seo.mjs",
-    "release": "npm run content:validate && npm run build && npm run seo:validate"
+    "release": "npm run content:validate && npm run analytics:validate && npm run build && npm run seo:validate"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",

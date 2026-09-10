@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-10 - Restore automatic Google Analytics
+- Restored GTM/GA4 tracking on every page after it was removed by mistake.
+- Kept the bottom analytics notice, consent panel and settings control removed.
+- Added release validation so tracking cannot disappear unnoticed.
+
 ## 2026-09-10 - Remove Google Analytics
 - Removed Google Analytics tracking and the consent notice/settings shown at the bottom of every page.
 - Updated the privacy policy to match the site's current data practices.

@@ -62,3 +62,9 @@ changed but `updatedAt` was not bumped.
 - Affiliate destinations only appear behind the state gate (`/go/` pages and
   `src/assets/eligibility.js`); never link an operator directly from article
   copy.
+
+## Analytics
+
+- `src/assets/analytics.js` loads GTM container `GTM-NTLVFVB7` on every page.
+- The GTM container sends measurement to GA4 property `G-E3Y4MKKS6Q`.
+- Do not add an analytics banner, consent panel or analytics settings control.
