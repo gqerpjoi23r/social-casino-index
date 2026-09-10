@@ -2,39 +2,37 @@
 
 ## Objective
 
-Make Social Casino Index a source-backed player-value comparison service, not only a redemption-time directory. Complete the authorized public-evidence pass for all ten operators, deliver the review package, and stop before funded tests or production implementation.
+Deliver a readable ten-operator review supported only by public operator-owned URLs. Stop before production implementation, accounts or transactions.
 
 ## Completed
 
-- Reviewed production landing/About pages, all 42 sitemap URLs, ten outbound pages, source templates, data, and validators.
-- Recovered August 17 Google Ads and Bright Data Trends/SERP research in `/Users/nimaboustanian/projects/kylserviceguiden.se/`.
-- Documented findings and primary references in `audit.md`.
-- Defined the operator sequence, phased scope, evidence schema, content briefs, review gates, and engineering tickets in `agent-plan.md`.
-- Saved reproducible audit scripts and JSON evidence.
-- Completed normalized records for Jackpota, Lucky Bunny, YAY Casino, Dorados, Zonko, Chumba Casino, Pulsz, Stake.us, WOW Vegas, and McLuck.
-- Added 38 source records and field-level source/status attachments in `operator-evidence.json`.
-- Added the human-readable ten-operator attribute matrix in `comparison-matrix.md`.
+- Replaced secondary/legacy support with a schema-v2 snapshot: ten stable operator IDs, 13 public-evidence attributes and 26 source/access records.
+- Read public JS-rendered text and linked rules without screenshots or account access. Retained field-level source locators, dates and available hashes.
+- Corrected Jackpota's product classification, Lucky Bunny's public packages, WOW's three-day signup schedule, and the scope of YAY/Stake terms.
+- Kept YAY's conflicting welcome amounts unresolved. Removed unsupported values where official pages were blocked.
+- Reworked the matrix into readable topic tables with grouped links. Removed account-observation fields and universally unsupported comparisons. Operational experience is deferred TODO only.
+- Updated the plan to supersede earlier screenshot/account-testing requirements.
 
 ## Remaining
 
-Review and approve or correct the ten-operator matrix. Resolve Jackpota's product classification, Lucky Bunny's sparse public evidence, and conflicting welcome offers before publication. Fix outbound/eligibility logic before promotion. Reconcile funded-test statuses, author identity, and numbered partner ordering. Demand research, content briefs, production data migration, funded tests, and player-account observations remain separate work.
+Owner review of `comparison-matrix.md`. Approve or correct the retained facts before any production migration. Future implementation starts with ENG-01/ENG-02; neither is authorized in this run. No additional research is required to close this delivery.
 
 ## Changed Files
 
-Only `research/2026-09-09-seo-player-value/` and a short `CHANGELOG.md` entry. No production source, campaigns, paid jobs, purchases, funded tests, or player accounts changed.
+`operator-evidence.json`, `comparison-matrix.md`, `agent-plan.md`, `handoff.md` in this directory, plus `CHANGELOG.md`. No production source edits. Preserve unrelated `docs/assets/site.css` changes.
 
 ## Verification
 
-`operator-evidence.json` parses with `jq`, contains all ten expected records, uses the approved status enum, and has no missing source references. Source reachability checks returned a mix of `200` and `403`; the latter are recorded as an access limitation, not proof that a claim is false. `npm run release` passed on September 10, 2026. Earlier checks found syntax errors on all ten outbound pages; the green release does not detect those defects.
+Passed `git diff --check` and structural assertions covering ten stable IDs, 13 attributes per operator, 26 source records, 63 claim-source links, source hashes, offer arithmetic and matrix URLs. `npm run release` passed in an isolated copy: content, build, sitemap and SEO checks. Unrelated shared CSS remained unchanged. These checks cover structure and the existing site, not the truth of operator claims or the previously reported outbound-script defects.
 
 ## Blockers
 
-Private funded-test evidence and author identity require owner confirmation. Current US keyword metrics and GSC/AI performance are unmeasured. Account-only offers remain unknown without authorized access. Jackpota's product mode and several promotional values remain conflicting. Record actual execution usage and charges where available; do not claim model spending is capped when the environment cannot enforce it.
+Some official pages return regional/bot blocks or require login. Do not bypass them. Promotions need a fresh check before publication. Research is a dated snapshot, not a verified availability or payout ranking.
 
 ## Branch
 
-`remaining-operator-player-value`, based on `fe2b7e2`. Worktree: `/Users/nimaboustanian/Documents/ChatGPT/affe-social`. This is a research branch; no production push is authorized by this handoff.
+`operator-primary-evidence`, based on `1201672`. No push or deployment authorized.
 
 ## Exact Next Step
 
-Review `comparison-matrix.md` against `operator-evidence.json`. Approve corrections and decide whether to resolve evidence gaps, authorize funded tests, or begin ENG-01/ENG-02 implementation.
+Review the matrix and decide which supported fields should enter the site. Do not restart research or create accounts automatically.

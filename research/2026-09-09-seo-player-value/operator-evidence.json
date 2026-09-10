@@ -1,1172 +1,278 @@
 {
   "metadata": {
-    "schemaVersion": "1.0.0",
+    "schemaVersion": "2.0.0",
     "createdAt": "2026-09-10",
     "checkedAt": "2026-09-10",
-    "scope": "Public, US-facing player-value evidence for the ten indexed operators.",
+    "scope": "Ten-operator, operator-owned public evidence only. Research snapshot for owner review, not production data.",
+    "statuses": ["operator_stated", "public_page_observed", "unverified", "conflicting"],
     "limitations": [
-      "No player accounts were created and no purchases or funded tests were performed.",
-      "Account-specific cashier values, personalized promotions, and inaccessible terms remain unverified.",
-      "Values from the legacy site record are retained only when their source and evidence status are explicit.",
-      "Unknown numeric values are null. They are not zero.",
-      "This dataset does not determine legal availability for an individual player."
+      "No accounts, screenshots, purchases, funded tests, outreach, or access-control bypasses.",
+      "Search is discovery only. Search snippets, affiliates, and legacy site records do not substantiate values.",
+      "Unverified values are null, never zero. Partial values state their limits.",
+      "An access block is not evidence that an operator lacks a feature or has withdrawn from the US.",
+      "Public-page observation describes displayed content, not a completed transaction or independently tested service.",
+      "State lists describe operator notices, not legal advice or permission to route a player.",
+      "Promotions need another check before publication; no expiry is assumed from a page remaining accessible.",
+      "Raw local captures can contain IP addresses and are not committed. Source hashes identify rendered text unless explicitly marked PDF bytes.",
+      "Version 2 replaces sourceIds with evidence objects containing sourceId and locator; kyc is renamed verificationPolicy."
     ],
-    "statuses": [
-      "operator_stated",
-      "observed",
-      "independently_tested",
-      "unverified",
-      "conflicting",
-      "expired",
-      "not_applicable"
-    ]
+    "omittedComparisonAttributes": [
+      "Exact total game inventory: inconsistent counting and no comparable census.",
+      "Full recurring daily-reward schedule: no complete, comparable schedule across the ten.",
+      "Standardized package-value basket: no shared verified price point across operators.",
+      "All-in redemption fees: no comparable, complete method-level schedule.",
+      "Authenticated balances, personalized offers, cashier menus and account-specific limits."
+    ],
+    "deferredOperationalTodos": [
+      "Actual end-to-end redemption time and reliability.",
+      "Actual verification completion time and friction.",
+      "Support response quality and time.",
+      "Account closure and safer-play control effectiveness."
+    ],
+    "todoPolicy": "Deferred only, not comparison fields or scheduled work. Do not create accounts or conduct hands-on tests without a new owner decision."
+  },
+  "attributes": {
+    "entity": "Named operator or contracting entity; roles distinguished where available.",
+    "productMode": "Publicly supported play/prize model; separate promotional contests from ordinary gameplay.",
+    "currencies": "Publicly identified currencies; labels alone do not establish redemption rights.",
+    "welcomeOffer": "Signup and first-purchase offers separated; conflicting variants are not normalized into one offer.",
+    "purchaseRequirement": "Free participation versus a specific paid offer; unknown offer conditions stay explicit.",
+    "dailyReward": "Public recurring reward, base amount and claim interval where stated.",
+    "packages": "Dated public price/currency examples, not a complete cashier or value ranking.",
+    "gamesProviders": "Named categories or provider examples, not tested inventory.",
+    "playthrough": "Published multiplier and exactly which coins it applies to.",
+    "redemptionMinimumCap": "Published thresholds and caps with method, location and period.",
+    "redemptionMethodsTiming": "Public methods and scoped processing guidance, not measured payout speed.",
+    "verificationPolicy": "Public document requirements only, not observed verification experience.",
+    "restrictions": "Dated operator exclusions or product-mode restrictions; not a legal conclusion."
   },
   "sources": [
-    {
-      "id": "legacy-index",
-      "title": "Social Casino Index legacy operator records",
-      "publisher": "Social Casino Index",
-      "url": "repo:src/_data/operators.json",
-      "retrievedAt": "2026-09-10",
-      "context": "internal_secondary"
-    },
-    {
-      "id": "jackpota-home",
-      "title": "Jackpota homepage",
-      "publisher": "Jackpota",
-      "url": "https://www.jackpota.com/",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "jackpota-support",
-      "title": "Jackpota Help Center",
-      "publisher": "Jackpota",
-      "url": "https://support.jackpota.com/hc/en-us",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "jackpota-free-gc",
-      "title": "How can I obtain free Gold Coins?",
-      "publisher": "Jackpota",
-      "url": "https://support.jackpota.com/hc/en-us/articles/14737888008220-How-can-I-obtain-free-Gold-Coins",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "jackpota-packages",
-      "title": "Gold Coin Packages",
-      "publisher": "Jackpota",
-      "url": "https://support.jackpota.com/hc/en-us/articles/12669339478812-Gold-Coin-Packages",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "jackpota-external-redemption",
-      "title": "Current Jackpota redemption descriptions",
-      "publisher": "Multiple independent publishers",
-      "url": "https://deadspin.com/sweepstakes-casinos/reviews/jackpota/redemption/",
-      "retrievedAt": "2026-09-10",
-      "context": "public_secondary"
-    },
-    {
-      "id": "lucky-bunny-home",
-      "title": "Lucky Bunny website and registration copy",
-      "publisher": "Lucky Bunny",
-      "url": "https://luckybunny.fun/",
-      "retrievedAt": "2026-09-10",
-      "context": "public_limited"
-    },
-    {
-      "id": "lucky-bunny-secondary",
-      "title": "Current Lucky Bunny public offer and redemption descriptions",
-      "publisher": "Multiple independent publishers",
-      "url": "https://sweepscasinos.us/reviews/lucky-bunny/",
-      "retrievedAt": "2026-09-10",
-      "context": "public_secondary"
-    },
-    {
-      "id": "yay-terms",
-      "title": "YAY Casino Terms and Conditions",
-      "publisher": "YAY Casino",
-      "url": "https://www.yaycasino.com/terms-and-conditions",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "yay-rules",
-      "title": "YAY Casino Sweepstakes Rules, version 2.1",
-      "publisher": "YAY Casino",
-      "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
-      "retrievedAt": "2026-09-10",
-      "effectiveAt": "2026-08-20",
-      "context": "public"
-    },
-    {
-      "id": "yay-home",
-      "title": "YAY Casino homepage",
-      "publisher": "YAY Casino",
-      "url": "https://www.yaycasino.com/",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "yay-redemption-guide",
-      "title": "How to Redeem Your Sweeps Coins at YAY Casino",
-      "publisher": "YAY Casino",
-      "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
-      "retrievedAt": "2026-09-10",
-      "effectiveAt": "2026-07-07",
-      "context": "public"
-    },
-    {
-      "id": "dorados-home",
-      "title": "Dorados homepage and public lobby",
-      "publisher": "Dorados",
-      "url": "https://dorados.com/en",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "dorados-registration",
-      "title": "Dorados registration page",
-      "publisher": "Dorados",
-      "url": "https://dorados.com/en/registration",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "dorados-rules",
-      "title": "Dorados Sweepstakes Rules",
-      "publisher": "Dorados",
-      "url": "https://dorados.com/en/sweepstakes-rules",
-      "retrievedAt": "2026-09-10",
-      "context": "public_restricted"
-    },
-    {
-      "id": "zonko-terms",
-      "title": "Zonko Terms of Use",
-      "publisher": "Zonko",
-      "url": "https://www.zonko.com/help/terms/",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "zonko-rules",
-      "title": "Zonko Play Rules",
-      "publisher": "Zonko",
-      "url": "https://www.zonko.com/help/play-rules/",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "zonko-faq",
-      "title": "Zonko FAQ",
-      "publisher": "Zonko",
-      "url": "https://www.zonko.com/help/faq/",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "chumba-rules",
-      "title": "Chumba Casino Sweeps Rules, version 8.0",
-      "publisher": "Chumba Casino",
-      "url": "https://www.chumbacasino.com/documents/231215-POL-CHU-Sweeps-Rules-8.0.pdf",
-      "retrievedAt": "2026-09-10",
-      "effectiveAt": "2023-12-15",
-      "context": "public"
-    },
-    {
-      "id": "chumba-redeem",
-      "title": "Redeem Prizes",
-      "publisher": "Chumba Casino",
-      "url": "https://www.chumbacasino.com/getting-started/redeem-prizes",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "chumba-terms",
-      "title": "Chumba Casino Terms and Conditions",
-      "publisher": "Chumba Casino",
-      "url": "https://www.chumbacasino.com/terms-and-conditions",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "chumba-home",
-      "title": "Chumba Casino homepage",
-      "publisher": "Chumba Casino",
-      "url": "https://www.chumbacasino.com/",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "pulsz-home",
-      "title": "Pulsz homepage",
-      "publisher": "Pulsz",
-      "url": "https://www.pulsz.com/",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "pulsz-terms",
-      "title": "Pulsz Terms of Use",
-      "publisher": "Pulsz",
-      "url": "https://www.pulsz.com/terms-of-use",
-      "retrievedAt": "2026-09-10",
-      "context": "public_limited"
-    },
-    {
-      "id": "pulsz-bank",
-      "title": "How do I redeem using Online Banking?",
-      "publisher": "Pulsz",
-      "url": "https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "pulsz-skrill",
-      "title": "How do I redeem via Skrill?",
-      "publisher": "Pulsz",
-      "url": "https://support.pulsz.com/hc/en-us/articles/24820794645905-How-do-I-redeem-via-Skrill",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "stake-home",
-      "title": "Stake.us casino homepage",
-      "publisher": "Stake.us",
-      "url": "https://stake.us/casino/home",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "stake-terms",
-      "title": "Stake.us Terms and Conditions",
-      "publisher": "Stake.us",
-      "url": "https://stake.us/policies/terms",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "stake-redeem",
-      "title": "Redeeming Rewards",
-      "publisher": "Stake.us",
-      "url": "https://help.stake.us/en/articles/6453222-redeeming-rewards",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "stake-playthrough",
-      "title": "Redemption Progress",
-      "publisher": "Stake.us",
-      "url": "https://help.stake.us/en/articles/6465093-redemption-progress",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "wow-terms",
-      "title": "WOW Vegas Terms and Conditions",
-      "publisher": "WOW Vegas",
-      "url": "https://www.wowvegas.com/terms-and-conditions",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "wow-home",
-      "title": "WOW Vegas homepage",
-      "publisher": "WOW Vegas",
-      "url": "https://www.wowvegas.com/",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "wow-signup",
-      "title": "Sign-Up Bonus - How It Works",
-      "publisher": "WOW Vegas",
-      "url": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "wow-promo",
-      "title": "WOW Vegas Promo Code 2026",
-      "publisher": "WOW Vegas",
-      "url": "https://www.wowvegas.com/promo-code",
-      "retrievedAt": "2026-09-10",
-      "effectiveAt": "2026-01-01",
-      "context": "public_promotion"
-    },
-    {
-      "id": "wow-redeem",
-      "title": "How do I redeem?",
-      "publisher": "WOW Vegas",
-      "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "mcluck-terms",
-      "title": "McLuck Terms of Service",
-      "publisher": "McLuck",
-      "url": "https://www.mcluck.com/terms-of-service",
-      "retrievedAt": "2026-09-10",
-      "context": "public_limited"
-    },
-    {
-      "id": "mcluck-support",
-      "title": "McLuck Help Center",
-      "publisher": "McLuck",
-      "url": "https://support.mcluck.com/hc/en-us",
-      "retrievedAt": "2026-09-10",
-      "context": "public"
-    },
-    {
-      "id": "mcluck-promotions",
-      "title": "How do promotions work?",
-      "publisher": "McLuck",
-      "url": "https://support.mcluck.com/hc/en-us/articles/38182163464477-How-do-promotions-work",
-      "retrievedAt": "2026-09-10",
-      "effectiveAt": "2026-08-06",
-      "context": "public"
-    }
+    {"id":"jackpota-home","publisher":"Jackpota","title":"Homepage","url":"https://www.jackpota.com/","retrievedAt":"2026-09-10T07:26:19.630Z","access":"public_rendered","sha256":"2529dbf73c4194a0acb53b0e0a10019fc65e58dad268b7679d0c29d650f6aaff"},
+    {"id":"jackpota-terms","publisher":"Jackpota","title":"Terms of Service v2.6","url":"https://www.jackpota.com/terms-of-service","retrievedAt":"2026-09-10T07:26:54.312Z","effectiveAt":"2026-07-30","access":"public_rendered","sha256":"1e9d39126058ac2253d8533b291fbb35e1674b33539c28deb95f518f24ea15b9"},
+    {"id":"jackpota-packages","publisher":"Jackpota","title":"Gold Coin Packages","url":"https://support.jackpota.com/hc/en-us/articles/12669339478812-Gold-Coin-Packages","retrievedAt":"2026-09-10T07:26:59.732Z","access":"bot_blocked"},
+    {"id":"lucky-bunny-home","publisher":"Lucky Bunny","title":"Public lobby and Quick Buy","url":"https://luckybunny.fun/","retrievedAt":"2026-09-10T07:26:07.220Z","access":"public_rendered","sha256":"91e73d85f5665e955c0ead955ae52b24215e87713d4269d5436f67aec76410f9","note":"Currency icons were inspected in rendered DOM: alt fc/sc and fun-coin/sweep-coin classes. No account or checkout."},
+    {"id":"yay-home","publisher":"YAY Casino","title":"Homepage","url":"https://www.yaycasino.com/","retrievedAt":"2026-09-10T07:26:25.801Z","access":"public_rendered","sha256":"0167121b458161dda353b5551ed42a41f694ceaf0ed66b5e46035bf2bd29430a"},
+    {"id":"yay-promotions","publisher":"YAY Casino","title":"Promotions","url":"https://www.yaycasino.com/promotions","requestedUrl":"https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion","retrievedAt":"2026-09-10T07:27:08.103Z","access":"public_rendered","sha256":"1f574d78104361604ad237520ed5267e15193c5499cb77d0a50b08059599b684"},
+    {"id":"yay-daily","publisher":"YAY Casino","title":"Daily Login Bonus","url":"https://www.yaycasino.com/promotions/promo/online-casino-daily-login-bonus","retrievedAt":"2026-09-10T07:27:14.916Z","access":"public_rendered","sha256":"ed67cdaca16ee17a07f5f6878be028e7c7282caefb4d44ea48cc3d20d3cbb5cf"},
+    {"id":"yay-rules","publisher":"YAY Casino","title":"Sweepstakes Rules v2.1","url":"https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf","retrievedAt":"2026-09-10","publishedAt":"2026-08-20","access":"public_pdf","sha256":"f02ac89efc4f62d6c66cf33733be4a4ebcd8b0c87032a019074fe0afc05f7e7c","hashBasis":"PDF bytes"},
+    {"id":"yay-redemption-guide","publisher":"YAY Casino","title":"How to Redeem Your Sweeps Coins at YAY Casino","url":"https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/","retrievedAt":"2026-09-10T07:29:46.550Z","access":"public_rendered","sha256":"3eaa1884d3459361806d07cc956466c34f3ee497c30e96be921c45bb29b3c044"},
+    {"id":"dorados-home","publisher":"Dorados","title":"Regional access notice","url":"https://dorados.com/en","retrievedAt":"2026-09-10T07:29:50.324Z","access":"region_notice_only","sha256":"f425eb15b0584e2caf65660d902f441fb47be64e29adc7810304924e54a46ff9"},
+    {"id":"dorados-rules","publisher":"Dorados","title":"Rules request returned regional access notice","url":"https://dorados.com/en/sweepstakes-rules","retrievedAt":"2026-09-10T07:26:19.395Z","access":"region_notice_only"},
+    {"id":"zonko-notice","publisher":"Zonko","title":"Location block and operator footer","url":"https://www.zonko.com/geo-block","requestedUrl":"https://www.zonko.com/help/faq/","retrievedAt":"2026-09-10T07:26:11.615Z","access":"region_notice_only","sha256":"19b4ef7f929a0c7de1413dca7ead8d4091e72112835987ce6990189c002f1d0a"},
+    {"id":"chumba-notice","publisher":"Chumba Casino","title":"Availability notice and operator footer","url":"https://www.chumbacasino.com/geo-block","requestedUrl":"https://www.chumbacasino.com/getting-started/redeem-prizes","retrievedAt":"2026-09-10T07:26:25.319Z","access":"region_notice_only","sha256":"659780f183f34c3ca0f03c7ae0532704c99be50859aa954564ff5faff2311e37"},
+    {"id":"pulsz-home","publisher":"Pulsz","title":"Homepage request blocked","url":"https://www.pulsz.com/","retrievedAt":"2026-09-10T07:26:06.625Z","access":"bot_blocked"},
+    {"id":"pulsz-bank","publisher":"Pulsz","title":"Online Banking help request blocked","url":"https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking","retrievedAt":"2026-09-10T07:29:39.150Z","access":"bot_blocked"},
+    {"id":"stake-redeem","publisher":"Stake.us","title":"Redeeming Rewards","url":"https://help.stake.us/en/articles/6453222-redeeming-rewards","retrievedAt":"2026-09-10T07:26:19.070Z","access":"public_rendered","sha256":"836825778369b3c7404dd1c961977d8e3b6984a1c2d56059fecf483719485689"},
+    {"id":"stake-coins","publisher":"Stake.us","title":"Sweep Coins (Stake Cash)","url":"https://help.stake.us/en/articles/6389246-sweep-coins-stake-cash","retrievedAt":"2026-09-10T07:27:06.021Z","access":"public_rendered","sha256":"7c35d11edee320170c1113caccf4b21b57c135494d4268277d8aaaefb399ec51"},
+    {"id":"stake-rollover","publisher":"Stake.us","title":"Redemption progress","url":"https://help.stake.us/en/articles/6465093-redemption-progress","retrievedAt":"2026-09-10T07:27:11.507Z","access":"public_rendered","sha256":"54ba8488ac43872157b982032801bb28ac08e205c9e1bab7edca8a675e591b20"},
+    {"id":"stake-terms","publisher":"Stake.us","title":"Terms request blocked","url":"https://stake.us/policies/terms","retrievedAt":"2026-09-10T07:29:55.688Z","access":"bot_blocked"},
+    {"id":"wow-signup","publisher":"WOW Vegas","title":"Sign-Up Bonus - How It Works","url":"https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works","retrievedAt":"2026-09-10T07:26:54.725Z","access":"public_rendered","sha256":"7507e6dc948d04015ba1642e6e882765870c8f74489d86577642d138b0add292"},
+    {"id":"wow-promo","publisher":"WOW Vegas","title":"Promo Code 2026","url":"https://www.wowvegas.com/promo-code","retrievedAt":"2026-09-10T07:27:00.073Z","access":"public_rendered","sha256":"b3051ccff41076010d16b3383242191cbccc4077a71bacb246cd166dac7c67f4","note":"Page says last updated January 2026. Readable now is not proof that every advertised offer remains claimable."},
+    {"id":"wow-redeem","publisher":"WOW Vegas","title":"How do I redeem?","url":"https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem","retrievedAt":"2026-09-10T07:26:25.197Z","access":"public_rendered","sha256":"8d21be512fec1bc8ab359eb3343bc870c95233f2af1f274b85f56eb9de50ff94"},
+    {"id":"wow-terms","publisher":"WOW Vegas","title":"Terms and Conditions","url":"https://www.wowvegas.com/terms-and-conditions","retrievedAt":"2026-09-10T07:29:57.391Z","access":"public_rendered","sha256":"faf5a7ae42a9d427de405c817da29700da511633b76b9b3cb6b79e347d40b879"},
+    {"id":"wow-rules","publisher":"WOW Vegas","title":"SC rules request redirected to login","url":"https://www.wowvegas.com/sc-game-rules","finalUrl":"https://www.wowvegas.com/login?redirect=/sc-game-rules","retrievedAt":"2026-09-10T07:29:52.126Z","access":"login_required"},
+    {"id":"mcluck-notice","publisher":"McLuck","title":"Availability notice returned at terms URL","url":"https://www.mcluck.com/terms-of-service","retrievedAt":"2026-09-10T07:29:44.761Z","access":"region_notice_only","sha256":"34d1b9772290274750f52e6eb4849fd691343e47e40060cadfd93189a23a0d9f"},
+    {"id":"mcluck-support","publisher":"McLuck","title":"Help center request blocked","url":"https://support.mcluck.com/hc/en-us","retrievedAt":"2026-09-10T07:26:30.656Z","access":"bot_blocked"}
   ],
   "operators": [
     {
-      "id": "jackpota",
-      "name": "Jackpota",
-      "attributes": {
-        "entity": {
-          "value": "Silver Social Operations Limited",
-          "status": "operator_stated",
-          "sourceIds": ["jackpota-home"]
-        },
-        "productMode": {
-          "value": "Unresolved: official public pages emphasize free-play Gold Coins, while current independent pages describe a dual-currency sweepstakes product.",
-          "status": "conflicting",
-          "sourceIds": ["jackpota-home", "jackpota-support", "jackpota-external-redemption"]
-        },
-        "currencies": {
-          "value": ["Gold Coins", "Sweeps Coins reported by current secondary sources"],
-          "status": "conflicting",
-          "sourceIds": ["jackpota-support", "jackpota-external-redemption"]
-        },
-        "welcomeOffer": {
-          "value": "Legacy official support record: 100% more coins plus 75 free spins; current currency split is not publicly resolved.",
-          "status": "unverified",
-          "sourceIds": ["legacy-index", "jackpota-support"]
-        },
-        "purchaseRequirement": {
-          "value": "Purchase required for the 100%-more-coins component; registration/free-coin component not resolved.",
-          "status": "unverified",
-          "sourceIds": ["legacy-index", "jackpota-support"]
-        },
-        "dailyReward": {
-          "value": {
-            "intervalHours": 24,
-            "amount": null,
-            "currency": "Gold Coins"
-          },
-          "status": "operator_stated",
-          "sourceIds": ["jackpota-free-gc"]
-        },
-        "packages": {
-          "value": {
-            "minimumPriceUsd": 1.99,
-            "maximumPriceUsd": 99.99,
-            "currency": "Gold Coins"
-          },
-          "status": "operator_stated",
-          "sourceIds": ["jackpota-packages"]
-        },
-        "gamesProviders": {
-          "value": "More than 700 games; slots, table games, live dealer, Megaways, and other categories. Complete provider list not captured.",
-          "status": "operator_stated",
-          "sourceIds": ["jackpota-home"]
-        },
-        "playthrough": {
-          "value": null,
-          "status": "conflicting",
-          "sourceIds": ["jackpota-support", "jackpota-external-redemption"],
-          "note": "Prize-bearing mode is unresolved."
-        },
-        "redemptionMinimumCap": {
-          "value": {
-            "minimumSc": null,
-            "maximumScPerDay": null
-          },
-          "status": "conflicting",
-          "sourceIds": ["jackpota-support", "jackpota-external-redemption"]
-        },
-        "redemptionMethodsTiming": {
-          "value": null,
-          "status": "conflicting",
-          "sourceIds": ["jackpota-support", "jackpota-external-redemption"]
-        },
-        "kyc": {
-          "value": "Government-issued identity documentation may be required for account verification.",
-          "status": "operator_stated",
-          "sourceIds": ["legacy-index", "jackpota-support"]
-        },
-        "restrictions": {
-          "value": "Legacy record lists 17 excluded states; recheck after product classification is resolved.",
-          "status": "unverified",
-          "sourceIds": ["legacy-index"]
-        }
+      "id":"jackpota",
+      "name":"Jackpota",
+      "coverage":{"sourceIds":["jackpota-home","jackpota-terms","jackpota-packages"],"note":"Homepage and current terms readable; package help blocked. Do not carry legacy SC or prize-redemption claims forward."},
+      "attributes":{
+        "entity":{"value":"Silver Social Operations Limited","status":"operator_stated","evidence":[{"sourceId":"jackpota-terms","locator":"Opening parties paragraph"}]},
+        "productMode":{"value":"Entertainment-only virtual-coin gameplay. Separate no-purchase promotional contests or giveaways are an explicit exception, not evidence of ordinary SC redemption.","status":"operator_stated","evidence":[{"sourceId":"jackpota-terms","locator":"2.1 and 2.4"}]},
+        "currencies":{"value":["Gold Coins"],"status":"operator_stated","evidence":[{"sourceId":"jackpota-home","locator":"Free-to-play explanation"}]},
+        "welcomeOffer":{"value":{"extraCoinsPercent":100,"freeSpins":75,"purchaseRequired":null,"coinAmount":null,"spinDenomination":null},"status":"operator_stated","evidence":[{"sourceId":"jackpota-home","locator":"Join now offer"}],"note":"Headline only. Do not label the full offer no-purchase or prize-bearing."},
+        "purchaseRequirement":{"value":"No purchase needed for ordinary play; welcome-offer purchase condition not established.","status":"operator_stated","evidence":[{"sourceId":"jackpota-terms","locator":"2.4"}]},
+        "dailyReward":{"value":{"currency":"Gold Coins","amount":null,"intervalHours":24},"status":"operator_stated","evidence":[{"sourceId":"jackpota-home","locator":"Free-to-play explanation; daily login"}]},
+        "packages":{"value":null,"status":"unverified","evidence":[],"note":"Package help blocked; remove legacy $1.99-$99.99 range."},
+        "gamesProviders":{"value":["Slots","Blackjack","Roulette","Live dealer","Slingo"],"status":"operator_stated","evidence":[{"sourceId":"jackpota-home","locator":"Free-to-play explanation"}],"note":"Omit total: same page advertises both 700+ and 1,500+."},
+        "playthrough":{"value":null,"status":"unverified","evidence":[],"note":"No verified ordinary prize-bearing coin mode; separate contest rules not established."},
+        "redemptionMinimumCap":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMethodsTiming":{"value":null,"status":"unverified","evidence":[]},
+        "verificationPolicy":{"value":"May request identity, address and source-of-funds evidence.","status":"operator_stated","evidence":[{"sourceId":"jackpota-terms","locator":"8.3"}]},
+        "restrictions":{"value":{"excludedStates":["AL","CT","DE","ID","IN","KY","LA","ME","MD","MI","MT","NV","NJ","NY","TN","WA","WV"],"outsideUsExcluded":true},"status":"operator_stated","evidence":[{"sourceId":"jackpota-terms","locator":"3.4"}],"note":"Promotions may impose additional eligibility rules."}
       }
     },
     {
-      "id": "lucky-bunny",
-      "name": "Lucky Bunny",
-      "attributes": {
-        "entity": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["lucky-bunny-home", "lucky-bunny-secondary"]
-        },
-        "productMode": {
-          "value": "Reported dual-currency sweepstakes social casino.",
-          "status": "unverified",
-          "sourceIds": ["lucky-bunny-home", "lucky-bunny-secondary"]
-        },
-        "currencies": {
-          "value": ["Fun Coins or Gold Coins", "Sweeps Coins"],
-          "status": "conflicting",
-          "sourceIds": ["lucky-bunny-home", "lucky-bunny-secondary"],
-          "note": "Public sources use inconsistent names for the entertainment currency."
-        },
-        "welcomeOffer": {
-          "value": null,
-          "status": "conflicting",
-          "sourceIds": ["lucky-bunny-secondary"],
-          "note": "Current secondary sources report materially different signup amounts."
-        },
-        "purchaseRequirement": {
-          "value": "A no-purchase signup component and optional first-purchase offers are reported; exact current terms are not publicly verified.",
-          "status": "unverified",
-          "sourceIds": ["lucky-bunny-secondary"]
-        },
-        "dailyReward": {
-          "value": {
-            "amountScMinimum": null,
-            "amountScMaximum": null,
-            "mechanism": "Daily wheel/login reward reported"
-          },
-          "status": "unverified",
-          "sourceIds": ["lucky-bunny-secondary"]
-        },
-        "packages": {
-          "value": null,
-          "status": "conflicting",
-          "sourceIds": ["lucky-bunny-secondary"]
-        },
-        "gamesProviders": {
-          "value": "Large slots, table, and live-game lobby reported; exact count and providers not verified from stable operator pages.",
-          "status": "unverified",
-          "sourceIds": ["lucky-bunny-secondary"]
-        },
-        "playthrough": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["lucky-bunny-secondary"]
-        },
-        "redemptionMinimumCap": {
-          "value": {
-            "minimumSc": null,
-            "maximumScPerDay": null
-          },
-          "status": "unverified",
-          "sourceIds": ["lucky-bunny-secondary"]
-        },
-        "redemptionMethodsTiming": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["lucky-bunny-secondary"]
-        },
-        "kyc": {
-          "value": "Identity verification is reported before first redemption; document requirements are not verified.",
-          "status": "unverified",
-          "sourceIds": ["lucky-bunny-secondary"]
-        },
-        "restrictions": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["lucky-bunny-home"]
-        }
+      "id":"lucky-bunny",
+      "name":"Lucky Bunny",
+      "coverage":{"sourceIds":["lucky-bunny-home"],"note":"JS-rendered lobby and package cards readable without login. Entity, prize rights and detailed terms not established."},
+      "attributes":{
+        "entity":{"value":null,"status":"unverified","evidence":[]},
+        "productMode":{"value":null,"status":"unverified","evidence":[],"note":"FC/SC labels alone do not establish prize rights."},
+        "currencies":{"value":["FC","SC"],"status":"public_page_observed","evidence":[{"sourceId":"lucky-bunny-home","locator":"Quick Buy cards; currency image alt fc/sc and fun-coin/sweep-coin classes"}],"note":"Keep displayed abbreviations; no cash-value inference."},
+        "welcomeOffer":{"value":null,"status":"unverified","evidence":[]},
+        "purchaseRequirement":{"value":"The sampled Quick Buy packages require payment; signup conditions not verified.","status":"public_page_observed","evidence":[{"sourceId":"lucky-bunny-home","locator":"Quick Buy price buttons"}]},
+        "dailyReward":{"value":null,"status":"unverified","evidence":[]},
+        "packages":{"value":{"kind":"Public sample, not a full cashier","items":[{"priceUsd":4.99,"fc":50000,"complimentarySc":5},{"priceUsd":49.99,"fc":500000,"complimentarySc":50},{"priceUsd":99.99,"fc":1000000,"complimentarySc":101}]},"status":"public_page_observed","evidence":[{"sourceId":"lucky-bunny-home","locator":"Quick Buy cards; currency icon labels"}],"note":"Displayed prices, not completed or guaranteed purchases."},
+        "gamesProviders":{"value":["BGaming","Hacksaw","Iconic21"],"status":"public_page_observed","evidence":[{"sourceId":"lucky-bunny-home","locator":"Lobby collection headings"}]},
+        "playthrough":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMinimumCap":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMethodsTiming":{"value":null,"status":"unverified","evidence":[]},
+        "verificationPolicy":{"value":null,"status":"unverified","evidence":[]},
+        "restrictions":{"value":null,"status":"unverified","evidence":[]}
       }
     },
     {
-      "id": "yay-casino",
-      "name": "YAY Casino",
-      "attributes": {
-        "entity": {
-          "value": "Social Gaming LLC",
-          "status": "operator_stated",
-          "sourceIds": ["yay-terms", "yay-rules"]
-        },
-        "productMode": {
-          "value": "Dual-currency sweepstakes social casino.",
-          "status": "operator_stated",
-          "sourceIds": ["yay-rules"]
-        },
-        "currencies": {
-          "value": ["Gold Coins", "Sweeps Coins"],
-          "status": "operator_stated",
-          "sourceIds": ["yay-rules"]
-        },
-        "welcomeOffer": {
-          "value": null,
-          "status": "conflicting",
-          "sourceIds": ["legacy-index", "yay-home"],
-          "note": "The legacy record and current public promotional copy report different coin and free-spin amounts."
-        },
-        "purchaseRequirement": {
-          "value": "No purchase is necessary to participate; purchase-based promotions may have separate terms.",
-          "status": "operator_stated",
-          "sourceIds": ["yay-terms", "yay-rules"]
-        },
-        "dailyReward": {
-          "value": {
-            "amount": null,
-            "currency": "Sweeps Coins",
-            "mechanism": "Daily login reward reported by operator"
-          },
-          "status": "operator_stated",
-          "sourceIds": ["yay-home"]
-        },
-        "packages": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["yay-home"]
-        },
-        "gamesProviders": {
-          "value": "More than 1,300 games across slots, jackpots, table-style games, and other categories; provider list not normalized.",
-          "status": "operator_stated",
-          "sourceIds": ["yay-home"]
-        },
-        "playthrough": {
-          "value": {
-            "multiplier": 1,
-            "basis": "Sweeps Coins by default"
-          },
-          "status": "operator_stated",
-          "sourceIds": ["yay-rules", "legacy-index"]
-        },
-        "redemptionMinimumCap": {
-          "value": {
-            "minimumSc": 50,
-            "maximumScPerDay": 9550
-          },
-          "status": "operator_stated",
-          "sourceIds": ["yay-rules", "legacy-index"]
-        },
-        "redemptionMethodsTiming": {
-          "value": {
-            "methods": ["bank transfer", "cryptocurrency where offered", "Visa virtual card where offered"],
-            "reviewHoursTypicalMinimum": 24,
-            "reviewHoursTypicalMaximum": 72,
-            "reviewDaysMaximum": 7
-          },
-          "status": "operator_stated",
-          "sourceIds": ["yay-redemption-guide", "yay-rules", "legacy-index"]
-        },
-        "kyc": {
-          "value": "Identity, residential address, selfie, eligibility, and payment checks can apply before first redemption.",
-          "status": "operator_stated",
-          "sourceIds": ["yay-redemption-guide", "yay-rules"]
-        },
-        "restrictions": {
-          "value": "The current terms exclude at least California, Idaho, Michigan, New York, and Washington; use the current participant eligibility document for the complete list.",
-          "status": "operator_stated",
-          "sourceIds": ["yay-terms"]
-        }
+      "id":"yay-casino",
+      "name":"YAY Casino",
+      "coverage":{"sourceIds":["yay-home","yay-promotions","yay-daily","yay-rules","yay-redemption-guide"],"note":"Public pages and rules PDF readable. Welcome offer remains conflicted; daily amount is conditional."},
+      "attributes":{
+        "entity":{"value":"Social Gaming LLC","status":"operator_stated","evidence":[{"sourceId":"yay-promotions","locator":"Company footer"}]},
+        "productMode":{"value":"Gold Coin free play and Sweeps Coin promotional play with conditional prize redemption.","status":"operator_stated","evidence":[{"sourceId":"yay-promotions","locator":"Currency FAQ"},{"sourceId":"yay-rules","locator":"Sections 4 and 5"}]},
+        "currencies":{"value":["Gold Coins","Sweeps Coins"],"status":"operator_stated","evidence":[{"sourceId":"yay-promotions","locator":"Currency FAQ"}]},
+        "welcomeOffer":{"value":null,"status":"conflicting","evidence":[{"sourceId":"yay-home","locator":"Welcome bonus headline"},{"sourceId":"yay-promotions","locator":"How to make the most of the welcome bonus"}],"variants":[{"sourceId":"yay-home","gc":120000,"sc":12,"freeSpins":20},{"sourceId":"yay-promotions","gc":80000,"sc":8,"freeSpins":20,"spinSc":0.1,"spinGame":"Yay Devil Fire 2"}],"note":"No applicable terms resolve the two public amounts; do not pick the larger headline."},
+        "purchaseRequirement":{"value":"Public signup offer is no-purchase and requires account verification; paid promotions are separate.","status":"operator_stated","evidence":[{"sourceId":"yay-promotions","locator":"Welcome bonus steps and no-deposit FAQ"}]},
+        "dailyReward":{"value":{"firstClaimGc":10000,"firstClaimSc":1,"intervalHours":24,"streakLengthDays":7,"eligibility":"SC balance must be below an operator-set threshold; threshold amount not published here.","reset":"Streak resets after seven consecutive days; missed-day details not established."},"status":"operator_stated","evidence":[{"sourceId":"yay-promotions","locator":"How to Claim Your Daily Bonus"},{"sourceId":"yay-daily","locator":"Progressive Daily Login Bonus"},{"sourceId":"yay-rules","locator":"3.2.2, page 4"}]},
+        "packages":{"value":null,"status":"unverified","evidence":[]},
+        "gamesProviders":{"value":["Booming Games","Relax Gaming","Slotmill","Evoplay","3 Oaks Gaming"],"status":"operator_stated","evidence":[{"sourceId":"yay-daily","locator":"Get Your Daily Free Coins and Start Playing"}]},
+        "playthrough":{"value":{"guideMultiplier":1,"scope":"General guide, not a guarantee for every promotion","conditions":"Rules permit variation by game, promotion and region; WAR does not contribute."},"status":"operator_stated","evidence":[{"sourceId":"yay-redemption-guide","locator":"Exchange Your Sweeps Coins with Ease"},{"sourceId":"yay-rules","locator":"4.5-4.7, page 6"}]},
+        "redemptionMinimumCap":{"value":{"minimumSc":50,"maximumRequestScPerDay":9550,"floridaMaximumScPerSinglePlay":4900,"maximumTotalWinScPer48Hours":10000,"winCapScope":"Except Restricted Jurisdiction and Excluded Territories, as worded in 4.15."},"status":"operator_stated","evidence":[{"sourceId":"yay-rules","locator":"5.3 page 8; 5.14-5.15 page 10; 4.15 page 7"}],"note":"50 SC described as the minimum redeemable per day. Win caps are not withdrawal caps."},
+        "redemptionMethodsTiming":{"value":{"methods":["Bank transfer","Visa virtual card","Supported cryptocurrencies"],"publishedTiming":"Guide states 1-3 days for Visa virtual card; not an end-to-end guarantee. Rules allow verification up to one month after all requested documents and KYC/legal review."},"status":"operator_stated","evidence":[{"sourceId":"yay-redemption-guide","locator":"Visa Virtual Card; Did You Know; Other Important Things"},{"sourceId":"yay-rules","locator":"6.1, page 11"}]},
+        "verificationPolicy":{"value":"May require photo ID, proof of residence, proof of income and payment-method ownership. Guide also describes selfie and phone checks.","status":"operator_stated","evidence":[{"sourceId":"yay-rules","locator":"5.4 and 5.9-5.12, pages 8-10"},{"sourceId":"yay-redemption-guide","locator":"Identity Verification and Visa steps"}]},
+        "restrictions":{"value":{"excludedSweepstakesStates":["ID","MI","NY","WA","NV","LA","DE","CA","TN","CT","IL","ME","IN","NJ","MT"],"scope":"Sweepstakes permitted territories, not an all-products availability finding"},"status":"operator_stated","evidence":[{"sourceId":"yay-rules","locator":"1.1.8, page 2"}]}
       }
     },
     {
-      "id": "dorados",
-      "name": "Dorados",
-      "attributes": {
-        "entity": {
-          "value": "Rafflefy Limited",
-          "status": "operator_stated",
-          "sourceIds": ["dorados-rules", "legacy-index"]
-        },
-        "productMode": {
-          "value": "Dual-currency sweepstakes social casino.",
-          "status": "operator_stated",
-          "sourceIds": ["dorados-home", "dorados-registration"]
-        },
-        "currencies": {
-          "value": ["Gold Coins", "Sweeps Coins"],
-          "status": "operator_stated",
-          "sourceIds": ["dorados-home", "dorados-registration"]
-        },
-        "welcomeOffer": {
-          "value": "Registration reward includes Gold Coins and complimentary Sweeps Coins; exact public amount not captured.",
-          "status": "operator_stated",
-          "sourceIds": ["dorados-registration"]
-        },
-        "purchaseRequirement": {
-          "value": "No purchase is necessary for registration, play, daily rewards, or alternative entry.",
-          "status": "operator_stated",
-          "sourceIds": ["dorados-home", "dorados-registration"]
-        },
-        "dailyReward": {
-          "value": {
-            "amount": null,
-            "currency": null,
-            "mechanism": "Daily rewards advertised"
-          },
-          "status": "operator_stated",
-          "sourceIds": ["dorados-home"]
-        },
-        "packages": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["dorados-home"]
-        },
-        "gamesProviders": {
-          "value": "Large public lobby with slots, live games, roulette, blackjack, game shows, crash/instant games, scratch/bingo, and multiple provider groupings.",
-          "status": "observed",
-          "sourceIds": ["dorados-home"]
-        },
-        "playthrough": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["dorados-rules"]
-        },
-        "redemptionMinimumCap": {
-          "value": {
-            "minimumSc": 100,
-            "maximumScPerDay": null
-          },
-          "status": "operator_stated",
-          "sourceIds": ["dorados-rules", "legacy-index"]
-        },
-        "redemptionMethodsTiming": {
-          "value": {
-            "methods": ["designated payment method or another financial account in the participant's name"],
-            "timing": null
-          },
-          "status": "operator_stated",
-          "sourceIds": ["dorados-rules", "legacy-index"]
-        },
-        "kyc": {
-          "value": "Identity and named payment-account checks can apply before a prize is released.",
-          "status": "operator_stated",
-          "sourceIds": ["dorados-rules", "legacy-index"]
-        },
-        "restrictions": {
-          "value": "Legacy record lists 14 excluded states; the direct current rules were access-restricted during this pass.",
-          "status": "unverified",
-          "sourceIds": ["dorados-rules", "legacy-index"]
-        }
+      "id":"dorados",
+      "name":"Dorados",
+      "coverage":{"sourceIds":["dorados-home","dorados-rules"],"note":"Regional block notice only. Earlier entity, currency, lobby and 100 SC claims removed."},
+      "attributes":{
+        "entity":{"value":null,"status":"unverified","evidence":[]},
+        "productMode":{"value":"Free-to-play social gaming; prize model not verified.","status":"operator_stated","evidence":[{"sourceId":"dorados-home","locator":"Access notice description"}]},
+        "currencies":{"value":null,"status":"unverified","evidence":[]},
+        "welcomeOffer":{"value":null,"status":"unverified","evidence":[]},
+        "purchaseRequirement":{"value":"No purchase necessary for the social gaming described in the notice; no offer-specific finding.","status":"operator_stated","evidence":[{"sourceId":"dorados-home","locator":"Access notice description"}]},
+        "dailyReward":{"value":null,"status":"unverified","evidence":[]},
+        "packages":{"value":null,"status":"unverified","evidence":[]},
+        "gamesProviders":{"value":null,"status":"unverified","evidence":[]},
+        "playthrough":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMinimumCap":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMethodsTiming":{"value":null,"status":"unverified","evidence":[]},
+        "verificationPolicy":{"value":null,"status":"unverified","evidence":[]},
+        "restrictions":{"value":null,"status":"unverified","evidence":[],"note":"A block in the research location does not establish US state restrictions."}
       }
     },
     {
-      "id": "zonko",
-      "name": "Zonko",
-      "attributes": {
-        "entity": {
-          "value": "Mamba Limited / Forever Winning LLC",
-          "status": "operator_stated",
-          "sourceIds": ["zonko-terms", "legacy-index"]
-        },
-        "productMode": {
-          "value": "Dual-currency sweepstakes social casino.",
-          "status": "operator_stated",
-          "sourceIds": ["zonko-terms", "zonko-rules"]
-        },
-        "currencies": {
-          "value": ["Gold Coins or other entertainment Virtual Coins", "Sweepstakes Coins"],
-          "status": "operator_stated",
-          "sourceIds": ["zonko-terms", "zonko-rules"]
-        },
-        "welcomeOffer": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["zonko-faq"]
-        },
-        "purchaseRequirement": {
-          "value": "No purchase is necessary; an alternative method of entry is available.",
-          "status": "operator_stated",
-          "sourceIds": ["zonko-faq", "zonko-rules"]
-        },
-        "dailyReward": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["zonko-faq"]
-        },
-        "packages": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["zonko-terms"]
-        },
-        "gamesProviders": {
-          "value": "Public social-casino lobby; exact game count and providers not captured.",
-          "status": "unverified",
-          "sourceIds": ["zonko-faq"]
-        },
-        "playthrough": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["zonko-rules"]
-        },
-        "redemptionMinimumCap": {
-          "value": {
-            "cashMinimumSc": 100,
-            "giftCardMinimumSc": null,
-            "maximumScPerDay": null
-          },
-          "status": "operator_stated",
-          "sourceIds": ["zonko-rules", "legacy-index"],
-          "note": "The operator states that gift-card minimums may be lower where offered."
-        },
-        "redemptionMethodsTiming": {
-          "value": {
-            "methods": ["cash prize", "gift card where offered"],
-            "timing": null
-          },
-          "status": "unverified",
-          "sourceIds": ["zonko-rules", "legacy-index"]
-        },
-        "kyc": {
-          "value": "Verification may require government-issued ID, proof of address, and evidence of funds; requested documents must be supplied within 40 days.",
-          "status": "operator_stated",
-          "sourceIds": ["zonko-terms", "legacy-index"]
-        },
-        "restrictions": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["zonko-terms"]
-        }
+      "id":"zonko",
+      "name":"Zonko",
+      "coverage":{"sourceIds":["zonko-notice"],"note":"Location block and footer only. Terms and redemption claims from the earlier pass are not retained."},
+      "attributes":{
+        "entity":{"value":"Mamba Limited owns/operates the site; footer names Mamba Limited and Forever Winning LLC as joint service providers.","status":"operator_stated","evidence":[{"sourceId":"zonko-notice","locator":"Operator footer"}]},
+        "productMode":{"value":null,"status":"unverified","evidence":[]},
+        "currencies":{"value":null,"status":"unverified","evidence":[]},
+        "welcomeOffer":{"value":null,"status":"unverified","evidence":[]},
+        "purchaseRequirement":{"value":"Footer states no purchase necessary to play; individual offer conditions not verified.","status":"operator_stated","evidence":[{"sourceId":"zonko-notice","locator":"No Purchase Necessary footer"}]},
+        "dailyReward":{"value":null,"status":"unverified","evidence":[]},
+        "packages":{"value":null,"status":"unverified","evidence":[]},
+        "gamesProviders":{"value":null,"status":"unverified","evidence":[]},
+        "playthrough":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMinimumCap":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMethodsTiming":{"value":null,"status":"unverified","evidence":[]},
+        "verificationPolicy":{"value":null,"status":"unverified","evidence":[]},
+        "restrictions":{"value":null,"status":"unverified","evidence":[]}
       }
     },
     {
-      "id": "chumba",
-      "name": "Chumba Casino",
-      "attributes": {
-        "entity": {
-          "value": "VGW",
-          "status": "operator_stated",
-          "sourceIds": ["chumba-terms", "legacy-index"]
-        },
-        "productMode": {
-          "value": "Dual-currency social casino with sweepstakes promotional play in eligible jurisdictions.",
-          "status": "operator_stated",
-          "sourceIds": ["chumba-rules"]
-        },
-        "currencies": {
-          "value": ["Gold Coins", "Sweeps Coins"],
-          "status": "operator_stated",
-          "sourceIds": ["chumba-rules"]
-        },
-        "welcomeOffer": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["chumba-home"]
-        },
-        "purchaseRequirement": {
-          "value": "No purchase is necessary to participate in the sweepstakes.",
-          "status": "operator_stated",
-          "sourceIds": ["chumba-rules"]
-        },
-        "dailyReward": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["chumba-home"]
-        },
-        "packages": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["chumba-home"]
-        },
-        "gamesProviders": {
-          "value": "More than 200 social-casino games; public categories include slots, jackpots, live games, and named provider collections.",
-          "status": "operator_stated",
-          "sourceIds": ["chumba-home"]
-        },
-        "playthrough": {
-          "value": "Sweeps Coins must be used in promotional play and resulting eligible Sweeps Coins may be redeemed; exact contribution rules vary.",
-          "status": "operator_stated",
-          "sourceIds": ["chumba-rules"]
-        },
-        "redemptionMinimumCap": {
-          "value": {
-            "cashMinimumSc": 100,
-            "giftCardMinimumSc": null,
-            "maximumScPerDay": null
-          },
-          "status": "operator_stated",
-          "sourceIds": ["chumba-rules"]
-        },
-        "redemptionMethodsTiming": {
-          "value": {
-            "methods": ["bank transfer", "gift card where offered"],
-            "processingDaysAfterApproval": 2
-          },
-          "status": "operator_stated",
-          "sourceIds": ["chumba-redeem", "chumba-terms", "legacy-index"]
-        },
-        "kyc": {
-          "value": "Identity, residential address, and nominated bank-account verification are required before bank redemption.",
-          "status": "operator_stated",
-          "sourceIds": ["chumba-redeem", "chumba-terms"]
-        },
-        "restrictions": {
-          "value": "Availability and sweepstakes mode differ by state; current location controls and terms must be checked before routing.",
-          "status": "operator_stated",
-          "sourceIds": ["chumba-terms"]
-        }
+      "id":"chumba",
+      "name":"Chumba Casino",
+      "coverage":{"sourceIds":["chumba-notice"],"note":"Detailed availability notice and footer readable; redemption page redirected. Old rules PDF is not proof of current redemption terms."},
+      "attributes":{
+        "entity":{"value":"VGW Malta Limited operates the site; VGW Games Limited operates sweepstakes promotions and prizes.","status":"operator_stated","evidence":[{"sourceId":"chumba-notice","locator":"Legal footer"}]},
+        "productMode":{"value":"Gold Coin free play; sweepstakes availability depends on state.","status":"operator_stated","evidence":[{"sourceId":"chumba-notice","locator":"State availability breakdown"}]},
+        "currencies":{"value":["Gold Coins"],"status":"operator_stated","evidence":[{"sourceId":"chumba-notice","locator":"Gold Coin free-to-play only list"}],"note":"Partial: promotional currency naming not established in this captured notice."},
+        "welcomeOffer":{"value":null,"status":"unverified","evidence":[]},
+        "purchaseRequirement":{"value":"No purchase necessary, per footer; specific signup conditions not verified.","status":"operator_stated","evidence":[{"sourceId":"chumba-notice","locator":"Legal footer"}]},
+        "dailyReward":{"value":null,"status":"unverified","evidence":[]},
+        "packages":{"value":null,"status":"unverified","evidence":[]},
+        "gamesProviders":{"value":null,"status":"unverified","evidence":[]},
+        "playthrough":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMinimumCap":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMethodsTiming":{"value":null,"status":"unverified","evidence":[]},
+        "verificationPolicy":{"value":null,"status":"unverified","evidence":[]},
+        "restrictions":{"value":{"unavailableStates":["CT","DE","MI","MT","NV","WA"],"goldCoinOnlyStates":["CA","ID","IN","LA","ME","MS","NJ","NY","TN","WV"]},"status":"operator_stated","evidence":[{"sourceId":"chumba-notice","locator":"Currently not available and Gold Coin free-to-play only lists"}]}
       }
     },
     {
-      "id": "pulsz",
-      "name": "Pulsz",
-      "attributes": {
-        "entity": {
-          "value": "Yellow Social Interactive",
-          "status": "operator_stated",
-          "sourceIds": ["pulsz-terms", "legacy-index"]
-        },
-        "productMode": {
-          "value": "Dual-currency sweepstakes social casino.",
-          "status": "operator_stated",
-          "sourceIds": ["pulsz-home", "pulsz-terms"]
-        },
-        "currencies": {
-          "value": ["Gold Coins", "Sweeps Coins"],
-          "status": "operator_stated",
-          "sourceIds": ["pulsz-home", "pulsz-terms"]
-        },
-        "welcomeOffer": {
-          "value": "5,000 free Gold Coins at registration; any Sweeps Coin or purchase component is not normalized.",
-          "status": "operator_stated",
-          "sourceIds": ["pulsz-home"]
-        },
-        "purchaseRequirement": {
-          "value": "No purchase for the stated Gold Coin registration reward; Skrill redemption requires a prior Skrill purchase.",
-          "status": "operator_stated",
-          "sourceIds": ["pulsz-home", "pulsz-skrill"]
-        },
-        "dailyReward": {
-          "value": {
-            "amount": null,
-            "currency": null,
-            "mechanism": "Daily rewards advertised"
-          },
-          "status": "operator_stated",
-          "sourceIds": ["pulsz-home"]
-        },
-        "packages": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["pulsz-terms"]
-        },
-        "gamesProviders": {
-          "value": "More than 1,000 free-to-play games; categories include slots and table/live-style games. Provider list not normalized.",
-          "status": "operator_stated",
-          "sourceIds": ["pulsz-home"]
-        },
-        "playthrough": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["pulsz-terms"]
-        },
-        "redemptionMinimumCap": {
-          "value": {
-            "minimumSc": null,
-            "maximumScPerDay": null
-          },
-          "status": "unverified",
-          "sourceIds": ["pulsz-terms"]
-        },
-        "redemptionMethodsTiming": {
-          "value": {
-            "methods": ["Trustly", "standard ACH", "Skrill with prior Skrill purchase", "gift card where offered"],
-            "firstRedemptionBusinessDaysMinimum": 3,
-            "firstRedemptionBusinessDaysMaximum": 7,
-            "internalProcessingHoursMaximum": 72
-          },
-          "status": "operator_stated",
-          "sourceIds": ["pulsz-bank", "pulsz-skrill", "legacy-index"]
-        },
-        "kyc": {
-          "value": "Identity verification is required for redemption; the first redemption includes verification.",
-          "status": "operator_stated",
-          "sourceIds": ["pulsz-terms", "legacy-index"]
-        },
-        "restrictions": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["pulsz-terms"]
-        }
+      "id":"pulsz",
+      "name":"Pulsz",
+      "coverage":{"sourceIds":["pulsz-home","pulsz-bank"],"note":"Bot controls prevented substantive public evidence. All previous unsupported values removed, not replaced by affiliate claims."},
+      "attributes":{
+        "entity":{"value":null,"status":"unverified","evidence":[]},
+        "productMode":{"value":null,"status":"unverified","evidence":[]},
+        "currencies":{"value":null,"status":"unverified","evidence":[]},
+        "welcomeOffer":{"value":null,"status":"unverified","evidence":[]},
+        "purchaseRequirement":{"value":null,"status":"unverified","evidence":[]},
+        "dailyReward":{"value":null,"status":"unverified","evidence":[]},
+        "packages":{"value":null,"status":"unverified","evidence":[]},
+        "gamesProviders":{"value":null,"status":"unverified","evidence":[]},
+        "playthrough":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMinimumCap":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMethodsTiming":{"value":null,"status":"unverified","evidence":[]},
+        "verificationPolicy":{"value":null,"status":"unverified","evidence":[]},
+        "restrictions":{"value":null,"status":"unverified","evidence":[]}
       }
     },
     {
-      "id": "stake-us",
-      "name": "Stake.us",
-      "attributes": {
-        "entity": {
-          "value": "Medium Rare",
-          "status": "operator_stated",
-          "sourceIds": ["stake-terms", "legacy-index"]
-        },
-        "productMode": {
-          "value": "Dual-currency sweepstakes social casino.",
-          "status": "operator_stated",
-          "sourceIds": ["stake-home", "stake-terms"]
-        },
-        "currencies": {
-          "value": ["Gold Coins", "Stake Cash"],
-          "status": "operator_stated",
-          "sourceIds": ["stake-redeem"]
-        },
-        "welcomeOffer": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["stake-home"]
-        },
-        "purchaseRequirement": {
-          "value": "No purchase is necessary for free daily Stake Cash; purchase-linked Stake Cash has separate rollover conditions.",
-          "status": "operator_stated",
-          "sourceIds": ["stake-home", "stake-playthrough"]
-        },
-        "dailyReward": {
-          "value": {
-            "amount": null,
-            "currency": "Stake Cash",
-            "mechanism": "Free daily claim advertised"
-          },
-          "status": "operator_stated",
-          "sourceIds": ["stake-home"]
-        },
-        "packages": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["stake-home"]
-        },
-        "gamesProviders": {
-          "value": "More than 3,000 games, including Stake Originals, slots, live dealer, blackjack, roulette, and other categories.",
-          "status": "operator_stated",
-          "sourceIds": ["stake-home"]
-        },
-        "playthrough": {
-          "value": {
-            "multiplier": 3,
-            "basis": "Stake Cash received alongside a Gold Coin purchase"
-          },
-          "status": "operator_stated",
-          "sourceIds": ["stake-playthrough"]
-        },
-        "redemptionMinimumCap": {
-          "value": {
-            "minimumSc": null,
-            "floridaMaximumPrizeUsdPerDay": 5000
-          },
-          "status": "conflicting",
-          "sourceIds": ["stake-terms", "legacy-index"],
-          "note": "The legacy record says 40 SC minimum; current public terms reserve the right to set a threshold without stating that number."
-        },
-        "redemptionMethodsTiming": {
-          "value": {
-            "methods": ["cryptocurrency"],
-            "timing": null
-          },
-          "status": "operator_stated",
-          "sourceIds": ["stake-redeem", "legacy-index"]
-        },
-        "kyc": {
-          "value": "Identity verification can apply before redemption; the legacy record reports a typical 2-3 business-day verification stage.",
-          "status": "unverified",
-          "sourceIds": ["stake-terms", "legacy-index"]
-        },
-        "restrictions": {
-          "value": "Excluded territories are defined in the current terms; Florida has a stated daily prize cap.",
-          "status": "operator_stated",
-          "sourceIds": ["stake-terms"]
-        }
+      "id":"stake-us",
+      "name":"Stake.us",
+      "coverage":{"sourceIds":["stake-redeem","stake-coins","stake-rollover","stake-terms"],"note":"Official help readable; current terms blocked. Do not retain legacy entity, Florida cap or state claims."},
+      "attributes":{
+        "entity":{"value":null,"status":"unverified","evidence":[]},
+        "productMode":{"value":"Gold Coin fun play and Stake Cash redeemable for prizes subject to requirements.","status":"operator_stated","evidence":[{"sourceId":"stake-redeem","locator":"Virtual token definitions"}]},
+        "currencies":{"value":["Gold Coins","Stake Cash"],"status":"operator_stated","evidence":[{"sourceId":"stake-redeem","locator":"Virtual token definitions"}]},
+        "welcomeOffer":{"value":null,"status":"unverified","evidence":[]},
+        "purchaseRequirement":{"value":"Daily bonus is free; separate complimentary Stake Cash can accompany a Gold Coin purchase.","status":"operator_stated","evidence":[{"sourceId":"stake-redeem","locator":"Daily bonus"},{"sourceId":"stake-coins","locator":"Ways to receive Stake Cash"}]},
+        "dailyReward":{"value":{"currency":"Stake Cash","amount":null,"interval":"Daily"},"status":"operator_stated","evidence":[{"sourceId":"stake-redeem","locator":"Daily bonus"},{"sourceId":"stake-coins","locator":"Daily bonuses"}]},
+        "packages":{"value":null,"status":"unverified","evidence":[]},
+        "gamesProviders":{"value":["Stake Originals","Third-party games"],"status":"operator_stated","evidence":[{"sourceId":"stake-redeem","locator":"Opening description"}]},
+        "playthrough":{"value":{"multiplier":3,"scope":"Only Stake Cash received alongside Gold Coin purchases"},"status":"operator_stated","evidence":[{"sourceId":"stake-rollover","locator":"Opening requirement and worked example"}]},
+        "redemptionMinimumCap":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMethodsTiming":{"value":{"methods":["Cryptocurrency"],"publishedTiming":null},"status":"operator_stated","evidence":[{"sourceId":"stake-coins","locator":"Crypto prize redemption"}]},
+        "verificationPolicy":{"value":null,"status":"unverified","evidence":[],"note":"Email/2FA redemption confirmation is not sufficient evidence of a full identity-verification policy."},
+        "restrictions":{"value":null,"status":"unverified","evidence":[]}
       }
     },
     {
-      "id": "wow-vegas",
-      "name": "WOW Vegas",
-      "attributes": {
-        "entity": {
-          "value": "MW Services Limited; support, service, and payment processing by WOWCOM Services Inc.",
-          "status": "operator_stated",
-          "sourceIds": ["wow-home", "wow-terms"]
-        },
-        "productMode": {
-          "value": "Dual-currency sweepstakes social casino.",
-          "status": "operator_stated",
-          "sourceIds": ["wow-terms", "wow-redeem"]
-        },
-        "currencies": {
-          "value": ["WOW Coins", "Sweeps Coins"],
-          "status": "operator_stated",
-          "sourceIds": ["wow-home", "wow-redeem"]
-        },
-        "welcomeOffer": {
-          "value": null,
-          "status": "conflicting",
-          "sourceIds": ["wow-signup", "wow-promo"],
-          "note": "The help article states 150,000 WOW Coins plus 2 SC initially; the promotional page states 250,000 WOW Coins plus 5 SC over three days and a separate purchase offer."
-        },
-        "purchaseRequirement": {
-          "value": "No purchase for the signup component; the promotional first-purchase component costs $9.99.",
-          "status": "operator_stated",
-          "sourceIds": ["wow-signup", "wow-promo"]
-        },
-        "dailyReward": {
-          "value": {
-            "amount": null,
-            "currency": null,
-            "mechanism": "Daily specials and giveaways advertised"
-          },
-          "status": "unverified",
-          "sourceIds": ["wow-home"]
-        },
-        "packages": {
-          "value": {
-            "promotionalPriceUsd": 9.99,
-            "wowCoins": 1500000,
-            "sweepsCoins": 30
-          },
-          "status": "operator_stated",
-          "sourceIds": ["wow-promo"],
-          "note": "Dated promotional package, not a complete public package table."
-        },
-        "gamesProviders": {
-          "value": "More than 2,000 games advertised; slots, jackpots, Megaways, and table-style categories. Provider list not normalized.",
-          "status": "operator_stated",
-          "sourceIds": ["wow-home"]
-        },
-        "playthrough": {
-          "value": {
-            "multiplier": 1,
-            "basis": "Sweeps Coins"
-          },
-          "status": "operator_stated",
-          "sourceIds": ["wow-terms", "legacy-index"]
-        },
-        "redemptionMinimumCap": {
-          "value": {
-            "cashMinimumSc": 50,
-            "giftCardMinimumSc": 20,
-            "maximumScPerDay": null
-          },
-          "status": "operator_stated",
-          "sourceIds": ["wow-redeem"]
-        },
-        "redemptionMethodsTiming": {
-          "value": {
-            "methods": ["cash prize", "gift card"],
-            "timing": null
-          },
-          "status": "operator_stated",
-          "sourceIds": ["wow-redeem"]
-        },
-        "kyc": {
-          "value": "Verification is required before redemption; public document details and timing were not captured.",
-          "status": "operator_stated",
-          "sourceIds": ["wow-redeem"]
-        },
-        "restrictions": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["wow-terms"]
-        }
+      "id":"wow-vegas",
+      "name":"WOW Vegas",
+      "coverage":{"sourceIds":["wow-signup","wow-promo","wow-redeem","wow-terms","wow-rules"],"note":"Help, promo and general terms readable. SC rules require login, so no playthrough claim. Day-one and three-day signup amounts are not a conflict."},
+      "attributes":{
+        "entity":{"value":"MW Services Limited and WOWCom Services Inc.","status":"operator_stated","evidence":[{"sourceId":"wow-terms","locator":"Definitions of We/Us and WOWCom Services"}]},
+        "productMode":{"value":"WOW Coin play and conditional Sweeps Coin cash/gift-card prize redemption.","status":"operator_stated","evidence":[{"sourceId":"wow-redeem","locator":"Initiate Redemption; nonredeemable blue WOW Coins"}]},
+        "currencies":{"value":["WOW Coins","Sweeps Coins"],"status":"operator_stated","evidence":[{"sourceId":"wow-signup","locator":"What You Receive"},{"sourceId":"wow-redeem","locator":"Initiate Redemption"}]},
+        "welcomeOffer":{"value":{"signup":{"purchaseRequired":false,"schedule":[{"day":1,"wowCoins":150000,"sc":2},{"day":2,"wowCoins":50000,"sc":1.5},{"day":3,"wowCoins":50000,"sc":1.5}],"totalWowCoins":250000,"totalSc":5},"firstPurchase":{"priceUsd":9.99,"wowCoins":1500000,"complimentarySc":30},"advertisedCode":"WOWBONUS2026"},"status":"operator_stated","evidence":[{"sourceId":"wow-signup","locator":"What You Receive; Next Offers"},{"sourceId":"wow-promo","locator":"Your Welcome Bonus; promo code"}],"note":"Three-day total is not immediate signup credit. Later rewards need separate claims; help says emails arrive on days two and three. Code appears on promo page; necessity for every signup is not established."},
+        "purchaseRequirement":{"value":"Signup claims are free; the separate 1.5M WOW Coins + 30 SC offer costs $9.99.","status":"operator_stated","evidence":[{"sourceId":"wow-promo","locator":"Sign-Up Bonus and First Purchase Bonus"}]},
+        "dailyReward":{"value":null,"status":"unverified","evidence":[],"note":"Three-day welcome sequence is not evidence of an ongoing daily reward amount."},
+        "packages":{"value":{"kind":"Advertised first-purchase promotion","priceUsd":9.99,"wowCoins":1500000,"complimentarySc":30},"status":"operator_stated","evidence":[{"sourceId":"wow-promo","locator":"First Purchase Bonus"}]},
+        "gamesProviders":{"value":["Slots","Jackpots","Megaways","Table games"],"status":"operator_stated","evidence":[{"sourceId":"wow-promo","locator":"Why Choose WOW Vegas"}]},
+        "playthrough":{"value":null,"status":"unverified","evidence":[],"note":"SC rules redirected to login. Removed prior 1x claim."},
+        "redemptionMinimumCap":{"value":{"minimumCashSc":50,"minimumGiftCardSc":20,"maximumScPerDay":null},"status":"operator_stated","evidence":[{"sourceId":"wow-redeem","locator":"Initiate Redemption; minimum amounts"}]},
+        "redemptionMethodsTiming":{"value":{"methods":["Skrill","Trustly","MassPay","Prizeout"],"publishedTiming":null},"status":"operator_stated","evidence":[{"sourceId":"wow-redeem","locator":"Choose your redemption method"}]},
+        "verificationPolicy":{"value":"Account must be fully verified before redemption; required documents and timing not specified in this help article.","status":"operator_stated","evidence":[{"sourceId":"wow-redeem","locator":"Verify Your Account"}]},
+        "restrictions":{"value":null,"status":"unverified","evidence":[]}
       }
     },
     {
-      "id": "mcluck",
-      "name": "McLuck",
-      "attributes": {
-        "entity": {
-          "value": "B-Two Operations Limited; B2Services acts as payment agent.",
-          "status": "operator_stated",
-          "sourceIds": ["mcluck-terms", "legacy-index"]
-        },
-        "productMode": {
-          "value": "Dual-currency sweepstakes social casino.",
-          "status": "operator_stated",
-          "sourceIds": ["mcluck-terms", "legacy-index"]
-        },
-        "currencies": {
-          "value": ["Gold Coins", "Sweeps Coins"],
-          "status": "operator_stated",
-          "sourceIds": ["mcluck-terms", "legacy-index"]
-        },
-        "welcomeOffer": {
-          "value": "5,000 Gold Coins plus a 150% extra first-store offer in the legacy official-source record; current amounts require recheck.",
-          "status": "unverified",
-          "sourceIds": ["legacy-index", "mcluck-support"]
-        },
-        "purchaseRequirement": {
-          "value": "No purchase for the registration Gold Coins; purchase required for the first-store percentage offer.",
-          "status": "unverified",
-          "sourceIds": ["legacy-index", "mcluck-promotions"]
-        },
-        "dailyReward": {
-          "value": {
-            "intervalHours": 24,
-            "amount": null,
-            "currency": "Gold Coins"
-          },
-          "status": "operator_stated",
-          "sourceIds": ["legacy-index", "mcluck-promotions"]
-        },
-        "packages": {
-          "value": {
-            "minimumPriceUsd": 1.99,
-            "maximumPriceUsd": 99.99
-          },
-          "status": "unverified",
-          "sourceIds": ["legacy-index", "mcluck-support"]
-        },
-        "gamesProviders": {
-          "value": "Large slots-led social-casino lobby; exact current count and provider list are not normalized.",
-          "status": "unverified",
-          "sourceIds": ["mcluck-support", "legacy-index"]
-        },
-        "playthrough": {
-          "value": null,
-          "status": "unverified",
-          "sourceIds": ["mcluck-terms"]
-        },
-        "redemptionMinimumCap": {
-          "value": {
-            "bankMinimumSc": 75,
-            "giftCardMinimumSc": 10,
-            "maximumScPerDay": 10000,
-            "floridaAndNewYorkMaximumScPerDay": 4900
-          },
-          "status": "operator_stated",
-          "sourceIds": ["mcluck-terms", "legacy-index"]
-        },
-        "redemptionMethodsTiming": {
-          "value": {
-            "methods": ["bank transfer", "gift card"],
-            "internalProcessingHoursMaximum": 72,
-            "bankDeliveryDaysMinimum": 2,
-            "bankDeliveryDaysMaximumTypical": 5,
-            "bankDeliveryDaysMaximum": 10
-          },
-          "status": "operator_stated",
-          "sourceIds": ["mcluck-terms", "legacy-index"]
-        },
-        "kyc": {
-          "value": "Identity verification can apply before first payment; submitted verification is reported as reviewed within 48 hours.",
-          "status": "operator_stated",
-          "sourceIds": ["mcluck-support", "legacy-index"]
-        },
-        "restrictions": {
-          "value": "Legacy official-source record lists 17 excluded states; promotion eligibility and availability can also be account- and jurisdiction-specific.",
-          "status": "unverified",
-          "sourceIds": ["mcluck-terms", "mcluck-promotions", "legacy-index"]
-        }
+      "id":"mcluck",
+      "name":"McLuck",
+      "coverage":{"sourceIds":["mcluck-notice","mcluck-support"],"note":"Terms URL returned availability notice; help blocked. Notice supports exclusions only, not legacy offers or payout terms."},
+      "attributes":{
+        "entity":{"value":null,"status":"unverified","evidence":[]},
+        "productMode":{"value":null,"status":"unverified","evidence":[]},
+        "currencies":{"value":null,"status":"unverified","evidence":[]},
+        "welcomeOffer":{"value":null,"status":"unverified","evidence":[]},
+        "purchaseRequirement":{"value":null,"status":"unverified","evidence":[]},
+        "dailyReward":{"value":null,"status":"unverified","evidence":[]},
+        "packages":{"value":null,"status":"unverified","evidence":[]},
+        "gamesProviders":{"value":null,"status":"unverified","evidence":[]},
+        "playthrough":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMinimumCap":{"value":null,"status":"unverified","evidence":[]},
+        "redemptionMethodsTiming":{"value":null,"status":"unverified","evidence":[]},
+        "verificationPolicy":{"value":null,"status":"unverified","evidence":[]},
+        "restrictions":{"value":{"excludedStates":["WA","ID","IN","NV","KY","MT","MI","LA","DE","NY","NJ","WV","MD","CT","TN","ME"],"noticeCountries":["US","CA"]},"status":"operator_stated","evidence":[{"sourceId":"mcluck-notice","locator":"Availability notice state list"}],"note":"Other states are not thereby independently verified as available."}
       }
     }
   ]

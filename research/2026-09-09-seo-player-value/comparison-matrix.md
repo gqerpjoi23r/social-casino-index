@@ -1,106 +1,121 @@
-# Ten-Operator Player-Value Evidence Matrix
+# Ten-Operator Evidence Review
 
-Checked September 10, 2026. This is a public-evidence review, not a funded player test. The canonical machine-readable records and field-level source IDs are in `operator-evidence.json`.
+Checked September 10, 2026. Research only; these corrections are not yet published on the site.
 
-## Status Legend
+We used operator websites, official help pages and rules, including text from JS-rendered public pages. No screenshots, player accounts or transactions. Search results helped locate pages but do not substantiate the values below.
 
-| Code | Meaning |
-|---|---|
-| OS | Stated by an operator-controlled public source |
-| OB | Directly observed in a public lobby or page |
-| IT | Independently tested under an authorized protocol |
-| UV | Not verified from sufficient current public evidence |
-| CF | Current sources conflict or the product classification is unresolved |
-| EX | Source or offer is expired |
-| NA | The field does not apply |
+GC means Gold Coins. SC follows each operator's promotional-currency label, not a universal cash equivalent. Lucky Bunny displays FC and SC; those labels alone do not establish prize rights. "Not verified" means insufficient accessible evidence, not that a feature does not exist.
 
-No field in this pass has status `IT`, `EX`, or `NA`. A blank numeric amount is unknown, not zero.
+## What Changed
 
-## Attribute Definitions
+- Jackpota's current terms describe entertainment-only coin play, with separate promotional contests as an exception. Remove legacy ordinary SC/redemption claims.
+- Lucky Bunny's public JS-rendered package cards provide actual price/currency examples. Its entity and prize rules remain unresolved.
+- YAY's welcome offer still conflicts: the homepage shows 120,000 GC + 12 SC + 20 spins; promotions show 80,000 GC + 8 SC + 20 spins. Do not select either as the confirmed offer.
+- WOW's signup amounts are consistent: day one differs from the three-day total. Its welcome sequence is not an ongoing daily-reward schedule.
+- Prior claims for several blocked operators lacked sufficient current primary evidence. They have been removed rather than filled from affiliate sites.
 
-| Attribute | Value recorded |
-|---|---|
-| Entity | Publicly named operating or contracting entity |
-| Product mode | Entertainment-only, sweepstakes, or unresolved product classification |
-| Currencies | Named play and promotional currencies |
-| Welcome offer | Public registration or first-purchase proposition |
-| Purchase requirement | Whether the stated benefit requires payment |
-| Daily reward | Amount, currency, interval, and mechanism when public |
-| Packages | Public prices and included currencies |
-| Games/providers | Publicly stated or directly observed lobby scope |
-| Playthrough | Required use before promotional currency can be redeemed |
-| Redemption minimum/cap | Published thresholds and daily caps |
-| Methods/timing | Published redemption routes and processing estimates |
-| KYC | Public identity and payment-account verification requirements |
-| Restrictions | Public jurisdiction limits or unresolved availability |
+## Operators and Offers
 
-## Identity and Offer
+This overview includes all ten operators. Later tables include only operators with useful evidence for that topic, so missing rows are not disguised as a negative finding.
 
-| Operator | Entity | Product mode | Currencies | Welcome offer | Purchase requirement |
-|---|---|---|---|---|---|
-| Jackpota | Silver Social Operations Limited (OS) | Gold Coin public pages conflict with secondary dual-currency descriptions (CF) | Gold Coins; secondary sources report Sweeps Coins (CF) | Legacy: 100% more coins + 75 spins; current split unresolved (UV) | Purchase for 100%-more component; free component unresolved (UV) |
-| Lucky Bunny | Unknown (UV) | Reported dual-currency sweepstakes casino (UV) | Fun/Gold Coins and Sweeps Coins; naming conflicts (CF) | Current public descriptions conflict (CF) | No-purchase signup and optional purchase offers reported; exact terms unknown (UV) |
-| YAY Casino | Social Gaming LLC (OS) | Dual-currency sweepstakes casino (OS) | Gold Coins; Sweeps Coins (OS) | Current public sources conflict (CF) | No purchase necessary; purchase promotions can have separate terms (OS) |
-| Dorados | Rafflefy Limited (OS) | Dual-currency sweepstakes casino (OS) | Gold Coins; Sweeps Coins (OS) | Registration includes GC + complimentary SC; amount not captured (OS) | No purchase for registration, play, daily rewards, or alternative entry (OS) |
-| Zonko | Mamba Limited / Forever Winning LLC (OS) | Dual-currency sweepstakes casino (OS) | Gold/entertainment Virtual Coins; Sweepstakes Coins (OS) | Unknown (UV) | No purchase necessary; alternative entry available (OS) |
-| Chumba Casino | VGW (OS) | Dual-currency social casino with eligible-jurisdiction sweepstakes play (OS) | Gold Coins; Sweeps Coins (OS) | Unknown (UV) | No purchase necessary for sweepstakes participation (OS) |
-| Pulsz | Yellow Social Interactive (OS) | Dual-currency sweepstakes casino (OS) | Gold Coins; Sweeps Coins (OS) | 5,000 GC registration reward; SC/purchase component not normalized (OS) | No purchase for registration GC; prior Skrill purchase required for Skrill redemption (OS) |
-| Stake.us | Medium Rare (OS) | Dual-currency sweepstakes casino (OS) | Gold Coins; Stake Cash (OS) | Unknown (UV) | No purchase for daily Stake Cash; purchase-linked Stake Cash has rollover (OS) |
-| WOW Vegas | MW Services Limited; WOWCOM Services Inc. supports service/payment processing (OS) | Dual-currency sweepstakes casino (OS) | WOW Coins; Sweeps Coins (OS) | Signup and promo pages conflict (CF) | Signup component is free; first-purchase offer costs $9.99 (OS) |
-| McLuck | B-Two Operations Limited; B2Services payment agent (OS) | Dual-currency sweepstakes casino (OS) | Gold Coins; Sweeps Coins (OS) | Legacy: 5,000 GC + 150% first-store extra; current amounts need recheck (UV) | Registration GC free; purchase required for percentage offer (UV) |
-
-## Rewards, Packages, and Games
-
-| Operator | Daily reward | Packages | Games/providers |
+| Operator | Supported product / currency | Public welcome offer | Payment condition / limitation |
 |---|---|---|---|
-| Jackpota | Every 24 hours; GC amount unknown (OS) | $1.99-$99.99, Gold Coins (OS) | 700+ games; slots, tables, live dealer, Megaways; providers incomplete (OS) |
-| Lucky Bunny | Daily wheel/login reported; SC range unknown (UV) | Unknown; public reports conflict (CF) | Large slots/table/live lobby reported; count/providers unverified (UV) |
-| YAY Casino | Daily login SC reward; amount unknown (OS) | Unknown (UV) | 1,300+ games; slots, jackpots, table-style and other games; providers not normalized (OS) |
-| Dorados | Daily rewards advertised; amount/currency unknown (OS) | Unknown (UV) | Public lobby shows slots, live, roulette, blackjack, shows, crash/instant, scratch/bingo, and provider groups (OB) |
-| Zonko | Unknown (UV) | Unknown (UV) | Public lobby exists; count/providers not captured (UV) |
-| Chumba Casino | Unknown (UV) | Unknown (UV) | 200+ games; slots, jackpots, live games, and named provider collections (OS) |
-| Pulsz | Daily rewards advertised; amount/currency unknown (OS) | Unknown (UV) | 1,000+ games; slots and table/live-style games; providers not normalized (OS) |
-| Stake.us | Free daily Stake Cash claim; amount unknown (OS) | Unknown (UV) | 3,000+ games; originals, slots, live dealer, blackjack, roulette, and others (OS) |
-| WOW Vegas | Daily specials/giveaways advertised; amount/currency unknown (UV) | Promo: $9.99 for 1.5M WOW Coins + 30 SC (OS) | 2,000+ games; slots, jackpots, Megaways, and table-style games; providers not normalized (OS) |
-| McLuck | Every 24 hours; GC amount unknown (OS) | Legacy range $1.99-$99.99; current values unverified (UV) | Large slots-led lobby; count/providers not normalized (UV) |
+| Jackpota | Entertainment-only Gold Coins; separate contests are an exception | 100% extra coins + 75 spins | Offer purchase condition unresolved; ordinary play needs no purchase |
+| Lucky Bunny | FC / SC displayed; prize model not verified | Not verified | Sampled Quick Buy packages are paid; signup conditions unknown |
+| YAY Casino | Gold Coins / Sweeps Coins; conditional prize redemption | Conflicting amounts; see above | Signup promotion states no purchase; account verification required |
+| Dorados | Free-to-play social gaming notice; prize model/currencies not verified | Not verified | Notice says no purchase necessary for social gaming |
+| Zonko | Product/currencies not verified | Not verified | Footer says no purchase necessary to play; offer terms unavailable |
+| Chumba Casino | Gold Coin play; sweepstakes mode varies by state | Not verified | Footer says no purchase necessary; signup terms unavailable |
+| Pulsz | Not verified in this pass | Not verified | Bot controls blocked substantive evidence |
+| Stake.us | Gold Coins / Stake Cash; conditional prize redemption | Not verified | Daily bonus is free; purchase-linked Stake Cash is separate |
+| WOW Vegas | WOW Coins / Sweeps Coins; conditional cash/gift-card redemption | Day 1: 150,000 WOW Coins + 2 SC; days 2 and 3: 50,000 + 1.5 SC each | Free claims; 250,000 + 5 SC total is spread over three days, not immediate credit |
+| McLuck | Product/currencies not verified | Not verified | Only an availability notice was readable |
 
-## Redemption and Account
+WOW's separate first-purchase promotion is $9.99 for 1.5 million WOW Coins + 30 SC. The promo page advertises `WOWBONUS2026`, but does not establish that every signup requires it. That page says it was last updated in January 2026; recheck the promotion before publication.
 
-| Operator | Playthrough | Minimum / cap | Methods / timing | KYC |
-|---|---|---|---|---|
-| Jackpota | Unknown because prize mode is unresolved (CF) | Minimum and daily cap unknown (CF) | Unknown (CF) | Government ID may be required (OS) |
-| Lucky Bunny | Unknown (UV) | Minimum and daily cap unknown (UV) | Unknown (UV) | Identity check before first redemption reported; documents unverified (UV) |
-| YAY Casino | 1x SC by default (OS) | 50 SC minimum; 9,550 SC/day cap (OS) | Bank, crypto where offered, Visa virtual card where offered; typical review 24-72h, up to 7 days (OS) | Identity, address, selfie, eligibility, and payment checks can apply (OS) |
-| Dorados | Unknown (UV) | 100 SC minimum; cap unknown (OS) | Designated payment method or another account in participant's name; timing unknown (OS) | Identity and named payment-account checks can apply (OS) |
-| Zonko | Unknown (UV) | 100 SC cash minimum; gift-card minimum and daily cap unknown (OS) | Cash or gift card where offered; timing unknown (UV) | ID, address, and source-of-funds evidence can be required; 40-day response window (OS) |
-| Chumba Casino | SC must be played before eligible results can be redeemed; contribution varies (OS) | 100 SC cash minimum; gift-card minimum and cap unknown (OS) | Bank or gift card; 2 days after approval stated (OS) | Identity, address, and nominated bank verification for bank redemption (OS) |
-| Pulsz | Unknown (UV) | Minimum and daily cap unknown (UV) | Trustly, ACH, Skrill after prior Skrill purchase, gift card; first redemption 3-7 business days, internal processing up to 72h (OS) | Identity verification required; first redemption includes verification (OS) |
-| Stake.us | 3x on Stake Cash supplied with a GC purchase (OS) | General minimum unknown; Florida prize cap $5,000/day is unresolved against legacy data (CF) | Cryptocurrency; timing unknown (OS) | Verification can apply; legacy 2-3 business-day estimate unverified (UV) |
-| WOW Vegas | 1x SC (OS) | 50 SC cash; 20 SC gift card; cap unknown (OS) | Cash or gift card; timing unknown (OS) | Verification required; documents/timing not captured (OS) |
-| McLuck | Unknown (UV) | Bank 75 SC; gift card 10 SC; 10,000 SC/day, or 4,900 in FL/NY (OS) | Bank/gift card; internal processing up to 72h; bank typically 2-5 days, up to 10 (OS) | Verification can apply; reported review within 48h (OS) |
+## Rewards, Packages and Games
 
-## Restrictions
+These are dated examples, not a value ranking or a complete inventory. Other operators lack enough accessible evidence for this table.
 
-| Operator | Restriction evidence |
+| Operator | Recurring reward | Public package example | Game/provider examples |
+|---|---|---|---|
+| Jackpota | Gold Coins every 24 hours; amount not established | Not verified | Slots, blackjack, roulette, live dealer, Slingo |
+| Lucky Bunny | Not verified | $4.99: 50,000 FC + 5 SC; $49.99: 500,000 FC + 50 SC; $99.99: 1 million FC + 101 SC | BGaming, Hacksaw, Iconic21 |
+| YAY Casino | First claim: 10,000 GC + 1 SC; every 24 hours, seven-day streak | Not verified | Booming Games, Relax Gaming, Slotmill, Evoplay, 3 Oaks Gaming |
+| Stake.us | Free daily Stake Cash; amount not established | Not verified | Stake Originals and third-party games |
+| WOW Vegas | Ongoing schedule not verified | First purchase: $9.99 for 1.5 million WOW Coins + 30 SC | Slots, jackpots, Megaways, table games |
+
+YAY's daily claim is conditional on an SC balance below an operator-set threshold; the threshold is not published in the reviewed material. Its streak resets after seven consecutive days. Do not present the first claim as an unconditional daily entitlement or invent later streak amounts.
+
+Lucky Bunny's package values came from rendered public cards, including currency-icon labels. No checkout was completed. Prices and displayed SC do not prove redemption rights.
+
+## Published Redemption Terms
+
+Only three operators have sufficient public evidence for useful entries here. No row measures actual payout speed.
+
+| Operator | Playthrough | Minimum / cap | Methods and timing |
+|---|---|---|---|
+| YAY Casino | Guide says 1x; rules permit variation by game, promotion and region. WAR does not contribute | 50 SC minimum redeemable per day; requests capped at 9,550 SC/day | Bank transfer, Visa virtual card, supported crypto. Guide says 1-3 days for Visa, not end-to-end delivery |
+| Stake.us | 3x only for Stake Cash supplied with Gold Coin purchases | Not verified | Cryptocurrency; timing not established |
+| WOW Vegas | Not verified; SC rules redirect to login | Cash: 50 SC; gift card: 20 SC; daily cap not established | Skrill, Trustly, MassPay, Prizeout; timing not established |
+
+YAY's rules separately limit a Florida single-play win to 4,900 SC and total wins to 10,000 SC per 48 hours, subject to the rule's territorial wording. These are not withdrawal caps. Verification may take up to one month after all requested documents and KYC/legal review; the Visa estimate must not hide that stage.
+
+## Entity and Verification
+
+Keep this detail in operator records rather than adding columns to every offer table. Other operators' entities or document policies were not established in this pass.
+
+| Operator | Named entity | Published verification policy |
+|---|---|---|
+| Jackpota | Silver Social Operations Limited | May request identity, address and source-of-funds evidence |
+| YAY Casino | Social Gaming LLC | May request photo ID, residence, income and payment-ownership evidence; guide also describes selfie and phone checks |
+| Zonko | Mamba Limited owns/operates the site; Mamba Limited and Forever Winning LLC are named joint service providers | Not verified |
+| Chumba Casino | VGW Malta Limited operates the site; VGW Games Limited operates sweepstakes promotions/prizes | Not verified |
+| WOW Vegas | MW Services Limited and WOWCom Services Inc. | Full verification required before redemption; documents/timing not established by the help article |
+
+## Operator Restrictions
+
+These are dated operator notices, not legal findings or a list of verified allowed states. A regional block encountered by the researcher does not imply an operator has withdrawn from the US.
+
+| Operator | Public notice / scope |
 |---|---|
-| Jackpota | Legacy record lists 17 excluded states; recheck after product classification is resolved (UV) |
-| Lucky Bunny | Unknown from sufficient public evidence (UV) |
-| YAY Casino | Current terms exclude at least CA, ID, MI, NY, and WA; consult the current eligibility document for the complete list (OS) |
-| Dorados | Legacy record lists 14 excluded states; direct rules were access-restricted in this pass (UV) |
-| Zonko | Unknown from captured public terms (UV) |
-| Chumba Casino | Availability and sweepstakes mode vary by state; current controls and terms require checking before routing (OS) |
-| Pulsz | Unknown from captured public terms (UV) |
-| Stake.us | Current terms define excluded territories; Florida has a stated daily prize cap (OS) |
-| WOW Vegas | Unknown from captured public terms (UV) |
-| McLuck | Legacy record lists 17 excluded states; availability and promotions can be jurisdiction/account specific (UV) |
+| Jackpota | Terms exclude AL, CT, DE, ID, IN, KY, LA, ME, MD, MI, MT, NV, NJ, NY, TN, WA, WV and locations outside the US. Promotions may impose further limits |
+| YAY Casino | Sweepstakes exclusions: ID, MI, NY, WA, NV, LA, DE, CA, TN, CT, IL, ME, IN, NJ, MT. This is not an all-products availability finding |
+| Chumba Casino | Unavailable: CT, DE, MI, MT, NV, WA. Gold Coin only: CA, ID, IN, LA, ME, MS, NJ, NY, TN, WV |
+| McLuck | Notice excludes WA, ID, IN, NV, KY, MT, MI, LA, DE, NY, NJ, WV, MD, CT, TN, ME. Unlisted states are not independently verified as available |
 
-## Review Notes
+Lucky Bunny, Dorados, Zonko, Pulsz, Stake.us and WOW Vegas: sufficient current state restrictions were not captured.
 
-- Jackpota must not be presented as a confirmed sweepstakes operator until its current official public product and currency terms resolve the conflict.
-- Lucky Bunny has the weakest public evidence. Most values need a stable operator-controlled source.
-- Welcome offers for YAY Casino and WOW Vegas conflict across current public pages. Do not select a favorable amount without applicable offer terms.
-- Account-only package menus and personalized promotions remain unknown.
-- Advertised game counts are operator statements unless marked `OB`; they are not independent inventory counts.
-- Redemption timing is operator-stated processing guidance, not an independently tested payout result.
-- HTTP access checks on September 10, 2026 returned `403` for some public operator/help pages. This can reflect bot controls and does not convert previously reviewed content into an independently verified claim.
-- Ten rows are available, but cross-operator rankings still require comparable fields and the funded-test gates in `src/methodology.njk`.
+## Sources and Access
+
+Links are grouped here to keep the tables readable. The JSON stores all 26 source records, retrieval dates, access results, hashes where available, and field-level section/page locators. A blocked URL documents an evidence gap; it does not support a value.
+
+| Operator | Operator-owned sources | Access / limits |
+|---|---|---|
+| Jackpota | [Homepage](https://www.jackpota.com/), [terms v2.6](https://www.jackpota.com/terms-of-service) | Readable; terms dated July 30, 2026. Package help blocked |
+| Lucky Bunny | [Public lobby](https://luckybunny.fun/) | JS-rendered lobby and Quick Buy cards; no account |
+| YAY Casino | [Homepage](https://www.yaycasino.com/), [promotions](https://www.yaycasino.com/promotions), [daily bonus](https://www.yaycasino.com/promotions/promo/online-casino-daily-login-bonus), [rules PDF](https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf), [redemption guide](https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/) | Readable pages/PDF; rules v2.1 dated August 20, 2026 |
+| Dorados | [Homepage](https://dorados.com/en), [rules URL](https://dorados.com/en/sweepstakes-rules) | Regional access notice only |
+| Zonko | [Location notice/footer](https://www.zonko.com/geo-block) | FAQ request redirected; substantive rules unavailable |
+| Chumba Casino | [Availability notice/footer](https://www.chumbacasino.com/geo-block) | Redemption request redirected; older rules not used as current proof |
+| Pulsz | [Homepage](https://www.pulsz.com/), [banking help](https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking) | Bot-blocked; no substantive values retained |
+| Stake.us | [Redeeming rewards](https://help.stake.us/en/articles/6453222-redeeming-rewards), [Stake Cash](https://help.stake.us/en/articles/6389246-sweep-coins-stake-cash), [redemption progress](https://help.stake.us/en/articles/6465093-redemption-progress) | Help readable; current terms blocked |
+| WOW Vegas | [Signup help](https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works), [promo page](https://www.wowvegas.com/promo-code), [redemption help](https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem), [terms](https://www.wowvegas.com/terms-and-conditions) | Readable; separate SC rules redirected to login |
+| McLuck | [Terms URL / availability notice](https://www.mcluck.com/terms-of-service) | Notice only; help center blocked |
+
+## Fields Kept and Dropped
+
+The internal record keeps 13 public-evidence attributes: entity, product mode, currencies, welcome offer, purchase requirement, daily reward, packages, games/providers, playthrough, redemption minimum/cap, methods/published timing, verification policy and restrictions.
+
+Do not create comparison columns for exact game totals, complete recurring-reward schedules, standardized package-value baskets or all-in redemption fees: none has a defensible comparable dataset in this pass. Retain useful partial examples in operator notes. Account-only balances, personalized offers, cashier menus and account-specific limits are out of scope, not missing research assignments.
+
+For eventual publication, use compact topic tables with conditions beside amounts and one grouped source section. Keep source IDs, statuses and hashes in the evidence layer. If a topic has fewer than five comparable records, use operator notes or a limited guide, not a ten-operator league table. This review document deliberately shows gaps for the owner's inspection.
+
+## Deferred Operational TODOs
+
+- Actual end-to-end redemption time and reliability.
+- Actual verification time and friction.
+- Support response quality and response time.
+- Account closure and safer-play control effectiveness.
+
+These are not comparison attributes, scheduled tasks or authorization to create accounts. Stop here for owner review.

@@ -1,238 +1,152 @@
 # Player-Value Research and Implementation Plan
 
-## Objective and Limits
+## Current Scope and Stop
 
-Deliver a US-focused, evidence-backed comparison framework covering bonuses, daily rewards, packages, games, eligibility, account experience, and redemptions.
+The public-evidence pass covers all ten indexed operators. Phase 1 established the foundation and first three operators; the owner then authorized the remaining seven. The latest instruction narrows the work to accessible operator-owned evidence, readable output and no hands-on experience.
 
-Phase 1 established the shared research foundation and completed the first three operator records: Jackpota, Lucky Bunny, and YAY Casino. The owner then authorized Phase 2 research for the remaining seven operators. The current evidence pass now covers all ten operators.
+This plan supersedes the earlier dollar-allocation and account-testing requirements. Spending cannot be capped by prose. Bound the work by scope and stop after delivering the corrected evidence package.
 
-Read `audit.md` for findings, citations, limitations, and recovered research. The priorities below are recommendations, not measured keyword rankings.
+No accounts, screenshots, purchases, funded tests, outreach, paid services, access-control bypasses, production edits or deployment. No further demand research or operator expansion is included. Operational experience is a deferred TODO only.
 
-Do not represent model or provider spending as reliably capped unless the execution environment enforces a real limit. Record observed usage and charges when available. Control work through explicit scope: complete the ten-operator public-evidence pass, deliver it for review, and stop before funded testing, paid research, expanded demand collection, or production implementation.
+## Operator Sequence
 
-No paid research was launched during the audit. Do not create accounts, accept operator terms, purchase packages, impersonate players, or send operator outreach without separate authorization.
+Order is a work sequence, not a ranking or endorsement. Preserve these IDs.
 
-Engineering tickets are specified below for a subsequent implementation agent. Finish the research outputs even when an implementation ticket requires owner input.
+| Order | Operator | Stable ID | Phase |
+|---:|---|---|---|
+| 1 | Jackpota | `jackpota` | 1 |
+| 2 | Lucky Bunny | `lucky-bunny` | 1 |
+| 3 | YAY Casino | `yay-casino` | 1 |
+| 4 | Dorados | `dorados` | 2 |
+| 5 | Zonko | `zonko` | 2 |
+| 6 | Chumba Casino | `chumba` | 2 |
+| 7 | Pulsz | `pulsz` | 2 |
+| 8 | Stake.us | `stake-us` | 2 |
+| 9 | WOW Vegas | `wow-vegas` | 2 |
+| 10 | McLuck | `mcluck` | 2 |
 
-## Operator Sequence and Phase Gate
+## Evidence Method
 
-The sequence below is operational only. It is not a ranking, endorsement, market-share claim, or statement of operator quality.
+1. Use search, including operator-domain searches, to discover official pages. Search snippets and third-party articles are not evidence for operator values.
+2. Read the public offer, applicable rules, help pages and notices. Prefer specific applicable terms over generic marketing; leave unresolved contradictions explicit.
+3. For JS-heavy pages, read the rendered public DOM/text and public linked documents. Check currency labels and offer conditions, not only visible numbers.
+4. Do not log in, bypass challenges, change identity/location to evade restrictions, or proceed through checkout. After a bounded retry or an alternative public official page, record the access limitation and stop.
+5. Store a source URL, retrieval date, title, publisher, access result and available document date/hash. Attach the supporting section/page locator to each field. Do not take screenshots.
+6. Keep unsupported numeric values null, not zero. Do not infer availability from the absence of a state in a list or a feature from a currency label.
 
-| Order | Operator | Phase |
-|---:|---|---|
-| 1 | Jackpota | Phase 1 |
-| 2 | Lucky Bunny | Phase 1 |
-| 3 | YAY Casino | Phase 1 |
-| 4 | Dorados | Phase 2 |
-| 5 | Zonko | Phase 2 |
-| 6 | Chumba Casino | Phase 2 |
-| 7 | Pulsz | Phase 2 |
-| 8 | Stake.us | Phase 2 |
-| 9 | WOW Vegas | Phase 2 |
-| 10 | McLuck | Phase 2 |
-
-### Phase 1A: Foundation
-
-Complete these shared foundations before operator research:
-
-1. Inspect and index the recovered August 17 research and the September 9 audit evidence.
-2. Confirm the ten-operator roster, stable IDs, known product category, official domains, and unresolved classification questions.
-3. Create the normalized operator, offer, condition, daily schedule, source, and claim contracts defined below.
-4. Establish evidence statuses, field-level source attachment, capture naming, hashes, retrieval timestamps, conflict handling, and freshness fields.
-5. Create the human-readable comparison matrix, conflict register, content-brief template, QA checklist, and execution-usage log.
-6. Define the full US query panel. Keep demand collection separate from the authorized ten-operator public-evidence pass.
-7. Reproduce ENG-01 and specify the shared eligibility data needed by all operators. Repair and test ENG-01 before any commercial routing is released.
-8. Resolve or explicitly hold the Phase 1 portions of ENG-02: funded-test status, product classification, neutral ordering, relationship disclosure, and author identity.
-
-### Phase 1B: First Three Operators
-
-Complete the full record contract and player-benchmark fields for Jackpota, Lucky Bunny, and YAY Casino. Record inaccessible, account-specific, conflicting, and unknown fields explicitly. Apply the independent review requirements to all three records.
-
-Produce the first three complete records and review the method before expanding it.
-
-### Phase 2: Remaining Seven Operators
-
-After owner authorization, apply the same record contract to Dorados, Zonko, Chumba Casino, Pulsz, Stake.us, WOW Vegas, and McLuck. Preserve unknown values and conflicts rather than filling gaps from weak or account-specific claims.
-
-### Current Review Stop
-
-The ten-operator public-evidence pass is complete. Deliver the normalized records, source inventory, comparison matrix, conflicts, limitations, QA result, implementation status, and known usage or charges. Then stop.
-
-Do not expand the live query batch, create accounts, fund tests, create comparison pages, change production data, or consume paid services without a new owner instruction. Allow at most one bounded retry per failed source. Do not silently switch providers or buy a subscription.
-
-## A. Demand and Competitive Evidence
-
-### Reuse and Authentication
-
-Read the August 17 artifacts under `/Users/nimaboustanian/projects/kylserviceguiden.se/` before making requests. Reuse the four sweepstakes SERPs as a historical baseline, not as a current ranking sample.
-
-If the workflow uses GCP credentials, inspect the active identity with `gcloud auth list` and validate its active token before cloud requests. Do not select an account by name or start interactive login automatically. If validation fails, record the exact error privately and the missing capability in the report. Continue other work; request owner reauthentication separately. Do not substitute invented volume estimates.
-
-### Keyword Panel
-
-Start with the following intent families. Define and deduplicate approximately 50 canonical queries for the long-term panel. Demand collection remains outside the completed ten-operator evidence pass unless separately authorized.
-
-| Family | Seed queries | Category / intent treatment |
-|---|---|---|
-| Discovery | `social casino`, `sweepstakes casino`, `social casino vs sweepstakes casino` | Keep entertainment-only and prize intent separate |
-| Welcome | `sweepstakes casino sign up bonus`, `sweepstakes casino welcome bonus`, `social casino free coins` | Distinguish registration from first purchase |
-| No purchase | `sweepstakes casino no deposit bonus`, `free sweeps coins no purchase`, `sweepstakes casino mail in entry` | Explain conditions; no "free money" claim |
-| Daily | `sweepstakes casino daily bonus`, `daily free sweeps coins`, `social casino daily rewards` | Separate base claim and streak maximum |
-| Packages | `sweepstakes casino coin packages`, `sweepstakes casino first purchase bonus`, `sweepstakes casino package deals` | Test demand; do not assume SC purchase semantics |
-| Conditions | `sweepstakes casino playthrough`, `sweepstakes bonus expiration`, `sweeps coins vs gold coins` | High information need even if volume is sparse |
-| Games | `sweepstakes casino games`, `sweepstakes casino blackjack`, `social casino slots` | Verify actual mode/provider availability |
-| Redemption | `sweepstakes casino minimum redemption`, `sweepstakes casino redemption fees`, `sweepstakes casino payout time` | Improve existing coverage; avoid duplicate URLs |
-| Account | `sweepstakes casino verification`, `sweepstakes casino account closed`, `sweepstakes casino support` | No identity-check avoidance guidance |
-| State exit | `sweepstakes casino left state balance`, `sweepstakes casino redemption deadline`, state-name variants | Exact current notices and primary legal sources |
-| Operators | `[operator] bonus`, `[operator] daily rewards`, `[operator] redemption minimum` | Allocate among brands based on observed demand |
-
-For Ads historical metrics use US geography, English, and Google Search network consistently. Save the actual request, date range/month coverage, response date, returned keyword, close variants, monthly series, and average volume. Keep missing/suppressed results null. Do not sum overlapping variants. Advertising competition and bid estimates are not organic difficulty.
-
-For Trends, define the long-term design around anchored topic groups over 12 months and the latest 90 days. During Phase 1, run only a bounded foundation sample. Preserve geography, query/topic identity, timeframe, category, and search property. Use a shared anchor within connected groups; do not compare raw 0-100 values from independently normalized requests. Do not report a short-term spike as established durable demand.
-
-For a future SERP pass, run only the smallest batch needed to validate category intent and select competitor pages. Record the exact request count and stop before broad state-localized or repeat collection. Use provider-supported location identifiers and record them. Do not claim state localization from `gl=us` alone.
-
-Capture organic top ten, ads separately, PAA, related searches, and AI overview presence/citations when the response actually exposes them. Missing AI fields mean unavailable evidence, not "no AI overview." Preserve request settings, timestamps, response IDs, result URLs, and provider errors.
-
-### Full-Page Gap Review
-
-During Phase 1, read six distinct competitor pages selected across welcome bonuses, daily rewards, package value, and state exits, with multiple domains represented where results permit. Inspect the actual page, not just its snippet. Record which comparison fields have primary sources, dates, eligibility, test evidence, corrections, and clear currency separation. Propose the remaining six-page sample for a later phase.
-
-Use SERP findings to select competitors rather than preselecting only weak affiliates. Include strong examples and disconfirming evidence. Report a source barrier or inaccessible page as such. Do not turn an absent snippet keyword into an absence-of-evidence claim.
-
-Also outline a watchlist of up to five relevant operators absent from the index when they appear in the bounded Phase 1 evidence. Record their observed query/result appearances, apparent product model, official source availability, and inclusion rationale. Do not perform separate operator research for the watchlist or treat result appearances as market share. The watchlist informs the next coverage decision, not automatic publication.
-
-Output a query-to-page map with intent, category, geography, metric scope, observed competitors, gap evidence, confidence, proposed existing/new page, and reason. Assign P1/P2/P3 through transparent editorial judgment: player consequence, observed demand, demonstrable information gap, evidence availability, and maintenance cost. Do not invent a numeric opportunity score.
-
-**Acceptance:** every demand number traces to a raw response; every asserted competitor gap traces to a full-page inspection; every proposed page maps to one main intent; no US demand is inferred from the global report.
-
-## B. Offer Evidence
-
-The completed evidence pass covers all ten operators. Use existing source lists for discovery, then check current official rules, help pages, offer pages, and public lobbies. Partner status must not affect coverage depth.
-
-For inaccessible public terms, record `not_publicly_accessible`. For personalized/account-only offers, record `account_specific` or `unverified` until legitimately available evidence exists. Do not create a player account, bypass access/location controls, or treat an affiliate headline as primary proof.
+Raw local captures may contain IP addresses. They stay outside the repository. Public evidence records contain no private account data. Page reachability is not proof an offer remains claimable.
 
 ### Record Contract
 
-Deliver JSON records and a human-readable matrix. Use separate entities for operators, offers, sources, and claims so one offer's terms do not overwrite another offer or the operator's general rules.
+`operator-evidence.json` is the canonical research snapshot, not production data. Schema version 2 preserves operator IDs, renames `kyc` to `verificationPolicy`, and uses `evidence: [{sourceId, locator}]` on each attribute.
 
-| Entity | Minimum fields |
+Statuses are limited to `operator_stated`, `public_page_observed`, `unverified` and `conflicting`. Public-page observation means displayed content, never a successful transaction. Unsupported fields have a null value. Conflicts can retain separate sourced variants without selecting a winner.
+
+Thirteen public-evidence attributes remain:
+
+| Group | Attributes |
 |---|---|
-| Operator | Stable ID, display name, confirmed entity or unknown, product mode, currency definitions, official URLs |
-| Offer | Stable ID, operator ID, type, eligible audience, jurisdiction, code/channel, purchase requirement, price/currency, GC amount, promotional currency amount, spins and denomination |
-| Conditions | Playthrough multiplier and basis, game contribution, minimum redemption, maximum prize/cap, excluded methods/games, expiry/claim window, verification, linked general and offer-specific rules |
-| Daily schedule | Base reward, interval/timezone, streak day table, reset rule, missed-day effect, eligibility, currency |
-| Source | ID, exact URL, title, publisher, retrieved timestamp, document effective date when stated, hash/capture location, public/account context |
-| Claim | Field path, value/unit, source ID, section/page locator, evidence type, scope, checked timestamp, status, conflict note |
+| Identity | Entity, product mode, currencies |
+| Offers | Welcome offer, purchase requirement, daily reward, public package examples |
+| Games | Provider/category examples, without an exact inventory comparison |
+| Redemption | Scoped playthrough, minimum/cap, public methods and scoped published timing |
+| Policy | Public verification requirements, dated operator restrictions |
 
-Use a status enum such as `operator_stated`, `observed`, `independently_tested`, `unverified`, `conflicting`, `expired`, and `not_applicable`. Store unknown numeric values as null, never zero. A generic page source list is not sufficient: attach the source to the field it supports.
+Keep signup and first-purchase offers separate. Preserve currency units, price, claim timing, multiplier scope, method and cap period. A promotional win limit is not a withdrawal limit. Published processing time is not observed end-to-end payout speed.
 
-Capture dated screenshots/document hashes where permitted. Keep raw pages, access tokens, and any private account material outside the public site repository. No identity documents or player financial records belong in public evidence files.
+### Coverage and Readability
 
-**Acceptance:** ten operator rows; every critical offer field either source-backed or explicitly unknown; all offer amounts distinguish currencies; all purchase requirements are visible; no claim implies guaranteed cash or profit; account-specific offers are never universalized.
+The review matrix includes all ten operators in its overview. Topic tables include only useful evidenced entries, with a single explanation for missing operators rather than rows full of repeated unknowns.
 
-## C. Other Player Benchmarks
+Do not add columns for universally unsupported or noncomparable fields: exact game totals, complete recurring-reward schedules, standardized package baskets and all-in redemption fees. Keep useful isolated facts as operator notes. Account-specific offers, balances, cashier values and personalized limits are excluded, not targets for future gap filling in this scope.
 
-For all ten operators, record published game/provider information and a reproducible public-lobby sample when accessible rather than accepting an advertised total as an observed count. Capture device/mode and region when relevant. Do not imply all games share the same RTP or availability.
+Reader-facing copy should answer the question first. Keep essential purchase and eligibility conditions next to the number. Group official source links below the table or in the operator's source section. Keep technical status codes, IDs, hashes and detailed provenance outside the main reading flow.
 
-Record redemption minimum and fees by method, published support channels/hours, verification requirements, account closure/appeal routes, and published spending/session/exclusion controls. Label response time and successful closure as untested unless actually observed under authorized conditions.
+For publication, require at least five comparable current records for a cross-operator topic table; otherwise use a limited guide or individual operator notes. Do not produce rankings from this research snapshot.
 
-For three priority state-exit questions selected by package A, build a notice-based chronology: legal source, operator notice, effective date, purchase/play cutoff, redemption deadline, balance treatment, support route, and unresolved conflicts. Use official state/regulator/operator sources. A law change, operator withdrawal, and legal availability are different facts. Do not describe another gambling product as a workaround.
+## Review Findings
 
-**Acceptance:** one comparison matrix, at least five non-payout dimensions, no unverified legal assertions, and clear separation between published policy and measured experience.
+The detailed values and URLs are in `comparison-matrix.md`.
 
-## D. Independent Review and Refresh Policy
+- Jackpota: current terms establish ordinary entertainment-only coin play, with a separate promotional-contest exception. Remove legacy ordinary SC/prize-redemption claims.
+- Lucky Bunny: rendered public cards establish price/FC/SC examples, not prize rights.
+- YAY: welcome amounts remain conflicting; daily rewards have a balance condition. Scope its 1x guide, Visa estimate and caps correctly.
+- WOW: day-one and three-day signup amounts agree once the schedule is considered. The ongoing daily reward and playthrough remain unverified.
+- Dorados, Zonko, Chumba, Pulsz and McLuck: retain only what readable notices or footers support. Do not carry old or secondary claims forward.
+- Stake.us: scope 3x to purchase-linked Stake Cash; inaccessible current terms do not support legacy entity, cap or state claims.
 
-Recheck every high-consequence field: category, prize eligibility, purchase requirement, offer amount/currency, expiry, state exclusion, playthrough, redemption minimum/cap, and any legal deadline. Sample at least 20% of lower-risk fields. Log conflicts and resolve them from the applicable current primary rules; retain a conflict label when resolution is not possible.
+Before publication, review high-consequence fields: product mode, prize rights, currency/amount, purchase requirement, state restrictions, playthrough and caps. Check that every retained claim has accessible supporting evidence and that contradictions are visible. Structural validation cannot establish that operator terms are truthful or complete.
 
-Review provenance, units, personalization, and misleading omissions. Verify that unknown is not presented as zero, an exclusion list is not assumed complete, and a source review does not imply a funded product test.
+## Freshness and Corrections
 
-Proposed publication service levels:
+These are proposed publication rules, not a scheduled monitoring commitment:
 
-- Recheck volatile promotional amounts within 24 hours before first publication.
-- During active promotion coverage, recheck volatile offers daily or label them as dated snapshots and suppress "current/best" language when stale.
-- Check recurring rewards and package terms weekly; recheck immediately after a detected change.
-- Check baseline product/account terms monthly and after a change notice.
-- Check state exits and legal deadlines immediately before publication; review active deadlines daily.
-- Expire offers automatically at known end times. If the source disappears or freshness cannot be maintained, show stale/unverified status and remove current-offer promotion.
+- Recheck promotional amounts within 24 hours before publication. During active offer coverage, check daily or label as a dated snapshot and suppress current-offer claims.
+- Recheck recurring rewards and packages weekly when actively covered.
+- Recheck baseline product/verification terms monthly and after a notice.
+- Recheck operator restrictions and active exit deadlines immediately before publication. Active deadlines need daily review if covered.
+- Expire offers at known end times. Mark disappeared or stale sources unverified and stop promotion when freshness cannot be maintained.
 
-These are future operating requirements, not work included in this evidence pass. Estimate maintenance effort separately before promising a continuously maintained service. Preserve `checkedAt`, `effectiveAt`, `expiresAt`, and `updatedAt` as different concepts.
+Keep retrieval, effective, expiry and article-update dates distinct. Do not invent an expiry. Assign a maintenance owner before promising continuous coverage.
 
-## E. Editorial Backlog
+Accept operator corrections only with an operator-owned URL or public applicable document. Review the affected claim, record the date and reason, preserve unresolved conflicts, and update the source record and reader-facing value together. Partner status never overrides evidence. No pay-for-verification process or outreach is authorized.
 
-Paths are proposals. Confirm query intent and overlap before creation.
+## Editorial Backlog
 
-| Priority | Page / action | Required differentiation and publication gate |
+Future proposals only; no new pages are authorized. `audit.md` remains historical context, not current evidence for operator values.
+
+| Priority | Brief | Publication gate |
 |---|---|---|
-| P1 | Upgrade existing operator records | Add welcome, daily, packages, games, support, restrictions, and field-level sources; preserve existing URLs initially |
-| P1 | `/bonuses/` | Compare signup/no-purchase and purchase offers separately; require at least five comparable current records for a cross-operator table |
-| P1 | `/guides/social-vs-sweepstakes-casinos/` | Clear currencies/prizes taxonomy; existing real-prizes guide should be consolidated or linked without duplicated intent |
-| P1 | `/daily-rewards/` | Base versus streak amounts, claim windows, eligibility; require at least five comparable records |
-| P2 | `/coin-packages/` | Disclosed exact-price baskets and conditions; show unavailable price points as unavailable, never interpolated |
-| P2 | Bonus-conditions guide | Explain playthrough, expiry, excluded games, free-spin units, and redemption caps using sourced examples |
-| P2 | Existing state pages plus state-exit guide | Add operator-specific notices, balance deadlines, evidence, and update history; primary-source review required |
-| P2 | Game-choice comparison | Provider/title/mode coverage and verification date; do not rank operators by unverified game counts |
-| P2 | Verification/support/account-controls guide | Published requirements, escalation, closure tools; no unsupported response-time league table |
-| P2 | Dataset/methodology/corrections pages | Data dictionary, stable IDs, evidence statuses, distributions, versioning, permitted reuse, submission standards |
-| P3 | Returning-player rewards | Publish only broadly available terms; personalized VIP promises remain out of universal comparisons |
-| P3 | Objective comparisons by specific player need | Create only after unique demand and adequate records exist; no template-generated "best" pages |
+| P1 | Correct existing operator records and product taxonomy | Owner review; preserve URLs; repair eligibility before commercial routing |
+| P1 | Welcome/no-purchase comparison | Separate signup from purchase offers; five comparable fresh records |
+| P1 | Social versus sweepstakes explanation | Clear currency/prize distinction; avoid overlap with the existing real-prizes guide |
+| P2 | Daily rewards or package examples | Use limited operator notes until comparable coverage supports a table |
+| P2 | Bonus conditions and public verification guide | Scoped, sourced examples; no measured experience claims |
+| P2 | State notices and exit deadlines | Current operator notices and, for legal assertions, direct legal sources |
+| P2 | Dataset, methodology and corrections | Readable methodology plus detailed provenance in the evidence layer |
 
-Each brief must include primary intent, audience/category, evidence table, outline, required original contribution, source IDs, existing-page overlap, internal links, freshness owner, and acceptance checks. If fewer than five comparable records exist, publish a limited explanatory guide or operator-specific record instead of implying market-wide coverage.
-
-A comparison page should answer the question first, present comparable facts, explain conditions nearby, identify evidence gaps, and link to detailed source records. No affiliate links in article copy. Commercial CTAs must follow the repaired eligibility flow.
+Each future brief needs one primary intent, audience, outline, source records, distinctive contribution, existing-page overlap, internal links, freshness owner and acceptance checks. Reuse recovered demand research as historical context only; do not infer US demand from global numbers. Further query collection requires separate approval.
 
 ## Engineering Backlog
 
+These tickets remain unimplemented. A green release alone does not verify source truth or the previously reported outbound defects.
+
 ### ENG-01: Eligibility and Outbound Repair
 
-Scope: `src/assets/eligibility.js`, all `src/go/*/index.html`, shared operator/state data, targeted tests.
+Use shared operator/state data. Separate banner dismissal from valid selection. Decode cookies defensively and validate state values. Unknown product availability blocks commercial routing. Avoid unsafe HTML construction and navigation races.
 
-Use one source of eligibility truth. Separate banner dismissal from valid state selection. Decode cookies defensively. Validate state values against an explicit set. Combine jurisdiction status with verified operator restrictions. Unknown product availability must block commercial routing. A browser preference is not legal verification; retain that distinction in visible copy.
-
-Avoid unsafe HTML string construction. Verify syntax on every generated outbound page. The current meta-refresh must not race a legitimate navigation.
-
-Acceptance: browser tests cover no cookie, dismissal/reload, malformed cookie, invalid state, globally restricted state, operator-only exclusion, unresolved availability, verified allowed route, changed selection, direct `/go/` access, and no JavaScript. Stub external navigation during tests; never visit an operator to create activity. Editorial content remains public.
+Acceptance: generated outbound scripts parse; browser tests cover no cookie, dismissed banner/reload, malformed cookie, invalid state, global/operator exclusion, unresolved availability, an allowed route, changed selection, direct `/go/` access and no JavaScript. Stub external navigation. Editorial pages remain public.
 
 ### ENG-02: Truth and Category Consistency
 
-Scope: operator records, `tests.json`, methodology, homepage positioning/order, author identity.
+Reconcile existing test statuses with actual evidence. Exclude entertainment-only products from payout claims. Confirm author identity with the owner. Use neutral order and relationship disclosure.
 
-Reconcile pending with test evidence. Add not-applicable handling for entertainment-only products. Verify the author identity with the owner. Display neutral ordering and relationship disclosure. Do not claim a verified operator is safe/legal in every state.
+Acceptance: no unsupported pending/completed tests; no payout metrics for an inapplicable product; no best/fastest ranking without three comparable completed funded tests per operator under the existing methodology. This is a publication safeguard, not authorization to conduct those tests.
 
-Acceptance: no pending status without a referenced funded run; no payout metrics for an inapplicable product; no best/fastest ranking without three comparable completed tests per operator; unresolved identity assertions removed or held pending confirmation.
+### ENG-03: Reviewed Public-Evidence Data
 
-### ENG-03: Normalized Player-Value Data
+Use existing Eleventy data patterns. Migrate only approved public-evidence fields. Keep offer conditions visible and provenance accessible but unobtrusive. Do not add account-observation fields.
 
-Scope: existing Eleventy data pattern, operator template, homepage comparison, JSON/CSV exports, content validation.
+Acceptance: HTML/JSON/CSV agree; null/conflicting/stale states render correctly; stable IDs and operator restrictions survive migration; sparse topics do not become misleading league tables; desktop/mobile layouts remain readable.
 
-Implement the reviewed record contract with minimal abstractions. Add category and player-need filters backed by visible static content. Show purchase requirement, currency, conditions, and source freshness adjacent to the offer.
+### ENG-04: SEO and Data Integrity
 
-Acceptance: HTML/JSON/CSV agree on values; null/expired/conflicting states render correctly; operator-specific restrictions do not get lost; no duplicate canonical operator records; mobile comparison and filters work without text overlap.
+Validate exact canonicals, parsed JSON-LD, indexability, internal links and source metadata against generated output. Keep `/go/` excluded/noindex. Use truthful Dataset metadata and separate event dates from content updates.
 
-### ENG-04: SEO/Data Integrity
-
-Scope: sitemap/template metadata, structured data, SEO/content validators.
-
-Parse JSON-LD rather than checking only its existence. Derive tested URLs from build output or collections. Check exact canonicals, indexability, internal links, unique main headings, required source metadata, and exclusion of `/go/`. Add truthful Dataset markup to the dataset page. Separate state event dates from content modification dates.
-
-Acceptance: all public pages are covered; gated pages remain excluded/noindex; dates reflect real content changes; no fabricated ratings/reviews; new metadata represents visible data. Read the sitemap-freshness skill before page/date changes.
+Acceptance: metadata matches visible content; no invented ratings; public URLs covered; date rules honored. Read the sitemap-freshness skill before changing pages or dates.
 
 ### ENG-05: Measurement and Corrections
 
-Inspect existing GSC/GA configuration before adding anything. Establish a 28-day baseline when enough history exists; otherwise label the available period. Separate US brand/nonbrand query groups and offer versus payout landing pages.
+Inspect existing GSC/GA before adding instrumentation. Label unavailable or partial baselines honestly. Publish a correction process with editorial ownership and dated resolutions.
 
-Prepare a panel of 12 fixed player prompts during Phase 1, but do not run the multi-surface observation study. A later authorized phase can record engine/mode/date, exact cited URL, accuracy, and no-citation/error states. Do not claim an AI visibility baseline from the unexecuted panel.
+Acceptance: no unsupported traffic/AI-citation uplift claims; corrections update both visible values and provenance. Further measurement studies are outside this run.
 
-Publish an operator correction/submission policy with named editorial ownership, evidence requirements, dated resolutions, conflict handling, and no pay-for-verification mechanism. Do not send outreach in this planning task.
+## Deferred Operational TODOs
 
-Acceptance: baseline or explicitly unavailable status; no unsupported traffic/citation uplift claims; correction policy and data provenance agree.
+Actual redemption reliability/time, verification friction/time, support quality/time, and closure/safer-play effectiveness require a new owner decision. They are not current attributes or scheduled work. Do not create accounts to resolve them.
 
-## Delivery and Release Gates
+## Delivery Gate
 
-The current research delivery consists of ten operator records, field-level source references, a comparison matrix, conflict and limitation notes, and a review acceptance summary. The reviewer must approve critical claims before production use.
+Deliver the JSON, readable matrix and short handoff. Validate IDs, statuses, field/source references, units, null handling and matrix consistency. Run `npm run release` without disturbing unrelated work. Update the changelog and commit only task files on a short-lived branch. No production push.
 
-Implementation runs `npm run release` plus the new browser and data-consistency tests. Use a short-lived branch, update `CHANGELOG.md`, and commit only task files. Generate `docs/` through the build. Do not publish new rankings or legal assertions simply because release validation passes.
-
-The next implementation target remains ENG-01 and ENG-02. The completed research target is a public-evidence record for each of the ten operators using the shared foundation.
-
-Stop after the ten-operator review package. The owner will decide whether to fund tests, change the method, authorize implementation, or end the project.
+Stop for owner review. Next action is approval/correction of the matrix, not more research, tests or implementation.
