@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-10 - Simplify navigation and identify the publisher
+- Remove Methodology, Payout methods and Redemption times from the main menu; preserve all existing pages, operator attributes and data exports.
+- Add a SweepsBrief footer link and identify Sweeps Brief LLC on About using the shared legal name.
+- Keep methodology accessible through the footer and About. Attribute-specific rankings remain deferred until comparable evidence meets the existing research standard.
+
 ## 2026-09-10 - Monitor first-run corrections
 - Fix publication staging of an ignored CSS source; keep normalized observations with capture artifacts for independent evaluation.
 - Tighten passage categories after first-run review, preserve decimal values and join PDF-wrapped paragraphs.
