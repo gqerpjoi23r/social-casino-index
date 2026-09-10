@@ -3,26 +3,24 @@ import { join } from "node:path";
 import { hash } from "./core.mjs";
 import { readCapture, saveJson } from "./archive.mjs";
 import { NUMERIC_VERSION, EXTRACTION_SCHEMA } from "./schema.mjs";
-import { deterministicExtract, checkExtraction, attachProvenance, comparableOffer, changeSignals } from "./numeric-core.mjs";
-import { Budget } from "./providers.mjs";
+import { deterministicExtract, checkExtraction, attachProvenance, comparableOffer, changeSignals, retainUnconfirmed } from "./numeric-core.mjs";
+import { RequestUsage } from "./providers.mjs";
 
 const directory = process.argv[2];
 if (!directory) throw new Error("Usage: node scripts/monitor/numeric.mjs <capture directory>");
 const read = path => JSON.parse(readFileSync(path, "utf8"));
 const manifest = read(join(directory, "manifest.json"));
-const operators = read("src/_data/operators.json");
-const config = read("data/monitor/config.json");
-const monitor = existsSync(join(directory, "monitor.json")) ? read(join(directory, "monitor.json")) : null;
-const ledgerPath = join(directory, "budget.json");
-const budget = new Budget(existsSync(ledgerPath) ? read(ledgerPath) : monitor?.spending || [], new Date().toISOString().slice(0, 10), config.budget);
+const operators = read(existsSync(join(directory, "operators-config.json")) ? join(directory, "operators-config.json") : "src/_data/operators.json");
+const usageCounter = new RequestUsage();
 const modelEnabled = process.env.MONITOR_USE_MODEL === "true";
 const cacheOnly = process.env.MONITOR_CACHE_ONLY === "true";
 if (modelEnabled && !(process.env.MONITOR_MODEL && (cacheOnly || (process.env.MONITOR_MODEL_URL && process.env.MONITOR_MODEL_KEY)))) {
   throw new Error("model_configuration_missing");
 }
 const previous = process.env.MONITOR_PREVIOUS ? read(process.env.MONITOR_PREVIOUS) : null;
+if (previous) saveJson(directory, "previous-numeric.json", previous);
 const result = { schemaVersion: NUMERIC_VERSION, runId: manifest.runId,
-  capturedAt: manifest.startedAt, extractedAt: new Date().toISOString(), publicationStatus: "staged",
+  capturedAt: manifest.startedAt, extractedAt: new Date().toISOString(), publicationStatus: "staged", extractorVersion: "2.1.0",
   model: modelEnabled ? process.env.MONITOR_MODEL : null, operators: [], events: [] };
 const evaluation = { runId: manifest.runId, operators: [], rejected: [], modelErrors: [],
   checkedNumbers: 0, modelCalls: 0, replayEvents: 0,
@@ -57,7 +55,7 @@ for (const operator of operators) {
   let usage = null;
   if (modelEnabled && pages.length) {
     const modelPages = pages.map(page => ({ sourceId: page.sourceId, url: page.finalUrl,
-      text: page.text.slice(0, 70000), truncated: page.text.length > 70000 }));
+      text: page.text.slice(0, 160000), truncated: page.text.length > 160000 }));
     const request = {
       model: process.env.MONITOR_MODEL,
       messages: [{ role: "system", content: instructions }, { role: "user", content: JSON.stringify(modelPages) }],
@@ -67,12 +65,12 @@ for (const operator of operators) {
     const inputHash = hash(JSON.stringify(request));
     const cachedPath = join(directory, `model/${operator.slug}-response.json`);
     const cached = existsSync(cachedPath) ? read(cachedPath) : null;
-    const canReplay = cached?.inputHash === inputHash;
+    const canReplay = process.env.MONITOR_FORCE_MODEL !== "true" && cached?.inputHash === inputHash;
     if (!canReplay && cacheOnly) {
       modelStatus = "cache_miss";
       evaluation.modelErrors.push({ operator: operator.slug, error: modelStatus });
-    } else if (!canReplay && !budget.reserve("model", config.costUpperBounds.model)) {
-      modelStatus = "budget_limit";
+    } else if (!canReplay && !usageCounter.reserve("model")) {
+      modelStatus = "request_limit";
       evaluation.modelErrors.push({ operator: operator.slug, error: modelStatus });
     } else {
       try {
@@ -82,7 +80,7 @@ for (const operator of operators) {
           modelStatus = "replayed";
         } else {
           evaluation.modelCalls++;
-          saveJson(directory, "budget.json", budget.entries);
+          saveJson(directory, "model-usage.json", { calls: evaluation.modelCalls });
           saveJson(directory, `model/${operator.slug}-request.json`, { inputHash, request, truncatedSources: modelPages.filter(page => page.truncated).map(page => page.sourceId) });
           const response = await fetch(process.env.MONITOR_MODEL_URL, {
             method: "POST", signal: AbortSignal.timeout(180000),
@@ -127,17 +125,15 @@ for (const operator of operators) {
   console.log(`${operator.slug}: ${records.offers.length} offers, ${records.facts.length} numeric policies; ${selected.rejected.length} rejected; ${modelStatus}`);
 }
 result.events = changeSignals(previous, result);
+retainUnconfirmed(previous, result);
 evaluation.replayEvents = changeSignals(result, result).length;
-evaluation.reservations = budget.entries;
+evaluation.tokens = evaluation.operators.reduce((total, row) => {
+  for (const key of ["prompt_tokens", "completion_tokens", "total_tokens"]) total[key] += row.usage?.[key] || 0;
+  return total;
+}, { prompt_tokens: 0, completion_tokens: 0, total_tokens: 0 });
 evaluation.schemaValid = true;
 saveJson(directory, "numeric.json", result);
 saveJson(directory, "numeric-evaluation.json", evaluation);
-if (monitor) {
-  monitor.spending = budget.entries;
-  saveJson(directory, "monitor.json", monitor);
-  // This is the existing allowance ledger, not reviewed operator data.
-  if (process.env.CI && process.env.MONITOR_STAGE_ONLY !== "true") saveJson(process.cwd(), "src/_data/monitor.json", monitor, {});
-}
 const summary = [
   "## Numeric extraction (staged, not published)", "",
   `Numbers with source grounding: ${evaluation.checkedNumbers}. Model errors: ${evaluation.modelErrors.length}. Rejected records: ${evaluation.rejected.length}.`,

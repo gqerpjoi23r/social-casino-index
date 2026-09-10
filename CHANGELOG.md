@@ -14,11 +14,17 @@ Format:
 
 ---
 
+## 2026-09-10 - Numeric monitor completion and live evaluation
+- Remove dollar-ledger enforcement; retain request bounds, raw capture provenance, model tokens and reported Firecrawl credits.
+- Isolate branch baselines, verify S3 uploads by download and hash, retain failed-source values, and distinguish wording, numeric and extractor changes.
+- Correct prior access diagnosis: the repository-scoped credential has push/admin access. The global `sunmer` login remains unchanged.
+- Switch Pages to Actions deployment for ordinary main pushes and monitor runs. Daily numeric results remain private until reviewed and promoted.
+
 ## 2026-09-10 - Private captures and staged numeric extraction
 - Archive source responses, Firecrawl Markdown/HTML, model responses and numeric records in private S3; GitHub Actions uses AWS OIDC and an SSM model key, without Lambda.
 - Extract typed offer amounts and policy values with exact evidence, units, scope, explicit unknowns and review-required change signals. Cached replay needs no new scrape or model call.
 - Add readable per-run results with all source URLs, values, evidence and rejected records; use one parallel directory transfer for final archiving.
-- Numeric records remain private and unreviewed; production comparison facts are unchanged. Local S3 upload/restore verified with 49 grounded numeric fields and 20 rejected records. Tests and release pass; GitHub push/dispatch is blocked by the active account's read-only repository access.
+- Numeric records remain private and unreviewed; production comparison facts are unchanged. Local S3 upload/restore verified with 49 grounded numeric fields and 20 rejected records. The earlier GitHub blocker diagnosis was incorrect; the repository credential has write access.
 
 ## 2026-09-10 - Simplify navigation and identify the publisher
 - Remove Methodology, Payout methods and Redemption times from the main menu; preserve all existing pages, operator attributes and data exports.

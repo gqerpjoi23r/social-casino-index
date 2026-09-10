@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readableText, accessStatus, extract, validQuotes, aggregate } from "./core.mjs";
-import { Budget } from "./providers.mjs";
+import { RequestUsage } from "./providers.mjs";
 
 const operator = { slug: "fixture", name: "Fixture", playerValue: { productMode: "sweepstakes" } };
 const text = "The minimum redemption is 50 SC for eligible players.\nClaim your daily reward of 0.5 SC every day.\nIdentity verification requires government photo identification.";
@@ -52,9 +52,11 @@ test("baseline, repeat, change and failed-source retention", () => {
   assert.deepEqual(failed.record.fields.minimum.quotes, first.record.fields.minimum.quotes);
   assert.equal(failed.events.length, 0);
 });
-test("paid calls have a hard request cap and reservation allowance", () => {
-  const budget = new Budget([], "2026-09-10");
-  for (let i = 0; i < 35; i++) assert.equal(budget.reserve("firecrawl", 0.1), true);
-  assert.equal(budget.reserve("firecrawl", 0.1), false);
-  assert.equal(budget.reserve("model", undefined), false);
+test("request caps remain, dollar ledger is not enforced", () => {
+  const usage = new RequestUsage([{ amount: 999999 }], "2026-09-10");
+  for (let i = 0; i < 45; i++) assert.equal(usage.reserve("firecrawl"), true);
+  assert.equal(usage.reserve("firecrawl"), false);
+  assert.equal(usage.reserve("model"), true);
+  usage.record("firecrawl", { metadata: { creditsUsed: 2 } });
+  assert.equal(usage.firecrawlCreditsReported, 2);
 });

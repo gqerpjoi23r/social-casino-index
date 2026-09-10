@@ -2,6 +2,7 @@ import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync } from "node:fs";
 import { join, basename } from "node:path";
 import { uploadDirectory } from "./archive.mjs";
+import { baselineKey, usableRun } from "./state-core.mjs";
 
 const [command, directory] = process.argv.slice(2);
 const bucket = process.env.MONITOR_BUCKET;
@@ -17,9 +18,10 @@ function download(key, path, optional = false) {
   }
 }
 const pointerPath = ".monitor/latest.json";
+const pointerKey = baselineKey();
 mkdirSync(".monitor", { recursive: true });
 if (command === "restore") {
-  if (!download("runs/latest.json", pointerPath, true)) {
+  if (!download(pointerKey, pointerPath, true)) {
     console.log("No previous private run; using committed observation history.");
   } else {
     const pointer = read(pointerPath);
@@ -49,11 +51,14 @@ if (command === "restore") {
     const prior = existsSync(pointerPath) ? read(pointerPath) : {};
     const evaluationPath = join(directory, "numeric-evaluation.json");
     const evaluation = existsSync(evaluationPath) ? read(evaluationPath) : null;
-    const usable = evaluation && evaluation.modelErrors.length === 0 && evaluation.replayEvents === 0;
-    const pointer = { runId: basename(directory), numericRunId: usable ? basename(directory) : prior.numericRunId || null };
-    writeFileSync(pointerPath, JSON.stringify(pointer, null, 2) + "\n");
-    aws(["s3", "cp", pointerPath, `s3://${bucket}/runs/latest.json`, "--only-show-errors"]);
-    console.log(`Archived ${pointer.runId}; numeric baseline: ${pointer.numericRunId || "none"}.`);
+    const replayPath = join(directory, "replay-evaluation.json");
+    const replay = existsSync(replayPath) ? read(replayPath) : null;
+    if (usableRun(manifest, evaluation, replay)) {
+      const pointer = { runId: basename(directory), numericRunId: basename(directory), scope: manifest.scope };
+      writeFileSync(pointerPath, JSON.stringify(pointer, null, 2) + "\n");
+      aws(["s3", "cp", pointerPath, `s3://${bucket}/${pointerKey}`, "--only-show-errors"]);
+      console.log(`Verified archive ${pointer.runId}; advanced ${pointerKey}.`);
+    } else console.log(`Run archived; retained prior usable baseline ${prior.runId || "none"}.`);
   }
 } else {
   throw new Error("Usage: node scripts/monitor/state.mjs restore|finish [capture-directory]");

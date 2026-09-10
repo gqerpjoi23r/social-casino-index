@@ -5,8 +5,9 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { readableText } from "./core.mjs";
 import { archiveCapture, readCapture, uploadFile } from "./archive.mjs";
-import { deterministicExtract, checkExtraction, comparableOffer, changeSignals } from "./numeric-core.mjs";
+import { deterministicExtract, checkExtraction, comparableOffer, changeSignals, retainUnconfirmed } from "./numeric-core.mjs";
 import { firecrawlOptions } from "./providers.mjs";
+import { baselineKey, usableRun } from "./state-core.mjs";
 
 const pages = text => [{ sourceId: "faq", text }];
 test("numeric extraction survives HTML wrapper changes", () => {
@@ -92,4 +93,38 @@ test("identical replay ignores extraction timestamps; missing is not expired", (
   assert.deepEqual(changeSignals(current, next), []);
   next.operators[0].offers = [];
   assert.equal(changeSignals(current, next)[0].type, "not_reconfirmed");
+});
+test("record ordering and wording do not become numeric changes", () => {
+  const a = { sourceId: "faq", field: "redemption_minimum", value: 50, quote: "At least 50 SC", conditions: ["Verified", "US"] };
+  const b = { ...a, value: 100, sourceId: "rules" };
+  const run = { extractorVersion: "v1", operators: [{ slug: "x", offers: [], facts: [a, b], statements: [] }] };
+  const next = structuredClone(run);
+  next.operators[0].facts.reverse();
+  next.operators[0].facts[1].conditions.reverse();
+  assert.deepEqual(changeSignals(run, next), []);
+  next.operators[0].facts[1].quote = "Redeem a minimum of 50 SC";
+  assert.equal(changeSignals(run, next)[0].type, "wording_only_change");
+  next.operators[0].facts[1].value = 60;
+  assert.equal(changeSignals(run, next)[0].type, "numeric_or_condition_change");
+  next.extractorVersion = "v2";
+  assert.equal(changeSignals(run, next)[0].type, "extractor_change");
+});
+test("conflicting source claims stay separate and failed pages retain old values", () => {
+  const run = { operators: [{ slug: "x", offers: [], facts: [{ sourceId: "faq", value: 50 }, { sourceId: "rules", value: 100 }], statements: [] }] };
+  const next = { operators: [{ slug: "x", readableSources: [{ sourceId: "faq" }], offers: [], facts: [{ sourceId: "faq", value: 50 }], statements: [] }] };
+  assert.equal(changeSignals(run, next)[0].type, "not_reconfirmed");
+  retainUnconfirmed(run, next);
+  assert.equal(next.operators[0].facts[1].value, 100);
+  assert.equal(next.operators[0].facts[1].reconfirmationStatus, "not_reconfirmed");
+});
+test("trial pointers are separate and model failures cannot advance baselines", () => {
+  assert.notEqual(baselineKey({ GITHUB_REF: "refs/heads/main" }), baselineKey({ GITHUB_REF: "refs/heads/codex/trial" }));
+  assert.notEqual(baselineKey({ GITHUB_REF: "refs/heads/codex/a" }), baselineKey({ GITHUB_REF: "refs/heads/codex/b" }));
+  const manifest = { completedAt: "now", sources: [{ status: "ok" }] };
+  const evaluation = { schemaValid: true, modelErrors: [], replayEvents: 0 };
+  const replay = { unsupportedQuotes: 0, identicalReplayEvents: 0 };
+  assert.equal(usableRun(manifest, evaluation, replay), true);
+  assert.equal(usableRun({}, evaluation, replay), false);
+  assert.equal(usableRun(manifest, { ...evaluation, modelErrors: ["timeout"] }, replay), false);
+  assert.equal(usableRun(manifest, evaluation, { ...replay, unsupportedQuotes: 1 }), false);
 });

@@ -1,23 +1,27 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync } from "node:fs";
 import { join } from "node:path";
 import { FIELDS, VERSION, hash, extract, validQuotes, aggregate } from "./core.mjs";
-import { Budget, retrieve, modelExtract } from "./providers.mjs";
+import { RequestUsage, retrieve, modelExtract } from "./providers.mjs";
 import { archiveCapture, saveJson, uploadDirectory } from "./archive.mjs";
+import { baselineScope, pagePurpose } from "./state-core.mjs";
 
 const root = process.cwd();
 const read = (path, fallback) => existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : fallback;
 const write = (path, data) => writeFileSync(path, JSON.stringify(data, null, 2) + "\n");
 const observedAt = new Date().toISOString();
-const runId = `${observedAt.replace(/[:.]/g, "-")}-${process.env.GITHUB_RUN_ID || "local"}`;
+const runId = `${observedAt.replace(/[:.]/g, "-")}-${process.env.GITHUB_RUN_ID || "local"}-${process.env.GITHUB_RUN_ATTEMPT || "1"}`;
 const output = join(root, ".monitor", runId);
 mkdirSync(output, { recursive: true });
 if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, `capture_path=${output}\n`);
-const manifest = { schemaVersion: 1, runId, startedAt: observedAt, captures: [], sources: [] };
+const manifest = { schemaVersion: 1, runId, scope: baselineScope(), startedAt: observedAt, captures: [], sources: [] };
+saveJson(output, "manifest.json", manifest);
 mkdirSync("data/monitor/runs", { recursive: true });
 const operators = read("src/_data/operators.json", []);
 const previous = read(process.env.MONITOR_PREVIOUS_STATE || "src/_data/monitor.json", { operators: [], sources: {}, spending: [], runs: [] });
 const config = read("data/monitor/config.json", {});
-const budget = new Budget(previous.spending, observedAt.slice(0, 10), config.budget);
+saveJson(output, "operators-config.json", operators);
+saveJson(output, "sources-config.json", config);
+const usage = new RequestUsage();
 const sourceCache = { ...(previous.sources || {}) };
 const records = [];
 const events = [];
@@ -26,7 +30,7 @@ let count = 0;
 
 for (const operator of operators) {
   const sources = [];
-  for (const source of operator.sources) {
+  for (const source of [...operator.sources, ...(config.additionalSources || []).filter(item => item.operatorId === operator.slug)]) {
     if (count >= 50) break;
     count++;
     metrics.attempted++;
@@ -37,15 +41,20 @@ for (const operator of operators) {
     let provider;
     const options = ["direct"];
     if (process.env.FIRECRAWL_API_KEY) options.push("firecrawl");
+    if (process.env.FIRECRAWL_API_KEY && config.sourceOptions?.[source.id]?.retryFullContent) options.push("firecrawl_full");
     if (process.env.BRIGHTDATA_API_KEY && process.env.BRIGHTDATA_ZONE) options.push("brightdata");
-    for (provider of options) {
-      if (provider !== "direct" && !budget.reserve(provider, config.costUpperBounds?.[provider])) {
-        attempts.push({ provider, status: "budget_or_price_limit" });
+    for (const attemptProvider of options) {
+      provider = attemptProvider === "firecrawl_full" ? "firecrawl" : attemptProvider;
+      if (!usage.reserve(provider)) {
+        attempts.push({ provider, status: "request_limit" });
         continue;
       }
-      if (provider !== "direct") saveJson(output, "budget.json", budget.entries);
+      saveJson(output, "usage.json", usage);
       try {
-        result = await retrieve(url, provider, process.env, config.sourceOptions?.[source.id] || {});
+        result = await retrieve(url, provider, process.env, {
+          ...config.sourceOptions?.[source.id], ...(attemptProvider === "firecrawl_full" ? { onlyMainContent: false } : {}),
+        });
+        usage.record(provider, result);
         // Preserve public source text, including dotted terms-clause numbers.
         // Request headers and credentials are never added to the capture.
         attempts.push({ provider, status: result.status });
@@ -58,12 +67,16 @@ for (const operator of operators) {
         continue;
       }
       // Storage failure is fatal: do not extract or publish uncaptured evidence.
-      const capture = archiveCapture(output, { id: source.id, operatorId: operator.slug, url }, provider, result);
+      const capture = archiveCapture(output, { id: source.id, operatorId: operator.slug, url, purpose: source.purpose || pagePurpose(source) }, provider, result);
       manifest.captures.push(capture);
       saveJson(output, "manifest.json", manifest);
-      if (result.status === "ok" || result.status === "login_required") break;
+      const omitted = config.sourceOptions?.[source.id]?.retryFullContent &&
+        result.status === "ok" && !/\b(?:\d+(?:\.\d+)?\s*(?:SC|coins|%)|bonus|offer)\b/i.test(result.text);
+      if ((result.status === "ok" && !omitted) || result.status === "login_required") break;
     }
     const record = { id: source.id, url, finalUrl: result?.finalUrl || url, checkedAt: observedAt,
+      purpose: source.purpose || pagePurpose(source), discoveredFrom: source.discoveredFrom || null,
+      offerCoverage: "not_established_by_readability",
       status: result?.status || "failed", provider: attempts.findLast(attempt => attempt.status === "ok")?.provider || null, attempts };
     if (result?.status === "ok") {
       metrics.readable++;
@@ -80,7 +93,7 @@ for (const operator of operators) {
         if (process.env.MONITOR_USE_PASSAGE_MODEL === "true" && process.env.MONITOR_MODEL_URL &&
             process.env.MONITOR_MODEL_KEY && process.env.MONITOR_MODEL &&
             Object.values(record.fields).filter(quotes => quotes.length).length < 2 &&
-            budget.reserve("model", config.costUpperBounds?.model)) {
+            usage.reserve("model")) {
           try {
             const model = validQuotes(result.text, await modelExtract(result.text, FIELDS));
             for (const key of Object.keys(FIELDS)) {
@@ -113,13 +126,14 @@ const summary = {
   totalFields: records.length * Object.keys(FIELDS).length,
   changes: events.filter(event => event.type !== "baseline").length,
   baselines: events.filter(event => event.type === "baseline").length,
-  spendingReservedUsd: budget.entries.filter(entry => entry.date === observedAt.slice(0, 10)).reduce((sum, entry) => sum + entry.reservedUsd, 0),
-  providerCalls: budget.calls,
+  providerCalls: usage.calls,
+  firecrawlCreditsReported: usage.firecrawlResponsesWithCredits ? usage.firecrawlCreditsReported : null,
+  firecrawlResponsesWithCredits: usage.firecrawlResponsesWithCredits,
 };
 const latest = {
   schemaVersion: 1, lastAttemptedAt: observedAt,
   lastReadableRunAt: metrics.readable ? observedAt : previous.lastReadableRunAt || null,
-  summary, operators: records, sources: sourceCache, spending: budget.entries,
+  summary, operators: records, sources: sourceCache, spending: previous.spending || [],
   events: [...events, ...(previous.events || [])].slice(0, 500),
   runs: [summary, ...(previous.runs || [])].slice(0, 90),
 };
@@ -129,6 +143,7 @@ if (process.env.MONITOR_STAGE_ONLY !== "true") {
 }
 write(join(output, "summary.json"), summary);
 write(join(output, "monitor.json"), latest);
+saveJson(output, "usage.json", usage);
 saveJson(output, "manifest.json", { ...manifest, completedAt: new Date().toISOString() });
 if (!metrics.readable) process.exitCode = 1;
 const report = [
@@ -137,7 +152,7 @@ const report = [
   `Readable sources: ${metrics.readable}/${metrics.attempted}`,
   `Fields with source passages: ${summary.coveredFields}/${summary.totalFields}`,
   `Baseline observations: ${summary.baselines}; source-wording changes: ${summary.changes}`,
-  `Reserved paid-service allowance today: $${summary.spendingReservedUsd.toFixed(2)} (not an invoice)`, "",
+  `Requests: ${JSON.stringify(usage.calls)}. Reported Firecrawl credits: ${summary.firecrawlCreditsReported ?? "unavailable"} (not an invoice).`, "",
   "| Operator | Readable sources | Fields with passages |",
   "| --- | ---: | ---: |",
   ...records.map(record => `| ${record.name} | ${record.sources.filter(source => source.status === "ok").length}/${record.sources.length} | ${Object.values(record.fields).filter(field => ["observed", "partial"].includes(field.status)).length}/${Object.keys(FIELDS).length} |`),

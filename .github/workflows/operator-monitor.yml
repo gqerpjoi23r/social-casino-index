@@ -22,6 +22,7 @@ jobs:
       AWS_REGION: eu-north-1
       MONITOR_BUCKET: socialcasinoindex-monitor-349131272959
       MONITOR_USE_MODEL: "true"
+      MONITOR_STAGE_ONLY: "true"
       MONITOR_MODEL: gpt-5.6-terra
       MONITOR_MODEL_URL: https://autorank-coding-ai.openai.azure.com/openai/v1/chat/completions
     steps:
@@ -60,6 +61,7 @@ jobs:
           CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
         run: npm run monitor:numeric -- "$CAPTURE_PATH"
       - name: Write readable numeric results
+        if: always() && steps.capture.outputs.capture_path != ''
         env:
           CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
         run: npm run monitor:report -- "$CAPTURE_PATH"
@@ -74,7 +76,8 @@ jobs:
         run: |
           git config user.name "Social Casino Index monitor"
           git config user.email "monitor@users.noreply.github.com"
-          git add src/_data/monitor.json data/monitor/runs docs
+          # Daily extraction remains private until explicit review and promotion.
+          git add docs
           if ! git diff --cached --quiet; then
             git commit -m "Publish daily operator source observations"
             git push origin HEAD:main

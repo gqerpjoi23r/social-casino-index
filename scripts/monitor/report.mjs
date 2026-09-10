@@ -93,7 +93,7 @@ lines.push("## Files", "",
   "- `model/*-request.json` and `model/*-response.json`: replay inputs, model output and token usage; no API keys.",
   "- `numeric.json`: staged normalized records, provenance and candidate changes.",
   "- `numeric-evaluation.json`: coverage, rejection details, model errors and numeric replay results.",
-  "- `budget.json`: retained request reservations, not an invoice.",
+  "- `usage.json`: bounded request counts and available provider credits, not an invoice.",
   "- `evaluation.md` and `replay-evaluation.json`: passage coverage and evidence checks.", "");
 const path = join(directory, "results.md");
 writeFileSync(path, lines.join("\n"));

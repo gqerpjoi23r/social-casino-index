@@ -1,12 +1,16 @@
 {
-  "budget": { "dailyUsd": 12, "weeklyUsd": 50 },
   "sourceOverrides": {
     "zonko-notice": "https://www.zonko.com/help/faq/",
     "chumba-notice": "https://www.chumbacasino.com/getting-started/redeem-prizes"
   },
-  "costUpperBounds": {
-    "firecrawl": 0.10,
-    "brightdata": 0.10,
-    "model": 0.50
+  "additionalSources": [
+    { "operatorId": "jackpota", "id": "jackpota-promotions", "url": "https://www.jackpota.com/promotions", "purpose": "promotions_index", "discoveredFrom": "jackpota-home" },
+    { "operatorId": "yay-casino", "id": "yay-signup", "url": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion", "purpose": "signup_offer", "discoveredFrom": "yay-promotions" },
+    { "operatorId": "chumba", "id": "chumba-rules", "url": "https://www.chumbacasino.com/sweeps-rules", "purpose": "sweepstakes_rules", "discoveredFrom": "chumba-home" },
+    { "operatorId": "mcluck", "id": "mcluck-promotions", "url": "https://www.mcluck.com/promotions", "purpose": "promotions_index", "discoveredFrom": "mcluck-home" }
+  ],
+  "sourceOptions": {
+    "mcluck-promotions": { "retryFullContent": true },
+    "jackpota-promotions": { "retryFullContent": true }
   }
 }

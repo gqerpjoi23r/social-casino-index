@@ -21,21 +21,23 @@ export function firecrawlOptions(url, onlyMainContent = true) {
     maxAge: 0, timeout: 60000, location: { country: "US" }, proxy: "basic" };
 }
 
-export class Budget {
-  constructor(previous = [], date = new Date().toISOString().slice(0, 10), limits = {}) {
-    this.date = date;
-    this.entries = previous.filter(entry => new Date(date) - new Date(entry.date) < 7 * 86400000);
-    this.calls = { firecrawl: 0, brightdata: 0, model: 0 };
-    this.limits = { dailyUsd: 5, weeklyUsd: 25, ...limits };
+export class RequestUsage {
+  constructor() {
+    this.calls = { direct: 0, firecrawl: 0, brightdata: 0, model: 0 };
+    this.firecrawlCreditsReported = 0;
+    this.firecrawlResponsesWithCredits = 0;
   }
-  reserve(provider, upperBound) {
-    const daily = this.entries.filter(entry => entry.date === this.date).reduce((n, entry) => n + entry.reservedUsd, 0);
-    const weekly = this.entries.reduce((n, entry) => n + entry.reservedUsd, 0);
-    const caps = { firecrawl: 35, brightdata: 10, model: 12 };
-    if (!(upperBound > 0) || daily + upperBound > this.limits.dailyUsd || weekly + upperBound > this.limits.weeklyUsd || this.calls[provider] >= caps[provider]) return false;
+  reserve(provider) {
+    const caps = { direct: 50, firecrawl: 45, brightdata: 10, model: 12 };
+    if (!(provider in caps) || this.calls[provider] >= caps[provider]) return false;
     this.calls[provider]++;
-    this.entries.push({ date: this.date, provider, reservedUsd: upperBound });
     return true;
+  }
+  record(provider, result) {
+    if (provider === "firecrawl" && Number.isFinite(result.metadata?.creditsUsed)) {
+      this.firecrawlCreditsReported += result.metadata.creditsUsed;
+      this.firecrawlResponsesWithCredits++;
+    }
   }
 }
 

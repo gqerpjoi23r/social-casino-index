@@ -120,18 +120,48 @@ export function comparableOffer(offer) {
 
 export function changeSignals(previous, current) {
   const events = [];
+  const canonical = value => Array.isArray(value) ? value.map(canonical).sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b))) :
+    value && typeof value === "object" ? Object.fromEntries(Object.keys(value).sort().map(key => [key, canonical(value[key])])) :
+      typeof value === "string" ? normalize(value) : value;
+  const serialize = value => JSON.stringify(canonical(value));
+  const metadata = ["id", "sourceUrl", "capturedAt", "captureId", "archiveKey", "textHash", "extractor", "reviewStatus", "extractedAt", "reconfirmationStatus"];
+  const stable = items => items.map(item => Object.fromEntries(Object.entries(item).filter(([key]) => !metadata.includes(key))));
+  const substantive = items => stable(items).map(item => Object.fromEntries(Object.entries(item)
+    .filter(([key]) => !["quote", "summary", "name"].includes(key))));
   for (const operator of current.operators) {
     const old = previous?.operators?.find(item => item.slug === operator.slug);
     for (const kind of ["offers", "facts", "statements"]) {
       const before = old?.[kind] || [];
       const after = operator[kind];
-      const stable = items => items.map(item => Object.fromEntries(Object.entries(item).filter(([key]) =>
-        !["id", "sourceUrl", "capturedAt", "captureId", "archiveKey", "textHash", "extractor", "reviewStatus", "extractedAt"].includes(key))));
-      if (JSON.stringify(stable(before)) !== JSON.stringify(stable(after))) events.push({
-        operator: operator.slug, kind, type: !old ? "baseline" : !after.length ? "not_reconfirmed" : "candidate_change",
-        before, after, requiresReview: true,
-      });
+      const identity = item => serialize([item.sourceId, item.field || item.kind, item.method, item.stage, item.promoCode]);
+      for (const key of new Set([...before, ...after].map(identity))) {
+        const a = before.filter(item => identity(item) === key);
+        const b = after.filter(item => identity(item) === key);
+        if (serialize(stable(a)) === serialize(stable(b))) continue;
+        const sourceId = (b[0] || a[0]).sourceId;
+        const sourceFailed = operator.readableSources && !operator.readableSources.some(source => source.sourceId === sourceId);
+        const versionChanged = old && previous.extractorVersion !== current.extractorVersion;
+        events.push({
+          operator: operator.slug, kind, sourceId,
+          type: !old ? "baseline" : sourceFailed || !b.length ? "not_reconfirmed" :
+            versionChanged ? "extractor_change" : serialize(substantive(a)) === serialize(substantive(b)) ?
+              "wording_only_change" : "numeric_or_condition_change",
+          before: a, after: b, requiresReview: true,
+        });
+      }
     }
   }
   return events;
+}
+
+export function retainUnconfirmed(previous, current) {
+  for (const operator of current.operators) {
+    const old = previous?.operators?.find(item => item.slug === operator.slug);
+    if (!old) continue;
+    const readable = new Set(operator.readableSources.map(source => source.sourceId));
+    for (const kind of ["offers", "facts", "statements"]) {
+      operator[kind].push(...old[kind].filter(item => !readable.has(item.sourceId))
+        .map(item => ({ ...item, reconfirmationStatus: "not_reconfirmed" })));
+    }
+  }
 }
