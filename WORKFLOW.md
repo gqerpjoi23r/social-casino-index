@@ -62,9 +62,3 @@ changed but `updatedAt` was not bumped.
 - Affiliate destinations only appear behind the state gate (`/go/` pages and
   `src/assets/eligibility.js`); never link an operator directly from article
   copy.
-
-## Analytics
-
-GTM/GA4/Cookiebot placeholders are in `src/_includes/base.njk`. Create the
-containers under business-owned accounts, paste the snippets, and validate in
-GTM Preview and GA4 DebugView before considering analytics done.

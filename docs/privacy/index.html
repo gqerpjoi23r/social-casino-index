@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy | Social Casino Index</title>
-<meta name="description" content="What Social Casino Index collects, what the state cookie stores, and what analytics events record.">
+<meta name="description" content="What Social Casino Index collects and what the state cookie stores.">
 <link rel="canonical" href="https://socialcasinoindex.com/privacy/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Social Casino Index">
 <meta property="og:title" content="Privacy Policy">
-<meta property="og:description" content="What Social Casino Index collects, what the state cookie stores, and what analytics events record.">
+<meta property="og:description" content="What Social Casino Index collects and what the state cookie stores.">
 <meta property="og:url" content="https://socialcasinoindex.com/privacy/">
 <meta property="og:image" content="https://socialcasinoindex.com/assets/social-card.jpg">
 <meta property="og:image:secure_url" content="https://socialcasinoindex.com/assets/social-card.jpg">
@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="Social Casino Index: independent research on US sweepstakes casino redemption times and payout methods.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Privacy Policy">
-<meta name="twitter:description" content="What Social Casino Index collects, what the state cookie stores, and what analytics events record.">
+<meta name="twitter:description" content="What Social Casino Index collects and what the state cookie stores.">
 <meta name="twitter:image" content="https://socialcasinoindex.com/assets/social-card.jpg">
 <meta name="twitter:image:alt" content="Social Casino Index: independent research on US sweepstakes casino redemption times and payout methods.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,6 @@
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/phosphor/style.css">
 <script>document.documentElement.classList.add('js');</script>
-<script src="/assets/analytics.js" defer></script>
 
 </head>
 <body class="bg-base-100 font-sans text-[17px] leading-relaxed text-base-content antialiased">
@@ -85,11 +84,6 @@
   <h2>The state cookie</h2>
   <p>If you select a state in the availability picker, the two-letter state code is stored in a cookie (<code>sci_state</code>) on your device for 30 days. It is used only to decide whether commercial offers are shown to you. The selection is not transmitted to our servers by that cookie beyond normal page requests, and you can clear it at any time through your browser.</p>
 
-  <h2>Analytics</h2>
-  <p>We use Google Analytics 4 through Google Tag Manager only after you accept optional analytics. If you reject analytics, we do not load these Google tracking scripts. Analytics measures page visits, sessions and engagement; enabled enhanced measurement can also measure scrolling, outbound clicks and file downloads. We do not send your selected state, payment details or identity documents as custom analytics events.</p>
-  <p>Google receives technical information such as page URLs, browser and device information and network requests, and uses analytics cookies (names beginning with <code>_ga</code>) to distinguish visits. Advertising consent remains denied, and Google signals and advertising personalization are disabled by the site configuration.</p>
-  <p>Your analytics choice is stored in your browser's local storage for up to 180 days. Use <strong>Analytics settings</strong> at the bottom of any page to change it. Rejecting after acceptance removes this site's analytics cookies and reloads the page to stop tracking. Withdrawal does not delete data already collected. If browser storage is unavailable, your choice applies only to the current page.</p>
-
   <h2>Affiliate redirects</h2>
   <p>Links under <code>/go/</code> redirect to operator sites. The operator you land on has its own privacy policy, which governs any data you give them.</p>
 
@@ -100,7 +94,7 @@
   <p>The site is served as static files by GitHub Pages. GitHub may log standard request data (IP address, user agent) per its own privacy statement.</p>
 
   <h2>Changes</h2>
-  <p>This policy was updated on 9 September 2026 to describe optional Google Analytics and consent controls.</p>
+  <p>This policy was updated on 10 September 2026 to reflect the site's current data practices.</p>
 </article>
 </main>
 
@@ -130,20 +124,6 @@
   </div>
 </footer>
 
-<section id="analytics-consent" class="fixed inset-x-0 bottom-0 z-50 max-h-[70vh] overflow-y-auto border-t border-base-300 bg-base-200 px-6 py-5" aria-label="Analytics preferences" hidden>
-  <div class="mx-auto max-w-5xl">
-    <h2 class="font-semibold text-lg" tabindex="-1" id="analytics-consent-title">Optional analytics</h2>
-    <p class="my-3">May we use Google Analytics cookies to measure visits and site use? Your choice does not affect access. <a class="underline" href="/privacy/">Privacy policy</a>.</p>
-    <p id="analytics-consent-status" role="status"></p>
-    <div class="flex flex-wrap gap-3">
-      <button class="btn btn-outline btn-sm" type="button" data-analytics-choice="denied">Reject analytics</button>
-      <button class="btn btn-outline btn-sm" type="button" data-analytics-choice="granted">Accept analytics</button>
-    </div>
-  </div>
-</section>
-<div class="js-only px-6 py-3 text-center">
-  <button type="button" id="analytics-settings" class="underline text-sm">Analytics settings</button>
-</div>
 <script src="/assets/eligibility.js" defer></script>
 </body>
 </html>

@@ -28,7 +28,6 @@
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/phosphor/style.css">
 <script>document.documentElement.classList.add('js');</script>
-<script src="/assets/analytics.js" defer></script>
 
 </head>
 <body class="bg-base-100 font-sans text-[17px] leading-relaxed text-base-content antialiased">
@@ -117,20 +116,6 @@
   </div>
 </footer>
 
-<section id="analytics-consent" class="fixed inset-x-0 bottom-0 z-50 max-h-[70vh] overflow-y-auto border-t border-base-300 bg-base-200 px-6 py-5" aria-label="Analytics preferences" hidden>
-  <div class="mx-auto max-w-5xl">
-    <h2 class="font-semibold text-lg" tabindex="-1" id="analytics-consent-title">Optional analytics</h2>
-    <p class="my-3">May we use Google Analytics cookies to measure visits and site use? Your choice does not affect access. <a class="underline" href="/privacy/">Privacy policy</a>.</p>
-    <p id="analytics-consent-status" role="status"></p>
-    <div class="flex flex-wrap gap-3">
-      <button class="btn btn-outline btn-sm" type="button" data-analytics-choice="denied">Reject analytics</button>
-      <button class="btn btn-outline btn-sm" type="button" data-analytics-choice="granted">Accept analytics</button>
-    </div>
-  </div>
-</section>
-<div class="js-only px-6 py-3 text-center">
-  <button type="button" id="analytics-settings" class="underline text-sm">Analytics settings</button>
-</div>
 <script src="/assets/eligibility.js" defer></script>
 </body>
 </html>

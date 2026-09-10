@@ -14,6 +14,10 @@ Format:
 
 ---
 
+## 2026-09-10 - Remove Google Analytics
+- Removed Google Analytics tracking and the consent notice/settings shown at the bottom of every page.
+- Updated the privacy policy to match the site's current data practices.
+
 ## 2026-09-10 - Primary-source cleanup and readable operator review
 - Replaced secondary and legacy support with operator-owned public evidence; corrected product/offer interpretations and removed unsupported values.
 - Kept technical provenance outside the main comparison tables. Dropped account-only attributes and noncomparable columns; hands-on experience is deferred TODO only.
