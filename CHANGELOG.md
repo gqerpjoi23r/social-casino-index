@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-11 - Compact shared player comparisons
+- Use the same branded cards on the homepage and updates page, with ten operators, visible offer conditions, separate redemption methods, and native source details.
+- Show unknown and inapplicable values explicitly; exclude stale, conflicting, scoped, or mixed-unit amounts from current comparisons. Offer only supported useful sorts with static default ordering.
+- Preserve public exports, review metadata, dated claims, and eligibility routing. No new operator collection.
+- Verify 50 monitor tests and both pages at five viewport widths, keyboard symbols, independent native details without JavaScript, timed sort fallbacks, eligibility controls, private-evidence exclusion, and five byte-identical exports.
+
 ## 2026-09-11 - Player-friendly operator updates comparison
 - Replace the audit-first view with alphabetical, sortable operator terms and native expandable public detail.
 - Keep conflicting, retained, stale and ambiguous amounts out of numeric sorting; preserve separate cash/gift-card methods and immediate/staged SC.

@@ -1,0 +1,108 @@
+{% macro symbol(item) %}
+<span class="term-symbol" tabindex="0" role="img" aria-label="{{ item.explanation | escape }}" title="{{ item.explanation | escape }}"><span aria-hidden="true">{% if item.symbol == "cross" %}&times;{% else %}?{% endif %}</span><span class="term-tooltip" aria-hidden="true">{{ item.explanation | escape }}</span></span>
+{% endmacro %}
+{% macro value(item) %}
+<div class="term-summary"{% if item.validUntil %} data-valid-until="{{ item.validUntil }}"{% endif %}>
+  <strong class="term-value">{% if item.symbol %}{{ symbol(item) }}{% elif item.parts %}{% for part in item.parts %}{% if part.symbol %}{{ symbol(part) }}{% else %}{{ part.text | escape }}{% endif %}{% endfor %}{% else %}{{ item.text | escape }}{% endif %}</strong>
+  {% if item.notes.length %}<p class="term-note">{% for note in item.notes %}<span>{{ note | escape }}</span>{% if not loop.last %} <span aria-hidden="true">&middot;</span> {% endif %}{% endfor %}</p>{% endif %}
+</div>
+{% endmacro %}
+{% macro fullTerms(operator) %}
+<div class="terms-content">
+  <h4>Published claims &amp; conditions</h4>
+  {% if operator.records.length %}
+  <ol class="public-claims">
+    {% for record in operator.records %}
+    <li data-record-id="{{ record.id | escape }}">
+      <h5>{{ record.name | default(record.label, true) | escape }}</h5>
+      <p class="claim-value">{{ record.valueText | escape }}</p>
+      {% if record.scopeText %}<p>{{ record.scopeText | escape }}</p>{% endif %}
+      {% if record.conflict %}<p><strong>Conflict:</strong> {{ record.conflict | escape }}</p>{% endif %}
+      <p class="claim-freshness{% if not record.current %} retained-claim{% endif %}">{{ record.freshnessLabel | escape }}{% if not record.current %}. Not used as a current summary value.{% endif %}</p>
+      <p class="claim-source">
+        {% if record.sourceUrl %}<a href="{{ record.sourceUrl | escape }}" rel="noopener">Operator source</a> &middot; {% endif %}
+        Captured: <time datetime="{{ record.capturedAt | escape }}">{{ record.capturedAt | default("Unknown", true) | escape }}</time>
+        {% if record.lastConfirmedAt %}<br>Confirmed: <time datetime="{{ record.lastConfirmedAt | escape }}">{{ record.lastConfirmedAt | escape }}</time>{% endif %}
+      </p>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}<p>No public claim values available.</p>{% endif %}
+  <h4>Unknowns</h4>
+  <p>{% if operator.unknowns.length %}{{ operator.unknowns | join("; ") | escape }}.{% else %}No additional unknown fields reported.{% endif %}</p>
+  <details class="collection-details">
+    <summary>Collection &amp; record metadata</summary>
+    <p>{{ operator.collectionStatus | escape }}: {{ operator.readablePages }}/{{ operator.attemptedPages }} sources readable. Extraction: {{ operator.extractionStatus | escape }}.</p>
+    <p>Last attempt: {{ operator.lastAttempt | default("Unknown", true) | escape }}.<br>Last successful capture: {{ operator.lastSuccessfulCapture | default("Unknown", true) | escape }}.<br>{{ operator.changeStatus | escape }}.</p>
+    <pre class="record-metadata">{{ operator.publicRecords | escape }}</pre>
+  </details>
+  <h4>Sources</h4>
+  <ul class="source-coverage">{% for source in operator.coverage %}
+    <li><a href="{{ source.url | escape }}" rel="noopener">{{ source.id | escape }}</a>: {{ source.status | escape }}; purpose: {{ source.purpose | escape }}{% if source.capturedAt %}; captured {{ source.capturedAt | escape }}{% endif %}</li>
+  {% endfor %}</ul>
+  <h4>Available history</h4>
+  {% if operator.history.length %}
+  <ul class="public-history">{% for event in operator.history %}
+    <li><strong>{{ event.label | escape }}</strong> &middot; {{ event.typeLabel | escape }}<br>
+      <time datetime="{{ event.observedAt | escape }}">{{ event.dateLabel | escape }}</time>
+      {% if event.before.length %}<p>Before: {{ event.beforeText | escape }}</p>{% endif %}
+      {% if event.after.length %}<p>After: {{ event.afterText | escape }}</p>{% endif %}
+    </li>
+  {% endfor %}</ul>
+  {% else %}<p>No public change events available.</p>{% endif %}
+</div>
+{% endmacro %}
+<p class="alert alert-warning" id="refresh-warning" role="status" data-last-refresh="{{ numeric.lastSuccessfulRefresh | escape }}"{% if not refreshStale %} hidden{% endif %}><span><strong>Refresh overdue:</strong> no successful public refresh in the last 36 hours. Retained values may be out of date.</span></p>
+<div class="comparison-toolbar">
+  <label class="sort-control" for="updates-sort" hidden>Sort by
+    <select class="select select-bordered select-sm" id="updates-sort" disabled>
+      {% for sort in comparisonSorts %}<option value="{{ sort.key }}">{{ sort.label }}</option>{% endfor %}
+    </select>
+  </label>
+</div>
+<p id="updates-sort-status" class="sr-only" aria-live="polite"></p>
+<div class="comparison-grid compact-comparison" data-comparison>
+{% for operator in numericRows %}
+  <article class="operator-card" id="{{ operator.slug | escape }}" data-operator="{{ operator.slug | escape }}" data-sort="{{ operator.sortData | escape }}">
+    <header class="operator-heading">
+      <div class="operator-brand">
+        {% for brand in operators %}{% if brand.slug == operator.slug %}<img class="operator-favicon" src="/assets/favicons/{{ brand.slug }}{{ brand.faviconExt }}" width="32" height="32" alt="" loading="lazy" decoding="async">{% endif %}{% endfor %}
+        <h3><a href="/redemption-times/{{ operator.slug | escape }}/">{{ operator.name | escape }}</a></h3>
+      </div>
+      {% if operator.productMode == "entertainment_only" %}<span class="entertainment-label">Entertainment only</span>{% endif %}
+      <a class="operator-full-terms" href="/redemption-times/{{ operator.slug | escape }}/">Full record <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    </header>
+    <div class="player-values">
+      <section class="value-group" aria-label="Signup SC">
+        <h4><i class="ph ph-gift" aria-hidden="true"></i> Signup SC</h4>
+        {{ value(operator.signup) }}
+      </section>
+      <section class="value-group" aria-label="First-purchase offer">
+        <h4><i class="ph ph-coins" aria-hidden="true"></i> First purchase</h4>
+        {{ value(operator.purchase) }}
+      </section>
+      <section class="value-group" aria-label="Redemption minimums">
+        <h4><i class="ph ph-bank" aria-hidden="true"></i> Redemption minimums</h4>
+        <dl class="redemption-methods">
+          <div><dt>Cash</dt><dd>{{ value(operator.cash) }}</dd></div>
+          <div><dt>Gift card</dt><dd>{{ value(operator.gift) }}</dd></div>
+        </dl>
+      </section>
+    </div>
+    <details class="operator-details">
+      <summary>Terms &amp; sources<span class="sr-only"> for {{ operator.name | escape }}</span></summary>
+      {{ fullTerms(operator) }}
+    </details>
+    <footer class="capture-footer">Captured: {% if operator.lastSuccessfulCapture %}<time datetime="{{ operator.lastSuccessfulCapture | escape }}">{{ operator.checked.text | escape }}</time>{% else %}Unknown{% endif %}</footer>
+  </article>
+{% endfor %}
+</div>
+<details class="comparison-source-details">
+  <summary>About these sources &amp; downloads</summary>
+  <p>Automated collection reads public operator pages. Automated records are unreviewed; individual review metadata and dated retained values remain in each operator's source details. A readable source does not confirm every retained claim.</p>
+  <p>Published terms are not measured payouts or eligibility confirmation. Terms can change. Check operator conditions and state eligibility before participating.</p>
+  <p><a href="/updates/numeric.json">Numeric JSON</a> &middot; <a href="/updates/data.json">Observations JSON</a> &middot; <a href="/methodology/">Methodology</a></p>
+  <p>Last public refresh: <time datetime="{{ numeric.lastSuccessfulRefresh | escape }}">{{ numeric.lastSuccessfulRefresh | default("Unknown", true) | escape }}</time>{% if monitor.summary.githubRunUrl %} &middot; <a href="{{ monitor.summary.githubRunUrl | escape }}" rel="noopener">Production run</a>{% endif %}</p>
+</details>
+<script src="/assets/monitor-freshness.js" defer></script>
+<script src="/assets/updates-sort.js" type="module"></script>
