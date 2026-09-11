@@ -56,32 +56,52 @@ export function readCapture(directory, entry) {
   return capture;
 }
 
-export function verifyArchive(directory) {
+export function verifyArchive(directory, { allowPartial = false } = {}) {
   const index = JSON.parse(readFileSync(join(directory, "integrity.json"), "utf8"));
+  const manifestBytes = readFileSync(join(directory, "manifest.json"));
+  if (!index.files.some(file => file.path === "manifest.json" && file.sha256 === hash(manifestBytes))) {
+    throw new Error("archive_manifest_integrity_required");
+  }
+  const manifest = JSON.parse(manifestBytes);
+  const blockedOperators = new Set();
+  function failure(path, error) {
+    const entry = manifest.captures.find(entry => entry.path === path);
+    const source = entry && manifest.sources.find(source => entry.id.startsWith(`${source.id}-`));
+    const operator = source?.operatorId;
+    if (!allowPartial || !operator) throw error;
+    blockedOperators.add(operator);
+  }
   for (const file of index.files) {
     if (file.path.includes("..") || file.path.startsWith("/")) throw new Error("invalid_archive_path");
-    if (hash(readFileSync(join(directory, file.path))) !== file.sha256) throw new Error(`archive_hash_mismatch:${file.path}`);
+    try {
+      if (hash(readFileSync(join(directory, file.path))) !== file.sha256) throw new Error(`archive_hash_mismatch:${file.path}`);
+    } catch (error) { failure(file.path, error); }
   }
-  const manifest = JSON.parse(readFileSync(join(directory, "manifest.json"), "utf8"));
-  for (const entry of manifest.captures) readCapture(directory, entry);
+  for (const name of ["manifest.json", ...manifest.captures.map(entry => entry.path),
+    ...["numeric.json", "numeric-evaluation.json"].filter(name => existsSync(join(directory, name)))]) {
+    if (!index.files.some(file => file.path === name)) failure(name, new Error(`archive_missing:${name}`));
+  }
+  for (const entry of manifest.captures) {
+    try { readCapture(directory, entry); } catch (error) { failure(entry.path, error); }
+  }
   if (manifest.completedAt) for (const name of ["summary.json", "monitor.json", "usage.json"]) {
     if (!index.files.some(file => file.path === name)) throw new Error(`archive_missing:${name}`);
   }
-  return { files: index.files.length, captures: manifest.captures.length };
+  return { files: index.files.length, captures: manifest.captures.length, blockedOperators: [...blockedOperators] };
 }
 
 export function uploadDirectory(directory, env = process.env) {
   const files = readdirSync(directory, { recursive: true, withFileTypes: true })
-    .filter(entry => entry.isFile() && entry.name !== "integrity.json")
+    .filter(entry => entry.isFile() && !["integrity.json", "archive-verified.json", "publication.json"].includes(entry.name))
     .map(entry => {
       const path = join(entry.parentPath || entry.path, entry.name);
       return { path: relative(directory, path), sha256: hash(readFileSync(path)) };
     }).sort((a, b) => a.path.localeCompare(b.path));
   writeFileSync(join(directory, "integrity.json"), JSON.stringify({ files }, null, 2) + "\n");
-  verifyArchive(directory);
+  const verification = verifyArchive(directory, { allowPartial: true });
   if (!env.MONITOR_BUCKET) {
     if (env.CI) throw new Error("archive_bucket_required");
-    return;
+    return verification;
   }
   execFileSync("aws", ["s3", "cp", directory, `s3://${env.MONITOR_BUCKET}/runs/${directory.split("/").at(-1)}/`,
     "--recursive", "--only-show-errors", "--region", env.AWS_REGION || "eu-north-1"],
@@ -96,6 +116,10 @@ export function uploadDirectory(directory, env = process.env) {
         hash(readFileSync(join(restored, "integrity.json"))) !== hash(readFileSync(join(directory, "integrity.json")))) {
       throw new Error("archive_inventory_mismatch");
     }
-    verifyArchive(restored);
+    const remote = verifyArchive(restored, { allowPartial: true });
+    if (JSON.stringify(remote.blockedOperators) !== JSON.stringify(verification.blockedOperators)) {
+      throw new Error("archive_operator_verification_mismatch");
+    }
   } finally { rmSync(restored, { recursive: true, force: true }); }
+  return verification;
 }

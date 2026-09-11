@@ -3,6 +3,8 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync } fr
 import { join, basename } from "node:path";
 import { uploadDirectory } from "./archive.mjs";
 import { baselineKey, usableRun } from "./state-core.mjs";
+import { hash } from "./core.mjs";
+import { productionRun } from "./publication-core.mjs";
 
 const [command, directory] = process.argv.slice(2);
 const bucket = process.env.MONITOR_BUCKET;
@@ -21,6 +23,10 @@ const pointerPath = ".monitor/latest.json";
 const pointerKey = baselineKey();
 mkdirSync(".monitor", { recursive: true });
 if (command === "restore") {
+  const reviewReference = read("scripts/monitor/review-reference.json");
+  const reviewedPath = ".monitor/reviewed.json";
+  download(reviewReference.key, reviewedPath);
+  if (hash(readFileSync(reviewedPath)) !== reviewReference.sha256) throw new Error("reviewed_reference_integrity_failed");
   if (!download(pointerKey, pointerPath, true)) {
     console.log("No previous private run; using committed observation history.");
   } else {
@@ -43,8 +49,28 @@ if (command === "restore") {
     console.log(`Restored ${pointer.runId}; numeric baseline: ${numericRunId || "none"}.`);
   }
 } else if (command === "finish" && directory) {
-  uploadDirectory(directory);
+  const verification = uploadDirectory(directory);
   const manifest = read(join(directory, "manifest.json"));
+  writeFileSync(join(directory, "archive-verified.json"), JSON.stringify({
+    runId: manifest.runId, integrityHash: hash(readFileSync(join(directory, "integrity.json"))),
+    blockedOperators: verification.blockedOperators,
+  }) + "\n");
+  console.log(`Verified remote archive ${manifest.runId}; baseline unchanged until publication.`);
+} else if (command === "advance" && directory) {
+  const manifest = read(join(directory, "manifest.json"));
+  const receipt = read(join(directory, "archive-verified.json"));
+  const publication = read(join(directory, "publication.json"));
+  if (receipt.blockedOperators?.length) {
+    console.log("Corrupt operator archive; baseline retained.");
+    process.exit(0);
+  }
+  if (!productionRun(manifest) || receipt.runId !== manifest.runId ||
+      publication.runId !== manifest.runId ||
+      publication.numericHash !== hash(readFileSync("src/_data/numeric.json")) ||
+      publication.monitorHash !== hash(readFileSync("src/_data/monitor.json")) ||
+      receipt.integrityHash !== hash(readFileSync(join(directory, "integrity.json")))) {
+    throw new Error("verified_production_publication_required");
+  }
   if (!manifest.completedAt || !existsSync(join(directory, "monitor.json"))) {
     console.log("Partial run archived; previous completed baseline retained.");
   } else {
@@ -61,5 +87,5 @@ if (command === "restore") {
     } else console.log(`Run archived; retained prior usable baseline ${prior.runId || "none"}.`);
   }
 } else {
-  throw new Error("Usage: node scripts/monitor/state.mjs restore|finish [capture-directory]");
+  throw new Error("Usage: node scripts/monitor/state.mjs restore|finish|advance [capture-directory]");
 }

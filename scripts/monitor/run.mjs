@@ -114,6 +114,7 @@ for (const operator of operators) {
     } else { metrics.failed++; }
     sources.push(record);
     manifest.sources.push({ operatorId: operator.slug, ...record });
+    saveJson(output, "manifest.json", manifest);
     console.log(`${operator.slug} ${source.id}: ${record.status} (${record.provider || "no readable response"})`);
   }
   const result = aggregate(operator, sources, previous.operators.find(record => record.slug === operator.slug), observedAt);
@@ -140,15 +141,11 @@ const latest = {
   events: [...events, ...(previous.events || [])].slice(0, 500),
   runs: [summary, ...(previous.runs || [])].slice(0, 90),
 };
-if (process.env.MONITOR_STAGE_ONLY !== "true") {
-  write("src/_data/monitor.json", latest);
-  write(`data/monitor/runs/${runId}.json`, { summary, events, operators: records });
-}
+// Collection only stages private results. publish.mjs is the sole public writer.
 write(join(output, "summary.json"), summary);
 write(join(output, "monitor.json"), latest);
 saveJson(output, "usage.json", usage);
 saveJson(output, "manifest.json", { ...manifest, completedAt: new Date().toISOString() });
-if (!metrics.readable) process.exitCode = 1;
 const report = [
   "# Daily operator collection", "",
   `Run: ${observedAt}`,
@@ -159,6 +156,8 @@ const report = [
   "| Operator | Readable sources | Fields with passages |",
   "| --- | ---: | ---: |",
   ...records.map(record => `| ${record.name} | ${record.sources.filter(source => source.status === "ok").length}/${record.sources.length} | ${Object.values(record.fields).filter(field => ["observed", "partial"].includes(field.status)).length}/${Object.keys(FIELDS).length} |`),
+  ...manifest.sources.filter(source => source.status !== "ok").map(source =>
+    `- ${source.operatorId}/${source.id}: ${source.status}; attempts: ${JSON.stringify(source.attempts)}`),
   "", "Extraction coverage is not factual accuracy. Source passages are not independently verified outcomes.",
   "Full source captures are stored in the private S3 archive. They are not published as site pages or public Actions artifacts.",
 ];

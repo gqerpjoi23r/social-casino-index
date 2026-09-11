@@ -50,6 +50,14 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Reject superseded build
+        id: current
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          actual="$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)"
+          test "$actual" = "$GITHUB_SHA" && echo "deploy=true" >> "$GITHUB_OUTPUT" || echo "Superseded by $actual"
       - name: Deploy Pages
+        if: steps.current.outputs.deploy == 'true'
         id: deployment
         uses: actions/deploy-pages@v4

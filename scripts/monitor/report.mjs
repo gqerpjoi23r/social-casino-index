@@ -23,7 +23,7 @@ const numeric = read("numeric.json");
 const evaluation = read("numeric-evaluation.json");
 const summary = read("summary.json");
 const cell = value => String(value ?? "unknown").replace(/\|/g, "\\|").replace(/\s+/g, " ");
-const numberFields = ["priceUsd", "immediateSc", "totalSc", "goldCoins", "advertisedExtraPercent", "durationDays", "intervalHours"];
+const numberFields = ["priceUsd", "immediateSc", "totalSc", "goldCoins", "advertisedExtraPercent", "advertisedDiscountPercent", "durationDays", "intervalHours"];
 const totals = key => numeric.operators.reduce((sum, operator) => sum + operator[key].length, 0);
 const models = [...new Set(numeric.operators.flatMap(operator => {
   const path = join(directory, `model/${operator.slug}-response.json`);

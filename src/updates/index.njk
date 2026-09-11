@@ -1,43 +1,58 @@
 ---
 layout: base.njk
 title: "Daily operator source checks"
-description: "Dated source passages and collection status for ten social casino operators. Published terms, missing evidence and wording changes, separate from verified outcomes."
+description: "Numeric offers, published policies and collection status for ten operators. Reviewed values remain separate from automated claims and measured outcomes."
 permalink: "/updates/"
 publishedAt: "2026-09-10"
+updatedAt: "2026-09-11"
 jsonld:
   "@context": "https://schema.org"
   "@type": "CollectionPage"
   name: "Daily operator source checks"
   url: "https://socialcasinoindex.com/updates/"
 ---
-<main><article class="wrap">
+<main><article class="wrap numeric-monitor">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li>Daily checks</li></ol></nav>
   <h1>Daily operator source checks</h1>
-  <p>Automated readings of public operator pages. These passages are not reviewed facts, measured payout results or confirmation of eligibility. A wording change is not necessarily a changed offer.</p>
-  {% if monitor.summary %}
-  <p><strong>Last run: <time>{{ monitor.lastAttemptedAt | escape }}</time>.</strong> {{ monitor.summary.metrics.readable }} of {{ monitor.summary.metrics.attempted }} sources readable; {{ monitor.summary.coveredFields }} of {{ monitor.summary.totalFields }} topic fields contained matching passages.</p>
-  <p><a href="/updates/data.json">Download observations (JSON)</a> · <a href="{{ monitor.summary.githubRunUrl | escape }}" rel="noopener">Run and capture artifacts</a></p>
-  <h2>Recent signals</h2>
-  <p>First observations establish a baseline. Missing passages do not prove a feature was removed. Source wording changes require review before comparison values change.</p>
-  {% for event in monitor.events | limit(30) %}
-  <details><summary>{{ event.observedAt | escape }} · {{ event.operator | escape }} · {{ event.label | escape }} · {{ event.type | escape }}</summary>
-    {% if event.type != "baseline" %}<h3>Previously</h3>{% for quote in event.before %}<p>{{ quote.quote | escape }}</p>{% endfor %}{% endif %}
-    <h3>Collected</h3>{% for quote in event.after %}<p>{{ quote.quote | escape }} <a href="{{ quote.url | escape }}" rel="noopener">Source</a></p>{% endfor %}
-  </details>
-  {% else %}<p>No new signals in the stored history.</p>{% endfor %}
-  <h2>Operator readouts</h2>
-  {% for record in monitor.operators %}
-  <section id="{{ record.slug | escape }}">
-    <h2><a href="/redemption-times/{{ record.slug | escape }}/">{{ record.name | escape }}</a></h2>
-    {% if record.productMode == "entertainment_only" %}<p><strong>Entertainment-only product. Do not interpret coin amounts as redeemable prizes.</strong></p>{% endif %}
-    {% for key, field in record.fields %}
-    <details><summary>{{ field.label | escape }} · {{ field.status | escape }}</summary>
-      <p>{{ field.note | escape }} Checked: {{ field.checkedAt | escape }}.</p>
-      {% for quote in field.quotes %}<blockquote><p>{{ quote.quote | escape }}</p></blockquote><p>Observed: {{ quote.observedAt | escape }} · <a href="{{ quote.url | escape }}" rel="noopener">Operator source</a></p>{% endfor %}
-    </details>
-    {% endfor %}
-    <details><summary>Source availability</summary><ul>{% for source in record.sources %}<li><a href="{{ source.url | escape }}" rel="noopener">{{ source.id | escape }}</a>: {{ source.status | escape }}{% if source.provider %} ({{ source.provider | escape }}){% endif %}</li>{% endfor %}</ul></details>
+  <p>Operator-published amounts, not measured payouts or eligibility confirmation. Automated claims are unreviewed. Conflicting terms remain unresolved.</p>
+  <p id="refresh-warning" role="status" data-last-refresh="{{ numeric.lastSuccessfulRefresh | escape }}"{% if not refreshStale %} hidden{% endif %}><strong>Refresh overdue:</strong> no successful public refresh in the last 36 hours. Retained values may be out of date.</p>
+  {% if numeric.runId %}
+  <p><strong>Last public refresh:</strong> <time datetime="{{ numeric.lastSuccessfulRefresh | escape }}">{{ numeric.lastSuccessfulRefresh | escape }}</time></p>
+  <p><a href="/updates/numeric.json">Numeric JSON</a> &middot; <a href="/updates/data.json">Observations JSON</a>{% if monitor.summary.githubRunUrl %} &middot; <a href="{{ monitor.summary.githubRunUrl | escape }}" rel="noopener">Production run</a>{% endif %}</p>
+  {% for operator in numericRows %}
+  <section id="{{ operator.slug | escape }}">
+    <h2><a href="/redemption-times/{{ operator.slug | escape }}/">{{ operator.name | escape }}</a></h2>
+    <p><strong>{{ operator.collectionStatus | escape }}</strong>: {{ operator.readablePages }}/{{ operator.attemptedPages }} sources readable. Extraction: {{ operator.extractionStatus | escape }}.</p>
+    <p>Attempt: {{ operator.lastAttempt | escape }}. Last readable capture: {{ operator.lastSuccessfulCapture | default("Unknown", true) | escape }}.<br>{{ operator.changeStatus | escape }}.</p>
+    {% if operator.productMode == "entertainment_only" %}<p><strong>Entertainment-only product. Coins are not redeemable SC.</strong></p>{% endif %}
+    {% if operator.records.length %}
+    <div class="numeric-table-scroll" tabindex="0" role="region" aria-label="{{ operator.name | escape }} numeric claims">
+      <table><thead><tr><th scope="col">Claim</th><th scope="col">Published value</th><th scope="col">Scope and conditions</th><th scope="col">Review and evidence</th></tr></thead>
+      <tbody>{% for record in operator.records %}
+        <tr><th scope="row">{{ record.label | escape }}</th><td>{{ record.valueText | escape }}</td><td>{{ record.scopeText | escape }}</td>
+        <td><strong>{{ record.reviewLabel | escape }}</strong><br>{{ record.freshnessLabel | escape }}<br>
+          {% if record.sourceUrl %}<a href="{{ record.sourceUrl | escape }}" rel="noopener">Operator source</a><br>{% endif %}
+          Captured: {{ record.capturedAt | default("Unknown", true) | escape }}
+          {% if record.lastConfirmedAt %}<br>Confirmed: {{ record.lastConfirmedAt | escape }}{% endif %}
+        </td></tr>
+      {% endfor %}</tbody></table>
+    </div>
+    {% else %}<p>Numeric values: unknown.</p>{% endif %}
+    {% if operator.unknowns.length %}<p>Unknown: {{ operator.unknowns | join("; ") | escape }}.</p>{% endif %}
+    <details><summary>Source coverage</summary><ul>{% for source in operator.coverage %}<li><a href="{{ source.url | escape }}" rel="noopener">{{ source.id | escape }}</a>: {{ source.status | escape }}; purpose: {{ source.purpose | escape }}{% if source.capturedAt %}; {{ source.capturedAt | escape }}{% endif %}</li>{% endfor %}</ul></details>
   </section>
   {% endfor %}
-  {% else %}<p>The first collection has not completed.</p>{% endif %}
+  {% else %}<p>The first numeric publication has not completed.</p>{% endif %}
 </article></main>
+<style>
+.numeric-monitor section{padding:1.5rem 0;border-top:1px solid #cbd5e1}
+.numeric-monitor h2{font-size:1.4rem}
+.numeric-table-scroll{overflow-x:auto;max-width:100%}
+.numeric-monitor table{width:100%;border-collapse:collapse;font-size:.875rem}
+.numeric-monitor th,.numeric-monitor td{text-align:left;vertical-align:top;padding:.65rem;border-bottom:1px solid #d1d5db;min-width:9rem;overflow-wrap:anywhere}
+.numeric-monitor td:nth-child(3){min-width:15rem}
+.numeric-monitor th{font-weight:600}
+.numeric-monitor #refresh-warning{padding:1rem;border-left:4px solid #b91c1c;background:#fef2f2;color:#7f1d1d}
+.numeric-monitor p,.numeric-monitor li{overflow-wrap:anywhere}
+</style>
+<script src="/assets/monitor-freshness.js" defer></script>

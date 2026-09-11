@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-11 - Complete daily numeric publication
+- Publish archive-verified typed claims for all ten operators, with reviewed history separate from automated updates and failed-source retention.
+- Add condition-sensitive reconfirmation, corruption isolation, production-only baseline advancement, and publication regression tests.
+- Render numeric values, source coverage and a live 36-hour stale warning. Keep captures and the hash-pinned review/evaluation artifacts private.
+- Verify 40 tests and corrected offline replay; the older prompt cache cannot identically replay with the current extractor. Review artifacts are pinned under `reviews/2026-09-11-a2bef284992ccc38/`.
+
 ## 2026-09-10 - Live archive review and numeric publication
 - The ten-operator Actions run completed; review now separates semantic correctness from quote grounding.
 - Fix offline event replay to ignore extraction timestamps and preserve readable captures when fallback fails.

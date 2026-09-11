@@ -30,6 +30,9 @@ jobs:
       MONITOR_STAGE_ONLY: "true"
       MONITOR_MODEL: gpt-5.6-terra
       MONITOR_MODEL_URL: https://autorank-coding-ai.openai.azure.com/openai/v1/chat/completions
+      ARCHIVE_RUN_ID: ${{ inputs.archive_run_id }}
+    outputs:
+      published_sha: ${{ steps.commit.outputs.sha }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -70,6 +73,8 @@ jobs:
           CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
         run: node scripts/monitor/evaluate.mjs "$CAPTURE_PATH"
       - name: Extract numeric offers and policies
+        id: numeric
+        continue-on-error: true
         env:
           CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
         run: npm run monitor:numeric -- "$CAPTURE_PATH"
@@ -79,28 +84,40 @@ jobs:
           CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
         run: npm run monitor:report -- "$CAPTURE_PATH"
       - name: Preserve private captures and evaluation
+        id: archive
         if: always() && steps.capture.outputs.capture_path != ''
         env:
           CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
         run: node scripts/monitor/state.mjs finish "$CAPTURE_PATH"
+      - name: Publish verified daily readouts
+        if: github.ref == 'refs/heads/main' && inputs.archive_run_id == '' && steps.archive.outcome == 'success'
+        env:
+          CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
+        run: node scripts/monitor/publish.mjs "$CAPTURE_PATH"
       - run: npm run release
       - name: Commit validated observations
-        if: github.ref == 'refs/heads/main'
+        id: commit
+        if: github.ref == 'refs/heads/main' && inputs.archive_run_id == ''
         run: |
           git config user.name "Social Casino Index monitor"
           git config user.email "monitor@users.noreply.github.com"
-          # Daily extraction remains private until explicit review and promotion.
-          git add docs
+          git add src/_data/monitor.json src/_data/numeric.json docs
           if ! git diff --cached --quiet; then
             git commit -m "Publish daily operator source observations"
             git push origin HEAD:main
           fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Advance verified production baseline
+        if: github.ref == 'refs/heads/main' && inputs.archive_run_id == ''
+        env:
+          CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
+        run: node scripts/monitor/state.mjs advance "$CAPTURE_PATH"
       - uses: actions/upload-pages-artifact@v3
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && inputs.archive_run_id == ''
         with:
           path: docs
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && inputs.archive_run_id == ''
     needs: collect
     runs-on: ubuntu-latest
     concurrency:
@@ -110,6 +127,15 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Reject superseded build
+        id: current
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED: ${{ needs.collect.outputs.published_sha }}
+        run: |
+          actual="$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)"
+          test "$actual" = "$EXPECTED" && echo "deploy=true" >> "$GITHUB_OUTPUT" || echo "Superseded by $actual"
       - name: Deploy Pages
+        if: steps.current.outputs.deploy == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
