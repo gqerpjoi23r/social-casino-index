@@ -4,7 +4,7 @@ title: "Compare Free SC, First-Purchase Offers and Redemption Minimums"
 description: "Compare social casino signup Sweeps Coins, first-purchase offers, cash and gift-card minimums, and playthrough. Source-linked amounts with conditions and unknowns clearly marked."
 permalink: "/"
 publishedAt: "2026-09-08"
-updatedAt: "2026-09-10"
+updatedAt: "2026-09-11"
 ogType: "website"
 eleventyComputed:
   jsonld:
@@ -24,6 +24,7 @@ eleventyComputed:
       - "@type": "ItemList"
         name: "Social casino comparison"
         numberOfItems: 10
+        itemListOrder: "https://schema.org/ItemListUnordered"
         itemListElement:
           - "@type": "ListItem"
             position: 1
@@ -56,7 +57,6 @@ eleventyComputed:
             position: 10
             url: "https://socialcasinoindex.com/redemption-times/jackpota/"
 ---
-{% from "player-value.njk" import operatorCard %}
 <main>
 <section class="hero-bg relative -mt-px">
   <div class="wrap py-10 sm:py-14">
@@ -72,23 +72,10 @@ eleventyComputed:
 <div class="wrap py-2">
   <section id="compare" class="scroll-mt-20 py-8" aria-labelledby="compare-heading">
     <div class="mb-5">
-      <h2 id="compare-heading" class="section-title">Compare player value</h2>
-      <p class="mt-2 max-w-3xl text-base-content/70">Signup SC, first-purchase price and bonus SC, then redemption minimums and playthrough. Gold Coins are for entertainment, not cash redemption. SC prizes remain subject to the operator's rules and verification.</p>
-      <p class="mt-2 text-sm text-base-content/55">Alphabetical, not ranked. Records reviewed September 10, 2026. “Not verified” means we could not confirm a current value, not that the offer is zero.</p>
+      <h2 id="compare-heading" class="section-title">Compare operator terms</h2>
+      <p class="mt-2 max-w-3xl text-base-content/70">Signup SC, first-purchase offers and redemption minimums. SC means Sweepstakes Coins; entertainment coins are not SC. Prizes remain subject to operator rules and verification.</p>
     </div>
-    <div class="comparison-grid">
-      {% for op in collections.comparisonOperators %}{{ operatorCard(op) }}{% endfor %}
-    </div>
-    {% for op in collections.entertainmentOperators %}
-    <article class="operator-card mt-4">
-      <header class="operator-heading">
-        <div class="flex items-center gap-3"><img class="operator-favicon" src="/assets/favicons/{{ op.slug }}{{ op.faviconExt }}" width="32" height="32" alt="" loading="lazy"><h3><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></h3></div>
-        <span class="badge">Entertainment only</span>
-      </header>
-      <p class="mt-3 text-base-content/70">Ordinary Gold Coin play has no prize redemption. Signup SC, first-purchase SC and redemption minimums do not apply. Separate promotional contests have their own rules.</p>
-      <a class="operator-full-terms mt-2" href="/redemption-times/{{ op.slug }}/">Full record and sources <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-    </article>
-    {% endfor %}
+    {% include "comparison-cards.njk" %}
     <p class="mt-4 text-sm text-base-content/55">Partner links may earn us a commission. Compensation does not change the figures or order. No purchase is necessary to participate in sweepstakes. Eligibility and terms vary.</p>
   </section>
 
@@ -131,7 +118,7 @@ eleventyComputed:
     <div class="mb-5 flex flex-wrap items-end justify-between gap-3">
       <div>
         <h2 id="data-heading" class="section-title">The data behind the comparison</h2>
-        <p class="m-0 text-base-content/60">One normalized record per operator, with a last-checked date and access-dated primary sources.</p>
+        <p class="m-0 text-base-content/60">Dated operator records with access-dated primary sources. Current comparison snapshots are available in the source downloads above.</p>
       </div>
       <div class="flex gap-2">
         <a class="btn btn-sm btn-outline" href="/assets/data/operators-2026.1.json" download>JSON</a>
