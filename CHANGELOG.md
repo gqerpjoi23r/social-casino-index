@@ -14,6 +14,10 @@ Format:
 
 ---
 
+## 2026-09-11 - Use the existing private archive permissions
+- Pin the verified review under `runs/review-2026-09-11-a2bef284992ccc38/`, inside the existing Actions role permissions.
+- The first production attempt stopped before collection because the original `reviews/` prefix was not allowed. Preserve those artifacts; do not expand IAM permissions.
+
 ## 2026-09-11 - Complete daily numeric publication
 - Publish archive-verified typed claims for all ten operators, with reviewed history separate from automated updates and failed-source retention.
 - Add condition-sensitive reconfirmation, corruption isolation, production-only baseline advancement, and publication regression tests.
