@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../updates/comparison.css";
 
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {

@@ -1,58 +1,137 @@
 ---
 layout: base.njk
-title: "Daily operator source checks"
-description: "Numeric offers, published policies and collection status for ten operators. Reviewed values remain separate from automated claims and measured outcomes."
+title: "Compare operator terms"
+description: "Compare signup SC, redemption minimums, first-purchase offers and source freshness for ten operators. Full public terms, conditions and history remain available."
 permalink: "/updates/"
 publishedAt: "2026-09-10"
 updatedAt: "2026-09-11"
 jsonld:
   "@context": "https://schema.org"
   "@type": "CollectionPage"
-  name: "Daily operator source checks"
+  name: "Compare operator terms"
   url: "https://socialcasinoindex.com/updates/"
 ---
-<main><article class="wrap numeric-monitor">
-  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li>Daily checks</li></ol></nav>
-  <h1>Daily operator source checks</h1>
-  <p>Operator-published amounts, not measured payouts or eligibility confirmation. Automated claims are unreviewed. Conflicting terms remain unresolved.</p>
-  <p id="refresh-warning" role="status" data-last-refresh="{{ numeric.lastSuccessfulRefresh | escape }}"{% if not refreshStale %} hidden{% endif %}><strong>Refresh overdue:</strong> no successful public refresh in the last 36 hours. Retained values may be out of date.</p>
-  {% if numeric.runId %}
-  <p><strong>Last public refresh:</strong> <time datetime="{{ numeric.lastSuccessfulRefresh | escape }}">{{ numeric.lastSuccessfulRefresh | escape }}</time></p>
-  <p><a href="/updates/numeric.json">Numeric JSON</a> &middot; <a href="/updates/data.json">Observations JSON</a>{% if monitor.summary.githubRunUrl %} &middot; <a href="{{ monitor.summary.githubRunUrl | escape }}" rel="noopener">Production run</a>{% endif %}</p>
-  {% for operator in numericRows %}
-  <section id="{{ operator.slug | escape }}">
-    <h2><a href="/redemption-times/{{ operator.slug | escape }}/">{{ operator.name | escape }}</a></h2>
+{% macro value(item) %}
+  <strong class="term-value">{{ item.text | escape }}</strong>
+  {% for note in item.notes %}<span class="term-note">{{ note | escape }}</span>{% endfor %}
+  {% if item.automated %}<span class="badge badge-outline review-badge">Automated &middot; unreviewed</span>{% endif %}
+{% endmacro %}
+{% macro redemption(operator) %}
+  <span class="method-term"><span class="term-label">Cash</span>{{ value(operator.cash) }}</span>
+  <span class="method-term"><span class="term-label">Gift card</span>{{ value(operator.gift) }}</span>
+  {% if operator.unspecifiedMinimum %}<span class="term-note">Other minimum published; method unspecified.</span>{% endif %}
+{% endmacro %}
+{% macro checked(operator) %}
+  <strong class="term-value"><time datetime="{{ operator.lastSuccessfulCapture | escape }}">{{ operator.checked.text | escape }}</time></strong>
+  <span class="term-note">{{ operator.readablePages }}/{{ operator.attemptedPages }} sources readable / attempted</span>
+  {% if operator.checked.stale %}<span class="badge badge-outline">Dated capture</span>{% endif %}
+{% endmacro %}
+{% macro fullTerms(operator) %}
+  <div class="coverage-intro">
+    <a class="operator-profile" href="/redemption-times/{{ operator.slug | escape }}/">{{ operator.name | escape }} profile <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
     <p><strong>{{ operator.collectionStatus | escape }}</strong>: {{ operator.readablePages }}/{{ operator.attemptedPages }} sources readable. Extraction: {{ operator.extractionStatus | escape }}.</p>
-    <p>Attempt: {{ operator.lastAttempt | escape }}. Last readable capture: {{ operator.lastSuccessfulCapture | default("Unknown", true) | escape }}.<br>{{ operator.changeStatus | escape }}.</p>
-    {% if operator.productMode == "entertainment_only" %}<p><strong>Entertainment-only product. Coins are not redeemable SC.</strong></p>{% endif %}
-    {% if operator.records.length %}
-    <div class="numeric-table-scroll" tabindex="0" role="region" aria-label="{{ operator.name | escape }} numeric claims">
-      <table><thead><tr><th scope="col">Claim</th><th scope="col">Published value</th><th scope="col">Scope and conditions</th><th scope="col">Review and evidence</th></tr></thead>
-      <tbody>{% for record in operator.records %}
-        <tr><th scope="row">{{ record.label | escape }}</th><td>{{ record.valueText | escape }}</td><td>{{ record.scopeText | escape }}</td>
-        <td><strong>{{ record.reviewLabel | escape }}</strong><br>{{ record.freshnessLabel | escape }}<br>
-          {% if record.sourceUrl %}<a href="{{ record.sourceUrl | escape }}" rel="noopener">Operator source</a><br>{% endif %}
-          Captured: {{ record.capturedAt | default("Unknown", true) | escape }}
-          {% if record.lastConfirmedAt %}<br>Confirmed: {{ record.lastConfirmedAt | escape }}{% endif %}
-        </td></tr>
-      {% endfor %}</tbody></table>
-    </div>
-    {% else %}<p>Numeric values: unknown.</p>{% endif %}
-    {% if operator.unknowns.length %}<p>Unknown: {{ operator.unknowns | join("; ") | escape }}.</p>{% endif %}
-    <details><summary>Source coverage</summary><ul>{% for source in operator.coverage %}<li><a href="{{ source.url | escape }}" rel="noopener">{{ source.id | escape }}</a>: {{ source.status | escape }}; purpose: {{ source.purpose | escape }}{% if source.capturedAt %}; {{ source.capturedAt | escape }}{% endif %}</li>{% endfor %}</ul></details>
-  </section>
-  {% endfor %}
-  {% else %}<p>The first numeric publication has not completed.</p>{% endif %}
+    <p>Last attempt: {{ operator.lastAttempt | default("Unknown", true) | escape }}.<br>Last successful capture: {{ operator.lastSuccessfulCapture | default("Unknown", true) | escape }}.<br>{{ operator.changeStatus | escape }}.</p>
+    {% if operator.productMode == "entertainment_only" %}<p class="alert alert-warning">Entertainment-only product. Coins are not redeemable SC.</p>{% endif %}
+  </div>
+  <h3>Published claims &amp; conditions</h3>
+  {% if operator.records.length %}
+  <ol class="public-claims">
+    {% for record in operator.records %}
+    <li data-record-id="{{ record.id | escape }}">
+      <div class="claim-heading">
+        <h4>{{ record.name | default(record.label, true) | escape }}</h4>
+        <span class="badge badge-outline">{{ record.reviewLabel | escape }}</span>
+      </div>
+      <p class="claim-value">{{ record.valueText | escape }}</p>
+      {% if record.scopeText %}<p>{{ record.scopeText | escape }}</p>{% endif %}
+      {% if record.conflict %}<p class="alert alert-warning"><strong>Conflict:</strong> {{ record.conflict | escape }}</p>{% endif %}
+      <p class="claim-freshness{% if not record.current %} retained-claim{% endif %}">{{ record.freshnessLabel | escape }}{% if not record.current %}. Not used as a current summary value.{% endif %}</p>
+      <p class="claim-source">
+        {% if record.sourceUrl %}<a href="{{ record.sourceUrl | escape }}" rel="noopener">Operator source</a> &middot; {% endif %}
+        Captured: <time datetime="{{ record.capturedAt | escape }}">{{ record.capturedAt | default("Unknown", true) | escape }}</time>
+        {% if record.lastConfirmedAt %}<br>Confirmed: <time datetime="{{ record.lastConfirmedAt | escape }}">{{ record.lastConfirmedAt | escape }}</time>{% endif %}
+      </p>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}<p>Public claim values: unknown.</p>{% endif %}
+  <h3>Unknowns</h3>
+  <p>{% if operator.unknowns.length %}{{ operator.unknowns | join("; ") | escape }}.{% else %}No additional unknown fields reported.{% endif %}</p>
+  <h3>Source coverage</h3>
+  <ul class="source-coverage">{% for source in operator.coverage %}
+    <li><a href="{{ source.url | escape }}" rel="noopener">{{ source.id | escape }}</a>: {{ source.status | escape }}; purpose: {{ source.purpose | escape }}{% if source.capturedAt %}; captured {{ source.capturedAt | escape }}{% endif %}</li>
+  {% endfor %}</ul>
+  <h3>Available history</h3>
+  {% if operator.history.length %}
+  <ul class="public-history">{% for event in operator.history %}
+    <li><strong>{{ event.label | escape }}</strong> &middot; {{ event.typeLabel | escape }}<br>
+      <time datetime="{{ event.observedAt | escape }}">{{ event.dateLabel | escape }}</time>
+      {% if event.before.length %}<p>Before: {{ event.beforeText | escape }}</p>{% endif %}
+      {% if event.after.length %}<p>After: {{ event.afterText | escape }}</p>{% endif %}
+    </li>
+  {% endfor %}</ul>
+  {% else %}<p>No public change events available.</p>{% endif %}
+{% endmacro %}
+<main><article class="wrap updates-comparison">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Compare terms</li></ol></nav>
+  <header class="comparison-heading">
+    <p class="eyebrow">Operator updates</p>
+    <h1 class="page-title">Compare operator terms</h1>
+    <p>Signup rewards, redemption minimums and first-purchase offers for {{ numericRows.length }} operators.</p>
+    <p class="comparison-disclaimer">Published terms, not &ldquo;best&rdquo; rankings, measured payouts or eligibility confirmation. Automated values are unreviewed. SC means Sweepstakes Coins; entertainment coins are not SC.</p>
+  </header>
+  <p class="alert alert-warning" id="refresh-warning" role="status" data-last-refresh="{{ numeric.lastSuccessfulRefresh | escape }}"{% if not refreshStale %} hidden{% endif %}><span><strong>Refresh overdue:</strong> no successful public refresh in the last 36 hours. Retained values may be out of date.</span></p>
+  <div class="comparison-toolbar">
+    <p>{{ numericRows.length }} operators <span aria-hidden="true">&middot;</span> <a href="/updates/numeric.json">Numeric JSON</a> <span aria-hidden="true">&middot;</span> <a href="/updates/data.json">Observations JSON</a></p>
+    <label class="sort-control" for="updates-sort">Sort by
+      <select class="select select-bordered select-sm" id="updates-sort" disabled>
+        <option value="name:asc">Operator: A to Z</option><option value="name:desc">Operator: Z to A</option>
+        <option value="signup:asc">Signup SC: low to high</option><option value="signup:desc">Signup SC: high to low</option>
+        <option value="cash:asc">Cash minimum: low to high</option><option value="cash:desc">Cash minimum: high to low</option>
+        <option value="purchase:asc">Purchase price: low to high</option><option value="purchase:desc">Purchase price: high to low</option>
+        <option value="checked:asc">Last checked: oldest first</option><option value="checked:desc">Last checked: newest first</option>
+      </select>
+    </label>
+  </div>
+  <p id="updates-sort-status" class="sr-only" aria-live="polite"></p>
+  <table class="table comparison-table" data-comparison>
+    <caption class="sr-only">Published operator terms. Missing, stale and conflicting values sort last. Equal values sort alphabetically. Redemption sorting uses explicit cash minimums only.</caption>
+    <thead><tr>
+      <th scope="col" aria-sort="ascending"><button type="button" data-sort-key="name" disabled>Operator <i class="ph ph-arrow-up" aria-hidden="true"></i></button></th>
+      <th scope="col" aria-sort="none"><button type="button" data-sort-key="signup" disabled>Signup reward <i class="ph ph-arrows-down-up" aria-hidden="true"></i></button></th>
+      <th scope="col" aria-sort="none"><button type="button" data-sort-key="cash" disabled>Redemption minimum <i class="ph ph-arrows-down-up" aria-hidden="true"></i></button></th>
+      <th scope="col" aria-sort="none"><button type="button" data-sort-key="purchase" disabled>First-purchase offer <i class="ph ph-arrows-down-up" aria-hidden="true"></i></button></th>
+      <th scope="col" aria-sort="none"><button type="button" data-sort-key="checked" disabled>Last checked <i class="ph ph-arrows-down-up" aria-hidden="true"></i></button></th>
+    </tr></thead>
+    {% for operator in numericRows %}
+    <tbody id="{{ operator.slug | escape }}" data-operator="{{ operator.slug | escape }}" data-sort="{{ operator.sortData | escape }}">
+      <tr class="desktop-values">
+        <th scope="row"><a href="/redemption-times/{{ operator.slug | escape }}/">{{ operator.name | escape }}</a></th>
+        <td>{{ value(operator.signup) }}</td><td>{{ redemption(operator) }}</td>
+        <td>{{ value(operator.purchase) }}</td><td>{{ checked(operator) }}</td>
+      </tr>
+      <tr class="operator-detail-row"><td colspan="5">
+        <details class="collapse collapse-arrow operator-details">
+          <summary class="collapse-title">
+            <span class="mobile-operator-name">{{ operator.name | escape }}</span>
+            <span class="desktop-detail-label">Full terms &amp; sources <span class="detail-count">{{ operator.records.length }} public claims</span><span class="sr-only"> for {{ operator.name | escape }}</span></span>
+            <span class="mobile-values">
+              <span><span class="term-label">Signup reward</span>{{ value(operator.signup) }}</span>
+              <span><span class="term-label">Redemption minimum</span>{{ redemption(operator) }}</span>
+              <span><span class="term-label">First-purchase offer</span>{{ value(operator.purchase) }}</span>
+              <span><span class="term-label">Last checked</span>{{ checked(operator) }}</span>
+            </span>
+          </summary>
+          <div class="collapse-content">{{ fullTerms(operator) }}</div>
+        </details>
+      </td></tr>
+    </tbody>
+    {% endfor %}
+  </table>
+  <footer class="comparison-footer">
+    <p>Last public refresh: <time datetime="{{ numeric.lastSuccessfulRefresh | escape }}">{{ numeric.lastSuccessfulRefresh | default("Unknown", true) | escape }}</time>{% if monitor.summary.githubRunUrl %} &middot; <a href="{{ monitor.summary.githubRunUrl | escape }}" rel="noopener">Production run</a>{% endif %}</p>
+    <p>Terms can change. A readable source does not confirm every retained claim. Check operator conditions and state eligibility before participating.</p>
+  </footer>
 </article></main>
-<style>
-.numeric-monitor section{padding:1.5rem 0;border-top:1px solid #cbd5e1}
-.numeric-monitor h2{font-size:1.4rem}
-.numeric-table-scroll{overflow-x:auto;max-width:100%}
-.numeric-monitor table{width:100%;border-collapse:collapse;font-size:.875rem}
-.numeric-monitor th,.numeric-monitor td{text-align:left;vertical-align:top;padding:.65rem;border-bottom:1px solid #d1d5db;min-width:9rem;overflow-wrap:anywhere}
-.numeric-monitor td:nth-child(3){min-width:15rem}
-.numeric-monitor th{font-weight:600}
-.numeric-monitor #refresh-warning{padding:1rem;border-left:4px solid #b91c1c;background:#fef2f2;color:#7f1d1d}
-.numeric-monitor p,.numeric-monitor li{overflow-wrap:anywhere}
-</style>
 <script src="/assets/monitor-freshness.js" defer></script>
+<script src="/assets/updates-sort.js" type="module"></script>
