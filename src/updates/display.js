@@ -10,10 +10,13 @@ export function displayRecord(record) {
       if (record[key] !== null && record[key] !== undefined) parts.push(`${key === "advertisedExtraPercent" && record.extraPercentComparison === "at_least" ? "at least " : ""}${number(record[key])} ${label}`);
     }
   } else if (record.recordType === "facts") {
-    parts.push(`${words(record.comparison)} ${number(record.value)}${record.upperValue != null ? ` to ${number(record.upperValue)}` : ""} ${words(record.unit)}`.trim());
+    parts.push(record.value == null ? "Unknown" :
+      `${words(record.comparison)} ${number(record.value)}${record.upperValue != null ? ` to ${number(record.upperValue)}` : ""} ${words(record.unit)}`.trim());
   } else parts.push(record.summary || "Operator statement");
   const scope = [record.method, record.scope, record.timing, record.stage, record.basis]
     .filter(value => value && value !== "unspecified").map(words);
+  if (record.purchaseRequired === true) scope.push("Purchase required");
+  if (record.purchaseRequired === false) scope.push("No purchase required");
   return { ...record, label: words(record.field || record.kind), valueText: parts.join("; ") || "Unknown",
     scopeText: [...scope, ...(record.states || []), ...(record.conditions || []),
       ...(record.promoCode ? [`Code: ${record.promoCode}`] : [])].join("; "),

@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-11 - Player-friendly operator updates comparison
+- Replace the audit-first view with alphabetical, sortable operator terms and native expandable public detail.
+- Keep conflicting, retained, stale and ambiguous amounts out of numeric sorting; preserve separate cash/gift-card methods and immediate/staged SC.
+- Reuse the public snapshots and exports without changing collection or private evidence.
+- Verify 46 monitor tests and browser checks for all ten operators, every public claim, both sort directions, keyboard/native expansion without JavaScript, five responsive widths, unchanged exports and the live 36-hour warning. Browser checks use `scripts/monitor/comparison-browser-test.mjs` with an installed Playwright browser.
+
 ## 2026-09-11 - Use the existing private archive permissions
 - Pin the verified review under `runs/review-2026-09-11-a2bef284992ccc38/`, inside the existing Actions role permissions.
 - The first production attempt stopped before collection because the original `reviews/` prefix was not allowed. Preserve those artifacts; do not expand IAM permissions.
