@@ -4,6 +4,7 @@
 {% macro value(item) %}
 <div class="term-summary"{% if item.validUntil %} data-valid-until="{{ item.validUntil }}"{% endif %}>
   <strong class="term-value">{% if item.symbol %}{{ symbol(item) }}{% elif item.parts %}{% for part in item.parts %}{% if part.symbol %}{{ symbol(part) }}{% else %}{{ part.text | escape }}{% endif %}{% endfor %}{% else %}{{ item.text | escape }}{% endif %}</strong>
+  {% for package in item.packages %}<div class="purchase-package">{{ value(package) }}</div>{% endfor %}
   {% if item.notes.length %}<p class="term-note">{% for note in item.notes %}<span>{{ note | escape }}</span>{% if not loop.last %} <span aria-hidden="true">&middot;</span> {% endif %}{% endfor %}</p>{% endif %}
 </div>
 {% endmacro %}
@@ -17,6 +18,7 @@
       <h5>{{ record.name | default(record.label, true) | escape }}</h5>
       <p class="claim-value">{{ record.valueText | escape }}</p>
       {% if record.scopeText %}<p>{{ record.scopeText | escape }}</p>{% endif %}
+      {% if record.methodCorrection %}<p class="claim-method-correction">{{ record.methodCorrection | escape }}</p>{% endif %}
       {% if record.conflict %}<p><strong>Conflict:</strong> {{ record.conflict | escape }}</p>{% endif %}
       <p class="claim-freshness{% if not record.current %} retained-claim{% endif %}">{{ record.freshnessLabel | escape }}{% if not record.current %}. Not used as a current summary value.{% endif %}</p>
       <p class="claim-source">

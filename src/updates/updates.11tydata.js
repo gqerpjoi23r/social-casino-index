@@ -1,5 +1,6 @@
 import { displayRecord } from "./display.js";
 import { defaultOrder, eligibleSorts } from "../assets/comparison-order.js";
+import { comparisonRecord } from "./method-corrections.js";
 
 const MAX_AGE = 36 * 60 * 60 * 1000;
 const amount = value => typeof value === "number" && Number.isFinite(value) && value >= 0;
@@ -64,8 +65,10 @@ function stagedNote(record) {
 function signupSummary(all, now) {
   const matching = all.filter(record => record.recordType === "offers" && record.kind === "signup");
   const current = matching.filter(record => currentRecord(record, now));
-  const records = current;
   if (!current.length) return unavailable(matching);
+  // An entertainment-coin or percentage ad makes no competing SC claim.
+  const records = current.filter(record => amount(record.immediateSc) || amount(record.totalSc) ||
+    !(amount(record.goldCoins) || amount(record.advertisedExtraPercent) || amount(record.advertisedDiscountPercent)));
   const values = distinct(records.map(record => record.immediateSc).filter(amount));
   if (records.some(conflicted) || values.length > 1) {
     return unknown("Conflicting signup terms. Immediate SC is unresolved.", records, offerNotes(records));
@@ -100,25 +103,8 @@ function minimumSummary(all, method, now) {
   return result;
 }
 
-function purchaseSummary(all, now) {
-  const matching = all.filter(record => record.recordType === "offers" && record.kind === "first_purchase");
-  const records = matching.filter(record => currentRecord(record, now));
-  if (!records.length) return unavailable(matching);
-  if (records.some(conflicted)) return unknown("Conflicting purchase terms.", records, offerNotes(records));
-  if (!records.every(general)) return unknown("Purchase eligibility scope is not comparable.", records, offerNotes(records));
-  // Include conditions and code in identity: equal prices do not imply the same package.
-  const packages = distinct(records.map(record => JSON.stringify([
-    record.priceUsd, record.immediateSc, record.totalSc, record.goldCoins,
-    record.durationDays, record.intervalHours, record.promoCode, record.purchaseRequired,
-    record.advertisedExtraPercent, record.advertisedDiscountPercent,
-    [...(record.conditions || [])].sort(),
-  ])));
-  if (packages.length > 1) return summary("Multiple offers", records, null, offerNotes(records));
-  const record = records[0];
-  if (!amount(record.priceUsd) && !amount(record.immediateSc)) {
-    return unknown("Purchase price and immediate SC are unknown.", records, offerNotes(records));
-  }
-  const result = summary("", records, null, offerNotes(records));
+function purchasePackage(record) {
+  const result = summary("", [record], null, offerNotes([record]));
   result.parts = [
     amount(record.priceUsd) ? { text: `$${number(record.priceUsd)} USD` } :
       { symbol: "?", explanation: "Purchase price is unknown." },
@@ -130,9 +116,41 @@ function purchaseSummary(all, now) {
   return result;
 }
 
+function purchaseSummary(all, now) {
+  const matching = all.filter(record => record.recordType === "offers" && record.kind === "first_purchase");
+  const records = matching.filter(record => currentRecord(record, now));
+  if (!records.length) return unavailable(matching);
+  if (records.some(conflicted)) return unknown("Conflicting purchase terms.", records, offerNotes(records));
+  if (!records.every(general)) return unknown("Purchase eligibility scope is not comparable.", records, offerNotes(records));
+  // Include conditions and code in identity: equal prices do not imply the same package.
+  const identity = record => JSON.stringify([
+    record.priceUsd, record.immediateSc, record.totalSc, record.goldCoins,
+    record.durationDays, record.intervalHours, record.promoCode, record.purchaseRequired,
+    record.advertisedExtraPercent, record.advertisedDiscountPercent,
+    [...(record.conditions || [])].sort(),
+  ]);
+  const packages = [...new Map(records.map(record => [identity(record), record])).values()];
+  if (packages.length > 1) {
+    // Surface independently complete packages without filling gaps from another
+    // source or implying that partial descriptions describe the same offer.
+    const complete = packages.filter(record => amount(record.priceUsd) && amount(record.immediateSc));
+    return {
+      ...summary("Multiple offers", records),
+      packages: complete.map(purchasePackage),
+      notes: complete.length < packages.length ? ["Other offer details incomplete; see terms."] : [],
+    };
+  }
+  const record = records[0];
+  if (!amount(record.priceUsd) && !amount(record.immediateSc)) {
+    return unknown("Purchase price and immediate SC are unknown.", records, offerNotes(records));
+  }
+  return { ...purchasePackage(record), validUntil: summary("", records).validUntil };
+}
+
 export function comparisonRows(numeric, monitor = {}, now = Date.now()) {
   const rows = (numeric?.operators || []).map(operator => {
-    const records = operator.records || [];
+    const originalRecords = operator.records || [];
+    const records = originalRecords.map(comparisonRecord);
     const signup = signupSummary(records, now);
     const cash = minimumSummary(records, "cash", now);
     const gift = minimumSummary(records, "gift_card", now);
@@ -140,7 +158,7 @@ export function comparisonRows(numeric, monitor = {}, now = Date.now()) {
     if (operator.productMode === "entertainment_only") {
       for (const item of [signup, cash, gift, purchase]) {
         Object.assign(item, summary("Not applicable"), {
-          symbol: "cross", explanation: "Not applicable. Entertainment coins are not redeemable SC.", parts: null,
+          symbol: "cross", explanation: "Not applicable. Entertainment coins are not redeemable SC.", parts: null, packages: [],
         });
       }
     }
@@ -153,7 +171,7 @@ export function comparisonRows(numeric, monitor = {}, now = Date.now()) {
     };
     return {
       ...operator, signup, cash, gift, purchase, checked,
-      publicRecords: JSON.stringify(records, null, 2),
+      publicRecords: JSON.stringify(originalRecords, null, 2),
       unspecifiedMinimum: records.some(record => record.field === "redemption_minimum" &&
         !["cash", "gift_card"].includes(record.method) && currentRecord(record, now)),
       history: (monitor.events || []).filter(event => event.operator === operator.slug).map(event => ({
@@ -189,7 +207,7 @@ export function comparisonRows(numeric, monitor = {}, now = Date.now()) {
 }
 
 export const eleventyComputed = {
-  updatedAt: data => [data.numeric?.lastSuccessfulRefresh, "2026-09-11"].filter(Boolean).sort().at(-1),
+  updatedAt: data => [data.numeric?.lastSuccessfulRefresh, data.monitor?.publication?.lastSuccessfulRefresh, "2026-09-12"].filter(Boolean).sort().at(-1),
   numericRows: data => comparisonRows(data.numeric, data.monitor),
   comparisonSorts: data => eligibleSorts(comparisonRows(data.numeric, data.monitor)),
   refreshStale: data => !data.numeric?.lastSuccessfulRefresh ||
