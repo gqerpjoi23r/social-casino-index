@@ -60,6 +60,18 @@ try {
     assert.equal($(".compact-comparison .value-group").length, 30);
     assert.equal($(".entertainment-label").text().trim(), "Entertainment only");
     assert.equal($(".comparison-source-details").length, 1);
+    const sitemap = load(await readFile("docs/sitemap.xml", "utf8"), { xmlMode: true });
+    const modified = sitemap("url").filter((_, element) =>
+      sitemap(element).find("loc").text() === `https://socialcasinoindex.com${path}`).find("lastmod").text();
+    assert.ok(modified >= "2026-09-12", "Sitemap includes the comparison update date");
+    assert.match($("#mcluck .player-values").text(), /2\.5 SC immediate/);
+    assert.match($("#wow-vegas .purchase-package").text(), /\$9\.99 USD \/ 30 SC immediate/);
+    assert.match($("#wow-vegas .purchase-package").text(), /Code: WOWBONUS2026/);
+    assert.match($("#wow-vegas .player-values").text(), /5 SC total over 3 days/);
+    assert.match($("#zonko .player-values").text(), /25 free SC via a Power Boost credited daily over 8 days/);
+    assert.match($("#chumba .redemption-methods").text(), /100 SC[\s\S]*10 SC/);
+    assert.match($("#wow-vegas .redemption-methods").text(), /50 SC[\s\S]*20 SC/);
+    assert.equal($(".claim-method-correction").length, 4);
     assert.doesNotMatch(html, /Automated · unreviewed|s3:\/\/|\.monitor\/|evidenceQuote|captureHash|api[_-]?key/i);
     for (const operator of numeric.operators) {
       const card = $(`[data-operator="${operator.slug}"]`);
@@ -84,9 +96,14 @@ try {
     assert.deepEqual(await order(page), data.map(row => row.name));
     assert.deepEqual(await page.locator("#updates-sort option").evaluateAll(items => items.map(item => item.value)), options.map(item => item.key));
     await overflow(page);
-    await page.screenshot({ path: `${output}/${label}-desktop.png`, fullPage: true });
+    for (const image of await page.locator(".operator-favicon").all()) {
+      await image.scrollIntoViewIfNeeded();
+      await image.evaluate(image => image.decode());
+    }
     const images = await page.locator(".operator-favicon").evaluateAll(images => images.map(image => ({ src: image.src, loaded: image.complete && image.naturalWidth > 0 })));
     assert.ok(images.every(image => image.loaded), JSON.stringify(images));
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.screenshot({ path: `${output}/${label}-desktop.png`, fullPage: true });
     await expand(page);
     for (const option of options) {
       await page.locator("#updates-sort").selectOption(option.key);
@@ -112,7 +129,7 @@ try {
     await page.locator("details.operator-details[open] > summary").evaluateAll(items => items.forEach(item => item.click()));
     await page.locator("#wow-vegas").scrollIntoViewIfNeeded();
     await page.screenshot({ path: `${output}/${label}-mobile-offer.png` });
-    const symbol = page.locator("#wow-vegas .term-symbol").first();
+    const symbol = page.locator("#yay-casino .term-symbol").first();
     await symbol.hover();
     assert.equal(await symbol.locator(".term-tooltip").isVisible(), true);
     await overflow(page);
@@ -128,6 +145,7 @@ try {
     assert.deepEqual(await order(page), names);
     assert.equal(await page.locator(".sort-control").isVisible(), false);
     assert.equal(await page.locator("[data-valid-until]").count(), 0);
+    assert.equal(await page.locator(".purchase-package").count(), 0);
     assert.deepEqual(errors, []);
     await context.close();
 

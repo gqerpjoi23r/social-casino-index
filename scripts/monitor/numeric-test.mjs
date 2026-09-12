@@ -75,6 +75,18 @@ test("schema rejects invented fields and wrong unit/field combinations", () => {
   data.facts[0].invented = true;
   assert.throws(() => checkExtraction(data, input), /invalid_extraction_schema/);
 });
+test("schema accepts explicit cash without changing ambiguous redemption methods", () => {
+  const input = pages("The minimum redemption for cash prizes is 50 SC.");
+  const data = deterministicExtract(input);
+  data.facts[0].method = "cash";
+  assert.equal(checkExtraction(data, input).accepted.facts[0].method, "cash");
+  for (const method of ["general", "unspecified", "gift_card"]) {
+    data.facts[0].method = method;
+    assert.equal(checkExtraction(data, input).accepted.facts[0].method, method);
+  }
+  data.facts[0].method = "invented";
+  assert.throws(() => checkExtraction(data, input), /invalid_extraction_schema/);
+});
 test("explicit million amounts are grounded without inventing arithmetic", () => {
   const input = pages("Buy this package for $9.99 and receive 30 SC plus 1.5 million Gold Coins.");
   const data = deterministicExtract(input);

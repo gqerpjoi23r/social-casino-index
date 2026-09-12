@@ -6,6 +6,7 @@ import { displayRecord } from "../../src/updates/display.js";
 import { comparisonRows, currentRecord } from "../../src/updates/updates.11tydata.js";
 import { compareOperators } from "../../src/assets/updates-sort.js";
 import { eligibleSorts, defaultOrder } from "../../src/assets/comparison-order.js";
+import { comparisonRecord } from "../../src/updates/method-corrections.js";
 
 const now = Date.parse("2026-09-11T15:00:00Z");
 const capture = "2026-09-11T12:00:00Z";
@@ -82,6 +83,24 @@ test("signup never chooses a conflicting maximum or uses staged SC as immediate"
   assert.equal(row([record({ immediateSc: null, totalSc: 5, durationDays: 3 })]).signup.sortValue, null);
   assert.equal(row([record({ immediateSc: null, totalSc: null, goldCoins: 1000000 })]).signup.sortValue, null);
   assert.equal(row([record()], { productMode: "entertainment_only" }).signup.symbol, "cross");
+});
+
+test("unrelated signup ads do not hide immediate SC or invent missing amounts", () => {
+  for (const fields of [{ goldCoins: 1000000 }, { advertisedExtraPercent: 150 },
+    { advertisedDiscountPercent: 50 }]) {
+    const ad = record({ immediateSc: null, totalSc: null, ...fields });
+    const result = row([record({ promoCode: "WELCOME", conditions: ["Verify email"] }), ad]);
+    assert.equal(result.signup.sortValue, 2);
+    assert.match(result.signup.notes.join(" "), /Code: WELCOME/);
+    assert.match(result.signup.notes.join(" "), /Verify email/);
+    assert.equal(result.records.length, 2);
+    assert.equal(row([ad]).signup.symbol, "?");
+    assert.equal(row([record(), { ...ad, totalSc: 5 }]).signup.symbol, "?");
+  }
+  assert.equal(row([record(), record({ immediateSc: null, totalSc: null })]).signup.symbol, "?");
+  assert.equal(row([record(), record({ goldCoins: 1000, immediateSc: 8 })]).signup.symbol, "?");
+  const totalOnly = row([record({ immediateSc: null, totalSc: 5, durationDays: 3 })]).signup;
+  assert.match(totalOnly.notes.join(" "), /5 SC total over 3 days/);
 });
 
 test("claim freshness never comes from a recent operator collection attempt", () => {
@@ -163,6 +182,29 @@ test("purchase summaries preserve package identity, unknowns, conditions and cur
   assert.equal(row([{ ...offer, kind: "paid_pass" }]).purchase.sortValue, null);
 });
 
+test("multiple purchases show complete packages without combining partial records", () => {
+  const complete = record({ kind: "first_purchase", priceUsd: 9.99, immediateSc: 30,
+    totalSc: 35, durationDays: 3, promoCode: "FIRST", conditions: ["New accounts only"] });
+  const partial = { ...complete, priceUsd: null, immediateSc: null, totalSc: null,
+    promoCode: "PARTIAL", conditions: ["Other offer"] };
+  const result = row([complete, partial]).purchase;
+  assert.equal(result.text, "Multiple offers");
+  assert.equal(result.sortValue, null);
+  assert.equal(result.packages.length, 1);
+  assert.equal(result.packages[0].text, "$9.99 USD / 30 SC immediate");
+  assert.match(result.packages[0].notes.join(" "), /Code: FIRST/);
+  assert.match(result.packages[0].notes.join(" "), /35 SC total over 3 days/);
+  assert.match(result.packages[0].notes.join(" "), /New accounts only/);
+  assert.doesNotMatch(result.packages[0].notes.join(" "), /PARTIAL|Other offer/);
+  assert.match(result.notes.join(" "), /incomplete/);
+  assert.equal(row([complete, { ...complete, priceUsd: 20 }]).purchase.packages.length, 2);
+  assert.equal(row([{ ...complete, priceUsd: null }, { ...complete, immediateSc: null }]).purchase.packages.length, 0);
+  assert.equal(row([complete, { ...complete, freshness: "not_reconfirmed", priceUsd: 1 }]).purchase.text,
+    "$9.99 USD / 30 SC immediate");
+  assert.equal(row([complete, { ...complete, conflict: "Disagreement" }]).purchase.symbol, "?");
+  assert.deepEqual(row([complete, partial], { productMode: "entertainment_only" }).purchase.packages, []);
+});
+
 test("useful sort directions put unknown, conflicting and expired values last with alphabetical ties", () => {
   for (const key of ["signup", "gift", "cash"]) {
     const sortable = (name, sortValue, validUntil = now + 1000) => ({ name, [key]: { sortValue, validUntil } });
@@ -184,23 +226,56 @@ test("published ten-operator fixture keeps every record, history event and expor
   const original = JSON.stringify(numeric);
   const rows = comparisonRows(numeric, monitor, Date.parse(numeric.lastSuccessfulRefresh) + 60000);
   assert.equal(rows.length, 10);
-  assert.equal(eligibleSorts(rows, Date.parse(numeric.lastSuccessfulRefresh) + 60000)[0].key, "gift");
-  assert.deepEqual(rows.slice(0, 2).map(item => item.slug), ["chumba", "wow-vegas"]);
+  assert.deepEqual(eligibleSorts(rows, Date.parse(numeric.lastSuccessfulRefresh) + 60000).map(sort => sort.key),
+    ["signup", "gift", "cash"]);
+  assert.deepEqual(rows.slice(0, 2).map(item => item.slug), ["mcluck", "wow-vegas"]);
   for (const item of rows) {
     const source = numeric.operators.find(op => op.slug === item.slug);
     assert.deepEqual(item.records.map(r => r.id), source.records.map(r => r.id));
     assert.equal(item.history.length, monitor.events.filter(event => event.operator === item.slug).length);
     assert.deepEqual(item.coverage, source.coverage);
     assert.deepEqual(item.unknowns, source.unknowns);
+    assert.deepEqual(JSON.parse(item.publicRecords), source.records);
     assert.ok(item.records.filter(r => r.reviewStatus === "automated_unreviewed").every(r => r.reviewLabel === "automated unreviewed"));
   }
   assert.match(rows.find(item => item.slug === "yay-casino").signup.explanation, /Conflicting/);
   assert.equal(rows.find(item => item.slug === "wow-vegas").signup.sortValue, 2);
+  assert.equal(rows.find(item => item.slug === "mcluck").signup.sortValue, 2.5);
   assert.equal(rows.find(item => item.slug === "wow-vegas").purchase.text, "Multiple offers");
-  assert.equal(rows.find(item => item.slug === "chumba").cash.sortValue, null);
+  assert.equal(rows.find(item => item.slug === "wow-vegas").purchase.packages[0].text, "$9.99 USD / 30 SC immediate");
+  assert.equal(rows.find(item => item.slug === "wow-vegas").cash.sortValue, 50);
+  assert.equal(rows.find(item => item.slug === "chumba").cash.sortValue, 100);
   assert.equal(rows.find(item => item.slug === "chumba").gift.sortValue, 10);
   assert.equal(rows.find(item => item.slug === "lucky-bunny").checked.sortValue, null);
   assert.equal(JSON.stringify(numeric), original);
+});
+
+test("saved cash corrections are exact, immutable and never override freshness", () => {
+  const numeric = JSON.parse(readFileSync("src/_data/numeric.json", "utf8"));
+  const corrected = numeric.operators.flatMap(operator => operator.records)
+    .filter(record => comparisonRecord(record) !== record);
+  assert.equal(corrected.length, 4);
+  for (const original of corrected) {
+    const before = JSON.stringify(original);
+    const result = comparisonRecord(Object.freeze(original));
+    assert.equal(result.method, "cash");
+    assert.match(result.methodCorrection, /Original extraction metadata is preserved/);
+    assert.equal(JSON.stringify(original), before);
+    for (const change of [{ value: 999 }, { conditions: ["Changed"] }, { sourceUrl: "https://example.com" },
+      { id: "new" }, { lastConfirmedAt: capture }, { freshness: "not_reconfirmed" }, { reviewStatus: "unresolved" }]) {
+      const changed = { ...original, ...change };
+      assert.equal(comparisonRecord(changed), changed);
+    }
+    const time = Date.parse(original.freshness === "reconfirmed" ? original.lastConfirmedAt : original.capturedAt);
+    const boundary = time + 36 * 3600000;
+    const rowsAt = at => comparisonRows({ operators: [operator([original])] }, {}, at)[0];
+    assert.equal(rowsAt(boundary).cash.sortValue, original.value);
+    assert.equal(rowsAt(boundary + 1).cash.sortValue, null);
+    assert.equal(rowsAt(time - 1).cash.sortValue, null);
+  }
+  const ambiguous = minimum({ method: "unspecified", basis: "Cash Prize Redemption option" });
+  assert.equal(comparisonRecord(ambiguous), ambiguous);
+  assert.equal(row([ambiguous]).cash.symbol, "?");
 });
 
 test("method unit and scope checks apply independently to cash and gift cards", () => {

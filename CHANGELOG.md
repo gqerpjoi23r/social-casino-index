@@ -14,6 +14,13 @@ Format:
 
 ---
 
+## 2026-09-12 - Restore supported player comparison values
+- Stop unrelated entertainment-coin and percentage ads from hiding an explicit signup SC reward. Show complete priced packages even when other offer descriptions are incomplete; do not combine their terms.
+- Add the missing cash method to the extraction schema. Correct only four exact saved Chumba/WOW cash records in the shared display adapter; preserve original metadata and all exports.
+- Keep genuine conflicts, ambiguous methods, retained values and expired records out of comparisons. No new collection or infrastructure changes.
+- Advance both comparison pages' sitemap dates for this update while retaining later collection dates.
+- Verify 54 monitor tests, release validation, both pages at five widths, loaded logos, keyboard/native details, expiry and sort preservation, eligibility controls, private-evidence exclusion, and five byte-identical exports.
+
 ## 2026-09-11 - Compact shared player comparisons
 - Use the same branded cards on the homepage and updates page, with ten operators, visible offer conditions, separate redemption methods, and native source details.
 - Show unknown and inapplicable values explicitly; exclude stale, conflicting, scoped, or mixed-unit amounts from current comparisons. Offer only supported useful sorts with static default ordering.

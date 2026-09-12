@@ -15,6 +15,7 @@
 .compact-comparison .value-group h4 i { color: var(--color-brand); font-size: 1rem; }
 .term-value { display: block; font-size: 1rem; font-weight: 600; line-height: 1.5; font-variant-numeric: tabular-nums; }
 .term-note { display: block; margin-top: .3rem; font-size: .75rem; line-height: 1.5; color: var(--color-base-content); opacity: .8; overflow-wrap: anywhere; }
+.purchase-package { margin-top: .5rem; }
 .redemption-methods { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; margin: 0; }
 .redemption-methods dt { font-size: .7rem; opacity: .75; margin-bottom: .2rem; }
 .redemption-methods dd { margin: 0; }
