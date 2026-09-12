@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-  "lastAttemptedAt": "2026-09-11T12:43:21.040Z",
-  "lastSuccessfulRefresh": "2026-09-11T12:50:34.184Z",
+  "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+  "lastAttemptedAt": "2026-09-12T06:30:00.683Z",
+  "lastSuccessfulRefresh": "2026-09-12T06:37:40.242Z",
   "staleAfterHours": 36,
   "operators": [
     {
@@ -11,8 +11,8 @@
       "productMode": "entertainment_only",
       "attemptedPages": 4,
       "readablePages": 4,
-      "lastAttempt": "2026-09-11T12:43:21.040Z",
-      "lastSuccessfulCapture": "2026-09-11T12:44:23.603Z",
+      "lastAttempt": "2026-09-12T06:30:00.683Z",
+      "lastSuccessfulCapture": "2026-09-12T06:31:00.271Z",
       "collectionStatus": "readable",
       "extractionStatus": "extracted",
       "changeStatus": "automated claims published; review pending",
@@ -22,28 +22,28 @@
           "url": "https://www.jackpota.com/",
           "purpose": "homepage",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:43:37.547Z"
+          "capturedAt": "2026-09-12T06:30:19.192Z"
         },
         {
           "id": "jackpota-terms",
           "url": "https://www.jackpota.com/terms-of-service",
           "purpose": "terms_or_rules",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:43:53.048Z"
+          "capturedAt": "2026-09-12T06:30:34.382Z"
         },
         {
           "id": "jackpota-packages",
           "url": "https://support.jackpota.com/hc/en-us/articles/12669339478812-Gold-Coin-Packages",
           "purpose": "offer_or_rewards",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:44:04.134Z"
+          "capturedAt": "2026-09-12T06:30:45.920Z"
         },
         {
           "id": "jackpota-promotions",
           "url": "https://www.jackpota.com/promotions",
           "purpose": "promotions_index",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:44:23.603Z"
+          "capturedAt": "2026-09-12T06:31:00.271Z"
         }
       ],
       "records": [
@@ -75,7 +75,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:43:37.547Z"
+          "lastConfirmedAt": "2026-09-12T06:30:19.192Z"
         },
         {
           "sourceId": "jackpota-home",
@@ -135,7 +135,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:43:37.547Z"
+          "lastConfirmedAt": "2026-09-12T06:30:19.192Z"
         },
         {
           "sourceId": "jackpota-packages",
@@ -165,7 +165,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:44:04.134Z"
+          "lastConfirmedAt": "2026-09-12T06:30:45.920Z"
         },
         {
           "sourceId": "jackpota-packages",
@@ -195,7 +195,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:44:04.134Z"
+          "lastConfirmedAt": "2026-09-12T06:30:45.920Z"
         },
         {
           "sourceId": "jackpota-terms",
@@ -221,7 +221,198 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:43:53.048Z"
+          "lastConfirmedAt": "2026-09-12T06:30:34.382Z"
+        },
+        {
+          "sourceId": "jackpota-home",
+          "name": "Join Now: 100% More Coins + 75 Free Spins",
+          "kind": "signup",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
+          "advertisedExtraPercent": 100,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": "exact",
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": null,
+          "promoCode": null,
+          "conditions": [
+            "Join now.",
+            "Includes 75 free spins.",
+            "The source does not state a Gold Coin quantity or purchase requirement."
+          ],
+          "id": "ad8046f05aff8a6bd365",
+          "sourceUrl": "https://www.jackpota.com/",
+          "capturedAt": "2026-09-12T06:30:19.192Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "jackpota-home",
+          "name": "Account creation Gold Coins",
+          "kind": "signup",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": 7500,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "Create an account now.",
+            "Sign up within the displayed countdown."
+          ],
+          "id": "e38014e2c059d84d255c",
+          "sourceUrl": "https://www.jackpota.com/",
+          "capturedAt": "2026-09-12T06:30:19.192Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "jackpota-terms",
+          "field": "minimum_age",
+          "value": 21,
+          "upperValue": null,
+          "unit": "years",
+          "comparison": "greater_than",
+          "method": "unspecified",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Must also be the minimum legal age of majority, whichever is higher, in the jurisdiction where the user accesses or uses the Service.",
+          "conditions": [
+            "User must be legally allowed to participate in the Games and access the Service under applicable jurisdictional laws."
+          ],
+          "id": "f43e86c7c5b17b551b2c",
+          "sourceUrl": "https://www.jackpota.com/terms-of-service",
+          "capturedAt": "2026-09-12T06:30:34.382Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "jackpota-home",
+          "field": "offer_conditions",
+          "summary": "The operator says no purchase is required and says Gold Coins may be obtained by logging in every 24 hours, referrals, social-media community participation, and more; no daily Gold Coin amount is stated.",
+          "id": "572a56c793007097a55e",
+          "sourceUrl": "https://www.jackpota.com/",
+          "capturedAt": "2026-09-12T06:30:19.192Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "jackpota-home",
+          "field": "offer_conditions",
+          "summary": "The operator says referral free coins are received when referred friends make their first purchase; no coin amount is stated.",
+          "id": "5feb4a5b8579e7b3bebd",
+          "sourceUrl": "https://www.jackpota.com/",
+          "capturedAt": "2026-09-12T06:30:19.192Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "jackpota-terms",
+          "field": "restrictions",
+          "summary": "The operator says users must not access the Games or Service from Alabama, Connecticut, Delaware, Idaho, Indiana, Kentucky, Louisiana, Maine, Maryland, Michigan, Montana, Nevada, New Jersey, New York, Tennessee, Washington, West Virginia, any jurisdiction outside the United States, or other posted prohibited territories. Promotions may have additional eligibility requirements.",
+          "id": "fe2d9c2708e5cc9173f0",
+          "sourceUrl": "https://www.jackpota.com/terms-of-service",
+          "capturedAt": "2026-09-12T06:30:34.382Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "jackpota-terms",
+          "field": "verification",
+          "summary": "The operator may conduct age, identity, credit-background, and location verification; users must allow Location Services. Account opening or use may be restricted pending satisfactory verification. Possible documents include photo ID, matching utility bill, and source-of-wealth or source-of-funds documentation. The operator may terminate, deactivate, or restrict an account if verification cannot be completed.",
+          "id": "81575399240f9b3fa67c",
+          "sourceUrl": "https://www.jackpota.com/terms-of-service",
+          "capturedAt": "2026-09-12T06:30:34.382Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "jackpota-terms",
+          "field": "account_closure",
+          "summary": "The operator reserves the right to close accounts inactive for 60 days or longer without prior notice, may refuse to open or close an account at its sole discretion, and says user-initiated account closure forfeits access to associated Virtual Coins.",
+          "id": "f41e18c1f9239eecf040",
+          "sourceUrl": "https://www.jackpota.com/terms-of-service",
+          "capturedAt": "2026-09-12T06:30:34.382Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "jackpota-terms",
+          "field": "account_closure",
+          "summary": "The operator prohibits transfer or sale of Virtual Coins and sale or assignment of a user account. It says an attempt will result in account closure and forfeiture and may result in a lifetime ban and possible legal action.",
+          "id": "677cc419c56de013d388",
+          "sourceUrl": "https://www.jackpota.com/terms-of-service",
+          "capturedAt": "2026-09-12T06:30:34.382Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "jackpota-terms",
+          "field": "offer_conditions",
+          "summary": "Promotions are subject to the Terms, official rules, and additional published terms. The operator reserves the right to withdraw, alter, or exclude users from promotions, including for multiple accounts or fraudulent or illegal activity, and may suspend accounts and withhold promotional benefits.",
+          "id": "1e5b30296ea3bfe79feb",
+          "sourceUrl": "https://www.jackpota.com/terms-of-service",
+          "capturedAt": "2026-09-12T06:30:34.382Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
         },
         {
           "sourceId": "jackpota-home",
@@ -249,7 +440,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -279,7 +470,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -305,7 +496,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -320,7 +511,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -335,7 +526,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -350,7 +541,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -365,7 +556,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -380,7 +571,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -395,7 +586,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         }
@@ -417,19 +608,19 @@
       "name": "Lucky Bunny",
       "productMode": "unverified",
       "attemptedPages": 1,
-      "readablePages": 0,
-      "lastAttempt": "2026-09-11T12:43:21.040Z",
-      "lastSuccessfulCapture": null,
-      "collectionStatus": "unavailable",
-      "extractionStatus": "not_called_no_readable_source",
-      "changeStatus": "evidence unavailable; not reconfirmed",
+      "readablePages": 1,
+      "lastAttempt": "2026-09-12T06:30:00.683Z",
+      "lastSuccessfulCapture": "2026-09-12T06:31:14.654Z",
+      "collectionStatus": "readable",
+      "extractionStatus": "extracted",
+      "changeStatus": "change awaiting review",
       "coverage": [
         {
           "id": "lucky-bunny-home",
           "url": "https://luckybunny.fun/",
           "purpose": "homepage",
-          "status": "empty",
-          "capturedAt": null
+          "status": "ok",
+          "capturedAt": "2026-09-12T06:31:14.654Z"
         }
       ],
       "records": [],
@@ -454,8 +645,8 @@
       "productMode": "sweepstakes",
       "attemptedPages": 6,
       "readablePages": 6,
-      "lastAttempt": "2026-09-11T12:43:21.040Z",
-      "lastSuccessfulCapture": "2026-09-11T12:45:25.055Z",
+      "lastAttempt": "2026-09-12T06:30:00.683Z",
+      "lastSuccessfulCapture": "2026-09-12T06:31:57.012Z",
       "collectionStatus": "readable",
       "extractionStatus": "extracted",
       "changeStatus": "automated claims published; review pending",
@@ -465,42 +656,42 @@
           "url": "https://www.yaycasino.com/",
           "purpose": "homepage",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:44:54.255Z"
+          "capturedAt": "2026-09-12T06:31:21.227Z"
         },
         {
           "id": "yay-promotions",
           "url": "https://www.yaycasino.com/promotions",
           "purpose": "offer_or_rewards",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:45:00.703Z"
+          "capturedAt": "2026-09-12T06:31:27.908Z"
         },
         {
           "id": "yay-daily",
           "url": "https://www.yaycasino.com/promotions/promo/online-casino-daily-login-bonus",
           "purpose": "offer_or_rewards",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:45:06.737Z"
+          "capturedAt": "2026-09-12T06:31:35.197Z"
         },
         {
           "id": "yay-rules",
           "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
           "purpose": "terms_or_rules",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:45:11.908Z"
+          "capturedAt": "2026-09-12T06:31:41.318Z"
         },
         {
           "id": "yay-redemption-guide",
           "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
           "purpose": "redemption_help",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:45:18.351Z"
+          "capturedAt": "2026-09-12T06:31:48.788Z"
         },
         {
           "id": "yay-signup",
           "url": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
           "purpose": "signup_offer",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:45:25.055Z"
+          "capturedAt": "2026-09-12T06:31:57.012Z"
         }
       ],
       "records": [
@@ -600,7 +791,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:06.737Z"
+          "lastConfirmedAt": "2026-09-12T06:31:35.197Z"
         },
         {
           "sourceId": "yay-rules",
@@ -632,7 +823,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:11.908Z"
+          "lastConfirmedAt": "2026-09-12T06:31:41.318Z"
         },
         {
           "sourceId": "yay-rules",
@@ -805,7 +996,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:18.351Z"
+          "lastConfirmedAt": "2026-09-12T06:31:48.788Z"
         },
         {
           "sourceId": "yay-rules",
@@ -904,6 +1095,424 @@
           "purchaseRequired": null,
           "promoCode": null,
           "conditions": [
+            "Sign up bonus",
+            "Includes 20 Free Spins"
+          ],
+          "id": "c3920e25e63c4e500a92",
+          "sourceUrl": "https://www.yaycasino.com/",
+          "capturedAt": "2026-09-12T06:31:21.227Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-promotions",
+          "name": "Yay Casino Welcome Bonus",
+          "kind": "signup",
+          "priceUsd": null,
+          "immediateSc": 8,
+          "totalSc": 8,
+          "goldCoins": 80000,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": null,
+          "promoCode": null,
+          "conditions": [
+            "Create an account with name, date of birth, state, email, and password",
+            "Verify email",
+            "Verify ID",
+            "Log in and claim",
+            "20 free spins are on Yay Devil Fire 2",
+            "Free-spin value is stated as 0.1 SC/spin"
+          ],
+          "id": "089f9693250782f98370",
+          "sourceUrl": "https://www.yaycasino.com/promotions",
+          "capturedAt": "2026-09-12T06:31:27.908Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-promotions",
+          "name": "Yay Casino Daily Bonus",
+          "kind": "recurring_daily",
+          "priceUsd": null,
+          "immediateSc": 1,
+          "totalSc": 1,
+          "goldCoins": 10000,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": 24,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "First daily bonus only",
+            "Complete the free sign-up process",
+            "Log in daily",
+            "Go to the Coin Store"
+          ],
+          "id": "3dbe2225b0b3a6a1a116",
+          "sourceUrl": "https://www.yaycasino.com/promotions",
+          "capturedAt": "2026-09-12T06:31:27.908Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-rules",
+          "name": "Mail Code Sweeps Coins Request",
+          "kind": "promotion",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": 5,
+          "goldCoins": null,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "Available only in Sweepstakes Permitted Territories",
+            "Generate a unique Mail Code",
+            "Send a handwritten request by mail",
+            "Log in and request the code on the Mail Code page",
+            "A new code may be requested after the waiting period shown on the Mail Code page"
+          ],
+          "id": "df5f46bf61bb83d31057",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "capturedAt": "2026-09-12T06:31:41.318Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-rules",
+          "field": "minimum_age",
+          "value": 18,
+          "upperValue": null,
+          "unit": "years",
+          "comparison": "at_least",
+          "method": "unspecified",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "At the time of entry; the age of majority in the participant's jurisdiction applies if later than 18.",
+          "conditions": [
+            "Eligible Participants only",
+            "Void where prohibited by law"
+          ],
+          "id": "6aacf572ea547e501b1a",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "capturedAt": "2026-09-12T06:31:41.318Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-rules",
+          "field": "playthrough",
+          "value": 1,
+          "upperValue": null,
+          "unit": "multiplier",
+          "comparison": "exact",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Sweeps Coins collected by the participant; the operator may impose a Playthrough Requirement.",
+          "conditions": [
+            "Unless otherwise required by Yay Casino",
+            "Required before eligibility for redemption for real Prizes"
+          ],
+          "id": "09d2cd2b8cc36f80aca4",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "capturedAt": "2026-09-12T06:31:41.318Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-rules",
+          "field": "redemption_minimum",
+          "value": 50,
+          "upperValue": null,
+          "unit": "SC",
+          "comparison": "at_least",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Minimum redemption per day.",
+          "conditions": [],
+          "id": "23ca564e66dbbd6aa26a",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "capturedAt": "2026-09-12T06:31:41.318Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-rules",
+          "field": "redemption_cap",
+          "value": 4900,
+          "upperValue": null,
+          "unit": "SC",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [
+            "Florida"
+          ],
+          "basis": "Prize won on any single spin or single play.",
+          "conditions": [
+            "Prize winnings in excess of 4,900 Sweeps Coins will not be allocated or paid"
+          ],
+          "id": "818c45bdcf347ed03bcd",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "capturedAt": "2026-09-12T06:31:41.318Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-rules",
+          "field": "redemption_cap",
+          "value": 9550,
+          "upperValue": null,
+          "unit": "SC",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Daily limit of Sweeps Coins that can be requested for redemption.",
+          "conditions": [],
+          "id": "daab4a786a4b158ab484",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "capturedAt": "2026-09-12T06:31:41.318Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-rules",
+          "field": "redemption_time",
+          "value": 1,
+          "upperValue": null,
+          "unit": "months",
+          "comparison": "up_to",
+          "method": "unspecified",
+          "stage": "approval",
+          "states": [],
+          "basis": "Verification process after receiving all requested documents and passing KYC and legal review.",
+          "conditions": [
+            "All prizes are subject to verification",
+            "The operator must be satisfied the participant complied with Terms and Conditions, Sweepstakes Rules, and applicable documentation"
+          ],
+          "id": "7cff20088cd9acc5398c",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "capturedAt": "2026-09-12T06:31:41.318Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-redemption-guide",
+          "field": "redemption_time",
+          "value": 1,
+          "upperValue": 3,
+          "unit": "calendar_days",
+          "comparison": "range",
+          "method": "virtual_card",
+          "stage": "end_to_end",
+          "states": [],
+          "basis": "Receiving winnings via the Visa Virtual Card method.",
+          "conditions": [
+            "Described as the fastest option for fiat methods"
+          ],
+          "id": "4fc07234fd5f2cd106ac",
+          "sourceUrl": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
+          "capturedAt": "2026-09-12T06:31:48.788Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-redemption-guide",
+          "field": "redemption_time",
+          "value": 24,
+          "upperValue": null,
+          "unit": "hours",
+          "comparison": "at_least",
+          "method": "unspecified",
+          "stage": "approval",
+          "states": [],
+          "basis": "Approval and processing after submission of a redemption request.",
+          "conditions": [],
+          "id": "464e82be6a029e643194",
+          "sourceUrl": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
+          "capturedAt": "2026-09-12T06:31:48.788Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-rules",
+          "field": "restrictions",
+          "summary": "The operator says its permitted territory includes the United States except Idaho, Michigan, New York, Washington, Nevada, Louisiana, Delaware, California, Tennessee, Connecticut, Illinois, Maine, Indiana, New Jersey, and Montana, and it may change permitted territories at its discretion.",
+          "id": "9bfc99ce0aa1f0a293f4",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "capturedAt": "2026-09-12T06:31:41.318Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-rules",
+          "field": "verification",
+          "summary": "The operator says prize redemption requires verification as an Eligible Participant and matching personal and account details; it may request identification, credit, banking, or other information at registration or before financial transactions.",
+          "id": "a9e8438d9a94503e7739",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "capturedAt": "2026-09-12T06:31:41.318Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-rules",
+          "field": "verification",
+          "summary": "The operator says redemption requests can remain pending or be refused until requested documents satisfy it; missing requested documentation within 30 days may result in refused redemption, account closure or suspension, or other action.",
+          "id": "2053566ec1c8fb9d23f8",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "capturedAt": "2026-09-12T06:31:41.318Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-rules",
+          "field": "account_closure",
+          "summary": "The operator says Sweeps Coins may be forfeited when an account closes, and an account balance must be withdrawn within seven days of requesting closure or the balance will be forfeited.",
+          "id": "7b83fce030b32ff9bd48",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "capturedAt": "2026-09-12T06:31:41.318Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-rules",
+          "field": "account_closure",
+          "summary": "The operator says it may close an account at any time in its sole discretion and may limit or prevent prize redemption.",
+          "id": "082e7f4dada8940a6659",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "capturedAt": "2026-09-12T06:31:41.318Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-daily",
+          "field": "offer_conditions",
+          "summary": "The daily promotion is no-purchase-necessary, void where prohibited, available only in non-restricted jurisdictions, subject to terms, may be changed, and may result in disqualification or account suspension/closure for abuse; bonuses may vary by jurisdiction.",
+          "id": "fea26e76de156e8dff77",
+          "sourceUrl": "https://www.yaycasino.com/promotions/promo/online-casino-daily-login-bonus",
+          "capturedAt": "2026-09-12T06:31:35.197Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "yay-home",
+          "name": "Sign Up Bonus",
+          "kind": "signup",
+          "priceUsd": null,
+          "immediateSc": 12,
+          "totalSc": 12,
+          "goldCoins": 120000,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": null,
+          "promoCode": null,
+          "conditions": [
             "Includes 20 Free Spins."
           ],
           "id": "443d84d9b353b6a3f8ac",
@@ -913,7 +1522,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -946,7 +1555,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -977,7 +1586,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1000,7 +1609,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1027,7 +1636,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1050,7 +1659,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1076,7 +1685,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1101,7 +1710,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1124,7 +1733,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1150,7 +1759,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1176,7 +1785,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1191,7 +1800,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1206,7 +1815,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1221,7 +1830,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1236,7 +1845,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1251,7 +1860,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1266,7 +1875,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         }
@@ -1284,8 +1893,8 @@
       "productMode": "sweepstakes",
       "attemptedPages": 3,
       "readablePages": 3,
-      "lastAttempt": "2026-09-11T12:43:21.040Z",
-      "lastSuccessfulCapture": "2026-09-11T12:46:11.371Z",
+      "lastAttempt": "2026-09-12T06:30:00.683Z",
+      "lastSuccessfulCapture": "2026-09-12T06:32:40.785Z",
       "collectionStatus": "readable",
       "extractionStatus": "extracted",
       "changeStatus": "automated claims published; review pending",
@@ -1295,21 +1904,21 @@
           "url": "https://dorados.com/en",
           "purpose": "homepage",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:45:41.597Z"
+          "capturedAt": "2026-09-12T06:32:12.273Z"
         },
         {
           "id": "dorados-rules",
           "url": "https://www.dorados.com/en/sweepstakes-rules",
           "purpose": "terms_or_rules",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:45:58.068Z"
+          "capturedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "id": "dorados-welcome",
           "url": "https://dorados.com/en/help-centre/bonuses-and-promotions/is-there-a-welcome-offer-for-new-players",
           "purpose": "offer_or_rewards",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:46:11.371Z"
+          "capturedAt": "2026-09-12T06:32:40.785Z"
         }
       ],
       "records": [
@@ -1346,7 +1955,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1371,7 +1980,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1396,7 +2005,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1447,7 +2056,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1472,7 +2081,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1497,7 +2106,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1522,7 +2131,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1547,7 +2156,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1572,7 +2181,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1597,7 +2206,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1622,7 +2231,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1647,7 +2256,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1672,7 +2281,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1697,7 +2306,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1722,7 +2331,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1747,7 +2356,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1772,7 +2381,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1797,7 +2406,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+          "lastConfirmedAt": "2026-09-12T06:32:27.142Z"
         },
         {
           "sourceId": "dorados-rules",
@@ -1848,8 +2457,670 @@
           "recordType": "facts",
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
-          "freshness": "reconfirmed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": "2026-09-11T12:45:58.068Z"
+        },
+        {
+          "sourceId": "dorados-welcome",
+          "name": "Welcome offers",
+          "kind": "first_purchase",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": true,
+          "promoCode": null,
+          "conditions": [
+            "Available to newly registered participants when making their first purchase.",
+            "Certain reward conditions must be met; see the reward Terms & Conditions under the desired offer."
+          ],
+          "id": "a6d2fec462a050508207",
+          "sourceUrl": "https://dorados.com/en/help-centre/bonuses-and-promotions/is-there-a-welcome-offer-for-new-players",
+          "capturedAt": "2026-09-12T06:32:40.785Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-home",
+          "name": "Daily rewards",
+          "kind": "recurring_daily",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": null,
+          "promoCode": null,
+          "conditions": [
+            "Log in daily and collect what is available.",
+            "The amount and availability of daily rewards are not specified."
+          ],
+          "id": "7ee324a4fa36928bbd2f",
+          "sourceUrl": "https://dorados.com/en/",
+          "capturedAt": "2026-09-12T06:32:12.273Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "name": "Handwritten mail request for Sweeps Coins",
+          "kind": "promotion",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": 2,
+          "goldCoins": null,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "At least 2 Sweeps Coins are credited for each valid request; the Company may determine another amount.",
+            "Submit a handwritten letter in a stamped #10 envelope.",
+            "One request per envelope and limited to 1 per day per Account.",
+            "The request must be mailed from the same U.S. state as the residential address registered to the Account.",
+            "The letter must include the account holder's full name, account email, residential address, and a request statement accepting the Customer Agreement."
+          ],
+          "id": "89422cd6243e5a905604",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_minimum",
+          "value": 100,
+          "upperValue": null,
+          "unit": "SC",
+          "comparison": "at_least",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Redeemable Sweeps Coins required to initiate Prize redemption.",
+          "conditions": [
+            "Amounts below 100 Redeemable Sweeps Coins are not eligible for redemption."
+          ],
+          "id": "be57ec04cef128df29ad",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "playthrough",
+          "value": 1,
+          "upperValue": null,
+          "unit": "multiplier",
+          "comparison": "at_least",
+          "method": "unspecified",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Sweepstakes Credits granted to the participant must be played on the relevant Game; the operator may require a greater number of plays in any combination of Game play.",
+          "conditions": [
+            "Sweepstakes Credits cannot be directly redeemed for real Prizes.",
+            "The threshold in Section 12 applies.",
+            "The operator may require more plays at its discretion."
+          ],
+          "id": "a1d764d61f016e027595",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "minimum_age",
+          "value": 21,
+          "upperValue": null,
+          "unit": "years",
+          "comparison": "at_least",
+          "method": "unspecified",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Sweepstakes entry eligibility.",
+          "conditions": [
+            "Participant must be at least 21 years old or the legal age of majority in their usual place of residence, whichever is greater."
+          ],
+          "id": "e7ae39a4839156d72cc7",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_cap",
+          "value": 2500,
+          "upperValue": null,
+          "unit": "USD",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "VIP1 daily cumulative redemption cap.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "b70b823a88297265adc8",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_cap",
+          "value": 30000,
+          "upperValue": null,
+          "unit": "USD",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "VIP1 monthly cumulative redemption cap.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "2367ccbdf65742105136",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_time",
+          "value": 72,
+          "upperValue": null,
+          "unit": "hours",
+          "comparison": "up_to",
+          "method": "unspecified",
+          "stage": "unspecified",
+          "states": [],
+          "basis": "VIP1 processing time.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "8da317a1a920dffa4cc9",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_cap",
+          "value": 2500,
+          "upperValue": null,
+          "unit": "USD",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "VIP2 daily cumulative redemption cap.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "2484073befb020eeca94",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_cap",
+          "value": 33000,
+          "upperValue": null,
+          "unit": "USD",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "VIP2 monthly cumulative redemption cap.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "02a2525b833f67062321",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_time",
+          "value": 72,
+          "upperValue": null,
+          "unit": "hours",
+          "comparison": "up_to",
+          "method": "unspecified",
+          "stage": "unspecified",
+          "states": [],
+          "basis": "VIP2 processing time.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "3cd3826b53d2d23b1a68",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_cap",
+          "value": 2500,
+          "upperValue": null,
+          "unit": "USD",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "VIP3 daily cumulative redemption cap.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "60b45104d2191afc7410",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_cap",
+          "value": 39000,
+          "upperValue": null,
+          "unit": "USD",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "VIP3 monthly cumulative redemption cap.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "f67a5e446ea6549c2f8e",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_time",
+          "value": 48,
+          "upperValue": null,
+          "unit": "hours",
+          "comparison": "up_to",
+          "method": "unspecified",
+          "stage": "unspecified",
+          "states": [],
+          "basis": "VIP3 processing time.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "07f0923e5569b7617e77",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_cap",
+          "value": 2500,
+          "upperValue": null,
+          "unit": "USD",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "VIP4 daily cumulative redemption cap.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "5ecb15b8506b456687f4",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_cap",
+          "value": 48000,
+          "upperValue": null,
+          "unit": "USD",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "VIP4 monthly cumulative redemption cap.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "c7c14bd693d6a3a8141c",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_time",
+          "value": 24,
+          "upperValue": null,
+          "unit": "hours",
+          "comparison": "up_to",
+          "method": "unspecified",
+          "stage": "unspecified",
+          "states": [],
+          "basis": "VIP4 processing time.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "cea049c98fc947dd52dc",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_cap",
+          "value": 2500,
+          "upperValue": null,
+          "unit": "USD",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "VIP5 daily cumulative redemption cap.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "eda3a8e480bd119e5228",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_time",
+          "value": 24,
+          "upperValue": null,
+          "unit": "hours",
+          "comparison": "up_to",
+          "method": "unspecified",
+          "stage": "unspecified",
+          "states": [],
+          "basis": "VIP5 processing time.",
+          "conditions": [
+            "Current limit may be updated at the operator's sole discretion without prior notice."
+          ],
+          "id": "dc6d98a49327035f50a6",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_cap",
+          "value": 5000,
+          "upperValue": null,
+          "unit": "USD",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [
+            "Florida"
+          ],
+          "basis": "Maximum value of a single Prize redemption.",
+          "conditions": [
+            "A redemption request exceeding US$5,000 will be adjusted so its total value does not surpass US$5,000."
+          ],
+          "id": "7fbb1eb19a0793b97ce6",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "redemption_time",
+          "value": 10,
+          "upperValue": null,
+          "unit": "business_days",
+          "comparison": "up_to",
+          "method": "unspecified",
+          "stage": "transfer",
+          "states": [],
+          "basis": "Processing of prize payment to the Payment Method or alternative financial account.",
+          "conditions": [
+            "The operator may fulfill the Prize redemption through multiple payments over several days rather than one transaction."
+          ],
+          "id": "b13c1feea5b6eddb09bb",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "restrictions",
+          "summary": "Sweepstakes entry requires the stated age threshold, no participation from a Restricted Jurisdiction or where unlawful, an operational non-inactive unrestricted account, and no more than one account.",
+          "id": "ac0a3dfc68a3f1ed5816",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "account_closure",
+          "summary": "Sweepstakes Credits, Redeemable Sweeps Coins, and unredeemed Prizes are forfeited for inactive or closed accounts; reinstatement is at the operator's sole discretion.",
+          "id": "23b5725c36a4108f063d",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "verification",
+          "summary": "A Prize is not awarded until compliance is confirmed, required verification is completed with written confirmation, and the Prize is redeemed; a sworn eligibility declaration may be requested. Failure to complete required verification within 30 days of written request can forfeit the Prize.",
+          "id": "dd3819c41c2af96d8579",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "verification",
+          "summary": "Before redemption, the operator may require government-issued identification and may request eligibility, release, and tax documents; missed requirements may result in disqualification and forfeiture.",
+          "id": "f796e42394e4b2464a89",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "account_closure",
+          "summary": "The operator may suspend, restrict, or close an account and hold prize redemption requests during verification, and may discontinue verification and suspend, restrict, or close an account if requested information or documentation is not provided within 30 days.",
+          "id": "1e717cb1d06a01181d94",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "dorados-rules",
+          "field": "account_closure",
+          "summary": "The operator states it may suspend, terminate, or limit accounts for listed reasons and may retain, forfeit, and cancel Sweepstakes Credits and Redeemable Sweeps Coins held at that time.",
+          "id": "4ba3f7ef8ef7d5383d47",
+          "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
+          "capturedAt": "2026-09-12T06:32:27.142Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
         },
         {
           "sourceId": "dorados-welcome",
@@ -1878,7 +3149,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1911,7 +3182,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1942,7 +3213,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1968,7 +3239,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -1995,7 +3266,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2021,7 +3292,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2047,7 +3318,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2073,7 +3344,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2099,7 +3370,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2125,7 +3396,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2151,7 +3422,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2177,7 +3448,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2203,7 +3474,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2229,7 +3500,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2255,7 +3526,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2281,7 +3552,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2307,7 +3578,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2333,7 +3604,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2359,7 +3630,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2385,7 +3656,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2412,7 +3683,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2438,7 +3709,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2453,7 +3724,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2468,7 +3739,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2483,7 +3754,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2498,7 +3769,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2513,7 +3784,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2528,7 +3799,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2543,7 +3814,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         }
@@ -2561,8 +3832,8 @@
       "productMode": "unverified",
       "attemptedPages": 1,
       "readablePages": 1,
-      "lastAttempt": "2026-09-11T12:43:21.040Z",
-      "lastSuccessfulCapture": "2026-09-11T12:46:17.327Z",
+      "lastAttempt": "2026-09-12T06:30:00.683Z",
+      "lastSuccessfulCapture": "2026-09-12T06:32:47.313Z",
       "collectionStatus": "readable",
       "extractionStatus": "extracted",
       "changeStatus": "automated claims published; review pending",
@@ -2572,10 +3843,186 @@
           "url": "https://www.zonko.com/help/faq/",
           "purpose": "support_or_availability",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:46:17.327Z"
+          "capturedAt": "2026-09-12T06:32:47.313Z"
         }
       ],
       "records": [
+        {
+          "sourceId": "zonko-notice",
+          "name": "Prime+ Pass",
+          "kind": "paid_pass",
+          "priceUsd": 44,
+          "immediateSc": null,
+          "totalSc": 144,
+          "goldCoins": null,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": 30,
+          "intervalHours": null,
+          "purchaseRequired": true,
+          "promoCode": null,
+          "conditions": [
+            "One-time monthly purchase.",
+            "Rewards are distributed daily over 30 days.",
+            "Daily scratch cards provide bonus SC.",
+            "Initial SC credit is immediate, but its amount is not stated.",
+            "The full SC amount is not received on the purchase day."
+          ],
+          "id": "a0186d5e634fcc2889bf",
+          "sourceUrl": "https://www.zonko.com/help/faq/",
+          "capturedAt": "2026-09-12T06:32:47.313Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "zonko-notice",
+          "name": "daily Bonus free Sweepstakes Coins",
+          "kind": "recurring_daily",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "Requires logging into an account daily and claiming through the “Bonus” section.",
+            "The amount of Sweepstakes Coins is not stated.",
+            "Other prizes may be included.",
+            "Missions, social-media campaigns, and AMOE may offer additional free SC subject to applicable rules, eligibility requirements, instructions, and limits."
+          ],
+          "id": "44ac983299083fa22198",
+          "sourceUrl": "https://www.zonko.com/help/faq/",
+          "capturedAt": "2026-09-12T06:32:47.313Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "zonko-notice",
+          "field": "redemption_time",
+          "value": 72,
+          "upperValue": null,
+          "unit": "hours",
+          "comparison": "up_to",
+          "method": "unspecified",
+          "stage": "unspecified",
+          "states": [],
+          "basis": "Redemption period; weekends are included. After approval, prize receipt depends on bank processing times.",
+          "conditions": [
+            "Typically up to 72 hours.",
+            "Includes weekends.",
+            "An approval email confirms the redemption is ready to be processed.",
+            "Prize arrival after approval depends on bank processing times."
+          ],
+          "id": "5aba89bec6cd2f974476",
+          "sourceUrl": "https://www.zonko.com/help/faq/",
+          "capturedAt": "2026-09-12T06:32:47.313Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "zonko-notice",
+          "field": "minimum_age",
+          "value": 18,
+          "upperValue": null,
+          "unit": "years",
+          "comparison": "at_least",
+          "method": "unspecified",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Participation in Zonko’s games and sweepstakes.",
+          "conditions": [],
+          "id": "ce83e0eeab4281e1accd",
+          "sourceUrl": "https://www.zonko.com/help/faq/",
+          "capturedAt": "2026-09-12T06:32:47.313Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "zonko-notice",
+          "field": "verification",
+          "summary": "Before redeeming, Zonko says users must fully verify valid ID, proof of address, and payment method(s); documents can be uploaded on site.",
+          "id": "f9582367697d0e854442",
+          "sourceUrl": "https://www.zonko.com/help/faq/",
+          "capturedAt": "2026-09-12T06:32:47.313Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "zonko-notice",
+          "field": "restrictions",
+          "summary": "Zonko says redemptions can only be made to a valid debit card registered in the user's name.",
+          "id": "569866028fed15865919",
+          "sourceUrl": "https://www.zonko.com/help/faq/",
+          "capturedAt": "2026-09-12T06:32:47.313Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "zonko-notice",
+          "field": "verification",
+          "summary": "Zonko says redemption requires valid ID, proof of address, and payment methods linked to the account; users should mask the middle 8 card digits when uploading.",
+          "id": "53279d5be1ca5fcec242",
+          "sourceUrl": "https://www.zonko.com/help/faq/",
+          "capturedAt": "2026-09-12T06:32:47.313Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "zonko-notice",
+          "field": "restrictions",
+          "summary": "Zonko tells users to check local regulations to ensure they can participate.",
+          "id": "8390036c19c8d3760aa7",
+          "sourceUrl": "https://www.zonko.com/help/faq/",
+          "capturedAt": "2026-09-12T06:32:47.313Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
         {
           "sourceId": "zonko-notice",
           "name": "Welcome offer",
@@ -2603,7 +4050,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2636,7 +4083,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2667,7 +4114,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2698,30 +4145,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
-          "lastConfirmedAt": null,
-          "completePackage": false
-        },
-        {
-          "sourceId": "zonko-notice",
-          "field": "minimum_age",
-          "value": 18,
-          "upperValue": null,
-          "unit": "years",
-          "comparison": "at_least",
-          "method": "unspecified",
-          "stage": "not_applicable",
-          "states": [],
-          "basis": "Participation in Zonko’s games and sweepstakes.",
-          "conditions": [],
-          "id": "ce83e0eeab4281e1accd",
-          "sourceUrl": "https://www.zonko.com/help/faq/",
-          "capturedAt": "2026-09-11T12:46:17.327Z",
-          "extractor": "gpt-5.6-terra:2.2.0",
-          "reviewStatus": "automated_unreviewed",
-          "recordType": "facts",
-          "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2747,7 +4171,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2762,7 +4186,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2777,7 +4201,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2792,7 +4216,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2807,7 +4231,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         }
@@ -2833,8 +4257,8 @@
       "productMode": "sweepstakes",
       "attemptedPages": 4,
       "readablePages": 3,
-      "lastAttempt": "2026-09-11T12:43:21.040Z",
-      "lastSuccessfulCapture": "2026-09-11T12:46:55.769Z",
+      "lastAttempt": "2026-09-12T06:30:00.683Z",
+      "lastSuccessfulCapture": "2026-09-12T06:33:27.793Z",
       "collectionStatus": "partial",
       "extractionStatus": "extracted",
       "changeStatus": "automated claims published; review pending",
@@ -2844,21 +4268,21 @@
           "url": "https://www.chumbacasino.com/getting-started/redeem-prizes",
           "purpose": "support_or_availability",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:46:29.629Z"
+          "capturedAt": "2026-09-12T06:33:00.823Z"
         },
         {
           "id": "chumba-home",
           "url": "https://www.chumbacasino.com/",
           "purpose": "homepage",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:46:43.434Z"
+          "capturedAt": "2026-09-12T06:33:14.352Z"
         },
         {
           "id": "chumba-redeem",
           "url": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
           "purpose": "redemption_help",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:46:55.769Z"
+          "capturedAt": "2026-09-12T06:33:27.793Z"
         },
         {
           "id": "chumba-rules",
@@ -2893,7 +4317,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:46:55.769Z"
+          "lastConfirmedAt": "2026-09-12T06:33:27.793Z"
         },
         {
           "sourceId": "chumba-redeem",
@@ -2919,7 +4343,147 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:46:55.769Z"
+          "lastConfirmedAt": "2026-09-12T06:33:27.793Z"
+        },
+        {
+          "sourceId": "chumba-redeem",
+          "field": "redemption_minimum",
+          "value": 100,
+          "upperValue": null,
+          "unit": "SC",
+          "comparison": "at_least",
+          "method": "cash",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Cash Prize Redemption option",
+          "conditions": [
+            "Applies to the \"Cash Prize\" Redemption option."
+          ],
+          "id": "c5f0ba57df27e2887d51",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "capturedAt": "2026-09-12T06:33:27.793Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "chumba-redeem",
+          "field": "redemption_minimum",
+          "value": 10,
+          "upperValue": null,
+          "unit": "SC",
+          "comparison": "at_least",
+          "method": "gift_card",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Gift Card Redemption option",
+          "conditions": [
+            "Applies to the Gift Card Redemption option."
+          ],
+          "id": "434b6853c1092ec2785e",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "capturedAt": "2026-09-12T06:33:27.793Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "chumba-notice",
+          "field": "verification",
+          "summary": "The operator says account verification is required before redeeming Sweeps Coin prizes, and banking information must be verified to redeem into a nominated bank account.",
+          "id": "8214a812383054c0653f",
+          "sourceUrl": "https://www.chumbacasino.com/getting-started/redeem-prizes",
+          "capturedAt": "2026-09-12T06:33:00.823Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "chumba-notice",
+          "field": "verification",
+          "summary": "The operator says identity and residential address verification are required before adding bank account information, and a recent bank statement is required.",
+          "id": "64bc122c9ce916daa43c",
+          "sourceUrl": "https://www.chumbacasino.com/getting-started/redeem-prizes",
+          "capturedAt": "2026-09-12T06:33:00.823Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "chumba-notice",
+          "field": "verification",
+          "summary": "The operator specifies bank-statement content and says it must be dated within the last 6 months; the statement may verify both the bank account and current residential address.",
+          "id": "7c3dd42c1c0842bedc25",
+          "sourceUrl": "https://www.chumbacasino.com/getting-started/redeem-prizes",
+          "capturedAt": "2026-09-12T06:33:00.823Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "chumba-redeem",
+          "field": "verification",
+          "summary": "The operator says first-time redeemers need to re-verify their phone number and that identity and banking information validation are required to redeem prizes.",
+          "id": "659a0755a4000018a85b",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "capturedAt": "2026-09-12T06:33:27.793Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "chumba-redeem",
+          "field": "restrictions",
+          "summary": "The operator says prize redemptions cannot be processed to another person's account, bank information must correspond to the account holder, and a redemption payment method must have been used for a purchase.",
+          "id": "ae465242ebd507719f3f",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "capturedAt": "2026-09-12T06:33:27.793Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "chumba-redeem",
+          "field": "offer_conditions",
+          "summary": "The operator says free Sweeps Coins received through the listed sources can be used for Sweepstakes games, and Sweeps Coins collected from play can be redeemed without making a purchase.",
+          "id": "058920c8055381e0b687",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "capturedAt": "2026-09-12T06:33:27.793Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
         },
         {
           "sourceId": "chumba-home",
@@ -2946,7 +4510,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -2971,32 +4535,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
-          "lastConfirmedAt": null,
-          "completePackage": false
-        },
-        {
-          "sourceId": "chumba-redeem",
-          "field": "redemption_minimum",
-          "value": 10,
-          "upperValue": null,
-          "unit": "SC",
-          "comparison": "at_least",
-          "method": "gift_card",
-          "stage": "not_applicable",
-          "states": [],
-          "basis": "Gift Card Redemption option",
-          "conditions": [
-            "Applies to the Gift Card Redemption option."
-          ],
-          "id": "434b6853c1092ec2785e",
-          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "capturedAt": "2026-09-11T12:46:55.769Z",
-          "extractor": "gpt-5.6-terra:2.2.0",
-          "reviewStatus": "automated_unreviewed",
-          "recordType": "facts",
-          "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3011,7 +4550,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3026,7 +4565,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3041,7 +4580,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3056,7 +4595,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         }
@@ -3078,8 +4617,8 @@
       "productMode": "unverified",
       "attemptedPages": 4,
       "readablePages": 4,
-      "lastAttempt": "2026-09-11T12:43:21.040Z",
-      "lastSuccessfulCapture": "2026-09-11T12:47:51.648Z",
+      "lastAttempt": "2026-09-12T06:30:00.683Z",
+      "lastSuccessfulCapture": "2026-09-12T06:34:31.271Z",
       "collectionStatus": "readable",
       "extractionStatus": "extracted",
       "changeStatus": "automated claims published; review pending",
@@ -3089,28 +4628,28 @@
           "url": "https://www.pulsz.com/terms-of-use",
           "purpose": "terms_or_rules",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:47:16.513Z"
+          "capturedAt": "2026-09-12T06:33:50.924Z"
         },
         {
           "id": "pulsz-home",
           "url": "https://www.pulsz.com/",
           "purpose": "homepage",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:47:28.430Z"
+          "capturedAt": "2026-09-12T06:34:05.210Z"
         },
         {
           "id": "pulsz-bank",
           "url": "https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking",
           "purpose": "redemption_help",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:47:39.928Z"
+          "capturedAt": "2026-09-12T06:34:18.562Z"
         },
         {
           "id": "pulsz-gift",
           "url": "https://support.pulsz.com/hc/en-us/articles/24820902593169-How-do-I-redeem-via-Gift-Card",
           "purpose": "redemption_help",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:47:51.648Z"
+          "capturedAt": "2026-09-12T06:34:31.271Z"
         }
       ],
       "records": [
@@ -3231,6 +4770,206 @@
         },
         {
           "sourceId": "pulsz-home",
+          "name": "5,000 free Gold Coins",
+          "kind": "signup",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": 5000,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "Start playing with Pulsz."
+          ],
+          "id": "e3924b55096886c96901",
+          "sourceUrl": "https://www.pulsz.com/",
+          "capturedAt": "2026-09-12T06:34:05.210Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "pulsz-home",
+          "name": "Welcome Bundle",
+          "kind": "signup",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
+          "advertisedExtraPercent": 200,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": "at_least",
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": null,
+          "promoCode": null,
+          "conditions": [
+            "Join Pulsz today to claim your exclusive Welcome Bundle."
+          ],
+          "id": "0f0d1c3b83712b5950fa",
+          "sourceUrl": "https://www.pulsz.com/",
+          "capturedAt": "2026-09-12T06:34:05.210Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "pulsz-terms",
+          "field": "minimum_age",
+          "value": 21,
+          "upperValue": null,
+          "unit": "years",
+          "comparison": "greater_than",
+          "method": "unspecified",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Age requirement for continued use of the Service; minimum legal age of majority may be higher in the user's jurisdiction.",
+          "conditions": [
+            "User must be legally allowed under applicable jurisdictional laws to participate in the Games and access the Service."
+          ],
+          "id": "486f5773ce9605c40f93",
+          "sourceUrl": "https://www.pulsz.com/terms-of-use",
+          "capturedAt": "2026-09-12T06:33:50.924Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "pulsz-terms",
+          "field": "redemption_time",
+          "value": 90,
+          "upperValue": null,
+          "unit": "days_unspecified",
+          "comparison": "up_to",
+          "method": "unspecified",
+          "stage": "unspecified",
+          "states": [],
+          "basis": "Time from submission of a redemption request to provide requested information and complete required steps.",
+          "conditions": [
+            "Redemption requests are automatically declined if pending for more than ninety (90) days.",
+            "On automatic decline, the request is canceled and applicable Virtual Coins are returned to the User Account.",
+            "A new redemption request may be submitted subject to the Terms of Use."
+          ],
+          "id": "e1ab4645581c701c1391",
+          "sourceUrl": "https://www.pulsz.com/terms-of-use",
+          "capturedAt": "2026-09-12T06:33:50.924Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "pulsz-terms",
+          "field": "restrictions",
+          "summary": "The operator says access is prohibited from the listed Restricted Territories and from outside the United States; certain promotions are limited for users based in Mississippi, New Jersey, Indiana, Maine and Oklahoma.",
+          "id": "b6dedeae758e65dcadce",
+          "sourceUrl": "https://www.pulsz.com/terms-of-use",
+          "capturedAt": "2026-09-12T06:33:50.924Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "pulsz-terms",
+          "field": "verification",
+          "summary": "The operator says it or a third party may conduct age, identity, credit-background, and other required verification checks; account opening or use may be restricted pending completion, and an account may be terminated, suspended, deactivated, or restricted if checks cannot be completed.",
+          "id": "3976f5981d6e96d7445f",
+          "sourceUrl": "https://www.pulsz.com/terms-of-use",
+          "capturedAt": "2026-09-12T06:33:50.924Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "pulsz-terms",
+          "field": "account_closure",
+          "summary": "The operator says it may close an account inactive for sixty days or longer without prior notice, and may refuse to open or close an account at its sole discretion; user-requested closure forfeits access to associated Virtual Coins.",
+          "id": "aaff73c37440bb303d0f",
+          "sourceUrl": "https://www.pulsz.com/terms-of-use",
+          "capturedAt": "2026-09-12T06:33:50.924Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "pulsz-terms",
+          "field": "offer_conditions",
+          "summary": "The operator says promotions, contests, and special offers are subject to the Terms, official rules, and additional published terms; it may alter, withdraw, or exclude users from them, including for multiple accounts or suspected fraudulent or illegal activity.",
+          "id": "9a2a1c4d0730e9750d92",
+          "sourceUrl": "https://www.pulsz.com/terms-of-use",
+          "capturedAt": "2026-09-12T06:33:50.924Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "pulsz-bank",
+          "field": "other",
+          "summary": "The operator describes redeeming a cash prize through Bank Transfers, using either Trustly or Standard ACH.",
+          "id": "cf2fa2ff94fb7d256f2d",
+          "sourceUrl": "https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking",
+          "capturedAt": "2026-09-12T06:34:18.562Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "pulsz-gift",
+          "field": "other",
+          "summary": "The operator describes a redemption method in which the user selects “Redeem as Gift Card,” then selects a gift card and amount.",
+          "id": "c7814dd89000762e051a",
+          "sourceUrl": "https://support.pulsz.com/hc/en-us/articles/24820902593169-How-do-I-redeem-via-Gift-Card",
+          "capturedAt": "2026-09-12T06:34:31.271Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "pulsz-home",
           "name": "Welcome Bundle",
           "kind": "signup",
           "priceUsd": null,
@@ -3254,7 +4993,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3284,7 +5023,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3309,7 +5048,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3324,7 +5063,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3339,7 +5078,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3354,7 +5093,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3369,7 +5108,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3384,7 +5123,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3399,7 +5138,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         }
@@ -3422,8 +5161,8 @@
       "productMode": "sweepstakes",
       "attemptedPages": 4,
       "readablePages": 4,
-      "lastAttempt": "2026-09-11T12:43:21.040Z",
-      "lastSuccessfulCapture": "2026-09-11T12:48:21.879Z",
+      "lastAttempt": "2026-09-12T06:30:00.683Z",
+      "lastSuccessfulCapture": "2026-09-12T06:35:03.810Z",
       "collectionStatus": "readable",
       "extractionStatus": "extracted",
       "changeStatus": "automated claims published; review pending",
@@ -3433,28 +5172,28 @@
           "url": "https://help.stake.us/en/articles/6453222-redeeming-rewards",
           "purpose": "redemption_help",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:47:57.446Z"
+          "capturedAt": "2026-09-12T06:34:37.518Z"
         },
         {
           "id": "stake-coins",
           "url": "https://help.stake.us/en/articles/6389246-sweep-coins-stake-cash",
           "purpose": "support_or_availability",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:48:03.279Z"
+          "capturedAt": "2026-09-12T06:34:43.742Z"
         },
         {
           "id": "stake-rollover",
           "url": "https://help.stake.us/en/articles/6465093-redemption-progress",
           "purpose": "terms_or_rules",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:48:08.893Z"
+          "capturedAt": "2026-09-12T06:34:49.904Z"
         },
         {
           "id": "stake-terms",
           "url": "https://stake.us/policies/terms",
           "purpose": "terms_or_rules",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:48:21.879Z"
+          "capturedAt": "2026-09-12T06:35:03.810Z"
         }
       ],
       "records": [
@@ -3482,7 +5221,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:48:08.893Z"
+          "lastConfirmedAt": "2026-09-12T06:34:49.904Z"
         },
         {
           "sourceId": "stake-terms",
@@ -3507,8 +5246,8 @@
           "recordType": "facts",
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
-          "freshness": "not_reconfirmed",
-          "lastConfirmedAt": "2026-09-10T21:21:33.666Z"
+          "freshness": "reconfirmed",
+          "lastConfirmedAt": "2026-09-12T06:35:03.810Z"
         },
         {
           "recordType": "offers",
@@ -3529,7 +5268,7 @@
           "reviewStatus": "reviewed",
           "extractor": "saved-source-review",
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:48:21.879Z"
+          "lastConfirmedAt": "2026-09-12T06:35:03.810Z"
         },
         {
           "recordType": "facts",
@@ -3555,7 +5294,7 @@
           "reviewStatus": "reviewed",
           "extractor": "saved-source-review",
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:48:21.879Z"
+          "lastConfirmedAt": "2026-09-12T06:35:03.810Z"
         },
         {
           "recordType": "facts",
@@ -3580,7 +5319,267 @@
           "reviewStatus": "unresolved",
           "extractor": "saved-source-review",
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:48:21.879Z"
+          "lastConfirmedAt": "2026-09-12T06:35:03.810Z"
+        },
+        {
+          "sourceId": "stake-terms",
+          "name": "Daily Login Bonus",
+          "kind": "recurring_daily",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": 24,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "Claim Stake Cash once per day by logging into the Customer Account and claiming the daily bonus."
+          ],
+          "id": "8c389909fbcdf1b8aab0",
+          "sourceUrl": "https://stake.us/policies/terms",
+          "capturedAt": "2026-09-12T06:35:03.810Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "stake-terms",
+          "name": "Daily Bonus Gold Coins",
+          "kind": "recurring_daily",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": 24,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "Claim Gold Coins once per day by logging into the Customer Account and claiming the daily bonus.",
+            "Gold Coins cannot be redeemed for any value whatsoever."
+          ],
+          "id": "a81ce15965b2550ad5c6",
+          "sourceUrl": "https://stake.us/policies/terms",
+          "capturedAt": "2026-09-12T06:35:03.810Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "stake-terms",
+          "name": "Stake Cash through Post Card",
+          "kind": "promotion",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": 5,
+          "goldCoins": null,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "Send a standard postcard or Request Card at least 4” x 6”, unfolded, in a stamped envelope to the listed address.",
+            "Handwrite the required return address, words, account details, unique postcard code, and statement.",
+            "Limit of one Request Card per outer envelope.",
+            "The request must be made by the Customer and posted from the same state or province as the Customer's verified residential address.",
+            "Request Cards from Excluded Territories may be rejected.",
+            "Cards without a valid unique postcard code will be rejected."
+          ],
+          "id": "19548c8274e074a49af4",
+          "sourceUrl": "https://stake.us/policies/terms",
+          "capturedAt": "2026-09-12T06:35:03.810Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "stake-rollover",
+          "field": "playthrough",
+          "value": 3,
+          "upperValue": null,
+          "unit": "multiplier",
+          "comparison": "at_least",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Stake Cash received as a bonus alongside a purchase of Gold Coins",
+          "conditions": [
+            "Redemption is available after the rollover is completed.",
+            "Only Stake Cash received alongside a purchase has this rollover according to this page.",
+            "New Stake Cash received alongside a new purchase locks the Redemption section until that amount is played through 3X."
+          ],
+          "id": "a80a2ee7f96403442eaa",
+          "sourceUrl": "https://help.stake.us/en/articles/6465093-redemption-progress",
+          "capturedAt": "2026-09-12T06:34:49.904Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "stake-terms",
+          "field": "playthrough",
+          "value": 3,
+          "upperValue": null,
+          "unit": "multiplier",
+          "comparison": "exact",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "all Stake Cash, except Stake Cash won through Promotional Play",
+          "conditions": [
+            "Stake Cash won through Promotional Play is excepted.",
+            "Only Stake Cash can be redeemed for Prizes."
+          ],
+          "id": "e9d6ab9ec21e75aa10fb",
+          "sourceUrl": "https://stake.us/policies/terms",
+          "capturedAt": "2026-09-12T06:35:03.810Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "stake-terms",
+          "field": "redemption_cap",
+          "value": 5000,
+          "upperValue": null,
+          "unit": "USD",
+          "comparison": "up_to",
+          "method": "general",
+          "stage": "not_applicable",
+          "states": [
+            "Florida"
+          ],
+          "basis": "redemption value of Stake Cash won on any Game or play via a Customer’s participation in the Sweepstakes",
+          "conditions": [
+            "The cap is per day.",
+            "A redemption of a Prize valued in excess of USD $5,000 per day will not be allocated or paid."
+          ],
+          "id": "c326dbc0128de52264b1",
+          "sourceUrl": "https://stake.us/policies/terms",
+          "capturedAt": "2026-09-12T06:35:03.810Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "stake-terms",
+          "field": "minimum_age",
+          "value": 21,
+          "upperValue": null,
+          "unit": "years",
+          "comparison": "greater_than",
+          "method": "unspecified",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "age required to participate in the Games offered on the Platform",
+          "conditions": [
+            "A higher minimum legal age of majority may apply in the jurisdiction of residence.",
+            "The customer must be legally allowed to participate under laws applicable to them."
+          ],
+          "id": "7f074005019b487029b1",
+          "sourceUrl": "https://stake.us/policies/terms",
+          "capturedAt": "2026-09-12T06:35:03.810Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "stake-terms",
+          "field": "verification",
+          "summary": "Stake says it requests identification document and proof of address upon registration, and may accept a driver's license or other government-issued identification document containing the residential address.",
+          "id": "0cade4683fb93078f52d",
+          "sourceUrl": "https://stake.us/policies/terms",
+          "capturedAt": "2026-09-12T06:35:03.810Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "stake-terms",
+          "field": "verification",
+          "summary": "Stake says prize redemption requests remain pending until required verification is completed to its satisfaction, and it may restrict, suspend, or deactivate an account when verification cannot be completed.",
+          "id": "ba246207e075e9746d66",
+          "sourceUrl": "https://stake.us/policies/terms",
+          "capturedAt": "2026-09-12T06:35:03.810Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "stake-terms",
+          "field": "restrictions",
+          "summary": "Stake identifies countries other than the continental United States of America and Hawaii, the listed States, other jurisdictions legally precluded from playing, and jurisdictions Stake excludes in its discretion as Excluded Territories.",
+          "id": "57d59efbd0970aad4e96",
+          "sourceUrl": "https://stake.us/policies/terms",
+          "capturedAt": "2026-09-12T06:35:03.810Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "stake-terms",
+          "field": "account_closure",
+          "summary": "Stake says account closure can be requested by email and forfeits continued access to and rights to associated Gold Coins, Stake Cash, and unredeemed Prizes; reopening requests are evaluated unless self-exclusion has been implemented.",
+          "id": "f77ce48a49efd57d45eb",
+          "sourceUrl": "https://stake.us/policies/terms",
+          "capturedAt": "2026-09-12T06:35:03.810Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
         },
         {
           "sourceId": "stake-rollover",
@@ -3604,7 +5603,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3631,7 +5630,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3656,7 +5655,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3671,7 +5670,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3686,7 +5685,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3701,7 +5700,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3716,7 +5715,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -3731,7 +5730,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         }
@@ -3754,8 +5753,8 @@
       "productMode": "sweepstakes",
       "attemptedPages": 5,
       "readablePages": 4,
-      "lastAttempt": "2026-09-11T12:43:21.040Z",
-      "lastSuccessfulCapture": "2026-09-11T12:48:51.084Z",
+      "lastAttempt": "2026-09-12T06:30:00.683Z",
+      "lastSuccessfulCapture": "2026-09-12T06:35:36.827Z",
       "collectionStatus": "partial",
       "extractionStatus": "extracted",
       "changeStatus": "automated claims published; review pending",
@@ -3765,28 +5764,28 @@
           "url": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
           "purpose": "offer_or_rewards",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:48:28.002Z"
+          "capturedAt": "2026-09-12T06:35:11.065Z"
         },
         {
           "id": "wow-promo",
           "url": "https://www.wowvegas.com/promo-code",
           "purpose": "offer_or_rewards",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:48:33.481Z"
+          "capturedAt": "2026-09-12T06:35:17.452Z"
         },
         {
           "id": "wow-redeem",
           "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
           "purpose": "redemption_help",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:48:38.966Z"
+          "capturedAt": "2026-09-12T06:35:23.918Z"
         },
         {
           "id": "wow-terms",
           "url": "https://www.wowvegas.com/terms-and-conditions",
           "purpose": "terms_or_rules",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:48:51.084Z"
+          "capturedAt": "2026-09-12T06:35:36.827Z"
         },
         {
           "id": "wow-rules",
@@ -3827,7 +5826,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:48:28.002Z"
+          "lastConfirmedAt": "2026-09-12T06:35:11.065Z"
         },
         {
           "sourceId": "wow-signup",
@@ -3947,7 +5946,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:48:38.966Z"
+          "lastConfirmedAt": "2026-09-12T06:35:23.918Z"
         },
         {
           "sourceId": "wow-redeem",
@@ -3972,7 +5971,7 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:48:38.966Z"
+          "lastConfirmedAt": "2026-09-12T06:35:23.918Z"
         },
         {
           "sourceId": "wow-terms",
@@ -3998,7 +5997,355 @@
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
           "freshness": "reconfirmed",
-          "lastConfirmedAt": "2026-09-11T12:48:51.084Z"
+          "lastConfirmedAt": "2026-09-12T06:35:36.827Z"
+        },
+        {
+          "sourceId": "wow-signup",
+          "name": "Sign-Up Bonus",
+          "kind": "signup",
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": null,
+          "goldCoins": 150000,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "Create an account at WOW Vegas.",
+            "Accept the Sweepstakes Rules when prompted during registration.",
+            "Click the “Claim Your Free SC” button.",
+            "The 2nd- and 3rd-day rewards are sent by email."
+          ],
+          "id": "107308d6dbf2f6026194",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
+          "capturedAt": "2026-09-12T06:35:11.065Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-signup",
+          "name": "First-Time 30 SC + 1.5 million WOW Coins offer",
+          "kind": "first_purchase",
+          "priceUsd": null,
+          "immediateSc": 30,
+          "totalSc": 30,
+          "goldCoins": 1500000,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": true,
+          "promoCode": null,
+          "conditions": [
+            "Available for a first purchase.",
+            "Available in the Coin Store.",
+            "Described as an exclusive discounted coin pack."
+          ],
+          "id": "32686f0f84ba9911a390",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
+          "capturedAt": "2026-09-12T06:35:11.065Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-promo",
+          "name": "Welcome Sign-Up Bonus",
+          "kind": "signup",
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 5,
+          "goldCoins": 250000,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": 3,
+          "intervalHours": null,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "Available to claim after sign-up.",
+            "SC and WOW Coins are staged across Day 1, Day 2, and Day 3."
+          ],
+          "id": "6e1bebb74b053701392c",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "capturedAt": "2026-09-12T06:35:17.452Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-promo",
+          "name": "First Purchase Bonus",
+          "kind": "first_purchase",
+          "priceUsd": 9.99,
+          "immediateSc": 30,
+          "totalSc": 30,
+          "goldCoins": 1500000,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": 67,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": true,
+          "promoCode": null,
+          "conditions": [
+            "Only $9.99 (normally $29.99).",
+            "67% discount on first purchase.",
+            "Instant coin delivery."
+          ],
+          "id": "d1208e8bc4be2331db65",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "capturedAt": "2026-09-12T06:35:17.452Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-promo",
+          "name": "WOWBONUS2026 Promo Code Bonus",
+          "kind": "promotion",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": null,
+          "promoCode": "WOWBONUS2026",
+          "conditions": [
+            "Get up to 1,750,000 WOW Coins + SC 35 FREE."
+          ],
+          "id": "55010a9f591d8ab45359",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "capturedAt": "2026-09-12T06:35:17.452Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-redeem",
+          "field": "redemption_minimum",
+          "value": 50,
+          "upperValue": null,
+          "unit": "SC",
+          "comparison": "at_least",
+          "method": "cash",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "cash prize",
+          "conditions": [
+            "Account must be fully verified before redeeming."
+          ],
+          "id": "046f230216e228c4b343",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+          "capturedAt": "2026-09-12T06:35:23.918Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-redeem",
+          "field": "redemption_minimum",
+          "value": 20,
+          "upperValue": null,
+          "unit": "SC",
+          "comparison": "at_least",
+          "method": "gift_card",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "gift cards",
+          "conditions": [
+            "Account must be fully verified before redeeming."
+          ],
+          "id": "f5b76d06cf88cae49ce3",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+          "capturedAt": "2026-09-12T06:35:23.918Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-terms",
+          "field": "minimum_age",
+          "value": 18,
+          "upperValue": null,
+          "unit": "years",
+          "comparison": "greater_than",
+          "method": "unspecified",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "age requirement to participate; a higher minimum legal age of majority may apply in the jurisdiction of residence",
+          "conditions": [
+            "Must be legally allowed to participate under laws applicable to the player."
+          ],
+          "id": "f1da450a5292b083b249",
+          "sourceUrl": "https://www.wowvegas.com/terms-and-conditions",
+          "capturedAt": "2026-09-12T06:35:36.827Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-redeem",
+          "field": "verification",
+          "summary": "The operator says the account must be fully verified before redemption and documents can be uploaded to expedite verification.",
+          "id": "e7d40acb0c9f36ad18c4",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+          "capturedAt": "2026-09-12T06:35:23.918Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-promo",
+          "field": "restrictions",
+          "summary": "The page says SC promotional play excludes Maryland, New Jersey, Michigan, Montana, Louisiana, Connecticut, New York, Tennessee, Illinois, and California; registration is unavailable in Idaho, Nevada, and Washington; and Canada excludes Quebec.",
+          "id": "8ce6fb7bd9aed1369fd9",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "capturedAt": "2026-09-12T06:35:17.452Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-terms",
+          "field": "verification",
+          "summary": "The operator requires registration name to match government identification and says personal-detail changes may require resubmission of government identification; misleading or inaccurate residential-address information results in account closure.",
+          "id": "bb431fda9b65d19ffda5",
+          "sourceUrl": "https://www.wowvegas.com/terms-and-conditions",
+          "capturedAt": "2026-09-12T06:35:36.827Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-terms",
+          "field": "verification",
+          "summary": "The operator says it may conduct identification, credit, and other verification checks; enhanced due diligence may include certified photo ID and proof of address; and it may request source-of-funds, financial-standing, occupation, and similar information.",
+          "id": "1ea81accd47174346471",
+          "sourceUrl": "https://www.wowvegas.com/terms-and-conditions",
+          "capturedAt": "2026-09-12T06:35:36.827Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-terms",
+          "field": "verification",
+          "summary": "The operator says it may deactivate an account if requested documents are not provided within 7 days and says WOW Coin purchases are unavailable until verification is successfully completed.",
+          "id": "9b1e0ee38f2e53c7d680",
+          "sourceUrl": "https://www.wowvegas.com/terms-and-conditions",
+          "capturedAt": "2026-09-12T06:35:36.827Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-terms",
+          "field": "account_closure",
+          "summary": "The operator says customers may request account closure through the Contact Us link, and closure forfeits continued access to and rights to use, enjoy, or benefit from WOW Coins.",
+          "id": "c2184ae96b456f60697c",
+          "sourceUrl": "https://www.wowvegas.com/terms-and-conditions",
+          "capturedAt": "2026-09-12T06:35:36.827Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-terms",
+          "field": "account_closure",
+          "summary": "The operator reserves the right to refuse an account or close an open account in its sole discretion.",
+          "id": "568ec1ee8515233230e9",
+          "sourceUrl": "https://www.wowvegas.com/terms-and-conditions",
+          "capturedAt": "2026-09-12T06:35:36.827Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "wow-terms",
+          "field": "offer_conditions",
+          "summary": "The operator says promotions are subject to the terms and any published promotion-specific terms; promotion-specific terms control in a conflict, and promotions may be withdrawn or modified without prior notice.",
+          "id": "af99d0c2b90c1efced92",
+          "sourceUrl": "https://www.wowvegas.com/terms-and-conditions",
+          "capturedAt": "2026-09-12T06:35:36.827Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
         },
         {
           "sourceId": "wow-signup",
@@ -4028,7 +6375,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4059,7 +6406,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4091,7 +6438,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4123,7 +6470,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4149,7 +6496,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4175,7 +6522,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4200,7 +6547,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4215,7 +6562,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4230,7 +6577,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4245,7 +6592,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4260,7 +6607,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4275,7 +6622,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4290,7 +6637,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4305,7 +6652,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         }
@@ -4328,9 +6675,9 @@
       "name": "McLuck",
       "productMode": "unverified",
       "attemptedPages": 6,
-      "readablePages": 5,
-      "lastAttempt": "2026-09-11T12:43:21.040Z",
-      "lastSuccessfulCapture": "2026-09-11T12:50:28.714Z",
+      "readablePages": 4,
+      "lastAttempt": "2026-09-12T06:30:00.683Z",
+      "lastSuccessfulCapture": "2026-09-12T06:37:10.567Z",
       "collectionStatus": "partial",
       "extractionStatus": "extracted",
       "changeStatus": "automated claims published; review pending",
@@ -4347,35 +6694,35 @@
           "url": "https://www.mcluck.com/",
           "purpose": "homepage",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:49:32.218Z"
+          "capturedAt": "2026-09-12T06:36:32.861Z"
         },
         {
           "id": "mcluck-support",
           "url": "https://support.mcluck.com/hc/en-us",
           "purpose": "support_or_availability",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:49:44.249Z"
+          "capturedAt": "2026-09-12T06:36:45.688Z"
         },
         {
           "id": "mcluck-welcome",
           "url": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
           "purpose": "offer_or_rewards",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:49:55.176Z"
+          "capturedAt": "2026-09-12T06:36:58.241Z"
         },
         {
           "id": "mcluck-eligibility",
           "url": "https://support.mcluck.com/hc/en-us/articles/38182149192221-Why-am-I-not-eligible-for-a-promotion",
           "purpose": "support_or_availability",
           "status": "ok",
-          "capturedAt": "2026-09-11T12:50:06.749Z"
+          "capturedAt": "2026-09-12T06:37:10.567Z"
         },
         {
           "id": "mcluck-promotions",
           "url": "https://www.mcluck.com/promotions",
           "purpose": "promotions_index",
-          "status": "ok",
-          "capturedAt": "2026-09-11T12:50:28.714Z"
+          "status": "blocked",
+          "capturedAt": null
         }
       ],
       "records": [
@@ -4460,17 +6807,76 @@
           "recordType": "facts",
           "runId": "2026-09-10T21-34-03-671Z-34532833593-reextract",
           "completePackage": false,
-          "freshness": "reconfirmed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": "2026-09-11T12:49:32.218Z"
         },
         {
+          "sourceId": "mcluck-home",
+          "name": "Spin for Fun free rewards",
+          "kind": "signup",
+          "priceUsd": null,
+          "immediateSc": 2.5,
+          "totalSc": 2.5,
+          "goldCoins": 7500,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "Player must continue to claim the coins.",
+            "No purchase needed."
+          ],
+          "id": "f77c8c838c51dea143d0",
+          "sourceUrl": "https://www.mcluck.com/",
+          "capturedAt": "2026-09-12T06:36:32.861Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
           "sourceId": "mcluck-welcome",
-          "name": "Welcome rewards for new players",
+          "name": "New-player welcome Gold Coins",
           "kind": "signup",
           "priceUsd": null,
           "immediateSc": null,
           "totalSc": null,
           "goldCoins": 5000,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "conditions": [
+            "For new players."
+          ],
+          "id": "115af630f2d62c513488",
+          "sourceUrl": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
+          "capturedAt": "2026-09-12T06:36:58.241Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "mcluck-welcome",
+          "name": "New-player 150% EXTRA online store offer",
+          "kind": "first_purchase",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
           "advertisedExtraPercent": 150,
           "advertisedDiscountPercent": null,
           "extraPercentComparison": "exact",
@@ -4479,16 +6885,16 @@
           "purchaseRequired": null,
           "promoCode": null,
           "conditions": [
-            "For new players.",
-            "The 150% EXTRA offer is in the online store."
+            "New players qualify.",
+            "Offer is in the online store."
           ],
-          "id": "da47f1977900bbf4b64e",
+          "id": "eeacd2f0b345f4959c34",
           "sourceUrl": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
-          "capturedAt": "2026-09-11T12:49:55.176Z",
-          "extractor": "gpt-5.6-terra:2.2.0",
+          "capturedAt": "2026-09-12T06:36:58.241Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
-          "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
           "freshness": "captured_unreviewed",
           "lastConfirmedAt": null,
           "completePackage": false
@@ -4517,9 +6923,10 @@
           "capturedAt": "2026-09-11T12:50:28.714Z",
           "extractor": "gpt-5.6-terra:2.2.0",
           "reviewStatus": "automated_unreviewed",
+          "reconfirmationStatus": "not_reconfirmed",
           "recordType": "offers",
-          "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4547,9 +6954,10 @@
           "capturedAt": "2026-09-11T12:50:28.714Z",
           "extractor": "gpt-5.6-terra:2.2.0",
           "reviewStatus": "automated_unreviewed",
+          "reconfirmationStatus": "not_reconfirmed",
           "recordType": "offers",
-          "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4576,9 +6984,126 @@
           "capturedAt": "2026-09-11T12:50:28.714Z",
           "extractor": "gpt-5.6-terra:2.2.0",
           "reviewStatus": "automated_unreviewed",
+          "reconfirmationStatus": "not_reconfirmed",
+          "recordType": "offers",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "not_reconfirmed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "mcluck-home",
+          "field": "minimum_age",
+          "value": 21,
+          "upperValue": null,
+          "unit": "years",
+          "comparison": "at_least",
+          "method": "unspecified",
+          "stage": "not_applicable",
+          "states": [],
+          "basis": "Age requirement for registration.",
+          "conditions": [
+            "No purchase necessary."
+          ],
+          "id": "875d7312a780de00a613",
+          "sourceUrl": "https://www.mcluck.com/",
+          "capturedAt": "2026-09-12T06:36:32.861Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "facts",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "mcluck-welcome",
+          "field": "restrictions",
+          "summary": "The welcome rewards page says it is unavailable outside the United States of America and in US states where services are not offered.",
+          "id": "b338823956c7ec44fa44",
+          "sourceUrl": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
+          "capturedAt": "2026-09-12T06:36:58.241Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "mcluck-eligibility",
+          "field": "offer_conditions",
+          "summary": "Promotion eligibility varies by offer and may require participation requirements, qualifying purchases, participation during the promotional period, and compliance with terms and conditions.",
+          "id": "0f8e5ad10789645fee98",
+          "sourceUrl": "https://support.mcluck.com/hc/en-us/articles/38182149192221-Why-am-I-not-eligible-for-a-promotion",
+          "capturedAt": "2026-09-12T06:37:10.567Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "mcluck-home",
+          "field": "restrictions",
+          "summary": "Registration is stated as 21+.",
+          "id": "ad015014d8f32b8831f4",
+          "sourceUrl": "https://www.mcluck.com/",
+          "capturedAt": "2026-09-12T06:36:32.861Z",
+          "extractor": "gpt-5.6-terra:2.2.1",
+          "reviewStatus": "automated_unreviewed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "mcluck-promotions",
+          "field": "restrictions",
+          "summary": "McLuck says entry or winning is free and no purchase is necessary; the offer is void where prohibited by law and Terms of Service apply.",
+          "id": "3b784058cbcb67ad8a41",
+          "sourceUrl": "https://www.mcluck.com/promotions",
+          "capturedAt": "2026-09-11T12:50:28.714Z",
+          "extractor": "gpt-5.6-terra:2.2.0",
+          "reviewStatus": "automated_unreviewed",
+          "reconfirmationStatus": "not_reconfirmed",
+          "recordType": "statements",
+          "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
+          "freshness": "not_reconfirmed",
+          "lastConfirmedAt": null,
+          "completePackage": false
+        },
+        {
+          "sourceId": "mcluck-welcome",
+          "name": "Welcome rewards for new players",
+          "kind": "signup",
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": 5000,
+          "advertisedExtraPercent": 150,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": "exact",
+          "durationDays": null,
+          "intervalHours": null,
+          "purchaseRequired": null,
+          "promoCode": null,
+          "conditions": [
+            "For new players.",
+            "The 150% EXTRA offer is in the online store."
+          ],
+          "id": "da47f1977900bbf4b64e",
+          "sourceUrl": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
+          "capturedAt": "2026-09-11T12:49:55.176Z",
+          "extractor": "gpt-5.6-terra:2.2.0",
+          "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4607,7 +7132,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "offers",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4632,7 +7157,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "facts",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4647,7 +7172,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         },
@@ -4662,22 +7187,7 @@
           "reviewStatus": "automated_unreviewed",
           "recordType": "statements",
           "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
-          "lastConfirmedAt": null,
-          "completePackage": false
-        },
-        {
-          "sourceId": "mcluck-promotions",
-          "field": "restrictions",
-          "summary": "McLuck says entry or winning is free and no purchase is necessary; the offer is void where prohibited by law and Terms of Service apply.",
-          "id": "3b784058cbcb67ad8a41",
-          "sourceUrl": "https://www.mcluck.com/promotions",
-          "capturedAt": "2026-09-11T12:50:28.714Z",
-          "extractor": "gpt-5.6-terra:2.2.0",
-          "reviewStatus": "automated_unreviewed",
-          "recordType": "statements",
-          "runId": "2026-09-11T12-43-21-040Z-34600310943-1",
-          "freshness": "captured_unreviewed",
+          "freshness": "not_reconfirmed",
           "lastConfirmedAt": null,
           "completePackage": false
         }
