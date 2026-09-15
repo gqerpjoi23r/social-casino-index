@@ -14,6 +14,14 @@ Format:
 
 ---
 
+## 2026-09-15 - Three numeric comparisons, less display machinery
+- Replace ten partially empty cards with welcome SC, first-purchase value, and method-specific redemption comparisons. Include only supported numeric entries, with observed dates and expandable conditions.
+- Choose player-beneficial amounts from the latest saved snapshot per source and category. Keep staged totals distinct from immediate SC; never combine incomplete purchase packages or guess redemption methods.
+- Remove comparison sorting, 36-hour value expiry, conflict suppression, audit panels, old record formatting and historical method patches. Keep collection, evidence, exports and state-gated CTAs unchanged.
+- These are dated advertised terms, not newly verified offers or funded payout rankings. Missing entries are omitted; raw history remains downloadable.
+- Clean generated assets before builds so removed comparison scripts cannot remain in the deployment. The changed display implementation is approximately 47% smaller, excluding tests, data and generated output.
+- Verify 47 monitor tests, release validation, nine numeric entries on both pages at five widths, loaded logos, keyboard/native details without JavaScript, eligibility controls and five unchanged exports.
+
 ## 2026-09-12 - Restore supported player comparison values
 - Stop unrelated entertainment-coin and percentage ads from hiding an explicit signup SC reward. Show complete priced packages even when other offer descriptions are incomplete; do not combine their terms.
 - Add the missing cash method to the extraction schema. Correct only four exact saved Chumba/WOW cash records in the shared display adapter; preserve original metadata and all exports.

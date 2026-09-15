@@ -25,29 +25,3 @@
   </section>
 </div>
 {% endmacro %}
-
-{% macro operatorCard(op) %}
-<article class="operator-card">
-  <header class="operator-heading">
-    <div class="flex items-center gap-3">
-      <img class="operator-favicon" src="/assets/favicons/{{ op.slug }}{{ op.faviconExt }}" width="32" height="32" alt="" loading="lazy" decoding="async">
-      <h3><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></h3>
-    </div>
-    <a class="operator-full-terms" href="/redemption-times/{{ op.slug }}/">Full record <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-  </header>
-  {% if op.playerValue.productMode == "unverified" %}<p class="product-note">Prize-redemption model not verified from accessible current rules.</p>{% endif %}
-  {{ benchmarks(op) }}
-  <details class="operator-details">
-    <summary>Daily rewards, timing and source notes</summary>
-    <dl class="operator-secondary">
-      <div><dt>Daily reward</dt><dd>{{ op.playerValue.daily.display }}{% if op.playerValue.daily.conditions %}. {{ op.playerValue.daily.conditions }}{% endif %}</dd></div>
-      <div><dt>Published timing</dt><dd>{{ op.publishedEstimate }}</dd></div>
-      <div><dt>Methods</dt><dd>{{ op.methods }}</dd></div>
-      <div><dt>Games</dt><dd>{{ op.games }}</dd></div>
-      <div><dt>Identity checks</dt><dd>{{ op.kyc }}</dd></div>
-    </dl>
-    <p>{{ op.availability }}</p>
-    <p>Record reviewed {{ op.playerValue.checkedAt | readableDate }}. Published claims, not funded test results. <a href="/redemption-times/{{ op.slug }}/#sources">Sources and access limits</a>.</p>
-  </details>
-</article>
-{% endmacro %}
