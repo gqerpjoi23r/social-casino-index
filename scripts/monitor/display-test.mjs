@@ -1,348 +1,110 @@
-import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { runInNewContext } from "node:vm";
-import { displayRecord } from "../../src/updates/display.js";
-import { comparisonRows, currentRecord } from "../../src/updates/updates.11tydata.js";
-import { compareOperators } from "../../src/assets/updates-sort.js";
-import { eligibleSorts, defaultOrder } from "../../src/assets/comparison-order.js";
-import { comparisonRecord } from "../../src/updates/method-corrections.js";
+import test from "node:test";
+import { comparisonSections } from "../../src/updates/updates.11tydata.js";
 
-const now = Date.parse("2026-09-11T15:00:00Z");
-const capture = "2026-09-11T12:00:00Z";
+const now = Date.parse("2026-09-15T12:00:00Z");
 const record = (fields = {}) => ({
-  recordType: "offers", kind: "signup", immediateSc: 2, totalSc: 2,
-  freshness: "captured_unreviewed", capturedAt: capture, reviewStatus: "automated_unreviewed",
-  conditions: [], ...fields,
+  recordType: "offers", kind: "signup", sourceUrl: "https://example.com/promo",
+  capturedAt: "2026-09-12T12:00:00Z", immediateSc: 2, totalSc: 2, conditions: [], ...fields,
 });
-const operator = (records, fields = {}) => ({
-  slug: "test", name: "Test", records, lastSuccessfulCapture: capture,
-  lastAttempt: "2026-09-11T14:59:00Z", readablePages: 2, attemptedPages: 3, ...fields,
-});
-const row = (records, fields = {}) => comparisonRows({ operators: [operator(records, fields)] }, {}, now)[0];
-
-test("display keeps discounts, extra coins and redeemable amounts distinct", () => {
-  const row = displayRecord({ recordType: "offers", priceUsd: 9.99, immediateSc: 30,
-    totalSc: 30, goldCoins: 1500000, advertisedDiscountPercent: 67, promoCode: "EXAMPLE",
-    conditions: ["First purchase only"], sourceUrl: "https://example.com/offer" });
-  assert.match(row.valueText, /9.99 USD/);
-  assert.match(row.valueText, /30 immediate SC/);
-  assert.match(row.valueText, /1,500,000 entertainment coins/);
-  assert.match(row.valueText, /67 % price discount/);
-  assert.doesNotMatch(row.valueText, /extra coins/);
-  assert.match(row.scopeText, /First purchase only; Code: EXAMPLE/);
-  assert.equal(row.sourceUrl, "https://example.com/offer");
+const operator = (records, fields = {}) => ({ slug: "example", name: "Example", records, ...fields });
+const sections = records => comparisonSections({ operators: [operator(records)] }, now);
+const rows = (records, section = 0, group = 0) => sections(records)[section].groups[group].rows;
+const fact = fields => record({
+  recordType: "facts", field: "redemption_minimum", method: "cash",
+  unit: "SC", comparison: "at_least", value: 100, ...fields,
 });
 
-test("display preserves qualified amounts, scope and unknowns", () => {
-  assert.equal(displayRecord({ recordType: "offers" }).valueText, "Unknown");
-  assert.equal(displayRecord({ recordType: "facts", value: null, unit: "SC" }).valueText, "Unknown");
-  assert.equal(displayRecord({ recordType: "facts", unit: "USD" }).valueText, "Unknown");
-  assert.match(displayRecord({ recordType: "offers", advertisedExtraPercent: 200,
-    extraPercentComparison: "at_least" }).valueText, /at least 200 % extra coins/);
-  const row = displayRecord({ recordType: "facts", value: 100, comparison: "at_least",
-    unit: "SC", method: "cash", states: ["Florida"] });
-  assert.equal(row.valueText, "at least 100 SC");
-  assert.equal(row.scopeText, "cash; Florida");
-});
-
-test("stale warning ages without a rebuild and updates on visibility", () => {
-  let now = Date.parse("2026-09-11T00:00:00Z");
-  const warning = { dataset: { lastRefresh: new Date(now).toISOString() }, hidden: false };
-  let tick;
-  let visible;
-  class Clock extends Date { static now() { return now; } }
-  runInNewContext(readFileSync("src/assets/monitor-freshness.js", "utf8"), {
-    Date: Clock,
-    document: { getElementById: () => warning, addEventListener: (_, callback) => { visible = callback; } },
-    setInterval: (callback, delay) => { tick = callback; assert.equal(delay, 60000); },
-  });
-  assert.equal(warning.hidden, true);
-  now += 36 * 60 * 60 * 1000;
-  tick();
-  assert.equal(warning.hidden, true);
-  now++;
-  tick();
-  assert.equal(warning.hidden, false);
-  warning.dataset.lastRefresh = new Date(now).toISOString();
-  visible();
-  assert.equal(warning.hidden, true);
-  warning.dataset.lastRefresh = "";
-  tick();
-  assert.equal(warning.hidden, false);
-});
-
-test("signup never chooses a conflicting maximum or uses staged SC as immediate", () => {
-  assert.equal(row([record({ immediateSc: 8 }), record({ immediateSc: 12 })]).signup.sortValue, null);
-  assert.match(row([record({ conflict: "Two saved sources disagree" })]).signup.explanation, /Conflicting/);
-  assert.equal(row([record({ reviewStatus: "unresolved" })]).signup.sortValue, null);
-  const staged = row([record({ totalSc: 5, durationDays: 3 })]).signup;
-  assert.equal(staged.text, "2 SC immediate");
-  assert.equal(staged.sortValue, 2);
-  assert.match(staged.notes.join(" "), /5 SC total over 3 days \(not all immediate\)/);
-  assert.equal(row([record({ immediateSc: null, totalSc: 5, durationDays: 3 })]).signup.sortValue, null);
-  assert.equal(row([record({ immediateSc: null, totalSc: null, goldCoins: 1000000 })]).signup.sortValue, null);
-  assert.equal(row([record()], { productMode: "entertainment_only" }).signup.symbol, "cross");
-});
-
-test("unrelated signup ads do not hide immediate SC or invent missing amounts", () => {
-  for (const fields of [{ goldCoins: 1000000 }, { advertisedExtraPercent: 150 },
-    { advertisedDiscountPercent: 50 }]) {
-    const ad = record({ immediateSc: null, totalSc: null, ...fields });
-    const result = row([record({ promoCode: "WELCOME", conditions: ["Verify email"] }), ad]);
-    assert.equal(result.signup.sortValue, 2);
-    assert.match(result.signup.notes.join(" "), /Code: WELCOME/);
-    assert.match(result.signup.notes.join(" "), /Verify email/);
-    assert.equal(result.records.length, 2);
-    assert.equal(row([ad]).signup.symbol, "?");
-    assert.equal(row([record(), { ...ad, totalSc: 5 }]).signup.symbol, "?");
-  }
-  assert.equal(row([record(), record({ immediateSc: null, totalSc: null })]).signup.symbol, "?");
-  assert.equal(row([record(), record({ goldCoins: 1000, immediateSc: 8 })]).signup.symbol, "?");
-  const totalOnly = row([record({ immediateSc: null, totalSc: 5, durationDays: 3 })]).signup;
-  assert.match(totalOnly.notes.join(" "), /5 SC total over 3 days/);
-});
-
-test("claim freshness never comes from a recent operator collection attempt", () => {
-  for (const fields of [
-    { freshness: "not_reconfirmed", lastConfirmedAt: capture },
-    { capturedAt: "2026-09-09T00:00:00Z" },
-    { capturedAt: null },
-    { capturedAt: "not-a-date" },
-    { capturedAt: "2026-09-12T00:00:00Z" },
-    { freshness: "reconfirmed", lastConfirmedAt: null },
-  ]) {
-    const result = row([record(fields)]);
-    assert.equal(result.signup.sortValue, null);
-    assert.equal(result.signup.symbol, "?");
-    assert.match(result.signup.explanation, /Not currently confirmed/);
-    assert.equal(result.records[0].current, false);
-    assert.match(result.records[0].freshnessLabel, /Retained \/ dated/);
-  }
-  const reconfirmed = record({ freshness: "reconfirmed", capturedAt: "2026-01-01", lastConfirmedAt: capture });
-  assert.equal(currentRecord(reconfirmed, now), true);
-  assert.equal(row([reconfirmed]).signup.sortValue, 2);
-  const boundary = Date.parse(capture) + 36 * 60 * 60 * 1000;
-  assert.equal(currentRecord(record(), boundary), true);
-  assert.equal(currentRecord(record(), boundary + 1), false);
-  assert.equal(row([record()], { lastSuccessfulCapture: null }).checked.sortValue, null);
-  assert.equal(row([record()], { lastSuccessfulCapture: "2026-09-09" }).checked.sortValue, null);
-  assert.equal(row([record()]).checked.sortValue, Date.parse(capture));
-});
-
-const minimum = (fields = {}) => record({
-  recordType: "facts", field: "redemption_minimum", value: 100, unit: "SC",
-  comparison: "at_least", method: "cash", states: [], ...fields,
-});
-
-test("redemption separates explicit methods, units, scope and qualified ranges", () => {
-  const separated = row([minimum(), minimum({ method: "gift_card", value: 10 })]);
-  assert.equal(separated.cash.sortValue, 100);
-  assert.equal(separated.gift.sortValue, 10);
-  for (const method of ["general", "unspecified", null, "bank_transfer"]) {
-    const result = row([minimum({ method, basis: "Cash redemption" })]);
-    assert.equal(result.cash.sortValue, null);
-    assert.equal(result.unspecifiedMinimum, true);
-  }
-  for (const fields of [
-    { comparison: "greater_than" }, { upperValue: 200 }, { states: ["Florida"] },
-    { unit: "gold_coins" }, { scope: "VIP" }, { value: null }, { comparison: "up_to" },
-  ]) {
-    assert.equal(row([minimum(fields)]).cash.sortValue, null);
-    assert.equal(row([minimum(fields)]).cash.symbol, "?");
-  }
-  assert.equal(row([minimum(), minimum({ value: 50 })]).cash.sortValue, null);
-  assert.equal(row([minimum(), minimum({ unit: "USD" })]).cash.sortValue, null);
-  const currencies = comparisonRows({ operators: [
-    operator([minimum()], { name: "SC Operator" }),
-    operator([minimum({ unit: "USD" })], { name: "USD Operator" }),
-  ] }, {}, now);
-  assert.ok(currencies.every(item => item.cash.sortValue === null));
-  assert.match(currencies[0].cash.explanation, /Different published units/);
-});
-
-test("purchase summaries preserve package identity, unknowns, conditions and currency", () => {
-  const offer = record({ kind: "first_purchase", priceUsd: 20, immediateSc: 40,
-    totalSc: 65, durationDays: 8, promoCode: "WELCOME", conditions: ["Verified new accounts only"] });
-  const single = row([offer]).purchase;
-  assert.equal(single.sortValue, null);
-  assert.match(single.text, /\$20 USD \/ 40 SC immediate/);
-  assert.match(single.notes.join(" "), /65 SC total over 8 days/);
-  assert.match(single.notes.join(" "), /Code: WELCOME/);
-  assert.match(single.notes.join(" "), /Verified new accounts only/);
-  assert.equal(row([offer, { ...offer, sourceId: "another-source" }]).purchase.text, single.text);
-  for (const change of [{ priceUsd: 10 }, { immediateSc: 60 }, { priceUsd: null },
-    { promoCode: "OTHER" }, { conditions: ["VIP only"] }]) {
-    const multiple = row([offer, { ...offer, ...change }]).purchase;
-    assert.equal(multiple.text, "Multiple offers");
-    assert.equal(multiple.sortValue, null);
-  }
-  assert.equal(row([{ ...offer, priceUsd: null }]).purchase.sortValue, null);
-  assert.equal(row([{ ...offer, conflict: "Conflicting price" }]).purchase.sortValue, null);
-  assert.equal(row([{ ...offer, kind: "paid_pass" }]).purchase.sortValue, null);
-});
-
-test("multiple purchases show complete packages without combining partial records", () => {
-  const complete = record({ kind: "first_purchase", priceUsd: 9.99, immediateSc: 30,
-    totalSc: 35, durationDays: 3, promoCode: "FIRST", conditions: ["New accounts only"] });
-  const partial = { ...complete, priceUsd: null, immediateSc: null, totalSc: null,
-    promoCode: "PARTIAL", conditions: ["Other offer"] };
-  const result = row([complete, partial]).purchase;
-  assert.equal(result.text, "Multiple offers");
-  assert.equal(result.sortValue, null);
-  assert.equal(result.packages.length, 1);
-  assert.equal(result.packages[0].text, "$9.99 USD / 30 SC immediate");
-  assert.match(result.packages[0].notes.join(" "), /Code: FIRST/);
-  assert.match(result.packages[0].notes.join(" "), /35 SC total over 3 days/);
-  assert.match(result.packages[0].notes.join(" "), /New accounts only/);
-  assert.doesNotMatch(result.packages[0].notes.join(" "), /PARTIAL|Other offer/);
-  assert.match(result.notes.join(" "), /incomplete/);
-  assert.equal(row([complete, { ...complete, priceUsd: 20 }]).purchase.packages.length, 2);
-  assert.equal(row([{ ...complete, priceUsd: null }, { ...complete, immediateSc: null }]).purchase.packages.length, 0);
-  assert.equal(row([complete, { ...complete, freshness: "not_reconfirmed", priceUsd: 1 }]).purchase.text,
-    "$9.99 USD / 30 SC immediate");
-  assert.equal(row([complete, { ...complete, conflict: "Disagreement" }]).purchase.symbol, "?");
-  assert.deepEqual(row([complete, partial], { productMode: "entertainment_only" }).purchase.packages, []);
-});
-
-test("useful sort directions put unknown, conflicting and expired values last with alphabetical ties", () => {
-  for (const key of ["signup", "gift", "cash"]) {
-    const sortable = (name, sortValue, validUntil = now + 1000) => ({ name, [key]: { sortValue, validUntil } });
-    const items = [sortable("Unknown", null), sortable("Expired", 100, now - 1),
-      sortable("Zulu", 2), sortable("Alpha", 2), sortable("Beta", 1), sortable("Conflict", null)];
-    const sorted = direction => [...items].sort((a, b) => compareOperators(a, b, key, direction, now)).map(item => item.name);
-    assert.deepEqual(sorted("asc"), ["Beta", "Alpha", "Zulu", "Conflict", "Expired", "Unknown"]);
-    assert.deepEqual(sorted("desc"), ["Alpha", "Zulu", "Beta", "Conflict", "Expired", "Unknown"]);
-    assert.equal(compareOperators(sortable("Alpha", 0), sortable("Beta", 1), key, "asc", now), -1);
-  }
-  const names = [{ name: "Zulu" }, { name: "Alpha" }];
-  assert.deepEqual([...names].sort((a, b) => compareOperators(a, b, "name", "asc", now)).map(item => item.name), ["Alpha", "Zulu"]);
-  assert.deepEqual([...names].sort((a, b) => compareOperators(a, b, "name", "desc", now)).map(item => item.name), ["Alpha", "Zulu"]);
-});
-
-test("published ten-operator fixture keeps every record, history event and export unchanged", () => {
+test("saved snapshots populate all three metrics without empty operators", () => {
   const numeric = JSON.parse(readFileSync("src/_data/numeric.json", "utf8"));
-  const monitor = JSON.parse(readFileSync("src/_data/monitor.json", "utf8"));
-  const original = JSON.stringify(numeric);
-  const rows = comparisonRows(numeric, monitor, Date.parse(numeric.lastSuccessfulRefresh) + 60000);
-  assert.equal(rows.length, 10);
-  assert.deepEqual(eligibleSorts(rows, Date.parse(numeric.lastSuccessfulRefresh) + 60000).map(sort => sort.key),
-    ["signup", "gift", "cash"]);
-  assert.deepEqual(rows.slice(0, 2).map(item => item.slug), ["mcluck", "wow-vegas"]);
-  for (const item of rows) {
-    const source = numeric.operators.find(op => op.slug === item.slug);
-    assert.deepEqual(item.records.map(r => r.id), source.records.map(r => r.id));
-    assert.equal(item.history.length, monitor.events.filter(event => event.operator === item.slug).length);
-    assert.deepEqual(item.coverage, source.coverage);
-    assert.deepEqual(item.unknowns, source.unknowns);
-    assert.deepEqual(JSON.parse(item.publicRecords), source.records);
-    assert.ok(item.records.filter(r => r.reviewStatus === "automated_unreviewed").every(r => r.reviewLabel === "automated unreviewed"));
-  }
-  assert.match(rows.find(item => item.slug === "yay-casino").signup.explanation, /Conflicting/);
-  assert.equal(rows.find(item => item.slug === "wow-vegas").signup.sortValue, 2);
-  assert.equal(rows.find(item => item.slug === "mcluck").signup.sortValue, 2.5);
-  assert.equal(rows.find(item => item.slug === "wow-vegas").purchase.text, "Multiple offers");
-  assert.equal(rows.find(item => item.slug === "wow-vegas").purchase.packages[0].text, "$9.99 USD / 30 SC immediate");
-  assert.equal(rows.find(item => item.slug === "wow-vegas").cash.sortValue, 50);
-  assert.equal(rows.find(item => item.slug === "chumba").cash.sortValue, 100);
-  assert.equal(rows.find(item => item.slug === "chumba").gift.sortValue, 10);
-  assert.equal(rows.find(item => item.slug === "lucky-bunny").checked.sortValue, null);
-  assert.equal(JSON.stringify(numeric), original);
-});
-
-test("saved cash corrections are exact, immutable and never override freshness", () => {
-  const numeric = JSON.parse(readFileSync("src/_data/numeric.json", "utf8"));
-  const corrected = numeric.operators.flatMap(operator => operator.records)
-    .filter(record => comparisonRecord(record) !== record);
-  assert.equal(corrected.length, 4);
-  for (const original of corrected) {
-    const before = JSON.stringify(original);
-    const result = comparisonRecord(Object.freeze(original));
-    assert.equal(result.method, "cash");
-    assert.match(result.methodCorrection, /Original extraction metadata is preserved/);
-    assert.equal(JSON.stringify(original), before);
-    for (const change of [{ value: 999 }, { conditions: ["Changed"] }, { sourceUrl: "https://example.com" },
-      { id: "new" }, { lastConfirmedAt: capture }, { freshness: "not_reconfirmed" }, { reviewStatus: "unresolved" }]) {
-      const changed = { ...original, ...change };
-      assert.equal(comparisonRecord(changed), changed);
-    }
-    const time = Date.parse(original.freshness === "reconfirmed" ? original.lastConfirmedAt : original.capturedAt);
-    const boundary = time + 36 * 3600000;
-    const rowsAt = at => comparisonRows({ operators: [operator([original])] }, {}, at)[0];
-    assert.equal(rowsAt(boundary).cash.sortValue, original.value);
-    assert.equal(rowsAt(boundary + 1).cash.sortValue, null);
-    assert.equal(rowsAt(time - 1).cash.sortValue, null);
-  }
-  const ambiguous = minimum({ method: "unspecified", basis: "Cash Prize Redemption option" });
-  assert.equal(comparisonRecord(ambiguous), ambiguous);
-  assert.equal(row([ambiguous]).cash.symbol, "?");
-});
-
-test("method unit and scope checks apply independently to cash and gift cards", () => {
-  const rows = comparisonRows({ operators: [
-    operator([minimum(), minimum({ method: "gift_card", value: 10 })], { name: "Alpha" }),
-    operator([minimum({ value: 50 }), minimum({ method: "gift_card", unit: "USD", value: 5 })], { name: "Beta" }),
-  ] }, {}, now);
-  assert.deepEqual(eligibleSorts(rows, now).map(sort => sort.key), ["cash"]);
-  assert.ok(rows.every(item => item.gift.symbol === "?" && item.gift.sortValue === null));
-  assert.ok(rows.every(item => item.cash.sortValue !== null));
-  for (const fields of [{ states: ["Florida"] }, { scope: "VIP" }, { unit: "EUR" },
-    { unit: "gold_coins" }, { value: null }, { conflict: "Source disagreement" }]) {
-    const item = row([minimum({ method: "gift_card", ...fields })]);
-    assert.equal(item.gift.symbol, "?");
-    assert.equal(item.gift.sortValue, null);
+  const result = comparisonSections(numeric, now);
+  assert.deepEqual(result.map(section => section.groups.map(group => group.rows.length)), [[3], [2], [2, 2]]);
+  const find = (section, slug, group = 0) => result[section].groups[group].rows.find(row => row.slug === slug);
+  assert.equal(find(0, "mcluck").value, "2.5 SC");
+  assert.equal(find(0, "yay-casino").value, "12 SC");
+  assert.doesNotMatch(find(0, "yay-casino").note, /No purchase|free/i);
+  assert.equal(find(0, "wow-vegas").value, "5 SC total");
+  assert.match(find(0, "wow-vegas").note, /2 SC immediate; total over 3 days/);
+  assert.equal(find(1, "wow-vegas").value, "$9.99 / 30 SC");
+  assert.equal(find(1, "wow-vegas").promoCode, null);
+  assert.equal(find(1, "zonko").value, "$20 / 40 SC");
+  assert.ok(find(1, "zonko").conditions.some(condition => condition.includes("8 days")));
+  assert.equal(find(2, "chumba").value, "100 SC");
+  assert.equal(find(2, "chumba", 1).value, "10 SC");
+  assert.equal(find(2, "wow-vegas").value, "50 SC");
+  assert.equal(find(2, "wow-vegas", 1).value, "20 SC");
+  for (const section of result) for (const group of section.groups) {
+    assert.deepEqual(group.rows.map(row => row.name), group.rows.map(row => row.name).sort((a, b) => a.localeCompare(b, "en")));
+    assert.ok(group.rows.every(row => row.value && !row.value.includes("?") && row.sourceUrl && row.observedAt));
   }
 });
 
-test("current signup scope and missing amounts cannot leak into summaries", () => {
-  for (const fields of [{ states: ["Florida"] }, { scope: "VIP" }, { purchaseRequired: true }]) {
-    const item = row([record(fields)]);
-    assert.equal(item.signup.symbol, "?");
-    assert.equal(item.signup.sortValue, null);
-  }
-  assert.equal(row([record(), record({ immediateSc: null })]).signup.symbol, "?");
-  assert.equal(row([record(), record({ immediateSc: 99, freshness: "not_reconfirmed" })]).signup.sortValue, 2);
-  assert.equal(row([record({ immediateSc: null, totalSc: null, conditions: ["Get 50 SC now"] })]).signup.symbol, "?");
+test("conflicting sources choose the higher welcome total and retain its conditions", () => {
+  const conditions = ["Verify email", "Claim over three days"];
+  const chosen = rows([record({ immediateSc: 8, totalSc: 8 }),
+    record({ sourceUrl: "https://example.com/home", immediateSc: 4, totalSc: 12,
+      durationDays: 3, conditions, reviewStatus: "unresolved", conflict: "Different ads" })])[0];
+  assert.equal(chosen.value, "12 SC total");
+  assert.match(chosen.note, /4 SC immediate; total over 3 days/);
+  assert.deepEqual(chosen.conditions, conditions);
 });
 
-test("sort eligibility, fallback priority, zero, ties, expiry and alphabetical default", () => {
-  const field = (sortValue, unit = "SC", validUntil = now) => ({ sortValue, unit, validUntil });
-  const alpha = { name: "Alpha", signup: field(2), gift: field(10), cash: field(100) };
-  const beta = { name: "Beta", signup: field(5), gift: field(20), cash: field(50) };
-  const unknown = { name: "Unknown" };
-  assert.deepEqual(eligibleSorts([alpha], now), []);
-  assert.deepEqual(eligibleSorts([alpha, beta], now).map(sort => sort.key), ["signup", "gift", "cash"]);
-  assert.deepEqual(defaultOrder([alpha, beta, unknown], now).map(item => item.name), ["Beta", "Alpha", "Unknown"]);
-  assert.deepEqual(eligibleSorts([alpha, beta], now + 1), []);
-  assert.deepEqual(defaultOrder([unknown, beta, alpha], now + 1).map(item => item.name), ["Alpha", "Beta", "Unknown"]);
-  beta.signup.sortValue = null;
-  assert.equal(eligibleSorts([alpha, beta], now)[0].key, "gift");
-  assert.deepEqual(defaultOrder([beta, alpha], now).map(item => item.name), ["Alpha", "Beta"]);
-  beta.gift.sortValue = null;
-  assert.equal(eligibleSorts([alpha, beta], now)[0].key, "cash");
-  beta.cash.sortValue = null;
-  assert.deepEqual(eligibleSorts([alpha, beta], now), []);
-  beta.cash = field(0);
-  assert.equal(eligibleSorts([alpha, beta], now)[0].key, "cash");
-  alpha.cash.sortValue = 0;
-  assert.deepEqual(defaultOrder([beta, alpha], now).map(item => item.name), ["Alpha", "Beta"]);
+test("latest source snapshot supersedes older higher values and old promo codes", () => {
+  const old = record({ capturedAt: "2026-09-11T12:00:00Z", totalSc: 50, promoCode: "OLD" });
+  assert.equal(rows([old, record()])[0].value, "2 SC");
+  assert.equal(rows([old, record({ immediateSc: null, totalSc: null })]).length, 0);
+  assert.equal(rows([old, record({ states: ["FL"] })]).length, 0);
+  assert.equal(rows([old, record()])[0].promoCode, undefined);
 });
 
-test("entertainment amounts are inapplicable and purchases never become price rankings", () => {
-  const records = [record(), minimum(), minimum({ method: "gift_card" }),
-    record({ kind: "first_purchase", priceUsd: 10 })];
-  const entertainment = row(records, { productMode: "entertainment_only" });
-  for (const key of ["signup", "purchase", "cash", "gift"]) {
-    assert.equal(entertainment[key].symbol, "cross");
-    assert.equal(entertainment[key].sortValue, null);
-    assert.match(entertainment[key].explanation, /Entertainment/);
+test("observation dates survive failed refreshes and do not expire after 36 hours", () => {
+  const saved = record({ capturedAt: "2026-09-01T12:00:00Z", freshness: "not_reconfirmed" });
+  assert.equal(rows([saved])[0].observedAt, saved.capturedAt);
+  assert.equal(rows([record({ lastConfirmedAt: "2026-09-14T12:00:00Z" })])[0].observedAt, "2026-09-14T12:00:00Z");
+});
+
+test("purchase comparison selects complete packages by immediate SC per dollar", () => {
+  const pack = fields => record({ kind: "first_purchase", ...fields });
+  const chosen = rows([
+    pack({ priceUsd: 20, immediateSc: 40, totalSc: 200 }),
+    pack({ priceUsd: 10, immediateSc: 30, totalSc: 30, promoCode: "NEW" }),
+    pack({ priceUsd: null, immediateSc: 1000 }),
+    pack({ priceUsd: 1, immediateSc: null }),
+  ], 1)[0];
+  assert.equal(chosen.value, "$10 / 30 SC");
+  assert.equal(chosen.promoCode, "NEW");
+  assert.equal(rows([pack({ priceUsd: 1, immediateSc: null }), pack({ priceUsd: null, immediateSc: 30 })], 1).length, 0);
+  assert.equal(rows([pack({ priceUsd: 0, immediateSc: 30 })], 1).length, 0);
+});
+
+test("minimums choose the lowest supported amount within each explicit SC method", () => {
+  const result = sections([fact({ value: 100 }), fact({ value: 50 }),
+    fact({ value: 10, method: "gift_card" }), fact({ value: 1, unit: "USD" }),
+    fact({ value: 2, method: "general" }), fact({ value: 3, upperValue: 99 }),
+    fact({ value: 4, comparison: "up_to" }), fact({ value: 5, states: ["FL"] })]);
+  assert.equal(result[2].groups[0].rows[0].value, "50 SC");
+  assert.equal(result[2].groups[1].rows[0].value, "10 SC");
+});
+
+test("changed method does not resurrect a superseded cash claim", () => {
+  assert.equal(rows([fact({ capturedAt: "2026-09-11T12:00:00Z" }), fact({ method: "general" })], 2).length, 0);
+});
+
+test("totals do not become immediate coins; purchase requirements remain visible", () => {
+  assert.equal(rows([record({ immediateSc: null, totalSc: 5 })])[0].note, "Advertised total");
+  assert.match(rows([record({ purchaseRequired: true })])[0].note, /Purchase required/);
+  assert.match(rows([record({ purchaseRequired: false })])[0].note, /No purchase needed/);
+  assert.equal(rows([record({ immediateSc: 10, totalSc: 5 })]).length, 0);
+});
+
+test("invalid dates, sources, amounts, scoped claims and entertainment-only products are excluded", () => {
+  for (const fields of [{ capturedAt: "invalid" }, { capturedAt: "2026-09-16T00:00:00Z" },
+    { sourceUrl: "" }, { sourceUrl: "javascript:alert(1)" }, { immediateSc: null, totalSc: null },
+    { totalSc: NaN, immediateSc: -1 }, { states: ["FL"] }, { scope: "vip" }]) {
+    assert.equal(rows([record(fields)]).length, 0, JSON.stringify(fields));
   }
-  assert.equal(row([record({ kind: "first_purchase", priceUsd: 10, immediateSc: null })]).purchase.parts[2].symbol, "?");
-  assert.equal(row([record({ kind: "first_purchase", priceUsd: null })]).purchase.parts[0].symbol, "?");
-  const purchases = comparisonRows({ operators: [
-    operator([record({ kind: "first_purchase", priceUsd: 99 })], { name: "Alpha" }),
-    operator([record({ kind: "first_purchase", priceUsd: 1 })], { name: "Beta" }),
-  ] }, {}, now);
-  assert.deepEqual(eligibleSorts(purchases, now), []);
-  assert.deepEqual(purchases.map(item => item.name), ["Alpha", "Beta"]);
+  const result = comparisonSections({ operators: [operator([record()], { productMode: "entertainment_only" })] }, now);
+  assert.ok(result.every(section => section.groups.every(group => group.rows.length === 0)));
+  assert.ok(comparisonSections(undefined).every(section => section.groups.every(group => group.rows.length === 0)));
 });
