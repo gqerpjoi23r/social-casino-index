@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-16 - Player-value answers and visibility topics
+- Add source-linked, dated answers for redemption minimums, free signup timing, purchase budgets and two direct comparisons to both benchmark pages.
+- Generate answers from the same saved numeric records as the three metrics. Preserve cash versus gift cards, immediate versus staged coins, and all data exports.
+- Add eight Lovd visibility prompts in four topics without replacing the existing monitoring baseline. These measure visibility; they do not establish indexing or ranking gains.
+
 ## 2026-09-15 - Three numeric comparisons, less display machinery
 - Replace ten partially empty cards with welcome SC, first-purchase value, and method-specific redemption comparisons. Include only supported numeric entries, with observed dates and expandable conditions.
 - Choose player-beneficial amounts from the latest saved snapshot per source and category. Keep staged totals distinct from immediate SC; never combine incomplete purchase packages or guess redemption methods.

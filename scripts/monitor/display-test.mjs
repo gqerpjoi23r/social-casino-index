@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { comparisonSections } from "../../src/updates/updates.11tydata.js";
+import { comparisonSections, playerAnswers } from "../../src/updates/updates.11tydata.js";
 
 const now = Date.parse("2026-09-15T12:00:00Z");
 const record = (fields = {}) => ({
@@ -18,12 +18,12 @@ const fact = fields => record({
 
 test("saved snapshots populate all three metrics without empty operators", () => {
   const numeric = JSON.parse(readFileSync("src/_data/numeric.json", "utf8"));
-  const result = comparisonSections(numeric, now);
+  const result = comparisonSections(numeric, Date.parse(numeric.lastSuccessfulRefresh));
   assert.deepEqual(result.map(section => section.groups.map(group => group.rows.length)), [[3], [2], [2, 2]]);
   const find = (section, slug, group = 0) => result[section].groups[group].rows.find(row => row.slug === slug);
   assert.equal(find(0, "mcluck").value, "2.5 SC");
   assert.equal(find(0, "yay-casino").value, "12 SC");
-  assert.doesNotMatch(find(0, "yay-casino").note, /No purchase|free/i);
+  assert.match(find(0, "yay-casino").note, /No purchase needed/);
   assert.equal(find(0, "wow-vegas").value, "5 SC total");
   assert.match(find(0, "wow-vegas").note, /2 SC immediate; total over 3 days/);
   assert.equal(find(1, "wow-vegas").value, "$9.99 / 30 SC");
@@ -38,6 +38,34 @@ test("saved snapshots populate all three metrics without empty operators", () =>
     assert.deepEqual(group.rows.map(row => row.name), group.rows.map(row => row.name).sort((a, b) => a.localeCompare(b, "en")));
     assert.ok(group.rows.every(row => row.value && !row.value.includes("?") && row.sourceUrl && row.observedAt));
   }
+});
+
+test("player answers preserve methods, stages and source dates without inventing missing pair metrics", () => {
+  const numeric = JSON.parse(readFileSync("src/_data/numeric.json", "utf8"));
+  const answers = playerAnswers(numeric, Date.parse(numeric.lastSuccessfulRefresh));
+  const text = id => answers.find(group => group.id === id).rows.map(row => row.text).join(" ");
+  assert.match(text("low-redemption"), /50 SC cash/);
+  assert.match(text("low-redemption"), /10 SC.*gift-card threshold/);
+  assert.match(text("free-signup"), /5 SC total.*2 SC immediate; total over 3 days/);
+  assert.match(text("purchase-value"), /\$9.99 includes 30 immediate SC/);
+  assert.match(text("purchase-value"), /3 SC per dollar|3 immediate SC per dollar/);
+  assert.doesNotMatch(text("compare-mcluck"), /cash redemption/i);
+  assert.match(text("compare-chumba"), /50 SC.*100 SC/);
+  assert.ok(answers.every(group => group.rows.every(row => row.sourceUrl && row.observedAt)));
+  assert.deepEqual(playerAnswers(undefined, now), []);
+});
+
+test("budget answers find affordable packages even when a larger package has a better ratio", () => {
+  const numeric = { operators: [operator([
+    record({ kind: "first_purchase", priceUsd: 20, immediateSc: 100 }),
+    record({ kind: "first_purchase", priceUsd: 9, immediateSc: 18 }),
+    record({ purchaseRequired: null }),
+  ])] };
+  const answers = playerAnswers(numeric, now);
+  assert.ok(!answers.some(group => group.id === "free-signup"));
+  const text = answers.find(group => group.id === "purchase-value").rows.map(row => row.text).join(" ");
+  assert.match(text, /\$9 includes 18 immediate SC/);
+  assert.match(text, /5 immediate SC per dollar on its \$20 package/);
 });
 
 test("conflicting sources choose the higher welcome total and retain its conditions", () => {
