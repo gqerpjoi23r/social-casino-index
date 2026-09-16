@@ -1,69 +1,69 @@
 {
   "schemaVersion": 1,
-  "lastAttemptedAt": "2026-09-12T06:30:00.683Z",
-  "lastReadableRunAt": "2026-09-12T06:30:00.683Z",
+  "lastAttemptedAt": "2026-09-16T06:32:30.423Z",
+  "lastReadableRunAt": "2026-09-16T06:32:30.423Z",
   "summary": {
-    "id": "2026-09-12T06-30-00-683Z-34678248454-1",
-    "observedAt": "2026-09-12T06:30:00.683Z",
+    "id": "2026-09-16T06-32-30-423Z-35064136339-1",
+    "observedAt": "2026-09-16T06:32:30.423Z",
     "extractorVersion": "1.1.1",
-    "githubRunUrl": "https://github.com/gqerpjoi23r/social-casino-index/actions/runs/34678248454",
+    "githubRunUrl": "https://github.com/gqerpjoi23r/social-casino-index/actions/runs/35064136339",
     "metrics": {
       "attempted": 38,
-      "readable": 34,
-      "failed": 4,
-      "deterministicFields": 12,
+      "readable": 36,
+      "failed": 2,
+      "deterministicFields": 10,
       "modelFields": 0,
-      "cached": 23
+      "cached": 26
     },
     "operators": 10,
-    "coveredFields": 48,
+    "coveredFields": 49,
     "totalFields": 80,
-    "changes": 0,
+    "changes": 2,
     "baselines": 0,
     "providerCalls": {
       "direct": 38,
-      "firecrawl": 26,
+      "firecrawl": 25,
       "brightdata": 0,
       "model": 0
     },
-    "firecrawlCreditsReported": 25,
-    "firecrawlResponsesWithCredits": 25
+    "firecrawlCreditsReported": 24,
+    "firecrawlResponsesWithCredits": 24
   },
   "operators": [
     {
       "slug": "jackpota",
       "name": "Jackpota",
       "productMode": "entertainment_only",
-      "checkedAt": "2026-09-12T06:30:00.683Z",
+      "checkedAt": "2026-09-16T06:32:30.423Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "purchase": {
           "label": "Public purchase packages",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -71,7 +71,7 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -79,7 +79,7 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -87,16 +87,16 @@
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         }
@@ -106,7 +106,7 @@
           "id": "jackpota-home",
           "url": "https://www.jackpota.com/",
           "finalUrl": "https://www.jackpota.com/",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "homepage",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -129,7 +129,7 @@
           "id": "jackpota-terms",
           "url": "https://www.jackpota.com/terms-of-service",
           "finalUrl": "https://www.jackpota.com/terms-of-service",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "terms_or_rules",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -152,7 +152,7 @@
           "id": "jackpota-packages",
           "url": "https://support.jackpota.com/hc/en-us/articles/12669339478812-Gold-Coin-Packages",
           "finalUrl": "https://support.jackpota.com/hc/en-us/articles/12669339478812-Gold-Coin-Packages",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "offer_or_rewards",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -175,7 +175,7 @@
           "id": "jackpota-promotions",
           "url": "https://www.jackpota.com/promotions",
           "finalUrl": "https://www.jackpota.com/promotions",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "promotions_index",
           "discoveredFrom": "jackpota-home",
           "offerCoverage": "not_established_by_readability",
@@ -200,12 +200,12 @@
       "slug": "lucky-bunny",
       "name": "Lucky Bunny",
       "productMode": "unverified",
-      "checkedAt": "2026-09-12T06:30:00.683Z",
+      "checkedAt": "2026-09-16T06:32:30.423Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -213,7 +213,7 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -221,7 +221,7 @@
         "purchase": {
           "label": "Public purchase packages",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -229,7 +229,7 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -237,7 +237,7 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -245,7 +245,7 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -253,7 +253,7 @@
         "verification": {
           "label": "Verification requirements",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -261,7 +261,7 @@
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -272,7 +272,7 @@
           "id": "lucky-bunny-home",
           "url": "https://luckybunny.fun/",
           "finalUrl": "https://luckybunny.fun/",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "homepage",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -288,7 +288,7 @@
               "status": "ok"
             }
           ],
-          "textHash": "f699b1984e3d41c100b656553f09b239e342ba0b357d7b3a5a4b1073ea183f5b",
+          "textHash": "6a648cc3db8dbe3d703743701bf763b254d6464425074205d8df3845d2d3a468",
           "extractor": "deterministic"
         }
       ]
@@ -297,28 +297,28 @@
       "slug": "yay-casino",
       "name": "YAY Casino",
       "productMode": "sweepstakes",
-      "checkedAt": "2026-09-12T06:30:00.683Z",
+      "checkedAt": "2026-09-16T06:32:30.423Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "purchase": {
           "label": "Public purchase packages",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -326,40 +326,40 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         }
@@ -369,7 +369,7 @@
           "id": "yay-home",
           "url": "https://www.yaycasino.com/",
           "finalUrl": "https://www.yaycasino.com/",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "homepage",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -388,7 +388,7 @@
           "id": "yay-promotions",
           "url": "https://www.yaycasino.com/promotions",
           "finalUrl": "https://www.yaycasino.com/promotions",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "offer_or_rewards",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -400,14 +400,14 @@
               "status": "ok"
             }
           ],
-          "textHash": "7b5a29e7e2e0d1b4a8aa0d1445faee10af4ee02ea470cbba79b7ae40bdce1702",
+          "textHash": "57e6bc4480dde0c99975b33c825008d38e4433e06c6071296fb9fb835e26269c",
           "extractor": "deterministic"
         },
         {
           "id": "yay-daily",
           "url": "https://www.yaycasino.com/promotions/promo/online-casino-daily-login-bonus",
           "finalUrl": "https://www.yaycasino.com/promotions/promo/online-casino-daily-login-bonus",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "offer_or_rewards",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -426,7 +426,7 @@
           "id": "yay-rules",
           "url": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
           "finalUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "terms_or_rules",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -445,7 +445,7 @@
           "id": "yay-redemption-guide",
           "url": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
           "finalUrl": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "redemption_help",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -464,7 +464,7 @@
           "id": "yay-signup",
           "url": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
           "finalUrl": "https://www.yaycasino.com/promotions",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "signup_offer",
           "discoveredFrom": "yay-promotions",
           "offerCoverage": "not_established_by_readability",
@@ -476,7 +476,7 @@
               "status": "ok"
             }
           ],
-          "textHash": "7b5a29e7e2e0d1b4a8aa0d1445faee10af4ee02ea470cbba79b7ae40bdce1702",
+          "textHash": "57e6bc4480dde0c99975b33c825008d38e4433e06c6071296fb9fb835e26269c",
           "extractor": "deterministic"
         }
       ]
@@ -485,12 +485,12 @@
       "slug": "dorados",
       "name": "Dorados",
       "productMode": "sweepstakes",
-      "checkedAt": "2026-09-12T06:30:00.683Z",
+      "checkedAt": "2026-09-16T06:32:30.423Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -498,15 +498,15 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "purchase": {
           "label": "Public purchase packages",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -514,40 +514,40 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         }
@@ -557,7 +557,7 @@
           "id": "dorados-home",
           "url": "https://dorados.com/en",
           "finalUrl": "https://dorados.com/en/",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "homepage",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -573,14 +573,14 @@
               "status": "ok"
             }
           ],
-          "textHash": "e9c87d99a34abbdcf2d5db98d0248cfeec1e01e2d5d8f262a8dfc31a1c64f245",
+          "textHash": "46d2b5db1d9cb6f4526fae7149458869e1029fbe00e6691ccb8e12cd56e66fc3",
           "extractor": "deterministic"
         },
         {
           "id": "dorados-rules",
           "url": "https://www.dorados.com/en/sweepstakes-rules",
           "finalUrl": "https://dorados.com/en/sweepstakes-rules",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "terms_or_rules",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -603,7 +603,7 @@
           "id": "dorados-welcome",
           "url": "https://dorados.com/en/help-centre/bonuses-and-promotions/is-there-a-welcome-offer-for-new-players",
           "finalUrl": "https://dorados.com/en/help-centre/bonuses-and-promotions/is-there-a-welcome-offer-for-new-players",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "offer_or_rewards",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -628,12 +628,12 @@
       "slug": "zonko",
       "name": "Zonko",
       "productMode": "unverified",
-      "checkedAt": "2026-09-12T06:30:00.683Z",
+      "checkedAt": "2026-09-16T06:32:30.423Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -641,23 +641,23 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "purchase": {
           "label": "Public purchase packages",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -665,7 +665,7 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -673,24 +673,24 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         }
@@ -700,7 +700,7 @@
           "id": "zonko-notice",
           "url": "https://www.zonko.com/help/faq/",
           "finalUrl": "https://www.zonko.com/help/faq/",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "support_or_availability",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -721,12 +721,12 @@
       "slug": "chumba",
       "name": "Chumba Casino",
       "productMode": "sweepstakes",
-      "checkedAt": "2026-09-12T06:30:00.683Z",
+      "checkedAt": "2026-09-16T06:32:30.423Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -734,15 +734,15 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "purchase": {
           "label": "Public purchase packages",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -750,7 +750,7 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -758,31 +758,31 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -793,7 +793,7 @@
           "id": "chumba-notice",
           "url": "https://www.chumbacasino.com/getting-started/redeem-prizes",
           "finalUrl": "https://www.chumbacasino.com/getting-started/redeem-prizes",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "support_or_availability",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -809,14 +809,14 @@
               "status": "ok"
             }
           ],
-          "textHash": "d62c8159c75afef2635c2e3462fa734908693202678da7c577a58414bdb3f9ff",
+          "textHash": "b22f4a625e43e131ea3b835715c5d7db7ee0325c3809397ba098b9b25d95ec4b",
           "extractor": "deterministic"
         },
         {
           "id": "chumba-home",
           "url": "https://www.chumbacasino.com/",
           "finalUrl": "https://www.chumbacasino.com/",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "homepage",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -832,14 +832,14 @@
               "status": "ok"
             }
           ],
-          "textHash": "3f80be3cbacceb04d931dac8c79ced9c98b9cae8d32f3d3018c9e800b6e34c48",
+          "textHash": "351a71dfe1e7a3402a9d23cc96d108e2558691f75e326bcabef9d14e62cd6d40",
           "extractor": "deterministic"
         },
         {
           "id": "chumba-redeem",
           "url": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
           "finalUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "redemption_help",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -862,7 +862,7 @@
           "id": "chumba-rules",
           "url": "https://www.chumbacasino.com/sweeps-rules",
           "finalUrl": "https://www.chumbacasino.com/sweeps-rules",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "sweepstakes_rules",
           "discoveredFrom": "chumba-home",
           "offerCoverage": "not_established_by_readability",
@@ -886,28 +886,28 @@
       "slug": "pulsz",
       "name": "Pulsz",
       "productMode": "unverified",
-      "checkedAt": "2026-09-12T06:30:00.683Z",
+      "checkedAt": "2026-09-16T06:32:30.423Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "purchase": {
           "label": "Public purchase packages",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -915,7 +915,7 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -923,7 +923,7 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -931,24 +931,24 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         }
@@ -958,7 +958,7 @@
           "id": "pulsz-terms",
           "url": "https://www.pulsz.com/terms-of-use",
           "finalUrl": "https://www.pulsz.com/terms-of-use",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "terms_or_rules",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -981,7 +981,7 @@
           "id": "pulsz-home",
           "url": "https://www.pulsz.com/",
           "finalUrl": "https://www.pulsz.com/",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "homepage",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1004,7 +1004,7 @@
           "id": "pulsz-bank",
           "url": "https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking",
           "finalUrl": "https://support.pulsz.com/hc/en-us/articles/24820788909457-How-do-I-redeem-using-Online-Banking",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "redemption_help",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1027,7 +1027,7 @@
           "id": "pulsz-gift",
           "url": "https://support.pulsz.com/hc/en-us/articles/24820902593169-How-do-I-redeem-via-Gift-Card",
           "finalUrl": "https://support.pulsz.com/hc/en-us/articles/24820902593169-How-do-I-redeem-via-Gift-Card",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "redemption_help",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1052,12 +1052,12 @@
       "slug": "stake-us",
       "name": "Stake.us",
       "productMode": "sweepstakes",
-      "checkedAt": "2026-09-12T06:30:00.683Z",
+      "checkedAt": "2026-09-16T06:32:30.423Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1065,15 +1065,15 @@
         "daily": {
           "label": "Recurring daily reward",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "purchase": {
           "label": "Public purchase packages",
           "status": "stale",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": "2026-09-10T16:19:55.046Z",
           "quotes": [],
           "note": "Previous evidence retained; not confirmed in this run."
@@ -1081,40 +1081,40 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         }
@@ -1124,7 +1124,7 @@
           "id": "stake-redeem",
           "url": "https://help.stake.us/en/articles/6453222-redeeming-rewards",
           "finalUrl": "https://help.stake.us/en/articles/6453222-redeeming-rewards",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "redemption_help",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1143,7 +1143,7 @@
           "id": "stake-coins",
           "url": "https://help.stake.us/en/articles/6389246-sweep-coins-stake-cash",
           "finalUrl": "https://help.stake.us/en/articles/6389246-sweep-coins-stake-cash",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "support_or_availability",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1162,7 +1162,7 @@
           "id": "stake-rollover",
           "url": "https://help.stake.us/en/articles/6465093-redemption-progress",
           "finalUrl": "https://help.stake.us/en/articles/6465093-redemption-progress",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "terms_or_rules",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1181,7 +1181,7 @@
           "id": "stake-terms",
           "url": "https://stake.us/policies/terms",
           "finalUrl": "https://stake.us/policies/terms",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "terms_or_rules",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1206,20 +1206,20 @@
       "slug": "wow-vegas",
       "name": "WOW Vegas",
       "productMode": "sweepstakes",
-      "checkedAt": "2026-09-12T06:30:00.683Z",
+      "checkedAt": "2026-09-16T06:32:30.423Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "daily": {
           "label": "Recurring daily reward",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1227,15 +1227,15 @@
         "purchase": {
           "label": "Public purchase packages",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1243,32 +1243,32 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "verification": {
           "label": "Verification requirements",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         }
@@ -1278,7 +1278,7 @@
           "id": "wow-signup",
           "url": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
           "finalUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "offer_or_rewards",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1297,7 +1297,7 @@
           "id": "wow-promo",
           "url": "https://www.wowvegas.com/promo-code",
           "finalUrl": "https://www.wowvegas.com/promo-code",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "offer_or_rewards",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1316,7 +1316,7 @@
           "id": "wow-redeem",
           "url": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
           "finalUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "redemption_help",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1335,7 +1335,7 @@
           "id": "wow-terms",
           "url": "https://www.wowvegas.com/terms-and-conditions",
           "finalUrl": "https://www.wowvegas.com/terms-and-conditions",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "terms_or_rules",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1358,7 +1358,7 @@
           "id": "wow-rules",
           "url": "https://www.wowvegas.com/sc-game-rules",
           "finalUrl": "https://www.wowvegas.com/login?redirect=/sc-game-rules",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "terms_or_rules",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1381,28 +1381,28 @@
       "slug": "mcluck",
       "name": "McLuck",
       "productMode": "unverified",
-      "checkedAt": "2026-09-12T06:30:00.683Z",
+      "checkedAt": "2026-09-16T06:32:30.423Z",
       "fields": {
         "welcome": {
           "label": "Welcome offer",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "daily": {
           "label": "Recurring daily reward",
-          "status": "partial",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "status": "observed",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
-          "note": "Some previously supporting sources were not reconfirmed."
+          "note": "Operator source passages, not independently verified outcomes."
         },
         "purchase": {
           "label": "Public purchase packages",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1410,7 +1410,7 @@
         "playthrough": {
           "label": "Playthrough",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1418,7 +1418,7 @@
         "minimum": {
           "label": "Redemption minimums and caps",
           "status": "unavailable",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "lastObservedAt": null,
           "quotes": [],
           "note": "No supported passage collected. This does not mean the feature is absent."
@@ -1426,24 +1426,24 @@
         "timing": {
           "label": "Published redemption timing and methods",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         },
         "verification": {
           "label": "Verification requirements",
-          "status": "stale",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-10T16:23:45.610Z",
+          "status": "observed",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
-          "note": "Previous evidence retained; not confirmed in this run."
+          "note": "Operator source passages, not independently verified outcomes."
         },
         "restrictions": {
           "label": "Operator-stated restrictions",
           "status": "observed",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
-          "lastObservedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
+          "lastObservedAt": "2026-09-16T06:32:30.423Z",
           "quotes": [],
           "note": "Operator source passages, not independently verified outcomes."
         }
@@ -1453,12 +1453,12 @@
           "id": "mcluck-notice",
           "url": "https://www.mcluck.com/terms-of-service",
           "finalUrl": "https://www.mcluck.com/terms-of-service",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "support_or_availability",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
-          "status": "blocked",
-          "provider": null,
+          "status": "ok",
+          "provider": "firecrawl",
           "attempts": [
             {
               "provider": "direct",
@@ -1466,15 +1466,17 @@
             },
             {
               "provider": "firecrawl",
-              "status": "blocked"
+              "status": "ok"
             }
-          ]
+          ],
+          "textHash": "d6f9cd88d7ede2dcad3ce43c107308ca0fe8b2dd32890bb13529c14ceb7eb578",
+          "extractor": "deterministic"
         },
         {
           "id": "mcluck-home",
           "url": "https://www.mcluck.com/",
           "finalUrl": "https://www.mcluck.com/",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "homepage",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1490,14 +1492,14 @@
               "status": "ok"
             }
           ],
-          "textHash": "7e95dc0b5b6e5250a32cc93fb5e3e986c76ec95d64b34dc3315bd2c9f9e09d58",
+          "textHash": "bc2fcf61b5e02f71aac4aecb0fcad1ff4847a5468af983c472a5e1f4ab374235",
           "extractor": "deterministic"
         },
         {
           "id": "mcluck-support",
           "url": "https://support.mcluck.com/hc/en-us",
           "finalUrl": "https://support.mcluck.com/hc/en-us",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "support_or_availability",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1513,14 +1515,14 @@
               "status": "ok"
             }
           ],
-          "textHash": "99496d7dec8138ad65457413422605ac336bee41ff20b772de5ed16bd001e8f1",
+          "textHash": "ca4caf845c25ff995f8c01e725304d1bd4aac233b0dfbd30b829349eb520783e",
           "extractor": "deterministic"
         },
         {
           "id": "mcluck-welcome",
           "url": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
           "finalUrl": "https://support.mcluck.com/hc/en-us/articles/9182773849885-What-is-the-welcome-rewards-for-new-players",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "offer_or_rewards",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1543,7 +1545,7 @@
           "id": "mcluck-eligibility",
           "url": "https://support.mcluck.com/hc/en-us/articles/38182149192221-Why-am-I-not-eligible-for-a-promotion",
           "finalUrl": "https://support.mcluck.com/hc/en-us/articles/38182149192221-Why-am-I-not-eligible-for-a-promotion",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "support_or_availability",
           "discoveredFrom": null,
           "offerCoverage": "not_established_by_readability",
@@ -1559,19 +1561,19 @@
               "status": "ok"
             }
           ],
-          "textHash": "8c10f96e6e7521b66f2ca858c7387bbe56cece3fc2a681f7660e03bc7d42720d",
+          "textHash": "08aafdbfe1ca4753d9549f8b0841e0f2febfb614006a61ef2fdab715d716a29c",
           "extractor": "deterministic"
         },
         {
           "id": "mcluck-promotions",
           "url": "https://www.mcluck.com/promotions",
           "finalUrl": "https://www.mcluck.com/promotions",
-          "checkedAt": "2026-09-12T06:30:00.683Z",
+          "checkedAt": "2026-09-16T06:32:30.423Z",
           "purpose": "promotions_index",
           "discoveredFrom": "mcluck-home",
           "offerCoverage": "not_established_by_readability",
-          "status": "blocked",
-          "provider": null,
+          "status": "ok",
+          "provider": "firecrawl",
           "attempts": [
             {
               "provider": "direct",
@@ -1579,13 +1581,11 @@
             },
             {
               "provider": "firecrawl",
-              "status": "blocked"
-            },
-            {
-              "provider": "firecrawl",
-              "status": "blocked"
+              "status": "ok"
             }
-          ]
+          ],
+          "textHash": "951012880c39f5386a6afa891b69cf2230de5f9b970933bfe42d0ddbb9f28298",
+          "extractor": "deterministic"
         }
       ]
     }
@@ -1924,6 +1924,24 @@
     }
   ],
   "events": [
+    {
+      "operator": "mcluck",
+      "field": "daily",
+      "label": "Recurring daily reward",
+      "type": "source_wording_changed",
+      "observedAt": "2026-09-16T06:32:30.423Z",
+      "before": [],
+      "after": []
+    },
+    {
+      "operator": "mcluck",
+      "field": "restrictions",
+      "label": "Operator-stated restrictions",
+      "type": "source_wording_changed",
+      "observedAt": "2026-09-16T06:32:30.423Z",
+      "before": [],
+      "after": []
+    },
     {
       "operator": "yay-casino",
       "field": "welcome",
@@ -2494,6 +2512,33 @@
   ],
   "runs": [
     {
+      "id": "2026-09-16T06-32-30-423Z-35064136339-1",
+      "observedAt": "2026-09-16T06:32:30.423Z",
+      "extractorVersion": "1.1.1",
+      "githubRunUrl": "https://github.com/gqerpjoi23r/social-casino-index/actions/runs/35064136339",
+      "metrics": {
+        "attempted": 38,
+        "readable": 36,
+        "failed": 2,
+        "deterministicFields": 10,
+        "modelFields": 0,
+        "cached": 26
+      },
+      "operators": 10,
+      "coveredFields": 49,
+      "totalFields": 80,
+      "changes": 2,
+      "baselines": 0,
+      "providerCalls": {
+        "direct": 38,
+        "firecrawl": 25,
+        "brightdata": 0,
+        "model": 0
+      },
+      "firecrawlCreditsReported": 24,
+      "firecrawlResponsesWithCredits": 24
+    },
+    {
       "id": "2026-09-12T06-30-00-683Z-34678248454-1",
       "observedAt": "2026-09-12T06:30:00.683Z",
       "extractorVersion": "1.1.1",
@@ -2624,8 +2669,8 @@
     }
   ],
   "publication": {
-    "runId": "2026-09-12T06-30-00-683Z-34678248454-1",
-    "lastSuccessfulRefresh": "2026-09-12T06:37:40.242Z",
+    "runId": "2026-09-16T06-32-30-423Z-35064136339-1",
+    "lastSuccessfulRefresh": "2026-09-16T06:39:12.223Z",
     "staleAfterHours": 36
   }
 }
