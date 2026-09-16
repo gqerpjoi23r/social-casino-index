@@ -69,6 +69,25 @@ try {
     }
     for (const width of [320, 390, 768, 1024, 1440]) {
       await page.setViewportSize({ width, height: 900 });
+      if (path === "/") {
+        await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
+        assert.match(await page.locator("#compare-heading").innerText(), /signup bonuses, purchase value and cash-out minimums/);
+        assert.equal(await page.locator(".benchmark-intro a[href='/methodology/']").count(), 1);
+        assert.equal(await page.locator("#latest-guides-heading, #choose-heading, main .hero-bg").count(), 0);
+        const firstAmount = await page.locator(".benchmark-value").first().boundingBox();
+        assert.ok(firstAmount.y + firstAmount.height < 900, `First amount must be above the fold at ${width}px`);
+        assert.deepEqual(await page.locator(".benchmark-jumps a").allTextContents().then(labels => labels.map(label => label.trim())),
+          ["Signup bonuses", "Purchase offers", "Redemption minimums"]);
+        for (const link of await page.locator(".benchmark-jumps a").all()) {
+          const href = await link.getAttribute("href");
+          await link.click();
+          await page.waitForFunction(href => {
+            const target = document.querySelector(href).getBoundingClientRect();
+            const header = document.querySelector("body > header").getBoundingClientRect();
+            return location.hash === href && target.top >= header.bottom && target.top < innerHeight - 50;
+          }, href);
+        }
+      }
       await page.locator("[data-comparison]").scrollIntoViewIfNeeded();
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
       assert.deepEqual(await page.locator(".benchmark :is(td, th, p, strong), .player-answers :is(h3, li)").evaluateAll(elements =>
@@ -92,6 +111,10 @@ try {
     await staticPage.goto(`${base}${path}`);
     assert.equal(await staticPage.locator(".benchmark-table tbody tr").count(), 9);
     assert.equal(await staticPage.locator(".player-answers > section").count(), answers.length);
+    if (path === "/") {
+      await staticPage.locator('.benchmark-jumps a[href="#benchmark-purchase"]').click();
+      assert.equal(new URL(staticPage.url()).hash, "#benchmark-purchase");
+    }
     await staticPage.locator(".benchmark summary").first().focus();
     await staticPage.keyboard.press("Enter");
     assert.equal(await staticPage.locator(".benchmark details[open]").count(), 1);

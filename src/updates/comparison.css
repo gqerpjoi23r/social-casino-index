@@ -1,7 +1,17 @@
 .updates-comparison { padding-top: 2rem; padding-bottom: 3rem; }
 .comparison-heading { max-width: 52rem; }
 .comparison-heading > p { margin: .7rem 0; }
-.benchmark-section { padding: 1.25rem 0 1.75rem; border-top: 2px solid var(--color-base-300); scroll-margin-top: 5rem; }
+.benchmark-intro { padding: 1.25rem 0 0; }
+.benchmark-intro h1 { margin: 0 0 .4rem; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600; }
+.benchmark-intro h2 { max-width: 48rem; margin: 0; font-size: 1.75rem; line-height: 1.2; font-weight: 600; text-wrap: balance; }
+.benchmark-intro p { margin: .65rem 0; font-size: .875rem; }
+.benchmark-intro a { color: var(--color-brand); text-underline-offset: 3px; }
+.benchmark-intro p a { text-decoration: underline; }
+.benchmark-jumps { display: flex; flex-wrap: wrap; gap: .2rem 1.5rem; padding: .35rem 0 .75rem; }
+.benchmark-jumps a { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; font-size: .875rem; text-decoration: none; }
+.benchmark-jumps a:hover { text-decoration: underline; }
+.benchmark-intro a:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 3px; }
+.benchmark-section { padding: 1.25rem 0 1.75rem; border-top: 2px solid var(--color-base-300); scroll-margin-top: 9rem; }
 .benchmark-section > h3 { display: flex; align-items: center; gap: .65rem; margin: 0 0 .8rem; font-size: 1.25rem; font-weight: 600; }
 .benchmark-section > h3 i { color: var(--color-brand); }
 .benchmark-table { width: 100%; table-layout: fixed; border-collapse: collapse; text-align: left; }
@@ -12,7 +22,7 @@
 .benchmark-table thead th { padding-top: .3rem; padding-bottom: .5rem; font-size: .75rem; font-weight: 500; }
 .benchmark-brand { display: flex; align-items: center; gap: .65rem; color: var(--color-base-content); text-decoration: none; font-weight: 600; }
 .benchmark-brand:hover { color: var(--color-brand); }
-.benchmark-value { display: block; font-size: 1.125rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.benchmark-value { display: block; color: var(--color-accent); font-size: 1.125rem; font-weight: 600; font-variant-numeric: tabular-nums; }
 .benchmark-note { margin: .25rem 0; font-size: .8rem; line-height: 1.5; }
 .benchmark-source { display: inline-block; margin: .35rem 0; font-size: .75rem; }
 .benchmark details { margin-top: .25rem; font-size: .8rem; line-height: 1.6; }

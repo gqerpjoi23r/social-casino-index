@@ -88,31 +88,26 @@
 </header>
 
 <main>
-<section class="hero-bg relative -mt-px">
-  <div class="wrap py-10 sm:py-14">
-    <h1 class="mb-4 max-w-3xl font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">Social Casino Index</h1>
-    <p class="mb-6 max-w-2xl text-lg leading-relaxed text-white/85">Welcome Sweeps Coins. First-purchase value. Redemption minimums. Compare advertised amounts before you sign up.</p>
-    <div class="flex flex-wrap gap-3">
-      <a href="#compare" class="btn btn-primary"><i class="ph ph-scales" aria-hidden="true"></i> Compare casinos</a>
-      <a href="/availability/" class="btn btn-outline border-white/40 text-white hover:border-white/60 hover:bg-white/10"><i class="ph ph-map-pin" aria-hidden="true"></i> State availability</a>
-    </div>
-  </div>
-</section>
-
-<div class="wrap py-2">
-  <section id="compare" class="scroll-mt-20 py-8" aria-labelledby="compare-heading">
-    <div class="mb-5">
-      <h2 id="compare-heading" class="section-title">Compare operator terms</h2>
-      <p class="mt-2 max-w-3xl text-base-content/70">Welcome SC, first-purchase offers and redemption minimums. SC means Sweepstakes Coins; entertainment coins are not SC. Prizes remain subject to operator rules and verification.</p>
-    </div>
+<div class="wrap">
+  <header class="benchmark-intro">
+    <h1>Social Casino Index</h1>
+    <h2 id="compare-heading">Compare signup bonuses, purchase value and cash-out minimums.</h2>
+    <p>Advertised Sweeps Coins (SC), with dated operator sources. <a href="/methodology/">How we compare</a>.</p>
+    <nav class="benchmark-jumps" aria-label="Casino comparisons">
+      <a href="#benchmark-welcome"><i class="ph ph-gift" aria-hidden="true"></i> Signup bonuses</a>
+      <a href="#benchmark-purchase"><i class="ph ph-coins" aria-hidden="true"></i> Purchase offers</a>
+      <a href="#benchmark-redemption"><i class="ph ph-bank" aria-hidden="true"></i> Redemption minimums</a>
+    </nav>
+  </header>
+  <section id="compare" aria-labelledby="compare-heading">
     <div class="benchmark" data-comparison>
 
   <section class="benchmark-section" id="benchmark-welcome" aria-labelledby="heading-welcome">
-    <h3 id="heading-welcome"><i class="ph ph-gift" aria-hidden="true"></i> Welcome SC</h3>
+    <h3 id="heading-welcome"><i class="ph ph-gift" aria-hidden="true"></i> Signup bonuses</h3>
 
     <table class="benchmark-table">
-      <caption class="sr-only">Welcome SC</caption>
-      <thead><tr><th scope="col">Casino</th><th scope="col">Welcome SC</th></tr></thead>
+      <caption class="sr-only">Signup bonuses</caption>
+      <thead><tr><th scope="col">Casino</th><th scope="col">Signup bonuses</th></tr></thead>
       <tbody>
         <tr data-operator="mcluck">
           <th scope="row"><a class="benchmark-brand" href="/redemption-times/mcluck/">
@@ -136,7 +131,7 @@
             <span>WOW Vegas</span>
           </a></th>
           <td>
-            <strong class="benchmark-value">5 SC total</strong>
+            <strong class="benchmark-value">5 SC over 3 days</strong>
 <p class="benchmark-note">2 SC immediate; total over 3 days. No purchase needed</p>
 
             <a class="benchmark-source" href="https://www.wowvegas.com/promo-code" rel="noopener">Observed <time datetime="2026-09-16T06:37:19.131Z">September 16, 2026</time></a>
@@ -167,11 +162,11 @@
   </section>
 
   <section class="benchmark-section" id="benchmark-purchase" aria-labelledby="heading-purchase">
-    <h3 id="heading-purchase"><i class="ph ph-coins" aria-hidden="true"></i> First purchase</h3>
+    <h3 id="heading-purchase"><i class="ph ph-coins" aria-hidden="true"></i> Purchase offers</h3>
 
     <table class="benchmark-table">
-      <caption class="sr-only">First purchase</caption>
-      <thead><tr><th scope="col">Casino</th><th scope="col">First purchase</th></tr></thead>
+      <caption class="sr-only">Purchase offers</caption>
+      <thead><tr><th scope="col">Casino</th><th scope="col">Purchase offers</th></tr></thead>
       <tbody>
         <tr data-operator="wow-vegas">
           <th scope="row"><a class="benchmark-brand" href="/redemption-times/wow-vegas/">
@@ -179,7 +174,7 @@
             <span>WOW Vegas</span>
           </a></th>
           <td>
-            <strong class="benchmark-value">$9.99 / 30 SC</strong>
+            <strong class="benchmark-value">30 SC for $9.99</strong>
 <p class="benchmark-note">3 SC per $1. Immediate coins.</p>
 
             <a class="benchmark-source" href="https://www.wowvegas.com/promo-code" rel="noopener">Observed <time datetime="2026-09-16T06:37:19.131Z">September 16, 2026</time></a>
@@ -195,7 +190,7 @@
             <span>Zonko</span>
           </a></th>
           <td>
-            <strong class="benchmark-value">$20 / 40 SC</strong>
+            <strong class="benchmark-value">40 SC for $20</strong>
 <p class="benchmark-note">2 SC per $1. Immediate coins.</p>
 
             <a class="benchmark-source" href="https://www.zonko.com/help/faq/" rel="noopener">Observed <time datetime="2026-09-11T12:46:17.327Z">September 11, 2026</time></a>
@@ -210,7 +205,7 @@
   </section>
 
   <section class="benchmark-section" id="benchmark-redemption" aria-labelledby="heading-redemption">
-    <h3 id="heading-redemption"><i class="ph ph-bank" aria-hidden="true"></i> Redemption minimum</h3>
+    <h3 id="heading-redemption"><i class="ph ph-bank" aria-hidden="true"></i> Redemption minimums</h3>
 
     <table class="benchmark-table">
       <caption class="">Cash</caption>
@@ -313,7 +308,7 @@
     <ul>
       <li>McLuck advertises 2.5 SC without a purchase. Immediate. <a href="https://www.mcluck.com/promotions" rel="noopener">McLuck source, <time datetime="2026-09-16T06:39:06.968Z">September 16, 2026</time></a></li>
 
-      <li>WOW Vegas advertises 5 SC total without a purchase. 2 SC immediate; total over 3 days. <a href="https://www.wowvegas.com/promo-code" rel="noopener">WOW Vegas source, <time datetime="2026-09-16T06:37:19.131Z">September 16, 2026</time></a></li>
+      <li>WOW Vegas advertises 5 SC over 3 days without a purchase. 2 SC immediate; total over 3 days. <a href="https://www.wowvegas.com/promo-code" rel="noopener">WOW Vegas source, <time datetime="2026-09-16T06:37:19.131Z">September 16, 2026</time></a></li>
 
       <li>YAY Casino advertises 12 SC without a purchase. Immediate. <a href="https://www.yaycasino.com/" rel="noopener">YAY Casino source, <time datetime="2026-09-16T06:33:48.501Z">September 16, 2026</time></a></li>
 </ul>
@@ -333,7 +328,7 @@
   <section id="compare-mcluck" aria-labelledby="compare-mcluck-heading">
     <h3 id="compare-mcluck-heading">WOW Vegas vs McLuck</h3>
     <ul>
-      <li>WOW Vegas free signup sweeps coins: 5 SC total. 2 SC immediate; total over 3 days. No purchase needed. <a href="https://www.wowvegas.com/promo-code" rel="noopener">WOW Vegas source, <time datetime="2026-09-16T06:37:19.131Z">September 16, 2026</time></a></li>
+      <li>WOW Vegas free signup sweeps coins: 5 SC over 3 days. 2 SC immediate; total over 3 days. No purchase needed. <a href="https://www.wowvegas.com/promo-code" rel="noopener">WOW Vegas source, <time datetime="2026-09-16T06:37:19.131Z">September 16, 2026</time></a></li>
 
       <li>McLuck free signup sweeps coins: 2.5 SC. Immediate. No purchase needed. <a href="https://www.mcluck.com/promotions" rel="noopener">McLuck source, <time datetime="2026-09-16T06:39:06.968Z">September 16, 2026</time></a></li>
 </ul>
@@ -352,65 +347,6 @@
 
 
     <p class="mt-4 text-sm text-base-content/55">Partner links may earn us a commission. Compensation does not change the figures or order. No purchase is necessary to participate in sweepstakes. Eligibility and terms vary.</p>
-  </section>
-
-  <section class="py-9" aria-labelledby="latest-guides-heading">
-    <div class="mb-5 flex flex-wrap items-end justify-between gap-3">
-      <div>
-        <h2 id="latest-guides-heading" class="section-title">Latest guides</h2>
-        <p class="m-0 text-base-content/60">The most recent research and operator guides from the site.</p>
-      </div>
-      <a class="btn btn-sm btn-outline" href="/guides/">View all guides</a>
-    </div>
-    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      
-      <a href="/guides/redemption-methods/bank-transfer/" class="card group no-underline transition hover:border-brand">
-        <div class="card-head">
-          <span class="badge pending">Guide</span>
-          <h2 class="mt-3 !text-xl group-hover:text-brand">Sweepstakes Casino Bank Transfer Redemptions</h2>
-          <p>How bank-transfer redemptions work at sweepstakes casinos: published timing, minimums, account-name checks and which operators support them.</p>
-        </div>
-        <div class="card-foot">
-          <p><i class="ph ph-calendar-blank" aria-hidden="true"></i> September 9, 2026</p>
-          <p class="text-brand">Read <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
-        </div>
-      </a>
-      
-      <a href="/guides/redemption-methods/crypto/" class="card group no-underline transition hover:border-brand">
-        <div class="card-head">
-          <span class="badge pending">Guide</span>
-          <h2 class="mt-3 !text-xl group-hover:text-brand">Sweepstakes Casino Crypto Redemptions</h2>
-          <p>How cryptocurrency redemptions work at sweepstakes casinos: settlement speed, wallet handling, asset-value risk and which operators support them.</p>
-        </div>
-        <div class="card-foot">
-          <p><i class="ph ph-calendar-blank" aria-hidden="true"></i> September 9, 2026</p>
-          <p class="text-brand">Read <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
-        </div>
-      </a>
-      
-      <a href="/guides/redemption-methods/gift-card/" class="card group no-underline transition hover:border-brand">
-        <div class="card-head">
-          <span class="badge pending">Guide</span>
-          <h2 class="mt-3 !text-xl group-hover:text-brand">Sweepstakes Casino Gift Card Redemptions</h2>
-          <p>How gift-card redemptions work at sweepstakes casinos: lower minimums, retail restrictions and which operators support them.</p>
-        </div>
-        <div class="card-foot">
-          <p><i class="ph ph-calendar-blank" aria-hidden="true"></i> September 9, 2026</p>
-          <p class="text-brand">Read <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
-        </div>
-      </a>
-      
-    </div>
-  </section>
-
-  <section class="py-10" aria-labelledby="choose-heading">
-    <h2 id="choose-heading" class="section-title">Choose by player value</h2>
-    <div class="value-links">
-      <a href="/redemption-times/"><i class="ph ph-timer" aria-hidden="true"></i><span><strong>Fast and predictable redemptions</strong><small>Compare timing, minimums, methods and first-payout checks.</small></span></a>
-      <a href="/guides/sweepstakes-casino-redemption-methods/"><i class="ph ph-bank" aria-hidden="true"></i><span><strong>Bank, gift card or crypto</strong><small>Match the payout method to your priorities.</small></span></a>
-      <a href="/guides/sweepstakes-casino-real-prizes-rules/"><i class="ph ph-trophy" aria-hidden="true"></i><span><strong>How real-prize play works</strong><small>Understand currencies, playthrough and redemption.</small></span></a>
-      <a href="/taxes/"><i class="ph ph-receipt" aria-hidden="true"></i><span><strong>Prize record keeping</strong><small>Track redemptions and prepare useful records for tax time.</small></span></a>
-    </div>
   </section>
 
   <section class="py-10" aria-labelledby="data-heading">

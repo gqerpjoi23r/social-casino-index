@@ -39,13 +39,13 @@ export function comparisonSections(numeric, now = Date.now(), purchaseBudget = I
       const timing = staged ? `${number(signup.immediateSc)} SC immediate${signup.durationDays > 0 ? `; total over ${number(signup.durationDays)} days` : "; remainder in stages"}` :
         amount(signup.immediateSc) && total(signup) === signup.immediateSc ? "Immediate" : "Advertised total";
       const eligibility = signup.purchaseRequired === false ? "No purchase needed" : signup.purchaseRequired === true ? "Purchase required" : "";
-      welcome.push({ ...entry(operator, signup, `${number(total(signup))} SC${staged ? " total" : ""}`,
+      welcome.push({ ...entry(operator, signup, `${number(total(signup))} SC${staged ? signup.durationDays > 0 ? ` over ${number(signup.durationDays)} days` : " in stages" : ""}`,
         [timing, eligibility].filter(Boolean).join(". ")), timing });
     }
     const pack = latest(records, record => record.recordType === "offers" && record.kind === "first_purchase", now)
       .filter(record => amount(record.priceUsd) && record.priceUsd > 0 && record.priceUsd <= purchaseBudget && amount(record.immediateSc))
       .sort((a, b) => b.immediateSc / b.priceUsd - a.immediateSc / a.priceUsd || a.priceUsd - b.priceUsd)[0];
-    if (pack) purchase.push(entry(operator, pack, `$${number(pack.priceUsd)} / ${number(pack.immediateSc)} SC`,
+    if (pack) purchase.push(entry(operator, pack, `${number(pack.immediateSc)} SC for $${number(pack.priceUsd)}`,
       `${number(pack.immediateSc / pack.priceUsd)} SC per $1. Immediate coins.`));
     const minimums = latest(records, record => record.recordType === "facts" && record.field === "redemption_minimum", now);
     for (const [method, rows] of [["cash", cash], ["gift_card", gift]]) {
@@ -56,9 +56,9 @@ export function comparisonSections(numeric, now = Date.now(), purchaseBudget = I
     }
   }
   return [
-    { id: "welcome", title: "Welcome SC", icon: "gift", groups: [{ rows: welcome }] },
-    { id: "purchase", title: "First purchase", icon: "coins", groups: [{ rows: purchase }] },
-    { id: "redemption", title: "Redemption minimum", icon: "bank", groups: [{ title: "Cash", rows: cash }, { title: "Gift card", rows: gift }] },
+    { id: "welcome", title: "Signup bonuses", icon: "gift", groups: [{ rows: welcome }] },
+    { id: "purchase", title: "Purchase offers", icon: "coins", groups: [{ rows: purchase }] },
+    { id: "redemption", title: "Redemption minimums", icon: "bank", groups: [{ title: "Cash", rows: cash }, { title: "Gift card", rows: gift }] },
   ];
 }
 

@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-16 - Compact player-first homepage
+- Replace the large hero with a short player-focused headline, three direct comparison links and a methodology link beside the introduction.
+- Put purchase price and staged signup timing in the prominent amount text; retain dated sources, conditions and all three metrics.
+- Remove the homepage guide grid and secondary topic directory. Guides remain in navigation; saved data, exports, collection and eligibility are unchanged.
+
 ## 2026-09-16 - Player-value answers and visibility topics
 - Add source-linked, dated answers for redemption minimums, free signup timing, purchase budgets and two direct comparisons to both benchmark pages.
 - Generate answers from the same saved numeric records as the three metrics. Preserve cash versus gift cards, immediate versus staged coins, and all data exports.

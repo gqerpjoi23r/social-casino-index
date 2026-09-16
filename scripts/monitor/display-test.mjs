@@ -24,11 +24,11 @@ test("saved snapshots populate all three metrics without empty operators", () =>
   assert.equal(find(0, "mcluck").value, "2.5 SC");
   assert.equal(find(0, "yay-casino").value, "12 SC");
   assert.match(find(0, "yay-casino").note, /No purchase needed/);
-  assert.equal(find(0, "wow-vegas").value, "5 SC total");
+  assert.equal(find(0, "wow-vegas").value, "5 SC over 3 days");
   assert.match(find(0, "wow-vegas").note, /2 SC immediate; total over 3 days/);
-  assert.equal(find(1, "wow-vegas").value, "$9.99 / 30 SC");
+  assert.equal(find(1, "wow-vegas").value, "30 SC for $9.99");
   assert.equal(find(1, "wow-vegas").promoCode, null);
-  assert.equal(find(1, "zonko").value, "$20 / 40 SC");
+  assert.equal(find(1, "zonko").value, "40 SC for $20");
   assert.ok(find(1, "zonko").conditions.some(condition => condition.includes("8 days")));
   assert.equal(find(2, "chumba").value, "100 SC");
   assert.equal(find(2, "chumba", 1).value, "10 SC");
@@ -46,7 +46,7 @@ test("player answers preserve methods, stages and source dates without inventing
   const text = id => answers.find(group => group.id === id).rows.map(row => row.text).join(" ");
   assert.match(text("low-redemption"), /50 SC cash/);
   assert.match(text("low-redemption"), /10 SC.*gift-card threshold/);
-  assert.match(text("free-signup"), /5 SC total.*2 SC immediate; total over 3 days/);
+  assert.match(text("free-signup"), /5 SC over 3 days.*2 SC immediate; total over 3 days/);
   assert.match(text("purchase-value"), /\$9.99 includes 30 immediate SC/);
   assert.match(text("purchase-value"), /3 SC per dollar|3 immediate SC per dollar/);
   assert.doesNotMatch(text("compare-mcluck"), /cash redemption/i);
@@ -73,7 +73,7 @@ test("conflicting sources choose the higher welcome total and retain its conditi
   const chosen = rows([record({ immediateSc: 8, totalSc: 8 }),
     record({ sourceUrl: "https://example.com/home", immediateSc: 4, totalSc: 12,
       durationDays: 3, conditions, reviewStatus: "unresolved", conflict: "Different ads" })])[0];
-  assert.equal(chosen.value, "12 SC total");
+  assert.equal(chosen.value, "12 SC over 3 days");
   assert.match(chosen.note, /4 SC immediate; total over 3 days/);
   assert.deepEqual(chosen.conditions, conditions);
 });
@@ -100,7 +100,7 @@ test("purchase comparison selects complete packages by immediate SC per dollar",
     pack({ priceUsd: null, immediateSc: 1000 }),
     pack({ priceUsd: 1, immediateSc: null }),
   ], 1)[0];
-  assert.equal(chosen.value, "$10 / 30 SC");
+  assert.equal(chosen.value, "30 SC for $10");
   assert.equal(chosen.promoCode, "NEW");
   assert.equal(rows([pack({ priceUsd: 1, immediateSc: null }), pack({ priceUsd: null, immediateSc: 30 })], 1).length, 0);
   assert.equal(rows([pack({ priceUsd: 0, immediateSc: 30 })], 1).length, 0);
@@ -120,6 +120,7 @@ test("changed method does not resurrect a superseded cash claim", () => {
 });
 
 test("totals do not become immediate coins; purchase requirements remain visible", () => {
+  assert.equal(rows([record({ immediateSc: 2, totalSc: 5 })])[0].value, "5 SC in stages");
   assert.equal(rows([record({ immediateSc: null, totalSc: 5 })])[0].note, "Advertised total");
   assert.match(rows([record({ purchaseRequired: true })])[0].note, /Purchase required/);
   assert.match(rows([record({ purchaseRequired: false })])[0].note, /No purchase needed/);
