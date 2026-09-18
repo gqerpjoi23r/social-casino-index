@@ -8,19 +8,19 @@ layout: base.njk
 tags: ["statePages"]
 ogType: "article"
 publishedAt: "2026-09-09"
-updatedAt: "2026-09-09"
+updatedAt: "2026-09-18"
 eleventyComputed:
-  title: "Are Sweepstakes Casinos Legal in {{ state.name }}?"
-  description: "{{ state.name }} sweepstakes casino status: {{ state.statusShort | lower }}. Which operators restrict the state, and what that means for players. Not legal advice."
+  title: "{{ state.name }} Sweepstakes Casino Restrictions"
+  description: "{{ state.name }} site offer policy, operator restrictions and legal-source coverage. Availability is not legal clearance."
   jsonld:
     "@context": "https://schema.org"
     "@graph":
       - "@type": "Article"
         "@id": "https://socialcasinoindex.com/availability/{{ state.slug }}/#article"
-        headline: "Are Sweepstakes Casinos Legal in {{ state.name }}?"
-        description: "{{ state.name }} sweepstakes casino status: {{ state.statusShort | lower }}. Operator restrictions and player guidance. Not legal advice."
+        headline: "{{ state.name }} Sweepstakes Casino Restrictions"
+        description: "{{ state.name }} site offer policy, operator restrictions and legal-source coverage."
         datePublished: "2026-09-09"
-        dateModified: "2026-09-09"
+        dateModified: "{{ contentDates.statePages }}"
         mainEntityOfPage: "https://socialcasinoindex.com/availability/{{ state.slug }}/"
         author:
           "@id": "https://socialcasinoindex.com/#alex-rowan"
@@ -43,10 +43,10 @@ eleventyComputed:
         "@id": "https://socialcasinoindex.com/availability/{{ state.slug }}/#faq"
         mainEntity:
           - "@type": "Question"
-            name: "Are sweepstakes casinos legal in {{ state.name }}?"
+            name: "Does this site show sweepstakes casino offers in {{ state.name }}?"
             acceptedAnswer:
               "@type": "Answer"
-              text: "{{ state.answer }} This page reflects operator availability policy and public reporting, not legal advice."
+              text: "No. Social Casino Index blocks commercial offers in {{ state.name }}. This site policy does not establish the legal status of every product or operator."
           - "@type": "Question"
             name: "Can I claim a sweepstakes casino bonus in {{ state.name }}?"
             acceptedAnswer:
@@ -55,37 +55,38 @@ eleventyComputed:
 ---
 <main><article class="wrap py-10">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/availability/">State availability</a></li><li><span aria-current="page">{{ state.name }}</span></li></ol></nav>
-  <p class="eyebrow">State record · {{ state.statusShort }}</p>
-  <h1 class="page-title">Are Sweepstakes Casinos Legal in {{ state.name }}?</h1>
-  <p class="lede">{{ state.name }} is treated as closed to sweepstakes casinos{% if state.status == "statute" %} by statute{% else %} by enforcement{% endif %}. This page shows what that means for players and which operators restrict the state.</p>
+  <p class="eyebrow">State record · Updated {{ contentDates.statePages | readableDate }}</p>
+  <h1 class="page-title">{{ state.name }} Sweepstakes Casino Restrictions</h1>
   <div class="answer-first">
     <span class="af-label">Direct answer</span>
-    <p><strong>{{ state.answer }}</strong></p>
-    <p class="text-sm">This reflects operator availability policy and public reporting, not legal advice.</p>
+    <p><strong>Social Casino Index blocks commercial offers in {{ state.name }}.</strong> This is a site policy, not a determination that every sweepstakes product is illegal in the state.</p>
+    <p>{% if stateEvidence[state.code] %}{{ stateEvidence[state.code].summary }}{% else %}We have not completed the state-specific legal-source review for this page. Do not use the gate setting or an operator's acceptance as legal clearance.{% endif %}</p>
   </div>
 
   <h2>Status at a glance</h2>
   <dl class="detail-grid">
-    <div><dt>Status</dt><dd>{{ state.statusShort }}</dd></div>
-    <div><dt>Category</dt><dd>{% if state.status == "statute" %}Closed by statute{% else %}Closed by enforcement{% endif %}</dd></div>
-{% if state.statusDate %}<div><dt>Effective date</dt><dd>{{ state.statusDate | readableDate }}</dd></div>{% endif %}
+    <div><dt>Legal-source coverage</dt><dd>{% if stateEvidence[state.code] %}Primary-source note below{% else %}State-specific review not completed{% endif %}</dd></div>
     <div><dt>Offers on this site</dt><dd>Blocked for {{ state.name }}</dd></div>
   </dl>
 
-  <h2>Why {{ state.name }} is treated as closed</h2>
-  <p>{{ state.basis }} This classification reflects operator availability policy, not legal advice; state law in this category changes frequently.</p>
+  <h2 id="legal-sources">Legal sources</h2>
+  {% if stateEvidence[state.code] %}{% set evidence = stateEvidence[state.code] %}
+  <p>{{ evidence.summary }} <a href="{{ evidence.url }}" rel="noopener">{{ evidence.label }}</a>. Reviewed {{ evidence.reviewedAt | readableDate }}.</p>
+  {% else %}
+  <p>No state-specific statute or enforcement finding is asserted here without a reviewed primary source. The existing offer block remains in place while that evidence gap is open.</p>
+  {% endif %}
 
   <h2>Operators that restrict {{ state.name }}</h2>
-  <p>The table below lists each operator whose reviewed terms name {{ state.name }} ({{ state.code }}) as a restricted state. Operators without a published restriction are marked as not published; that does not mean they accept {{ state.name }} players.</p>
+  <p>The table shows exclusions retained in the site's operator records. These exclusions were not reverified in the latest offer review. A missing exclusion does not establish acceptance or legality.</p>
   <div class="table-scroll">
     <table class="data">
-      <thead><tr><th>Operator</th><th>{{ state.code }} status in reviewed terms</th><th>Record</th></tr></thead>
+      <thead><tr><th>Operator</th><th>{{ state.code }} in retained exclusions</th><th>Evidence and limits</th></tr></thead>
       <tbody>
 {% for op in operators %}
         <tr>
           <th>{{ op.name }}</th>
-          <td>{% if state.code in op.restrictedStates %}Restricted in published terms{% else %}No published restriction found{% endif %}</td>
-          <td><a href="/redemption-times/{{ op.slug }}/">Full terms</a></td>
+          <td>{% if state.code in op.restrictedStates %}Excluded in retained record{% else %}Not listed; acceptance unverified{% endif %}</td>
+          <td><a href="/redemption-times/{{ op.slug }}/#availability">Availability record</a> · <a href="/redemption-times/{{ op.slug }}/#sources">Sources</a></td>
         </tr>
 {% endfor %}
       </tbody>

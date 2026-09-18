@@ -1,10 +1,10 @@
 ---
 layout: base.njk
 title: "State Availability"
-description: "Which US states are open or closed to sweepstakes casinos, and how the commercial-offer gate on this site works."
+description: "State-by-state offer policy, operator restrictions and separately sourced legal notes for sweepstakes casinos."
 permalink: "/availability/"
 publishedAt: "2026-09-09"
-updatedAt: "2026-09-09"
+updatedAt: "2026-09-18"
 ogType: "article"
 eleventyComputed:
   jsonld:
@@ -13,9 +13,9 @@ eleventyComputed:
       - "@type": "Article"
         "@id": "https://socialcasinoindex.com/availability/#article"
         headline: "State Availability"
-        description: "Which US states are open or closed to sweepstakes casinos, and how the commercial-offer gate on this site works."
+        description: "State-by-state offer policy, operator restrictions and separately sourced legal notes."
         datePublished: "2026-09-09"
-        dateModified: "2026-09-09"
+        dateModified: "2026-09-18"
         mainEntityOfPage: "https://socialcasinoindex.com/availability/"
         author:
           "@id": "https://socialcasinoindex.com/#alex-rowan"
@@ -34,15 +34,15 @@ eleventyComputed:
         "@id": "https://socialcasinoindex.com/availability/#faq"
         mainEntity:
           - "@type": "Question"
-            name: "How many states are open to sweepstakes casinos?"
+            name: "Which states have offers blocked on this site?"
             acceptedAnswer:
               "@type": "Answer"
-              text: "About 36 states plus the District of Columbia are treated as open on this site. Fourteen states are closed: eleven by statute (California, New York, Connecticut, Indiana, Louisiana, Maine, Montana, Nevada, New Jersey, Oklahoma and Tennessee) and three by enforcement (Idaho, Michigan and Washington)."
+              text: "This site blocks offers in California, Connecticut, Idaho, Indiana, Louisiana, Maine, Michigan, Montana, Nevada, New Jersey, New York, Oklahoma, Tennessee and Washington. This is a site offer policy, not a list of legal or illegal states."
           - "@type": "Question"
-            name: "When did California close to sweepstakes casinos?"
+            name: "Does operator availability establish legality?"
             acceptedAnswer:
               "@type": "Answer"
-              text: "California closed on 1 January 2026 under Assembly Bill 831, which was signed on 11 October 2025. It is the most significant recent state closure in this category."
+              text: "No. Site offer policy, an operator's acceptance of a state, and legal status are separate questions. The source notes on this page do not establish a complete legal assessment of every state."
 ---
 
 <main>
@@ -58,8 +58,8 @@ eleventyComputed:
 
   <div class="answer-first">
     <span class="af-label">In short</span>
-    <p><strong>About 36 states plus DC are treated as open to sweepstakes casinos; 14 are closed.</strong> Eleven are closed by statute (California, New York, Connecticut, Indiana, Louisiana, Maine, Montana, Nevada, New Jersey, Oklahoma and Tennessee) and three by enforcement (Idaho, Michigan and Washington). California closed most recently, on 1 January 2026 under AB 831.</p>
-    <p>All research on this site is public everywhere. Commercial offers appear only after you select a state, and are blocked for states where sweepstakes casinos are closed by statute or enforcement.</p>
+    <p><strong>This site blocks commercial offers in 14 states:</strong> {% for s in collections.closedStates %}{{ s.name }}{% if not loop.last %}, {% endif %}{% endfor %}. This is our offer-blocking policy, not a verified list of states where every sweepstakes casino is illegal.</p>
+    <p>Site policy, operator restrictions and legal status are separate questions. All research remains public. The table below covers all 50 states and DC; a state without a site-wide block is not legal clearance or confirmation that an operator accepts you.</p>
   </div>
 
   <h2>How the gate works on this site</h2>
@@ -78,16 +78,25 @@ eleventyComputed:
     <noscript><p class="eligibility-note">State selection requires JavaScript.</p></noscript>
   </section>
 
-  <h2 id="closed-states">Closed states</h2>
-  <p>The following states are treated as closed on this site, and commercial offers are blocked for them. This list reflects operator availability policy, not legal advice; state law in this category changes frequently.</p>
-  <ul class="tick-list">
-    <li class="bad"><b>Closed by statute.</b> {% for s in collections.statuteStates %}<a href="/availability/{{ s.slug }}/">{{ s.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.</li>
-    <li class="bad"><b>Closed by enforcement.</b> {% for s in collections.enforcementStates %}<a href="/availability/{{ s.slug }}/">{{ s.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}. No sweepstakes-specific law, but regulators apply existing gambling statutes.</li>
-  </ul>
-  <p>California is the most significant recent change: AB 831 was signed on 11 October 2025 and took effect on 1 January 2026.</p>
+  <h2 id="closed-states">State-by-state offer policy</h2>
+  <p>Page updated September 18, 2026. Existing gate settings are unchanged. State records link to operator evidence and identify where legal-source review is still incomplete.</p>
+  <div class="table-scroll"><table class="data">
+    <thead><tr><th scope="col">State</th><th scope="col">Site offer policy</th><th scope="col">Legal-source coverage</th></tr></thead>
+    <tbody>{% for s in states %}{% if s.code %}
+      <tr id="state-{{ s.code | lower }}"><th scope="row">{% if s.slug %}<a href="/availability/{{ s.slug }}/">{{ s.name }}</a>{% else %}{{ s.name }}{% endif %}</th>
+      <td>{% if s.status == "statute" or s.status == "enforcement" %}Offers blocked{% else %}No site-wide block; operator restrictions still apply{% endif %}</td>
+      <td>{% if stateEvidence[s.code] %}<a href="/availability/{{ s.slug }}/#legal-sources">Primary-source note available</a>{% else %}State-specific legal review not completed{% endif %}</td></tr>
+    {% endif %}{% endfor %}</tbody>
+  </table></div>
 
-  <h2>Open states</h2>
-  <p>Most other states, including Texas, Florida, Ohio, Pennsylvania, Georgia and North Carolina, are treated as open. Individual operators may still choose not to serve specific states; the operator's own terms govern.</p>
+  <h2 id="legal-sources">Legal sources and limits</h2>
+  {% for code, evidence in stateEvidence %}
+  <p>{{ evidence.summary }} <a href="{{ evidence.url }}" rel="noopener">{{ evidence.label }}</a>. Reviewed {{ evidence.reviewedAt | readableDate }}.</p>
+  {% endfor %}
+  <h2 id="why-legal">Does availability mean legal?</h2>
+  <p>No. An operator accepting a state does not establish that its product complies with state law. Promotional sweepstakes, dual-currency casino-style products and entertainment-only games cannot be treated as one legal category. This page does not provide a definitive legal-state list or identify the most recent state closure.</p>
+  <h2 id="california-texas">California and Texas</h2>
+  <p>California has the specific AB 831 source note above and a <a href="/availability/california/">state record</a>. This site has no state-wide Texas offer block, but we have not completed a Texas legal-source review. That difference in site policy is not a conclusion that the same product is legal in Texas.</p>
 
   <h2>Not legal advice</h2>
   <p>This page is general information for readers. Confirm the current rules for your state before you play, and speak to a licensed attorney about your own situation.</p>

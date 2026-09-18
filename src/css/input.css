@@ -120,6 +120,10 @@ table.data td, table.data th { overflow-wrap: break-word; word-break: break-word
 table.data th:first-child, table.data td:first-child { width: 8.5rem; }
 table.data th:last-child, table.data td:last-child { width: 7rem; }
 @media (max-width: 560px) { table.data { min-width: 34rem; } }
+table.data.redemption-requirements { min-width: 62rem; }
+table.data.redemption-requirements th:first-child { width: 8.5rem; }
+table.data.redemption-requirements th:last-child { width: 9rem; }
+table.data.redemption-comparison { min-width: 76rem; }
 
 /* ---------- Operator comparisons ---------- */
 .player-values { @apply my-5 grid grid-cols-1 gap-5 md:grid-cols-3; }

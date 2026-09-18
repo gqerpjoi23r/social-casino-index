@@ -5,6 +5,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "CNAME": "CNAME" });
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
+  eleventyConfig.addPassthroughCopy({ "strategy/prompt-map.md": "strategy/prompt-map.md" });
+  eleventyConfig.addFilter("latestDate", (...dates) => dates.filter(Boolean).map(date => new Date(date).toISOString().slice(0, 10)).sort().at(-1));
 
   eleventyConfig.addFilter("isoDate", (value) => {
     if (!value) return "";

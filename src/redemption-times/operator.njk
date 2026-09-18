@@ -18,7 +18,7 @@ eleventyComputed:
         headline: "{{ operator.name }} Offers and Redemption Requirements"
         description: "{{ operator.name }} signup SC, first-purchase offer, redemption minimums and playthrough, with source-linked conditions."
         datePublished: "{{ operator.verifiedAt }}"
-        dateModified: "{{ operator.verifiedAt }}"
+        dateModified: "{{ operator.verifiedAt | latestDate(contentDates.operatorPages) }}"
         mainEntityOfPage: "https://socialcasinoindex.com/redemption-times/{{ operator.slug }}/"
         author:
           "@id": "https://socialcasinoindex.com/#alex-rowan"
@@ -57,6 +57,16 @@ eleventyComputed:
   <p class="eyebrow">Operator record · Reviewed {{ operator.verifiedAt | readableDate }}</p>
   <h1 class="page-title">{{ operator.name }} Offers and Redemption Requirements</h1>
   <p class="lede">{{ operator.summary }}</p>
+  <section aria-labelledby="redemption-answer">
+    <h2 id="redemption-answer">{{ operator.name }} redemption requirements</h2>
+    <dl class="detail-grid">
+      <div><dt>Published payout time</dt><dd>{{ operator.publishedEstimate }}</dd></div>
+      <div><dt>Redemption methods</dt><dd>{{ operator.methods }}</dd></div>
+      <div><dt>Minimum redemption</dt><dd>{{ operator.minRedemption }}</dd></div>
+      <div><dt>Verification</dt><dd>{{ operator.kyc }}</dd></div>
+    </dl>
+    <p class="text-sm">Evidence reviewed {{ operator.verifiedAt | readableDate }}; not a new verification of current terms. <a href="#sources">Sources and access limitations</a>. <a href="#availability">State restrictions</a>.</p>
+  </section>
   {{ benchmarks(operator, true) }}
   <p class="text-sm text-base-content/60">Published claims, not measured results. “Not verified” does not mean zero. Offers and eligibility can change.</p>
   <h2>Funded test status</h2>
@@ -89,11 +99,12 @@ eleventyComputed:
     <div><dt>Support</dt><dd>{{ operator.support }}</dd></div>
   </dl>
   {% if operator.tradeoffs.length %}<h2>Limitations</h2><ul>{% for item in operator.tradeoffs %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
-  <h2>Availability</h2>
+  <h2 id="availability">Availability</h2>
   <p>{{ operator.availability }}</p>
   {% if operator.restrictedStates.length %}<p><strong>Existing exclusions retained by the site's state gate:</strong> {{ operator.restrictedStates | join(", ") }}. This list was not reverified in the offer review and does not establish availability elsewhere.</p>{% endif %}
-  <p>See how each closed state treats sweepstakes casinos in the <a href="/availability/#closed-states">state availability index</a>.</p>
+  <p>Check the site's offer policy and separate legal-source notes in the <a href="/availability/#closed-states">state availability index</a>. Operator acceptance does not establish legality.</p>
   <h2>Compare payout methods</h2>
+  <p>For the request process, read <a href="/guides/how-to-redeem-sweeps-coins/">how to redeem Sweeps Coins</a>.</p>
   <p>{{ operator.name }} redemption methods: {{ operator.methods }}. Compare the rails in detail: <a href="/guides/redemption-methods/bank-transfer/">bank transfer</a>, <a href="/guides/redemption-methods/gift-card/">gift card</a> and <a href="/guides/redemption-methods/crypto/">cryptocurrency</a>, or read the <a href="/research/sweepstakes-casino-redemption-times/">full redemption-time research</a>.</p>
   {% if operator.partner %}
   <div class="cta-box" data-cta-operator="{{ operator.slug }}">

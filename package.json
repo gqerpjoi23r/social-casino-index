@@ -20,7 +20,8 @@
     "analytics:validate": "node --test scripts/test-analytics.mjs",
     "sitemap:validate": "node scripts/validate-sitemap.mjs",
     "seo:validate": "node scripts/validate-seo.mjs",
-    "release": "npm run content:validate && npm run analytics:validate && npm run build && npm run seo:validate"
+    "prompts:validate": "node --test scripts/test-prompt-map.mjs && node scripts/validate-prompt-map.mjs",
+    "release": "npm run content:validate && npm run analytics:validate && npm run build && npm run seo:validate && npm run prompts:validate"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",

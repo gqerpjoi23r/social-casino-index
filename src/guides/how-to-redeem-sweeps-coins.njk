@@ -1,0 +1,62 @@
+---
+layout: base.njk
+title: "How to Redeem Sweeps Coins for Cash"
+description: "The Sweeps Coins redemption process: eligibility, verification, redeemable balance, method minimums, request review and payment delivery."
+permalink: "/guides/how-to-redeem-sweeps-coins/"
+tags: ["guides"]
+guideType: "Explainer"
+status: "published"
+publishedAt: "2026-09-18"
+updatedAt: "2026-09-18"
+authorId: "alex-rowan"
+reviewer: "Social Casino Index research team"
+primaryQuery: "how to redeem Sweeps Coins for cash"
+disclosure: "affiliate"
+ogType: "article"
+eleventyComputed:
+  jsonld:
+    "@context": "https://schema.org"
+    "@type": "Article"
+    headline: "How to Redeem Sweeps Coins for Cash"
+    datePublished: "2026-09-18"
+    dateModified: "2026-09-18"
+    mainEntityOfPage: "https://socialcasinoindex.com/guides/how-to-redeem-sweeps-coins/"
+    author:
+      "@id": "https://socialcasinoindex.com/#alex-rowan"
+    publisher:
+      "@id": "https://socialcasinoindex.com/#org"
+---
+<main><article class="wrap py-10">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/guides/">Guides</a></li><li><span aria-current="page">Redeem Sweeps Coins</span></li></ol></nav>
+  <h1 class="page-title">How to Redeem Sweeps Coins for Cash</h1>
+  <div class="answer-first">
+    <span class="af-label">Direct answer</span>
+    <p>At operators that support cash prizes, request redemption from the account's redemption screen after you meet eligibility, identity-check, playthrough and minimum-balance requirements. Choose an available payment method, submit the request, and wait for operator approval and delivery. A displayed Sweeps Coins balance is not necessarily a redeemable balance.</p>
+  </div>
+  <p>This process is based on <a href="#process-source">YAY Casino's published redemption guide</a> and the dated operator records below. Screens, methods and conditions differ by operator. Entertainment-only coins are not cash prizes; gift cards and cryptocurrency are not the same as cash delivered to a bank account.</p>
+
+  <h2 id="steps">Five steps to request a redemption</h2>
+  <ol class="list-decimal pl-6 space-y-3">
+    <li><strong>Check eligibility and product type.</strong> Read the operator's age, location and sweepstakes rules. The site's <a href="/availability/">state gate</a> is an offer policy, not legal clearance. Do not request cash from an entertainment-only product.</li>
+    <li><strong>Complete identity verification.</strong> Follow the operator's secure verification flow. YAY's guide describes government ID, proof of address and a selfie check. Other operators can require different documents.</li>
+    <li><strong>Check the redeemable balance.</strong> Confirm applicable playthrough and promotion conditions, then check the minimum for the specific method. Do not treat a gift-card minimum as a cash minimum.</li>
+    <li><strong>Select a method and submit.</strong> Use the options actually offered in your account. Confirm the recipient details, amount and any disclosed fees before submitting. Keep the request confirmation.</li>
+    <li><strong>Track review and delivery separately.</strong> An approved request may still be awaiting payment delivery. Check the stated processing window and contact operator support if the request exceeds it.</li>
+  </ol>
+
+  <h2 id="operator-requirements">Operator minimums, methods and timing</h2>
+  <p>The table uses our existing reviewed records, not a fresh review of each operator. Unknown values remain unknown. The evidence date and source register show what supports each record.</p>
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Operator redemption requirements"><table class="data redemption-requirements">
+    <caption>Dated published terms. Not funded-test results.</caption>
+    <thead><tr><th scope="col">Operator</th><th scope="col">Minimum redemption</th><th scope="col">Methods</th><th scope="col">Published timing</th><th scope="col">Evidence reviewed</th></tr></thead>
+    <tbody>{% for op in operators %}<tr><th scope="row"><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></th><td>{{ op.minRedemption }}</td><td>{{ op.methods }}</td><td>{{ op.publishedEstimate }}</td><td><a href="/redemption-times/{{ op.slug }}/#sources">{{ op.verifiedAt | readableDate }}</a></td></tr>{% endfor %}</tbody>
+  </table></div>
+
+  <h2>Why might a request not be available?</h2>
+  <p>Check incomplete verification, the redeemable balance, method-specific minimums and account or location restrictions. A balance alone does not establish eligibility for a prize. Use the operator's support channel to resolve account-specific issues; do not submit identity documents to this site.</p>
+  <h2>Is redemption instant?</h2>
+  <p>This dataset does not establish a universal instant payout. Identity checks, request approval and final delivery are different stages. Read the <a href="/redemption-times/">published timing comparison</a> and <a href="/guides/sweepstakes-casino-redemption-methods/">payment-method guide</a> before comparing estimates.</p>
+  <h2 id="sources">Sources and data</h2>
+  <p id="process-source"><a href="https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/" rel="noopener">YAY Casino: How to Redeem Your Sweeps Coins</a>. Process guidance reviewed September 18, 2026. Operator instructions describe that operator's process, not a guarantee of payout.</p>
+  <p>Each table row links to its dated source register. Download the existing <a href="/assets/data/operators-2026.1.json">operator JSON</a> or <a href="/assets/data/redemption-times-2026.1.csv">redemption CSV</a>. See the <a href="/methodology/">methodology</a> for the distinction between published terms and funded tests.</p>
+</article></main>

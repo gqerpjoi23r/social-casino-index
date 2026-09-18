@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-18 - Prompt-aligned redemption and state coverage
+- Add one Sweeps Coins redemption guide, linked operator answers and dated source-register links. Preserve datasets, exports, monitoring and eligibility behavior; no funded rankings are introduced.
+- Keep `/availability/` canonical. Separate unchanged site offer blocks from legal findings, add reviewed California/Washington primary-source notes, and make remaining state legal-review gaps explicit.
+- Move the prompt map source to `strategy/`, publish it through the build, repair missing targets, and validate every mapped page/fragment on release. Page-modified dates remain separate from operator evidence dates.
+- Verify 27 pages, all 90 prompt targets, four viewport widths, keyboard-scrollable comparisons and the guide without JavaScript; preserve existing data exports.
+
 ## 2026-09-16 - Compact player-first homepage
 - Replace the large hero with a short player-focused headline, three direct comparison links and a methodology link beside the introduction.
 - Put purchase price and staged signup timing in the prominent amount text; retain dated sources, conditions and all three metrics.

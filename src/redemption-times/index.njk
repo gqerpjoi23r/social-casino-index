@@ -7,7 +7,7 @@ tags: ["guides"]
 guideType: "Comparison"
 status: "published"
 publishedAt: "2026-09-09"
-updatedAt: "2026-09-10"
+updatedAt: "2026-09-18"
 authorId: "alex-rowan"
 reviewer: "Social Casino Index research team"
 primaryQuery: "sweepstakes casino redemption times"
@@ -18,12 +18,15 @@ disclosure: "affiliate"
   <p class="eyebrow">10-operator payout index</p>
   <h1 class="page-title">Sweepstakes Casino Redemption Times</h1>
   <p class="lede">Compare the full payout path: published timing, first-redemption verification, payment rail and minimum request. Each row links to a dated operator record.</p>
-  <div class="answer-first"><span class="af-label">What the data shows</span><p>Published payout language is not directly comparable unless you separate approval, processing and delivery. The current public-source review does not establish a comparable end-to-end timeframe for every operator. Unverified figures stay unverified; they are not replaced with industry estimates.</p></div>
-  <div class="table-scroll">
-    <table class="data">
+  <div class="answer-first"><span class="af-label">Redemption timing</span><p>A redemption has three parts: identity and eligibility checks, operator review, and payment delivery. Compare each operator's published time, method and minimum below. These are dated published terms, not measured payouts or a fastest-operator ranking.</p></div>
+  <h2 id="how-redemption-works">How redemption works</h2>
+  <p>Check eligibility, complete verification, confirm your redeemable balance and method-specific minimum, then submit a request through the operator's redemption screen. Approval and delivery are separate stages. Read the <a href="/guides/how-to-redeem-sweeps-coins/">step-by-step Sweeps Coins redemption guide</a>.</p>
+  <h2 id="by-method">Published payout times, methods and minimums</h2>
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Published redemption comparison">
+    <table class="data redemption-requirements redemption-comparison">
       <caption>Operator terms accessed September 2026. “Not publicly verified” means the field was not available in a stable public source.</caption>
-      <thead><tr><th>Operator</th><th>Published timing</th><th>First redemption</th><th>Methods</th><th>Minimum</th></tr></thead>
-      <tbody>{% for op in operators %}<tr><th><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></th><td>{{ op.publishedEstimate }}</td><td>{{ op.firstRedemption }}</td><td>{{ op.methods }}</td><td>{{ op.minRedemption }}</td></tr>{% endfor %}</tbody>
+      <thead><tr><th>Operator</th><th>Published timing</th><th>First redemption</th><th>Methods</th><th>Minimum</th><th>Evidence reviewed</th></tr></thead>
+      <tbody>{% for op in operators %}<tr><th><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></th><td>{{ op.publishedEstimate }}</td><td>{{ op.firstRedemption }}</td><td>{{ op.methods }}</td><td>{{ op.minRedemption }}</td><td><a href="/redemption-times/{{ op.slug }}/#sources">{{ op.verifiedAt | readableDate }}</a></td></tr>{% endfor %}</tbody>
     </table>
   </div>
   <h2>How to choose</h2>

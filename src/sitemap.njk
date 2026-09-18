@@ -10,9 +10,9 @@ eleventyExcludeFromCollections: true
   {%- endif %}
 {%- endfor %}
 {%- for op in operators %}
-  <url><loc>{{ site.url }}/redemption-times/{{ op.slug }}/</loc><lastmod>{{ op.verifiedAt | isoDate }}</lastmod></url>
+  <url><loc>{{ site.url }}/redemption-times/{{ op.slug }}/</loc><lastmod>{{ op.verifiedAt | latestDate(contentDates.operatorPages) }}</lastmod></url>
 {%- endfor %}
 {%- for s in collections.closedStates %}
-  <url><loc>{{ site.url }}/availability/{{ s.slug }}/</loc><lastmod>{{ s.statusDate | default("2026-09-09") | isoDate }}</lastmod></url>
+  <url><loc>{{ site.url }}/availability/{{ s.slug }}/</loc><lastmod>{{ contentDates.statePages }}</lastmod></url>
 {%- endfor %}
 </urlset>

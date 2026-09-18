@@ -1,0 +1,14 @@
+{
+  "CA": {
+    "summary": "California AB 831 prohibits the defined dual-currency online sweepstakes games and specified activities supporting them. The law includes exceptions, including certain incidental promotional sweepstakes; it is not a blanket prohibition on all promotions.",
+    "label": "California AB 831, Chapter 623, approved October 11, 2025",
+    "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB831",
+    "reviewedAt": "2026-09-18"
+  },
+  "WA": {
+    "summary": "Washington RCW 9.46.240 prohibits knowingly transmitting or receiving gambling information over the internet and other listed means, with exceptions for activities authorized under the chapter. This provision alone is not an operator-specific legal determination.",
+    "label": "Washington RCW 9.46.240",
+    "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=9.46.240",
+    "reviewedAt": "2026-09-18"
+  }
+}

@@ -26,6 +26,7 @@ const KEY_PAGES = [
   "guides/index.html",
   "guides/sweepstakes-casino-real-prizes-rules/index.html",
   "guides/sweepstakes-casino-redemption-methods/index.html",
+  "guides/how-to-redeem-sweeps-coins/index.html",
   "guides/redemption-methods/bank-transfer/index.html",
   "guides/redemption-methods/gift-card/index.html",
   "guides/redemption-methods/crypto/index.html",
@@ -53,6 +54,7 @@ for (const rel of ALL_KEY) {
 
 // 2. Key pages must carry JSON-LD.
 const JSONLD_PAGES = [
+  "guides/how-to-redeem-sweeps-coins/index.html",
   "index.html",
   "research/sweepstakes-casino-redemption-times/index.html",
   "availability/index.html",
