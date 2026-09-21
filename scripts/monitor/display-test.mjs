@@ -15,10 +15,72 @@ const fact = fields => record({
   recordType: "facts", field: "redemption_minimum", method: "cash",
   unit: "SC", comparison: "at_least", value: 100, ...fields,
 });
+const comparisonFixture = () => ({ operators: [
+  operator([record({ immediateSc: 12, totalSc: 12, purchaseRequired: false })],
+    { slug: "yay-casino", name: "YAY Casino" }),
+  operator([record({ kind: "first_purchase", priceUsd: 20, immediateSc: 40,
+    totalSc: 65, conditions: ["Additional coins credited over 8 days"] })],
+    { slug: "zonko", name: "Zonko" }),
+  operator([
+    record({ immediateSc: 2, totalSc: 5, durationDays: 3, purchaseRequired: false }),
+    record({ kind: "first_purchase", priceUsd: 9.99, immediateSc: 30, totalSc: 30, promoCode: null }),
+    fact({ value: 50 }), fact({ value: 20, method: "gift_card" }),
+  ], { slug: "wow-vegas", name: "WOW Vegas" }),
+  operator([record({ immediateSc: 2.5, totalSc: 2.5, purchaseRequired: false })],
+    { slug: "mcluck", name: "McLuck" }),
+  operator([fact({ value: 100 }), fact({ value: 10, method: "gift_card" })],
+    { slug: "chumba", name: "Chumba Casino" }),
+] });
 
-test("saved snapshots populate all three metrics without empty operators", () => {
+function assertSnapshot(numeric, at) {
+  assert.ok(Number.isFinite(at));
+  assert.ok(Array.isArray(numeric.operators));
+  const result = comparisonSections(numeric, at);
+  for (const section of result) for (const group of section.groups) {
+    assert.deepEqual(group.rows.map(row => row.name), group.rows.map(row => row.name).sort((a, b) => a.localeCompare(b, "en")));
+    assert.equal(new Set(group.rows.map(row => row.slug)).size, group.rows.length);
+    for (const row of group.rows) {
+      assert.ok(row.value);
+      assert.doesNotMatch(row.value, /\?|NaN|Infinity|undefined/);
+      assert.equal(new URL(row.sourceUrl).protocol, "https:");
+      assert.ok(Number.isFinite(Date.parse(row.observedAt)) && Date.parse(row.observedAt) <= at);
+      const source = numeric.operators.find(operator => operator.slug === row.slug);
+      assert.ok(source.records.some(record => record.sourceUrl === row.sourceUrl &&
+        (record.lastConfirmedAt || record.capturedAt) === row.observedAt));
+      const quantities = section.id === "welcome" ? [row.totalSc] :
+        section.id === "purchase" ? [row.immediateSc, row.priceUsd] : [row.amount];
+      assert.ok(quantities.every(value => typeof value === "number" && Number.isFinite(value) && value >= 0));
+      if (section.id === "purchase") assert.ok(row.priceUsd > 0);
+      if (section.id === "welcome") {
+        assert.equal(row.note.includes("No purchase needed"), row.purchaseRequired === false);
+        assert.equal(row.note.includes("Purchase required"), row.purchaseRequired === true);
+      }
+    }
+  }
+  const comparisonRows = result.flatMap(section => section.groups.flatMap(group => group.rows));
+  for (const group of playerAnswers(numeric, at)) for (const row of group.rows) {
+    assert.ok(row.text);
+    assert.doesNotMatch(row.text, /NaN|Infinity|undefined/);
+    assert.equal(new URL(row.sourceUrl).protocol, "https:");
+    assert.ok(Number.isFinite(Date.parse(row.observedAt)) && Date.parse(row.observedAt) <= at);
+    // Budget answers may choose a different package from the main comparison.
+    assert.ok(numeric.operators.find(operator => operator.slug === row.slug).records.some(record =>
+      record.sourceUrl === row.sourceUrl && (record.lastConfirmedAt || record.capturedAt) === row.observedAt));
+    if (group.id === "free-signup" || group.id === "compare-mcluck") {
+      assert.equal(row.purchaseRequired, false);
+      assert.ok(comparisonRows.some(comparison => comparison.slug === row.slug && comparison.value === row.value));
+    }
+  }
+}
+
+test("current saved snapshot renders supported comparisons and answers", () => {
   const numeric = JSON.parse(readFileSync("src/_data/numeric.json", "utf8"));
-  const result = comparisonSections(numeric, Date.parse(numeric.lastSuccessfulRefresh));
+  assertSnapshot(numeric, Date.parse(numeric.lastSuccessfulRefresh));
+});
+
+test("synthetic offers populate all three metrics without empty operators", () => {
+  const numeric = comparisonFixture();
+  const result = comparisonSections(numeric, now);
   assert.deepEqual(result.map(section => section.groups.map(group => group.rows.length)), [[3], [2], [2, 2]]);
   const find = (section, slug, group = 0) => result[section].groups[group].rows.find(row => row.slug === slug);
   assert.equal(find(0, "mcluck").value, "2.5 SC");
@@ -41,8 +103,7 @@ test("saved snapshots populate all three metrics without empty operators", () =>
 });
 
 test("player answers preserve methods, stages and source dates without inventing missing pair metrics", () => {
-  const numeric = JSON.parse(readFileSync("src/_data/numeric.json", "utf8"));
-  const answers = playerAnswers(numeric, Date.parse(numeric.lastSuccessfulRefresh));
+  const answers = playerAnswers(comparisonFixture(), now);
   const text = id => answers.find(group => group.id === id).rows.map(row => row.text).join(" ");
   assert.match(text("low-redemption"), /50 SC cash/);
   assert.match(text("low-redemption"), /10 SC.*gift-card threshold/);
@@ -53,6 +114,43 @@ test("player answers preserve methods, stages and source dates without inventing
   assert.match(text("compare-chumba"), /50 SC.*100 SC/);
   assert.ok(answers.every(group => group.rows.every(row => row.sourceUrl && row.observedAt)));
   assert.deepEqual(playerAnswers(undefined, now), []);
+});
+
+test("snapshot smoke checks allow changed amounts, promo codes and missing categories", () => {
+  for (const records of [[], [record({ immediateSc: 7, totalSc: 7, purchaseRequired: null })],
+    [record({ kind: "first_purchase", priceUsd: 5, immediateSc: 19, promoCode: "NEW" })],
+    [fact({ value: 35, method: "gift_card" })]]) {
+    assertSnapshot({ operators: [operator(records)] }, now);
+  }
+  assertSnapshot({ operators: [] }, now);
+});
+
+test("new unknown purchase requirements supersede older free-signup claims", () => {
+  for (const purchaseRequired of [null, undefined, true, false]) {
+    const numeric = { operators: [operator([
+      record({ capturedAt: "2026-09-11T12:00:00Z", purchaseRequired: false }),
+      record({ purchaseRequired }),
+    ])] };
+    const row = comparisonSections(numeric, now)[0].groups[0].rows[0];
+    assert.equal(row.observedAt, "2026-09-12T12:00:00Z");
+    assert.equal(row.purchaseRequired, purchaseRequired);
+    assert.equal(row.note.includes("No purchase needed"), purchaseRequired === false);
+    assert.equal(row.note.includes("Purchase required"), purchaseRequired === true);
+    assert.equal(playerAnswers(numeric, now).some(group => group.id === "free-signup"), purchaseRequired === false);
+  }
+});
+
+test("successive snapshots add, replace and remove promo codes", () => {
+  for (const kind of ["signup", "first_purchase"]) {
+    const records = [];
+    for (const [index, promoCode] of [null, "FIRST", "REPLACEMENT", null, undefined].entries()) {
+      const capturedAt = `2026-09-${10 + index}T12:00:00Z`;
+      records.push(record({ kind, capturedAt, promoCode, priceUsd: 10 }));
+      const row = rows(records, kind === "signup" ? 0 : 1)[0];
+      assert.equal(row.promoCode, promoCode);
+      assert.equal(row.observedAt, capturedAt);
+    }
+  }
 });
 
 test("budget answers find affordable packages even when a larger package has a better ratio", () => {
