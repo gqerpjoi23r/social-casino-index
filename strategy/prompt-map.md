@@ -125,6 +125,24 @@ The build validates every target path and fragment.
 | 87 | trusted sweepstakes casinos vs risky operators | / | HOME | P1 |
 | 90 | which sweepstakes casino sites are legitimate | / | HOME | P1 |
 
+## Bonus Benchmarks Added September 21
+
+These targets cover benefit-specific acquisition queries. They supplement the historical inventory above; they are not search-volume estimates or a claim that monitoring has already run.
+
+| # | Prompt | Target URL | Type | Pri |
+|---|--------|-----------|------|-----|
+| 91 | which sweepstakes casinos offer the most immediate free signup coins | /bonuses/no-purchase-signup-bonuses/ | BENCH | P1 |
+| 92 | compare no purchase signup bonuses for sweepstakes casinos | /bonuses/no-purchase-signup-bonuses/ | BENCH | P1 |
+| 93 | largest staged welcome bonus sweeps coins | /bonuses/staged-welcome-bonuses/ | BENCH | P1 |
+| 94 | compare immediate and staged sweepstakes signup rewards | /bonuses/staged-welcome-bonuses/ | BENCH | P1 |
+| 95 | which sweepstakes coin package gives the most SC per dollar | /bonuses/purchase-value/ | BENCH | P1 |
+| 96 | compare sweepstakes casino bonuses for ten dollars or less | /bonuses/bonuses-under-10-dollars/ | BENCH | P1 |
+| 97 | best published sweeps coin package under twenty dollars | /bonuses/bonuses-under-20-dollars/ | BENCH | P1 |
+| 98 | compare daily free sweeps coin rewards | /bonuses/daily-free-rewards/ | BENCH | P1 |
+| 99 | which sweepstakes casinos publish the lowest cash redemption minimum | /bonuses/cash-redemption-minimums/ | BENCH | P1 |
+| 100 | WOW Vegas versus McLuck signup bonus comparison | /compare/wow-vegas-vs-mcluck/ | COMPARE | P1 |
+| 101 | WOW Vegas versus Chumba cash redemption minimum | /compare/wow-vegas-vs-chumba/ | COMPARE | P1 |
+
 ## Notes
 
 - Prompt numbering follows the production list; "b" suffixes mark prompts whose

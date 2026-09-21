@@ -7,7 +7,7 @@ export function comparisonSections(numeric, now = Date.now(), purchaseBudget = I
   const model = buildBenchmarks(numeric, [], now, purchaseBudget);
   const entry = (operator, row) => ({ ...row, slug: operator.slug, name: operator.name, amount: row.value, value: row.label });
   for (const operator of model.operators.toSorted((a, b) => a.name.localeCompare(b.name, "en"))) {
-    const signup = operator.metrics.welcome;
+    const signup = operator.metrics.signup || operator.metrics.welcome;
     if (signup) {
       const staged = amount(signup.immediateSc) && signup.totalSc > signup.immediateSc;
       const timing = staged ? `${number(signup.immediateSc)} SC immediate${signup.durationDays > 0 ? `; total over ${number(signup.durationDays)} days` : "; remainder in stages"}` :

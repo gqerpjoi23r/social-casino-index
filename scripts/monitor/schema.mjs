@@ -1,6 +1,6 @@
 import Ajv from "ajv";
 
-export const NUMERIC_VERSION = "2.2.1";
+export const NUMERIC_VERSION = "2.3.0";
 const nullableNumber = { type: ["number", "null"], minimum: 0 };
 const nullableString = { type: ["string", "null"] };
 const strings = { type: "array", items: { type: "string" } };
@@ -27,6 +27,8 @@ export const EXTRACTION_SCHEMA = object({
     intervalHours: nullableNumber,
     purchaseRequired: { type: ["boolean", "null"] },
     promoCode: nullableString,
+    offerStatus: { enum: ["available", "withdrawn", "expired", "unknown"] },
+    expiresAt: nullableString,
     conditions: strings,
   }) },
   facts: { type: "array", items: object({

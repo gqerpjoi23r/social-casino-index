@@ -15,6 +15,9 @@ eleventyExcludeFromCollections: true
 {%- for benchmark in benchmarks.benchmarks %}
   <url><loc>{{ site.url }}{{ benchmark.url }}</loc><lastmod>{{ benchmark.updatedAt | latestDate("2026-09-21") }}</lastmod></url>
 {%- endfor %}
+{%- for comparison in benchmarks.comparisons %}
+  <url><loc>{{ site.url }}{{ comparison.url }}</loc><lastmod>{{ benchmarks.generatedAt | latestDate("2026-09-21") }}</lastmod></url>
+{%- endfor %}
 {%- for s in collections.closedStates %}
   <url><loc>{{ site.url }}/availability/{{ s.slug }}/</loc><lastmod>{{ contentDates.statePages }}</lastmod></url>
 {%- endfor %}

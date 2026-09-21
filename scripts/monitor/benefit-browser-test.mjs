@@ -23,9 +23,10 @@ const data = await (await fetch(`${base}/updates/leaderboard.json`)).json();
 const browser = await chromium.launch({ headless: true });
 try {
   const page = await browser.newPage();
+  page.setDefaultTimeout(10000);
   const errors = [];
   page.on("pageerror", error => errors.push(error.message));
-  for (const path of ["/", "/updates/", "/bonuses/", ...data.benchmarks.map(b => b.url)]) {
+  for (const path of ["/", "/updates/", "/bonuses/", ...data.benchmarks.map(b => b.url), ...data.comparisons.map(c => c.url)]) {
     await page.goto(`${base}${path}`);
     for (const benchmark of data.benchmarks) {
       const rows = page.locator(`[data-benchmark="${benchmark.id}"] tbody tr`);
@@ -38,7 +39,7 @@ try {
     for (const width of [320, 390, 768, 1024, 1440]) {
       await page.setViewportSize({ width, height: 900 });
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `${path} at ${width}`);
-      for (const image of await page.locator("main img").all()) {
+      for (const image of await page.locator("main img:visible").all()) {
         await image.scrollIntoViewIfNeeded();
         await image.evaluate(image => image.decode());
         assert.ok(await image.evaluate(image => image.naturalWidth > 0));
@@ -63,9 +64,11 @@ try {
     }
   }
   await page.goto(`${base}/`);
-  for (const key of ["signup", "purchase", "cash", "overall"]) {
+  for (const key of ["signup", "purchase", "cash"]) {
+    await page.goto(`${base}/`);
     await page.selectOption("#benefit-sort", key);
-    assert.equal(await page.locator("[data-ranked-operators] tr").count(), data.ranked.length);
+    await page.waitForURL(`${base}${data.benchmarks.find(b => b.id === key).url}`);
+    assert.equal(await page.locator(`[data-benchmark="${key}"] tbody tr`).count(), data.benchmarks.find(b => b.id === key).rows.length);
   }
   const noJs = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
   const plain = await noJs.newPage();

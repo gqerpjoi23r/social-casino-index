@@ -1,6 +1,148 @@
 {
   "schemaVersion": 1,
   "methodologyVersion": "published-benefits-1",
+  "comparisons": [
+    {
+      "slug": "wow-vegas-vs-mcluck",
+      "url": "/compare/wow-vegas-vs-mcluck/",
+      "title": "WOW Vegas vs McLuck",
+      "operators": [
+        {
+          "name": "WOW Vegas",
+          "url": "/redemption-times/wow-vegas/"
+        },
+        {
+          "name": "McLuck",
+          "url": "/redemption-times/mcluck/"
+        }
+      ],
+      "sections": [
+        {
+          "id": "signup",
+          "title": "No-purchase signup bonuses",
+          "url": "/bonuses/no-purchase-signup-bonuses/",
+          "rows": [
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "signup",
+              "value": 2,
+              "label": "2 SC",
+              "note": "5 SC total over 3 days.",
+              "recordId": "5c032bcb155ec981ff2b",
+              "sourceUrl": "https://www.wowvegas.com/promo-code",
+              "observedAt": "2026-09-21T19:45:10.340Z",
+              "status": "published",
+              "conditions": [
+                "Available to claim after sign-up.",
+                "Day 1 provides 150,000 WOW Coins and SC 2.",
+                "Day 2 provides 50,000 WOW Coins and SC 1.5.",
+                "Day 3 provides 50,000 WOW Coins and SC 1.5."
+              ],
+              "promoCode": "WOWBONUS2026",
+              "priceUsd": null,
+              "immediateSc": 2,
+              "totalSc": 5,
+              "durationDays": 3,
+              "purchaseRequired": false,
+              "kind": "signup"
+            },
+            {
+              "slug": "mcluck",
+              "name": "McLuck",
+              "url": "/redemption-times/mcluck/",
+              "metric": "signup",
+              "value": 2.5,
+              "label": "2.5 SC",
+              "note": "Immediate. No purchase needed.",
+              "recordId": "c422f20231c7f4e16079",
+              "sourceUrl": "https://www.mcluck.com/",
+              "observedAt": "2026-09-21T19:46:15.266Z",
+              "status": "published",
+              "conditions": [
+                "Continue to claim your coins",
+                "No purchase needed"
+              ],
+              "promoCode": null,
+              "priceUsd": null,
+              "immediateSc": 2.5,
+              "totalSc": 2.5,
+              "durationDays": null,
+              "purchaseRequired": false,
+              "kind": "signup"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "wow-vegas-vs-chumba",
+      "url": "/compare/wow-vegas-vs-chumba/",
+      "title": "WOW Vegas vs Chumba Casino",
+      "operators": [
+        {
+          "name": "WOW Vegas",
+          "url": "/redemption-times/wow-vegas/"
+        },
+        {
+          "name": "Chumba Casino",
+          "url": "/redemption-times/chumba/"
+        }
+      ],
+      "sections": [
+        {
+          "id": "cash",
+          "title": "Cash redemption minimums",
+          "url": "/bonuses/cash-redemption-minimums/",
+          "rows": [
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "cash",
+              "value": 50,
+              "label": "50 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "a35519efaaed4773afb8",
+              "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+              "observedAt": "2026-09-21T19:45:17.254Z",
+              "status": "published",
+              "conditions": [
+                "Blue WOW Coins cannot be redeemed, as they have no monetary value."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            },
+            {
+              "slug": "chumba",
+              "name": "Chumba Casino",
+              "url": "/redemption-times/chumba/",
+              "metric": "cash",
+              "value": 100,
+              "label": "100 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "b43cf96d468217c783e7",
+              "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+              "observedAt": "2026-09-21T19:43:17.897Z",
+              "status": "published",
+              "conditions": [
+                "Minimum redemption threshold applies to the \"Cash Prize\" Redemption option."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "generatedAt": "2026-09-21T19:47:24.805Z",
   "operators": [
     {

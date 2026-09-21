@@ -11,7 +11,7 @@ export function sameEvidence(record, candidate) {
     ["value", "upperValue", "unit", "scope", "timing", "priceUsd", "immediateSc", "goldCoins",
       "totalSc", "advertisedExtraPercent", "advertisedDiscountPercent", "extraPercentComparison",
       "intervalHours", "durationDays", "method", "stage", "comparison", "basis", "purchaseRequired",
-      "promoCode", "summary"].every(key =>
+      "promoCode", "offerStatus", "expiresAt", "summary"].every(key =>
       JSON.stringify(record[key] ?? null) === JSON.stringify(candidate[key] ?? null)) &&
     JSON.stringify([...(record.states || [])].sort()) === JSON.stringify([...(candidate.states || [])].sort());
 }
@@ -31,10 +31,16 @@ export function publicNumeric(operators, reviewed, manifest, captures, previous 
       const absenceReviews = Object.fromEntries(disclosureReviews.filter(review => review.operatorId === operator.slug &&
         ["signup", "purchase", "cash"].includes(review.metric) &&
         ["not_disclosed", "not_offered"].includes(review.status)).map(review => {
-        const valid = !blocked && review.reviewedAt && Date.parse(review.reviewedAt) <= Date.parse(manifest.completedAt) &&
+        const oldReview = prior?.disclosureReviews?.[review.metric];
+        const retainPrior = oldReview?.valid === true && oldReview.reviewedAt === review.reviewedAt &&
+          oldReview.status === review.status;
+        const valid = review.reviewedAt && Date.parse(review.reviewedAt) <= Date.parse(manifest.completedAt) &&
           review.checklistComplete === true && review.sources?.length > 0 &&
-          review.sources.every(source => successful.some(page => page.sourceId === source.id && page.textHash === source.textHash)) &&
-          !evaluation?.modelErrors?.some(error => error.operator === operator.slug);
+          review.sources.every(source => {
+            const page = successful.find(page => page.sourceId === source.id);
+            return page ? page.textHash === source.textHash : retainPrior;
+          }) &&
+          (retainPrior || (!blocked && !evaluation?.modelErrors?.some(error => error.operator === operator.slug)));
         return [review.metric, { status: review.status, reviewedAt: review.reviewedAt, valid: Boolean(valid),
           sources: (review.sources || []).map(source => ({ id: source.id, url: source.url })) }];
       }));

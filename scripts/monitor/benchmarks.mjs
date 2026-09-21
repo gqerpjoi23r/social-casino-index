@@ -145,7 +145,19 @@ export function buildBenchmarks(numeric, registry = [], now = Date.now(), purcha
     b.benefitCount - a.benefitCount || a.name.localeCompare(b.name, "en"));
   let rank = 0;
   for (const op of operators) if (op.score !== null) op.rank = ++rank;
-  return { schemaVersion: 1, methodologyVersion: METHODOLOGY_VERSION,
+  const comparisons = [["wow-vegas", "mcluck"], ["wow-vegas", "chumba"]].flatMap(slugs => {
+    const pair = slugs.map(slug => operators.find(op => op.slug === slug));
+    if (pair.some(op => !op)) return [];
+    const slug = slugs.join("-vs-");
+    const sections = benchmarks.filter(b => pair.every(op => op.metrics[b.id])).map(b => ({
+      id: b.id, title: b.title, url: b.url, rows: pair.map(op => ({
+        slug: op.slug, name: op.name, url: op.url, ...op.metrics[b.id],
+      })),
+    }));
+    return [{ slug, url: `/compare/${slug}/`, title: `${pair[0].name} vs ${pair[1].name}`,
+      operators: pair.map(op => ({ name: op.name, url: op.url })), sections }];
+  });
+  return { schemaVersion: 1, methodologyVersion: METHODOLOGY_VERSION, comparisons,
     generatedAt: numeric?.lastSuccessfulRefresh || null, operators, benchmarks,
     ranked: operators.filter(op => op.rank !== null), incomplete: operators.filter(op => op.rank === null) };
 }

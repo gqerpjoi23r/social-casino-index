@@ -7,7 +7,7 @@ const blankOffer = {
   priceUsd: null, immediateSc: null, totalSc: null, goldCoins: null,
   advertisedExtraPercent: null, durationDays: null, intervalHours: null,
   advertisedDiscountPercent: null, extraPercentComparison: null,
-  purchaseRequired: null, promoCode: null, conditions: [],
+  purchaseRequired: null, promoCode: null, offerStatus: "unknown", expiresAt: null, conditions: [],
 };
 
 // Conservative candidates from semantic sentences, never CSS selectors.
@@ -74,6 +74,11 @@ export function checkExtraction(data, pages) {
     let reason = !page ? "unknown_source" : !normalize(page.text).includes(normalize(item.quote)) ? "unsupported_quote" : null;
     if (kind === "offers" && item.immediateSc !== null && item.totalSc !== null && item.immediateSc > item.totalSc) reason = "immediate_exceeds_total";
     if (kind === "offers" && item.priceUsd === 0 && item.purchaseRequired === true) reason = "purchase_with_zero_price";
+    if (kind === "offers" && item.expiresAt !== null &&
+      (!/^\d{4}-\d{2}-\d{2}T.+(?:Z|[+-]\d{2}:\d{2})$/.test(item.expiresAt) ||
+        !Number.isFinite(Date.parse(item.expiresAt)) || !item.quote.includes(item.expiresAt))) reason = "unsupported_offer_expiry";
+    if (kind === "offers" && ["withdrawn", "expired"].includes(item.offerStatus) &&
+      !/\bexpired\b|\bwithdrawn\b|\bno longer available\b|\bdiscontinued\b|\boffer (?:has )?ended\b/i.test(item.quote)) reason = "unsupported_offer_withdrawal";
     if (kind === "offers" && /over\s+\d+\s+days|first\s+\d+\s+days/i.test(item.quote) &&
         item.kind === "recurring_daily") reason = "staged_is_not_recurring";
     if (kind === "offers" && /eligible|verification|new players|new customers|first purchase/i.test(item.quote) &&

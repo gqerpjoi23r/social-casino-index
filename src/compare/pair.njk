@@ -1,0 +1,32 @@
+---
+pagination:
+  data: benchmarks.comparisons
+  size: 1
+  alias: comparison
+layout: base.njk
+permalink: "/compare/{{ comparison.slug }}/"
+publishedAt: "2026-09-21"
+updatedAt: "2026-09-21"
+eleventyComputed:
+  title: "{{ comparison.title }}: Published Bonus Comparison"
+  description: "Compare {{ comparison.title }} by supported signup bonuses, purchase packages and cash redemption minimums. Dated operator sources and conditions."
+  jsonld:
+    "@context": "https://schema.org"
+    "@type": "CollectionPage"
+    name: "{{ comparison.title }}"
+---
+{% from "benefit-row.njk" import evidence %}
+<main><article class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/bonuses/">Bonus benchmarks</a></li><li aria-current="page">{{ comparison.title }}</li></ol></nav>
+<header class="benefit-intro"><h1>{{ comparison.title }}</h1><p>Published benefits compared on the same metric, with full offer conditions and observation dates.</p></header>
+{% for section in comparison.sections %}
+<section class="benefit-benchmark"><h2>{{ section.title }}</h2>
+<div class="benefit-detail-grid">{% for row in section.rows %}<section data-operator="{{ row.slug }}"><h3><a href="{{ row.url }}">{{ row.name }}</a></h3>{{ evidence(row) }}</section>{% endfor %}</div>
+<p class="benefit-policy"><a href="{{ section.url }}">Compare this benefit across all covered operators</a></p>
+</section>
+{% else %}
+<p>Comparable amounts for both operators have not yet been established. Their individual profiles retain any supported benefits.</p>
+{% endfor %}
+<nav class="benefit-nav" aria-label="Operator profiles">{% for operator in comparison.operators %}<a href="{{ operator.url }}">{{ operator.name }} profile</a>{% endfor %}</nav>
+<p class="benefit-policy">Published terms, not tested payout performance. <a href="/methodology/#published-offers">Methodology</a>.</p>
+</article></main>
