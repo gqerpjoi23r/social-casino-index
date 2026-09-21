@@ -27,7 +27,9 @@ test("equal-weight rank uses three percentiles and never affiliate status", () =
   assert.deepEqual(model(input), first);
 });
 test("component and score ties are deterministic", () => {
-  const result = model([complete("z", 2, 2, 50), complete("a", 2, 2, 50)]);
+  const extra = complete("z", 2, 2, 50);
+  extra.records.push(record({ kind: "recurring_daily", intervalHours: 24 }));
+  const result = model([extra, complete("a", 2, 2, 50)]);
   assert.deepEqual(result.ranked.map(op => op.slug), ["a", "z"]);
   assert.deepEqual(result.benchmarks[0].rows.map(row => row.rank), [1, 1]);
 });

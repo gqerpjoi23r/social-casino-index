@@ -142,7 +142,7 @@ export function buildBenchmarks(numeric, registry = [], now = Date.now(), purcha
   }
   operators.sort((a, b) => (b.score !== null) - (a.score !== null) ||
     (b.score ?? 0) - (a.score ?? 0) || b.disclosureCount - a.disclosureCount ||
-    b.benefitCount - a.benefitCount || a.name.localeCompare(b.name, "en"));
+    (a.score === null && b.score === null ? b.benefitCount - a.benefitCount : 0) || a.name.localeCompare(b.name, "en"));
   let rank = 0;
   for (const op of operators) if (op.score !== null) op.rank = ++rank;
   const comparisons = [["wow-vegas", "mcluck"], ["wow-vegas", "chumba"]].flatMap(slugs => {
