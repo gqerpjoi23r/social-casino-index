@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-21 - Verify production benefits and focus source discovery
+- Verify all seven live bonus benchmarks and eleven profiles across mobile/desktop, keyboard, image loading and no-JavaScript use.
+- Add three Lovd prompts for $20 packages, daily rewards and staged welcome bonuses; retain all 98 existing prompts and history without starting immediate analysis.
+- Exclude game-title URLs from new and persisted offer discoveries after the production refresh found games named with "bonus". Explicitly configured source URLs remain unchanged.
+
 ## 2026-09-21 - Published-benefit rankings and bonus benchmarks
 - Add an affiliate-independent, equal-weight operator ranking and seven query-specific bonus benchmarks. Incomplete overall evidence does not suppress a supported individual benefit.
 - Use one comparison model for homepage, operator profiles, answers and the new leaderboard JSON; preserve dated observations and distinguish staged rewards, package prices and cash/gift-card thresholds.
