@@ -29,22 +29,22 @@
               "metric": "signup",
               "value": 2,
               "label": "2 SC",
-              "note": "5 SC total over 3 days.",
-              "recordId": "5c032bcb155ec981ff2b",
-              "sourceUrl": "https://www.wowvegas.com/promo-code",
-              "observedAt": "2026-09-21T19:45:10.340Z",
+              "note": "Immediate. No purchase needed.",
+              "recordId": "61ae1ebd3f87faf23efb",
+              "sourceUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
+              "observedAt": "2026-09-21T21:46:24.480Z",
               "status": "published",
               "conditions": [
-                "Available to claim after sign-up.",
-                "Day 1 provides 150,000 WOW Coins and SC 2.",
-                "Day 2 provides 50,000 WOW Coins and SC 1.5.",
-                "Day 3 provides 50,000 WOW Coins and SC 1.5."
+                "Create an account at WOW Vegas.",
+                "Accept the Sweepstakes Rules when prompted during registration.",
+                "Click the “Claim Your Free SC” button.",
+                "Bonus is added upon completion."
               ],
-              "promoCode": "WOWBONUS2026",
+              "promoCode": null,
               "priceUsd": null,
               "immediateSc": 2,
-              "totalSc": 5,
-              "durationDays": 3,
+              "totalSc": 2,
+              "durationDays": null,
               "purchaseRequired": false,
               "kind": "signup"
             },
@@ -56,13 +56,14 @@
               "value": 2.5,
               "label": "2.5 SC",
               "note": "Immediate. No purchase needed.",
-              "recordId": "c422f20231c7f4e16079",
+              "recordId": "12e77b670c7f12ad39b1",
               "sourceUrl": "https://www.mcluck.com/",
-              "observedAt": "2026-09-21T19:46:15.266Z",
+              "observedAt": "2026-09-21T21:42:51.114Z",
               "status": "published",
               "conditions": [
-                "Continue to claim your coins",
-                "No purchase needed"
+                "“Spin for Fun to get Free Rewards.”",
+                "“Continue to claim your coins.”",
+                "“Play instantly! No purchase needed.”"
               ],
               "promoCode": null,
               "priceUsd": null,
@@ -104,9 +105,9 @@
               "value": 50,
               "label": "50 SC",
               "note": "Cash redemption minimum.",
-              "recordId": "a35519efaaed4773afb8",
+              "recordId": "657702ec5c98f533df6d",
               "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-              "observedAt": "2026-09-21T19:45:17.254Z",
+              "observedAt": "2026-09-21T21:42:38.478Z",
               "status": "published",
               "conditions": [
                 "Blue WOW Coins cannot be redeemed, as they have no monetary value."
@@ -125,13 +126,11 @@
               "value": 100,
               "label": "100 SC",
               "note": "Cash redemption minimum.",
-              "recordId": "b43cf96d468217c783e7",
+              "recordId": "79d04e14b409d2ea6552",
               "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-              "observedAt": "2026-09-21T19:43:17.897Z",
+              "observedAt": "2026-09-21T21:44:06.608Z",
               "status": "published",
-              "conditions": [
-                "Minimum redemption threshold applies to the \"Cash Prize\" Redemption option."
-              ],
+              "conditions": [],
               "priceUsd": null,
               "immediateSc": null,
               "totalSc": null,
@@ -143,7 +142,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-09-21T19:47:24.805Z",
+  "generatedAt": "2026-09-21T21:48:25.470Z",
   "operators": [
     {
       "slug": "wow-vegas",
@@ -156,22 +155,22 @@
           "metric": "signup",
           "value": 2,
           "label": "2 SC",
-          "note": "5 SC total over 3 days.",
-          "recordId": "5c032bcb155ec981ff2b",
-          "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "note": "Immediate. No purchase needed.",
+          "recordId": "61ae1ebd3f87faf23efb",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
+          "observedAt": "2026-09-21T21:46:24.480Z",
           "status": "published",
           "conditions": [
-            "Available to claim after sign-up.",
-            "Day 1 provides 150,000 WOW Coins and SC 2.",
-            "Day 2 provides 50,000 WOW Coins and SC 1.5.",
-            "Day 3 provides 50,000 WOW Coins and SC 1.5."
+            "Create an account at WOW Vegas.",
+            "Accept the Sweepstakes Rules when prompted during registration.",
+            "Click the “Claim Your Free SC” button.",
+            "Bonus is added upon completion."
           ],
-          "promoCode": "WOWBONUS2026",
+          "promoCode": null,
           "priceUsd": null,
           "immediateSc": 2,
-          "totalSc": 5,
-          "durationDays": 3,
+          "totalSc": 2,
+          "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup"
         },
@@ -180,15 +179,15 @@
           "value": 5,
           "label": "5 SC",
           "note": "No purchase needed.",
-          "recordId": "5c032bcb155ec981ff2b",
+          "recordId": "96d8483854cc2b8eb5c2",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "Available to claim after sign-up.",
-            "Day 1 provides 150,000 WOW Coins and SC 2.",
-            "Day 2 provides 50,000 WOW Coins and SC 1.5.",
-            "Day 3 provides 50,000 WOW Coins and SC 1.5."
+            "Day 1 provides 150,000 WOW Coins + SC 2.",
+            "Day 2 provides 50,000 WOW Coins + SC 1.5.",
+            "Day 3 provides 50,000 WOW Coins + SC 1.5."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": null,
@@ -203,15 +202,15 @@
           "value": 5,
           "label": "5 SC",
           "note": "2 SC immediate; total over 3 days.",
-          "recordId": "5c032bcb155ec981ff2b",
+          "recordId": "96d8483854cc2b8eb5c2",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "Available to claim after sign-up.",
-            "Day 1 provides 150,000 WOW Coins and SC 2.",
-            "Day 2 provides 50,000 WOW Coins and SC 1.5.",
-            "Day 3 provides 50,000 WOW Coins and SC 1.5."
+            "Day 1 provides 150,000 WOW Coins + SC 2.",
+            "Day 2 provides 50,000 WOW Coins + SC 1.5.",
+            "Day 3 provides 50,000 WOW Coins + SC 1.5."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": null,
@@ -226,9 +225,9 @@
           "value": 50,
           "label": "50 SC",
           "note": "Cash redemption minimum.",
-          "recordId": "a35519efaaed4773afb8",
+          "recordId": "657702ec5c98f533df6d",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-21T19:45:17.254Z",
+          "observedAt": "2026-09-21T21:42:38.478Z",
           "status": "published",
           "conditions": [
             "Blue WOW Coins cannot be redeemed, as they have no monetary value."
@@ -239,32 +238,15 @@
           "durationDays": null,
           "kind": null
         },
-        "general": {
-          "metric": "general",
-          "value": 50,
-          "label": "50 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "recordId": "a35519efaaed4773afb8",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-21T19:45:17.254Z",
-          "status": "published",
-          "conditions": [
-            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
+        "general": null,
         "gift": {
           "metric": "gift",
           "value": 20,
           "label": "20 SC",
           "note": "Gift-card redemption minimum.",
-          "recordId": "c8abcce14b7d83789a79",
+          "recordId": "487a40e7af2b0419c5f2",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-21T19:45:17.254Z",
+          "observedAt": "2026-09-21T21:42:38.478Z",
           "status": "published",
           "conditions": [
             "Blue WOW Coins cannot be redeemed, as they have no monetary value."
@@ -281,15 +263,15 @@
           "value": 3.003003003003003,
           "label": "30 SC for $9.99",
           "note": "3 SC per $1. First purchase only.",
-          "recordId": "c119ac91af2059f5e75b",
+          "recordId": "2c981bb9162ec5c0b6b9",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "First purchase only.",
+            "Register and enter WOWBONUS2026.",
             "Normally $29.99.",
-            "Instant coin delivery.",
-            "Unlock VIP rewards faster."
+            "Instant coin delivery."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": 9.99,
@@ -304,15 +286,15 @@
           "value": 3.003003003003003,
           "label": "30 SC for $9.99",
           "note": "3 SC per $1. First purchase only.",
-          "recordId": "c119ac91af2059f5e75b",
+          "recordId": "2c981bb9162ec5c0b6b9",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "First purchase only.",
+            "Register and enter WOWBONUS2026.",
             "Normally $29.99.",
-            "Instant coin delivery.",
-            "Unlock VIP rewards faster."
+            "Instant coin delivery."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": 9.99,
@@ -327,15 +309,15 @@
           "value": 3.003003003003003,
           "label": "30 SC for $9.99",
           "note": "3 SC per $1. First purchase only.",
-          "recordId": "c119ac91af2059f5e75b",
+          "recordId": "2c981bb9162ec5c0b6b9",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "First purchase only.",
+            "Register and enter WOWBONUS2026.",
             "Normally $29.99.",
-            "Instant coin delivery.",
-            "Unlock VIP rewards faster."
+            "Instant coin delivery."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": 9.99,
@@ -352,16 +334,98 @@
         "cash": null
       },
       "collectionStatus": "partial",
-      "score": 77.77777777777779,
+      "score": 88.8888888888889,
       "rank": 1,
-      "benefitCount": 6,
+      "benefitCount": 5,
       "componentScores": {
-        "signup": 33.333333333333336,
+        "signup": 66.66666666666667,
         "purchase": 100,
         "cash": 100
       },
       "disclosureCount": 3,
       "status": "Ranked on published offers"
+    },
+    {
+      "slug": "chumba",
+      "name": "Chumba Casino",
+      "productMode": "sweepstakes",
+      "favicon": "/assets/favicons/chumba.png",
+      "url": "/redemption-times/chumba/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": {
+          "metric": "cash",
+          "value": 100,
+          "label": "100 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "79d04e14b409d2ea6552",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "observedAt": "2026-09-21T21:44:06.608Z",
+          "status": "published",
+          "conditions": [],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "general": {
+          "metric": "general",
+          "value": 100,
+          "label": "100 SC",
+          "note": "General redemption minimum; cash method not established.",
+          "recordId": "71dd3d981f2a34fedc7f",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "observedAt": "2026-09-21T21:44:06.608Z",
+          "status": "published",
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "gift": {
+          "metric": "gift",
+          "value": 10,
+          "label": "10 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "4594baf7502b8e59b606",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "observedAt": "2026-09-21T21:44:06.608Z",
+          "status": "published",
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "partial",
+      "score": null,
+      "rank": null,
+      "benefitCount": 3,
+      "componentScores": {},
+      "disclosureCount": 1,
+      "status": "Overall comparison incomplete"
     },
     {
       "slug": "yay-casino",
@@ -372,24 +436,25 @@
       "metrics": {
         "signup": {
           "metric": "signup",
-          "value": 8,
-          "label": "8 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "ab08719d6a319c3d9a2e",
-          "sourceUrl": "https://www.yaycasino.com/promotions",
-          "observedAt": "2026-09-18T06:32:46.235Z",
-          "status": "retained",
+          "value": 1,
+          "label": "1 SC",
+          "note": "12 SC total over 7 days.",
+          "recordId": "60873e2e920050f276dc",
+          "sourceUrl": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
+          "observedAt": "2026-09-21T21:48:19.785Z",
+          "status": "published",
           "conditions": [
-            "Create an account with name, date of birth, state, email, and password.",
-            "Verify email and ID.",
-            "Log in to claim.",
-            "Includes 20 free spins valued at 0.1 SC/spin on Yay Devil Fire 2."
+            "New players only.",
+            "Complete registration to receive 5,000 GC + 1 SC.",
+            "Phone verification, email opt-in, SMS opt-in, and claiming the first daily bonus are required for the stated 40,000 GC + 4 SC.",
+            "Make 150 spins in SC mode within the first 7 days to unlock the additional 80,000 GC + 8 SC.",
+            "Includes 20 free spins on Yay Devil Fire 2, stated as value of 0.1 SC/spin."
           ],
           "promoCode": null,
           "priceUsd": null,
-          "immediateSc": 8,
-          "totalSc": 8,
-          "durationDays": null,
+          "immediateSc": 1,
+          "totalSc": 12,
+          "durationDays": 7,
           "purchaseRequired": false,
           "kind": "signup"
         },
@@ -397,33 +462,59 @@
           "metric": "welcome",
           "value": 12,
           "label": "12 SC",
-          "note": "Purchase requirement not confirmed.",
-          "recordId": "55155f4ce509af187a44",
-          "sourceUrl": "https://www.yaycasino.com/",
-          "observedAt": "2026-09-19T06:30:58.480Z",
-          "status": "retained",
+          "note": "No purchase needed.",
+          "recordId": "60873e2e920050f276dc",
+          "sourceUrl": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
+          "observedAt": "2026-09-21T21:48:19.785Z",
+          "status": "published",
           "conditions": [
-            "Sign up bonus.",
-            "Includes 20 Free Spins."
+            "New players only.",
+            "Complete registration to receive 5,000 GC + 1 SC.",
+            "Phone verification, email opt-in, SMS opt-in, and claiming the first daily bonus are required for the stated 40,000 GC + 4 SC.",
+            "Make 150 spins in SC mode within the first 7 days to unlock the additional 80,000 GC + 8 SC.",
+            "Includes 20 free spins on Yay Devil Fire 2, stated as value of 0.1 SC/spin."
           ],
           "promoCode": null,
           "priceUsd": null,
-          "immediateSc": 12,
+          "immediateSc": 1,
           "totalSc": 12,
-          "durationDays": null,
-          "purchaseRequired": null,
+          "durationDays": 7,
+          "purchaseRequired": false,
           "kind": "signup"
         },
-        "staged": null,
+        "staged": {
+          "metric": "staged",
+          "value": 12,
+          "label": "12 SC",
+          "note": "1 SC immediate; total over 7 days.",
+          "recordId": "60873e2e920050f276dc",
+          "sourceUrl": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
+          "observedAt": "2026-09-21T21:48:19.785Z",
+          "status": "published",
+          "conditions": [
+            "New players only.",
+            "Complete registration to receive 5,000 GC + 1 SC.",
+            "Phone verification, email opt-in, SMS opt-in, and claiming the first daily bonus are required for the stated 40,000 GC + 4 SC.",
+            "Make 150 spins in SC mode within the first 7 days to unlock the additional 80,000 GC + 8 SC.",
+            "Includes 20 free spins on Yay Devil Fire 2, stated as value of 0.1 SC/spin."
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 1,
+          "totalSc": 12,
+          "durationDays": 7,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
         "cash": null,
         "general": {
           "metric": "general",
           "value": 50,
           "label": "50 SC",
           "note": "General redemption minimum; cash method not established.",
-          "recordId": "23ca564e66dbbd6aa26a",
+          "recordId": "26232c81299b49e40154",
           "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
-          "observedAt": "2026-09-21T19:41:23.394Z",
+          "observedAt": "2026-09-21T21:47:13.561Z",
           "status": "published",
           "conditions": [],
           "priceUsd": null,
@@ -452,71 +543,6 @@
       "status": "Overall comparison incomplete"
     },
     {
-      "slug": "chumba",
-      "name": "Chumba Casino",
-      "productMode": "sweepstakes",
-      "favicon": "/assets/favicons/chumba.png",
-      "url": "/redemption-times/chumba/",
-      "metrics": {
-        "signup": null,
-        "welcome": null,
-        "staged": null,
-        "cash": {
-          "metric": "cash",
-          "value": 100,
-          "label": "100 SC",
-          "note": "Cash redemption minimum.",
-          "recordId": "b43cf96d468217c783e7",
-          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T19:43:17.897Z",
-          "status": "published",
-          "conditions": [
-            "Minimum redemption threshold applies to the \"Cash Prize\" Redemption option."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "general": null,
-        "gift": {
-          "metric": "gift",
-          "value": 10,
-          "label": "10 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "fc70432b33dfef1242f9",
-          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T19:43:17.897Z",
-          "status": "published",
-          "conditions": [
-            "Minimum redemption threshold applies to the Gift Card Redemption option."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "daily": null,
-        "purchase": null,
-        "purchase10": null,
-        "purchase20": null
-      },
-      "absences": {
-        "signup": null,
-        "purchase": null,
-        "cash": null
-      },
-      "collectionStatus": "partial",
-      "score": null,
-      "rank": null,
-      "benefitCount": 2,
-      "componentScores": {},
-      "disclosureCount": 1,
-      "status": "Overall comparison incomplete"
-    },
-    {
       "slug": "mcluck",
       "name": "McLuck",
       "productMode": "unverified",
@@ -528,13 +554,14 @@
           "value": 2.5,
           "label": "2.5 SC",
           "note": "Immediate. No purchase needed.",
-          "recordId": "c422f20231c7f4e16079",
+          "recordId": "12e77b670c7f12ad39b1",
           "sourceUrl": "https://www.mcluck.com/",
-          "observedAt": "2026-09-21T19:46:15.266Z",
+          "observedAt": "2026-09-21T21:42:51.114Z",
           "status": "published",
           "conditions": [
-            "Continue to claim your coins",
-            "No purchase needed"
+            "“Spin for Fun to get Free Rewards.”",
+            "“Continue to claim your coins.”",
+            "“Play instantly! No purchase needed.”"
           ],
           "promoCode": null,
           "priceUsd": null,
@@ -549,13 +576,14 @@
           "value": 2.5,
           "label": "2.5 SC",
           "note": "No purchase needed.",
-          "recordId": "c422f20231c7f4e16079",
+          "recordId": "12e77b670c7f12ad39b1",
           "sourceUrl": "https://www.mcluck.com/",
-          "observedAt": "2026-09-21T19:46:15.266Z",
+          "observedAt": "2026-09-21T21:42:51.114Z",
           "status": "published",
           "conditions": [
-            "Continue to claim your coins",
-            "No purchase needed"
+            "“Spin for Fun to get Free Rewards.”",
+            "“Continue to claim your coins.”",
+            "“Play instantly! No purchase needed.”"
           ],
           "promoCode": null,
           "priceUsd": null,
@@ -583,79 +611,6 @@
       "score": null,
       "rank": null,
       "benefitCount": 2,
-      "componentScores": {},
-      "disclosureCount": 1,
-      "status": "Overall comparison incomplete"
-    },
-    {
-      "slug": "zonko",
-      "name": "Zonko",
-      "productMode": "unverified",
-      "favicon": "/assets/favicons/zonko.png",
-      "url": "/redemption-times/zonko/",
-      "metrics": {
-        "signup": null,
-        "welcome": null,
-        "staged": null,
-        "cash": null,
-        "general": null,
-        "gift": null,
-        "daily": null,
-        "purchase": {
-          "metric": "purchase",
-          "value": 2,
-          "label": "40 SC for $20",
-          "note": "2 SC per $1. First purchase only.",
-          "recordId": "c407e05707783103f742",
-          "sourceUrl": "https://www.zonko.com/help/faq/",
-          "observedAt": "2026-09-19T06:32:12.811Z",
-          "status": "retained",
-          "conditions": [
-            "Includes a spin of the Welcome Wheel.",
-            "25 free SC is provided via a Power Boost credited daily over 8 days.",
-            "The Power Boost starts the day after the first purchase."
-          ],
-          "promoCode": null,
-          "priceUsd": 20,
-          "immediateSc": 40,
-          "totalSc": 40,
-          "durationDays": 8,
-          "purchaseRequired": true,
-          "kind": "first_purchase"
-        },
-        "purchase10": null,
-        "purchase20": {
-          "metric": "purchase20",
-          "value": 2,
-          "label": "40 SC for $20",
-          "note": "2 SC per $1. First purchase only.",
-          "recordId": "c407e05707783103f742",
-          "sourceUrl": "https://www.zonko.com/help/faq/",
-          "observedAt": "2026-09-19T06:32:12.811Z",
-          "status": "retained",
-          "conditions": [
-            "Includes a spin of the Welcome Wheel.",
-            "25 free SC is provided via a Power Boost credited daily over 8 days.",
-            "The Power Boost starts the day after the first purchase."
-          ],
-          "promoCode": null,
-          "priceUsd": 20,
-          "immediateSc": 40,
-          "totalSc": 40,
-          "durationDays": 8,
-          "purchaseRequired": true,
-          "kind": "first_purchase"
-        }
-      },
-      "absences": {
-        "signup": null,
-        "purchase": null,
-        "cash": null
-      },
-      "collectionStatus": "unavailable",
-      "score": null,
-      "rank": null,
-      "benefitCount": 1,
       "componentScores": {},
       "disclosureCount": 1,
       "status": "Overall comparison incomplete"
@@ -720,7 +675,7 @@
         "purchase": null,
         "cash": null
       },
-      "collectionStatus": "readable",
+      "collectionStatus": "partial",
       "score": null,
       "rank": null,
       "benefitCount": 0,
@@ -782,7 +737,7 @@
         "purchase": null,
         "cash": null
       },
-      "collectionStatus": "readable",
+      "collectionStatus": "partial",
       "score": null,
       "rank": null,
       "benefitCount": 0,
@@ -813,7 +768,7 @@
         "purchase": null,
         "cash": null
       },
-      "collectionStatus": "readable",
+      "collectionStatus": "partial",
       "score": null,
       "rank": null,
       "benefitCount": 0,
@@ -844,7 +799,38 @@
         "purchase": null,
         "cash": null
       },
-      "collectionStatus": "pending",
+      "collectionStatus": "partial",
+      "score": null,
+      "rank": null,
+      "benefitCount": 0,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Offer evidence being checked"
+    },
+    {
+      "slug": "zonko",
+      "name": "Zonko",
+      "productMode": "unverified",
+      "favicon": "/assets/favicons/zonko.png",
+      "url": "/redemption-times/zonko/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": null,
+        "gift": null,
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "readable",
       "score": null,
       "rank": null,
       "benefitCount": 0,
@@ -867,34 +853,6 @@
       "url": "/bonuses/no-purchase-signup-bonuses/",
       "rows": [
         {
-          "slug": "yay-casino",
-          "name": "YAY Casino",
-          "url": "/redemption-times/yay-casino/",
-          "favicon": "/assets/favicons/yay-casino.ico",
-          "metric": "signup",
-          "value": 8,
-          "label": "8 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "ab08719d6a319c3d9a2e",
-          "sourceUrl": "https://www.yaycasino.com/promotions",
-          "observedAt": "2026-09-18T06:32:46.235Z",
-          "status": "retained",
-          "conditions": [
-            "Create an account with name, date of birth, state, email, and password.",
-            "Verify email and ID.",
-            "Log in to claim.",
-            "Includes 20 free spins valued at 0.1 SC/spin on Yay Devil Fire 2."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 8,
-          "totalSc": 8,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup",
-          "rank": 1
-        },
-        {
           "slug": "mcluck",
           "name": "McLuck",
           "url": "/redemption-times/mcluck/",
@@ -903,13 +861,14 @@
           "value": 2.5,
           "label": "2.5 SC",
           "note": "Immediate. No purchase needed.",
-          "recordId": "c422f20231c7f4e16079",
+          "recordId": "12e77b670c7f12ad39b1",
           "sourceUrl": "https://www.mcluck.com/",
-          "observedAt": "2026-09-21T19:46:15.266Z",
+          "observedAt": "2026-09-21T21:42:51.114Z",
           "status": "published",
           "conditions": [
-            "Continue to claim your coins",
-            "No purchase needed"
+            "“Spin for Fun to get Free Rewards.”",
+            "“Continue to claim your coins.”",
+            "“Play instantly! No purchase needed.”"
           ],
           "promoCode": null,
           "priceUsd": null,
@@ -918,7 +877,7 @@
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup",
-          "rank": 2
+          "rank": 1
         },
         {
           "slug": "wow-vegas",
@@ -928,28 +887,57 @@
           "metric": "signup",
           "value": 2,
           "label": "2 SC",
-          "note": "5 SC total over 3 days.",
-          "recordId": "5c032bcb155ec981ff2b",
-          "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "note": "Immediate. No purchase needed.",
+          "recordId": "61ae1ebd3f87faf23efb",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
+          "observedAt": "2026-09-21T21:46:24.480Z",
           "status": "published",
           "conditions": [
-            "Available to claim after sign-up.",
-            "Day 1 provides 150,000 WOW Coins and SC 2.",
-            "Day 2 provides 50,000 WOW Coins and SC 1.5.",
-            "Day 3 provides 50,000 WOW Coins and SC 1.5."
+            "Create an account at WOW Vegas.",
+            "Accept the Sweepstakes Rules when prompted during registration.",
+            "Click the “Claim Your Free SC” button.",
+            "Bonus is added upon completion."
           ],
-          "promoCode": "WOWBONUS2026",
+          "promoCode": null,
           "priceUsd": null,
           "immediateSc": 2,
-          "totalSc": 5,
-          "durationDays": 3,
+          "totalSc": 2,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup",
+          "rank": 2
+        },
+        {
+          "slug": "yay-casino",
+          "name": "YAY Casino",
+          "url": "/redemption-times/yay-casino/",
+          "favicon": "/assets/favicons/yay-casino.ico",
+          "metric": "signup",
+          "value": 1,
+          "label": "1 SC",
+          "note": "12 SC total over 7 days.",
+          "recordId": "60873e2e920050f276dc",
+          "sourceUrl": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
+          "observedAt": "2026-09-21T21:48:19.785Z",
+          "status": "published",
+          "conditions": [
+            "New players only.",
+            "Complete registration to receive 5,000 GC + 1 SC.",
+            "Phone verification, email opt-in, SMS opt-in, and claiming the first daily bonus are required for the stated 40,000 GC + 4 SC.",
+            "Make 150 spins in SC mode within the first 7 days to unlock the additional 80,000 GC + 8 SC.",
+            "Includes 20 free spins on Yay Devil Fire 2, stated as value of 0.1 SC/spin."
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 1,
+          "totalSc": 12,
+          "durationDays": 7,
           "purchaseRequired": false,
           "kind": "signup",
           "rank": 3
         }
       ],
-      "updatedAt": "2026-09-21T19:46:15.266Z"
+      "updatedAt": "2026-09-21T21:48:19.785Z"
     },
     {
       "id": "staged",
@@ -964,6 +952,35 @@
       "url": "/bonuses/staged-welcome-bonuses/",
       "rows": [
         {
+          "slug": "yay-casino",
+          "name": "YAY Casino",
+          "url": "/redemption-times/yay-casino/",
+          "favicon": "/assets/favicons/yay-casino.ico",
+          "metric": "staged",
+          "value": 12,
+          "label": "12 SC",
+          "note": "1 SC immediate; total over 7 days.",
+          "recordId": "60873e2e920050f276dc",
+          "sourceUrl": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
+          "observedAt": "2026-09-21T21:48:19.785Z",
+          "status": "published",
+          "conditions": [
+            "New players only.",
+            "Complete registration to receive 5,000 GC + 1 SC.",
+            "Phone verification, email opt-in, SMS opt-in, and claiming the first daily bonus are required for the stated 40,000 GC + 4 SC.",
+            "Make 150 spins in SC mode within the first 7 days to unlock the additional 80,000 GC + 8 SC.",
+            "Includes 20 free spins on Yay Devil Fire 2, stated as value of 0.1 SC/spin."
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 1,
+          "totalSc": 12,
+          "durationDays": 7,
+          "purchaseRequired": false,
+          "kind": "signup",
+          "rank": 1
+        },
+        {
           "slug": "wow-vegas",
           "name": "WOW Vegas",
           "url": "/redemption-times/wow-vegas/",
@@ -972,15 +989,15 @@
           "value": 5,
           "label": "5 SC",
           "note": "2 SC immediate; total over 3 days.",
-          "recordId": "5c032bcb155ec981ff2b",
+          "recordId": "96d8483854cc2b8eb5c2",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "Available to claim after sign-up.",
-            "Day 1 provides 150,000 WOW Coins and SC 2.",
-            "Day 2 provides 50,000 WOW Coins and SC 1.5.",
-            "Day 3 provides 50,000 WOW Coins and SC 1.5."
+            "Day 1 provides 150,000 WOW Coins + SC 2.",
+            "Day 2 provides 50,000 WOW Coins + SC 1.5.",
+            "Day 3 provides 50,000 WOW Coins + SC 1.5."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": null,
@@ -989,10 +1006,10 @@
           "durationDays": 3,
           "purchaseRequired": false,
           "kind": "signup",
-          "rank": 1
+          "rank": 2
         }
       ],
-      "updatedAt": "2026-09-21T19:45:10.340Z"
+      "updatedAt": "2026-09-21T21:48:19.785Z"
     },
     {
       "id": "purchase",
@@ -1015,15 +1032,15 @@
           "value": 3.003003003003003,
           "label": "30 SC for $9.99",
           "note": "3 SC per $1. First purchase only.",
-          "recordId": "c119ac91af2059f5e75b",
+          "recordId": "2c981bb9162ec5c0b6b9",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "First purchase only.",
+            "Register and enter WOWBONUS2026.",
             "Normally $29.99.",
-            "Instant coin delivery.",
-            "Unlock VIP rewards faster."
+            "Instant coin delivery."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": 9.99,
@@ -1033,36 +1050,9 @@
           "purchaseRequired": true,
           "kind": "first_purchase",
           "rank": 1
-        },
-        {
-          "slug": "zonko",
-          "name": "Zonko",
-          "url": "/redemption-times/zonko/",
-          "favicon": "/assets/favicons/zonko.png",
-          "metric": "purchase",
-          "value": 2,
-          "label": "40 SC for $20",
-          "note": "2 SC per $1. First purchase only.",
-          "recordId": "c407e05707783103f742",
-          "sourceUrl": "https://www.zonko.com/help/faq/",
-          "observedAt": "2026-09-19T06:32:12.811Z",
-          "status": "retained",
-          "conditions": [
-            "Includes a spin of the Welcome Wheel.",
-            "25 free SC is provided via a Power Boost credited daily over 8 days.",
-            "The Power Boost starts the day after the first purchase."
-          ],
-          "promoCode": null,
-          "priceUsd": 20,
-          "immediateSc": 40,
-          "totalSc": 40,
-          "durationDays": 8,
-          "purchaseRequired": true,
-          "kind": "first_purchase",
-          "rank": 2
         }
       ],
-      "updatedAt": "2026-09-21T19:45:10.340Z"
+      "updatedAt": "2026-09-21T21:40:51.014Z"
     },
     {
       "id": "purchase10",
@@ -1085,15 +1075,15 @@
           "value": 3.003003003003003,
           "label": "30 SC for $9.99",
           "note": "3 SC per $1. First purchase only.",
-          "recordId": "c119ac91af2059f5e75b",
+          "recordId": "2c981bb9162ec5c0b6b9",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "First purchase only.",
+            "Register and enter WOWBONUS2026.",
             "Normally $29.99.",
-            "Instant coin delivery.",
-            "Unlock VIP rewards faster."
+            "Instant coin delivery."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": 9.99,
@@ -1105,7 +1095,7 @@
           "rank": 1
         }
       ],
-      "updatedAt": "2026-09-21T19:45:10.340Z"
+      "updatedAt": "2026-09-21T21:40:51.014Z"
     },
     {
       "id": "purchase20",
@@ -1128,15 +1118,15 @@
           "value": 3.003003003003003,
           "label": "30 SC for $9.99",
           "note": "3 SC per $1. First purchase only.",
-          "recordId": "c119ac91af2059f5e75b",
+          "recordId": "2c981bb9162ec5c0b6b9",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "First purchase only.",
+            "Register and enter WOWBONUS2026.",
             "Normally $29.99.",
-            "Instant coin delivery.",
-            "Unlock VIP rewards faster."
+            "Instant coin delivery."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": 9.99,
@@ -1146,36 +1136,9 @@
           "purchaseRequired": true,
           "kind": "first_purchase",
           "rank": 1
-        },
-        {
-          "slug": "zonko",
-          "name": "Zonko",
-          "url": "/redemption-times/zonko/",
-          "favicon": "/assets/favicons/zonko.png",
-          "metric": "purchase20",
-          "value": 2,
-          "label": "40 SC for $20",
-          "note": "2 SC per $1. First purchase only.",
-          "recordId": "c407e05707783103f742",
-          "sourceUrl": "https://www.zonko.com/help/faq/",
-          "observedAt": "2026-09-19T06:32:12.811Z",
-          "status": "retained",
-          "conditions": [
-            "Includes a spin of the Welcome Wheel.",
-            "25 free SC is provided via a Power Boost credited daily over 8 days.",
-            "The Power Boost starts the day after the first purchase."
-          ],
-          "promoCode": null,
-          "priceUsd": 20,
-          "immediateSc": 40,
-          "totalSc": 40,
-          "durationDays": 8,
-          "purchaseRequired": true,
-          "kind": "first_purchase",
-          "rank": 2
         }
       ],
-      "updatedAt": "2026-09-21T19:45:10.340Z"
+      "updatedAt": "2026-09-21T21:40:51.014Z"
     },
     {
       "id": "daily",
@@ -1189,7 +1152,7 @@
       "anchor": "daily",
       "url": "/bonuses/daily-free-rewards/",
       "rows": [],
-      "updatedAt": "2026-09-21T19:47:24.805Z"
+      "updatedAt": "2026-09-21T21:48:25.470Z"
     },
     {
       "id": "cash",
@@ -1212,9 +1175,9 @@
           "value": 50,
           "label": "50 SC",
           "note": "Cash redemption minimum.",
-          "recordId": "a35519efaaed4773afb8",
+          "recordId": "657702ec5c98f533df6d",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-21T19:45:17.254Z",
+          "observedAt": "2026-09-21T21:42:38.478Z",
           "status": "published",
           "conditions": [
             "Blue WOW Coins cannot be redeemed, as they have no monetary value."
@@ -1235,13 +1198,11 @@
           "value": 100,
           "label": "100 SC",
           "note": "Cash redemption minimum.",
-          "recordId": "b43cf96d468217c783e7",
+          "recordId": "79d04e14b409d2ea6552",
           "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T19:43:17.897Z",
+          "observedAt": "2026-09-21T21:44:06.608Z",
           "status": "published",
-          "conditions": [
-            "Minimum redemption threshold applies to the \"Cash Prize\" Redemption option."
-          ],
+          "conditions": [],
           "priceUsd": null,
           "immediateSc": null,
           "totalSc": null,
@@ -1250,7 +1211,7 @@
           "rank": 2
         }
       ],
-      "updatedAt": "2026-09-21T19:45:17.254Z"
+      "updatedAt": "2026-09-21T21:44:06.608Z"
     }
   ],
   "ranked": [
@@ -1265,22 +1226,22 @@
           "metric": "signup",
           "value": 2,
           "label": "2 SC",
-          "note": "5 SC total over 3 days.",
-          "recordId": "5c032bcb155ec981ff2b",
-          "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "note": "Immediate. No purchase needed.",
+          "recordId": "61ae1ebd3f87faf23efb",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
+          "observedAt": "2026-09-21T21:46:24.480Z",
           "status": "published",
           "conditions": [
-            "Available to claim after sign-up.",
-            "Day 1 provides 150,000 WOW Coins and SC 2.",
-            "Day 2 provides 50,000 WOW Coins and SC 1.5.",
-            "Day 3 provides 50,000 WOW Coins and SC 1.5."
+            "Create an account at WOW Vegas.",
+            "Accept the Sweepstakes Rules when prompted during registration.",
+            "Click the “Claim Your Free SC” button.",
+            "Bonus is added upon completion."
           ],
-          "promoCode": "WOWBONUS2026",
+          "promoCode": null,
           "priceUsd": null,
           "immediateSc": 2,
-          "totalSc": 5,
-          "durationDays": 3,
+          "totalSc": 2,
+          "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup"
         },
@@ -1289,15 +1250,15 @@
           "value": 5,
           "label": "5 SC",
           "note": "No purchase needed.",
-          "recordId": "5c032bcb155ec981ff2b",
+          "recordId": "96d8483854cc2b8eb5c2",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "Available to claim after sign-up.",
-            "Day 1 provides 150,000 WOW Coins and SC 2.",
-            "Day 2 provides 50,000 WOW Coins and SC 1.5.",
-            "Day 3 provides 50,000 WOW Coins and SC 1.5."
+            "Day 1 provides 150,000 WOW Coins + SC 2.",
+            "Day 2 provides 50,000 WOW Coins + SC 1.5.",
+            "Day 3 provides 50,000 WOW Coins + SC 1.5."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": null,
@@ -1312,15 +1273,15 @@
           "value": 5,
           "label": "5 SC",
           "note": "2 SC immediate; total over 3 days.",
-          "recordId": "5c032bcb155ec981ff2b",
+          "recordId": "96d8483854cc2b8eb5c2",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "Available to claim after sign-up.",
-            "Day 1 provides 150,000 WOW Coins and SC 2.",
-            "Day 2 provides 50,000 WOW Coins and SC 1.5.",
-            "Day 3 provides 50,000 WOW Coins and SC 1.5."
+            "Day 1 provides 150,000 WOW Coins + SC 2.",
+            "Day 2 provides 50,000 WOW Coins + SC 1.5.",
+            "Day 3 provides 50,000 WOW Coins + SC 1.5."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": null,
@@ -1335,9 +1296,9 @@
           "value": 50,
           "label": "50 SC",
           "note": "Cash redemption minimum.",
-          "recordId": "a35519efaaed4773afb8",
+          "recordId": "657702ec5c98f533df6d",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-21T19:45:17.254Z",
+          "observedAt": "2026-09-21T21:42:38.478Z",
           "status": "published",
           "conditions": [
             "Blue WOW Coins cannot be redeemed, as they have no monetary value."
@@ -1348,32 +1309,15 @@
           "durationDays": null,
           "kind": null
         },
-        "general": {
-          "metric": "general",
-          "value": 50,
-          "label": "50 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "recordId": "a35519efaaed4773afb8",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-21T19:45:17.254Z",
-          "status": "published",
-          "conditions": [
-            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
+        "general": null,
         "gift": {
           "metric": "gift",
           "value": 20,
           "label": "20 SC",
           "note": "Gift-card redemption minimum.",
-          "recordId": "c8abcce14b7d83789a79",
+          "recordId": "487a40e7af2b0419c5f2",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-21T19:45:17.254Z",
+          "observedAt": "2026-09-21T21:42:38.478Z",
           "status": "published",
           "conditions": [
             "Blue WOW Coins cannot be redeemed, as they have no monetary value."
@@ -1390,15 +1334,15 @@
           "value": 3.003003003003003,
           "label": "30 SC for $9.99",
           "note": "3 SC per $1. First purchase only.",
-          "recordId": "c119ac91af2059f5e75b",
+          "recordId": "2c981bb9162ec5c0b6b9",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "First purchase only.",
+            "Register and enter WOWBONUS2026.",
             "Normally $29.99.",
-            "Instant coin delivery.",
-            "Unlock VIP rewards faster."
+            "Instant coin delivery."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": 9.99,
@@ -1413,15 +1357,15 @@
           "value": 3.003003003003003,
           "label": "30 SC for $9.99",
           "note": "3 SC per $1. First purchase only.",
-          "recordId": "c119ac91af2059f5e75b",
+          "recordId": "2c981bb9162ec5c0b6b9",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "First purchase only.",
+            "Register and enter WOWBONUS2026.",
             "Normally $29.99.",
-            "Instant coin delivery.",
-            "Unlock VIP rewards faster."
+            "Instant coin delivery."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": 9.99,
@@ -1436,15 +1380,15 @@
           "value": 3.003003003003003,
           "label": "30 SC for $9.99",
           "note": "3 SC per $1. First purchase only.",
-          "recordId": "c119ac91af2059f5e75b",
+          "recordId": "2c981bb9162ec5c0b6b9",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-21T19:45:10.340Z",
+          "observedAt": "2026-09-21T21:40:51.014Z",
           "status": "published",
           "conditions": [
             "First purchase only.",
+            "Register and enter WOWBONUS2026.",
             "Normally $29.99.",
-            "Instant coin delivery.",
-            "Unlock VIP rewards faster."
+            "Instant coin delivery."
           ],
           "promoCode": "WOWBONUS2026",
           "priceUsd": 9.99,
@@ -1461,11 +1405,11 @@
         "cash": null
       },
       "collectionStatus": "partial",
-      "score": 77.77777777777779,
+      "score": 88.8888888888889,
       "rank": 1,
-      "benefitCount": 6,
+      "benefitCount": 5,
       "componentScores": {
-        "signup": 33.333333333333336,
+        "signup": 66.66666666666667,
         "purchase": 100,
         "cash": 100
       },
@@ -1475,6 +1419,88 @@
   ],
   "incomplete": [
     {
+      "slug": "chumba",
+      "name": "Chumba Casino",
+      "productMode": "sweepstakes",
+      "favicon": "/assets/favicons/chumba.png",
+      "url": "/redemption-times/chumba/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": {
+          "metric": "cash",
+          "value": 100,
+          "label": "100 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "79d04e14b409d2ea6552",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "observedAt": "2026-09-21T21:44:06.608Z",
+          "status": "published",
+          "conditions": [],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "general": {
+          "metric": "general",
+          "value": 100,
+          "label": "100 SC",
+          "note": "General redemption minimum; cash method not established.",
+          "recordId": "71dd3d981f2a34fedc7f",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "observedAt": "2026-09-21T21:44:06.608Z",
+          "status": "published",
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "gift": {
+          "metric": "gift",
+          "value": 10,
+          "label": "10 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "4594baf7502b8e59b606",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "observedAt": "2026-09-21T21:44:06.608Z",
+          "status": "published",
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "partial",
+      "score": null,
+      "rank": null,
+      "benefitCount": 3,
+      "componentScores": {},
+      "disclosureCount": 1,
+      "status": "Overall comparison incomplete"
+    },
+    {
       "slug": "yay-casino",
       "name": "YAY Casino",
       "productMode": "sweepstakes",
@@ -1483,24 +1509,25 @@
       "metrics": {
         "signup": {
           "metric": "signup",
-          "value": 8,
-          "label": "8 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "ab08719d6a319c3d9a2e",
-          "sourceUrl": "https://www.yaycasino.com/promotions",
-          "observedAt": "2026-09-18T06:32:46.235Z",
-          "status": "retained",
+          "value": 1,
+          "label": "1 SC",
+          "note": "12 SC total over 7 days.",
+          "recordId": "60873e2e920050f276dc",
+          "sourceUrl": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
+          "observedAt": "2026-09-21T21:48:19.785Z",
+          "status": "published",
           "conditions": [
-            "Create an account with name, date of birth, state, email, and password.",
-            "Verify email and ID.",
-            "Log in to claim.",
-            "Includes 20 free spins valued at 0.1 SC/spin on Yay Devil Fire 2."
+            "New players only.",
+            "Complete registration to receive 5,000 GC + 1 SC.",
+            "Phone verification, email opt-in, SMS opt-in, and claiming the first daily bonus are required for the stated 40,000 GC + 4 SC.",
+            "Make 150 spins in SC mode within the first 7 days to unlock the additional 80,000 GC + 8 SC.",
+            "Includes 20 free spins on Yay Devil Fire 2, stated as value of 0.1 SC/spin."
           ],
           "promoCode": null,
           "priceUsd": null,
-          "immediateSc": 8,
-          "totalSc": 8,
-          "durationDays": null,
+          "immediateSc": 1,
+          "totalSc": 12,
+          "durationDays": 7,
           "purchaseRequired": false,
           "kind": "signup"
         },
@@ -1508,33 +1535,59 @@
           "metric": "welcome",
           "value": 12,
           "label": "12 SC",
-          "note": "Purchase requirement not confirmed.",
-          "recordId": "55155f4ce509af187a44",
-          "sourceUrl": "https://www.yaycasino.com/",
-          "observedAt": "2026-09-19T06:30:58.480Z",
-          "status": "retained",
+          "note": "No purchase needed.",
+          "recordId": "60873e2e920050f276dc",
+          "sourceUrl": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
+          "observedAt": "2026-09-21T21:48:19.785Z",
+          "status": "published",
           "conditions": [
-            "Sign up bonus.",
-            "Includes 20 Free Spins."
+            "New players only.",
+            "Complete registration to receive 5,000 GC + 1 SC.",
+            "Phone verification, email opt-in, SMS opt-in, and claiming the first daily bonus are required for the stated 40,000 GC + 4 SC.",
+            "Make 150 spins in SC mode within the first 7 days to unlock the additional 80,000 GC + 8 SC.",
+            "Includes 20 free spins on Yay Devil Fire 2, stated as value of 0.1 SC/spin."
           ],
           "promoCode": null,
           "priceUsd": null,
-          "immediateSc": 12,
+          "immediateSc": 1,
           "totalSc": 12,
-          "durationDays": null,
-          "purchaseRequired": null,
+          "durationDays": 7,
+          "purchaseRequired": false,
           "kind": "signup"
         },
-        "staged": null,
+        "staged": {
+          "metric": "staged",
+          "value": 12,
+          "label": "12 SC",
+          "note": "1 SC immediate; total over 7 days.",
+          "recordId": "60873e2e920050f276dc",
+          "sourceUrl": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
+          "observedAt": "2026-09-21T21:48:19.785Z",
+          "status": "published",
+          "conditions": [
+            "New players only.",
+            "Complete registration to receive 5,000 GC + 1 SC.",
+            "Phone verification, email opt-in, SMS opt-in, and claiming the first daily bonus are required for the stated 40,000 GC + 4 SC.",
+            "Make 150 spins in SC mode within the first 7 days to unlock the additional 80,000 GC + 8 SC.",
+            "Includes 20 free spins on Yay Devil Fire 2, stated as value of 0.1 SC/spin."
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 1,
+          "totalSc": 12,
+          "durationDays": 7,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
         "cash": null,
         "general": {
           "metric": "general",
           "value": 50,
           "label": "50 SC",
           "note": "General redemption minimum; cash method not established.",
-          "recordId": "23ca564e66dbbd6aa26a",
+          "recordId": "26232c81299b49e40154",
           "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
-          "observedAt": "2026-09-21T19:41:23.394Z",
+          "observedAt": "2026-09-21T21:47:13.561Z",
           "status": "published",
           "conditions": [],
           "priceUsd": null,
@@ -1563,71 +1616,6 @@
       "status": "Overall comparison incomplete"
     },
     {
-      "slug": "chumba",
-      "name": "Chumba Casino",
-      "productMode": "sweepstakes",
-      "favicon": "/assets/favicons/chumba.png",
-      "url": "/redemption-times/chumba/",
-      "metrics": {
-        "signup": null,
-        "welcome": null,
-        "staged": null,
-        "cash": {
-          "metric": "cash",
-          "value": 100,
-          "label": "100 SC",
-          "note": "Cash redemption minimum.",
-          "recordId": "b43cf96d468217c783e7",
-          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T19:43:17.897Z",
-          "status": "published",
-          "conditions": [
-            "Minimum redemption threshold applies to the \"Cash Prize\" Redemption option."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "general": null,
-        "gift": {
-          "metric": "gift",
-          "value": 10,
-          "label": "10 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "fc70432b33dfef1242f9",
-          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T19:43:17.897Z",
-          "status": "published",
-          "conditions": [
-            "Minimum redemption threshold applies to the Gift Card Redemption option."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "daily": null,
-        "purchase": null,
-        "purchase10": null,
-        "purchase20": null
-      },
-      "absences": {
-        "signup": null,
-        "purchase": null,
-        "cash": null
-      },
-      "collectionStatus": "partial",
-      "score": null,
-      "rank": null,
-      "benefitCount": 2,
-      "componentScores": {},
-      "disclosureCount": 1,
-      "status": "Overall comparison incomplete"
-    },
-    {
       "slug": "mcluck",
       "name": "McLuck",
       "productMode": "unverified",
@@ -1639,13 +1627,14 @@
           "value": 2.5,
           "label": "2.5 SC",
           "note": "Immediate. No purchase needed.",
-          "recordId": "c422f20231c7f4e16079",
+          "recordId": "12e77b670c7f12ad39b1",
           "sourceUrl": "https://www.mcluck.com/",
-          "observedAt": "2026-09-21T19:46:15.266Z",
+          "observedAt": "2026-09-21T21:42:51.114Z",
           "status": "published",
           "conditions": [
-            "Continue to claim your coins",
-            "No purchase needed"
+            "“Spin for Fun to get Free Rewards.”",
+            "“Continue to claim your coins.”",
+            "“Play instantly! No purchase needed.”"
           ],
           "promoCode": null,
           "priceUsd": null,
@@ -1660,13 +1649,14 @@
           "value": 2.5,
           "label": "2.5 SC",
           "note": "No purchase needed.",
-          "recordId": "c422f20231c7f4e16079",
+          "recordId": "12e77b670c7f12ad39b1",
           "sourceUrl": "https://www.mcluck.com/",
-          "observedAt": "2026-09-21T19:46:15.266Z",
+          "observedAt": "2026-09-21T21:42:51.114Z",
           "status": "published",
           "conditions": [
-            "Continue to claim your coins",
-            "No purchase needed"
+            "“Spin for Fun to get Free Rewards.”",
+            "“Continue to claim your coins.”",
+            "“Play instantly! No purchase needed.”"
           ],
           "promoCode": null,
           "priceUsd": null,
@@ -1694,79 +1684,6 @@
       "score": null,
       "rank": null,
       "benefitCount": 2,
-      "componentScores": {},
-      "disclosureCount": 1,
-      "status": "Overall comparison incomplete"
-    },
-    {
-      "slug": "zonko",
-      "name": "Zonko",
-      "productMode": "unverified",
-      "favicon": "/assets/favicons/zonko.png",
-      "url": "/redemption-times/zonko/",
-      "metrics": {
-        "signup": null,
-        "welcome": null,
-        "staged": null,
-        "cash": null,
-        "general": null,
-        "gift": null,
-        "daily": null,
-        "purchase": {
-          "metric": "purchase",
-          "value": 2,
-          "label": "40 SC for $20",
-          "note": "2 SC per $1. First purchase only.",
-          "recordId": "c407e05707783103f742",
-          "sourceUrl": "https://www.zonko.com/help/faq/",
-          "observedAt": "2026-09-19T06:32:12.811Z",
-          "status": "retained",
-          "conditions": [
-            "Includes a spin of the Welcome Wheel.",
-            "25 free SC is provided via a Power Boost credited daily over 8 days.",
-            "The Power Boost starts the day after the first purchase."
-          ],
-          "promoCode": null,
-          "priceUsd": 20,
-          "immediateSc": 40,
-          "totalSc": 40,
-          "durationDays": 8,
-          "purchaseRequired": true,
-          "kind": "first_purchase"
-        },
-        "purchase10": null,
-        "purchase20": {
-          "metric": "purchase20",
-          "value": 2,
-          "label": "40 SC for $20",
-          "note": "2 SC per $1. First purchase only.",
-          "recordId": "c407e05707783103f742",
-          "sourceUrl": "https://www.zonko.com/help/faq/",
-          "observedAt": "2026-09-19T06:32:12.811Z",
-          "status": "retained",
-          "conditions": [
-            "Includes a spin of the Welcome Wheel.",
-            "25 free SC is provided via a Power Boost credited daily over 8 days.",
-            "The Power Boost starts the day after the first purchase."
-          ],
-          "promoCode": null,
-          "priceUsd": 20,
-          "immediateSc": 40,
-          "totalSc": 40,
-          "durationDays": 8,
-          "purchaseRequired": true,
-          "kind": "first_purchase"
-        }
-      },
-      "absences": {
-        "signup": null,
-        "purchase": null,
-        "cash": null
-      },
-      "collectionStatus": "unavailable",
-      "score": null,
-      "rank": null,
-      "benefitCount": 1,
       "componentScores": {},
       "disclosureCount": 1,
       "status": "Overall comparison incomplete"
@@ -1831,7 +1748,7 @@
         "purchase": null,
         "cash": null
       },
-      "collectionStatus": "readable",
+      "collectionStatus": "partial",
       "score": null,
       "rank": null,
       "benefitCount": 0,
@@ -1893,7 +1810,7 @@
         "purchase": null,
         "cash": null
       },
-      "collectionStatus": "readable",
+      "collectionStatus": "partial",
       "score": null,
       "rank": null,
       "benefitCount": 0,
@@ -1924,7 +1841,7 @@
         "purchase": null,
         "cash": null
       },
-      "collectionStatus": "readable",
+      "collectionStatus": "partial",
       "score": null,
       "rank": null,
       "benefitCount": 0,
@@ -1955,7 +1872,38 @@
         "purchase": null,
         "cash": null
       },
-      "collectionStatus": "pending",
+      "collectionStatus": "partial",
+      "score": null,
+      "rank": null,
+      "benefitCount": 0,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Offer evidence being checked"
+    },
+    {
+      "slug": "zonko",
+      "name": "Zonko",
+      "productMode": "unverified",
+      "favicon": "/assets/favicons/zonko.png",
+      "url": "/redemption-times/zonko/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": null,
+        "gift": null,
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "readable",
       "score": null,
       "rank": null,
       "benefitCount": 0,
