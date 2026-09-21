@@ -4,6 +4,7 @@ import { writeFileSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { load } from "cheerio";
+import { checkDestination } from "./discovery.mjs";
 
 export function linksFromHtml(html, url) {
   const $ = load(html || "");
@@ -55,11 +56,20 @@ async function responseBody(response) {
 export async function retrieve(url, provider, env = process.env, options = {}) {
   let response;
   const signal = AbortSignal.timeout(provider === "direct" ? 25000 : 70000);
+  if (options.allowedHosts) await checkDestination(url, options.allowedHosts);
   if (provider === "direct") {
-    response = await fetch(url, { signal, headers: {
+    let target = url;
+    for (let redirects = 0; redirects <= 5; redirects++) {
+      response = await fetch(target, { signal, redirect: options.allowedHosts ? "manual" : "follow", headers: {
       "User-Agent": "SocialCasinoIndex-Monitor/1.0 (+https://socialcasinoindex.com/about/)",
       "Accept": "text/html,application/pdf,text/plain;q=0.9",
-    } });
+      } });
+      if (!options.allowedHosts || ![301, 302, 303, 307, 308].includes(response.status)) break;
+      const location = response.headers.get("location");
+      await response.body?.cancel();
+      if (!location || redirects === 5) throw new Error("source_redirect_limit");
+      target = await checkDestination(new URL(location, target).href, options.allowedHosts);
+    }
   } else if (provider === "firecrawl") {
     response = await fetch("https://api.firecrawl.dev/v2/scrape", {
       method: "POST", signal, headers: { "Content-Type": "application/json", Authorization: `Bearer ${env.FIRECRAWL_API_KEY}` },
@@ -70,6 +80,7 @@ export async function retrieve(url, provider, env = process.env, options = {}) {
     if (!data.success || !data.data?.markdown) throw new Error("firecrawl_no_content");
     const body = data.data.markdown;
     const finalUrl = data.data.metadata?.url || data.data.metadata?.sourceURL || url;
+    if (options.allowedHosts) await checkDestination(finalUrl, options.allowedHosts);
     const text = readableText(body, "text/markdown");
     return { body, text, finalUrl, contentType: "text/markdown",
       markdown: data.data.markdown, html: data.data.html ?? null, rawHtml: data.data.rawHtml ?? null,

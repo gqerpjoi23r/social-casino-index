@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: "Bonus Benchmarks | Social Casino Index"
+description: "Compare no-purchase signup bonuses, staged rewards, daily SC, purchase packages by budget and cash redemption minimums."
+permalink: "/bonuses/"
+publishedAt: "2026-09-21"
+updatedAt: "2026-09-21"
+jsonld:
+  "@context": "https://schema.org"
+  "@type": "CollectionPage"
+  name: "Bonus benchmarks"
+---
+{% from "benefit-row.njk" import benchmarkTable %}
+<main><article class="wrap">
+<header class="benefit-intro"><h1>Bonus benchmarks</h1><p>Compare the benefit that matters to you. Each benchmark ranks comparable, published amounts from operator sources.</p>
+<nav class="benefit-nav" aria-label="Bonus benchmarks">{% for benchmark in benchmarks.benchmarks %}<a href="{{ benchmark.url }}">{{ benchmark.title }}</a>{% endfor %}</nav></header>
+{% for benchmark in benchmarks.benchmarks %}
+<section class="benefit-benchmark"><h2><a href="{{ benchmark.url }}">{{ benchmark.title }}</a></h2><p>{{ benchmark.explanation }}</p>{{ benchmarkTable(benchmark) }}</section>
+{% endfor %}
+</article></main>

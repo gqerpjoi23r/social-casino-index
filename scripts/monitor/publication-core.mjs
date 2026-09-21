@@ -16,7 +16,7 @@ export function sameEvidence(record, candidate) {
     JSON.stringify([...(record.states || [])].sort()) === JSON.stringify([...(candidate.states || [])].sort());
 }
 
-export function publicNumeric(operators, reviewed, manifest, captures, previous = null, extracted = null, evaluation = null, blockedOperators = []) {
+export function publicNumeric(operators, reviewed, manifest, captures, previous = null, extracted = null, evaluation = null, blockedOperators = [], disclosureReviews = []) {
   return {
     schemaVersion: 1, runId: manifest.runId, lastAttemptedAt: manifest.startedAt,
     lastSuccessfulRefresh: manifest.completedAt, staleAfterHours: 36,
@@ -28,6 +28,16 @@ export function publicNumeric(operators, reviewed, manifest, captures, previous 
         .map(page => [page.sourceId, page])).values()];
       const prior = previous?.operators?.find(row => row.slug === operator.slug);
       const current = blocked ? null : extracted?.operators?.find(row => row.slug === operator.slug);
+      const absenceReviews = Object.fromEntries(disclosureReviews.filter(review => review.operatorId === operator.slug &&
+        ["signup", "purchase", "cash"].includes(review.metric) &&
+        ["not_disclosed", "not_offered"].includes(review.status)).map(review => {
+        const valid = !blocked && review.reviewedAt && Date.parse(review.reviewedAt) <= Date.parse(manifest.completedAt) &&
+          review.checklistComplete === true && review.sources?.length > 0 &&
+          review.sources.every(source => successful.some(page => page.sourceId === source.id && page.textHash === source.textHash)) &&
+          !evaluation?.modelErrors?.some(error => error.operator === operator.slug);
+        return [review.metric, { status: review.status, reviewedAt: review.reviewedAt, valid: Boolean(valid),
+          sources: (review.sources || []).map(source => ({ id: source.id, url: source.url })) }];
+      }));
       const candidates = ["offers", "facts", "statements"].flatMap(kind =>
         (current?.[kind] || []).map(record => ({ ...record, recordType: kind })));
       const records = (reference?.records || []).map(record => {
@@ -74,6 +84,7 @@ export function publicNumeric(operators, reviewed, manifest, captures, previous 
           saved.sourceId === page.sourceId && saved.textHash === page.textHash))
           ? "change awaiting review" : records.some(record => record.freshness !== "reconfirmed")
             ? "evidence unavailable; not reconfirmed" : "reviewed evidence unchanged",
+        disclosureReviews: absenceReviews,
         coverage: sources.map(source => ({ id: source.id, url: source.url, purpose: source.purpose,
           status: blocked ? "archive_corrupt" : source.status,
           capturedAt: successful.find(page => page.sourceId === source.id)?.capturedAt || null })),

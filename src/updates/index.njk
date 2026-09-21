@@ -4,7 +4,7 @@ title: "Compare operator terms"
 description: "Compare advertised welcome SC, first-purchase value, and separate cash and gift-card redemption minimums. Numeric amounts with dated operator sources."
 permalink: "/updates/"
 publishedAt: "2026-09-10"
-updatedAt: "2026-09-16"
+updatedAt: "2026-09-21"
 jsonld:
   "@context": "https://schema.org"
   "@type": "CollectionPage"
@@ -17,5 +17,10 @@ jsonld:
     <h1 class="page-title">Compare operator terms</h1>
     <p>Welcome SC, first-purchase offers and redemption minimums. SC means Sweepstakes Coins; entertainment coins are not SC.</p>
   </header>
-  {% include "comparison-cards.njk" %}
+  {% include "leaderboard.njk" %}
+  {% from "benefit-row.njk" import benchmarkTable %}
+  {% for benchmark in benchmarks.benchmarks %}
+  <section class="benefit-benchmark" id="benchmark-{{ benchmark.anchor }}"><h2><a href="{{ benchmark.url }}">{{ benchmark.title }}</a></h2>{{ benchmarkTable(benchmark) }}</section>
+  {% endfor %}
+  {% include "player-answers.njk" %}
 </article></main>

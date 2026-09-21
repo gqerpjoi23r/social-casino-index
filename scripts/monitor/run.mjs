@@ -4,6 +4,7 @@ import { FIELDS, VERSION, hash, extract, validQuotes, aggregate } from "./core.m
 import { RequestUsage, retrieve, modelExtract } from "./providers.mjs";
 import { archiveCapture, saveJson, uploadDirectory } from "./archive.mjs";
 import { baselineScope, pagePurpose } from "./state-core.mjs";
+import { sourceQueues, discover, needsRendering } from "./discovery.mjs";
 
 const root = process.cwd();
 const read = (path, fallback) => existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : fallback;
@@ -27,14 +28,18 @@ const records = [];
 const events = [];
 const metrics = { attempted: 0, readable: 0, failed: 0, deterministicFields: 0, modelFields: 0, cached: 0 };
 let count = 0;
-
-for (const operator of operators) {
-  const sources = [];
-  for (const source of [...operator.sources, ...(config.additionalSources || []).filter(item => item.operatorId === operator.slug)]) {
-    if (count >= 50) break;
+const queues = sourceQueues(operators, config, previous);
+const discovery = {};
+// One source per operator per round prevents one large site exhausting the run.
+while (count < 50 && queues.some(item => item.attempted < 8 && item.queue.length)) {
+  for (const item of queues) {
+    if (count >= 50 || item.attempted >= 8 || !item.queue.length) continue;
+    const { operator, hosts, sources } = item;
+    const source = item.queue.shift();
+    item.attempted++;
     count++;
     metrics.attempted++;
-    const url = config.sourceOverrides?.[source.id] || source.url;
+    const url = source.url;
     if (!/^https:\/\//.test(url)) throw new Error(`Invalid source URL: ${source.id}`);
     const attempts = [];
     let result;
@@ -42,7 +47,7 @@ for (const operator of operators) {
     let provider;
     const options = ["direct"];
     if (process.env.FIRECRAWL_API_KEY) options.push("firecrawl");
-    if (process.env.FIRECRAWL_API_KEY && config.sourceOptions?.[source.id]?.retryFullContent) options.push("firecrawl_full");
+    if (process.env.FIRECRAWL_API_KEY) options.push("firecrawl_full");
     if (process.env.BRIGHTDATA_API_KEY && process.env.BRIGHTDATA_ZONE) options.push("brightdata");
     for (const attemptProvider of options) {
       provider = attemptProvider === "firecrawl_full" ? "firecrawl" : attemptProvider;
@@ -53,7 +58,8 @@ for (const operator of operators) {
       saveJson(output, "usage.json", usage);
       try {
         result = await retrieve(url, provider, process.env, {
-          ...config.sourceOptions?.[source.id], ...(attemptProvider === "firecrawl_full" ? { onlyMainContent: false } : {}),
+          ...config.sourceOptions?.[source.id], allowedHosts: hosts,
+          ...(attemptProvider === "firecrawl_full" ? { onlyMainContent: false } : {}),
         });
         usage.record(provider, result);
         if (result.status === "ok") readableResult = result;
@@ -72,14 +78,20 @@ for (const operator of operators) {
       const capture = archiveCapture(output, { id: source.id, operatorId: operator.slug, url, purpose: source.purpose || pagePurpose(source) }, provider, result);
       manifest.captures.push(capture);
       saveJson(output, "manifest.json", manifest);
-      const omitted = config.sourceOptions?.[source.id]?.retryFullContent &&
-        result.status === "ok" && !/\b(?:\d+(?:\.\d+)?\s*(?:SC|coins|%)|bonus|offer)\b/i.test(result.text);
+      const omitted = needsRendering(result, source);
       if ((result.status === "ok" && !omitted) || result.status === "login_required") break;
     }
     result = readableResult || result;
+    item.checked[source.id] = observedAt;
+    if (result?.status === "ok") {
+      const seen = new Set([...item.queue.map(s => s.url), ...sources.map(s => s.url), url]);
+      for (const found of discover(result.links, source, operator.slug, hosts)) {
+        if (!seen.has(found.url)) { item.queue.push(found); seen.add(found.url); }
+      }
+    }
     const record = { id: source.id, url, finalUrl: result?.finalUrl || url, checkedAt: observedAt,
       purpose: source.purpose || pagePurpose(source), discoveredFrom: source.discoveredFrom || null,
-      offerCoverage: "not_established_by_readability",
+      depth: source.depth || 0, offerCoverage: "not_established_by_readability",
       status: result?.status || "failed", provider: attempts.findLast(attempt => attempt.status === "ok")?.provider || null, attempts };
     if (result?.status === "ok") {
       metrics.readable++;
@@ -117,6 +129,15 @@ for (const operator of operators) {
     saveJson(output, "manifest.json", manifest);
     console.log(`${operator.slug} ${source.id}: ${record.status} (${record.provider || "no readable response"})`);
   }
+}
+for (const item of queues) {
+  const { operator, sources } = item;
+  // Carry pending and completed discoveries forward; oldest checks run first next time.
+  discovery[operator.slug] = { checked: item.checked, queue: [
+    ...item.queue, ...sources.filter(s => s.depth > 0).map(s => ({
+      id: s.id, url: s.url, purpose: s.purpose, discoveredFrom: s.discoveredFrom, depth: s.depth,
+    })),
+  ].slice(0, 250) };
   const result = aggregate(operator, sources, previous.operators.find(record => record.slug === operator.slug), observedAt);
   records.push(result.record);
   events.push(...result.events);
@@ -137,7 +158,7 @@ const summary = {
 const latest = {
   schemaVersion: 1, lastAttemptedAt: observedAt,
   lastReadableRunAt: metrics.readable ? observedAt : previous.lastReadableRunAt || null,
-  summary, operators: records, sources: sourceCache, spending: previous.spending || [],
+  summary, operators: records, sources: sourceCache, discovery, spending: previous.spending || [],
   events: [...events, ...(previous.events || [])].slice(0, 500),
   runs: [summary, ...(previous.runs || [])].slice(0, 90),
 };

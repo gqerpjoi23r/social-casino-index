@@ -1,6 +1,6 @@
 {
   "version": "2026.1",
-  "generatedAt": "2026-09-10T00:00:00.000Z",
+  "generatedAt": "2026-09-21T00:00:00.000Z",
   "records": [
     {
       "slug": "jackpota",
@@ -1261,6 +1261,101 @@
         },
         "playthrough": {
           "display": "Not verified",
+          "value": null,
+          "status": "unverified",
+          "conditions": "",
+          "sourceIds": []
+        }
+      }
+    },
+    {
+      "slug": "sweetsweeps",
+      "name": "SweetSweeps",
+      "parent": "Inimitable Solutions Limited",
+      "partner": false,
+      "position": 11,
+      "bestFor": "Published offers under review",
+      "summary": "SweetSweeps publishes a social casino and promotional offers. Its public terms and bonus details are included in source collection.",
+      "offer": "See the dated bonus benchmarks.",
+      "dailyValue": "Public reward evidence under review.",
+      "packageValue": "Public package evidence under review.",
+      "games": "Casino-style games",
+      "publishedEstimate": "Not established from collected evidence",
+      "firstRedemption": "Not tested",
+      "repeatRedemption": "Not tested",
+      "methods": "Public redemption evidence under review",
+      "minRedemption": "Public redemption evidence under review",
+      "playthrough": "Public playthrough evidence under review",
+      "kyc": "See current operator terms",
+      "limits": "See current operator terms",
+      "support": "Support response times have not been measured.",
+      "restrictedStates": [],
+      "availability": "An empty exclusion list is not confirmation of eligibility. Check the operator's current terms and the site's state policy before participating.",
+      "verificationStatus": "partial",
+      "verificationLabel": "Partial public evidence",
+      "verifiedAt": "2026-09-21",
+      "testStatus": "not_tested",
+      "observedResult": null,
+      "strengths": [],
+      "tradeoffs": [],
+      "sources": [
+        {
+          "id": "sweetsweeps-home",
+          "label": "Homepage",
+          "url": "https://sweetsweeps.com/",
+          "accessed": "2026-09-21",
+          "sourceType": "operator",
+          "access": "public_rendered"
+        },
+        {
+          "id": "sweetsweeps-terms",
+          "label": "Terms of use",
+          "url": "https://sweetsweeps.com/page/terms-and-conditions",
+          "accessed": "2026-09-21",
+          "sourceType": "operator",
+          "access": "public"
+        }
+      ],
+      "playerValue": {
+        "checkedAt": "2026-09-21",
+        "productMode": "unverified",
+        "signup": {
+          "display": "Not yet established",
+          "value": null,
+          "status": "unverified",
+          "conditions": "",
+          "sourceIds": []
+        },
+        "daily": {
+          "display": "Not yet established",
+          "value": null,
+          "status": "unverified",
+          "conditions": "",
+          "sourceIds": []
+        },
+        "firstPurchase": {
+          "display": "Not yet established",
+          "value": null,
+          "status": "unverified",
+          "conditions": "",
+          "sourceIds": []
+        },
+        "cashMinimum": {
+          "display": "Not yet established",
+          "value": null,
+          "status": "unverified",
+          "conditions": "",
+          "sourceIds": []
+        },
+        "giftCardMinimum": {
+          "display": "Not yet established",
+          "value": null,
+          "status": "unverified",
+          "conditions": "",
+          "sourceIds": []
+        },
+        "playthrough": {
+          "display": "Not yet established",
           "value": null,
           "status": "unverified",
           "conditions": "",
