@@ -18,7 +18,7 @@ eleventyComputed:
         headline: "{{ operator.name }} Offers and Redemption Requirements"
         description: "{{ operator.name }} signup SC, first-purchase offer, redemption minimums and playthrough, with source-linked conditions."
         datePublished: "{{ operator.verifiedAt }}"
-        dateModified: "{{ operator.verifiedAt | latestDate(contentDates.operatorPages) }}"
+        dateModified: "{{ operator.verifiedAt | latestDate(contentDates.operatorPages, benchmarks.generatedAt, '2026-09-21') }}"
         mainEntityOfPage: "https://socialcasinoindex.com/redemption-times/{{ operator.slug }}/"
         author:
           "@id": "https://socialcasinoindex.com/#alex-rowan"
@@ -37,38 +37,30 @@ eleventyComputed:
           - "@type": "ListItem"
             position: 3
             name: "{{ operator.name }}"
-      - "@type": "FAQPage"
-        "@id": "https://socialcasinoindex.com/redemption-times/{{ operator.slug }}/#faq"
-        mainEntity:
-          - "@type": "Question"
-            name: "How long does a {{ operator.name }} redemption take?"
-            acceptedAnswer:
-              "@type": "Answer"
-              text: "Published timing: {{ operator.publishedEstimate }}. First redemption: {{ operator.firstRedemption }}. These are published terms, not measured results; Social Casino Index has not yet completed a funded redemption test with {{ operator.name }}."
-          - "@type": "Question"
-            name: "What is the minimum redemption at {{ operator.name }}?"
-            acceptedAnswer:
-              "@type": "Answer"
-              text: "Minimum: {{ operator.minRedemption }}. Methods: {{ operator.methods }}."
 ---
-{% from "player-value.njk" import benchmarks %}
+{% from "benefit-row.njk" import evidence %}
 <main><article class="wrap py-10">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/redemption-times/">Redemption times</a></li><li><span aria-current="page">{{ operator.name }}</span></li></ol></nav>
-  <p class="eyebrow">Operator record · Reviewed {{ operator.verifiedAt | readableDate }}</p>
+  <p class="eyebrow">Operator record · Published benefits</p>
   <h1 class="page-title">{{ operator.name }} Offers and Redemption Requirements</h1>
-  <p class="lede">{{ operator.summary }}</p>
-  <section aria-labelledby="redemption-answer">
-    <h2 id="redemption-answer">{{ operator.name }} redemption requirements</h2>
-    <dl class="detail-grid">
-      <div><dt>Published payout time</dt><dd>{{ operator.publishedEstimate }}</dd></div>
-      <div><dt>Redemption methods</dt><dd>{{ operator.methods }}</dd></div>
-      <div><dt>Minimum redemption</dt><dd>{{ operator.minRedemption }}</dd></div>
-      <div><dt>Verification</dt><dd>{{ operator.kyc }}</dd></div>
-    </dl>
-    <p class="text-sm">Evidence reviewed {{ operator.verifiedAt | readableDate }}; not a new verification of current terms. <a href="#sources">Sources and access limitations</a>. <a href="#availability">State restrictions</a>.</p>
+  <p class="lede">{% if current.productMode == "entertainment_only" %}Entertainment-only Gold Coin play. These coins are not included in the cash-benefit benchmarks.{% else %}Published offers and redemption requirements, with the source and observation date attached to each figure.{% endif %}</p>
+  {% if current.rank %}<p>Published-offer rank <strong>{{ current.rank }}</strong> · Score {{ current.score | round(1) }}/100. <a href="/methodology/#published-offers">How we compare</a>.</p>{% endif %}
+  <div class="benefit-detail-grid">
+  {% for key, label in { signup: "Immediate free signup", welcome: "Advertised welcome reward", staged: "Staged free welcome reward", purchase: "Purchase package", daily: "Recurring daily reward", cash: "Cash redemption minimum", general: "General redemption minimum", gift: "Gift-card minimum" } %}
+    {% if current.metrics[key] %}<section data-metric="{{ key }}"><h2>{{ label }}</h2>{{ evidence(current.metrics[key]) }}</section>{% endif %}
+  {% endfor %}
+  </div>
+  {% if not current.benefitCount %}<p>{{ current.status }}. Missing collected values do not establish that an operator lacks an offer.</p>{% endif %}
+  <nav class="benefit-nav" aria-label="Bonus benchmarks">{% for benchmark in benchmarks.benchmarks %}{% if current.metrics[benchmark.id] %}<a href="{{ benchmark.url }}">Compare {{ benchmark.title | lower }}</a>{% endif %}{% endfor %}</nav>
+  <section id="redemption-answer">
+    <h2>{{ operator.name }} redemption requirements</h2>
+    {% if current.metrics.cash %}<p>Published cash redemption minimum: <strong>{{ current.metrics.cash.label }}</strong>.</p>{% elif current.metrics.general %}<p>Published general redemption minimum: <strong>{{ current.metrics.general.label }}</strong>. A cash-specific threshold is not established by this observation.</p>{% else %}<p>A cash redemption minimum has not been established in the collected evidence.</p>{% endif %}
+    {% for policy in publishedPolicies %}<details class="benefit-evidence"><summary>{{ policy.label | capitalize }}: {{ policy.value }}{% if policy.upperValue %}–{{ policy.upperValue }}{% endif %} {{ policy.unit | replace("_", " ") }} · {{ policy.method | replace("_", " ") }}</summary>
+      <p>{{ policy.basis | escape }}. {{ policy.stage | replace("_", " ") }}.</p>
+      <ul>{% for condition in policy.conditions %}<li>{{ condition | escape }}</li>{% endfor %}</ul>
+      <a href="{{ policy.sourceUrl | escape }}" rel="noopener">Source · {{ policy.observedAt | readableDate }}</a>
+    </details>{% endfor %}
   </section>
-  {{ benchmarks(operator, true) }}
-  <p class="text-sm text-base-content/60">Published claims, not measured results. “Not verified” does not mean zero. Offers and eligibility can change.</p>
   <h2>Funded test status</h2>
   <p>
 {% if operator.testStatus == "completed" %}
@@ -87,25 +79,13 @@ eleventyComputed:
 {% else %}
   <p>We have not funded an account with {{ operator.name }} yet. Every figure on this page is a published term from the operator's own documents, not a measured result. <a href="/methodology/">How funded testing works</a>.</p>
 {% endif %}
-  <h2>Timing and other terms</h2>
-  <dl class="detail-grid">
-    <div><dt>Daily reward</dt><dd>{{ operator.playerValue.daily.display }}{% if operator.playerValue.daily.conditions %}. {{ operator.playerValue.daily.conditions }}{% endif %}</dd></div>
-    <div><dt>Other package notes</dt><dd>{{ operator.packageValue }}</dd></div>
-    <div><dt>Games</dt><dd>{{ operator.games }}</dd></div>
-    <div><dt>First redemption</dt><dd>{{ operator.firstRedemption }}</dd></div>
-    <div><dt>Repeat redemption</dt><dd>{{ operator.repeatRedemption }}</dd></div>
-    <div><dt>Identity checks</dt><dd>{{ operator.kyc }}</dd></div>
-    <div><dt>Limits</dt><dd>{{ operator.limits }}</dd></div>
-    <div><dt>Support</dt><dd>{{ operator.support }}</dd></div>
-  </dl>
-  {% if operator.tradeoffs.length %}<h2>Limitations</h2><ul>{% for item in operator.tradeoffs %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
   <h2 id="availability">Availability</h2>
   <p>{{ operator.availability }}</p>
   {% if operator.restrictedStates.length %}<p><strong>Existing exclusions retained by the site's state gate:</strong> {{ operator.restrictedStates | join(", ") }}. This list was not reverified in the offer review and does not establish availability elsewhere.</p>{% endif %}
   <p>Check the site's offer policy and separate legal-source notes in the <a href="/availability/#closed-states">state availability index</a>. Operator acceptance does not establish legality.</p>
   <h2>Compare payout methods</h2>
   <p>For the request process, read <a href="/guides/how-to-redeem-sweeps-coins/">how to redeem Sweeps Coins</a>.</p>
-  <p>{{ operator.name }} redemption methods: {{ operator.methods }}. Compare the rails in detail: <a href="/guides/redemption-methods/bank-transfer/">bank transfer</a>, <a href="/guides/redemption-methods/gift-card/">gift card</a> and <a href="/guides/redemption-methods/crypto/">cryptocurrency</a>, or read the <a href="/research/sweepstakes-casino-redemption-times/">full redemption-time research</a>.</p>
+  <p>Compare the methods in detail: <a href="/guides/redemption-methods/bank-transfer/">bank transfer</a>, <a href="/guides/redemption-methods/gift-card/">gift card</a> and <a href="/guides/redemption-methods/crypto/">cryptocurrency</a>, or read the <a href="/research/sweepstakes-casino-redemption-times/">full redemption-time research</a>.</p>
   {% if operator.partner %}
   <div class="cta-box" data-cta-operator="{{ operator.slug }}">
     <p class="cta-title">Check {{ operator.name }}</p>

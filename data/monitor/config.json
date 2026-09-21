@@ -3,7 +3,14 @@
     "zonko-notice": "https://www.zonko.com/help/faq/",
     "chumba-notice": "https://www.chumbacasino.com/getting-started/redeem-prizes"
   },
+  "allowedHosts": {
+    "sweetsweeps": ["www.sweetsweeps.com", "sweetsweeps.com"],
+    "lucky-bunny": ["luckybunny.fun", "www.luckybunny.fun"],
+    "zonko": ["zonko.com", "www.zonko.com"],
+    "dorados": ["dorados.com", "www.dorados.com"]
+  },
   "additionalSources": [
+    { "operatorId": "zonko", "id": "zonko-home", "url": "https://www.zonko.com/", "purpose": "homepage" },
     { "operatorId": "jackpota", "id": "jackpota-promotions", "url": "https://www.jackpota.com/promotions", "purpose": "promotions_index", "discoveredFrom": "jackpota-home" },
     { "operatorId": "yay-casino", "id": "yay-signup", "url": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion", "purpose": "signup_offer", "discoveredFrom": "yay-promotions" },
     { "operatorId": "chumba", "id": "chumba-rules", "url": "https://www.chumbacasino.com/sweeps-rules", "purpose": "sweepstakes_rules", "discoveredFrom": "chumba-home" },

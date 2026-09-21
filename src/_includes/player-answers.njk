@@ -1,0 +1,14 @@
+{% if playerAnswers.length %}
+<section class="player-answers" aria-labelledby="player-answers-heading">
+  <h2 id="player-answers-heading" class="section-title">Specific comparisons</h2>
+  <nav class="benefit-nav" aria-label="Head-to-head comparisons">{% for comparison in benchmarks.comparisons %}<a href="{{ comparison.url }}">{{ comparison.title }}</a>{% endfor %}</nav>
+{% for group in playerAnswers %}
+  <section id="{{ group.id }}" aria-labelledby="{{ group.id }}-heading">
+    <h3 id="{{ group.id }}-heading">{{ group.title | escape }}</h3>
+    <ul>{% for row in group.rows %}
+      <li>{{ row.text | escape }} <a href="{{ row.sourceUrl | escape }}" rel="noopener">{{ row.name | escape }} source, <time datetime="{{ row.observedAt | escape }}">{{ row.observedAt | readableDate }}</time></a></li>
+    {% endfor %}</ul>
+  </section>
+{% endfor %}
+</section>
+{% endif %}

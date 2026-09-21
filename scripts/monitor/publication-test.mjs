@@ -26,6 +26,21 @@ test("all ten operators remain public during partial collection and model failur
   assert.equal(result.operators[0].records[0].freshness, "reconfirmed");
 });
 
+test("disclosure findings require reviewed source hashes and retain their dates after failed collection", () => {
+  const reviews = [{ operatorId: "operator-0", metric: "purchase", status: "not_disclosed",
+    reviewedAt: "2026-09-10", checklistComplete: true,
+    sources: [{ id: "terms", url: "https://example.com/terms", textHash: "hash" }] }];
+  const first = publicNumeric(operators, reviewed, manifest, [page], null, null, null, [], reviews);
+  assert.equal(first.operators[0].disclosureReviews.purchase.valid, true);
+  const failed = publicNumeric(operators, reviewed, manifest, [], first, null, null, [], reviews);
+  assert.equal(failed.operators[0].disclosureReviews.purchase.valid, true);
+  assert.equal(failed.operators[0].disclosureReviews.purchase.reviewedAt, "2026-09-10");
+  const changed = publicNumeric(operators, reviewed, manifest, [{ ...page, textHash: "new" }], first, null, null, [], reviews);
+  assert.equal(changed.operators[0].disclosureReviews.purchase.valid, false);
+  const unreviewed = publicNumeric(operators, reviewed, manifest, [], null, null, null, [], reviews);
+  assert.equal(unreviewed.operators[0].disclosureReviews.purchase.valid, false);
+});
+
 test("unchanged evidence suppresses only the identical reviewed claim", () => {
   assert.equal(publish(reviewed, [page], null, extract(claim)).operators[0].records.length, 1);
 });

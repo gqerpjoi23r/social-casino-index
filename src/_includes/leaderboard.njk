@@ -1,0 +1,44 @@
+{% from "benefit-row.njk" import evidence %}
+<section class="benefit-leaderboard" aria-labelledby="leaderboard-heading">
+  <div class="benefit-section-heading">
+    <div><h2 id="leaderboard-heading">Published-offer ranking</h2><p>Signup rewards, purchase value and cash redemption minimums, equally weighted.</p></div>
+    <label class="benefit-sort" hidden>Compare by
+      <select id="benefit-sort"><option value="overall" data-url="/">Balanced value</option><option value="signup" data-url="/bonuses/no-purchase-signup-bonuses/">Free signup SC</option><option value="purchase" data-url="/bonuses/purchase-value/">SC per dollar</option><option value="cash" data-url="/bonuses/cash-redemption-minimums/">Cash minimum</option></select>
+    </label>
+  </div>
+  <div class="benefit-scroll" tabindex="0" aria-label="Published offer comparison">
+  <table class="benefit-table benefit-overall">
+    <caption class="sr-only">Published offers, balanced ranking</caption>
+    <thead><tr><th scope="col">Rank</th><th scope="col">Casino</th><th scope="col">Free signup</th><th scope="col">Purchase value</th><th scope="col">Cash minimum</th></tr></thead>
+    <tbody data-ranked-operators>
+    {% for operator in benchmarks.ranked %}
+      <tr data-operator="{{ operator.slug }}" data-overall="{{ operator.rank }}" data-signup="{{ operator.metrics.signup.value }}" data-purchase="{{ operator.metrics.purchase.value }}" data-cash="{{ operator.metrics.cash.value }}">
+        <td class="benefit-rank">{{ operator.rank }}</td>
+        <th scope="row"><a class="benefit-brand" href="{{ operator.url }}">{% if operator.favicon %}<img src="{{ operator.favicon }}" alt="" width="32" height="32">{% endif %}<span>{{ operator.name | escape }}</span></a>
+          <details class="benefit-evidence"><summary>Score {{ operator.score | round(1) }}/100</summary><p>Signup {{ operator.componentScores.signup | round(1) }} · Purchase {{ operator.componentScores.purchase | round(1) }} · Cash access {{ operator.componentScores.cash | round(1) }}.</p><a href="/methodology/#published-offers">Scoring method</a></details>
+        </th>
+        {% for key in ["signup", "purchase", "cash"] %}<td>{% if operator.metrics[key] %}{{ evidence(operator.metrics[key]) }}{% else %}<span>{{ "Not offered" if operator.absences[key].status == "not_offered" else "Not publicly stated after review" }}</span>{% endif %}</td>{% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% if not benchmarks.ranked.length %}<p>Overall comparisons are being completed. The bonus benchmarks below rank each benefit independently.</p>{% endif %}
+  <p class="benefit-policy">Ranked within the covered operators using dated published terms, not tested payouts. <a href="/methodology/#published-offers">Methodology</a> · <a href="/updates/leaderboard.json">Ranking data</a></p>
+</section>
+<details id="all-operators" class="benefit-directory">
+  <summary id="coverage-heading">More operators and published benefits ({{ benchmarks.incomplete.length }})</summary>
+  <p>A missing field does not exclude a supported offer from its own bonus benchmark.</p>
+  <div class="benefit-directory-list">{% for operator in benchmarks.incomplete %}
+    <article data-operator="{{ operator.slug }}">
+      <a class="benefit-brand" href="{{ operator.url }}">{% if operator.favicon %}<img src="{{ operator.favicon }}" alt="" width="28" height="28" loading="lazy">{% endif %}<strong>{{ operator.name | escape }}</strong></a>
+      <div class="benefit-highlights">
+        {% if operator.metrics.signup %}<span>Free signup: {{ operator.metrics.signup.label }}</span>{% elif operator.metrics.welcome %}<span>Welcome: {{ operator.metrics.welcome.label }} · {{ operator.metrics.welcome.note }}</span>{% endif %}
+        {% if operator.metrics.purchase %}<span>Package: {{ operator.metrics.purchase.label }}</span>{% endif %}
+        {% if operator.metrics.cash %}<span>Cash minimum: {{ operator.metrics.cash.label }}</span>{% elif operator.metrics.general %}<span>General redemption minimum: {{ operator.metrics.general.label }}</span>{% endif %}
+        <small>{{ operator.status }}</small>
+      </div>
+    </article>
+  {% endfor %}</div>
+</details>
+<script src="/assets/benefit-sort.js" defer></script>

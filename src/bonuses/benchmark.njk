@@ -1,0 +1,32 @@
+---
+pagination:
+  data: benchmarks.benchmarks
+  size: 1
+  alias: benchmark
+  addAllPagesToCollections: true
+layout: base.njk
+permalink: "/bonuses/{{ benchmark.slug }}/"
+publishedAt: "2026-09-21"
+updatedAt: "2026-09-21"
+eleventyComputed:
+  title: "{{ benchmark.title }} | Social Casino Index"
+  description: "{{ benchmark.question }} Compare published amounts, conditions and dated operator sources."
+  jsonld:
+    "@context": "https://schema.org"
+    "@type": "CollectionPage"
+    name: "{{ benchmark.title }}"
+    description: "{{ benchmark.explanation }}"
+---
+{% from "benefit-row.njk" import benchmarkTable %}
+<main><article class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/bonuses/">Bonus benchmarks</a></li><li aria-current="page">{{ benchmark.title }}</li></ol></nav>
+  <header class="benefit-intro"><h1>{{ benchmark.title }}</h1><p>{{ benchmark.explanation }}</p></header>
+  <h2 class="mt-6 text-xl">{{ benchmark.question }}</h2>
+  {% if benchmark.rows.length %}
+  <p class="benefit-answer">{% for row in benchmark.rows %}{% if row.rank == 1 %}<a href="{{ row.url }}">{{ row.name }}</a>: <strong>{{ row.label }}</strong>. {{ row.note }} {% endif %}{% endfor %}These are the leading published figures within this comparison.</p>
+  {% endif %}
+  {{ benchmarkTable(benchmark) }}
+  <p class="benefit-policy">Observed dates and conditions are attached to each offer. Published benefits, not tested payouts. <a href="/methodology/#published-offers">How we rank</a> · <a href="/updates/leaderboard.json">Benchmark data</a>.</p>
+  <h2 class="mt-8 text-xl">Compare another benefit</h2>
+  <nav class="benefit-nav" aria-label="Bonus benchmarks">{% for item in benchmarks.benchmarks %}{% if item.id != benchmark.id %}<a href="{{ item.url }}">{{ item.title }}</a>{% endif %}{% endfor %}</nav>
+</article></main>

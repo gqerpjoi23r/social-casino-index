@@ -32,9 +32,12 @@ A green release means content schema, sitemap and SEO checks all pass.
   (`npm run content:touch -- <file>`); `content:validate` fails otherwise.
 - Nunjucks here lacks `selectattr`/`slice`/`limit` by default - compute
   filtered lists as collections in `eleventy.config.js`, not in templates.
-- Never publish a "fastest"/"best" ranking until 3 comparable funded tests
-  complete per operator (see `src/methodology.njk`). Observed figures stay
-  separate from published terms.
+- Published-offer rankings and bonus-specific benchmarks use the shared
+  evidence model and versioned methodology. Affiliate status never affects order.
+  Rank measured payout performance only after 3 comparable funded tests per
+  operator. Keep published benefits separate from observed payout results.
+- A collection failure is not operator opacity. Retain dated evidence; only
+  source-backed absence reviews can reduce a disclosure component.
 - No affiliate links in article copy; operator CTAs only behind the state
   gate (`/go/` + `src/assets/eligibility.js`).
 - `docs/` is the committed deploy artifact - always produced by the build,

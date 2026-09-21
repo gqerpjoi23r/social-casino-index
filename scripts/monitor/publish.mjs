@@ -26,11 +26,13 @@ const reviewPath = process.env.MONITOR_REVIEWED || ".monitor/reviewed.json";
 const reviewed = existsSync(reviewPath) ? read(reviewPath) : { operators: [] };
 const extracted = existsSync(join(directory, "numeric.json")) ? read(join(directory, "numeric.json")) : null;
 const evaluation = existsSync(join(directory, "numeric-evaluation.json")) ? read(join(directory, "numeric-evaluation.json")) : null;
-const numeric = publicNumeric(operators, reviewed, manifest, captures, previous, extracted, evaluation, verification.blockedOperators);
+const absenceReviews = read("data/monitor/disclosure-reviews.json").reviews;
+const numeric = publicNumeric(operators, reviewed, manifest, captures, previous, extracted, evaluation, verification.blockedOperators, absenceReviews);
 const monitor = read(join(directory, "monitor.json"));
 // Raw passages remain private; validated typed claims are explicitly unreviewed.
 monitor.events = monitor.events.map(event => ({ ...event, before: [], after: [] }));
 monitor.sources = {};
+delete monitor.discovery;
 monitor.operators.forEach(operator => {
   Object.values(operator.fields).forEach(field => { field.quotes = []; });
 });
@@ -44,6 +46,6 @@ writeFileSync(join(directory, "publication.json"), JSON.stringify({
 if (process.env.GITHUB_STEP_SUMMARY) {
   const { appendFileSync } = await import("node:fs");
   appendFileSync(process.env.GITHUB_STEP_SUMMARY,
-    `\n## Public refresh\nRun: ${manifest.runId}\n\nPublished ${numeric.operators.length} operators. New validated claims are automated and unreviewed; comparison facts and rankings are unchanged.\n`);
+    `\n## Public refresh\nRun: ${manifest.runId}\n\nPublished ${numeric.operators.length} operators. New source-grounded claims feed the published-benefit benchmarks; these are not funded payout results.\n`);
 }
 console.log(`Published all ${numeric.operators.length} operator readouts for ${manifest.runId}`);

@@ -1,0 +1,31 @@
+{% macro evidence(row) %}
+<strong class="benefit-value">{{ row.label | escape }}</strong>
+{% if row.note %}<p class="benefit-note">{{ row.note | escape }}</p>{% endif %}
+<details class="benefit-evidence">
+  <summary>Source &amp; terms{% if row.status == "retained" %} · Previous observation{% endif %}</summary>
+  <a href="{{ row.sourceUrl | escape }}" rel="noopener">Operator source · <time datetime="{{ row.observedAt | escape }}">{{ row.observedAt | readableDate }}</time></a>
+  {% if row.promoCode %}<p>Code: <strong>{{ row.promoCode | escape }}</strong></p>{% endif %}
+  {% if row.conditions.length %}<ul>{% for condition in row.conditions %}<li>{{ condition | escape }}</li>{% endfor %}</ul>{% endif %}
+</details>
+{% endmacro %}
+
+{% macro benchmarkTable(benchmark) %}
+{% from "benefit-row.njk" import evidence %}
+{% if benchmark.rows.length %}
+<div class="benefit-scroll" tabindex="0" aria-label="{{ benchmark.title | escape }} comparison">
+<table class="benefit-table" data-benchmark="{{ benchmark.id }}">
+  <caption class="sr-only">{{ benchmark.title }}</caption>
+  <thead><tr><th scope="col">Rank</th><th scope="col">Casino</th><th scope="col">{{ benchmark.label }}</th></tr></thead>
+  <tbody>{% for row in benchmark.rows %}
+    <tr data-operator="{{ row.slug }}">
+      <td class="benefit-rank">{{ row.rank }}</td>
+      <th scope="row"><a class="benefit-brand" href="{{ row.url }}">{% if row.favicon %}<img src="{{ row.favicon }}" alt="" width="32" height="32" loading="lazy">{% endif %}<span>{{ row.name | escape }}</span></a></th>
+      <td>{{ evidence(row) }}</td>
+    </tr>
+  {% endfor %}</tbody>
+</table>
+</div>
+{% else %}
+<p>No comparable published amounts have been established for this benchmark yet. <a href="/#all-operators">See the covered operators</a>.</p>
+{% endif %}
+{% endmacro %}

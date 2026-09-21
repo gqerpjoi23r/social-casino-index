@@ -25,6 +25,19 @@ test("paid staged total cannot be used as immediate daily reward", () => {
   assert.equal(data.offers[0].immediateSc, null);
   assert.equal(comparableOffer(data.offers[0]), false);
 });
+
+test("withdrawal and expiry metadata need explicit source support", () => {
+  const input = pages("Buy this package for $20 and receive 40 SC.");
+  const data = deterministicExtract(input);
+  data.offers[0].offerStatus = "withdrawn";
+  assert.equal(checkExtraction(data, input).rejected[0].reason, "unsupported_offer_withdrawal");
+  data.offers[0].offerStatus = "unknown";
+  data.offers[0].expiresAt = "2026-09-20T00:00:00Z";
+  assert.equal(checkExtraction(data, input).rejected[0].reason, "unsupported_offer_expiry");
+  data.offers[0].quote += " This offer expired at 2026-09-20T00:00:00Z.";
+  data.offers[0].offerStatus = "expired";
+  assert.equal(checkExtraction(data, pages(data.offers[0].quote)).accepted.offers.length, 1);
+});
 test("staged classification and omitted offer qualifiers are rejected", () => {
   const input = pages("$44 purchase provides 144 SC over 30 days.");
   const data = deterministicExtract(input);

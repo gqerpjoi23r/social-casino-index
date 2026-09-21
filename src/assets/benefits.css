@@ -1,0 +1,37 @@
+.benefit-intro{padding:2rem 0 1.25rem;border-bottom:1px solid #46524d}
+.benefit-intro h1{font-size:2.25rem;line-height:1.12;margin:0 0 .5rem;letter-spacing:0}
+.benefit-intro p{max-width:65ch;margin:.5rem 0;color:#c1cbc5}
+.benefit-nav{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;margin:1.25rem 0 0}
+.benefit-nav a{display:inline-flex;align-items:center;gap:.35rem;font-size:.95rem;text-decoration:underline;text-underline-offset:4px}
+.benefit-section-heading{display:flex;justify-content:space-between;align-items:end;gap:1rem;padding:1.75rem 0 1rem}
+.benefit-section-heading h2,.benefit-directory h2{font-size:1.45rem;line-height:1.2;margin:0 0 .5rem}
+.benefit-section-heading p,.benefit-directory>p{margin:0;color:#b8c7be;font-size:.95rem}
+.benefit-sort{font-size:.85rem;flex-shrink:0}
+.benefit-sort select{display:block;padding:.55rem 2rem .55rem .65rem;background:#26372e;border:1px solid #788d80;border-radius:4px;color:#eef6f0;min-width:170px}
+.benefit-scroll{overflow-x:auto;max-width:100%}
+.benefit-table{border-collapse:collapse;width:100%;font-size:.95rem}
+.benefit-table th,.benefit-table td{border-bottom:1px solid #46524d;padding:1rem .65rem;text-align:left;vertical-align:top}
+.benefit-table thead th{background:#28382f;font-size:.8rem;font-weight:600;color:#d7e5dc}
+.benefit-overall{min-width:720px}
+.benefit-rank{color:#f4cb67;font-size:1.15rem;font-weight:600;width:48px}
+.benefit-brand{display:flex;align-items:center;gap:.6rem;color:#e4eee8;font-weight:600;line-height:1.3;text-decoration:none;min-width:120px}
+.benefit-brand img{object-fit:contain;flex:none;width:32px;height:32px;border-radius:4px}
+.benefit-value{font-size:1.15rem;color:#c1f0d6;font-weight:600;display:block;line-height:1.35}
+.benefit-note{font-size:.85rem;line-height:1.45;color:#b8c7be;margin:.35rem 0}
+.benefit-evidence{font-size:.8rem;line-height:1.5;margin-top:.5rem;font-weight:400;color:#b8c7be;max-width:55ch}
+.benefit-evidence summary{cursor:pointer;color:#a3c9eb;text-decoration:underline;text-underline-offset:3px}
+.benefit-evidence ul{padding-left:1.1rem;margin:.5rem 0;overflow-wrap:anywhere}
+.benefit-policy{font-size:.85rem;color:#b8c7be;margin:1rem 0}
+.benefit-directory{padding:2rem 0}
+.benefit-directory-list{margin-top:1rem;border-top:1px solid #46524d}
+.benefit-directory-list article{display:grid;grid-template-columns:180px 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid #46524d}
+.benefit-highlights{display:flex;flex-wrap:wrap;gap:.3rem 1rem;font-size:.9rem}
+.benefit-highlights small{display:block;width:100%;color:#b8c7be;font-size:.8rem}
+.benefit-benchmark{padding:1.5rem 0;border-top:1px solid #46524d;scroll-margin-top:90px}
+.benefit-benchmark h2{font-size:1.4rem;margin:0 0 .5rem}
+.benefit-answer{font-size:1.1rem;line-height:1.55;max-width:75ch;margin:1.2rem 0}
+.benefit-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2rem}
+.benefit-detail-grid>section{padding:1.25rem 0;border-bottom:1px solid #46524d}
+.benefit-detail-grid h2{font-size:1rem;margin:0 0 .5rem}
+@media(max-width:600px){.benefit-intro h1{font-size:1.8rem}.benefit-section-heading{align-items:start;flex-direction:column}.benefit-directory-list article{grid-template-columns:1fr;gap:.5rem}.benefit-detail-grid{grid-template-columns:1fr}.benefit-table th,.benefit-table td{padding:.85rem .4rem}.benefit-brand{min-width:90px}.benefit-brand img{width:24px;height:24px}.benefit-value{font-size:1rem}.benefit-intro{padding-top:1.4rem}}
+@media(max-width:650px){.benefit-overall{min-width:0}.benefit-overall thead{display:none}.benefit-overall tbody{display:block}.benefit-overall tr{display:grid;grid-template-columns:28px minmax(0,1fr);border-bottom:1px solid #46524d}.benefit-overall th,.benefit-overall td{border:0}.benefit-overall td:not(:first-child){grid-column:2}.benefit-overall td:nth-child(3)::before{content:"Free signup"}.benefit-overall td:nth-child(4)::before{content:"Purchase value"}.benefit-overall td:nth-child(5)::before{content:"Cash minimum"}.benefit-overall td:nth-child(n+3)::before{display:block;font-size:.75rem;color:#b8c7be;margin-bottom:.3rem}}

@@ -14,6 +14,13 @@ Format:
 
 ---
 
+## 2026-09-21 - Published-benefit rankings and bonus benchmarks
+- Add an affiliate-independent, equal-weight operator ranking and seven query-specific bonus benchmarks. Incomplete overall evidence does not suppress a supported individual benefit.
+- Use one comparison model for homepage, operator profiles, answers and the new leaderboard JSON; preserve dated observations and distinguish staged rewards, package prices and cash/gift-card thresholds.
+- Add SweetSweeps to coverage, bounded source-link discovery, rendered-content fallback and reviewed disclosure-gap support. Collection failures do not create transparency penalties.
+- Add two head-to-head pages and eleven bonus-query targets without changing the historical prompt baseline. Expiry and withdrawal need explicit source support.
+- Verify 70 monitor tests, release validation and desktop/mobile browser checks. Feature-branch live collection is blocked by the existing OIDC trust; use the authorized main workflow without expanding IAM.
+
 ## 2026-09-21 - Keep daily refresh tests independent of changing offers
 - Use synthetic fixtures for exact display expectations and smoke-check the current snapshot without fixed offers, promo codes or row counts.
 - Cover unknown purchase requirements replacing old free-signup claims and promo-code addition, replacement and removal without changing display or extraction behavior.
