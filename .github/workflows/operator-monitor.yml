@@ -94,6 +94,8 @@ jobs:
         env:
           CAPTURE_PATH: ${{ steps.capture.outputs.capture_path }}
         run: node scripts/monitor/publish.mjs "$CAPTURE_PATH"
+      - name: Validate refreshed observations
+        run: npm run monitor:test
       - run: npm run release
       - name: Commit validated observations
         id: commit

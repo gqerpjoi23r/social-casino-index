@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-21 - Keep daily refresh tests independent of changing offers
+- Use synthetic fixtures for exact display expectations and smoke-check the current snapshot without fixed offers, promo codes or row counts.
+- Cover unknown purchase requirements replacing old free-signup claims and promo-code addition, replacement and removal without changing display or extraction behavior.
+- Validate refreshed observations before release, commit, baseline advancement and deployment; preserve private captures when validation fails.
+- Verify 53 monitor tests, full release validation, both September 18/19 snapshots and a mocked workflow failure. Generated pages and public data are unchanged; a fresh production run remains pending.
+
 ## 2026-09-18 - Prompt-aligned redemption and state coverage
 - Add one Sweeps Coins redemption guide, linked operator answers and dated source-register links. Preserve datasets, exports, monitoring and eligibility behavior; no funded rankings are introduced.
 - Keep `/availability/` canonical. Separate unchanged site offer blocks from legal findings, add reviewed California/Washington primary-source notes, and make remaining state legal-review gaps explicit.
