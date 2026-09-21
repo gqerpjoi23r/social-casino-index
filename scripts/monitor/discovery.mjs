@@ -3,7 +3,13 @@ import { lookup } from "node:dns/promises";
 import { hash } from "./core.mjs";
 
 const forbidden = /(?:^|\/)(?:login|signin|sign-in|register|signup|sign-up|logout|checkout|payment|deposit|withdraw|account|cart|go|api)(?:\/|$)/i;
+const gamePage = /(?:^|\/)(?:games?|slots?)(?:\/|$)/i;
 const relevant = /bonus|promo|offer|welcome|reward|daily|package|sweep|redeem|redemption|terms|rules|faq|help|support|\.pdf$/i;
+function relevantSource(link) {
+  const pathname = new URL(link).pathname;
+  return relevant.test(pathname) && !forbidden.test(pathname) && !gamePage.test(pathname) &&
+    !/[?&](?:action|token|session|redirect|return|affiliate|ref)=/i.test(link);
+}
 export function publicAddress(address) {
   if (isIP(address) === 4) {
     const [a, b] = address.split(".").map(Number);
@@ -37,8 +43,7 @@ export async function checkDestination(value, hosts, resolver = lookup) {
 export function discover(links, source, operatorId, hosts) {
   if ((source.depth || 0) >= 2) return [];
   return [...new Set(links || [])].map(link => safeUrl(link, hosts)).filter(Boolean)
-    .filter(link => relevant.test(new URL(link).pathname) && !forbidden.test(new URL(link).pathname) &&
-      !/[?&](?:action|token|session|redirect|return|affiliate|ref)=/i.test(link))
+    .filter(relevantSource)
     .sort().slice(0, 100).map(url => ({ id: `${operatorId}-discovered-${hash(url).slice(0, 12)}`,
       url, discoveredFrom: source.id, depth: (source.depth || 0) + 1, purpose: "discovered_terms_or_offer" }));
 }
@@ -55,7 +60,10 @@ export function sourceQueues(operators, config, previous = {}) {
     const hosts = [...new Set([...seeds.map(s => new URL(s.url).hostname), ...(config.allowedHosts?.[operator.slug] || [])])];
     const prior = previous.discovery?.[operator.slug] || {};
     const byUrl = new Map();
-    for (const source of [...seeds, ...(prior.queue || [])]) {
+    for (const source of [...seeds, ...(prior.queue || []).filter(source => {
+      const url = safeUrl(source.url, hosts);
+      return url && relevantSource(url);
+    })]) {
       const url = safeUrl(source.url, hosts);
       if (url && !byUrl.has(url)) byUrl.set(url, { ...source, url });
     }

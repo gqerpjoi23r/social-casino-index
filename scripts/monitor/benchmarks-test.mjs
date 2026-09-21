@@ -113,6 +113,8 @@ test("discovery only follows relevant public verified-domain links", () => {
     "https://example.com/bonus?utm_source=x", "https://example.com/rules.pdf",
     "https://example.com/account/bonus", "https://example.com/bonus?token=secret",
     "https://evil.example/bonus", "http://example.com/bonus", "https://example.com/news",
+    "https://example.com/games/slots/piggy-power-hit-the-bonus",
+    "https://example.com/en/slots/daily-rewards",
   ], { id: "home", depth: 0 }, "a", ["example.com"]);
   assert.deepEqual(sources.map(s => s.url), ["https://example.com/bonus", "https://example.com/rules.pdf"]);
   assert.equal(discover(["https://example.com/bonus"], { depth: 2 }, "a", ["example.com"]).length, 0);
@@ -136,4 +138,17 @@ test("persistent discovery queue revisits oldest checks and retains unfinished s
   const queue = sourceQueues(input, {}, previous)[0];
   assert.equal(queue.queue[0].id, "bonus");
   assert.equal(queue.queue.length, 2);
+});
+test("persisted game discoveries are removed without filtering explicit source seeds", () => {
+  const input = [{ slug: "a", sources: [
+    { id: "home", url: "https://example.com/" },
+    { id: "curated", url: "https://example.com/games/bonus-rules" },
+  ] }];
+  const previous = { discovery: { a: { queue: [
+    { id: "game", url: "https://example.com/games/slots/hit-the-bonus", depth: 1 },
+    { id: "bonus", url: "https://example.com/bonus", depth: 1 },
+    { id: "unsafe", url: "https://evil.example/bonus", depth: 1 },
+  ] } } };
+  assert.deepEqual(sourceQueues(input, {}, previous)[0].queue.map(source => source.id),
+    ["curated", "home", "bonus"]);
 });
