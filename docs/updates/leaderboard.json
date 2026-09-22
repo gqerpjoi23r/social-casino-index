@@ -33,7 +33,7 @@
               "recordId": "ac480b65060891a61993",
               "sourceUrl": "https://www.wowvegas.com/promo-code",
               "observedAt": "2026-09-22T06:39:29.335Z",
-              "status": "published",
+              "status": "retained",
               "firstObservedAt": "2026-09-22T06:39:29.335Z",
               "lastChangedAt": null,
               "conditions": [
@@ -76,6 +76,60 @@
               "kind": "signup"
             }
           ]
+        },
+        {
+          "id": "cash",
+          "title": "Cash redemption minimums",
+          "url": "/bonuses/cash-redemption-minimums/",
+          "rows": [
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "cash",
+              "value": 50,
+              "label": "50 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "b2332522d78843df6458",
+              "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+              "observedAt": "2026-09-22T06:40:22.482Z",
+              "status": "retained",
+              "firstObservedAt": "2026-09-22T06:40:22.482Z",
+              "lastChangedAt": null,
+              "conditions": [
+                "Blue WOW Coins cannot be redeemed, as they have no monetary value."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            },
+            {
+              "slug": "mcluck",
+              "name": "McLuck",
+              "url": "/redemption-times/mcluck/",
+              "metric": "cash",
+              "value": 75,
+              "label": "75 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "8a90ddacdd8b1db4da4a",
+              "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+              "observedAt": "2026-09-22T09:25:41.094Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-22T09:25:41.094Z",
+              "lastChangedAt": null,
+              "conditions": [
+                "Gift card and cash prize minimums are separate.",
+                "A Sweepstakes Coin must become qualifying to count toward the minimum."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            }
+          ]
         }
       ]
     },
@@ -110,7 +164,7 @@
               "recordId": "ac480b65060891a61993",
               "sourceUrl": "https://www.wowvegas.com/promo-code",
               "observedAt": "2026-09-22T06:39:29.335Z",
-              "status": "published",
+              "status": "retained",
               "firstObservedAt": "2026-09-22T06:39:29.335Z",
               "lastChangedAt": null,
               "conditions": [
@@ -136,7 +190,7 @@
               "recordId": "d8c68475709e46c12e14",
               "sourceUrl": "https://www.chumbacasino.com/promotions",
               "observedAt": "2026-09-22T06:39:06.245Z",
-              "status": "published",
+              "status": "retained",
               "firstObservedAt": "2026-09-22T06:39:06.245Z",
               "lastChangedAt": null,
               "conditions": [
@@ -169,7 +223,7 @@
               "recordId": "b2332522d78843df6458",
               "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
               "observedAt": "2026-09-22T06:40:22.482Z",
-              "status": "published",
+              "status": "retained",
               "firstObservedAt": "2026-09-22T06:40:22.482Z",
               "lastChangedAt": null,
               "conditions": [
@@ -189,13 +243,16 @@
               "value": 100,
               "label": "100 SC",
               "note": "Cash redemption minimum.",
-              "recordId": "79d04e14b409d2ea6552",
+              "recordId": "6264554b143159a5f795",
               "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-              "observedAt": "2026-09-21T21:44:06.608Z",
-              "status": "retained",
-              "firstObservedAt": "2026-09-21T21:44:06.608Z",
-              "lastChangedAt": null,
-              "conditions": [],
+              "observedAt": "2026-09-22T09:29:53.049Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-22T09:29:53.049Z",
+              "lastChangedAt": "2026-09-22T09:29:53.049Z",
+              "conditions": [
+                "If it is your first time to redeem, you need to re-verify your phone number.",
+                "Identity verification and banking-information validation are required to redeem prizes."
+              ],
               "priceUsd": null,
               "immediateSc": null,
               "totalSc": null,
@@ -207,7 +264,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-09-22T06:40:45.988Z",
+  "generatedAt": "2026-09-22T09:34:15.435Z",
   "operators": [
     {
       "slug": "wow-vegas",
@@ -224,7 +281,7 @@
           "recordId": "ac480b65060891a61993",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -247,7 +304,7 @@
           "recordId": "ac480b65060891a61993",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -270,7 +327,7 @@
           "recordId": "ac480b65060891a61993",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -293,7 +350,7 @@
           "recordId": "b2332522d78843df6458",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
           "observedAt": "2026-09-22T06:40:22.482Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:40:22.482Z",
           "lastChangedAt": null,
           "conditions": [
@@ -314,7 +371,7 @@
           "recordId": "650833622b0c3a7378a1",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
           "observedAt": "2026-09-22T06:40:22.482Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:40:22.482Z",
           "lastChangedAt": null,
           "conditions": [
@@ -335,7 +392,7 @@
           "recordId": "1145d65ceb7ba45d7b62",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -359,7 +416,7 @@
           "recordId": "1145d65ceb7ba45d7b62",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -383,7 +440,7 @@
           "recordId": "1145d65ceb7ba45d7b62",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -405,13 +462,13 @@
         "purchase": null,
         "cash": null
       },
-      "collectionStatus": "partial",
-      "score": 80.55555555555556,
+      "collectionStatus": "readable",
+      "score": 75,
       "rank": 1,
       "benefitCount": 5,
       "componentScores": {
         "signup": 75,
-        "purchase": 66.66666666666667,
+        "purchase": 50,
         "cash": 100
       },
       "disclosureCount": 3,
@@ -432,7 +489,7 @@
           "recordId": "d8c68475709e46c12e14",
           "sourceUrl": "https://www.chumbacasino.com/promotions",
           "observedAt": "2026-09-22T06:39:06.245Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:06.245Z",
           "lastChangedAt": null,
           "conditions": [
@@ -455,7 +512,7 @@
           "recordId": "d8c68475709e46c12e14",
           "sourceUrl": "https://www.chumbacasino.com/promotions",
           "observedAt": "2026-09-22T06:39:06.245Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:06.245Z",
           "lastChangedAt": null,
           "conditions": [
@@ -476,13 +533,16 @@
           "value": 100,
           "label": "100 SC",
           "note": "Cash redemption minimum.",
-          "recordId": "79d04e14b409d2ea6552",
+          "recordId": "6264554b143159a5f795",
           "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T21:44:06.608Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-21T21:44:06.608Z",
-          "lastChangedAt": null,
-          "conditions": [],
+          "observedAt": "2026-09-22T09:29:53.049Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-22T09:29:53.049Z",
+          "lastChangedAt": "2026-09-22T09:29:53.049Z",
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
           "priceUsd": null,
           "immediateSc": null,
           "totalSc": null,
@@ -496,8 +556,8 @@
           "note": "General redemption minimum; cash method not established.",
           "recordId": "71dd3d981f2a34fedc7f",
           "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T21:44:06.608Z",
-          "status": "retained",
+          "observedAt": "2026-09-22T09:29:53.049Z",
+          "status": "published",
           "firstObservedAt": "2026-09-10T21:20:03.804Z",
           "lastChangedAt": null,
           "conditions": [
@@ -517,8 +577,8 @@
           "note": "Gift-card redemption minimum.",
           "recordId": "4594baf7502b8e59b606",
           "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T21:44:06.608Z",
-          "status": "retained",
+          "observedAt": "2026-09-22T09:29:53.049Z",
+          "status": "published",
           "firstObservedAt": "2026-09-10T21:20:03.804Z",
           "lastChangedAt": null,
           "conditions": [
@@ -550,29 +610,75 @@
       "status": "Overall comparison incomplete"
     },
     {
-      "slug": "zonko",
-      "name": "Zonko",
+      "slug": "mcluck",
+      "name": "McLuck",
       "productMode": "unverified",
-      "favicon": "/assets/favicons/zonko.png",
-      "url": "/redemption-times/zonko/",
+      "favicon": "/assets/favicons/mcluck.jpg",
+      "url": "/redemption-times/mcluck/",
       "metrics": {
-        "signup": null,
-        "welcome": null,
+        "signup": {
+          "metric": "signup",
+          "value": 2.5,
+          "label": "2.5 SC",
+          "note": "Immediate. No purchase needed.",
+          "recordId": "12e77b670c7f12ad39b1",
+          "sourceUrl": "https://www.mcluck.com/",
+          "observedAt": "2026-09-21T21:42:51.114Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-21T21:42:51.114Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "“Spin for Fun to get Free Rewards.”",
+            "“Continue to claim your coins.”",
+            "“Play instantly! No purchase needed.”"
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 2.5,
+          "totalSc": 2.5,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
+        "welcome": {
+          "metric": "welcome",
+          "value": 2.5,
+          "label": "2.5 SC",
+          "note": "No purchase needed.",
+          "recordId": "12e77b670c7f12ad39b1",
+          "sourceUrl": "https://www.mcluck.com/",
+          "observedAt": "2026-09-21T21:42:51.114Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-21T21:42:51.114Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "“Spin for Fun to get Free Rewards.”",
+            "“Continue to claim your coins.”",
+            "“Play instantly! No purchase needed.”"
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 2.5,
+          "totalSc": 2.5,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
         "staged": null,
         "cash": {
           "metric": "cash",
-          "value": 100,
-          "label": "100 SC",
+          "value": 75,
+          "label": "75 SC",
           "note": "Cash redemption minimum.",
-          "recordId": "df58565f84965a772e5f",
-          "sourceUrl": "https://www.zonko.com/help/play-rules/",
-          "observedAt": "2026-09-22T06:38:54.039Z",
+          "recordId": "8a90ddacdd8b1db4da4a",
+          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+          "observedAt": "2026-09-22T09:25:41.094Z",
           "status": "published",
-          "firstObservedAt": "2026-09-22T06:38:54.039Z",
+          "firstObservedAt": "2026-09-22T09:25:41.094Z",
           "lastChangedAt": null,
           "conditions": [
-            "Entrants must accumulate and maintain qualifying Sweepstakes Coins associated with their User Account.",
-            "Cash Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin the user chooses to redeem."
+            "Gift card and cash prize minimums are separate.",
+            "A Sweepstakes Coin must become qualifying to count toward the minimum."
           ],
           "priceUsd": null,
           "immediateSc": null,
@@ -581,57 +687,31 @@
           "kind": null
         },
         "general": null,
-        "gift": null,
-        "daily": null,
-        "purchase": {
-          "metric": "purchase",
-          "value": 3.25,
-          "label": "65 SC for $20",
-          "note": "3.25 SC per $1. First purchase only.",
-          "recordId": "326870c79dd637c0ffbf",
-          "sourceUrl": "https://www.zonko.com/promotions/",
-          "observedAt": "2026-09-22T06:32:04.762Z",
+        "gift": {
+          "metric": "gift",
+          "value": 10,
+          "label": "10 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "67996c52322843a95dd6",
+          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+          "observedAt": "2026-09-22T09:25:41.094Z",
           "status": "published",
-          "firstObservedAt": "2026-09-22T06:32:04.762Z",
+          "firstObservedAt": "2026-09-22T09:25:41.094Z",
           "lastChangedAt": null,
           "conditions": [
-            "Requires a 1st Purchase of $20.",
-            "Includes a spin of the Welcome Wheel for more FREE SC rewards; the additional SC quantity is not stated.",
-            "Limited Time Offer. Don’t Miss Out!"
+            "Gift card and cash prize minimums are separate.",
+            "A Sweepstakes Coin must become qualifying to count toward the minimum."
           ],
-          "promoCode": null,
-          "priceUsd": 20,
-          "immediateSc": 65,
-          "totalSc": 65,
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
           "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "first_purchase"
+          "kind": null
         },
+        "daily": null,
+        "purchase": null,
         "purchase10": null,
-        "purchase20": {
-          "metric": "purchase20",
-          "value": 3.25,
-          "label": "65 SC for $20",
-          "note": "3.25 SC per $1. First purchase only.",
-          "recordId": "326870c79dd637c0ffbf",
-          "sourceUrl": "https://www.zonko.com/promotions/",
-          "observedAt": "2026-09-22T06:32:04.762Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T06:32:04.762Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Requires a 1st Purchase of $20.",
-            "Includes a spin of the Welcome Wheel for more FREE SC rewards; the additional SC quantity is not stated.",
-            "Limited Time Offer. Don’t Miss Out!"
-          ],
-          "promoCode": null,
-          "priceUsd": 20,
-          "immediateSc": 65,
-          "totalSc": 65,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "first_purchase"
-        }
+        "purchase20": null
       },
       "absences": {
         "signup": null,
@@ -641,7 +721,7 @@
       "collectionStatus": "partial",
       "score": null,
       "rank": null,
-      "benefitCount": 2,
+      "benefitCount": 4,
       "componentScores": {},
       "disclosureCount": 2,
       "status": "Overall comparison incomplete"
@@ -731,7 +811,27 @@
           "purchaseRequired": false,
           "kind": "signup"
         },
-        "cash": null,
+        "cash": {
+          "metric": "cash",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "8de0d08ea87bff367c11",
+          "sourceUrl": "https://www.yaycasino.com/blog/understanding-sweeps-coins-your-complete-guide-to-free-sweeps-coins-no-deposit/",
+          "observedAt": "2026-09-22T09:26:28.942Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-22T09:26:28.942Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "A 1x playthrough requirement must be completed.",
+            "KYC verification is required before the first redemption."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
         "general": {
           "metric": "general",
           "value": 50,
@@ -764,167 +864,93 @@
       "collectionStatus": "readable",
       "score": null,
       "rank": null,
-      "benefitCount": 3,
+      "benefitCount": 4,
       "componentScores": {},
-      "disclosureCount": 1,
+      "disclosureCount": 2,
       "status": "Overall comparison incomplete"
     },
     {
-      "slug": "mcluck",
-      "name": "McLuck",
+      "slug": "zonko",
+      "name": "Zonko",
       "productMode": "unverified",
-      "favicon": "/assets/favicons/mcluck.jpg",
-      "url": "/redemption-times/mcluck/",
-      "metrics": {
-        "signup": {
-          "metric": "signup",
-          "value": 2.5,
-          "label": "2.5 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "12e77b670c7f12ad39b1",
-          "sourceUrl": "https://www.mcluck.com/",
-          "observedAt": "2026-09-21T21:42:51.114Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-21T21:42:51.114Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "“Spin for Fun to get Free Rewards.”",
-            "“Continue to claim your coins.”",
-            "“Play instantly! No purchase needed.”"
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2.5,
-          "totalSc": 2.5,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "welcome": {
-          "metric": "welcome",
-          "value": 2.5,
-          "label": "2.5 SC",
-          "note": "No purchase needed.",
-          "recordId": "12e77b670c7f12ad39b1",
-          "sourceUrl": "https://www.mcluck.com/",
-          "observedAt": "2026-09-21T21:42:51.114Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-21T21:42:51.114Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "“Spin for Fun to get Free Rewards.”",
-            "“Continue to claim your coins.”",
-            "“Play instantly! No purchase needed.”"
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2.5,
-          "totalSc": 2.5,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "staged": null,
-        "cash": null,
-        "general": null,
-        "gift": null,
-        "daily": null,
-        "purchase": null,
-        "purchase10": null,
-        "purchase20": null
-      },
-      "absences": {
-        "signup": null,
-        "purchase": null,
-        "cash": null
-      },
-      "collectionStatus": "partial",
-      "score": null,
-      "rank": null,
-      "benefitCount": 2,
-      "componentScores": {},
-      "disclosureCount": 1,
-      "status": "Overall comparison incomplete"
-    },
-    {
-      "slug": "lucky-bunny",
-      "name": "Lucky Bunny",
-      "productMode": "unverified",
-      "favicon": "/assets/favicons/lucky-bunny.ico",
-      "url": "/redemption-times/lucky-bunny/",
+      "favicon": "/assets/favicons/zonko.png",
+      "url": "/redemption-times/zonko/",
       "metrics": {
         "signup": null,
         "welcome": null,
         "staged": null,
-        "cash": null,
+        "cash": {
+          "metric": "cash",
+          "value": 100,
+          "label": "100 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "df58565f84965a772e5f",
+          "sourceUrl": "https://www.zonko.com/help/play-rules/",
+          "observedAt": "2026-09-22T06:38:54.039Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-22T06:38:54.039Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Entrants must accumulate and maintain qualifying Sweepstakes Coins associated with their User Account.",
+            "Cash Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin the user chooses to redeem."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
         "general": null,
         "gift": null,
         "daily": null,
         "purchase": {
           "metric": "purchase",
-          "value": 1.0200204004080082,
-          "label": "510 SC for $499.99",
-          "note": "1.02 SC per $1. Purchase package.",
-          "recordId": "56aceb023d85db573e4e",
-          "sourceUrl": "https://luckybunny.fun/",
-          "observedAt": "2026-09-22T06:31:39.982Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T06:31:39.982Z",
+          "value": 3.25,
+          "label": "65 SC for $20",
+          "note": "3.25 SC per $1. First purchase only.",
+          "recordId": "326870c79dd637c0ffbf",
+          "sourceUrl": "https://www.zonko.com/promotions/",
+          "observedAt": "2026-09-22T06:32:04.762Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-22T06:32:04.762Z",
           "lastChangedAt": null,
           "conditions": [
-            "$510\n$499.99"
+            "Requires a 1st Purchase of $20.",
+            "Includes a spin of the Welcome Wheel for more FREE SC rewards; the additional SC quantity is not stated.",
+            "Limited Time Offer. Don’t Miss Out!"
           ],
           "promoCode": null,
-          "priceUsd": 499.99,
-          "immediateSc": 510,
-          "totalSc": 510,
+          "priceUsd": 20,
+          "immediateSc": 65,
+          "totalSc": 65,
           "durationDays": null,
           "purchaseRequired": true,
-          "kind": "purchase_package"
+          "kind": "first_purchase"
         },
-        "purchase10": {
-          "metric": "purchase10",
-          "value": 1.002004008016032,
-          "label": "5 SC for $4.99",
-          "note": "1 SC per $1. Purchase package.",
-          "recordId": "d77c0c838ac216420e1f",
-          "sourceUrl": "https://luckybunny.fun/",
-          "observedAt": "2026-09-22T06:31:39.982Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T06:31:39.982Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Quick Buy"
-          ],
-          "promoCode": null,
-          "priceUsd": 4.99,
-          "immediateSc": 5,
-          "totalSc": 5,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "purchase_package"
-        },
+        "purchase10": null,
         "purchase20": {
           "metric": "purchase20",
-          "value": 1.002004008016032,
-          "label": "5 SC for $4.99",
-          "note": "1 SC per $1. Purchase package.",
-          "recordId": "d77c0c838ac216420e1f",
-          "sourceUrl": "https://luckybunny.fun/",
-          "observedAt": "2026-09-22T06:31:39.982Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T06:31:39.982Z",
+          "value": 3.25,
+          "label": "65 SC for $20",
+          "note": "3.25 SC per $1. First purchase only.",
+          "recordId": "326870c79dd637c0ffbf",
+          "sourceUrl": "https://www.zonko.com/promotions/",
+          "observedAt": "2026-09-22T06:32:04.762Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-22T06:32:04.762Z",
           "lastChangedAt": null,
           "conditions": [
-            "Quick Buy"
+            "Requires a 1st Purchase of $20.",
+            "Includes a spin of the Welcome Wheel for more FREE SC rewards; the additional SC quantity is not stated.",
+            "Limited Time Offer. Don’t Miss Out!"
           ],
           "promoCode": null,
-          "priceUsd": 4.99,
-          "immediateSc": 5,
-          "totalSc": 5,
+          "priceUsd": 20,
+          "immediateSc": 65,
+          "totalSc": 65,
           "durationDays": null,
           "purchaseRequired": true,
-          "kind": "purchase_package"
+          "kind": "first_purchase"
         }
       },
       "absences": {
@@ -932,12 +958,12 @@
         "purchase": null,
         "cash": null
       },
-      "collectionStatus": "readable",
+      "collectionStatus": "unavailable",
       "score": null,
       "rank": null,
-      "benefitCount": 1,
+      "benefitCount": 2,
       "componentScores": {},
-      "disclosureCount": 1,
+      "disclosureCount": 2,
       "status": "Overall comparison incomplete"
     },
     {
@@ -959,7 +985,7 @@
           "recordId": "b2e2eb1322cee0d61956",
           "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
           "observedAt": "2026-09-22T06:38:47.921Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:38:47.921Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1009,6 +1035,37 @@
       "componentScores": {},
       "disclosureCount": 0,
       "status": "Entertainment-only product"
+    },
+    {
+      "slug": "lucky-bunny",
+      "name": "Lucky Bunny",
+      "productMode": "unverified",
+      "favicon": "/assets/favicons/lucky-bunny.ico",
+      "url": "/redemption-times/lucky-bunny/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": null,
+        "gift": null,
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "readable",
+      "score": null,
+      "rank": null,
+      "benefitCount": 0,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Offer evidence being checked"
     },
     {
       "slug": "pulsz",
@@ -1158,7 +1215,7 @@
           "recordId": "d8c68475709e46c12e14",
           "sourceUrl": "https://www.chumbacasino.com/promotions",
           "observedAt": "2026-09-22T06:39:06.245Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:06.245Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1186,7 +1243,7 @@
           "recordId": "ac480b65060891a61993",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1291,7 +1348,7 @@
           "recordId": "ac480b65060891a61993",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1334,7 +1391,7 @@
           "recordId": "326870c79dd637c0ffbf",
           "sourceUrl": "https://www.zonko.com/promotions/",
           "observedAt": "2026-09-22T06:32:04.762Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:32:04.762Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1363,7 +1420,7 @@
           "recordId": "1145d65ceb7ba45d7b62",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1379,33 +1436,6 @@
           "purchaseRequired": true,
           "kind": "first_purchase",
           "rank": 2
-        },
-        {
-          "slug": "lucky-bunny",
-          "name": "Lucky Bunny",
-          "url": "/redemption-times/lucky-bunny/",
-          "favicon": "/assets/favicons/lucky-bunny.ico",
-          "metric": "purchase",
-          "value": 1.0200204004080082,
-          "label": "510 SC for $499.99",
-          "note": "1.02 SC per $1. Purchase package.",
-          "recordId": "56aceb023d85db573e4e",
-          "sourceUrl": "https://luckybunny.fun/",
-          "observedAt": "2026-09-22T06:31:39.982Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T06:31:39.982Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "$510\n$499.99"
-          ],
-          "promoCode": null,
-          "priceUsd": 499.99,
-          "immediateSc": 510,
-          "totalSc": 510,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "purchase_package",
-          "rank": 3
         }
       ],
       "updatedAt": "2026-09-22T06:39:29.335Z"
@@ -1434,7 +1464,7 @@
           "recordId": "1145d65ceb7ba45d7b62",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1450,33 +1480,6 @@
           "purchaseRequired": true,
           "kind": "first_purchase",
           "rank": 1
-        },
-        {
-          "slug": "lucky-bunny",
-          "name": "Lucky Bunny",
-          "url": "/redemption-times/lucky-bunny/",
-          "favicon": "/assets/favicons/lucky-bunny.ico",
-          "metric": "purchase10",
-          "value": 1.002004008016032,
-          "label": "5 SC for $4.99",
-          "note": "1 SC per $1. Purchase package.",
-          "recordId": "d77c0c838ac216420e1f",
-          "sourceUrl": "https://luckybunny.fun/",
-          "observedAt": "2026-09-22T06:31:39.982Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T06:31:39.982Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Quick Buy"
-          ],
-          "promoCode": null,
-          "priceUsd": 4.99,
-          "immediateSc": 5,
-          "totalSc": 5,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "purchase_package",
-          "rank": 2
         }
       ],
       "updatedAt": "2026-09-22T06:39:29.335Z"
@@ -1505,7 +1508,7 @@
           "recordId": "326870c79dd637c0ffbf",
           "sourceUrl": "https://www.zonko.com/promotions/",
           "observedAt": "2026-09-22T06:32:04.762Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:32:04.762Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1534,7 +1537,7 @@
           "recordId": "1145d65ceb7ba45d7b62",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1550,33 +1553,6 @@
           "purchaseRequired": true,
           "kind": "first_purchase",
           "rank": 2
-        },
-        {
-          "slug": "lucky-bunny",
-          "name": "Lucky Bunny",
-          "url": "/redemption-times/lucky-bunny/",
-          "favicon": "/assets/favicons/lucky-bunny.ico",
-          "metric": "purchase20",
-          "value": 1.002004008016032,
-          "label": "5 SC for $4.99",
-          "note": "1 SC per $1. Purchase package.",
-          "recordId": "d77c0c838ac216420e1f",
-          "sourceUrl": "https://luckybunny.fun/",
-          "observedAt": "2026-09-22T06:31:39.982Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T06:31:39.982Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Quick Buy"
-          ],
-          "promoCode": null,
-          "priceUsd": 4.99,
-          "immediateSc": 5,
-          "totalSc": 5,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "purchase_package",
-          "rank": 3
         }
       ],
       "updatedAt": "2026-09-22T06:39:29.335Z"
@@ -1593,7 +1569,7 @@
       "anchor": "daily",
       "url": "/bonuses/daily-free-rewards/",
       "rows": [],
-      "updatedAt": "2026-09-22T06:40:45.988Z"
+      "updatedAt": "2026-09-22T09:34:15.435Z"
     },
     {
       "id": "cash",
@@ -1619,7 +1595,7 @@
           "recordId": "b2332522d78843df6458",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
           "observedAt": "2026-09-22T06:40:22.482Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:40:22.482Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1633,6 +1609,58 @@
           "rank": 1
         },
         {
+          "slug": "yay-casino",
+          "name": "YAY Casino",
+          "url": "/redemption-times/yay-casino/",
+          "favicon": "/assets/favicons/yay-casino.ico",
+          "metric": "cash",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "8de0d08ea87bff367c11",
+          "sourceUrl": "https://www.yaycasino.com/blog/understanding-sweeps-coins-your-complete-guide-to-free-sweeps-coins-no-deposit/",
+          "observedAt": "2026-09-22T09:26:28.942Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-22T09:26:28.942Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "A 1x playthrough requirement must be completed.",
+            "KYC verification is required before the first redemption."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null,
+          "rank": 1
+        },
+        {
+          "slug": "mcluck",
+          "name": "McLuck",
+          "url": "/redemption-times/mcluck/",
+          "favicon": "/assets/favicons/mcluck.jpg",
+          "metric": "cash",
+          "value": 75,
+          "label": "75 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "8a90ddacdd8b1db4da4a",
+          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+          "observedAt": "2026-09-22T09:25:41.094Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-22T09:25:41.094Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Gift card and cash prize minimums are separate.",
+            "A Sweepstakes Coin must become qualifying to count toward the minimum."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null,
+          "rank": 3
+        },
+        {
           "slug": "chumba",
           "name": "Chumba Casino",
           "url": "/redemption-times/chumba/",
@@ -1641,19 +1669,22 @@
           "value": 100,
           "label": "100 SC",
           "note": "Cash redemption minimum.",
-          "recordId": "79d04e14b409d2ea6552",
+          "recordId": "6264554b143159a5f795",
           "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T21:44:06.608Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-21T21:44:06.608Z",
-          "lastChangedAt": null,
-          "conditions": [],
+          "observedAt": "2026-09-22T09:29:53.049Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-22T09:29:53.049Z",
+          "lastChangedAt": "2026-09-22T09:29:53.049Z",
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
           "priceUsd": null,
           "immediateSc": null,
           "totalSc": null,
           "durationDays": null,
           "kind": null,
-          "rank": 2
+          "rank": 4
         },
         {
           "slug": "zonko",
@@ -1667,7 +1698,7 @@
           "recordId": "df58565f84965a772e5f",
           "sourceUrl": "https://www.zonko.com/help/play-rules/",
           "observedAt": "2026-09-22T06:38:54.039Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:38:54.039Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1679,15 +1710,15 @@
           "totalSc": null,
           "durationDays": null,
           "kind": null,
-          "rank": 2
+          "rank": 4
         }
       ],
-      "updatedAt": "2026-09-22T06:40:22.482Z"
+      "updatedAt": "2026-09-22T09:29:53.049Z"
     }
   ],
   "toplist": {
     "version": "single-toplist-1",
-    "lastCheckedAt": "2026-09-22T06:30:55.816Z",
+    "lastCheckedAt": "2026-09-22T09:22:39.215Z",
     "rows": [
       {
         "slug": "wow-vegas",
@@ -1705,7 +1736,7 @@
           "recordId": "ac480b65060891a61993",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1721,7 +1752,20 @@
           "kind": "signup"
         },
         "daily": null,
-        "redemption": null,
+        "redemption": {
+          "label": "Up to 24 hours",
+          "note": "Payment delivery; method unspecified",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676690-how-long-does-a-redemption-take",
+          "recordId": "f4c7622a0cb98da8af27",
+          "observedAt": "2026-09-22T09:25:28.469Z",
+          "conditions": [
+            "Skrill: up to 24 business hours."
+          ],
+          "status": "published",
+          "lastCheckedAt": "2026-09-22T09:22:39.215Z",
+          "firstObservedAt": "2026-09-22T09:25:28.469Z",
+          "lastChangedAt": null
+        },
         "cash": {
           "metric": "cash",
           "value": 50,
@@ -1730,7 +1774,7 @@
           "recordId": "b2332522d78843df6458",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
           "observedAt": "2026-09-22T06:40:22.482Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:40:22.482Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1743,7 +1787,7 @@
           "kind": null
         },
         "generalMinimum": null,
-        "lastCheckedAt": "2026-09-22T06:30:55.816Z"
+        "lastCheckedAt": "2026-09-22T09:22:39.215Z"
       },
       {
         "slug": "mcluck",
@@ -1792,9 +1836,29 @@
           "lastChangedAt": null
         },
         "redemption": null,
-        "cash": null,
+        "cash": {
+          "metric": "cash",
+          "value": 75,
+          "label": "75 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "8a90ddacdd8b1db4da4a",
+          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+          "observedAt": "2026-09-22T09:25:41.094Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-22T09:25:41.094Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Gift card and cash prize minimums are separate.",
+            "A Sweepstakes Coin must become qualifying to count toward the minimum."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
         "generalMinimum": null,
-        "lastCheckedAt": "2026-09-22T06:30:55.816Z"
+        "lastCheckedAt": "2026-09-22T09:22:39.215Z"
       },
       {
         "slug": "chumba",
@@ -1812,7 +1876,7 @@
           "recordId": "d8c68475709e46c12e14",
           "sourceUrl": "https://www.chumbacasino.com/promotions",
           "observedAt": "2026-09-22T06:39:06.245Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:06.245Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1836,8 +1900,8 @@
           "conditions": [
             "Log in daily to claim the bonus."
           ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-22T06:30:55.816Z",
+          "status": "retained",
+          "lastCheckedAt": null,
           "firstObservedAt": "2026-09-22T06:39:06.245Z",
           "lastChangedAt": null
         },
@@ -1847,13 +1911,16 @@
           "value": 100,
           "label": "100 SC",
           "note": "Cash redemption minimum.",
-          "recordId": "79d04e14b409d2ea6552",
+          "recordId": "6264554b143159a5f795",
           "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T21:44:06.608Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-21T21:44:06.608Z",
-          "lastChangedAt": null,
-          "conditions": [],
+          "observedAt": "2026-09-22T09:29:53.049Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-22T09:29:53.049Z",
+          "lastChangedAt": "2026-09-22T09:29:53.049Z",
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
           "priceUsd": null,
           "immediateSc": null,
           "totalSc": null,
@@ -1867,8 +1934,8 @@
           "note": "General redemption minimum; cash method not established.",
           "recordId": "71dd3d981f2a34fedc7f",
           "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T21:44:06.608Z",
-          "status": "retained",
+          "observedAt": "2026-09-22T09:29:53.049Z",
+          "status": "published",
           "firstObservedAt": "2026-09-10T21:20:03.804Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1881,7 +1948,7 @@
           "durationDays": null,
           "kind": null
         },
-        "lastCheckedAt": "2026-09-22T06:30:55.816Z"
+        "lastCheckedAt": "2026-09-22T09:22:39.215Z"
       },
       {
         "slug": "yay-casino",
@@ -1934,7 +2001,27 @@
           "lastChangedAt": null
         },
         "redemption": null,
-        "cash": null,
+        "cash": {
+          "metric": "cash",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "8de0d08ea87bff367c11",
+          "sourceUrl": "https://www.yaycasino.com/blog/understanding-sweeps-coins-your-complete-guide-to-free-sweeps-coins-no-deposit/",
+          "observedAt": "2026-09-22T09:26:28.942Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-22T09:26:28.942Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "A 1x playthrough requirement must be completed.",
+            "KYC verification is required before the first redemption."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
         "generalMinimum": {
           "metric": "general",
           "value": 50,
@@ -1953,7 +2040,7 @@
           "durationDays": null,
           "kind": null
         },
-        "lastCheckedAt": "2026-09-22T06:30:55.816Z"
+        "lastCheckedAt": "2026-09-22T09:22:39.215Z"
       },
       {
         "slug": "zonko",
@@ -1971,7 +2058,7 @@
           "recordId": "326870c79dd637c0ffbf",
           "sourceUrl": "https://www.zonko.com/promotions/",
           "observedAt": "2026-09-22T06:32:04.762Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:32:04.762Z",
           "lastChangedAt": null,
           "conditions": [
@@ -1996,8 +2083,8 @@
           "conditions": [
             "Claimed as a Daily Bonus; no SC or Gold Coin quantity is stated."
           ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-22T06:30:55.816Z",
+          "status": "retained",
+          "lastCheckedAt": null,
           "firstObservedAt": "2026-09-22T06:32:04.762Z",
           "lastChangedAt": null
         },
@@ -2011,8 +2098,8 @@
             "Subject to necessary verification and account security checks.",
             "May vary depending on verification requirements."
           ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-22T06:30:55.816Z",
+          "status": "retained",
+          "lastCheckedAt": null,
           "firstObservedAt": "2026-09-22T06:38:54.039Z",
           "lastChangedAt": null
         },
@@ -2024,7 +2111,7 @@
           "recordId": "df58565f84965a772e5f",
           "sourceUrl": "https://www.zonko.com/help/play-rules/",
           "observedAt": "2026-09-22T06:38:54.039Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:38:54.039Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2038,43 +2125,7 @@
           "kind": null
         },
         "generalMinimum": null,
-        "lastCheckedAt": "2026-09-22T06:30:55.816Z"
-      },
-      {
-        "slug": "lucky-bunny",
-        "name": "Lucky Bunny",
-        "favicon": "/assets/favicons/lucky-bunny.ico",
-        "url": "/redemption-times/lucky-bunny/",
-        "visitUrl": "/go/lucky-bunny/",
-        "position": 6,
-        "productMode": "unverified",
-        "welcome": {
-          "metric": "purchase20",
-          "value": 1.002004008016032,
-          "label": "5 SC for $4.99",
-          "note": "Regular purchase package",
-          "recordId": "d77c0c838ac216420e1f",
-          "sourceUrl": "https://luckybunny.fun/",
-          "observedAt": "2026-09-22T06:31:39.982Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T06:31:39.982Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Quick Buy"
-          ],
-          "promoCode": null,
-          "priceUsd": 4.99,
-          "immediateSc": 5,
-          "totalSc": 5,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "purchase_package"
-        },
-        "daily": null,
-        "redemption": null,
-        "cash": null,
-        "generalMinimum": null,
-        "lastCheckedAt": "2026-09-22T06:30:55.816Z"
+        "lastCheckedAt": "2026-09-22T09:22:39.215Z"
       },
       {
         "slug": "dorados",
@@ -2082,7 +2133,7 @@
         "favicon": "/assets/favicons/dorados.jpg",
         "url": "/redemption-times/dorados/",
         "visitUrl": "/go/dorados/",
-        "position": 7,
+        "position": 6,
         "productMode": "sweepstakes",
         "welcome": null,
         "daily": {
@@ -2110,8 +2161,8 @@
             "May be fulfilled through multiple payments over several days rather than in a single transaction.",
             "May be subject to further delays due to incomplete or pending verification, additional payment-method checks, or fraud prevention reviews."
           ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-22T06:30:55.816Z",
+          "status": "retained",
+          "lastCheckedAt": null,
           "firstObservedAt": "2026-09-22T06:38:47.921Z",
           "lastChangedAt": null
         },
@@ -2124,7 +2175,7 @@
           "recordId": "b2e2eb1322cee0d61956",
           "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
           "observedAt": "2026-09-22T06:38:47.921Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:38:47.921Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2136,7 +2187,22 @@
           "durationDays": null,
           "kind": null
         },
-        "lastCheckedAt": "2026-09-22T06:30:55.816Z"
+        "lastCheckedAt": "2026-09-22T09:22:39.215Z"
+      },
+      {
+        "slug": "lucky-bunny",
+        "name": "Lucky Bunny",
+        "favicon": "/assets/favicons/lucky-bunny.ico",
+        "url": "/redemption-times/lucky-bunny/",
+        "visitUrl": "/go/lucky-bunny/",
+        "position": 7,
+        "productMode": "unverified",
+        "welcome": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "generalMinimum": null,
+        "lastCheckedAt": "2026-09-22T09:22:39.215Z"
       },
       {
         "slug": "pulsz",
@@ -2164,7 +2230,7 @@
         "redemption": null,
         "cash": null,
         "generalMinimum": null,
-        "lastCheckedAt": "2026-09-22T06:30:55.816Z"
+        "lastCheckedAt": "2026-09-22T09:22:39.215Z"
       },
       {
         "slug": "stake-us",
@@ -2186,15 +2252,15 @@
             "The Gold Coin quantity is not stated.",
             "Gold Coins have no monetary value and cannot be redeemed."
           ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-22T06:30:55.816Z",
+          "status": "retained",
+          "lastCheckedAt": null,
           "firstObservedAt": "2026-09-22T06:32:44.686Z",
           "lastChangedAt": null
         },
         "redemption": null,
         "cash": null,
         "generalMinimum": null,
-        "lastCheckedAt": "2026-09-22T06:30:55.816Z"
+        "lastCheckedAt": "2026-09-22T09:22:39.215Z"
       },
       {
         "slug": "sweetsweeps",
@@ -2209,7 +2275,7 @@
         "redemption": null,
         "cash": null,
         "generalMinimum": null,
-        "lastCheckedAt": "2026-09-22T06:30:55.816Z"
+        "lastCheckedAt": "2026-09-22T09:22:39.215Z"
       },
       {
         "slug": "jackpota",
@@ -2220,25 +2286,11 @@
         "position": 11,
         "productMode": "entertainment_only",
         "welcome": null,
-        "daily": {
-          "label": "Daily Gold Coins",
-          "note": "Amount unverified",
-          "sourceUrl": "https://www.jackpota.com/",
-          "recordId": "0504b265865e9379b9f7",
-          "observedAt": "2026-09-22T06:31:19.545Z",
-          "conditions": [
-            "Gold Coins are available every day by logging into an account every 24 hours; the page also lists referring friends and joining the community on social media as ways to get free Gold Coins.",
-            "No purchase required; free forever."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-22T06:30:55.816Z",
-          "firstObservedAt": "2026-09-22T06:31:19.545Z",
-          "lastChangedAt": null
-        },
+        "daily": null,
         "redemption": null,
         "cash": null,
         "generalMinimum": null,
-        "lastCheckedAt": "2026-09-22T06:30:55.816Z"
+        "lastCheckedAt": "2026-09-22T09:22:39.215Z"
       }
     ]
   },
@@ -2258,7 +2310,7 @@
           "recordId": "ac480b65060891a61993",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2281,7 +2333,7 @@
           "recordId": "ac480b65060891a61993",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2304,7 +2356,7 @@
           "recordId": "ac480b65060891a61993",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2327,7 +2379,7 @@
           "recordId": "b2332522d78843df6458",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
           "observedAt": "2026-09-22T06:40:22.482Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:40:22.482Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2348,7 +2400,7 @@
           "recordId": "650833622b0c3a7378a1",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
           "observedAt": "2026-09-22T06:40:22.482Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:40:22.482Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2369,7 +2421,7 @@
           "recordId": "1145d65ceb7ba45d7b62",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2393,7 +2445,7 @@
           "recordId": "1145d65ceb7ba45d7b62",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2417,7 +2469,7 @@
           "recordId": "1145d65ceb7ba45d7b62",
           "sourceUrl": "https://www.wowvegas.com/promo-code",
           "observedAt": "2026-09-22T06:39:29.335Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:29.335Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2439,13 +2491,13 @@
         "purchase": null,
         "cash": null
       },
-      "collectionStatus": "partial",
-      "score": 80.55555555555556,
+      "collectionStatus": "readable",
+      "score": 75,
       "rank": 1,
       "benefitCount": 5,
       "componentScores": {
         "signup": 75,
-        "purchase": 66.66666666666667,
+        "purchase": 50,
         "cash": 100
       },
       "disclosureCount": 3,
@@ -2468,7 +2520,7 @@
           "recordId": "d8c68475709e46c12e14",
           "sourceUrl": "https://www.chumbacasino.com/promotions",
           "observedAt": "2026-09-22T06:39:06.245Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:06.245Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2491,7 +2543,7 @@
           "recordId": "d8c68475709e46c12e14",
           "sourceUrl": "https://www.chumbacasino.com/promotions",
           "observedAt": "2026-09-22T06:39:06.245Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:39:06.245Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2512,13 +2564,16 @@
           "value": 100,
           "label": "100 SC",
           "note": "Cash redemption minimum.",
-          "recordId": "79d04e14b409d2ea6552",
+          "recordId": "6264554b143159a5f795",
           "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T21:44:06.608Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-21T21:44:06.608Z",
-          "lastChangedAt": null,
-          "conditions": [],
+          "observedAt": "2026-09-22T09:29:53.049Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-22T09:29:53.049Z",
+          "lastChangedAt": "2026-09-22T09:29:53.049Z",
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
           "priceUsd": null,
           "immediateSc": null,
           "totalSc": null,
@@ -2532,8 +2587,8 @@
           "note": "General redemption minimum; cash method not established.",
           "recordId": "71dd3d981f2a34fedc7f",
           "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T21:44:06.608Z",
-          "status": "retained",
+          "observedAt": "2026-09-22T09:29:53.049Z",
+          "status": "published",
           "firstObservedAt": "2026-09-10T21:20:03.804Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2553,8 +2608,8 @@
           "note": "Gift-card redemption minimum.",
           "recordId": "4594baf7502b8e59b606",
           "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-21T21:44:06.608Z",
-          "status": "retained",
+          "observedAt": "2026-09-22T09:29:53.049Z",
+          "status": "published",
           "firstObservedAt": "2026-09-10T21:20:03.804Z",
           "lastChangedAt": null,
           "conditions": [
@@ -2586,29 +2641,75 @@
       "status": "Overall comparison incomplete"
     },
     {
-      "slug": "zonko",
-      "name": "Zonko",
+      "slug": "mcluck",
+      "name": "McLuck",
       "productMode": "unverified",
-      "favicon": "/assets/favicons/zonko.png",
-      "url": "/redemption-times/zonko/",
+      "favicon": "/assets/favicons/mcluck.jpg",
+      "url": "/redemption-times/mcluck/",
       "metrics": {
-        "signup": null,
-        "welcome": null,
+        "signup": {
+          "metric": "signup",
+          "value": 2.5,
+          "label": "2.5 SC",
+          "note": "Immediate. No purchase needed.",
+          "recordId": "12e77b670c7f12ad39b1",
+          "sourceUrl": "https://www.mcluck.com/",
+          "observedAt": "2026-09-21T21:42:51.114Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-21T21:42:51.114Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "“Spin for Fun to get Free Rewards.”",
+            "“Continue to claim your coins.”",
+            "“Play instantly! No purchase needed.”"
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 2.5,
+          "totalSc": 2.5,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
+        "welcome": {
+          "metric": "welcome",
+          "value": 2.5,
+          "label": "2.5 SC",
+          "note": "No purchase needed.",
+          "recordId": "12e77b670c7f12ad39b1",
+          "sourceUrl": "https://www.mcluck.com/",
+          "observedAt": "2026-09-21T21:42:51.114Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-21T21:42:51.114Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "“Spin for Fun to get Free Rewards.”",
+            "“Continue to claim your coins.”",
+            "“Play instantly! No purchase needed.”"
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 2.5,
+          "totalSc": 2.5,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
         "staged": null,
         "cash": {
           "metric": "cash",
-          "value": 100,
-          "label": "100 SC",
+          "value": 75,
+          "label": "75 SC",
           "note": "Cash redemption minimum.",
-          "recordId": "df58565f84965a772e5f",
-          "sourceUrl": "https://www.zonko.com/help/play-rules/",
-          "observedAt": "2026-09-22T06:38:54.039Z",
+          "recordId": "8a90ddacdd8b1db4da4a",
+          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+          "observedAt": "2026-09-22T09:25:41.094Z",
           "status": "published",
-          "firstObservedAt": "2026-09-22T06:38:54.039Z",
+          "firstObservedAt": "2026-09-22T09:25:41.094Z",
           "lastChangedAt": null,
           "conditions": [
-            "Entrants must accumulate and maintain qualifying Sweepstakes Coins associated with their User Account.",
-            "Cash Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin the user chooses to redeem."
+            "Gift card and cash prize minimums are separate.",
+            "A Sweepstakes Coin must become qualifying to count toward the minimum."
           ],
           "priceUsd": null,
           "immediateSc": null,
@@ -2617,57 +2718,31 @@
           "kind": null
         },
         "general": null,
-        "gift": null,
-        "daily": null,
-        "purchase": {
-          "metric": "purchase",
-          "value": 3.25,
-          "label": "65 SC for $20",
-          "note": "3.25 SC per $1. First purchase only.",
-          "recordId": "326870c79dd637c0ffbf",
-          "sourceUrl": "https://www.zonko.com/promotions/",
-          "observedAt": "2026-09-22T06:32:04.762Z",
+        "gift": {
+          "metric": "gift",
+          "value": 10,
+          "label": "10 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "67996c52322843a95dd6",
+          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+          "observedAt": "2026-09-22T09:25:41.094Z",
           "status": "published",
-          "firstObservedAt": "2026-09-22T06:32:04.762Z",
+          "firstObservedAt": "2026-09-22T09:25:41.094Z",
           "lastChangedAt": null,
           "conditions": [
-            "Requires a 1st Purchase of $20.",
-            "Includes a spin of the Welcome Wheel for more FREE SC rewards; the additional SC quantity is not stated.",
-            "Limited Time Offer. Don’t Miss Out!"
+            "Gift card and cash prize minimums are separate.",
+            "A Sweepstakes Coin must become qualifying to count toward the minimum."
           ],
-          "promoCode": null,
-          "priceUsd": 20,
-          "immediateSc": 65,
-          "totalSc": 65,
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
           "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "first_purchase"
+          "kind": null
         },
+        "daily": null,
+        "purchase": null,
         "purchase10": null,
-        "purchase20": {
-          "metric": "purchase20",
-          "value": 3.25,
-          "label": "65 SC for $20",
-          "note": "3.25 SC per $1. First purchase only.",
-          "recordId": "326870c79dd637c0ffbf",
-          "sourceUrl": "https://www.zonko.com/promotions/",
-          "observedAt": "2026-09-22T06:32:04.762Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T06:32:04.762Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Requires a 1st Purchase of $20.",
-            "Includes a spin of the Welcome Wheel for more FREE SC rewards; the additional SC quantity is not stated.",
-            "Limited Time Offer. Don’t Miss Out!"
-          ],
-          "promoCode": null,
-          "priceUsd": 20,
-          "immediateSc": 65,
-          "totalSc": 65,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "first_purchase"
-        }
+        "purchase20": null
       },
       "absences": {
         "signup": null,
@@ -2677,7 +2752,7 @@
       "collectionStatus": "partial",
       "score": null,
       "rank": null,
-      "benefitCount": 2,
+      "benefitCount": 4,
       "componentScores": {},
       "disclosureCount": 2,
       "status": "Overall comparison incomplete"
@@ -2767,7 +2842,27 @@
           "purchaseRequired": false,
           "kind": "signup"
         },
-        "cash": null,
+        "cash": {
+          "metric": "cash",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "8de0d08ea87bff367c11",
+          "sourceUrl": "https://www.yaycasino.com/blog/understanding-sweeps-coins-your-complete-guide-to-free-sweeps-coins-no-deposit/",
+          "observedAt": "2026-09-22T09:26:28.942Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-22T09:26:28.942Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "A 1x playthrough requirement must be completed.",
+            "KYC verification is required before the first redemption."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
         "general": {
           "metric": "general",
           "value": 50,
@@ -2800,167 +2895,93 @@
       "collectionStatus": "readable",
       "score": null,
       "rank": null,
-      "benefitCount": 3,
+      "benefitCount": 4,
       "componentScores": {},
-      "disclosureCount": 1,
+      "disclosureCount": 2,
       "status": "Overall comparison incomplete"
     },
     {
-      "slug": "mcluck",
-      "name": "McLuck",
+      "slug": "zonko",
+      "name": "Zonko",
       "productMode": "unverified",
-      "favicon": "/assets/favicons/mcluck.jpg",
-      "url": "/redemption-times/mcluck/",
-      "metrics": {
-        "signup": {
-          "metric": "signup",
-          "value": 2.5,
-          "label": "2.5 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "12e77b670c7f12ad39b1",
-          "sourceUrl": "https://www.mcluck.com/",
-          "observedAt": "2026-09-21T21:42:51.114Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-21T21:42:51.114Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "“Spin for Fun to get Free Rewards.”",
-            "“Continue to claim your coins.”",
-            "“Play instantly! No purchase needed.”"
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2.5,
-          "totalSc": 2.5,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "welcome": {
-          "metric": "welcome",
-          "value": 2.5,
-          "label": "2.5 SC",
-          "note": "No purchase needed.",
-          "recordId": "12e77b670c7f12ad39b1",
-          "sourceUrl": "https://www.mcluck.com/",
-          "observedAt": "2026-09-21T21:42:51.114Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-21T21:42:51.114Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "“Spin for Fun to get Free Rewards.”",
-            "“Continue to claim your coins.”",
-            "“Play instantly! No purchase needed.”"
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2.5,
-          "totalSc": 2.5,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "staged": null,
-        "cash": null,
-        "general": null,
-        "gift": null,
-        "daily": null,
-        "purchase": null,
-        "purchase10": null,
-        "purchase20": null
-      },
-      "absences": {
-        "signup": null,
-        "purchase": null,
-        "cash": null
-      },
-      "collectionStatus": "partial",
-      "score": null,
-      "rank": null,
-      "benefitCount": 2,
-      "componentScores": {},
-      "disclosureCount": 1,
-      "status": "Overall comparison incomplete"
-    },
-    {
-      "slug": "lucky-bunny",
-      "name": "Lucky Bunny",
-      "productMode": "unverified",
-      "favicon": "/assets/favicons/lucky-bunny.ico",
-      "url": "/redemption-times/lucky-bunny/",
+      "favicon": "/assets/favicons/zonko.png",
+      "url": "/redemption-times/zonko/",
       "metrics": {
         "signup": null,
         "welcome": null,
         "staged": null,
-        "cash": null,
+        "cash": {
+          "metric": "cash",
+          "value": 100,
+          "label": "100 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "df58565f84965a772e5f",
+          "sourceUrl": "https://www.zonko.com/help/play-rules/",
+          "observedAt": "2026-09-22T06:38:54.039Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-22T06:38:54.039Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Entrants must accumulate and maintain qualifying Sweepstakes Coins associated with their User Account.",
+            "Cash Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin the user chooses to redeem."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
         "general": null,
         "gift": null,
         "daily": null,
         "purchase": {
           "metric": "purchase",
-          "value": 1.0200204004080082,
-          "label": "510 SC for $499.99",
-          "note": "1.02 SC per $1. Purchase package.",
-          "recordId": "56aceb023d85db573e4e",
-          "sourceUrl": "https://luckybunny.fun/",
-          "observedAt": "2026-09-22T06:31:39.982Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T06:31:39.982Z",
+          "value": 3.25,
+          "label": "65 SC for $20",
+          "note": "3.25 SC per $1. First purchase only.",
+          "recordId": "326870c79dd637c0ffbf",
+          "sourceUrl": "https://www.zonko.com/promotions/",
+          "observedAt": "2026-09-22T06:32:04.762Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-22T06:32:04.762Z",
           "lastChangedAt": null,
           "conditions": [
-            "$510\n$499.99"
+            "Requires a 1st Purchase of $20.",
+            "Includes a spin of the Welcome Wheel for more FREE SC rewards; the additional SC quantity is not stated.",
+            "Limited Time Offer. Don’t Miss Out!"
           ],
           "promoCode": null,
-          "priceUsd": 499.99,
-          "immediateSc": 510,
-          "totalSc": 510,
+          "priceUsd": 20,
+          "immediateSc": 65,
+          "totalSc": 65,
           "durationDays": null,
           "purchaseRequired": true,
-          "kind": "purchase_package"
+          "kind": "first_purchase"
         },
-        "purchase10": {
-          "metric": "purchase10",
-          "value": 1.002004008016032,
-          "label": "5 SC for $4.99",
-          "note": "1 SC per $1. Purchase package.",
-          "recordId": "d77c0c838ac216420e1f",
-          "sourceUrl": "https://luckybunny.fun/",
-          "observedAt": "2026-09-22T06:31:39.982Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T06:31:39.982Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Quick Buy"
-          ],
-          "promoCode": null,
-          "priceUsd": 4.99,
-          "immediateSc": 5,
-          "totalSc": 5,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "purchase_package"
-        },
+        "purchase10": null,
         "purchase20": {
           "metric": "purchase20",
-          "value": 1.002004008016032,
-          "label": "5 SC for $4.99",
-          "note": "1 SC per $1. Purchase package.",
-          "recordId": "d77c0c838ac216420e1f",
-          "sourceUrl": "https://luckybunny.fun/",
-          "observedAt": "2026-09-22T06:31:39.982Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T06:31:39.982Z",
+          "value": 3.25,
+          "label": "65 SC for $20",
+          "note": "3.25 SC per $1. First purchase only.",
+          "recordId": "326870c79dd637c0ffbf",
+          "sourceUrl": "https://www.zonko.com/promotions/",
+          "observedAt": "2026-09-22T06:32:04.762Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-22T06:32:04.762Z",
           "lastChangedAt": null,
           "conditions": [
-            "Quick Buy"
+            "Requires a 1st Purchase of $20.",
+            "Includes a spin of the Welcome Wheel for more FREE SC rewards; the additional SC quantity is not stated.",
+            "Limited Time Offer. Don’t Miss Out!"
           ],
           "promoCode": null,
-          "priceUsd": 4.99,
-          "immediateSc": 5,
-          "totalSc": 5,
+          "priceUsd": 20,
+          "immediateSc": 65,
+          "totalSc": 65,
           "durationDays": null,
           "purchaseRequired": true,
-          "kind": "purchase_package"
+          "kind": "first_purchase"
         }
       },
       "absences": {
@@ -2968,12 +2989,12 @@
         "purchase": null,
         "cash": null
       },
-      "collectionStatus": "readable",
+      "collectionStatus": "unavailable",
       "score": null,
       "rank": null,
-      "benefitCount": 1,
+      "benefitCount": 2,
       "componentScores": {},
-      "disclosureCount": 1,
+      "disclosureCount": 2,
       "status": "Overall comparison incomplete"
     },
     {
@@ -2995,7 +3016,7 @@
           "recordId": "b2e2eb1322cee0d61956",
           "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
           "observedAt": "2026-09-22T06:38:47.921Z",
-          "status": "published",
+          "status": "retained",
           "firstObservedAt": "2026-09-22T06:38:47.921Z",
           "lastChangedAt": null,
           "conditions": [
@@ -3045,6 +3066,37 @@
       "componentScores": {},
       "disclosureCount": 0,
       "status": "Entertainment-only product"
+    },
+    {
+      "slug": "lucky-bunny",
+      "name": "Lucky Bunny",
+      "productMode": "unverified",
+      "favicon": "/assets/favicons/lucky-bunny.ico",
+      "url": "/redemption-times/lucky-bunny/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": null,
+        "gift": null,
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "readable",
+      "score": null,
+      "rank": null,
+      "benefitCount": 0,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Offer evidence being checked"
     },
     {
       "slug": "pulsz",
