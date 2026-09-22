@@ -6,6 +6,7 @@ permalink: "/"
 publishedAt: "2026-09-08"
 updatedAt: "2026-09-22"
 ogType: "website"
+homepage: true
 eleventyComputed:
   jsonld:
     "@context": "https://schema.org"
@@ -24,13 +25,21 @@ eleventyComputed:
 ---
 <main>
 <div class="wrap toplist-page">
-  <header class="benefit-intro">
+  <header class="benefit-intro home-intro">
+    <p class="home-eyebrow">US sweepstakes casino comparison</p>
     <h1>Social Casino Index</h1>
-    <p id="compare-heading">Welcome offers, daily rewards and redemption times. United States.</p>
+    <p class="home-promise">Know the offer. Understand the terms.</p>
+    <p class="home-description">We check operator sources daily to compare welcome offers, daily rewards and redemption terms. The numbers, the conditions and the gaps, in one place.</p>
+    <div class="home-byline"><span>Published by <a href="/about/">Sweeps Brief LLC</a></span><a href="/methodology/">Our methodology <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
   </header>
-  <section id="compare" aria-labelledby="compare-heading">
+  <div class="home-principles">
+    <span><i class="ph ph-clock" aria-hidden="true"></i> Daily source checks</span>
+    <span><i class="ph ph-link" aria-hidden="true"></i> Source-linked figures</span>
+    <span><i class="ph ph-scales" aria-hidden="true"></i> Affiliate-independent order</span>
+  </div>
+  <section id="compare" aria-labelledby="leaderboard-heading">
     {% include "toplist.njk" %}
-    <p class="mt-4 text-sm text-base-content/55">Partner links may earn us a commission. Compensation does not change the figures or order. No purchase is necessary to participate in sweepstakes. Eligibility and terms vary.</p>
+    <p class="home-disclosure">Partner links may earn us a commission, never a higher position. No purchase is necessary to participate in sweepstakes. Eligibility and terms vary. <a href="/disclosure/">Affiliate disclosure</a></p>
   </section>
 
 </div>

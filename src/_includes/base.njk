@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth" data-theme="dark">
+<html lang="en" class="scroll-smooth" data-theme="{{ 'light' if homepage else 'dark' }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,14 +31,16 @@
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/benefits.css">
 <link rel="stylesheet" href="/assets/phosphor/style.css">
+{%- if homepage %}<link rel="stylesheet" href="/assets/home.css">{% endif %}
 <script>document.documentElement.classList.add('js');</script>
 <script src="/assets/analytics.js" defer></script>
 {% if jsonld %}
 <script type="application/ld+json">{{ jsonld | json | safe }}</script>
 {% endif %}
 </head>
-<body class="bg-base-100 font-sans text-[17px] leading-relaxed text-base-content antialiased">
+<body class="bg-base-100 font-sans text-[17px] leading-relaxed text-base-content antialiased{% if homepage %} home-page{% endif %}">
 
+{% if not homepage -%}
 <div class="state-banner js-only" data-state-banner hidden>
   <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-6 py-2">
     <p class="m-0 flex items-center gap-2 text-[13.5px] text-base-content/70">
@@ -70,7 +72,29 @@
     </nav>
   </div>
 </header>
-
+{% else %}
+<header class="home-header">
+  <div class="home-header-inner">
+    <a class="home-brand" href="/" aria-label="Social Casino Index home"><i class="ph ph-chart-bar-horizontal" aria-hidden="true"></i><span>Social Casino Index</span></a>
+    <nav class="home-desktop-nav" aria-label="Main">
+      <a href="/updates/">Daily checks</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
+    </nav>
+    <details class="home-menu">
+      <summary aria-label="Navigation menu" title="Navigation menu"><i class="ph ph-list" aria-hidden="true"></i></summary>
+      <nav aria-label="Mobile">
+        <a href="/updates/">Daily checks</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/guides/">Guides</a>
+        <a href="/availability/">State availability</a>
+        <a href="/about/">About</a>
+        <a href="/authors/alex-rowan/">Author</a>
+      </nav>
+    </details>
+  </div>
+</header>
+{%- endif %}
 {{ content | safe }}
 
 <footer class="mt-14 border-t border-base-300 bg-base-200 text-[14.5px] text-base-content/70">
@@ -94,11 +118,12 @@
       <a class="text-base-content/70 no-underline hover:text-brand" href="/authors/alex-rowan/">Alex Rowan</a> ·
       <a class="text-base-content/70 no-underline hover:text-brand" href="https://sweepsbrief.com/">SweepsBrief</a>
     </p>
-    <p class="fine mb-3">Hero photo via <a class="text-base-content/60 underline hover:text-brand" href="https://unsplash.com/" rel="noopener">Unsplash</a>.</p>
+{% if not homepage %}    <p class="fine mb-3">Hero photo via <a class="text-base-content/60 underline hover:text-brand" href="https://unsplash.com/" rel="noopener">Unsplash</a>.</p>{% endif %}
     <p class="fine">&copy; {{ site.buildYear }} {{ site.legalName }}, a Delaware limited liability company. {{ site.name }} is a publication of {{ site.legalName }}.</p>
   </div>
 </footer>
 
 <script src="/assets/eligibility.js" defer></script>
+{%- if homepage %}<script src="/assets/home.js" defer></script>{% endif %}
 </body>
 </html>

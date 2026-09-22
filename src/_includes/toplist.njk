@@ -1,13 +1,17 @@
 {% macro cell(value) %}
-{% if value %}
+{% if value and value.label != "Amount not verified" %}
   <strong class="toplist-value">{{ value.label | escape }}</strong>
   {%- if value.note %}<span class="toplist-note">{{ value.note | escape }}</span>{% endif %}
-{% else %}<span class="toplist-unknown">Not verified</span>{% endif %}
+{% else %}<span class="toplist-unknown">{{ value.label if value else "Not verified" }}</span>{% endif %}
 {% endmacro %}
 <section class="toplist" id="all-operators" aria-labelledby="leaderboard-heading">
   <div class="toplist-heading">
-    <h2 id="leaderboard-heading">Top social casinos</h2>
-    {% if benchmarks.toplist.lastCheckedAt %}<span>Last check <time datetime="{{ benchmarks.toplist.lastCheckedAt }}">{{ benchmarks.toplist.lastCheckedAt | readableDate }}</time></span>{% endif %}
+    <div class="toplist-title"><h2 id="leaderboard-heading">The toplist <span class="toplist-count">{{ benchmarks.toplist.rows.length }}</span></h2>
+    {% if benchmarks.toplist.lastCheckedAt %}<span class="toplist-checked">Last checked <time datetime="{{ benchmarks.toplist.lastCheckedAt }}">{{ benchmarks.toplist.lastCheckedAt | readableDate }}</time></span>{% endif %}</div>
+    <div class="toplist-controls">
+    <label class="home-state"><i class="ph ph-map-pin" aria-hidden="true"></i><span class="sr-only">Your state</span>
+      <select data-state-picker aria-label="Your state">{% for s in states %}<option value="{{ s.code }}"{% if not s.code %} disabled selected{% endif %}>{{ s.name if s.code else "Your state" }}</option>{% endfor %}</select>
+    </label>
     <label class="toplist-sort" hidden>Sort
       <select id="toplist-sort">
         <option value="default">Most complete</option>
@@ -17,6 +21,7 @@
         <option value="cash">Cash minimum</option>
       </select>
     </label>
+    </div>
   </div>
   <p id="toplist-sort-status" class="sr-only" aria-live="polite"></p>
   <table class="toplist-table">
@@ -31,9 +36,11 @@
       <tr data-operator="{{ operator.slug }}" data-sort="{{ {slug: operator.slug, name: operator.name, position: operator.position, productMode: operator.productMode, knownAttributeCount: operator.knownAttributeCount, welcomeGroup: operator.welcomeGroup, sortValues: operator.sortValues} | json | escape }}">
         <td class="toplist-position">{{ operator.position }}</td>
         <th scope="row" class="toplist-name">
-          <a class="benefit-brand" href="{{ operator.url }}">{% if operator.favicon %}<img src="{{ operator.favicon }}" alt="" width="32" height="32">{% endif %}<span>{{ operator.name | escape }}</span></a>
+          <a class="benefit-brand" href="{{ operator.url }}">{% if operator.favicon %}<img src="{{ operator.favicon }}" alt="" width="32" height="32">{% else %}<span class="operator-monogram" aria-hidden="true">{{ operator.name | first }}</span>{% endif %}<span>{{ operator.name | escape }}</span></a>
+          <span class="toplist-coverage">{{ operator.knownAttributeCount }}/{{ benchmarks.toplist.attributeCount }} attributes sourced</span>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <div class="toplist-evidence">
             <span>{{ operator.knownAttributeCount }} of {{ benchmarks.toplist.attributeCount }} comparable attributes</span>
             {%- for key in ["welcome", "daily", "redemption", "cash"] %}{% set value = operator[key] %}{% if value %}
               <div class="toplist-source">
@@ -47,13 +54,14 @@
             {%- if operator.generalMinimum %}<div class="toplist-source"><a href="{{ operator.generalMinimum.sourceUrl | escape }}" rel="noopener">General minimum: {{ operator.generalMinimum.label }}</a><span>Cash method unverified</span></div>{% endif %}
             {%- if operator.productMode == "entertainment_only" %}<span>Entertainment-only coins have no cash value.</span>{% endif %}
             <a href="{{ operator.url }}">Full operator record</a>
+            </div>
           </details>
         </th>
         <td data-label="Welcome offer">{{ cell(operator.welcome) }}</td>
         <td data-label="Daily reward">{{ cell(operator.daily) }}</td>
         <td data-label="Redemption time">{{ cell(operator.redemption) }}</td>
         <td data-label="Cash minimum">{% if operator.productMode == "entertainment_only" %}<span class="toplist-unknown">Not applicable</span>{% elif operator.cash %}<strong class="toplist-value">{{ operator.cash.label }}</strong>{% else %}<span class="toplist-unknown">Not verified</span>{% endif %}</td>
-        <td class="toplist-action"><a class="toplist-visit" href="{{ operator.visitUrl }}" aria-label="Visit {{ operator.name | escape }}" title="Visit {{ operator.name | escape }}"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+        <td class="toplist-action"><a class="toplist-visit" href="{{ operator.visitUrl }}" aria-label="Visit {{ operator.name | escape }}" title="Visit {{ operator.name | escape }}"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
       </tr>
       {%- endfor %}
     </tbody>

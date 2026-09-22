@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth" data-theme="dark">
+<html lang="en" class="scroll-smooth" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +27,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/benefits.css">
-<link rel="stylesheet" href="/assets/phosphor/style.css">
+<link rel="stylesheet" href="/assets/phosphor/style.css"><link rel="stylesheet" href="/assets/home.css">
 <script>document.documentElement.classList.add('js');</script>
 <script src="/assets/analytics.js" defer></script>
 
@@ -54,52 +54,54 @@
 }</script>
 
 </head>
-<body class="bg-base-100 font-sans text-[17px] leading-relaxed text-base-content antialiased">
+<body class="bg-base-100 font-sans text-[17px] leading-relaxed text-base-content antialiased home-page">
 
-<div class="state-banner js-only" data-state-banner hidden>
-  <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-6 py-2">
-    <p class="m-0 flex items-center gap-2 text-[13.5px] text-base-content/70">
-      <i class="ph ph-map-pin text-base text-brand" aria-hidden="true"></i>
-      <span data-state-banner-text>Sweepstakes casino availability varies by state. Select yours for accurate offers.</span>
-    </p>
-    <div class="flex items-center gap-2">
-      <label class="sr-only" for="state-picker-banner">Your state</label>
-      <select id="state-picker-banner" class="select select-bordered select-sm w-auto" data-state-picker>
-        <option value="" disabled selected>Select your state...</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="DC">District of Columbia</option>
-      </select>
-      <button type="button" class="btn btn-ghost btn-sm btn-square" data-state-banner-close aria-label="Dismiss state banner"><i class="ph ph-x" aria-hidden="true"></i></button>
-    </div>
-  </div>
-</div>
 
-<header class="sticky top-0 z-40 border-b border-base-300 bg-base-100/90 backdrop-blur">
-  <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 px-6 py-3">
-    <a class="flex items-center gap-2.5 font-serif text-[22px] font-semibold text-base-content no-underline" href="/">
-      <i class="ph ph-crown-simple flex-none text-[30px] leading-none text-accent" aria-hidden="true"></i>
-      Social Casino Index
-    </a>
-    <nav class="flex flex-wrap items-center gap-x-5 gap-y-1 text-[14.5px] text-base-content/60" aria-label="Main">
-      <a class="no-underline hover:text-brand" href="/updates/">Daily checks</a>
-      <a class="no-underline hover:text-brand" href="/guides/">Guides</a>
-      <a class="no-underline hover:text-brand" href="/availability/">State availability</a>
-      <a class="no-underline hover:text-brand" href="/about/">About</a>
-      <a class="no-underline hover:text-brand" href="/authors/alex-rowan/">Author</a>
+<header class="home-header">
+  <div class="home-header-inner">
+    <a class="home-brand" href="/" aria-label="Social Casino Index home"><i class="ph ph-chart-bar-horizontal" aria-hidden="true"></i><span>Social Casino Index</span></a>
+    <nav class="home-desktop-nav" aria-label="Main">
+      <a href="/updates/">Daily checks</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
     </nav>
+    <details class="home-menu">
+      <summary aria-label="Navigation menu" title="Navigation menu"><i class="ph ph-list" aria-hidden="true"></i></summary>
+      <nav aria-label="Mobile">
+        <a href="/updates/">Daily checks</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/guides/">Guides</a>
+        <a href="/availability/">State availability</a>
+        <a href="/about/">About</a>
+        <a href="/authors/alex-rowan/">Author</a>
+      </nav>
+    </details>
   </div>
 </header>
-
 <main>
 <div class="wrap toplist-page">
-  <header class="benefit-intro">
+  <header class="benefit-intro home-intro">
+    <p class="home-eyebrow">US sweepstakes casino comparison</p>
     <h1>Social Casino Index</h1>
-    <p id="compare-heading">Welcome offers, daily rewards and redemption times. United States.</p>
+    <p class="home-promise">Know the offer. Understand the terms.</p>
+    <p class="home-description">We check operator sources daily to compare welcome offers, daily rewards and redemption terms. The numbers, the conditions and the gaps, in one place.</p>
+    <div class="home-byline"><span>Published by <a href="/about/">Sweeps Brief LLC</a></span><a href="/methodology/">Our methodology <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
   </header>
-  <section id="compare" aria-labelledby="compare-heading">
+  <div class="home-principles">
+    <span><i class="ph ph-clock" aria-hidden="true"></i> Daily source checks</span>
+    <span><i class="ph ph-link" aria-hidden="true"></i> Source-linked figures</span>
+    <span><i class="ph ph-scales" aria-hidden="true"></i> Affiliate-independent order</span>
+  </div>
+  <section id="compare" aria-labelledby="leaderboard-heading">
     
 <section class="toplist" id="all-operators" aria-labelledby="leaderboard-heading">
   <div class="toplist-heading">
-    <h2 id="leaderboard-heading">Top social casinos</h2>
-    <span>Last check <time datetime="2026-09-22T12:30:06.456Z">September 22, 2026</time></span>
+    <div class="toplist-title"><h2 id="leaderboard-heading">The toplist <span class="toplist-count">11</span></h2>
+    <span class="toplist-checked">Last checked <time datetime="2026-09-22T12:30:06.456Z">September 22, 2026</time></span></div>
+    <div class="toplist-controls">
+    <label class="home-state"><i class="ph ph-map-pin" aria-hidden="true"></i><span class="sr-only">Your state</span>
+      <select data-state-picker aria-label="Your state"><option value="" disabled selected>Your state</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="DC">District of Columbia</option></select>
+    </label>
     <label class="toplist-sort" hidden>Sort
       <select id="toplist-sort">
         <option value="default">Most complete</option>
@@ -109,6 +111,7 @@
         <option value="cash">Cash minimum</option>
       </select>
     </label>
+    </div>
   </div>
   <p id="toplist-sort-status" class="sr-only" aria-live="polite"></p>
   <table class="toplist-table">
@@ -137,8 +140,10 @@
         <td class="toplist-position">1</td>
         <th scope="row" class="toplist-name">
           <a class="benefit-brand" href="/redemption-times/mcluck/"><img src="/assets/favicons/mcluck.jpg" alt="" width="32" height="32"><span>McLuck</span></a>
+          <span class="toplist-coverage">3/4 attributes sourced</span>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <div class="toplist-evidence">
             <span>3 of 4 comparable attributes</span>
               <div class="toplist-source">
                 <a href="https://www.mcluck.com/promotions" rel="noopener">2.5 SC free</a>
@@ -157,6 +162,7 @@
                 <span>Observed <time datetime="2026-09-22T12:37:56.055Z">September 22, 2026</time></span><span>Change observed <time datetime="2026-09-22T12:37:56.055Z">September 22, 2026</time></span><ul><li>Cash and gift card prizes have separate minimum redemption requirements.</li></ul>
               </div>
             <a href="/redemption-times/mcluck/">Full operator record</a>
+            </div>
           </details>
         </th>
         <td data-label="Welcome offer">
@@ -165,9 +171,7 @@
 
 </td>
         <td data-label="Daily reward">
-
-  <strong class="toplist-value">Amount not verified</strong>
-
+<span class="toplist-unknown">Amount not verified</span>
 </td>
         <td data-label="Redemption time">
 
@@ -175,7 +179,7 @@
 
 </td>
         <td data-label="Cash minimum"><strong class="toplist-value">75 SC</strong></td>
-        <td class="toplist-action"><a class="toplist-visit" href="/go/mcluck/" aria-label="Visit McLuck" title="Visit McLuck"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+        <td class="toplist-action"><a class="toplist-visit" href="/go/mcluck/" aria-label="Visit McLuck" title="Visit McLuck"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
       </tr>
       <tr data-operator="wow-vegas" data-sort="{
   &quot;slug&quot;: &quot;wow-vegas&quot;,
@@ -194,8 +198,10 @@
         <td class="toplist-position">2</td>
         <th scope="row" class="toplist-name">
           <a class="benefit-brand" href="/redemption-times/wow-vegas/"><img src="/assets/favicons/wow-vegas.png" alt="" width="32" height="32"><span>WOW Vegas</span></a>
+          <span class="toplist-coverage">3/4 attributes sourced</span>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <div class="toplist-evidence">
             <span>3 of 4 comparable attributes</span>
               <div class="toplist-source">
                 <a href="https://www.wowvegas.com/promo-code" rel="noopener">2 SC free</a>
@@ -210,6 +216,7 @@
                 <span>Observed <time datetime="2026-09-22T12:37:43.153Z">September 22, 2026</time></span><span>Change observed <time datetime="2026-09-22T12:37:43.153Z">September 22, 2026</time></span><ul><li>Blue WOW Coins cannot be redeemed, as they have no monetary value.</li></ul>
               </div>
             <a href="/redemption-times/wow-vegas/">Full operator record</a>
+            </div>
           </details>
         </th>
         <td data-label="Welcome offer">
@@ -226,7 +233,7 @@
 
 </td>
         <td data-label="Cash minimum"><strong class="toplist-value">50 SC</strong></td>
-        <td class="toplist-action"><a class="toplist-visit" href="/go/wow-vegas/" aria-label="Visit WOW Vegas" title="Visit WOW Vegas"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+        <td class="toplist-action"><a class="toplist-visit" href="/go/wow-vegas/" aria-label="Visit WOW Vegas" title="Visit WOW Vegas"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
       </tr>
       <tr data-operator="zonko" data-sort="{
   &quot;slug&quot;: &quot;zonko&quot;,
@@ -245,8 +252,10 @@
         <td class="toplist-position">3</td>
         <th scope="row" class="toplist-name">
           <a class="benefit-brand" href="/redemption-times/zonko/"><img src="/assets/favicons/zonko.png" alt="" width="32" height="32"><span>Zonko</span></a>
+          <span class="toplist-coverage">3/4 attributes sourced</span>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <div class="toplist-evidence">
             <span>3 of 4 comparable attributes</span>
               <div class="toplist-source">
                 <a href="https://www.zonko.com/promotions/welcome-bonus/" rel="noopener">65 SC for $20</a>
@@ -265,6 +274,7 @@
                 <span>Observed <time datetime="2026-09-22T06:38:54.039Z">September 22, 2026</time> · Previous observation</span><ul><li>Entrants must accumulate and maintain qualifying Sweepstakes Coins associated with their User Account.</li><li>Cash Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin the user chooses to redeem.</li></ul>
               </div>
             <a href="/redemption-times/zonko/">Full operator record</a>
+            </div>
           </details>
         </th>
         <td data-label="Welcome offer">
@@ -273,9 +283,7 @@
 
 </td>
         <td data-label="Daily reward">
-
-  <strong class="toplist-value">Amount not verified</strong>
-
+<span class="toplist-unknown">Amount not verified</span>
 </td>
         <td data-label="Redemption time">
 
@@ -283,7 +291,7 @@
 
 </td>
         <td data-label="Cash minimum"><strong class="toplist-value">100 SC</strong></td>
-        <td class="toplist-action"><a class="toplist-visit" href="/go/zonko/" aria-label="Visit Zonko" title="Visit Zonko"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+        <td class="toplist-action"><a class="toplist-visit" href="/go/zonko/" aria-label="Visit Zonko" title="Visit Zonko"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
       </tr>
       <tr data-operator="chumba" data-sort="{
   &quot;slug&quot;: &quot;chumba&quot;,
@@ -302,8 +310,10 @@
         <td class="toplist-position">4</td>
         <th scope="row" class="toplist-name">
           <a class="benefit-brand" href="/redemption-times/chumba/"><img src="/assets/favicons/chumba.png" alt="" width="32" height="32"><span>Chumba Casino</span></a>
+          <span class="toplist-coverage">2/4 attributes sourced</span>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <div class="toplist-evidence">
             <span>2 of 4 comparable attributes</span>
               <div class="toplist-source">
                 <a href="https://www.chumbacasino.com/promotions" rel="noopener">2 SC free</a>
@@ -318,6 +328,7 @@
                 <span>Observed <time datetime="2026-09-22T12:37:16.957Z">September 22, 2026</time></span><ul><li>If it is your first time to redeem, you need to re-verify your phone number.</li><li>Identity verification and banking-information validation are required to redeem prizes.</li></ul>
               </div>
             <a href="/redemption-times/chumba/">Full operator record</a>
+            </div>
           </details>
         </th>
         <td data-label="Welcome offer">
@@ -326,15 +337,13 @@
 
 </td>
         <td data-label="Daily reward">
-
-  <strong class="toplist-value">Amount not verified</strong>
-
+<span class="toplist-unknown">Amount not verified</span>
 </td>
         <td data-label="Redemption time">
 <span class="toplist-unknown">Not verified</span>
 </td>
         <td data-label="Cash minimum"><strong class="toplist-value">100 SC</strong></td>
-        <td class="toplist-action"><a class="toplist-visit" href="/go/chumba/" aria-label="Visit Chumba Casino" title="Visit Chumba Casino"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+        <td class="toplist-action"><a class="toplist-visit" href="/go/chumba/" aria-label="Visit Chumba Casino" title="Visit Chumba Casino"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
       </tr>
       <tr data-operator="yay-casino" data-sort="{
   &quot;slug&quot;: &quot;yay-casino&quot;,
@@ -353,8 +362,10 @@
         <td class="toplist-position">5</td>
         <th scope="row" class="toplist-name">
           <a class="benefit-brand" href="/redemption-times/yay-casino/"><img src="/assets/favicons/yay-casino.ico" alt="" width="32" height="32"><span>YAY Casino</span></a>
+          <span class="toplist-coverage">2/4 attributes sourced</span>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <div class="toplist-evidence">
             <span>2 of 4 comparable attributes</span>
               <div class="toplist-source">
                 <a href="https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion" rel="noopener">1 SC free</a>
@@ -369,6 +380,7 @@
                 <span>Observed <time datetime="2026-09-22T09:26:28.942Z">September 22, 2026</time> · Previous observation</span><ul><li>A 1x playthrough requirement must be completed.</li><li>KYC verification is required before the first redemption.</li></ul>
               </div><div class="toplist-source"><a href="https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf" rel="noopener">General minimum: 50 SC</a><span>Cash method unverified</span></div>
             <a href="/redemption-times/yay-casino/">Full operator record</a>
+            </div>
           </details>
         </th>
         <td data-label="Welcome offer">
@@ -385,7 +397,7 @@
 <span class="toplist-unknown">Not verified</span>
 </td>
         <td data-label="Cash minimum"><strong class="toplist-value">50 SC</strong></td>
-        <td class="toplist-action"><a class="toplist-visit" href="/go/yay-casino/" aria-label="Visit YAY Casino" title="Visit YAY Casino"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+        <td class="toplist-action"><a class="toplist-visit" href="/go/yay-casino/" aria-label="Visit YAY Casino" title="Visit YAY Casino"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
       </tr>
       <tr data-operator="lucky-bunny" data-sort="{
   &quot;slug&quot;: &quot;lucky-bunny&quot;,
@@ -404,14 +416,17 @@
         <td class="toplist-position">6</td>
         <th scope="row" class="toplist-name">
           <a class="benefit-brand" href="/redemption-times/lucky-bunny/"><img src="/assets/favicons/lucky-bunny.ico" alt="" width="32" height="32"><span>Lucky Bunny</span></a>
+          <span class="toplist-coverage">1/4 attributes sourced</span>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <div class="toplist-evidence">
             <span>1 of 4 comparable attributes</span>
               <div class="toplist-source">
                 <a href="https://luckybunny.fun/" rel="noopener">5 SC for $4.99</a>
                 <span>Observed <time datetime="2026-09-22T12:30:51.551Z">September 22, 2026</time></span><span>Change observed <time datetime="2026-09-22T12:30:51.551Z">September 22, 2026</time></span><ul><li>The package display includes “5” followed by “free”.</li></ul>
               </div>
             <a href="/redemption-times/lucky-bunny/">Full operator record</a>
+            </div>
           </details>
         </th>
         <td data-label="Welcome offer">
@@ -426,7 +441,7 @@
 <span class="toplist-unknown">Not verified</span>
 </td>
         <td data-label="Cash minimum"><span class="toplist-unknown">Not verified</span></td>
-        <td class="toplist-action"><a class="toplist-visit" href="/go/lucky-bunny/" aria-label="Visit Lucky Bunny" title="Visit Lucky Bunny"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+        <td class="toplist-action"><a class="toplist-visit" href="/go/lucky-bunny/" aria-label="Visit Lucky Bunny" title="Visit Lucky Bunny"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
       </tr>
       <tr data-operator="dorados" data-sort="{
   &quot;slug&quot;: &quot;dorados&quot;,
@@ -445,14 +460,17 @@
         <td class="toplist-position">7</td>
         <th scope="row" class="toplist-name">
           <a class="benefit-brand" href="/redemption-times/dorados/"><img src="/assets/favicons/dorados.jpg" alt="" width="32" height="32"><span>Dorados</span></a>
+          <span class="toplist-coverage">1/4 attributes sourced</span>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <div class="toplist-evidence">
             <span>1 of 4 comparable attributes</span>
               <div class="toplist-source">
                 <a href="https://dorados.com/en/sweepstakes-rules" rel="noopener">Up to 10 business days</a>
                 <span>Observed <time datetime="2026-09-22T12:34:13.111Z">September 22, 2026</time></span><span>Change observed <time datetime="2026-09-22T12:34:13.111Z">September 22, 2026</time></span><ul><li>The operator may fulfill the Prize redemption through multiple payments over several days rather than in a single transaction.</li></ul>
               </div><div class="toplist-source"><a href="https://dorados.com/en/sweepstakes-rules" rel="noopener">General minimum: 100 SC</a><span>Cash method unverified</span></div>
             <a href="/redemption-times/dorados/">Full operator record</a>
+            </div>
           </details>
         </th>
         <td data-label="Welcome offer">
@@ -467,7 +485,7 @@
 
 </td>
         <td data-label="Cash minimum"><span class="toplist-unknown">Not verified</span></td>
-        <td class="toplist-action"><a class="toplist-visit" href="/go/dorados/" aria-label="Visit Dorados" title="Visit Dorados"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+        <td class="toplist-action"><a class="toplist-visit" href="/go/dorados/" aria-label="Visit Dorados" title="Visit Dorados"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
       </tr>
       <tr data-operator="pulsz" data-sort="{
   &quot;slug&quot;: &quot;pulsz&quot;,
@@ -486,10 +504,13 @@
         <td class="toplist-position">8</td>
         <th scope="row" class="toplist-name">
           <a class="benefit-brand" href="/redemption-times/pulsz/"><img src="/assets/favicons/pulsz.png" alt="" width="32" height="32"><span>Pulsz</span></a>
+          <span class="toplist-coverage">0/4 attributes sourced</span>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <div class="toplist-evidence">
             <span>0 of 4 comparable attributes</span>
             <a href="/redemption-times/pulsz/">Full operator record</a>
+            </div>
           </details>
         </th>
         <td data-label="Welcome offer">
@@ -502,7 +523,7 @@
 <span class="toplist-unknown">Not verified</span>
 </td>
         <td data-label="Cash minimum"><span class="toplist-unknown">Not verified</span></td>
-        <td class="toplist-action"><a class="toplist-visit" href="/go/pulsz/" aria-label="Visit Pulsz" title="Visit Pulsz"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+        <td class="toplist-action"><a class="toplist-visit" href="/go/pulsz/" aria-label="Visit Pulsz" title="Visit Pulsz"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
       </tr>
       <tr data-operator="stake-us" data-sort="{
   &quot;slug&quot;: &quot;stake-us&quot;,
@@ -521,29 +542,30 @@
         <td class="toplist-position">9</td>
         <th scope="row" class="toplist-name">
           <a class="benefit-brand" href="/redemption-times/stake-us/"><img src="/assets/favicons/stake-us.png" alt="" width="32" height="32"><span>Stake.us</span></a>
+          <span class="toplist-coverage">0/4 attributes sourced</span>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <div class="toplist-evidence">
             <span>0 of 4 comparable attributes</span>
               <div class="toplist-source">
                 <a href="https://stake.us/policies/terms" rel="noopener">Amount not verified</a>
                 <span>Observed <time datetime="2026-09-22T12:39:31.520Z">September 22, 2026</time></span><span>Change observed <time datetime="2026-09-22T12:39:31.520Z">September 22, 2026</time></span><ul><li>Claim Gold Coins once per day by logging into the Customer Account and claiming the daily bonus.</li><li>The published text does not state the Gold Coin amount.</li><li>Gold Coins cannot be redeemed for value.</li></ul>
               </div>
             <a href="/redemption-times/stake-us/">Full operator record</a>
+            </div>
           </details>
         </th>
         <td data-label="Welcome offer">
 <span class="toplist-unknown">Not verified</span>
 </td>
         <td data-label="Daily reward">
-
-  <strong class="toplist-value">Amount not verified</strong>
-
+<span class="toplist-unknown">Amount not verified</span>
 </td>
         <td data-label="Redemption time">
 <span class="toplist-unknown">Not verified</span>
 </td>
         <td data-label="Cash minimum"><span class="toplist-unknown">Not verified</span></td>
-        <td class="toplist-action"><a class="toplist-visit" href="/go/stake-us/" aria-label="Visit Stake.us" title="Visit Stake.us"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+        <td class="toplist-action"><a class="toplist-visit" href="/go/stake-us/" aria-label="Visit Stake.us" title="Visit Stake.us"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
       </tr>
       <tr data-operator="sweetsweeps" data-sort="{
   &quot;slug&quot;: &quot;sweetsweeps&quot;,
@@ -561,11 +583,14 @@
 }">
         <td class="toplist-position">10</td>
         <th scope="row" class="toplist-name">
-          <a class="benefit-brand" href="/redemption-times/sweetsweeps/"><span>SweetSweeps</span></a>
+          <a class="benefit-brand" href="/redemption-times/sweetsweeps/"><span class="operator-monogram" aria-hidden="true">S</span><span>SweetSweeps</span></a>
+          <span class="toplist-coverage">0/4 attributes sourced</span>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <div class="toplist-evidence">
             <span>0 of 4 comparable attributes</span>
             <a href="/redemption-times/sweetsweeps/">Full operator record</a>
+            </div>
           </details>
         </th>
         <td data-label="Welcome offer">
@@ -578,7 +603,7 @@
 <span class="toplist-unknown">Not verified</span>
 </td>
         <td data-label="Cash minimum"><span class="toplist-unknown">Not verified</span></td>
-        <td class="toplist-action"><a class="toplist-visit" href="/go/sweetsweeps/" aria-label="Visit SweetSweeps" title="Visit SweetSweeps"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+        <td class="toplist-action"><a class="toplist-visit" href="/go/sweetsweeps/" aria-label="Visit SweetSweeps" title="Visit SweetSweeps"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
       </tr>
       <tr data-operator="jackpota" data-sort="{
   &quot;slug&quot;: &quot;jackpota&quot;,
@@ -597,10 +622,13 @@
         <td class="toplist-position">11</td>
         <th scope="row" class="toplist-name">
           <a class="benefit-brand" href="/redemption-times/jackpota/"><img src="/assets/favicons/jackpota.png" alt="" width="32" height="32"><span>Jackpota</span></a>
+          <span class="toplist-coverage">0/4 attributes sourced</span>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <div class="toplist-evidence">
             <span>0 of 4 comparable attributes</span><span>Entertainment-only coins have no cash value.</span>
             <a href="/redemption-times/jackpota/">Full operator record</a>
+            </div>
           </details>
         </th>
         <td data-label="Welcome offer">
@@ -613,7 +641,7 @@
 <span class="toplist-unknown">Not verified</span>
 </td>
         <td data-label="Cash minimum"><span class="toplist-unknown">Not applicable</span></td>
-        <td class="toplist-action"><a class="toplist-visit" href="/go/jackpota/" aria-label="Visit Jackpota" title="Visit Jackpota"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+        <td class="toplist-action"><a class="toplist-visit" href="/go/jackpota/" aria-label="Visit Jackpota" title="Visit Jackpota"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
       </tr>
     </tbody>
   </table>
@@ -621,7 +649,7 @@
 </section>
 <script type="module" src="/assets/toplist-sort.js"></script>
 
-    <p class="mt-4 text-sm text-base-content/55">Partner links may earn us a commission. Compensation does not change the figures or order. No purchase is necessary to participate in sweepstakes. Eligibility and terms vary.</p>
+    <p class="home-disclosure">Partner links may earn us a commission, never a higher position. No purchase is necessary to participate in sweepstakes. Eligibility and terms vary. <a href="/disclosure/">Affiliate disclosure</a></p>
   </section>
 
 </div>
@@ -649,11 +677,11 @@
       <a class="text-base-content/70 no-underline hover:text-brand" href="/authors/alex-rowan/">Alex Rowan</a> ·
       <a class="text-base-content/70 no-underline hover:text-brand" href="https://sweepsbrief.com/">SweepsBrief</a>
     </p>
-    <p class="fine mb-3">Hero photo via <a class="text-base-content/60 underline hover:text-brand" href="https://unsplash.com/" rel="noopener">Unsplash</a>.</p>
+
     <p class="fine">&copy; 2026 Sweeps Brief LLC, a Delaware limited liability company. Social Casino Index is a publication of Sweeps Brief LLC.</p>
   </div>
 </footer>
 
-<script src="/assets/eligibility.js" defer></script>
+<script src="/assets/eligibility.js" defer></script><script src="/assets/home.js" defer></script>
 </body>
 </html>

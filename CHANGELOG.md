@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-22 - Readable, purpose-led homepage
+- Give the homepage a light editorial identity, compact introduction, publisher attribution and visible source-checking principles without adding another list.
+- Replace the tall mobile navigation with a compact native menu. Keep state selection beside sorting, existing visit gates, all four attributes and ranking behavior.
+- Align comparison values, emphasize actual amounts, quiet unknowns and expose coverage with expandable source details. Other pages retain their existing design.
+- Source panels and the mobile menu support Escape and outside-click dismissal. Browser regression checks cover five viewport widths, first-fold visibility, state selection, keyboard use and no-JavaScript access.
+
 ## 2026-09-22 - Keep conditional daily rewards out of fixed-value sorting
 - Validate daily qualifiers in the offer name as well as its conditions. Do not rank first-claim, variable, random, streak or "up to" rewards as fixed recurring daily SC.
 - Preserve the same homepage layout and source-backed records; only fixed-value comparison eligibility changes.

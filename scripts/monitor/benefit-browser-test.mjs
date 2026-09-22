@@ -52,7 +52,7 @@ try {
       }
     }
     for (const width of [320, 390, 768, 1024, 1440]) {
-      await page.setViewportSize({ width, height: 900 });
+      await page.setViewportSize({ width, height: width <= 390 ? 844 : 900 });
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `${path} at ${width}`);
       if (path === "/") {
         for (const key of Object.keys(SORTS)) {
@@ -71,6 +71,32 @@ try {
             button.closest("th").getAttribute("aria-sort")), "descending");
         }
         await page.selectOption("#toplist-sort", "default");
+        await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
+        const firstRow = await page.locator(".toplist-table tbody tr").first().boundingBox();
+        assert.ok(firstRow.y + firstRow.height <= (width <= 390 ? 844 : 900), `First operator below fold at ${width}`);
+        assert.equal(await page.locator(".toplist-coverage").count(), data.toplist.rows.length);
+        const statePicker = page.locator("[data-state-picker]");
+        await statePicker.selectOption("TX");
+        assert.ok((await page.context().cookies()).some(cookie => cookie.name === "sci_state" && cookie.value === "TX"));
+        if (width <= 390) {
+          const menu = page.locator(".home-menu");
+          await menu.locator("summary").focus();
+          await page.keyboard.press("Enter");
+          assert.equal(await menu.evaluate(element => element.open), true);
+          await page.keyboard.press("Escape");
+          assert.equal(await menu.evaluate(element => element.open), false);
+          await menu.locator("summary").click();
+          await page.locator("h1").click({ position: { x: 2, y: 2 } });
+          assert.equal(await menu.evaluate(element => element.open), false);
+        }
+        const sources = page.locator(".toplist-sources").first();
+        await sources.locator("summary").click();
+        const evidence = await sources.locator(".toplist-evidence").boundingBox();
+        assert.ok(evidence.x >= 0 && evidence.x + evidence.width <= width, `Evidence overflow at ${width}`);
+        assert.equal(await sources.locator(".toplist-evidence a").first().isVisible(), true);
+        await page.keyboard.press("Escape");
+        assert.equal(await sources.evaluate(element => element.open), false);
+        assert.equal(await sources.locator("summary").evaluate(element => element === document.activeElement), true);
         for (const brand of await page.locator(".toplist-name .benefit-brand").all()) {
           const box = await brand.boundingBox();
           assert.ok(box.width >= 120, `Casino name squeezed at ${width}: ${box.width}`);
@@ -90,8 +116,14 @@ try {
         assert.ok(await image.evaluate(image => image.naturalWidth > 0));
       }
       if (path === "/" || path === "/bonuses/no-purchase-signup-bonuses/") {
-        await page.evaluate(() => scrollTo(0, 0));
-        if (width === 390 || width === 1440) await page.screenshot({ path: `${screenshots}/${path === "/" ? "home" : "signup"}-${width}.png`, fullPage: true });
+        await page.evaluate(async () => {
+          await document.fonts.ready;
+          document.activeElement?.blur();
+          scrollTo({ top: 0, behavior: "instant" });
+        });
+        await page.mouse.move(0, 0);
+        await page.screenshot({ path: `${screenshots}/${path === "/" ? "home" : "signup"}-${width}.png`, fullPage: true });
+        if (path === "/") await page.screenshot({ path: `${screenshots}/home-fold-${width}.png` });
       }
     }
     const details = page.locator("main details summary").first();
@@ -115,9 +147,18 @@ try {
   assert.equal(await plain.locator("main table").count(), 1);
   assert.equal(await plain.locator(".benefit-sort").count(), 0);
   assert.equal(await plain.locator(".toplist-sort").isVisible(), false);
+  assert.equal(await plain.locator(".home-state").isVisible(), false);
+  await plain.locator(".home-menu summary").click();
+  assert.equal(await plain.locator(".home-menu nav").isVisible(), true);
   await plain.locator(".toplist-sources summary").first().click();
   assert.equal(await plain.locator(".toplist-sources").first().evaluate(element => element.open), true);
   await noJs.close();
+  await page.context().addCookies([{ name: "sci_state", value: "__dismissed", url: base }]);
+  await page.goto(`${base}/`);
+  assert.equal(await page.locator("[data-state-picker]").evaluate(select => select.selectedIndex), 0);
+  await page.goto(`${base}/about/`);
+  assert.equal(await page.locator("html").getAttribute("data-theme"), "dark");
+  assert.equal(await page.locator('link[href="/assets/home.css"]').count(), 0);
   for (const row of data.toplist.rows) {
     assert.equal((await fetch(`${base}${row.visitUrl}`)).status, 200, `Missing visit route: ${row.slug}`);
   }
