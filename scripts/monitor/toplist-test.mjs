@@ -59,11 +59,33 @@ test("redemption times retain stage, units and standard tier; exclude misleading
   assert.equal(row([timing]).redemption.label, "Up to 3 business days");
   assert.equal(row([timing]).redemption.note, "Processing; standard tier");
   for (const change of [
-    { stage: "unspecified" }, { method: "virtual_card" }, { method: "gift_card" },
+    { stage: "unspecified", basis: "Unspecified redemption window" }, { method: "virtual_card" }, { method: "gift_card" },
     { basis: "VIP4 processing time" }, { basis: "Verification process after receiving documents" },
     { basis: "Time to provide requested information before automatically declined" },
     { unit: "months" }, { comparison: "range", upperValue: null },
   ]) assert.equal(row([{ ...timing, ...change }]).redemption, null);
+});
+test("explicit processing basis restores unclassified stages without substituting transfer time", () => {
+  const base = record({ recordType: "facts", field: "redemption_time", value: 3,
+    unit: "business_days", method: "unspecified", stage: "unspecified", comparison: "up_to",
+    basis: "VIP status: Rising, Shooting Star, Blue, Bronze & Silver processing time." });
+  const transfer = { ...base, id: "transfer", value: 24, unit: "hours", stage: "transfer",
+    basis: "Skrill delivery time.", conditions: ["Up to 24 business hours."] };
+  assert.equal(row([base, transfer]).redemption.label, "Up to 3 business days");
+  assert.equal(row([base, transfer]).redemption.note, "Processing; Rising-Silver tiers");
+  assert.equal(row([transfer]).redemption, null);
+  const cash = { ...base, method: "cash", comparison: "range", upperValue: 5,
+    basis: "Cash prize redemption processing timeline." };
+  const generic = { ...cash, id: "generic", method: "general", value: 10, upperValue: null,
+    unit: "days_unspecified", comparison: "up_to", basis: "Prize redemption processing time." };
+  assert.equal(row([generic, cash]).redemption.label, "3-5 business days");
+  assert.equal(row([generic, cash]).redemption.note, "Processing; cash");
+});
+test("business hours are never labelled ordinary hours", () => {
+  const timing = record({ recordType: "facts", field: "redemption_time", value: 24,
+    unit: "hours", method: "cash", stage: "processing", comparison: "up_to",
+    conditions: ["Within 24 business hours."] });
+  assert.equal(row([timing]).redemption.label, "Up to 24 business hours");
 });
 test("new unknown timings supersede an old numeric promise", () => {
   const timing = record({ recordType: "facts", field: "redemption_time", value: 3,

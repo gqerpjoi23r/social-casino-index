@@ -14,6 +14,10 @@ Format:
 
 ---
 
+## 2026-09-22 - Preserve processing windows after the live refresh
+- Use an explicit processing basis when extraction leaves the timing stage unspecified. Do not substitute a payment-delivery-only window for redemption processing.
+- Preserve named entry-tier scope and business-hour units; prefer an explicit cash-processing window over an unspecified-method window. Add regression coverage from the fresh WOW and McLuck record shapes.
+
 ## 2026-09-22 - One homepage toplist with daily rewards
 - Replace the homepage's multiple rankings and directory with one operator list: welcome offer, daily reward, published redemption time and cash minimum. Preserve query-specific benchmark URLs, sources and state-gated visits.
 - Keep existing complete-score ordering; document deterministic positions for incomplete operators without inventing scores, votes or daily SC amounts. Distinguish initial daily claims, recurring rewards, payment stages and entertainment-only coins.

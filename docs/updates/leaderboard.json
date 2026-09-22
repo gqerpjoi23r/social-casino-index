@@ -1753,13 +1753,13 @@
         },
         "daily": null,
         "redemption": {
-          "label": "Up to 24 hours",
-          "note": "Payment delivery; method unspecified",
+          "label": "Up to 3 business days",
+          "note": "Processing; Rising-Silver tiers",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676690-how-long-does-a-redemption-take",
-          "recordId": "f4c7622a0cb98da8af27",
+          "recordId": "dcff4cf4e315ebae56f7",
           "observedAt": "2026-09-22T09:25:28.469Z",
           "conditions": [
-            "Skrill: up to 24 business hours."
+            "Within 3 business days."
           ],
           "status": "published",
           "lastCheckedAt": "2026-09-22T09:22:39.215Z",
@@ -1835,7 +1835,20 @@
           "firstObservedAt": "2026-09-21T21:42:51.114Z",
           "lastChangedAt": null
         },
-        "redemption": null,
+        "redemption": {
+          "label": "3-5 business days",
+          "note": "Processing; cash",
+          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+          "recordId": "9ad530d15303bf60ea71",
+          "observedAt": "2026-09-22T09:25:41.094Z",
+          "conditions": [
+            "Processing times are estimates and may vary."
+          ],
+          "status": "published",
+          "lastCheckedAt": "2026-09-22T09:22:39.215Z",
+          "firstObservedAt": "2026-09-22T09:25:41.094Z",
+          "lastChangedAt": null
+        },
         "cash": {
           "metric": "cash",
           "value": 75,

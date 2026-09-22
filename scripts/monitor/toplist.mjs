@@ -37,24 +37,32 @@ function dailyReward(operator, snapshot, offers) {
 function redemptionTime(snapshot, records) {
   const units = { hours: "hours", business_days: "business days", calendar_days: "calendar days",
     days_unspecified: "days (type unspecified)" };
-  const stages = { processing: "Processing", approval: "Approval", transfer: "Payment delivery",
+  const stages = { processing: "Processing", approval: "Approval",
     end_to_end: "Request to receipt" };
   const methods = { cash: "cash", bank: "bank", debit_card: "debit card",
     general: "method varies", unspecified: "method unspecified" };
-  const candidates = newest(records.filter(record => record.field === "redemption_time" &&
+  // Some extracted records leave stage unspecified despite an explicit processing basis.
+  const classified = records.map(record => record.stage === "unspecified" &&
+    /\bprocessing\b/i.test(record.basis || "") &&
+    !/\bdelivery\b|\btransfer\b/i.test(record.basis || "") ?
+    { ...record, stage: "processing" } : record);
+  const candidates = newest(classified.filter(record => record.field === "redemption_time" &&
     Number.isFinite(record.value) && units[record.unit] && methods[record.method] && stages[record.stage] &&
     ["exact", "up_to", "range", "at_least"].includes(record.comparison) &&
     (record.comparison !== "range" || (Number.isFinite(record.upperValue) && record.upperValue >= record.value)) &&
     !/verification process|provide requested|complete required|automatically declined/i.test(record.basis || "") &&
-    (!/VIP|account tier|membership tier/i.test(text(record)) || /\bstandard\b|\bVIP\s*0\b/i.test(text(record)))));
-  const priorities = ["processing", "approval", "end_to_end", "transfer"];
-  candidates.sort((a, b) => priorities.indexOf(a.stage) - priorities.indexOf(b.stage));
+    (!/VIP|account tier|membership tier/i.test(text(record)) || /\bstandard\b|\bVIP\s*0\b|\bRising\b/i.test(text(record)))));
+  const priorities = ["processing", "approval", "end_to_end"];
+  candidates.sort((a, b) => priorities.indexOf(a.stage) - priorities.indexOf(b.stage) ||
+    (a.method === "unspecified" || a.method === "general") - (b.method === "unspecified" || b.method === "general"));
   const record = candidates[0];
   if (!record) return null;
   const value = record.upperValue != null ? `${number(record.value)}-${number(record.upperValue)}` :
     `${record.comparison === "up_to" ? "Up to " : record.comparison === "at_least" ? "At least " : ""}${number(record.value)}`;
-  const tier = /\bstandard\b/i.test(text(record)) ? "standard tier" : methods[record.method];
-  return evidence(record, `${value} ${units[record.unit]}`, `${stages[record.stage]}; ${tier}`, snapshot);
+  const tier = /\bRising\b/i.test(text(record)) && /\bSilver\b/i.test(text(record)) ? "Rising-Silver tiers" :
+    /\bstandard\b/i.test(text(record)) ? "standard tier" : methods[record.method];
+  const unit = record.unit === "hours" && /\bbusiness hours\b/i.test(text(record)) ? "business hours" : units[record.unit];
+  return evidence(record, `${value} ${unit}`, `${stages[record.stage]}; ${tier}`, snapshot);
 }
 
 export function buildToplist(operators, numeric, latestRecords, now) {
