@@ -139,6 +139,29 @@ test("persistent discovery queue revisits oldest checks and retains unfinished s
   assert.equal(queue.queue[0].id, "bonus");
   assert.equal(queue.queue.length, 2);
 });
+test("comparison sources precede generic discoveries even if discoveries were never checked", () => {
+  const input = [{ slug: "a", sources: [{ id: "daily", url: "https://example.com/daily" }] }];
+  const previous = { discovery: { a: { checked: { daily: "2026-09-22" },
+    queue: [{ id: "other", url: "https://example.com/general-rules", depth: 1 }] } } };
+  const queue = sourceQueues(input, { comparisonSources: { a: ["daily"] } }, previous)[0];
+  assert.equal(queue.queue[0].id, "daily");
+  assert.equal(queue.queue[1].id, "other");
+});
+test("all configured comparison sources fit within the existing round-robin run budget", () => {
+  const registry = JSON.parse(readFileSync("src/_data/operators.json"));
+  const config = JSON.parse(readFileSync("data/monitor/config.json"));
+  const queues = sourceQueues(registry, config);
+  const expected = Object.values(config.comparisonSources).flat();
+  const visited = [];
+  while (visited.length < 50 && queues.some(q => q.queue.length && q.attempted < 8)) {
+    for (const q of queues) {
+      if (visited.length === 50 || q.attempted === 8 || !q.queue.length) continue;
+      visited.push(q.queue.shift().id);
+      q.attempted++;
+    }
+  }
+  for (const id of expected) assert.ok(visited.includes(id), `Priority source missed: ${id}`);
+});
 test("persisted game discoveries are removed without filtering explicit source seeds", () => {
   const input = [{ slug: "a", sources: [
     { id: "home", url: "https://example.com/" },

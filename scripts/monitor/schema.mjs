@@ -1,6 +1,6 @@
 import Ajv from "ajv";
 
-export const NUMERIC_VERSION = "2.3.0";
+export const NUMERIC_VERSION = "2.4.0";
 const nullableNumber = { type: ["number", "null"], minimum: 0 };
 const nullableString = { type: ["string", "null"] };
 const strings = { type: "array", items: { type: "string" } };
@@ -39,7 +39,7 @@ export const EXTRACTION_SCHEMA = object({
     unit: { enum: ["SC", "USD", "hours", "business_days", "calendar_days", "days_unspecified", "months", "multiplier", "years"] },
     comparison: { enum: ["exact", "at_least", "greater_than", "up_to", "range", "typical"] },
     method: { enum: ["cash", "bank", "gift_card", "crypto", "debit_card", "virtual_card", "general", "unspecified"] },
-    stage: { enum: ["approval", "transfer", "end_to_end", "unspecified", "not_applicable"] },
+    stage: { enum: ["processing", "approval", "transfer", "end_to_end", "unspecified", "not_applicable"] },
     states: strings,
     basis: { type: "string" },
     conditions: strings,

@@ -1,3 +1,5 @@
+import { orderToplist } from "../../src/assets/toplist-order.js";
+
 const number = value => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(value);
 const dated = record => record.lastConfirmedAt || record.capturedAt;
 const text = record => [record.name, record.basis, ...(record.conditions || [])].filter(Boolean).join(" ");
@@ -8,6 +10,9 @@ function evidence(record, label, note, snapshot) {
   const source = snapshot.coverage?.find(source => source.id === record.sourceId);
   return {
     label, note, sourceUrl: record.sourceUrl, recordId: record.id,
+    value: record.value ?? record.immediateSc ?? null,
+    upperValue: record.upperValue ?? null, unit: record.unit || "SC",
+    stage: record.stage || null, comparison: record.comparison || null,
     observedAt: dated(record), conditions: record.conditions || [],
     status: record.freshness === "not_reconfirmed" ? "retained" : "published",
     lastCheckedAt: source?.checkedAt || (source ? snapshot.lastAttempt : null),
@@ -19,19 +24,17 @@ function evidence(record, label, note, snapshot) {
 function dailyReward(operator, snapshot, offers) {
   if (operator.metrics.daily) {
     return { ...operator.metrics.daily, label: `${operator.metrics.daily.label} daily`,
-      note: "No purchase required" };
+      note: "No purchase required", comparable: true };
   }
   const candidates = newest(offers.filter(record => record.kind === "recurring_daily" &&
     record.purchaseRequired === false));
   const initial = candidates.find(record => record.immediateSc != null &&
     /first daily|first (?:day|login|claim)|day (?:one|1)/i.test(text(record)));
-  if (initial) return evidence(initial, `${number(initial.immediateSc)} SC first claim`,
-    "Later daily amounts unverified", snapshot);
+  if (initial) return { ...evidence(initial, `${number(initial.immediateSc)} SC first claim`,
+    "Later daily amounts unverified", snapshot), comparable: false };
   const recurring = candidates[0];
   if (!recurring) return null;
-  return evidence(recurring, /\bGold Coins?\b/i.test(text(recurring)) &&
-    !/\bSC\b|Sweeps(?:takes)? Coins?|Stake Cash/i.test(text(recurring)) ? "Daily Gold Coins" : "Daily reward",
-  "Amount unverified", snapshot);
+  return { ...evidence(recurring, "Amount not verified", "", snapshot), comparable: false };
 }
 
 function redemptionTime(snapshot, records) {
@@ -62,18 +65,18 @@ function redemptionTime(snapshot, records) {
   const tier = /\bRising\b/i.test(text(record)) && /\bSilver\b/i.test(text(record)) ? "Rising-Silver tiers" :
     /\bstandard\b/i.test(text(record)) ? "standard tier" : methods[record.method];
   const unit = record.unit === "hours" && /\bbusiness hours\b/i.test(text(record)) ? "business hours" : units[record.unit];
-  return evidence(record, `${value} ${unit}`, `${stages[record.stage]}; ${tier}`, snapshot);
+  const result = evidence(record, `${value} ${unit}`, `${stages[record.stage]}; ${tier}`, snapshot);
+  // Sort only a bounded processing/approval estimate, never a delivery time or minimum wait.
+  result.sortHours = ["processing", "approval"].includes(record.stage) &&
+    !["at_least", "greater_than"].includes(record.comparison) && record.unit !== "days_unspecified" &&
+    unit !== "business hours" ?
+    (record.upperValue ?? record.value) * (record.unit === "hours" ? 1 : 24) : null;
+  return result;
 }
 
 export function buildToplist(operators, numeric, latestRecords, now) {
   const snapshots = new Map((numeric?.operators || []).filter(Boolean).map(operator => [operator.slug, operator]));
-  const rows = [...operators].sort((a, b) =>
-    (b.score !== null) - (a.score !== null) || (b.score ?? 0) - (a.score ?? 0) ||
-    (a.productMode === "entertainment_only") - (b.productMode === "entertainment_only") ||
-    (b.metrics.signup?.value ?? -1) - (a.metrics.signup?.value ?? -1) ||
-    (b.metrics.purchase20?.value ?? b.metrics.purchase?.value ?? -1) -
-      (a.metrics.purchase20?.value ?? a.metrics.purchase?.value ?? -1) ||
-    a.name.localeCompare(b.name, "en")).map((operator, index) => {
+  const rows = operators.map(operator => {
     const snapshot = snapshots.get(operator.slug) || {};
     const records = snapshot.records || [];
     const offers = latestRecords(records, record => record.recordType === "offers", now);
@@ -88,8 +91,8 @@ export function buildToplist(operators, numeric, latestRecords, now) {
           `${number(signup.totalSc)} SC total${signup.durationDays ? ` over ${number(signup.durationDays)} days` : " in stages"}` :
         "On signup; no purchase",
     } : purchase ? { ...purchase, note: purchase.kind === "first_purchase" ? "First purchase" : "Regular purchase package" } : null;
-    return { slug: operator.slug, name: operator.name, favicon: operator.favicon,
-      url: operator.url, visitUrl: `/go/${operator.slug}/`, position: index + 1,
+    const row = { slug: operator.slug, name: operator.name, favicon: operator.favicon,
+      url: operator.url, visitUrl: `/go/${operator.slug}/`,
       productMode: operator.productMode, welcome,
       daily: dailyReward(operator, snapshot, offers),
       redemption: operator.productMode === "entertainment_only" ? null :
@@ -97,6 +100,21 @@ export function buildToplist(operators, numeric, latestRecords, now) {
           record.recordType === "facts" && record.field === "redemption_time", now)),
       cash: operator.metrics.cash || null, generalMinimum: operator.metrics.general || null,
       lastCheckedAt: snapshot.lastAttempt || null };
+    row.welcomeGroup = signup ? 0 : purchase ? 1 : 2;
+    row.sortValues = {
+      welcome: signup?.value ?? purchase?.value ?? null,
+      daily: row.daily?.comparable ? row.daily.value : null,
+      redemption: row.redemption?.sortHours ?? null,
+      cash: row.cash?.value ?? null,
+    };
+    row.knownAttributeCount = Object.values(row.sortValues).filter(value => Number.isFinite(value)).length;
+    row.missingAttributes = Object.keys(row.sortValues).filter(key => row.sortValues[key] === null);
+    return row;
   });
-  return { version: "single-toplist-1", lastCheckedAt: numeric?.lastAttemptedAt || null, rows };
+  const ordered = orderToplist(rows);
+  ordered.forEach((row, index) => { row.position = index + 1; });
+  return { version: "single-toplist-2", attributeCount: 4,
+    lastCheckedAt: numeric?.lastAttemptedAt || null, rows: ordered,
+    coverage: Object.fromEntries(["welcome", "daily", "redemption", "cash"].map(key =>
+      [key, rows.filter(row => row.sortValues[key] !== null).length])) };
 }

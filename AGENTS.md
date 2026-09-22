@@ -38,6 +38,10 @@ A green release means content schema, sitemap and SEO checks all pass.
   operator. Keep published benefits separate from observed payout results.
 - A collection failure is not operator opacity. Retain dated evidence; only
   source-backed absence reviews can reduce a disclosure component.
+- Homepage default order uses comparable attribute count, as requested by the
+  user. Missing attributes lower coverage placement, not a trust/disclosure
+  score. Column sorting ignores coverage and puts the best supported value
+  first, with unknown values last. Keep one homepage list.
 - No affiliate links in article copy; operator CTAs only behind the state
   gate (`/go/` + `src/assets/eligibility.js`).
 - `docs/` is the committed deploy artifact - always produced by the build,

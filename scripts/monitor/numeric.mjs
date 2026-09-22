@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { hash } from "./core.mjs";
 import { readCapture, saveJson } from "./archive.mjs";
 import { NUMERIC_VERSION, EXTRACTION_SCHEMA } from "./schema.mjs";
-import { deterministicExtract, checkExtraction, attachProvenance, comparableOffer, changeSignals, retainUnconfirmed } from "./numeric-core.mjs";
+import { deterministicExtract, checkExtraction, attachProvenance, comparableOffer, changeSignals, retainUnconfirmed, mergeDailyCandidates } from "./numeric-core.mjs";
 import { RequestUsage } from "./providers.mjs";
 
 const directory = process.argv[2];
@@ -35,11 +35,12 @@ For offers: immediateSc is explicitly available on the first claim/purchase; tot
 Never classify staged signup rewards or a paid pass as a recurring free daily bonus. Do not assume a generic purchase package is first-purchase-only. Retain promo codes and all eligibility/claim conditions.
 Set offerStatus to withdrawn or expired only when the quote explicitly says the offer ended, expired, was discontinued, or is no longer available. A missing offer is unknown, not withdrawn. Set expiresAt only when the exact ISO 8601 timestamp with timezone occurs in the quote; otherwise use null and preserve any date wording in conditions.
 Mail-in credits are not immediateSc. A first daily claim is not the amount of every subsequent daily claim: preserve that distinction in conditions.
+For recurring daily claims, actively look for the SC amount, claim interval and free/no-purchase wording in the same offer. Copy an explicit amount instead of replacing it with null. Keep Gold Coins separate from SC. A free offer has purchaseRequired=false and priceUsd=null; do not invent a numeric zero price. Capture a stated variable or seven-day schedule in conditions, not as a fixed daily amount.
 advertisedDiscountPercent is a price discount, never advertisedExtraPercent. Retain "200%+" as at_least in extraPercentComparison. Expand explicit "1.5 million" to 1500000. Do not calculate free-spin value as immediate SC.
 For facts: retain units, cash vs gift-card method, state scope, daily vs per-transaction caps, timing stage and business vs calendar days. Use method cash when the source explicitly says cash prizes; gift_card for gift cards. Do not assign cash to a general redemption threshold without an explicit connection. If the same quoted rule explicitly connects its general minimum to cash or bank prizes, preserve that connection in basis and conditions. If unspecified say unspecified, not general. State names must be copied from evidence, not inferred from country.
 A minimum is at_least, a maximum is up_to. Ranges use value and upperValue. Playthrough basis MUST distinguish purchase-linked coins, all coins and promotional exceptions.
 Use greater_than for "over" an age, not at_least. One month is value=1 unit=months, not one day. A virtual Visa card uses virtual_card, not debit_card.
-Extract every tier row's processing time and cap separately with the tier and daily/monthly scope. Processing is not automatically transfer; use unspecified unless the stage is explicit. A time to receive winnings after request is end_to_end. Keep separate approval time claims.
+Extract every tier row's processing time and cap separately with the tier and daily/monthly scope. Use stage=processing for an explicit processing window. Processing is not automatically transfer; use unspecified unless the stage is explicit. A time to receive winnings after request is end_to_end. Keep separate approval time claims.
 Time claims are published promises, NOT measured results. Do not use testimonials, examples, jackpot amounts or marketing purchase discounts as payout policies.
 Verification requirements, state exclusions and closure clauses are statements with exact quotes. Never assert legal status; only summarize what the operator says.
 Do not extract article dates as policy values or game counts as offers. Limit to 12 offers, 30 facts and 8 statements per operator.`;
@@ -118,6 +119,7 @@ for (const operator of operators) {
       }
     }
   }
+  selected = mergeDailyCandidates(selected, deterministic);
   const records = attachProvenance(selected.accepted, pages, extractor);
   const missing = ["offers", "redemption_minimum", "redemption_cap", "redemption_time", "playthrough", "verification", "restrictions"].filter(field =>
     field === "offers" ? !records.offers.length : ![...records.facts, ...records.statements].some(item => item.field === field));

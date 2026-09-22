@@ -55,8 +55,10 @@ export function needsRendering(result, source) {
 }
 export function sourceQueues(operators, config, previous = {}) {
   return operators.map(operator => {
+    const comparisonIds = new Set(config.comparisonSources?.[operator.slug] || []);
     const seeds = [...operator.sources, ...(config.additionalSources || []).filter(s => s.operatorId === operator.slug)]
-      .map(source => ({ ...source, url: config.sourceOverrides?.[source.id] || source.url, depth: 0 }));
+      .map(source => ({ ...source, url: config.sourceOverrides?.[source.id] || source.url,
+        comparisonSource: comparisonIds.has(source.id), depth: 0 }));
     const hosts = [...new Set([...seeds.map(s => new URL(s.url).hostname), ...(config.allowedHosts?.[operator.slug] || [])])];
     const prior = previous.discovery?.[operator.slug] || {};
     const byUrl = new Map();
@@ -68,6 +70,7 @@ export function sourceQueues(operators, config, previous = {}) {
       if (url && !byUrl.has(url)) byUrl.set(url, { ...source, url });
     }
     const queue = [...byUrl.values()].sort((a, b) =>
+      Number(Boolean(b.comparisonSource)) - Number(Boolean(a.comparisonSource)) ||
       (Date.parse(prior.checked?.[a.id] || "") || 0) - (Date.parse(prior.checked?.[b.id] || "") || 0) ||
       (a.depth || 0) - (b.depth || 0) || a.id.localeCompare(b.id));
     return { operator, hosts, queue, checked: { ...prior.checked }, attempted: 0, sources: [] };

@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-22 - Player-first completeness and attribute sorting
+- Replace the homepage's legacy-score priority with comparable numeric attribute count. Sort the same rows by welcome value, recurring daily SC, published processing window or cash minimum, keeping unknowns last and ignoring other missing fields for a selected sort.
+- Remove the redundant "Daily reward" fallback; initial claims and unquantified rewards do not count as complete daily data. Keep published evidence separate from measured payout claims.
+- Prioritise configured comparison sources within the existing collection budget. Fix explicit free daily parsing and add the missing processing-stage schema value. Preserve validated deterministic daily candidates when model extraction omits amounts.
+- Report per-operator missing comparison fields separately from collection success. The existing affiliate-independent benchmark data and query pages remain available.
+
 ## 2026-09-22 - Preserve processing windows after the live refresh
 - Use an explicit processing basis when extraction leaves the timing stage unspecified. Do not substitute a payment-delivery-only window for redemption processing.
 - Preserve named entry-tier scope and business-hour units; prefer an explicit cash-processing window over an unspecified-method window. Add regression coverage from the fresh WOW and McLuck record shapes.

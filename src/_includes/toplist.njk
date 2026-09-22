@@ -1,25 +1,40 @@
 {% macro cell(value) %}
 {% if value %}
   <strong class="toplist-value">{{ value.label | escape }}</strong>
-  {% if value.note %}<span class="toplist-note">{{ value.note | escape }}</span>{% endif %}
+  {%- if value.note %}<span class="toplist-note">{{ value.note | escape }}</span>{% endif %}
 {% else %}<span class="toplist-unknown">Not verified</span>{% endif %}
 {% endmacro %}
 <section class="toplist" id="all-operators" aria-labelledby="leaderboard-heading">
   <div class="toplist-heading">
     <h2 id="leaderboard-heading">Top social casinos</h2>
     {% if benchmarks.toplist.lastCheckedAt %}<span>Last check <time datetime="{{ benchmarks.toplist.lastCheckedAt }}">{{ benchmarks.toplist.lastCheckedAt | readableDate }}</time></span>{% endif %}
+    <label class="toplist-sort" hidden>Sort
+      <select id="toplist-sort">
+        <option value="default">Most complete</option>
+        <option value="welcome">Welcome offer</option>
+        <option value="daily">Daily SC</option>
+        <option value="redemption">Processing time</option>
+        <option value="cash">Cash minimum</option>
+      </select>
+    </label>
   </div>
+  <p id="toplist-sort-status" class="sr-only" aria-live="polite"></p>
   <table class="toplist-table">
     <caption class="sr-only">US social casino offers, daily rewards and published redemption terms</caption>
-    <thead><tr><th scope="col">#</th><th scope="col">Casino</th><th scope="col">Welcome offer</th><th scope="col">Daily reward</th><th scope="col">Redemption time</th><th scope="col">Cash minimum</th><th scope="col"><span class="sr-only">Visit</span></th></tr></thead>
+    <thead><tr><th scope="col">#</th><th scope="col">Casino</th>
+      {%- for key, label in {welcome: "Welcome offer", daily: "Daily reward", redemption: "Redemption time", cash: "Cash minimum"} %}
+      <th scope="col" aria-sort="none"><button type="button" data-sort-key="{{ key }}" disabled>{{ label }} <i class="ph ph-arrows-down-up" aria-hidden="true"></i></button></th>
+      {%- endfor %}
+      <th scope="col"><span class="sr-only">Visit</span></th></tr></thead>
     <tbody>
       {%- for operator in benchmarks.toplist.rows %}
-      <tr data-operator="{{ operator.slug }}">
+      <tr data-operator="{{ operator.slug }}" data-sort="{{ {slug: operator.slug, name: operator.name, position: operator.position, productMode: operator.productMode, knownAttributeCount: operator.knownAttributeCount, welcomeGroup: operator.welcomeGroup, sortValues: operator.sortValues} | json | escape }}">
         <td class="toplist-position">{{ operator.position }}</td>
         <th scope="row" class="toplist-name">
           <a class="benefit-brand" href="{{ operator.url }}">{% if operator.favicon %}<img src="{{ operator.favicon }}" alt="" width="32" height="32">{% endif %}<span>{{ operator.name | escape }}</span></a>
           <details class="toplist-sources">
             <summary>Sources &amp; terms</summary>
+            <span>{{ operator.knownAttributeCount }} of {{ benchmarks.toplist.attributeCount }} comparable attributes</span>
             {%- for key in ["welcome", "daily", "redemption", "cash"] %}{% set value = operator[key] %}{% if value %}
               <div class="toplist-source">
                 <a href="{{ value.sourceUrl | escape }}" rel="noopener">{{ value.label | escape }}</a>
@@ -45,3 +60,4 @@
   </table>
   <p class="toplist-footnote">SC = Sweepstakes Coins. Published times, not measured payouts. <a href="/methodology/#homepage-order">How we order the list</a> · <a href="/updates/">Daily checks</a></p>
 </section>
+<script type="module" src="/assets/toplist-sort.js"></script>

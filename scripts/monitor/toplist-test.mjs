@@ -3,6 +3,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { buildBenchmarks } from "./benchmarks.mjs";
 import { stampValueHistory } from "./value-history.mjs";
+import { orderToplist } from "../../src/assets/toplist-order.js";
+import { comparisonCoverage } from "./coverage.mjs";
 
 const now = Date.parse("2026-09-22T12:00:00Z");
 const record = change => ({ id: "record", sourceId: "home", sourceUrl: "https://example.com/",
@@ -34,7 +36,7 @@ test("daily first claims, recurring amounts and paid passes stay distinct", () =
   assert.equal(initial.daily.label, "1 SC first claim");
   assert.equal(initial.daily.note, "Later daily amounts unverified");
   assert.equal(row([record({ kind: "paid_pass", intervalHours: 24 })]).daily, null);
-  assert.equal(row([record({ kind: "recurring_daily", immediateSc: null, totalSc: null })]).daily.note, "Amount unverified");
+  assert.equal(row([record({ kind: "recurring_daily", immediateSc: null, totalSc: null })]).daily.label, "Amount not verified");
 });
 test("signup stages, cheap paid packages and cash methods stay explicit", () => {
   const staged = row([record({ immediateSc: 2, totalSc: 5, durationDays: 3 })]).welcome;
@@ -95,8 +97,51 @@ test("new unknown timings supersede an old numeric promise", () => {
 test("new daily unknown supersedes an old amount, not counted as zero", () => {
   const daily = record({ kind: "recurring_daily", intervalHours: 24 });
   const result = row([daily, { ...daily, capturedAt: "2026-09-22T06:00:00Z", immediateSc: null, totalSc: null }]);
-  assert.equal(result.daily.label, "Daily reward");
-  assert.equal(result.daily.note, "Amount unverified");
+  assert.equal(result.daily.label, "Amount not verified");
+  assert.equal(result.sortValues.daily, null);
+});
+
+test("default promotes completeness, but a single strong attribute wins its own sort", () => {
+  const cash = value => record({ id: "cash", recordType: "facts", field: "redemption_minimum",
+    method: "cash", comparison: "at_least", value, unit: "SC" });
+  const rows = model([
+    operator("complete", [record({}), cash(100), record({ id: "daily", kind: "recurring_daily", intervalHours: 24 })]),
+    operator("one-strong", [cash(10)]), operator("unknown", []),
+  ]).toplist.rows;
+  assert.equal(rows[0].slug, "complete");
+  assert.equal(rows[0].knownAttributeCount, 3);
+  assert.equal(orderToplist(rows, "cash")[0].slug, "one-strong");
+  assert.equal(orderToplist(rows, "cash").at(-1).slug, "unknown");
+  assert.equal(orderToplist(rows, "cash", "desc").at(-1).slug, "unknown");
+  assert.equal(orderToplist(rows, "default")[0].slug, "complete");
+});
+test("daily sort ignores first claims, Gold Coins, and unquantified advertising", () => {
+  const rows = model([
+    operator("first-only", [record({ kind: "recurring_daily", immediateSc: 50, totalSc: 50, conditions: ["First daily claim only"] })]),
+    operator("recurring", [record({ kind: "recurring_daily", immediateSc: 1, totalSc: 1, intervalHours: 24 })]),
+    operator("gold", [record({ kind: "recurring_daily", immediateSc: null, totalSc: null, goldCoins: 10000 })]),
+  ]).toplist.rows;
+  assert.equal(orderToplist(rows, "daily")[0].slug, "recurring");
+  for (const slug of ["first-only", "gold"]) assert.equal(rows.find(row => row.slug === slug).knownAttributeCount, 0);
+});
+test("welcome sorts free SC before priced packages; processing uses bounded upper estimates", () => {
+  const rows = model([
+    operator("paid", [record({ kind: "first_purchase", priceUsd: 10, immediateSc: 100, totalSc: 100, purchaseRequired: true })]),
+    operator("free", [record({ immediateSc: 1, totalSc: 1 })]),
+    operator("fast", [record({ recordType: "facts", field: "redemption_time", value: 24,
+      unit: "hours", comparison: "up_to", stage: "processing", method: "cash" })]),
+    operator("range", [record({ recordType: "facts", field: "redemption_time", value: 1, upperValue: 3,
+      unit: "business_days", comparison: "range", stage: "processing", method: "cash" })]),
+  ]).toplist.rows;
+  assert.equal(orderToplist(rows, "welcome")[0].slug, "free");
+  assert.equal(orderToplist(rows, "redemption")[0].slug, "fast");
+  assert.equal(rows.find(row => row.slug === "range").sortValues.redemption, 72);
+});
+test("coverage flags an empty daily column even when all pages were readable", () => {
+  const coverage = comparisonCoverage({ operators: [operator("a", [record({})], { collectionStatus: "readable" })] }, []);
+  assert.equal(coverage.status, "incomplete");
+  assert.equal(coverage.fields.daily, 0);
+  assert.ok(coverage.operators[0].missing.includes("daily"));
 });
 test("history separates first observations, unchanged checks, changes and failures", () => {
   const first = stampValueHistory([record({ freshness: "captured_unreviewed" })]);

@@ -5,11 +5,60 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { readableText } from "./core.mjs";
 import { archiveCapture, readCapture, uploadFile } from "./archive.mjs";
-import { deterministicExtract, checkExtraction, comparableOffer, changeSignals, retainUnconfirmed } from "./numeric-core.mjs";
+import { deterministicExtract, checkExtraction, comparableOffer, changeSignals, retainUnconfirmed, mergeDailyCandidates } from "./numeric-core.mjs";
 import { firecrawlOptions } from "./providers.mjs";
 import { baselineKey, usableRun } from "./state-core.mjs";
 
 const pages = text => [{ sourceId: "faq", text }];
+test("daily free amounts survive deterministic extraction and numeric qualification", () => {
+  for (const text of [
+    "Claim 1 free SC as your daily bonus.",
+    "Claim SC 1 as your daily bonus. No purchase necessary.",
+    "Claim 1 SC as your daily bonus. No purchase required.",
+    "Claim 1 SC as your daily bonus. No purchase is required.",
+    "Claim 0.5 Sweepstakes Coins every day as a free reward.",
+  ]) {
+    const result = checkExtraction(deterministicExtract(pages(text)), pages(text));
+    assert.equal(result.rejected.length, 0);
+    assert.equal(result.accepted.offers[0].purchaseRequired, false);
+    assert.ok(result.accepted.offers[0].immediateSc > 0);
+  }
+});
+test("daily parser never turns paid, capped, staged or GC-only claims into fixed free SC", () => {
+  for (const text of [
+    "Claim up to 50 free SC as your daily bonus.",
+    "Claim 1 free SC on the first daily claim.",
+    "Claim 10,000 free Gold Coins as your daily bonus.",
+    "Claim 1 SC daily with a purchase.",
+    "Claim 1 free SC as your daily VIP bonus.",
+  ]) assert.equal(deterministicExtract(pages(text)).offers.filter(o =>
+    o.kind === "recurring_daily" && o.purchaseRequired === false).length, 0);
+  const unknown = deterministicExtract(pages("Claim 1 SC as your daily bonus."));
+  assert.equal(unknown.offers[0].purchaseRequired, null);
+});
+test("explicit free price can be zero without allowing invented zero rewards", () => {
+  const input = pages("Claim 1 free SC as your daily bonus.");
+  const data = deterministicExtract(input);
+  data.offers[0].priceUsd = 0;
+  assert.equal(checkExtraction(data, input).accepted.offers.length, 1);
+  data.offers[0].immediateSc = 0;
+  assert.equal(checkExtraction(data, input).rejected[0].reason, "number_not_in_quote");
+});
+test("validated fallback daily values survive model omissions, not model conflicts", () => {
+  const input = pages("Claim 1 free SC as your daily bonus.");
+  const deterministic = checkExtraction(deterministicExtract(input), input);
+  const empty = { accepted: { offers: [], facts: [], statements: [] }, rejected: [] };
+  assert.equal(mergeDailyCandidates(empty, deterministic).accepted.offers[0].immediateSc, 1);
+  const conflict = { ...empty, accepted: { ...empty.accepted, offers: [{ ...deterministic.accepted.offers[0], immediateSc: 2 }] } };
+  assert.equal(mergeDailyCandidates(conflict, deterministic).accepted.offers.length, 1);
+});
+test("schema supports explicit processing without relabelling as transfer", () => {
+  const input = pages("The minimum redemption is 50 SC for eligible players.");
+  const data = deterministicExtract(input);
+  Object.assign(data.facts[0], { field: "redemption_time", value: 3, unit: "business_days", stage: "processing",
+    quote: "Cash redemption processing takes up to 3 business days." });
+  assert.equal(checkExtraction(data, pages(data.facts[0].quote)).accepted.facts[0].stage, "processing");
+});
 test("numeric extraction survives HTML wrapper changes", () => {
   const text = "Buy this package for $20 and receive 40 SC.";
   const a = deterministicExtract(pages(readableText(`<main><p>${text}</p></main>`)));

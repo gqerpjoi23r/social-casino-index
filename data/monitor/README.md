@@ -2,8 +2,9 @@
 
 The daily GitHub Actions workflow checks the configured operators at 06:17 UTC.
 Use `workflow_dispatch` for an additional run. Schedules can start late.
-The bounded source queue rotates oldest checks first; a run does not guarantee
-that every field or every configured source was refreshed.
+Configured `comparisonSources` run before general discoveries, oldest first
+within each group. All configured core sources fit the current 50-source run
+budget. A run does not guarantee that every field or source was readable.
 
 ## Collection
 
@@ -108,3 +109,10 @@ Each attempted source has `checkedAt`. Published records also carry
 conditions with the previous source/category snapshot, not extraction IDs or
 capture dates. An initial observation has no change date. Failed checks preserve
 these dates. These describe observed evidence, not an operator's effective date.
+
+The publication summary reports per-operator numeric comparison coverage.
+`comparison-coverage.json` records unresolved fields in the private run directory.
+An incomplete report emits a workflow warning: readable pages or valid extraction
+alone do not mean the homepage contains comparable values. The homepage defaults
+to coverage-first order, with in-place sorting that ignores coverage for each
+individual attribute.

@@ -21,7 +21,8 @@ export function deterministicExtract(pages) {
       if (quote.length < 15 || quote.length > 1500 || /\?$/u.test(quote) ||
           /for example|testimonial|trustpilot|rated|review by/i.test(quote)) continue;
       const source = { sourceId: page.sourceId, quote };
-      const sc = [...quote.matchAll(new RegExp(`${decimal}\\s*(?:free\\s+)?(?:SC\\b|Sweeps? Coins?\\b|Stake Cash\\b)`, "gi"))];
+      const sc = [...quote.matchAll(new RegExp(`(?:${decimal}\\s*(?:free\\s+)?(?:SC\\b|Sweeps?(?:takes)? Coins?\\b|Stake Cash\\b)|\\bSC\\s*${decimal})`, "gi"))]
+        .map(match => [match[0], match[1] || match[2]]);
       const dollars = [...quote.matchAll(new RegExp(`\\$\\s*${decimal}`, "g"))];
       if (sc.length === 1 && dollars.length === 1 && /purchas|package|buy/i.test(quote) &&
           !/maximum|minimum|redeem|redemption|example/i.test(quote)) {
@@ -35,10 +36,14 @@ export function deterministicExtract(pages) {
         });
       }
       // A redemption cap on a page mentioning "daily" is not a daily reward.
-      if (sc.length === 1 && !dollars.length && /daily|every 24 hours/i.test(quote) &&
-          /claim|bonus|reward/i.test(quote) && !/redeem|redemption|limit|maximum|purchase|welcome|sign.up|first|streak/i.test(quote)) {
+      const dailyText = quote.replace(/\bno purchase (?:is )?(?:required|necessary|needed)\b/gi, "");
+      const freeDaily = /\bfree\b|\bno purchase (?:is )?(?:required|necessary|needed)\b/i.test(quote) &&
+        !/not free|not (?:a )?free|free spins?|free trial|purchase (?:is )?required|must purchas|after purchas|when you buy/i.test(dailyText);
+      if (sc.length === 1 && !dollars.length && /daily|every 24 hours|every day|each day/i.test(quote) &&
+          /claim|bonus|reward/i.test(quote) && !/redeem|redemption|limit|maximum|purchase|welcome|sign.up|first|streak|up to|vip|increas|varies|can win/i.test(dailyText)) {
         result.offers.push({ ...blankOffer, ...source, name: "Recurring daily claim", kind: "recurring_daily",
-          immediateSc: number(sc[0][1]), totalSc: number(sc[0][1]), intervalHours: 24, conditions: [quote] });
+          immediateSc: number(sc[0][1]), totalSc: number(sc[0][1]), intervalHours: 24,
+          purchaseRequired: freeDaily ? false : null, conditions: [quote] });
       }
       const amount = sc.length === 1 && !dollars.length ? [number(sc[0][1]), "SC"] :
         dollars.length === 1 && !sc.length ? [number(dollars[0][1]), "USD"] : null;
@@ -88,17 +93,19 @@ export function checkExtraction(data, pages) {
       redemption_time: ["hours", "business_days", "calendar_days", "days_unspecified", "months"], playthrough: ["multiplier"], minimum_age: ["years"] };
     if (kind === "facts" && !units[item.field].includes(item.unit)) reason = "wrong_unit";
     // This is a grounding check, not a semantic accuracy claim.
-    const numericValues = kind === "offers" ?
-      ["priceUsd", "immediateSc", "totalSc", "goldCoins", "advertisedExtraPercent", "advertisedDiscountPercent", "durationDays", "intervalHours"].map(key => item[key]) :
-      kind === "facts" ? [item.value, item.upperValue] : [];
+    const numericValues = (kind === "offers" ?
+      ["priceUsd", "immediateSc", "totalSc", "goldCoins", "advertisedExtraPercent", "advertisedDiscountPercent", "durationDays", "intervalHours"] :
+      kind === "facts" ? ["value", "upperValue"] : []).map(key => [key, item[key]]);
     const normalizedQuote = normalize(item.quote).replace(/(\d),(?=\d)/g, "$1")
       .replace(/\bonce\b|\bone time\b/gi, "1").replace(/\btwice\b/gi, "2").replace(/\bthree times\b/gi, "3");
     const supportedNumbers = [...normalizedQuote.matchAll(/\d+(?:\.\d+)?/g)].map(match => Number(match[0]));
     for (const match of normalizedQuote.matchAll(/(\d+(?:\.\d+)?)\s*(million|thousand)\b/gi)) {
       supportedNumbers.push(Number(match[1]) * (match[2].toLowerCase() === "million" ? 1000000 : 1000));
     }
-    if (numericValues.some(value => value !== null && !supportedNumbers.includes(value) &&
-        !(kind === "offers" && value === 24 && item.intervalHours === 24 && /daily|every day/i.test(item.quote)))) {
+    if (numericValues.some(([key, value]) => value !== null && !supportedNumbers.includes(value) &&
+        !(kind === "offers" && key === "intervalHours" && value === 24 && /daily|every day|once per day|each day/i.test(item.quote)) &&
+        !(kind === "offers" && key === "priceUsd" && value === 0 && item.purchaseRequired === false &&
+          /\bfree\b|\bno purchase (?:is )?(?:required|necessary|needed)\b/i.test(item.quote)))) {
       reason = "number_not_in_quote";
     }
     // A price discount is not extra coin allocation, even when its number matches.
@@ -119,6 +126,18 @@ export function checkExtraction(data, pages) {
     else accepted[kind].push({ ...item, quote: normalize(item.quote) });
   }
   return { accepted, rejected };
+}
+
+export function mergeDailyCandidates(selected, deterministic) {
+  const offers = [...selected.accepted.offers];
+  for (const candidate of deterministic.accepted.offers) {
+    if (candidate.kind !== "recurring_daily" || candidate.purchaseRequired !== false || candidate.immediateSc === null) continue;
+    const peers = offers.filter(offer => offer.sourceId === candidate.sourceId && offer.kind === candidate.kind);
+    // Do not overwrite a model's qualified or conflicting numeric interpretation.
+    if (peers.some(offer => offer.immediateSc !== null || offer.purchaseRequired === true)) continue;
+    offers.push(candidate);
+  }
+  return { ...selected, accepted: { ...selected.accepted, offers } };
 }
 
 export function attachProvenance(data, pages, extractor) {

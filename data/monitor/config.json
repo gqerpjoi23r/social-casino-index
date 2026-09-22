@@ -10,6 +10,10 @@
     "dorados": ["dorados.com", "www.dorados.com"]
   },
   "additionalSources": [
+    { "operatorId": "wow-vegas", "id": "wow-promotions", "url": "https://www.wowvegas.com/promotions", "purpose": "daily_reward" },
+    { "operatorId": "chumba", "id": "chumba-promotions", "url": "https://www.chumbacasino.com/promotions", "purpose": "daily_reward" },
+    { "operatorId": "stake-us", "id": "stake-home", "url": "https://stake.us/", "purpose": "daily_reward" },
+    { "operatorId": "zonko", "id": "zonko-promotions", "url": "https://www.zonko.com/promotions/", "purpose": "daily_reward" },
     { "operatorId": "wow-vegas", "id": "wow-redemption-time", "url": "https://help.wowvegas.com/en/articles/10676690-how-long-does-a-redemption-take", "purpose": "redemption_time" },
     { "operatorId": "mcluck", "id": "mcluck-redemption-time", "url": "https://blog.mcluck.com/faq/mcluck-redemption-times/", "purpose": "redemption_time" },
     { "operatorId": "mcluck", "id": "mcluck-redemption-minimum", "url": "https://blog.mcluck.com/faq/minimum-redemption-amount/", "purpose": "redemption_minimum" },
@@ -19,6 +23,19 @@
     { "operatorId": "chumba", "id": "chumba-rules", "url": "https://www.chumbacasino.com/sweeps-rules", "purpose": "sweepstakes_rules", "discoveredFrom": "chumba-home" },
     { "operatorId": "mcluck", "id": "mcluck-promotions", "url": "https://www.mcluck.com/promotions", "purpose": "promotions_index", "discoveredFrom": "mcluck-home" }
   ],
+  "comparisonSources": {
+    "jackpota": ["jackpota-home", "jackpota-promotions"],
+    "lucky-bunny": ["lucky-bunny-home"],
+    "yay-casino": ["yay-daily", "yay-signup", "yay-rules", "yay-redemption-guide"],
+    "dorados": ["dorados-home", "dorados-welcome", "dorados-rules"],
+    "zonko": ["zonko-promotions", "zonko-notice", "zonko-home"],
+    "chumba": ["chumba-promotions", "chumba-home", "chumba-redeem"],
+    "pulsz": ["pulsz-home", "pulsz-bank", "pulsz-terms"],
+    "stake-us": ["stake-home", "stake-coins", "stake-redeem", "stake-terms"],
+    "wow-vegas": ["wow-promotions", "wow-promo", "wow-redemption-time", "wow-redeem"],
+    "mcluck": ["mcluck-home", "mcluck-promotions", "mcluck-redemption-time", "mcluck-redemption-minimum"],
+    "sweetsweeps": ["sweetsweeps-home", "sweetsweeps-terms"]
+  },
   "sourceOptions": {
     "mcluck-promotions": { "retryFullContent": true },
     "jackpota-promotions": { "retryFullContent": true }

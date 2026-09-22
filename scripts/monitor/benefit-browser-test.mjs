@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { createServer } from "node:http";
 import { readFile, mkdir } from "node:fs/promises";
 import { resolve, extname } from "node:path";
+import { orderToplist, SORTS } from "../../src/assets/toplist-order.js";
 
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
 const root = resolve("docs");
@@ -54,6 +55,22 @@ try {
       await page.setViewportSize({ width, height: 900 });
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `${path} at ${width}`);
       if (path === "/") {
+        for (const key of Object.keys(SORTS)) {
+          await page.selectOption("#toplist-sort", key);
+          assert.deepEqual(await page.locator(".toplist-table tbody tr").evaluateAll(rows =>
+            rows.map(row => row.dataset.operator)), orderToplist(data.toplist.rows, key).map(row => row.slug),
+          `Sort ${key} at ${width}`);
+          assert.equal(new URL(page.url()).pathname, "/");
+          assert.equal(await page.locator("main table").count(), 1);
+        }
+        if (width >= 768) {
+          await page.locator('[data-sort-key="cash"]').click();
+          assert.deepEqual(await page.locator(".toplist-table tbody tr").evaluateAll(rows =>
+            rows.map(row => row.dataset.operator)), orderToplist(data.toplist.rows, "cash", "desc").map(row => row.slug));
+          assert.equal(await page.locator('[data-sort-key="cash"]').evaluate(button =>
+            button.closest("th").getAttribute("aria-sort")), "descending");
+        }
+        await page.selectOption("#toplist-sort", "default");
         for (const brand of await page.locator(".toplist-name .benefit-brand").all()) {
           const box = await brand.boundingBox();
           assert.ok(box.width >= 120, `Casino name squeezed at ${width}: ${box.width}`);
@@ -97,6 +114,7 @@ try {
   assert.equal(await plain.locator(".toplist-table tbody tr").count(), data.toplist.rows.length);
   assert.equal(await plain.locator("main table").count(), 1);
   assert.equal(await plain.locator(".benefit-sort").count(), 0);
+  assert.equal(await plain.locator(".toplist-sort").isVisible(), false);
   await plain.locator(".toplist-sources summary").first().click();
   assert.equal(await plain.locator(".toplist-sources").first().evaluate(element => element.open), true);
   await noJs.close();
