@@ -30,6 +30,10 @@ try {
   for (const path of ["/", "/updates/", "/bonuses/", ...data.benchmarks.map(b => b.url), ...data.comparisons.map(c => c.url)]) {
     await page.goto(`${base}${path}`);
     if (path === "/") {
+      assert.equal(await page.locator("html").getAttribute("data-theme"), "dark");
+      assert.equal(await page.locator('#toplist-sort option[value="default"]').count(), 0);
+      assert.deepEqual(await page.locator("#toplist-sort option:not([disabled])").evaluateAll(options =>
+        options.map(option => option.value)), ["welcome", "daily", "redemption", "cash"]);
       assert.equal(await page.locator("main table").count(), 1);
       assert.equal(await page.locator(".benefit-directory,.benefit-benchmark,.benefit-nav").count(), 0);
       assert.deepEqual(await page.locator(".toplist-table tbody tr").evaluateAll(rows =>
@@ -55,7 +59,7 @@ try {
       await page.setViewportSize({ width, height: width <= 390 ? 844 : 900 });
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `${path} at ${width}`);
       if (path === "/") {
-        for (const key of Object.keys(SORTS)) {
+        for (const key of Object.keys(SORTS).filter(key => key !== "default")) {
           await page.selectOption("#toplist-sort", key);
           assert.deepEqual(await page.locator(".toplist-table tbody tr").evaluateAll(rows =>
             rows.map(row => row.dataset.operator)), orderToplist(data.toplist.rows, key).map(row => row.slug),
@@ -70,7 +74,7 @@ try {
           assert.equal(await page.locator('[data-sort-key="cash"]').evaluate(button =>
             button.closest("th").getAttribute("aria-sort")), "descending");
         }
-        await page.selectOption("#toplist-sort", "default");
+        await page.reload();
         await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
         const firstRow = await page.locator(".toplist-table tbody tr").first().boundingBox();
         assert.ok(firstRow.y + firstRow.height <= (width <= 390 ? 844 : 900), `First operator below fold at ${width}`);

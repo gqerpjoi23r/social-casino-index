@@ -14,6 +14,10 @@ Format:
 
 ---
 
+## 2026-09-22 - Restore the dark homepage skin
+- Restore the existing dark palette while preserving the compact introduction and responsive single toplist.
+- Remove "Most complete" from the sort menu. Keep the initial ranking unchanged; offer only the four player-facing attribute sorts.
+
 ## 2026-09-22 - Readable, purpose-led homepage
 - Give the homepage a light editorial identity, compact introduction, publisher attribution and visible source-checking principles without adding another list.
 - Replace the tall mobile navigation with a compact native menu. Keep state selection beside sorting, existing visit gates, all four attributes and ranking behavior.
