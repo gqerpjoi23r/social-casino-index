@@ -1,3 +1,5 @@
+import { stampValueHistory } from "./value-history.mjs";
+
 export function productionRun(manifest, env = process.env) {
   return env.GITHUB_REF === "refs/heads/main" && !env.ARCHIVE_RUN_ID &&
     manifest.scope === "production" && !manifest.reextractedFrom;
@@ -92,9 +94,10 @@ export function publicNumeric(operators, reviewed, manifest, captures, previous 
             ? "evidence unavailable; not reconfirmed" : "reviewed evidence unchanged",
         disclosureReviews: absenceReviews,
         coverage: sources.map(source => ({ id: source.id, url: source.url, purpose: source.purpose,
+          checkedAt: manifest.startedAt,
           status: blocked ? "archive_corrupt" : source.status,
           capturedAt: successful.find(page => page.sourceId === source.id)?.capturedAt || null })),
-        records, unknownValues: {
+        records: stampValueHistory(records, prior?.records), unknownValues: {
           firstPurchaseUsd: records.find(record => record.completePackage)?.priceUsd ?? null,
           firstPurchaseSc: records.find(record => record.completePackage)?.immediateSc ?? null,
         },

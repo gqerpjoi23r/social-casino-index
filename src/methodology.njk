@@ -4,7 +4,7 @@ title: "Methodology"
 description: "How Social Casino Index ranks published bonuses, reviews disclosure gaps and separates advertised benefits from funded payout tests."
 permalink: "/methodology/"
 publishedAt: "2026-09-08"
-updatedAt: "2026-09-21"
+updatedAt: "2026-09-22"
 ---
 
 <main>
@@ -28,9 +28,16 @@ updatedAt: "2026-09-21"
   <p>Each component scores 100 multiplied by the number of comparable operators with equal or worse values, divided by the number with a comparable value. Higher signup and package values are better; lower cash minimums are better. The overall score is the mean of the three component scores. Scores are relative to covered operators, not a percentage cash return or a claim of market-wide completeness.</p>
   <p>An explicitly absent benefit or a reviewed disclosure gap earns zero for that component, without claiming that a missing amount is numerically zero. We do not redistribute its weight. Overall scores require a supported value or completed absence review for every component. Ties use disclosure completeness, then operator name. A known lack of an offer counts as disclosure; collection failure does not.</p>
   <p>Every bonus benchmark has its own eligibility criteria. Missing redemption information does not exclude an operator from a signup comparison. Staged totals, first-purchase conditions, full purchase prices and gift-card thresholds remain distinct. A no-purchase claim requires explicit support. General thresholds count as cash only when the source explicitly connects them to cash.</p>
+  <h2 id="homepage-order">The homepage toplist</h2>
+  <p>The homepage contains one list, with welcome offers, daily rewards, published redemption times and cash minimums. Row numbers are list positions, not measured payout ranks. The ordering version is <strong>single-toplist-1</strong>.</p>
+  <p>Operators with a complete published-benefit score appear first, using the existing score above. Remaining redeemable or unverified operators follow by immediate no-purchase signup SC, highest first, then the SC-per-dollar ratio of a complete package costing $20 or less (or the available package when no such package is established), then name. Entertainment-only products appear last. An unknown value stays unknown; it is not an absence finding or a zero-value score. Commercial relationships do not affect this order.</p>
+  <p>We show recurring daily SC only when the amount and free recurring schedule are supported. A first daily claim is labelled as a first claim, and an advertised reward with no established amount is labelled accordingly. Daily rewards and published redemption windows are comparison fields, not new scoring components. Redemption times keep their payment method and processing stage; processing is not payment delivery. Promotional VIP times, verification deadlines and automatic cancellation deadlines do not become general payout promises.</p>
+  <h2>Daily maintenance</h2>
+  <p>The monitor is scheduled daily at 06:17 UTC. It checks a bounded, rotating set of operator sources, with earlier checks prioritised. A daily run does not guarantee a fresh value for every field. Failed access retains the previous dated evidence rather than changing the operator's score.</p>
+  <p>Last checked records the attempted source check. First observed records the first capture of a value. Change observed records a difference from the previous extracted value and its qualifying conditions; an initial observation is not a change. Rechecking an unchanged value does not reset its change date. These are observation dates, not claims about when an operator changed its offer.</p>
   <h2>Missing information and failed checks</h2>
   <p>We check operator homepages, promotions, relevant offers, help pages and linked rules, including rendered pages and PDFs when necessary. A documented absence review is required before missing disclosure affects a score. Blocked pages, failed extraction and unfinished collection are our evidence gaps, not operator transparency findings.</p>
-  <p>When collection fails, previously supported evidence retains its observation date. Scores are recalculated from those dated inputs; evidence is not presented as freshly verified. New superseding terms or a documented withdrawal take precedence. Operators with insufficient evidence remain visible with their known benefits, without an overall rank.</p>
+  <p>When collection fails, previously supported evidence retains its observation date. Scores are recalculated from those dated inputs; evidence is not presented as freshly verified. New superseding terms or a documented withdrawal take precedence. Operators with insufficient evidence remain in the homepage list with their known benefits, without an overall score.</p>
 
   <h2>Funded testing</h2>
   <p>Each test uses a real account, real identity verification and real money. We buy the smallest practical coin package, meet the playthrough requirement, then request a redemption and record timestamps for each stage: request, verification, processing and delivery. Repeat redemptions are measured separately from first redemptions, because verification dominates first-request timing.</p>

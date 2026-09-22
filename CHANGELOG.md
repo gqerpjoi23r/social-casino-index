@@ -14,6 +14,13 @@ Format:
 
 ---
 
+## 2026-09-22 - One homepage toplist with daily rewards
+- Replace the homepage's multiple rankings and directory with one operator list: welcome offer, daily reward, published redemption time and cash minimum. Preserve query-specific benchmark URLs, sources and state-gated visits.
+- Keep existing complete-score ordering; document deterministic positions for incomplete operators without inventing scores, votes or daily SC amounts. Distinguish initial daily claims, recurring rewards, payment stages and entertainment-only coins.
+- Add official redemption sources to the daily monitor and track attempted checks separately from first observations and observed value changes. Failed checks retain dated evidence.
+- Repair invalid scripts in the existing visit pages without changing destinations or the closed-state list; reject dismissed, malformed and unknown state cookies. SweetSweeps stays routed to availability pending verification.
+- Verify 82 monitor/gate tests, release validation, all 101 prompt targets, and desktop/mobile/no-JavaScript browser checks with real local redirects and mocked external destinations.
+
 ## 2026-09-21 - Verify production benefits and focus source discovery
 - Verify all seven live bonus benchmarks and eleven profiles across mobile/desktop, keyboard, image loading and no-JavaScript use.
 - Add three Lovd prompts for $20 packages, daily rewards and staged welcome bonuses; retain all 98 existing prompts and history without starting immediate analysis.

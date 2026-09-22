@@ -1,3 +1,5 @@
+import { buildToplist } from "./toplist.mjs";
+
 export const METHODOLOGY_VERSION = "published-benefits-1";
 const amount = value => typeof value === "number" && Number.isFinite(value) && value >= 0;
 const number = value => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(value);
@@ -21,6 +23,7 @@ function fact(record, metric, value, label, note = "") {
   return {
     metric, value, label, note, recordId: record.id, sourceUrl: record.sourceUrl,
     observedAt: date(record), status: record.freshness === "not_reconfirmed" ? "retained" : "published",
+    firstObservedAt: record.firstObservedAt || record.capturedAt, lastChangedAt: record.lastChangedAt || null,
     conditions: record.conditions || [], promoCode: record.promoCode,
     priceUsd: record.priceUsd ?? null, immediateSc: record.immediateSc ?? null,
     totalSc: total(record) ?? null, durationDays: record.durationDays ?? null,
@@ -159,5 +162,6 @@ export function buildBenchmarks(numeric, registry = [], now = Date.now(), purcha
   });
   return { schemaVersion: 1, methodologyVersion: METHODOLOGY_VERSION, comparisons,
     generatedAt: numeric?.lastSuccessfulRefresh || null, operators, benchmarks,
+    toplist: buildToplist(operators, numeric, latestRecords, now),
     ranked: operators.filter(op => op.rank !== null), incomplete: operators.filter(op => op.rank === null) };
 }

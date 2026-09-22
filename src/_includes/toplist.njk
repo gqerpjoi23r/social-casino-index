@@ -1,0 +1,47 @@
+{% macro cell(value) %}
+{% if value %}
+  <strong class="toplist-value">{{ value.label | escape }}</strong>
+  {% if value.note %}<span class="toplist-note">{{ value.note | escape }}</span>{% endif %}
+{% else %}<span class="toplist-unknown">Not verified</span>{% endif %}
+{% endmacro %}
+<section class="toplist" id="all-operators" aria-labelledby="leaderboard-heading">
+  <div class="toplist-heading">
+    <h2 id="leaderboard-heading">Top social casinos</h2>
+    {% if benchmarks.toplist.lastCheckedAt %}<span>Last check <time datetime="{{ benchmarks.toplist.lastCheckedAt }}">{{ benchmarks.toplist.lastCheckedAt | readableDate }}</time></span>{% endif %}
+  </div>
+  <table class="toplist-table">
+    <caption class="sr-only">US social casino offers, daily rewards and published redemption terms</caption>
+    <thead><tr><th scope="col">#</th><th scope="col">Casino</th><th scope="col">Welcome offer</th><th scope="col">Daily reward</th><th scope="col">Redemption time</th><th scope="col">Cash minimum</th><th scope="col"><span class="sr-only">Visit</span></th></tr></thead>
+    <tbody>
+      {%- for operator in benchmarks.toplist.rows %}
+      <tr data-operator="{{ operator.slug }}">
+        <td class="toplist-position">{{ operator.position }}</td>
+        <th scope="row" class="toplist-name">
+          <a class="benefit-brand" href="{{ operator.url }}">{% if operator.favicon %}<img src="{{ operator.favicon }}" alt="" width="32" height="32">{% endif %}<span>{{ operator.name | escape }}</span></a>
+          <details class="toplist-sources">
+            <summary>Sources &amp; terms</summary>
+            {%- for key in ["welcome", "daily", "redemption", "cash"] %}{% set value = operator[key] %}{% if value %}
+              <div class="toplist-source">
+                <a href="{{ value.sourceUrl | escape }}" rel="noopener">{{ value.label | escape }}</a>
+                <span>Observed <time datetime="{{ value.observedAt }}">{{ value.observedAt | readableDate }}</time>{% if value.status == "retained" %} · Previous observation{% endif %}</span>
+                {%- if value.lastChangedAt %}<span>Change observed <time datetime="{{ value.lastChangedAt }}">{{ value.lastChangedAt | readableDate }}</time></span>{% endif %}
+                {%- if value.promoCode %}<span>Code: {{ value.promoCode | escape }}</span>{% endif %}
+                {%- if value.conditions.length %}<ul>{% for condition in value.conditions %}<li>{{ condition | escape }}</li>{% endfor %}</ul>{% endif %}
+              </div>
+            {%- endif %}{% endfor %}
+            {%- if operator.generalMinimum %}<div class="toplist-source"><a href="{{ operator.generalMinimum.sourceUrl | escape }}" rel="noopener">General minimum: {{ operator.generalMinimum.label }}</a><span>Cash method unverified</span></div>{% endif %}
+            {%- if operator.productMode == "entertainment_only" %}<span>Entertainment-only coins have no cash value.</span>{% endif %}
+            <a href="{{ operator.url }}">Full operator record</a>
+          </details>
+        </th>
+        <td data-label="Welcome offer">{{ cell(operator.welcome) }}</td>
+        <td data-label="Daily reward">{{ cell(operator.daily) }}</td>
+        <td data-label="Redemption time">{{ cell(operator.redemption) }}</td>
+        <td data-label="Cash minimum">{% if operator.productMode == "entertainment_only" %}<span class="toplist-unknown">Not applicable</span>{% elif operator.cash %}<strong class="toplist-value">{{ operator.cash.label }}</strong>{% else %}<span class="toplist-unknown">Not verified</span>{% endif %}</td>
+        <td class="toplist-action"><a class="toplist-visit" href="{{ operator.visitUrl }}" aria-label="Visit {{ operator.name | escape }}" title="Visit {{ operator.name | escape }}"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+  <p class="toplist-footnote">SC = Sweepstakes Coins. Published times, not measured payouts. <a href="/methodology/#homepage-order">How we order the list</a> · <a href="/updates/">Daily checks</a></p>
+</section>

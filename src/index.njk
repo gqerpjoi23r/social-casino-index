@@ -1,10 +1,10 @@
 ---
 layout: base.njk
-title: "Social Casino Index | Bonus Benchmarks and Published Offers"
-description: "Compare free signup SC, staged welcome bonuses, daily rewards, purchase value and cash redemption minimums with dated operator sources."
+title: "Top Social Casinos: Bonuses, Daily Rewards and Redemption Times"
+description: "One US social casino toplist: compare welcome offers, daily rewards, published redemption times and cash minimums with dated operator sources."
 permalink: "/"
 publishedAt: "2026-09-08"
-updatedAt: "2026-09-21"
+updatedAt: "2026-09-22"
 ogType: "website"
 eleventyComputed:
   jsonld:
@@ -23,39 +23,15 @@ eleventyComputed:
           "@id": "https://socialcasinoindex.com/#org"
 ---
 <main>
-<div class="wrap">
+<div class="wrap toplist-page">
   <header class="benefit-intro">
     <h1>Social Casino Index</h1>
-    <p id="compare-heading">Compare free signup bonuses, purchase value and cash-out minimums.</p>
-    <nav class="benefit-nav" aria-label="Bonus benchmarks">
-      {% for benchmark in benchmarks.benchmarks %}<a href="{{ benchmark.url }}"><i class="ph ph-{{ benchmark.icon }}" aria-hidden="true"></i>{{ benchmark.title }}</a>{% endfor %}
-    </nav>
+    <p id="compare-heading">Welcome offers, daily rewards and redemption times. United States.</p>
   </header>
   <section id="compare" aria-labelledby="compare-heading">
-    {% include "leaderboard.njk" %}
-    {% from "benefit-row.njk" import benchmarkTable %}
-    {% for benchmark in benchmarks.benchmarks %}{% if benchmark.id == "signup" or benchmark.id == "purchase" or benchmark.id == "cash" %}
-    <section class="benefit-benchmark" id="benchmark-{{ benchmark.anchor }}">
-      <h2><a href="{{ benchmark.url }}">{{ benchmark.title }}</a></h2>
-      {{ benchmarkTable(benchmark) }}
-    </section>
-    {% endif %}{% endfor %}
-    {% include "player-answers.njk" %}
+    {% include "toplist.njk" %}
     <p class="mt-4 text-sm text-base-content/55">Partner links may earn us a commission. Compensation does not change the figures or order. No purchase is necessary to participate in sweepstakes. Eligibility and terms vary.</p>
   </section>
 
-  <section class="py-10" aria-labelledby="data-heading">
-    <div class="mb-5 flex flex-wrap items-end justify-between gap-3">
-      <div>
-        <h2 id="data-heading" class="section-title">Sources and history</h2>
-        <p class="m-0 text-base-content/60"><a href="/updates/leaderboard.json">Current benchmark data</a>. The downloads below preserve the earlier reviewed operator dataset.</p>
-      </div>
-      <div class="flex gap-2">
-        <a class="btn btn-sm btn-outline" href="/assets/data/operators-2026.1.json" download>JSON</a>
-        <a class="btn btn-sm btn-outline" href="/assets/data/player-value-2026.1.csv" download>CSV</a>
-      </div>
-    </div>
-    <p class="text-base-content/60">Amounts, conditions and field-level sources are included in the downloads. Published terms are separate from funded test results. <a href="/methodology/">Our methodology</a>.</p>
-  </section>
 </div>
 </main>

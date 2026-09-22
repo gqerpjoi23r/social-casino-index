@@ -1,7 +1,9 @@
 # Daily operator monitor
 
-The daily GitHub Actions workflow collects the existing ten operators at 06:17 UTC.
+The daily GitHub Actions workflow checks the configured operators at 06:17 UTC.
 Use `workflow_dispatch` for an additional run. Schedules can start late.
+The bounded source queue rotates oldest checks first; a run does not guarantee
+that every field or every configured source was refreshed.
 
 ## Collection
 
@@ -96,5 +98,13 @@ The main-branch workflow validates the site before committing data and generated
 `docs/`. It then explicitly deploys a Pages artifact, because the automatic
 data commit uses the workflow token. Branch runs do not commit or deploy.
 Concurrent main changes cause the push to fail rather than overwrite work.
-Numeric results remain staged in S3; this workflow does not overwrite reviewed
-operator facts or publish a purchase-value benchmark.
+Source-grounded numeric results publish through the shared evidence model after
+archive verification and validation. Reviewed facts and private source captures
+remain separate. The homepage uses one toplist; query-specific benchmark pages
+remain available on their existing URLs.
+
+Each attempted source has `checkedAt`. Published records also carry
+`firstObservedAt` and `lastChangedAt`. The latter compares values and qualifying
+conditions with the previous source/category snapshot, not extraction IDs or
+capture dates. An initial observation has no change date. Failed checks preserve
+these dates. These describe observed evidence, not an operator's effective date.
