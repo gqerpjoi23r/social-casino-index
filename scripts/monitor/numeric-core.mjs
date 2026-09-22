@@ -99,8 +99,8 @@ export function checkExtraction(data, pages) {
     const normalizedQuote = normalize(item.quote).replace(/(\d),(?=\d)/g, "$1")
       .replace(/\bonce\b|\bone time\b/gi, "1").replace(/\btwice\b/gi, "2").replace(/\bthree times\b/gi, "3");
     const supportedNumbers = [...normalizedQuote.matchAll(/\d+(?:\.\d+)?/g)].map(match => Number(match[0]));
-    for (const match of normalizedQuote.matchAll(/(\d+(?:\.\d+)?)\s*(million|thousand)\b/gi)) {
-      supportedNumbers.push(Number(match[1]) * (match[2].toLowerCase() === "million" ? 1000000 : 1000));
+    for (const match of normalizedQuote.matchAll(/(\d+(?:\.\d+)?)\s*(million|thousand|m|k)\b/gi)) {
+      supportedNumbers.push(Number(match[1]) * (/^(million|m)$/i.test(match[2]) ? 1000000 : 1000));
     }
     if (numericValues.some(([key, value]) => value !== null && !supportedNumbers.includes(value) &&
         !(kind === "offers" && key === "intervalHours" && value === 24 && /daily|every day|once per day|each day/i.test(item.quote)) &&

@@ -10,6 +10,8 @@
     "dorados": ["dorados.com", "www.dorados.com"]
   },
   "additionalSources": [
+    { "operatorId": "zonko", "id": "zonko-daily", "url": "https://www.zonko.com/promotions/daily-bonus/", "purpose": "daily_reward" },
+    { "operatorId": "wow-vegas", "id": "wow-free-sc", "url": "https://help.wowvegas.com/en/articles/11969957-how-can-i-earn-free-sc-on-wow-vegas", "purpose": "daily_reward" },
     { "operatorId": "wow-vegas", "id": "wow-promotions", "url": "https://www.wowvegas.com/promotions", "purpose": "daily_reward" },
     { "operatorId": "chumba", "id": "chumba-promotions", "url": "https://www.chumbacasino.com/promotions", "purpose": "daily_reward" },
     { "operatorId": "stake-us", "id": "stake-home", "url": "https://stake.us/", "purpose": "daily_reward" },
@@ -28,11 +30,11 @@
     "lucky-bunny": ["lucky-bunny-home"],
     "yay-casino": ["yay-daily", "yay-signup", "yay-rules", "yay-redemption-guide"],
     "dorados": ["dorados-home", "dorados-welcome", "dorados-rules"],
-    "zonko": ["zonko-promotions", "zonko-notice", "zonko-home"],
+    "zonko": ["zonko-daily", "zonko-promotions", "zonko-notice", "zonko-home"],
     "chumba": ["chumba-promotions", "chumba-home", "chumba-redeem"],
     "pulsz": ["pulsz-home", "pulsz-bank", "pulsz-terms"],
     "stake-us": ["stake-home", "stake-coins", "stake-redeem", "stake-terms"],
-    "wow-vegas": ["wow-promotions", "wow-promo", "wow-redemption-time", "wow-redeem"],
+    "wow-vegas": ["wow-free-sc", "wow-promotions", "wow-promo", "wow-redemption-time", "wow-redeem"],
     "mcluck": ["mcluck-home", "mcluck-promotions", "mcluck-redemption-time", "mcluck-redemption-minimum"],
     "sweetsweeps": ["sweetsweeps-home", "sweetsweeps-terms"]
   },

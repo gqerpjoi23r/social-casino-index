@@ -14,6 +14,13 @@ Format:
 
 ---
 
+## 2026-09-22 - Keep conditional daily rewards out of fixed-value sorting
+- Validate daily qualifiers in the offer name as well as its conditions. Do not rank first-claim, variable, random, streak or "up to" rewards as fixed recurring daily SC.
+- Preserve the same homepage layout and source-backed records; only fixed-value comparison eligibility changes.
+- Add the reward-detail URLs linked by Zonko and WOW to priority checks. A discovered detail page must not wait behind unrelated promotion pages.
+- Accept explicit K/M coin notation during numeric grounding, fixing whole-package rejection caused by values such as GC10M. Extractor version is 2.4.1; no inferred reward totals are allowed.
+- Restore cash-minimum eligibility when an unspecified method has an explicit cash-prize basis; this repairs Chumba's reconfirmed 100 SC record without guessing truly unspecified methods.
+
 ## 2026-09-22 - Player-first completeness and attribute sorting
 - Replace the homepage's legacy-score priority with comparable numeric attribute count. Sort the same rows by welcome value, recurring daily SC, published processing window or cash minimum, keeping unknowns last and ignoring other missing fields for a selected sort.
 - Remove the redundant "Daily reward" fallback; initial claims and unquantified rewards do not count as complete daily data. Keep published evidence separate from measured payout claims.

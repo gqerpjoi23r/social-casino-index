@@ -208,6 +208,60 @@
               "kind": "signup"
             }
           ]
+        },
+        {
+          "id": "cash",
+          "title": "Cash redemption minimums",
+          "url": "/bonuses/cash-redemption-minimums/",
+          "rows": [
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "cash",
+              "value": 50,
+              "label": "50 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "a35519efaaed4773afb8",
+              "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+              "observedAt": "2026-09-22T12:37:43.153Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-10T21:21:50.392Z",
+              "lastChangedAt": "2026-09-22T12:37:43.153Z",
+              "conditions": [
+                "Blue WOW Coins cannot be redeemed, as they have no monetary value."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            },
+            {
+              "slug": "chumba",
+              "name": "Chumba Casino",
+              "url": "/redemption-times/chumba/",
+              "metric": "cash",
+              "value": 100,
+              "label": "100 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "71dd3d981f2a34fedc7f",
+              "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+              "observedAt": "2026-09-22T12:37:16.957Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-10T21:20:03.804Z",
+              "lastChangedAt": null,
+              "conditions": [
+                "If it is your first time to redeem, you need to re-verify your phone number.",
+                "Identity verification and banking-information validation are required to redeem prizes."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            }
+          ]
         }
       ]
     }
@@ -316,26 +370,7 @@
           "durationDays": null,
           "kind": null
         },
-        "general": {
-          "metric": "general",
-          "value": 50,
-          "label": "50 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "recordId": "a35519efaaed4773afb8",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-22T12:37:43.153Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-10T21:21:50.392Z",
-          "lastChangedAt": "2026-09-22T12:37:43.153Z",
-          "conditions": [
-            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
+        "general": null,
         "gift": {
           "metric": "gift",
           "value": 20,
@@ -438,7 +473,7 @@
       "collectionStatus": "partial",
       "score": 80.55555555555556,
       "rank": 1,
-      "benefitCount": 6,
+      "benefitCount": 5,
       "componentScores": {
         "signup": 75,
         "purchase": 66.66666666666667,
@@ -446,6 +481,121 @@
       },
       "disclosureCount": 3,
       "status": "Ranked on published offers"
+    },
+    {
+      "slug": "chumba",
+      "name": "Chumba Casino",
+      "productMode": "sweepstakes",
+      "favicon": "/assets/favicons/chumba.png",
+      "url": "/redemption-times/chumba/",
+      "metrics": {
+        "signup": {
+          "metric": "signup",
+          "value": 2,
+          "label": "2 SC",
+          "note": "Immediate. No purchase needed.",
+          "recordId": "d8c68475709e46c12e14",
+          "sourceUrl": "https://www.chumbacasino.com/promotions",
+          "observedAt": "2026-09-22T06:39:06.245Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-22T06:39:06.245Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sign up to claim the peachy welcome offer.",
+            "The displayed offer is \"GC 2,000,000 + SC 2**\"."
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 2,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
+        "welcome": {
+          "metric": "welcome",
+          "value": 2,
+          "label": "2 SC",
+          "note": "Purchase requirement not confirmed.",
+          "recordId": "faba5501be5d74acc8e9",
+          "sourceUrl": "https://www.chumbacasino.com/promotions",
+          "observedAt": "2026-09-22T12:31:57.514Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-22T12:31:57.514Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sign up to claim your peachy welcome offer!",
+            "GC 2,000,000 + SC 2**"
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 2,
+          "durationDays": null,
+          "purchaseRequired": null,
+          "kind": "signup"
+        },
+        "staged": null,
+        "cash": {
+          "metric": "cash",
+          "value": 100,
+          "label": "100 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "71dd3d981f2a34fedc7f",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "observedAt": "2026-09-22T12:37:16.957Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-10T21:20:03.804Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "general": null,
+        "gift": {
+          "metric": "gift",
+          "value": 10,
+          "label": "10 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "4594baf7502b8e59b606",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "observedAt": "2026-09-22T12:37:16.957Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-10T21:20:03.804Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "partial",
+      "score": null,
+      "rank": null,
+      "benefitCount": 4,
+      "componentScores": {},
+      "disclosureCount": 2,
+      "status": "Overall comparison incomplete"
     },
     {
       "slug": "mcluck",
@@ -802,121 +952,6 @@
       "benefitCount": 2,
       "componentScores": {},
       "disclosureCount": 2,
-      "status": "Overall comparison incomplete"
-    },
-    {
-      "slug": "chumba",
-      "name": "Chumba Casino",
-      "productMode": "sweepstakes",
-      "favicon": "/assets/favicons/chumba.png",
-      "url": "/redemption-times/chumba/",
-      "metrics": {
-        "signup": {
-          "metric": "signup",
-          "value": 2,
-          "label": "2 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "d8c68475709e46c12e14",
-          "sourceUrl": "https://www.chumbacasino.com/promotions",
-          "observedAt": "2026-09-22T06:39:06.245Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-22T06:39:06.245Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sign up to claim the peachy welcome offer.",
-            "The displayed offer is \"GC 2,000,000 + SC 2**\"."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2,
-          "totalSc": 2,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "welcome": {
-          "metric": "welcome",
-          "value": 2,
-          "label": "2 SC",
-          "note": "Purchase requirement not confirmed.",
-          "recordId": "faba5501be5d74acc8e9",
-          "sourceUrl": "https://www.chumbacasino.com/promotions",
-          "observedAt": "2026-09-22T12:31:57.514Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T12:31:57.514Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sign up to claim your peachy welcome offer!",
-            "GC 2,000,000 + SC 2**"
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2,
-          "totalSc": 2,
-          "durationDays": null,
-          "purchaseRequired": null,
-          "kind": "signup"
-        },
-        "staged": null,
-        "cash": null,
-        "general": {
-          "metric": "general",
-          "value": 100,
-          "label": "100 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "recordId": "71dd3d981f2a34fedc7f",
-          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-22T12:37:16.957Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-10T21:20:03.804Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "If it is your first time to redeem, you need to re-verify your phone number.",
-            "Identity verification and banking-information validation are required to redeem prizes."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "gift": {
-          "metric": "gift",
-          "value": 10,
-          "label": "10 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "4594baf7502b8e59b606",
-          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-22T12:37:16.957Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-10T21:20:03.804Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "If it is your first time to redeem, you need to re-verify your phone number.",
-            "Identity verification and banking-information validation are required to redeem prizes."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "daily": null,
-        "purchase": null,
-        "purchase10": null,
-        "purchase20": null
-      },
-      "absences": {
-        "signup": null,
-        "purchase": null,
-        "cash": null
-      },
-      "collectionStatus": "partial",
-      "score": null,
-      "rank": null,
-      "benefitCount": 4,
-      "componentScores": {},
-      "disclosureCount": 1,
       "status": "Overall comparison incomplete"
     },
     {
@@ -1766,6 +1801,32 @@
           "rank": 3
         },
         {
+          "slug": "chumba",
+          "name": "Chumba Casino",
+          "url": "/redemption-times/chumba/",
+          "favicon": "/assets/favicons/chumba.png",
+          "metric": "cash",
+          "value": 100,
+          "label": "100 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "71dd3d981f2a34fedc7f",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "observedAt": "2026-09-22T12:37:16.957Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-10T21:20:03.804Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null,
+          "rank": 4
+        },
+        {
           "slug": "zonko",
           "name": "Zonko",
           "url": "/redemption-times/zonko/",
@@ -1980,26 +2041,7 @@
           "durationDays": null,
           "kind": null
         },
-        "generalMinimum": {
-          "metric": "general",
-          "value": 50,
-          "label": "50 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "recordId": "a35519efaaed4773afb8",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-22T12:37:43.153Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-10T21:21:50.392Z",
-          "lastChangedAt": "2026-09-22T12:37:43.153Z",
-          "conditions": [
-            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
+        "generalMinimum": null,
         "lastCheckedAt": "2026-09-22T12:30:06.456Z",
         "welcomeGroup": 0,
         "sortValues": {
@@ -2127,6 +2169,94 @@
         "position": 3
       },
       {
+        "slug": "chumba",
+        "name": "Chumba Casino",
+        "favicon": "/assets/favicons/chumba.png",
+        "url": "/redemption-times/chumba/",
+        "visitUrl": "/go/chumba/",
+        "productMode": "sweepstakes",
+        "welcome": {
+          "metric": "signup",
+          "value": 2,
+          "label": "2 SC free",
+          "note": "On signup; no purchase",
+          "recordId": "d8c68475709e46c12e14",
+          "sourceUrl": "https://www.chumbacasino.com/promotions",
+          "observedAt": "2026-09-22T06:39:06.245Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-22T06:39:06.245Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sign up to claim the peachy welcome offer.",
+            "The displayed offer is \"GC 2,000,000 + SC 2**\"."
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 2,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
+        "daily": {
+          "label": "Amount not verified",
+          "note": "",
+          "sourceUrl": "https://www.chumbacasino.com/promotions",
+          "recordId": "25ec27bf10aa7f5e8dfa",
+          "value": null,
+          "upperValue": null,
+          "unit": "SC",
+          "stage": null,
+          "comparison": null,
+          "observedAt": "2026-09-22T06:39:06.245Z",
+          "conditions": [
+            "Log in daily to claim the bonus."
+          ],
+          "status": "retained",
+          "lastCheckedAt": null,
+          "firstObservedAt": "2026-09-22T06:39:06.245Z",
+          "lastChangedAt": null,
+          "comparable": false
+        },
+        "redemption": null,
+        "cash": {
+          "metric": "cash",
+          "value": 100,
+          "label": "100 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "71dd3d981f2a34fedc7f",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "observedAt": "2026-09-22T12:37:16.957Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-10T21:20:03.804Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "generalMinimum": null,
+        "lastCheckedAt": "2026-09-22T12:30:06.456Z",
+        "welcomeGroup": 0,
+        "sortValues": {
+          "welcome": 2,
+          "daily": null,
+          "redemption": null,
+          "cash": 100
+        },
+        "knownAttributeCount": 2,
+        "missingAttributes": [
+          "daily",
+          "redemption"
+        ],
+        "position": 4
+      },
+      {
         "slug": "yay-casino",
         "name": "YAY Casino",
         "favicon": "/assets/favicons/yay-casino.ico",
@@ -2233,95 +2363,6 @@
         "missingAttributes": [
           "daily",
           "redemption"
-        ],
-        "position": 4
-      },
-      {
-        "slug": "chumba",
-        "name": "Chumba Casino",
-        "favicon": "/assets/favicons/chumba.png",
-        "url": "/redemption-times/chumba/",
-        "visitUrl": "/go/chumba/",
-        "productMode": "sweepstakes",
-        "welcome": {
-          "metric": "signup",
-          "value": 2,
-          "label": "2 SC free",
-          "note": "On signup; no purchase",
-          "recordId": "d8c68475709e46c12e14",
-          "sourceUrl": "https://www.chumbacasino.com/promotions",
-          "observedAt": "2026-09-22T06:39:06.245Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-22T06:39:06.245Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sign up to claim the peachy welcome offer.",
-            "The displayed offer is \"GC 2,000,000 + SC 2**\"."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2,
-          "totalSc": 2,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "daily": {
-          "label": "Amount not verified",
-          "note": "",
-          "sourceUrl": "https://www.chumbacasino.com/promotions",
-          "recordId": "25ec27bf10aa7f5e8dfa",
-          "value": null,
-          "upperValue": null,
-          "unit": "SC",
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-22T06:39:06.245Z",
-          "conditions": [
-            "Log in daily to claim the bonus."
-          ],
-          "status": "retained",
-          "lastCheckedAt": null,
-          "firstObservedAt": "2026-09-22T06:39:06.245Z",
-          "lastChangedAt": null,
-          "comparable": false
-        },
-        "redemption": null,
-        "cash": null,
-        "generalMinimum": {
-          "metric": "general",
-          "value": 100,
-          "label": "100 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "recordId": "71dd3d981f2a34fedc7f",
-          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-22T12:37:16.957Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-10T21:20:03.804Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "If it is your first time to redeem, you need to re-verify your phone number.",
-            "Identity verification and banking-information validation are required to redeem prizes."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "lastCheckedAt": "2026-09-22T12:30:06.456Z",
-        "welcomeGroup": 0,
-        "sortValues": {
-          "welcome": 2,
-          "daily": null,
-          "redemption": null,
-          "cash": null
-        },
-        "knownAttributeCount": 1,
-        "missingAttributes": [
-          "daily",
-          "redemption",
-          "cash"
         ],
         "position": 5
       },
@@ -2582,7 +2623,7 @@
       "welcome": 6,
       "daily": 0,
       "redemption": 4,
-      "cash": 4
+      "cash": 5
     }
   },
   "ranked": [
@@ -2688,26 +2729,7 @@
           "durationDays": null,
           "kind": null
         },
-        "general": {
-          "metric": "general",
-          "value": 50,
-          "label": "50 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "recordId": "a35519efaaed4773afb8",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-22T12:37:43.153Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-10T21:21:50.392Z",
-          "lastChangedAt": "2026-09-22T12:37:43.153Z",
-          "conditions": [
-            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
+        "general": null,
         "gift": {
           "metric": "gift",
           "value": 20,
@@ -2810,7 +2832,7 @@
       "collectionStatus": "partial",
       "score": 80.55555555555556,
       "rank": 1,
-      "benefitCount": 6,
+      "benefitCount": 5,
       "componentScores": {
         "signup": 75,
         "purchase": 66.66666666666667,
@@ -2821,6 +2843,121 @@
     }
   ],
   "incomplete": [
+    {
+      "slug": "chumba",
+      "name": "Chumba Casino",
+      "productMode": "sweepstakes",
+      "favicon": "/assets/favicons/chumba.png",
+      "url": "/redemption-times/chumba/",
+      "metrics": {
+        "signup": {
+          "metric": "signup",
+          "value": 2,
+          "label": "2 SC",
+          "note": "Immediate. No purchase needed.",
+          "recordId": "d8c68475709e46c12e14",
+          "sourceUrl": "https://www.chumbacasino.com/promotions",
+          "observedAt": "2026-09-22T06:39:06.245Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-22T06:39:06.245Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sign up to claim the peachy welcome offer.",
+            "The displayed offer is \"GC 2,000,000 + SC 2**\"."
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 2,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
+        "welcome": {
+          "metric": "welcome",
+          "value": 2,
+          "label": "2 SC",
+          "note": "Purchase requirement not confirmed.",
+          "recordId": "faba5501be5d74acc8e9",
+          "sourceUrl": "https://www.chumbacasino.com/promotions",
+          "observedAt": "2026-09-22T12:31:57.514Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-22T12:31:57.514Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sign up to claim your peachy welcome offer!",
+            "GC 2,000,000 + SC 2**"
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 2,
+          "durationDays": null,
+          "purchaseRequired": null,
+          "kind": "signup"
+        },
+        "staged": null,
+        "cash": {
+          "metric": "cash",
+          "value": 100,
+          "label": "100 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "71dd3d981f2a34fedc7f",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "observedAt": "2026-09-22T12:37:16.957Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-10T21:20:03.804Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "general": null,
+        "gift": {
+          "metric": "gift",
+          "value": 10,
+          "label": "10 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "4594baf7502b8e59b606",
+          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+          "observedAt": "2026-09-22T12:37:16.957Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-10T21:20:03.804Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "If it is your first time to redeem, you need to re-verify your phone number.",
+            "Identity verification and banking-information validation are required to redeem prizes."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "partial",
+      "score": null,
+      "rank": null,
+      "benefitCount": 4,
+      "componentScores": {},
+      "disclosureCount": 2,
+      "status": "Overall comparison incomplete"
+    },
     {
       "slug": "mcluck",
       "name": "McLuck",
@@ -3176,121 +3313,6 @@
       "benefitCount": 2,
       "componentScores": {},
       "disclosureCount": 2,
-      "status": "Overall comparison incomplete"
-    },
-    {
-      "slug": "chumba",
-      "name": "Chumba Casino",
-      "productMode": "sweepstakes",
-      "favicon": "/assets/favicons/chumba.png",
-      "url": "/redemption-times/chumba/",
-      "metrics": {
-        "signup": {
-          "metric": "signup",
-          "value": 2,
-          "label": "2 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "d8c68475709e46c12e14",
-          "sourceUrl": "https://www.chumbacasino.com/promotions",
-          "observedAt": "2026-09-22T06:39:06.245Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-22T06:39:06.245Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sign up to claim the peachy welcome offer.",
-            "The displayed offer is \"GC 2,000,000 + SC 2**\"."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2,
-          "totalSc": 2,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "welcome": {
-          "metric": "welcome",
-          "value": 2,
-          "label": "2 SC",
-          "note": "Purchase requirement not confirmed.",
-          "recordId": "faba5501be5d74acc8e9",
-          "sourceUrl": "https://www.chumbacasino.com/promotions",
-          "observedAt": "2026-09-22T12:31:57.514Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-22T12:31:57.514Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sign up to claim your peachy welcome offer!",
-            "GC 2,000,000 + SC 2**"
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2,
-          "totalSc": 2,
-          "durationDays": null,
-          "purchaseRequired": null,
-          "kind": "signup"
-        },
-        "staged": null,
-        "cash": null,
-        "general": {
-          "metric": "general",
-          "value": 100,
-          "label": "100 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "recordId": "71dd3d981f2a34fedc7f",
-          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-22T12:37:16.957Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-10T21:20:03.804Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "If it is your first time to redeem, you need to re-verify your phone number.",
-            "Identity verification and banking-information validation are required to redeem prizes."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "gift": {
-          "metric": "gift",
-          "value": 10,
-          "label": "10 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "4594baf7502b8e59b606",
-          "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-09-22T12:37:16.957Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-10T21:20:03.804Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "If it is your first time to redeem, you need to re-verify your phone number.",
-            "Identity verification and banking-information validation are required to redeem prizes."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "daily": null,
-        "purchase": null,
-        "purchase10": null,
-        "purchase20": null
-      },
-      "absences": {
-        "signup": null,
-        "purchase": null,
-        "cash": null
-      },
-      "collectionStatus": "partial",
-      "score": null,
-      "rank": null,
-      "benefitCount": 4,
-      "componentScores": {},
-      "disclosureCount": 1,
       "status": "Overall comparison incomplete"
     },
     {

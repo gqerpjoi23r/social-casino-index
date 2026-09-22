@@ -157,6 +157,19 @@ test("explicit million amounts are grounded without inventing arithmetic", () =>
   data.offers[0].goldCoins = 1500001;
   assert.equal(checkExtraction(data, input).rejected[0].reason, "number_not_in_quote");
 });
+test("abbreviated coin quantities do not discard a complete priced SC offer", () => {
+  for (const [quantity, amount] of [["10M", 10000000], ["120K", 120000], ["1.5M", 1500000]]) {
+    const input = pages(`Buy this package for $10 and receive SC30 plus GC${quantity}.`);
+    const data = deterministicExtract(input);
+    data.offers[0].goldCoins = amount;
+    const result = checkExtraction(data, input);
+    assert.equal(result.rejected.length, 0);
+    assert.equal(result.accepted.offers[0].priceUsd, 10);
+    assert.equal(result.accepted.offers[0].immediateSc, 30);
+    data.offers[0].goldCoins = amount + 1;
+    assert.equal(checkExtraction(data, input).rejected[0].reason, "number_not_in_quote");
+  }
+});
 test("months and strict ages cannot pass as days and inclusive ages", () => {
   const data = deterministicExtract(pages("The minimum redemption is 50 SC for eligible players."));
   const fact = data.facts[0];

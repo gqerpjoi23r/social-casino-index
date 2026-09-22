@@ -67,7 +67,7 @@ function operatorMetrics(operator, now, purchaseBudget) {
   const minima = latestRecords(records, r => r.recordType === "facts" && r.field === "redemption_minimum", now)
     .filter(r => r.unit === "SC" && amount(r.value) && ["exact", "at_least"].includes(r.comparison) && r.upperValue == null);
   const cash = minima.filter(r => ["cash", "bank", "debit_card"].includes(r.method) ||
-    (r.method === "general" && /\b(?:cash prizes?|bank transfer)\b/i.test([r.basis, ...(r.conditions || [])].join(" ")) &&
+    (["general", "unspecified"].includes(r.method) && /\b(?:cash prizes?|bank transfer)\b/i.test([r.basis, ...(r.conditions || [])].join(" ")) &&
       !/\b(?:not|excluding|except)\b/i.test([r.basis, ...(r.conditions || [])].join(" "))));
   const metrics = {
     signup: choose(signup.filter(r => r.purchaseRequired === false), "signup", r => r.immediateSc,
@@ -78,13 +78,14 @@ function operatorMetrics(operator, now, purchaseBudget) {
       amount(r.immediateSc) && r.totalSc > r.immediateSc), "staged", r => r.totalSc,
     r => `${number(r.totalSc)} SC`, r => `${number(r.immediateSc)} SC immediate; ${r.durationDays ? `total over ${number(r.durationDays)} days` : "remainder in stages"}.`),
     cash: choose(cash, "cash", r => r.value, r => `${number(r.value)} SC`, () => "Cash redemption minimum.", true),
-    general: choose(minima.filter(r => ["general", "unspecified"].includes(r.method)), "general", r => r.value,
+    general: choose(minima.filter(r => ["general", "unspecified"].includes(r.method) && !cash.includes(r)), "general", r => r.value,
       r => `${number(r.value)} SC`, () => "General redemption minimum; cash method not established.", true),
     gift: choose(minima.filter(r => r.method === "gift_card"), "gift", r => r.value,
       r => `${number(r.value)} SC`, () => "Gift-card redemption minimum.", true),
     daily: choose(offers("recurring_daily").filter(r => r.purchaseRequired === false &&
       (!r.intervalHours || r.intervalHours === 24) &&
-      !/\bfirst daily\b|\bfirst (?:day|login|claim)\b|\bday (?:one|1)\b|\bincreas|\bgrows\b/i.test((r.conditions || []).join(" "))),
+      !/\bfirst daily\b|\bfirst (?:day|login|claim)\b|\bday (?:one|1)\b|\bincreas|\bgrows\b|\bup to\b|\bvar(?:ies|y|iable)\b|\brandom\b|\bstreak\b/i.test(
+        [r.name, r.basis, ...(r.conditions || [])].filter(Boolean).join(" "))),
     "daily", r => r.immediateSc, r => `${number(r.immediateSc)} SC`, () => "Recurring daily reward. No purchase needed."),
   };
   for (const [key, budget] of [["purchase", purchaseBudget], ["purchase10", 10], ["purchase20", 20]]) {

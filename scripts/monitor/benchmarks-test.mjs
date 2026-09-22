@@ -86,16 +86,27 @@ test("budgets use whole packages, ordinary packages qualify, and stages stay dis
   assert.equal(metrics.purchase20.priceUsd, 9);
 });
 test("daily benchmark excludes initial claims and unquantified repeating schedules", () => {
-  for (const conditions of [["First daily bonus only"], ["First login reward"], ["Bonus grows each day"]]) {
+  for (const conditions of [["First daily bonus only"], ["First login reward"], ["Bonus grows each day"],
+    ["Claim up to 5 SC daily"], ["Daily reward varies"], ["Random daily reward"], ["Seven-day streak reward"]]) {
     const result = model([op("a", [record({ kind: "recurring_daily", conditions })])]);
     assert.equal(result.operators[0].metrics.daily, null);
   }
   assert.equal(model([op("a", [record({ kind: "recurring_daily", intervalHours: 24 })])]).operators[0].metrics.daily.value, 5);
 });
+test("daily qualifiers in the offer name also exclude it from fixed daily sorting", () => {
+  const result = model([op("a", [record({ kind: "recurring_daily", name: "First daily claim", intervalHours: 24 })])]);
+  assert.equal(result.operators[0].metrics.daily, null);
+  assert.equal(result.toplist.rows[0].sortValues.daily, null);
+  assert.equal(result.toplist.rows[0].knownAttributeCount, 0);
+});
 test("cash needs explicit method evidence; gifts and USD are not SC cash minima", () => {
   const base = record({ recordType: "facts", field: "redemption_minimum", method: "general", value: 50, unit: "SC", comparison: "at_least" });
   assert.equal(model([op("a", [base])]).operators[0].metrics.cash, null);
   assert.equal(model([op("a", [{ ...base, conditions: ["Applies to cash prizes."] }])]).operators[0].metrics.cash.value, 50);
+  assert.equal(model([op("a", [{ ...base, method: "unspecified" }])]).operators[0].metrics.cash, null);
+  assert.equal(model([op("a", [{ ...base, method: "unspecified", basis: '"Cash Prize" Redemption option' }])]).operators[0].metrics.cash.value, 50);
+  assert.equal(model([op("a", [{ ...base, method: "unspecified", basis: '"Cash Prize" Redemption option' }])]).operators[0].metrics.general, null);
+  assert.equal(model([op("a", [{ ...base, method: "gift_card", basis: "Not the Cash Prize Redemption option" }])]).operators[0].metrics.cash, null);
   for (const change of [{ method: "gift_card" }, { unit: "USD" }, { conditions: ["Not for cash prizes"] }]) {
     assert.equal(model([op("a", [{ ...base, ...change }])]).operators[0].metrics.cash, null);
   }
