@@ -1,0 +1,45 @@
+{% macro answer(details) -%}
+<p class="benefit-answer" id="signup-answer">{% if details.leaders.length %}The {% if details.id == "signup" %}largest published initial no-purchase signup reward{% else %}largest published staged no-purchase welcome total{% endif %} in this comparison is <strong>{{ details.leaders[0].label | escape }}</strong>, at {% for row in details.leaders %}<a href="{{ row.url | escape }}">{{ row.name | escape }}</a>{% if row.status == "retained" %} (previous observation){% endif %}{% if not loop.last %}{% if loop.revindex == 2 %} and {% else %}, {% endif %}{% endif %}{% endfor %}. {% if details.id == "staged" %}The full total is not the initial reward; claim timing and requirements are listed below.{% else %}Larger staged totals and claim requirements are listed below.{% endif %}{% else %}No comparable published {% if details.id == "signup" %}initial signup rewards{% else %}staged welcome totals{% endif %} have been established in this comparison yet.{% endif %}</p>
+{%- endmacro %}
+
+{% macro table(benchmark, details) -%}
+{% if details.rows.length -%}
+<div class="benefit-scroll" tabindex="0" aria-label="{{ benchmark.title | escape }} comparison">
+<table class="benefit-table" data-benchmark="{{ benchmark.id }}">
+  <caption class="sr-only">{{ benchmark.title }}</caption>
+  <thead><tr><th scope="col">Rank</th><th scope="col">Casino</th><th scope="col">{{ benchmark.label }}</th></tr></thead>
+  <tbody>{% for row in details.rows %}
+    <tr data-operator="{{ row.slug }}">
+      <td class="benefit-rank">{{ row.rank }}</td>
+      <th scope="row"><a class="benefit-brand" href="{{ row.url | escape }}">{% if row.favicon %}<img src="{{ row.favicon | escape }}" alt="" width="32" height="32" loading="lazy">{% endif %}<span>{{ row.name | escape }}</span></a></th>
+      <td><strong class="benefit-value">{{ row.label | escape }}</strong>
+      <p class="benefit-note">{% if details.id == "staged" %}{{ row.initialLabel | escape }} initially.{% elif row.staged %}{{ row.totalLabel | escape }} total in stages.{% else %}Initial signup reward.{% endif %}{% if row.staged and row.durationDays %} {{ row.durationDays }}-day claim period.{% endif %}</p>
+      <a class="signup-claim-link" href="#claim-{{ row.slug }}">Claim details<span class="sr-only"> for {{ row.name | escape }}</span></a></td>
+    </tr>
+  {% endfor %}</tbody>
+</table>
+</div>
+{%- endif %}
+{%- endmacro %}
+
+{% macro claims(details) -%}
+{% if details.rows.length -%}
+<section class="signup-claims" aria-labelledby="claim-requirements">
+  <h2 id="claim-requirements">What can I claim, and what is required?</h2>
+{% for row in details.rows %}
+  <section class="signup-claim" id="claim-{{ row.slug }}" data-claim-operator="{{ row.slug }}" data-record-id="{{ row.recordId | escape }}" aria-labelledby="claim-title-{{ row.slug }}">
+    <h3 id="claim-title-{{ row.slug }}"><a href="{{ row.url | escape }}">{{ row.name | escape }}</a></h3>
+    <dl class="signup-amounts">
+      <div><dt>Initial reward</dt><dd>{{ row.initialLabel | escape }}</dd></div>
+{% if row.staged %}      <div><dt>Staged total</dt><dd>{{ row.totalLabel | escape }}</dd></div>{% endif %}
+{% if row.staged and row.durationDays %}      <div><dt>Claim period</dt><dd>{{ row.durationDays }} days</dd></div>{% endif %}
+    </dl>
+{% if row.promoCode %}    <p class="signup-code">Promo code: <strong>{{ row.promoCode | escape }}</strong></p>{% endif %}
+{% if row.conditions.length %}    <ul class="signup-requirements">{% for condition in row.conditions %}<li>{{ condition | escape }}</li>{% endfor %}</ul>{% endif %}
+    <p class="benefit-source"><a href="{{ row.sourceUrl | escape }}" rel="noopener">Operator source</a> · Observed <time datetime="{{ row.observedAt | escape }}">{{ row.observedAt | readableDate }}</time>{% if row.status == "retained" %} · Previous observation{% endif %}</p>
+  </section>
+{% endfor %}
+</section>
+{%- endif %}
+<p class="signup-related"><a href="{{ details.relatedUrl }}">{{ details.relatedLabel }}</a>.</p>
+{%- endmacro %}

@@ -18,7 +18,7 @@ eleventyComputed:
     description: "{{ benchmark.explanation }}"
 ---
 {% from "benefit-row.njk" import benchmarkTable %}
-{% from "cash-minimum-answers.njk" import lowestAnswer, followupAnswers %}
+{% from "cash-minimum-answers.njk" import lowestAnswer, followupAnswers %}{% from "signup-details.njk" import answer as signupAnswer, table as signupTable, claims as signupClaims %}{% set signup = benchmark | signupDetails %}
 {% if benchmark.id == "cash" %}{% set answers = benchmarks | cashMinimumAnswers %}{% endif %}
 <main><article class="wrap">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/bonuses/">Bonus benchmarks</a></li><li aria-current="page">{{ benchmark.title }}</li></ol></nav>
@@ -26,12 +26,14 @@ eleventyComputed:
   <h2 class="mt-6 text-xl">{{ benchmark.question }}</h2>
   {% if benchmark.id == "cash" %}
 {{ lowestAnswer(answers) }}
+  {% elif signup %}
+{{ signupAnswer(signup) }}
   {% elif benchmark.rows.length %}
   <p class="benefit-answer">{% for row in benchmark.rows %}{% if row.rank == 1 %}<a href="{{ row.url }}">{{ row.name }}</a>: <strong>{{ row.label }}</strong>. {{ row.note }} {% endif %}{% endfor %}These are the leading published figures within this comparison.</p>
   {% endif %}
-  {{ benchmarkTable(benchmark, benchmark.id == "cash") }}
+  {% if signup %}{{ signupTable(benchmark, signup) }}{% else %}{{ benchmarkTable(benchmark, benchmark.id == "cash") }}{% endif %}
   <p class="benefit-policy">Observed dates and conditions are attached to each offer. Published benefits, not tested payouts. <a href="/methodology/#published-offers">How we rank</a> · <a href="/updates/leaderboard.json">Benchmark data</a>.</p>
-{% if benchmark.id == "cash" %}{{ followupAnswers(answers) }}{% endif %}
+{% if benchmark.id == "cash" %}{{ followupAnswers(answers) }}{% endif %}{% if signup %}{{ signupClaims(signup) }}{% endif %}
   <h2 class="mt-8 text-xl">Compare another benefit</h2>
   <nav class="benefit-nav" aria-label="Bonus benchmarks">{% for item in benchmarks.benchmarks %}{% if item.id != benchmark.id %}<a href="{{ item.url }}">{{ item.title }}</a>{% endif %}{% endfor %}</nav>
 </article></main>

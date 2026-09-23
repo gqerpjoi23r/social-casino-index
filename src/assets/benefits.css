@@ -74,6 +74,18 @@
 .benefit-evidence ul{padding-left:1.1rem;margin:.5rem 0;overflow-wrap:anywhere}
 .benefit-policy{font-size:.85rem;color:#b8c7be;margin:1rem 0}
 .benefit-source{font-size:.8rem;line-height:1.5;color:#b8c7be;margin:.5rem 0;overflow-wrap:anywhere}
+.signup-claim-link{font-size:.8rem}
+.signup-claims{margin-top:2rem}
+.signup-claims h2{font-size:1.4rem;line-height:1.3;margin:0 0 1rem}
+.signup-claim{padding:1.25rem 0;border-top:1px solid #46524d;scroll-margin-top:90px}
+.signup-claim h3{font-size:1.15rem;margin:0 0 1rem}
+.signup-amounts{display:flex;flex-wrap:wrap;gap:.75rem 2rem;margin:0 0 1rem}
+.signup-amounts dt{font-size:.8rem;color:#b8c7be}
+.signup-amounts dd{font-size:1.1rem;font-weight:600;color:#c1f0d6;margin:0}
+.signup-requirements{max-width:75ch;padding-left:1.2rem;font-size:.95rem;line-height:1.55;overflow-wrap:anywhere}
+.signup-requirements li+li{margin-top:.4rem}
+.signup-code{font-size:.9rem;overflow-wrap:anywhere}
+.signup-related{margin:1.25rem 0}
 .cash-gift-options{list-style:none;margin:1rem 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1.5rem}
 .cash-gift-options h3{font-size:1rem;margin:0 0 .5rem}
 .benefit-directory{padding:2rem 0}

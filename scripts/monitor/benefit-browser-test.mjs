@@ -4,6 +4,7 @@ import { readFile, mkdir } from "node:fs/promises";
 import { resolve, extname } from "node:path";
 import { orderToplist, SORTS } from "../../src/assets/toplist-order.js";
 import { cashMinimumAnswers } from "./cash-answers.mjs";
+import { signupDetails } from "./signup-details.mjs";
 
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
 const root = resolve("docs");
@@ -24,6 +25,7 @@ const base = process.env.BENCHMARK_URL || `http://127.0.0.1:${server.address().p
 const data = await (await fetch(`${base}/updates/leaderboard.json`)).json();
 const cashPath = "/bonuses/cash-redemption-minimums/";
 const answers = cashMinimumAnswers(data);
+const signupBenchmarks = data.benchmarks.filter(b => ["signup", "staged"].includes(b.id));
 const browser = await chromium.launch({ headless: true });
 try {
   const page = await browser.newPage();
@@ -73,6 +75,28 @@ try {
         assert.equal(await gift.locator(".benefit-source a").getAttribute("href"), row.sourceUrl);
         assert.equal(await gift.locator("time").getAttribute("datetime"), row.observedAt);
       }
+    }
+    const signupBenchmark = signupBenchmarks.find(b => b.url === path);
+    if (signupBenchmark) {
+      const details = signupDetails(signupBenchmark);
+      assert.equal(await page.locator("main details").count(), 0);
+      assert.equal(await page.locator("main table").count(), details.rows.length ? 1 : 0);
+      assert.deepEqual(await page.locator("[data-claim-operator]").evaluateAll(rows =>
+        rows.map(row => row.dataset.claimOperator)), details.rows.map(row => row.slug));
+      for (const row of details.rows) {
+        const claim = page.locator(`[data-claim-operator="${row.slug}"]`);
+        assert.equal(await claim.getAttribute("data-record-id"), row.recordId);
+        assert.ok((await claim.innerText()).includes(row.initialLabel));
+        if (row.staged) assert.ok((await claim.innerText()).includes(row.totalLabel));
+        assert.deepEqual(await claim.locator(".signup-requirements li").allTextContents(), row.conditions);
+        assert.equal(await claim.locator(".signup-code").count(), row.promoCode ? 1 : 0);
+        if (row.promoCode) assert.ok((await claim.locator(".signup-code").innerText()).includes(row.promoCode));
+        assert.equal(await claim.locator(".benefit-source a").getAttribute("href"), row.sourceUrl);
+        assert.equal(await claim.locator("time").getAttribute("datetime"), row.observedAt);
+        assert.equal((await claim.locator(".benefit-source").innerText()).includes("Previous observation"), row.status === "retained");
+      }
+      for (const row of details.leaders) assert.ok((await page.locator("#signup-answer").innerText()).includes(row.name));
+      assert.equal(await page.locator(`.signup-related a[href="${details.relatedUrl}"]`).count(), 1);
     }
     for (const benchmark of data.benchmarks) {
       const rows = page.locator(`[data-benchmark="${benchmark.id}"] tbody tr`);
@@ -146,18 +170,30 @@ try {
         await image.evaluate(image => image.decode());
         assert.ok(await image.evaluate(image => image.naturalWidth > 0));
       }
-      if (path === "/" || path === "/bonuses/no-purchase-signup-bonuses/" || path === cashPath) {
+      if (signupBenchmark) {
+        for (const element of await page.locator(".signup-claim h3,.signup-amounts,.signup-requirements,.signup-code").all()) {
+          const box = await element.boundingBox();
+          assert.ok(box.x >= 0 && box.x + box.width <= width, `Claim details overflow at ${width}`);
+        }
+      }
+      if (path === "/" || signupBenchmark || path === cashPath) {
         await page.evaluate(async () => {
           await document.fonts.ready;
           document.activeElement?.blur();
           scrollTo({ top: 0, behavior: "instant" });
         });
         await page.mouse.move(0, 0);
-        await page.screenshot({ path: `${screenshots}/${path === "/" ? "home" : path === cashPath ? "cash" : "signup"}-${width}.png`, fullPage: true });
+        await page.screenshot({ path: `${screenshots}/${path === "/" ? "home" : path === cashPath ? "cash" : signupBenchmark.id}-${width}.png`, fullPage: true });
         if (path === "/") await page.screenshot({ path: `${screenshots}/home-fold-${width}.png` });
       }
     }
     const details = page.locator("main details summary").first();
+    if (signupBenchmark?.rows.length) {
+      const link = page.locator(".signup-claim-link").first();
+      await link.focus();
+      await page.keyboard.press("Enter");
+      assert.equal(new URL(page.url()).hash, `#claim-${signupBenchmark.rows[0].slug}`);
+    }
     if (await details.count()) {
       await details.focus();
       await page.keyboard.press("Enter");
@@ -193,6 +229,17 @@ try {
     await cashTerms.focus();
     await plain.keyboard.press("Enter");
     assert.equal(await cashTerms.evaluate(element => element.parentElement.open), true);
+  }
+  for (const benchmark of signupBenchmarks) {
+    await plain.goto(`${base}${benchmark.url}`);
+    assert.equal(await plain.locator("#signup-answer").isVisible(), true);
+    assert.equal(await plain.locator("main details").count(), 0);
+    for (const claim of await plain.locator(".signup-claim").all()) assert.equal(await claim.isVisible(), true);
+    if (benchmark.rows.length) {
+      await plain.locator(".signup-claim-link").first().focus();
+      await plain.keyboard.press("Enter");
+      assert.equal(new URL(plain.url()).hash, `#claim-${benchmark.rows[0].slug}`);
+    }
   }
   await noJs.close();
   await page.context().addCookies([{ name: "sci_state", value: "__dismissed", url: base }]);
