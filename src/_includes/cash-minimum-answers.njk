@@ -1,0 +1,26 @@
+{% macro operators(rows) -%}
+{% for row in rows %}<a href="{{ row.url | escape }}">{{ row.name | escape }}</a>{% if row.status == "retained" %} (previous observation){% endif %}{% if not loop.last %}{% if loop.revindex == 2 %} and {% else %}, {% endif %}{% endif %}{% endfor %}
+{%- endmacro %}
+
+{% macro lowestAnswer(answers) %}
+<p class="benefit-answer" id="lowest-cash-minimum">{% if answers.hasCash %}
+The lowest published cash redemption minimum in this comparison is <strong>{{ answers.lowest[0].label | escape }}</strong>, at {{ operators(answers.lowest) }}.
+{% else %}We have not established a cash redemption minimum from the covered operator sources yet.{% endif %}</p>
+{% endmacro %}
+
+{% macro followupAnswers(answers) %}
+{% from "benefit-row.njk" import evidence %}
+<section class="benefit-benchmark" aria-labelledby="below-50-sc">
+  <h2 id="below-50-sc">Can I redeem below 50 SC?</h2>
+  <p class="benefit-answer" data-answer="cash-below-50"><strong>Cash:</strong> {% if answers.cashBelow50.length %}Yes. {{ operators(answers.cashBelow50) }} {% if answers.cashBelow50.length == 1 %}has a published minimum{% else %}have published minimums{% endif %} below 50 SC; see the amounts and sources above.{% elif answers.hasCash %}None of the cash minimums in this comparison is below 50 SC. The lowest is {{ answers.lowest[0].label | escape }}.{% else %}No cash minimum has been established in this comparison yet.{% endif %}</p>
+  <p class="benefit-answer" data-answer="gift-below-50"><strong>Gift cards:</strong> {% if answers.giftBelow50.length %}Yes. These published gift-card minimums are below 50 SC. They are not cash redemption minimums.{% else %}We have not established a gift-card minimum below 50 SC from the covered sources.{% endif %}</p>
+  {% if answers.giftBelow50.length %}<ul class="cash-gift-options">
+  {% for row in answers.giftBelow50 %}<li data-gift-operator="{{ row.slug }}"><h3><a href="{{ row.url | escape }}">{{ row.name | escape }}</a></h3>{{ evidence(row, true) }}</li>{% endfor %}
+  </ul>{% endif %}
+</section>
+<section class="benefit-benchmark" aria-labelledby="wow-vs-chumba-cash">
+  <h2 id="wow-vs-chumba-cash">WOW Vegas vs Chumba: which has the lower cash minimum?</h2>
+  <p class="benefit-answer" data-answer="cash-pair">{% if answers.pairComplete %}{% if answers.pairWinner %}<strong>{{ answers.pairWinner.name | escape }}</strong> has the lower published cash minimum.{% else %}Both have the same published cash minimum.{% endif %} {% for row in answers.pair %}<a href="{{ row.url | escape }}">{{ row.name | escape }}</a>: <strong>{{ row.label | escape }}</strong>{% if row.status == "retained" %} (previous observation){% endif %}. {% endfor %}{% else %}We need a published cash minimum for both operators to compare them.{% for row in answers.pair %} <a href="{{ row.url | escape }}">{{ row.name | escape }}</a>: <strong>{{ row.label | escape }}</strong>{% if row.status == "retained" %} (previous observation){% endif %}.{% endfor %}{% endif %}</p>
+  <p><a href="/compare/wow-vegas-vs-chumba/">Compare WOW Vegas and Chumba offers and redemption minimums</a>.</p>
+</section>
+{% endmacro %}
