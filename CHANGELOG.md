@@ -14,6 +14,13 @@ Format:
 
 ---
 
+## 2026-09-23 - Visible signup claim details
+- Improve only the signup and staged-welcome benchmarks with dynamic leaders, initial-versus-total amounts, and uncollapsed offer-specific schedules, requirements, promo codes and dated sources below compact tables.
+- Derive all details from each benchmark's selected record; preserve ranking, collection, exports and other pages. Remove only formatting-only condition fragments from this presentation.
+- Targeted official-source checks support the saved WOW and YAY schedules. McLuck blocked access and Chumba did not expose the offer; retain existing saved observations and dates, and track these check gaps in issue #14.
+- Build on the unmerged cash-page PR #15. No new pages, deployment or Lovd prompt changes; article updates remain dated September 23.
+- Verify 105 monitor tests, release checks and browser coverage at five widths with keyboard/no-JavaScript access. Only the two benchmark HTML pages and their stylesheet change in generated output; data exports remain byte-identical.
+
 ## 2026-09-23 - Direct cash-minimum answers
 - Strengthen the cash benchmark with data-derived lowest/tied minimums, separate below-50-SC cash and gift-card answers, and a WOW Vegas versus Chumba comparison.
 - Show cash sources, observation dates and retained-evidence markers without expanding terms. Add one contextual homepage link and remove duplicate benchmark title branding.

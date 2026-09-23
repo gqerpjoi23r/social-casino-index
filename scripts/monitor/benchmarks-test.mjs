@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { buildBenchmarks } from "./benchmarks.mjs";
 import { cashMinimumAnswers } from "./cash-answers.mjs";
+import { signupDetails } from "./signup-details.mjs";
 import nunjucks from "nunjucks";
 import { safeUrl, publicAddress, checkDestination, discover, needsRendering, sourceQueues } from "./discovery.mjs";
 
@@ -23,6 +24,75 @@ templates.addFilter("readableDate", value => value);
 const answerHtml = result => templates.renderString(
   '{% from "cash-minimum-answers.njk" import lowestAnswer, followupAnswers %}{{ lowestAnswer(answers) }}{{ followupAnswers(answers) }}',
   { answers: cashMinimumAnswers(result) });
+const signupHtml = benchmark => templates.renderString(
+  '{% from "signup-details.njk" import answer, table, claims %}{{ answer(details) }}{{ table(benchmark, details) }}{{ claims(details) }}',
+  { benchmark, details: signupDetails(benchmark) });
+
+test("signup leaders follow the selected initial reward and include all ties", () => {
+  const result = model([complete("z", 5, 2, 50), complete("a", 5, 2, 50), complete("b", 2, 2, 50)]);
+  const benchmark = result.benchmarks.find(b => b.id === "signup");
+  const before = JSON.stringify(result);
+  assert.deepEqual(signupDetails(benchmark).leaders.map(row => row.slug), ["a", "z"]);
+  const html = signupHtml(benchmark);
+  assert.match(html, /largest published initial no-purchase signup reward.*<strong>5 SC<\/strong>/);
+  assert.match(html, /href="\/redemption-times\/a\/">a<\/a> and <a href="\/redemption-times\/z\/">z/);
+  assert.equal(JSON.stringify(result), before);
+  const changed = model([complete("a", 7, 2, 50), complete("z", 5, 2, 50)]);
+  assert.match(signupHtml(changed.benchmarks.find(b => b.id === "signup")), /<strong>7 SC<\/strong>/);
+});
+
+test("signup and staged details never combine different offers from one operator", () => {
+  const result = model([op("a", [
+    record({ id: "initial", sourceId: "initial", immediateSc: 8, totalSc: 8,
+      conditions: ["Initial-only terms."], promoCode: "INITIAL" }),
+    record({ id: "staged", sourceId: "staged", immediateSc: 2, totalSc: 12, durationDays: 7,
+      conditions: ["Finish a task within seven days."], promoCode: "STAGED" }),
+  ])]);
+  const initial = signupHtml(result.benchmarks.find(b => b.id === "signup"));
+  const staged = signupHtml(result.benchmarks.find(b => b.id === "staged"));
+  assert.match(initial, /data-record-id="initial"/);
+  assert.match(initial, /Initial-only terms/);
+  assert.doesNotMatch(initial, /STAGED|Finish a task|12 SC|7 days/);
+  assert.match(staged, /data-record-id="staged"/);
+  assert.match(staged, /largest published staged no-purchase welcome total.*<strong>12 SC<\/strong>/);
+  assert.match(staged, /Initial reward<\/dt><dd>2 SC/);
+  assert.match(staged, /Staged total<\/dt><dd>12 SC/);
+  assert.match(staged, /Claim period<\/dt><dd>7 days/);
+  assert.match(staged, /STAGED|Finish a task/);
+  assert.doesNotMatch(staged, /INITIAL|Initial-only terms/);
+});
+
+test("claim details expose saved requirements without inferring rewards or schedules", () => {
+  const input = op("a", [record({ immediateSc: 2, totalSc: 5, durationDays: null,
+    freshness: "not_reconfirmed", promoCode: '<img src=x onerror="bad()">',
+    conditions: ["**", " --- ", " ", "Chance to win 500 SC.", "20 free spins at 0.1 SC per spin.",
+      "Verify phone <script>bad()</script>", "Complete 150 spins within 7 days."] })]);
+  const benchmark = model([input]).benchmarks.find(b => b.id === "staged");
+  const html = signupHtml(benchmark);
+  assert.equal(signupDetails(benchmark).rows[0].conditions.length, 4);
+  assert.match(html, /<dd>5 SC<\/dd>/);
+  assert.match(html, /Chance to win 500 SC/);
+  assert.match(html, /20 free spins at 0.1 SC per spin/);
+  assert.match(html, /Complete 150 spins within 7 days/);
+  assert.doesNotMatch(html, /Claim period|Day 1|<dd>7 SC|<dd>505 SC|Unknown|no requirements|<details|<script>|<img src=x/);
+  assert.match(html, /&lt;script&gt;/);
+  assert.match(html, /&lt;img/);
+  assert.match(html, /datetime="2026-09-20T12:00:00Z"/);
+  assert.match(html, /Previous observation/);
+  assert.match(html, /href="https:\/\/example.com\/offers"/);
+});
+
+test("optional claim details disappear cleanly and empty benchmarks have one scoped answer", () => {
+  const result = model([op("a", [record({ conditions: [], promoCode: null })])]);
+  const html = signupHtml(result.benchmarks.find(b => b.id === "signup"));
+  assert.doesNotMatch(html, /signup-requirements|signup-code|Claim period|Staged total|Unknown|undefined|null/);
+  for (const id of ["signup", "staged"]) {
+    const empty = signupHtml(model([]).benchmarks.find(b => b.id === id));
+    assert.match(empty, /No comparable published/);
+    assert.doesNotMatch(empty, /<table|class="signup-claims"|Unknown/);
+  }
+  assert.equal(signupDetails({ id: "cash", rows: [] }), null);
+});
 
 test("cash answers include all minimum ties and do not change the exported model", () => {
   const result = model([complete("z", 2, 2, 50), complete("a", 2, 2, 50), complete("b", 2, 2, 100)]);
