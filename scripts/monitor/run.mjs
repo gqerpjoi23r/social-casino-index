@@ -4,7 +4,7 @@ import { FIELDS, VERSION, hash, extract, validQuotes, aggregate } from "./core.m
 import { RequestUsage, retrieve, modelExtract } from "./providers.mjs";
 import { archiveCapture, saveJson, uploadDirectory } from "./archive.mjs";
 import { baselineScope, pagePurpose } from "./state-core.mjs";
-import { sourceQueues, discover, needsRendering } from "./discovery.mjs";
+import { sourceQueues, discover, needsRendering, retryFullContent } from "./discovery.mjs";
 
 const root = process.cwd();
 const read = (path, fallback) => existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : fallback;
@@ -50,6 +50,7 @@ while (count < 50 && queues.some(item => item.attempted < 8 && item.queue.length
     if (process.env.FIRECRAWL_API_KEY) options.push("firecrawl_full");
     if (process.env.BRIGHTDATA_API_KEY && process.env.BRIGHTDATA_ZONE) options.push("brightdata");
     for (const attemptProvider of options) {
+      if (attemptProvider === "firecrawl_full" && !retryFullContent(result, config.sourceOptions?.[source.id])) continue;
       provider = attemptProvider === "firecrawl_full" ? "firecrawl" : attemptProvider;
       if (!usage.reserve(provider)) {
         attempts.push({ provider, status: "request_limit" });
@@ -79,7 +80,7 @@ while (count < 50 && queues.some(item => item.attempted < 8 && item.queue.length
       manifest.captures.push(capture);
       saveJson(output, "manifest.json", manifest);
       const omitted = needsRendering(result, source);
-      if ((result.status === "ok" && !omitted) || result.status === "login_required") break;
+      if ((result.status === "ok" && !omitted) || ["login_required", "unsupported_content"].includes(result.status)) break;
     }
     result = readableResult || result;
     item.checked[source.id] = observedAt;

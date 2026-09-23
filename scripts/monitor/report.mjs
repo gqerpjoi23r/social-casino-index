@@ -43,6 +43,7 @@ const lines = [
   `- ${evaluation.checkedNumbers} non-null numeric fields passed grounding checks. These include ages, intervals and repeated amounts, not just bonus values.`,
   `- ${totals("derived")} complete immediate-purchase packages eligible for the current SC-per-USD calculation.`,
   `- ${evaluation.rejected.length} rejected records: ${Object.entries(rejectedReasons).map(([reason, count]) => `${count} ${reason}`).join("; ")}.`,
+  `- ${(evaluation.recovered || []).length} partial records recovered by omitting an unsupported total while preserving supported price, initial allocation and conditions.`,
   `- ${evaluation.modelErrors.length} model errors; ${evaluation.replayEvents} change events when replaying identical numeric records.`,
   `- Original collection: ${summary.providerCalls.firecrawl} Firecrawl calls. Cached model response files: ${numeric.operators.filter(operator => existsSync(join(directory, `model/${operator.slug}-response.json`))).length}. This extraction pass made ${evaluation.modelCalls} new model calls.`,
   `- Model deployment: ${numeric.model}; returned model: ${models.join(", ")}.`,

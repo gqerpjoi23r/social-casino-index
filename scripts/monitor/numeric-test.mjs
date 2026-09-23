@@ -6,10 +6,54 @@ import { join } from "node:path";
 import { readableText } from "./core.mjs";
 import { archiveCapture, readCapture, uploadFile } from "./archive.mjs";
 import { deterministicExtract, checkExtraction, comparableOffer, changeSignals, retainUnconfirmed, mergeDailyCandidates } from "./numeric-core.mjs";
-import { firecrawlOptions } from "./providers.mjs";
+import { firecrawlOptions, supportedContent } from "./providers.mjs";
+import { retryFullContent, discover } from "./discovery.mjs";
 import { baselineKey, usableRun } from "./state-core.mjs";
+import { emptyExtraction } from "./schema.mjs";
 
 const pages = text => [{ sourceId: "faq", text }];
+test("collection excludes binary assets and reserves full rendering for evidence-backed sources", () => {
+  assert.equal(supportedContent(Buffer.from("PK\u0003\u0004\u0000"), "application/zip"), false);
+  assert.equal(supportedContent(Buffer.from("hello\u0000world"), "text/html"), false);
+  assert.equal(supportedContent(Buffer.from("%PDF-1.7"), "application/octet-stream"), true);
+  assert.equal(supportedContent(Buffer.from("<p>1 SC daily</p>"), "text/html"), true);
+  assert.deepEqual(discover(["https://example.com/promotion.zip", "https://example.com/rules.pdf"],
+    { id: "home", depth: 0 }, "a", ["example.com"]).map(s => s.url), ["https://example.com/rules.pdf"]);
+  assert.equal(retryFullContent({ status: "ok" }), false);
+  assert.equal(retryFullContent({ status: "ok" }, { retryFullContent: true }), true);
+  for (const status of ["blocked", "region_notice", "login_required", "unsupported_content"])
+    assert.equal(retryFullContent({ status }, { retryFullContent: true }), false);
+});
+test("recover an explicit purchase allocation without keeping an invented staged total", () => {
+  const input = pages("A $20 purchase gives 40 SC now plus 25 SC credited over 8 days.");
+  const extraction = deterministicExtract(pages("Buy 40 SC for $20."));
+  extraction.offers[0] = { ...extraction.offers[0], quote: input[0].text, totalSc: 65,
+    durationDays: 8, conditions: ["25 SC credited over 8 days."] };
+  const original = JSON.stringify(extraction);
+  const result = checkExtraction(extraction, input);
+  assert.equal(result.accepted.offers[0].priceUsd, 20);
+  assert.equal(result.accepted.offers[0].immediateSc, 40);
+  assert.equal(result.accepted.offers[0].totalSc, null);
+  assert.equal(result.accepted.offers[0].durationDays, 8);
+  assert.equal(result.recovered[0].field, "totalSc");
+  assert.equal(JSON.stringify(extraction), original);
+  extraction.offers[0].immediateSc = 41;
+  assert.equal(checkExtraction(extraction, input).accepted.offers.length, 0);
+  extraction.offers[0].immediateSc = 40;
+  extraction.offers[0].quote = "Invented $20 purchase of 40 SC and 25 SC over 8 days.";
+  assert.equal(checkExtraction(extraction, input).accepted.offers.length, 0);
+});
+test("request frequency is rejected as a duration without discarding genuine processing estimates", () => {
+  const quote = "Only one Prize redemption request is processed per Customer Account in any 24-hour period.";
+  const extraction = emptyExtraction();
+  extraction.facts.push({ sourceId: "faq", quote, field: "redemption_time", value: 24, upperValue: null,
+    unit: "hours", comparison: "exact", method: "unspecified", stage: "processing", states: [],
+    basis: "one Prize redemption request per Customer Account", conditions: [quote] });
+  assert.equal(checkExtraction(extraction, pages(quote)).rejected[0].reason, "request_frequency_not_duration");
+  const actual = "A redemption request is typically processed within 24 hours.";
+  extraction.facts[0] = { ...extraction.facts[0], quote: actual, basis: "Processing time", conditions: [actual] };
+  assert.equal(checkExtraction(extraction, pages(actual)).accepted.facts.length, 1);
+});
 test("daily free amounts survive deterministic extraction and numeric qualification", () => {
   for (const text of [
     "Claim 1 free SC as your daily bonus.",

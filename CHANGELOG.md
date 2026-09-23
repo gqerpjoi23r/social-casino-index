@@ -14,6 +14,14 @@ Format:
 
 ---
 
+## 2026-09-23 - Evidence-led collection recovery
+- Audit 44 comparison attributes against the verified September 23 archive; replay cached extraction and run an isolated 11-source direct probe without paid calls or production writes. Findings and remaining operator gaps are in `data/monitor/collection-recovery.md`.
+- Exclude binary assets from discovery, retrieval and archived extraction. Restrict full-content retries to configured sources with readable first renders; retain useful Chumba/Lucky Bunny paths and existing request caps.
+- Recover supported purchase price and initial SC when only the total is ungrounded, logging the omitted field. Reject request frequency as processing duration; numeric extractor is 2.4.2.
+- Restore McLuck's explicitly typical processing range and remove Stake's misleading 24-hour request limit from speed comparisons. Attribute counts remain 14 overall; default ordering can change from corrected coverage, not a new ranking policy.
+- Prioritize Stake's existing redemption-progress source. Public numeric observations, confirmation dates, collection baselines and Lovd prompts remain unchanged; wider rendered-run savings still need live measurement after merge.
+- Verify 110 monitor tests, full release, and all seven benchmark pages plus eleven profiles at five viewport widths with keyboard and no-JavaScript checks.
+
 ## 2026-09-23 - Visible signup claim details
 - Improve only the signup and staged-welcome benchmarks with dynamic leaders, initial-versus-total amounts, and uncollapsed offer-specific schedules, requirements, promo codes and dated sources below compact tables.
 - Derive all details from each benchmark's selected record; preserve ranking, collection, exports and other pages. Remove only formatting-only condition fragments from this presentation.

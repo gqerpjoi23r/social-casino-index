@@ -2204,6 +2204,112 @@
     "lastCheckedAt": "2026-09-23T06:32:05.055Z",
     "rows": [
       {
+        "slug": "mcluck",
+        "name": "McLuck",
+        "favicon": "/assets/favicons/mcluck.jpg",
+        "url": "/redemption-times/mcluck/",
+        "visitUrl": "/go/mcluck/",
+        "productMode": "unverified",
+        "welcome": {
+          "metric": "signup",
+          "value": 60,
+          "label": "60 SC free",
+          "note": "On signup; no purchase",
+          "recordId": "9b32a4ff7b7bc4140ccf",
+          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+          "observedAt": "2026-09-23T06:38:49.959Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-23T06:38:49.959Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sign up now.",
+            "Includes a chance to win 500 FREE SC."
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 60,
+          "totalSc": 60,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
+        "daily": {
+          "label": "Amount not verified",
+          "note": "",
+          "sourceUrl": "https://www.mcluck.com/promotions",
+          "recordId": "73fa8f0920559114043c",
+          "value": null,
+          "upperValue": null,
+          "unit": "SC",
+          "stage": null,
+          "comparison": null,
+          "observedAt": "2026-09-16T06:39:06.968Z",
+          "conditions": [
+            "Log in daily to claim rewards."
+          ],
+          "status": "retained",
+          "lastCheckedAt": "2026-09-23T06:32:05.055Z",
+          "firstObservedAt": "2026-09-16T06:39:06.968Z",
+          "lastChangedAt": null,
+          "comparable": false
+        },
+        "redemption": {
+          "label": "Typically 3-5 business days",
+          "note": "Processing; cash",
+          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+          "recordId": "417c2196981e3e818a3d",
+          "value": 3,
+          "upperValue": 5,
+          "unit": "business_days",
+          "stage": "processing",
+          "comparison": "typical",
+          "observedAt": "2026-09-23T06:38:49.959Z",
+          "conditions": [
+            "Processing times are estimates and may vary."
+          ],
+          "status": "published",
+          "lastCheckedAt": "2026-09-23T06:32:05.055Z",
+          "firstObservedAt": "2026-09-23T06:38:49.959Z",
+          "lastChangedAt": "2026-09-23T06:38:49.959Z",
+          "sortHours": 120
+        },
+        "cash": {
+          "metric": "cash",
+          "value": 75,
+          "label": "75 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "60b7bc3ac75c9b8627f8",
+          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+          "observedAt": "2026-09-23T06:38:49.959Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-23T06:38:49.959Z",
+          "lastChangedAt": "2026-09-23T06:38:49.959Z",
+          "conditions": [
+            "The minimum depends on the type of prize selected.",
+            "Cash and gift card prizes have separate minimum redemption requirements."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "generalMinimum": null,
+        "lastCheckedAt": "2026-09-23T06:32:05.055Z",
+        "welcomeGroup": 0,
+        "sortValues": {
+          "welcome": 60,
+          "daily": null,
+          "redemption": 120,
+          "cash": 75
+        },
+        "knownAttributeCount": 3,
+        "missingAttributes": [
+          "daily"
+        ],
+        "position": 1
+      },
+      {
         "slug": "wow-vegas",
         "name": "WOW Vegas",
         "favicon": "/assets/favicons/wow-vegas.png",
@@ -2310,7 +2416,7 @@
         "missingAttributes": [
           "daily"
         ],
-        "position": 1
+        "position": 2
       },
       {
         "slug": "zonko",
@@ -2420,114 +2526,6 @@
         "knownAttributeCount": 3,
         "missingAttributes": [
           "daily"
-        ],
-        "position": 2
-      },
-      {
-        "slug": "mcluck",
-        "name": "McLuck",
-        "favicon": "/assets/favicons/mcluck.jpg",
-        "url": "/redemption-times/mcluck/",
-        "visitUrl": "/go/mcluck/",
-        "productMode": "unverified",
-        "welcome": {
-          "metric": "signup",
-          "value": 60,
-          "label": "60 SC free",
-          "note": "On signup; no purchase",
-          "recordId": "9b32a4ff7b7bc4140ccf",
-          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
-          "observedAt": "2026-09-23T06:38:49.959Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-23T06:38:49.959Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sign up now.",
-            "Includes a chance to win 500 FREE SC."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 60,
-          "totalSc": 60,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "daily": {
-          "label": "Amount not verified",
-          "note": "",
-          "sourceUrl": "https://www.mcluck.com/promotions",
-          "recordId": "73fa8f0920559114043c",
-          "value": null,
-          "upperValue": null,
-          "unit": "SC",
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-16T06:39:06.968Z",
-          "conditions": [
-            "Log in daily to claim rewards."
-          ],
-          "status": "retained",
-          "lastCheckedAt": "2026-09-23T06:32:05.055Z",
-          "firstObservedAt": "2026-09-16T06:39:06.968Z",
-          "lastChangedAt": null,
-          "comparable": false
-        },
-        "redemption": {
-          "label": "Up to 10 days (type unspecified)",
-          "note": "Processing; method varies",
-          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
-          "recordId": "7b049a24dfd4e03b6823",
-          "value": 10,
-          "upperValue": null,
-          "unit": "days_unspecified",
-          "stage": "processing",
-          "comparison": "up_to",
-          "observedAt": "2026-09-23T06:38:49.959Z",
-          "conditions": [
-            "Processing times are estimates and may vary.",
-            "Cash and gift card prizes have separate minimum redemption requirements."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-23T06:32:05.055Z",
-          "firstObservedAt": "2026-09-23T06:38:49.959Z",
-          "lastChangedAt": "2026-09-23T06:38:49.959Z",
-          "sortHours": null
-        },
-        "cash": {
-          "metric": "cash",
-          "value": 75,
-          "label": "75 SC",
-          "note": "Cash redemption minimum.",
-          "recordId": "60b7bc3ac75c9b8627f8",
-          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
-          "observedAt": "2026-09-23T06:38:49.959Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-23T06:38:49.959Z",
-          "lastChangedAt": "2026-09-23T06:38:49.959Z",
-          "conditions": [
-            "The minimum depends on the type of prize selected.",
-            "Cash and gift card prizes have separate minimum redemption requirements."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "generalMinimum": null,
-        "lastCheckedAt": "2026-09-23T06:32:05.055Z",
-        "welcomeGroup": 0,
-        "sortValues": {
-          "welcome": 60,
-          "daily": null,
-          "redemption": null,
-          "cash": 75
-        },
-        "knownAttributeCount": 2,
-        "missingAttributes": [
-          "daily",
-          "redemption"
         ],
         "position": 3
       },
@@ -2781,75 +2779,6 @@
         "position": 6
       },
       {
-        "slug": "stake-us",
-        "name": "Stake.us",
-        "favicon": "/assets/favicons/stake-us.png",
-        "url": "/redemption-times/stake-us/",
-        "visitUrl": "/go/stake-us/",
-        "productMode": "sweepstakes",
-        "welcome": null,
-        "daily": {
-          "label": "Amount not verified",
-          "note": "",
-          "sourceUrl": "https://stake.us/policies/terms",
-          "recordId": "82468a019d1e20de6537",
-          "value": null,
-          "upperValue": null,
-          "unit": "SC",
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-23T06:40:29.223Z",
-          "conditions": [
-            "Claim Stake Cash once per day by logging into the Customer Account and claiming the daily bonus.",
-            "The published text does not state the Stake Cash amount."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-23T06:32:05.055Z",
-          "firstObservedAt": "2026-09-23T06:40:29.223Z",
-          "lastChangedAt": "2026-09-23T06:40:29.223Z",
-          "comparable": false
-        },
-        "redemption": {
-          "label": "24 hours",
-          "note": "Processing; method unspecified",
-          "sourceUrl": "https://stake.us/policies/terms",
-          "recordId": "d9cc8e0b8cd92c28336a",
-          "value": 24,
-          "upperValue": null,
-          "unit": "hours",
-          "stage": "processing",
-          "comparison": "exact",
-          "observedAt": "2026-09-23T06:40:29.223Z",
-          "conditions": [
-            "Only one Prize redemption request is processed per Customer Account in any 24-hour period.",
-            "Requests are processed in the order received.",
-            "Identity verification and certain Payment Mediums may cause payment delays."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-23T06:32:05.055Z",
-          "firstObservedAt": "2026-09-23T06:40:29.223Z",
-          "lastChangedAt": null,
-          "sortHours": 24
-        },
-        "cash": null,
-        "generalMinimum": null,
-        "lastCheckedAt": "2026-09-23T06:32:05.055Z",
-        "welcomeGroup": 2,
-        "sortValues": {
-          "welcome": null,
-          "daily": null,
-          "redemption": 24,
-          "cash": null
-        },
-        "knownAttributeCount": 1,
-        "missingAttributes": [
-          "welcome",
-          "daily",
-          "cash"
-        ],
-        "position": 7
-      },
-      {
         "slug": "dorados",
         "name": "Dorados",
         "favicon": "/assets/favicons/dorados.jpg",
@@ -2916,7 +2845,7 @@
           "redemption",
           "cash"
         ],
-        "position": 8
+        "position": 7
       },
       {
         "slug": "pulsz",
@@ -2927,6 +2856,55 @@
         "productMode": "unverified",
         "welcome": null,
         "daily": null,
+        "redemption": null,
+        "cash": null,
+        "generalMinimum": null,
+        "lastCheckedAt": "2026-09-23T06:32:05.055Z",
+        "welcomeGroup": 2,
+        "sortValues": {
+          "welcome": null,
+          "daily": null,
+          "redemption": null,
+          "cash": null
+        },
+        "knownAttributeCount": 0,
+        "missingAttributes": [
+          "welcome",
+          "daily",
+          "redemption",
+          "cash"
+        ],
+        "position": 8
+      },
+      {
+        "slug": "stake-us",
+        "name": "Stake.us",
+        "favicon": "/assets/favicons/stake-us.png",
+        "url": "/redemption-times/stake-us/",
+        "visitUrl": "/go/stake-us/",
+        "productMode": "sweepstakes",
+        "welcome": null,
+        "daily": {
+          "label": "Amount not verified",
+          "note": "",
+          "sourceUrl": "https://stake.us/policies/terms",
+          "recordId": "82468a019d1e20de6537",
+          "value": null,
+          "upperValue": null,
+          "unit": "SC",
+          "stage": null,
+          "comparison": null,
+          "observedAt": "2026-09-23T06:40:29.223Z",
+          "conditions": [
+            "Claim Stake Cash once per day by logging into the Customer Account and claiming the daily bonus.",
+            "The published text does not state the Stake Cash amount."
+          ],
+          "status": "published",
+          "lastCheckedAt": "2026-09-23T06:32:05.055Z",
+          "firstObservedAt": "2026-09-23T06:40:29.223Z",
+          "lastChangedAt": "2026-09-23T06:40:29.223Z",
+          "comparable": false
+        },
         "redemption": null,
         "cash": null,
         "generalMinimum": null,
