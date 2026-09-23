@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-23 - Direct cash-minimum answers
+- Strengthen the cash benchmark with data-derived lowest/tied minimums, separate below-50-SC cash and gift-card answers, and a WOW Vegas versus Chumba comparison.
+- Show cash sources, observation dates and retained-evidence markers without expanding terms. Add one contextual homepage link and remove duplicate benchmark title branding.
+- Keep rankings, metric eligibility, public exports, collection and Lovd prompts unchanged. Broader content and collection work are tracked in GitHub issues #13 and #14; this branch is not a production deployment.
+- Verify 101 monitor tests, the full release, all seven benchmarks and eleven profiles across five viewport widths, keyboard and no-JavaScript use. Public exports remain byte-identical.
+
 ## 2026-09-22 - Restore the dark homepage skin
 - Restore the existing dark palette while preserving the compact introduction and responsive single toplist.
 - Remove "Most complete" from the sort menu. Keep the initial ranking unchanged; offer only the four player-facing attribute sorts.

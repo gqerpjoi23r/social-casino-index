@@ -73,6 +73,9 @@
 .benefit-evidence summary{cursor:pointer;color:#a3c9eb;text-decoration:underline;text-underline-offset:3px}
 .benefit-evidence ul{padding-left:1.1rem;margin:.5rem 0;overflow-wrap:anywhere}
 .benefit-policy{font-size:.85rem;color:#b8c7be;margin:1rem 0}
+.benefit-source{font-size:.8rem;line-height:1.5;color:#b8c7be;margin:.5rem 0;overflow-wrap:anywhere}
+.cash-gift-options{list-style:none;margin:1rem 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1.5rem}
+.cash-gift-options h3{font-size:1rem;margin:0 0 .5rem}
 .benefit-directory{padding:2rem 0}
 .benefit-directory-list{margin-top:1rem;border-top:1px solid #46524d}
 .benefit-directory-list article{display:grid;grid-template-columns:180px 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid #46524d}

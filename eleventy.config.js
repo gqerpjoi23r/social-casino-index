@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { cashMinimumAnswers } from "./scripts/monitor/cash-answers.mjs";
 
 export default function (eleventyConfig) {
   // Passthrough: files served as-is from the docs/ output.
@@ -24,6 +25,7 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value, null, 2));
+  eleventyConfig.addFilter("cashMinimumAnswers", cashMinimumAnswers);
 
   eleventyConfig.addFilter("limit", (items = [], n = 3) =>
     [...items].slice(0, n),

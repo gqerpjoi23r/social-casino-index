@@ -3,6 +3,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { buildBenchmarks } from "./benchmarks.mjs";
+import { cashMinimumAnswers } from "./cash-answers.mjs";
+import nunjucks from "nunjucks";
 import { safeUrl, publicAddress, checkDestination, discover, needsRendering, sourceQueues } from "./discovery.mjs";
 
 const now = Date.parse("2026-09-21T22:00:00Z");
@@ -16,6 +18,86 @@ const complete = (slug, signup, ratio, cash) => op(slug, [
   record({ id: "cash", recordType: "facts", field: "redemption_minimum", method: "cash", comparison: "at_least", value: cash, unit: "SC" }),
 ]);
 const model = operators => buildBenchmarks({ operators }, [], now);
+const templates = new nunjucks.Environment(new nunjucks.FileSystemLoader("src/_includes"));
+templates.addFilter("readableDate", value => value);
+const answerHtml = result => templates.renderString(
+  '{% from "cash-minimum-answers.njk" import lowestAnswer, followupAnswers %}{{ lowestAnswer(answers) }}{{ followupAnswers(answers) }}',
+  { answers: cashMinimumAnswers(result) });
+
+test("cash answers include all minimum ties and do not change the exported model", () => {
+  const result = model([complete("z", 2, 2, 50), complete("a", 2, 2, 50), complete("b", 2, 2, 100)]);
+  const before = JSON.stringify(result);
+  const answers = cashMinimumAnswers(result);
+  assert.deepEqual(answers.lowest.map(row => row.slug), ["a", "z"]);
+  assert.deepEqual(answers.cashBelow50, []);
+  const html = answerHtml(result);
+  assert.match(html, /lowest published cash redemption minimum.*<strong>50 SC<\/strong>/);
+  for (const slug of ["a", "z"]) assert.ok(html.includes(`href="/redemption-times/${slug}/"`));
+  assert.match(html, /None of the cash minimums in this comparison is below 50 SC/);
+  assert.equal(JSON.stringify(result), before);
+});
+
+test("below 50 is strict and gift/general minima never become cash answers", () => {
+  const minimum = (method, value) => record({ recordType: "facts", field: "redemption_minimum",
+    method, value, comparison: "exact", unit: "SC" });
+  const result = model([
+    op("under", [minimum("cash", 49)]),
+    op("boundary", [minimum("cash", 50)]),
+    op("gift", [minimum("gift_card", 10)]),
+    op("gift-boundary", [minimum("gift_card", 50)]),
+    op("general", [minimum("general", 5)]),
+    op("usd", [{ ...minimum("cash", 1), unit: "USD" }]),
+  ]);
+  const answers = cashMinimumAnswers(result);
+  assert.deepEqual(answers.cashBelow50.map(row => row.slug), ["under"]);
+  assert.deepEqual(answers.giftBelow50.map(row => row.slug), ["gift"]);
+  assert.deepEqual(answers.lowest.map(row => row.slug), ["under"]);
+  const html = answerHtml(result);
+  assert.match(html, /Cash:<\/strong> Yes/);
+  assert.match(html, /data-gift-operator="gift"/);
+  assert.doesNotMatch(html, /data-gift-operator="gift-boundary"/);
+  assert.match(html, /They are not cash redemption minimums/);
+});
+
+test("cash pair answers follow changing amounts, ties and missing operators", () => {
+  for (const [wow, chumba, winner] of [[50, 100, "wow-vegas"], [100, 50, "chumba"], [50, 50, null]]) {
+    const result = model([complete("wow-vegas", 2, 2, wow), complete("chumba", 2, 2, chumba)]);
+    const answers = cashMinimumAnswers(result);
+    assert.equal(answers.pairComplete, true);
+    assert.equal(answers.pairWinner?.slug || null, winner);
+    assert.match(answerHtml(result), winner ? new RegExp(`<strong>${winner}</strong> has the lower`) : /Both have the same/);
+  }
+  for (const operators of [[], [complete("wow-vegas", 2, 2, 50)], [complete("chumba", 2, 2, 100)]]) {
+    const result = model(operators);
+    assert.equal(cashMinimumAnswers(result).pairComplete, false);
+    assert.match(answerHtml(result), /We need a published cash minimum for both/);
+    assert.doesNotMatch(answerHtml(result), /<\/strong> has the lower|Both have the same|undefined|null/);
+  }
+  const empty = answerHtml(model([]));
+  assert.match(empty, /No cash minimum has been established/);
+  assert.match(empty, /We have not established a gift-card minimum below 50 SC/);
+});
+
+test("cash and gift evidence retain dates and markers outside collapsed terms", () => {
+  const input = complete("wow-vegas", 2, 2, 50);
+  input.records.push(record({ id: "gift", recordType: "facts", field: "redemption_minimum",
+    method: "gift_card", value: 10, comparison: "exact", unit: "SC", conditions: ["Gift cards only."] }));
+  input.records.forEach(r => { r.freshness = "not_reconfirmed"; });
+  input.records.find(r => r.id === "cash").conditions = ["Cash terms."];
+  const result = model([input]);
+  const benchmark = result.benchmarks.find(b => b.id === "cash");
+  const html = templates.renderString(
+    '{% from "benefit-row.njk" import benchmarkTable %}{{ benchmarkTable(benchmark, true) }}', { benchmark });
+  assert.match(html, /class="benefit-source">[\s\S]*2026-09-20T12:00:00Z[\s\S]*Previous observation<\/p>[\s\S]*<details/);
+  assert.match(html, /href="https:\/\/example.com\/offers"/);
+  assert.match(html, /Cash terms/);
+  assert.match(answerHtml(result), /previous observation/);
+  assert.match(answerHtml(result), /Previous observation<\/p>/);
+  const unchanged = templates.renderString(
+    '{% from "benefit-row.njk" import evidence %}{{ evidence(row) }}', { row: benchmark.rows[0] });
+  assert.doesNotMatch(unchanged, /class="benefit-source"/);
+  assert.match(unchanged, /<details[\s\S]*Previous observation[\s\S]*2026-09-20T12:00:00Z/);
+});
 
 test("equal-weight rank uses three percentiles and never affiliate status", () => {
   const input = [complete("a", 10, 2, 50), complete("b", 5, 3, 100)];

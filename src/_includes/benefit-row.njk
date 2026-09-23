@@ -1,15 +1,21 @@
-{% macro evidence(row) %}
+{% macro evidence(row, showSource = false) %}
 <strong class="benefit-value">{{ row.label | escape }}</strong>
 {% if row.note %}<p class="benefit-note">{{ row.note | escape }}</p>{% endif %}
+{% if showSource -%}
+<p class="benefit-source"><a href="{{ row.sourceUrl | escape }}" rel="noopener">Operator source</a> · Observed <time datetime="{{ row.observedAt | escape }}">{{ row.observedAt | readableDate }}</time>{% if row.status == "retained" %} · Previous observation{% endif %}</p>
+{% endif -%}
+{% if not showSource or row.promoCode or row.conditions.length -%}
 <details class="benefit-evidence">
-  <summary>Source &amp; terms{% if row.status == "retained" %} · Previous observation{% endif %}</summary>
+{% if showSource %}  <summary>Terms &amp; conditions</summary>
+{% else %}  <summary>Source &amp; terms{% if row.status == "retained" %} · Previous observation{% endif %}</summary>
   <a href="{{ row.sourceUrl | escape }}" rel="noopener">Operator source · <time datetime="{{ row.observedAt | escape }}">{{ row.observedAt | readableDate }}</time></a>
-  {% if row.promoCode %}<p>Code: <strong>{{ row.promoCode | escape }}</strong></p>{% endif %}
+{% endif %}{% if not showSource %}  {% endif %}{% if row.promoCode %}<p>Code: <strong>{{ row.promoCode | escape }}</strong></p>{% endif %}
   {% if row.conditions.length %}<ul>{% for condition in row.conditions %}<li>{{ condition | escape }}</li>{% endfor %}</ul>{% endif %}
 </details>
+{% endif -%}
 {% endmacro %}
 
-{% macro benchmarkTable(benchmark) %}
+{% macro benchmarkTable(benchmark, showSource = false) %}
 {% from "benefit-row.njk" import evidence %}
 {% if benchmark.rows.length %}
 <div class="benefit-scroll" tabindex="0" aria-label="{{ benchmark.title | escape }} comparison">
@@ -20,7 +26,7 @@
     <tr data-operator="{{ row.slug }}">
       <td class="benefit-rank">{{ row.rank }}</td>
       <th scope="row"><a class="benefit-brand" href="{{ row.url }}">{% if row.favicon %}<img src="{{ row.favicon }}" alt="" width="32" height="32" loading="lazy">{% endif %}<span>{{ row.name | escape }}</span></a></th>
-      <td>{{ evidence(row) }}</td>
+      <td>{{ evidence(row, showSource) }}</td>
     </tr>
   {% endfor %}</tbody>
 </table>

@@ -3,6 +3,7 @@ import { createServer } from "node:http";
 import { readFile, mkdir } from "node:fs/promises";
 import { resolve, extname } from "node:path";
 import { orderToplist, SORTS } from "../../src/assets/toplist-order.js";
+import { cashMinimumAnswers } from "./cash-answers.mjs";
 
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
 const root = resolve("docs");
@@ -21,6 +22,8 @@ const server = createServer(async (request, response) => {
 await new Promise(resolve => server.listen(0, "127.0.0.1", resolve));
 const base = process.env.BENCHMARK_URL || `http://127.0.0.1:${server.address().port}`;
 const data = await (await fetch(`${base}/updates/leaderboard.json`)).json();
+const cashPath = "/bonuses/cash-redemption-minimums/";
+const answers = cashMinimumAnswers(data);
 const browser = await chromium.launch({ headless: true });
 try {
   const page = await browser.newPage();
@@ -35,6 +38,7 @@ try {
       assert.deepEqual(await page.locator("#toplist-sort option:not([disabled])").evaluateAll(options =>
         options.map(option => option.value)), ["welcome", "daily", "redemption", "cash"]);
       assert.equal(await page.locator("main table").count(), 1);
+      assert.equal(await page.locator(`.toplist-footnote a[href="${cashPath}"]`).count(), 1);
       assert.equal(await page.locator(".benefit-directory,.benefit-benchmark,.benefit-nav").count(), 0);
       assert.deepEqual(await page.locator(".toplist-table tbody tr").evaluateAll(rows =>
         rows.map(row => row.dataset.operator)), data.toplist.rows.map(row => row.slug));
@@ -45,6 +49,29 @@ try {
           if (row[key]) assert.ok((await operator.innerText()).includes(row[key].label));
         }
         assert.equal(await operator.locator(".toplist-visit").getAttribute("href"), `/go/${row.slug}/`);
+      }
+    }
+    if (path === cashPath) {
+      assert.equal(await page.title(), "Cash redemption minimums | Social Casino Index");
+      for (const row of answers.lowest) {
+        assert.ok((await page.locator("#lowest-cash-minimum").innerText()).includes(row.name));
+        assert.ok((await page.locator("#lowest-cash-minimum").innerText()).includes(row.label));
+      }
+      for (const row of data.benchmarks.find(b => b.id === "cash").rows) {
+        const source = page.locator(`[data-benchmark="cash"] [data-operator="${row.slug}"] .benefit-source`);
+        assert.equal(await source.isVisible(), true);
+        assert.equal(await source.locator("a").getAttribute("href"), row.sourceUrl);
+        assert.equal(await source.locator("time").getAttribute("datetime"), row.observedAt);
+        assert.equal((await source.innerText()).includes("Previous observation"), row.status === "retained");
+      }
+      assert.equal(await page.locator('a[href="/compare/wow-vegas-vs-chumba/"]').count(), 1);
+      assert.deepEqual(await page.locator("[data-gift-operator]").evaluateAll(rows =>
+        rows.map(row => row.dataset.giftOperator)), answers.giftBelow50.map(row => row.slug));
+      for (const row of answers.giftBelow50) {
+        const gift = page.locator(`[data-gift-operator="${row.slug}"]`);
+        assert.equal(await gift.locator(".benefit-value").innerText(), row.label);
+        assert.equal(await gift.locator(".benefit-source a").getAttribute("href"), row.sourceUrl);
+        assert.equal(await gift.locator("time").getAttribute("datetime"), row.observedAt);
       }
     }
     for (const benchmark of data.benchmarks) {
@@ -119,14 +146,14 @@ try {
         await image.evaluate(image => image.decode());
         assert.ok(await image.evaluate(image => image.naturalWidth > 0));
       }
-      if (path === "/" || path === "/bonuses/no-purchase-signup-bonuses/") {
+      if (path === "/" || path === "/bonuses/no-purchase-signup-bonuses/" || path === cashPath) {
         await page.evaluate(async () => {
           await document.fonts.ready;
           document.activeElement?.blur();
           scrollTo({ top: 0, behavior: "instant" });
         });
         await page.mouse.move(0, 0);
-        await page.screenshot({ path: `${screenshots}/${path === "/" ? "home" : "signup"}-${width}.png`, fullPage: true });
+        await page.screenshot({ path: `${screenshots}/${path === "/" ? "home" : path === cashPath ? "cash" : "signup"}-${width}.png`, fullPage: true });
         if (path === "/") await page.screenshot({ path: `${screenshots}/home-fold-${width}.png` });
       }
     }
@@ -156,6 +183,17 @@ try {
   assert.equal(await plain.locator(".home-menu nav").isVisible(), true);
   await plain.locator(".toplist-sources summary").first().click();
   assert.equal(await plain.locator(".toplist-sources").first().evaluate(element => element.open), true);
+  await plain.locator(`.toplist-footnote a[href="${cashPath}"]`).click();
+  assert.equal(new URL(plain.url()).pathname, cashPath);
+  assert.equal(await plain.locator("#lowest-cash-minimum").isVisible(), true);
+  assert.equal(await plain.locator('[data-answer="cash-below-50"]').isVisible(), true);
+  for (const source of await plain.locator(".benefit-source").all()) assert.equal(await source.isVisible(), true);
+  const cashTerms = plain.locator('main details summary').first();
+  if (await cashTerms.count()) {
+    await cashTerms.focus();
+    await plain.keyboard.press("Enter");
+    assert.equal(await cashTerms.evaluate(element => element.parentElement.open), true);
+  }
   await noJs.close();
   await page.context().addCookies([{ name: "sci_state", value: "__dismissed", url: base }]);
   await page.goto(`${base}/`);
