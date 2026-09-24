@@ -35,9 +35,11 @@ function dailyReward(operator, snapshot, offers) {
       [record.name, record.basis, ...(record.conditions || [])].filter(Boolean).map(dailyQualifierText).join(" ")));
   if (initial) return { ...evidence(initial, `${number(initial.immediateSc)} SC first claim`,
     "Later daily amounts unverified", snapshot), comparable: false };
-  const variable = candidates.find(record => /increas|grows|progressive|streak|varies|variable|surprise|random/i.test(text(record)));
+  const increasingReward = /increas|grows|progressive|streak|better.{0,50}more days|more days.{0,50}better/i;
+  const variable = candidates.find(record => increasingReward.test(text(record)) ||
+    /varies|variable|surprise|random/i.test(text(record)));
   if (variable) {
-    const increasing = /increas|grows|progressive|streak/i.test(text(variable));
+    const increasing = increasingReward.test(text(variable));
     return { ...evidence(variable, increasing ? "Increasing daily reward" : "Variable daily reward",
       "Fixed daily SC not established", snapshot), comparable: false };
   }

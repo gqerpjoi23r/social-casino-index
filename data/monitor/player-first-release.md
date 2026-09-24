@@ -55,3 +55,20 @@ benchmarks, eleven profiles, eight migrated comparison pages and current CSV
 parity. Historical exports remain byte-identical. The subsequent production
 refresh reports its own actual values, order, coverage and requests in the
 workflow summary and `product-impact` artifact.
+
+## Production refresh
+
+Run `2026-09-24T22-03-36-894Z-36065157612-1` completed and deployed.
+It read 47/50 sources, used 38 Firecrawl requests and 12 model requests, and
+recovered two YAY records through one quote repair. YAY remained at 1 SC on
+registration. No new fixed daily amount qualified.
+
+Lucky Bunny's fresh homepage lists changed packages without an established
+immediate SC allocation. The new unknown supersedes the older amount; it leaves
+the homepage while remaining monitored. The live order is McLuck, Chumba Casino,
+WOW Vegas, YAY Casino, Zonko. Offers coverage is now five operators; processing
+remains four, cash minimums six, and fixed daily SC zero across the full roster.
+
+SweetSweeps remains blocked. WOW promotions and one discovered McLuck page
+require login. These collection gaps do not become operator nondisclosure
+findings. Other source-scope and extraction gaps remain in issue #14.
