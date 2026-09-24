@@ -1,4 +1,5 @@
 import { orderToplist } from "../../src/assets/toplist-order.js";
+import { isRequestFrequency } from "./redemption-semantics.mjs";
 
 const number = value => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(value);
 const dated = record => record.lastConfirmedAt || record.capturedAt;
@@ -51,7 +52,9 @@ function redemptionTime(snapshot, records) {
     { ...record, stage: "processing" } : record);
   const candidates = newest(classified.filter(record => record.field === "redemption_time" &&
     Number.isFinite(record.value) && units[record.unit] && methods[record.method] && stages[record.stage] &&
-    ["exact", "up_to", "range", "at_least"].includes(record.comparison) &&
+    ["exact", "up_to", "range", "at_least", "typical"].includes(record.comparison) &&
+    !isRequestFrequency(record) &&
+    (record.upperValue == null || (Number.isFinite(record.upperValue) && record.upperValue >= record.value)) &&
     (record.comparison !== "range" || (Number.isFinite(record.upperValue) && record.upperValue >= record.value)) &&
     !/verification process|provide requested|complete required|automatically declined/i.test(record.basis || "") &&
     (!/VIP|account tier|membership tier/i.test(text(record)) || /\bstandard\b|\bVIP\s*0\b|\bRising\b/i.test(text(record)))));
@@ -60,8 +63,8 @@ function redemptionTime(snapshot, records) {
     (a.method === "unspecified" || a.method === "general") - (b.method === "unspecified" || b.method === "general"));
   const record = candidates[0];
   if (!record) return null;
-  const value = record.upperValue != null ? `${number(record.value)}-${number(record.upperValue)}` :
-    `${record.comparison === "up_to" ? "Up to " : record.comparison === "at_least" ? "At least " : ""}${number(record.value)}`;
+  const value = (record.comparison === "typical" ? "Typically " : "") + (record.upperValue != null ? `${number(record.value)}-${number(record.upperValue)}` :
+    `${record.comparison === "up_to" ? "Up to " : record.comparison === "at_least" ? "At least " : ""}${number(record.value)}`);
   const tier = /\bRising\b/i.test(text(record)) && /\bSilver\b/i.test(text(record)) ? "Rising-Silver tiers" :
     /\bstandard\b/i.test(text(record)) ? "standard tier" : methods[record.method];
   const unit = record.unit === "hours" && /\bbusiness hours\b/i.test(text(record)) ? "business hours" : units[record.unit];

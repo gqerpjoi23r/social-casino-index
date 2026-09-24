@@ -2834,75 +2834,6 @@
         "position": 6
       },
       {
-        "slug": "stake-us",
-        "name": "Stake.us",
-        "favicon": "/assets/favicons/stake-us.png",
-        "url": "/redemption-times/stake-us/",
-        "visitUrl": "/go/stake-us/",
-        "productMode": "sweepstakes",
-        "welcome": null,
-        "daily": {
-          "label": "Amount not verified",
-          "note": "",
-          "sourceUrl": "https://stake.us/policies/terms",
-          "recordId": "82468a019d1e20de6537",
-          "value": null,
-          "upperValue": null,
-          "unit": "SC",
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-23T06:40:29.223Z",
-          "conditions": [
-            "Claim Stake Cash once per day by logging into the Customer Account and claiming the daily bonus.",
-            "The published text does not state the Stake Cash amount."
-          ],
-          "status": "retained",
-          "lastCheckedAt": "2026-09-24T06:31:53.431Z",
-          "firstObservedAt": "2026-09-23T06:40:29.223Z",
-          "lastChangedAt": "2026-09-23T06:40:29.223Z",
-          "comparable": false
-        },
-        "redemption": {
-          "label": "24 hours",
-          "note": "Processing; method unspecified",
-          "sourceUrl": "https://stake.us/policies/terms",
-          "recordId": "d9cc8e0b8cd92c28336a",
-          "value": 24,
-          "upperValue": null,
-          "unit": "hours",
-          "stage": "processing",
-          "comparison": "exact",
-          "observedAt": "2026-09-23T06:40:29.223Z",
-          "conditions": [
-            "Only one Prize redemption request is processed per Customer Account in any 24-hour period.",
-            "Requests are processed in the order received.",
-            "Identity verification and certain Payment Mediums may cause payment delays."
-          ],
-          "status": "retained",
-          "lastCheckedAt": "2026-09-24T06:31:53.431Z",
-          "firstObservedAt": "2026-09-23T06:40:29.223Z",
-          "lastChangedAt": null,
-          "sortHours": 24
-        },
-        "cash": null,
-        "generalMinimum": null,
-        "lastCheckedAt": "2026-09-24T06:31:53.431Z",
-        "welcomeGroup": 2,
-        "sortValues": {
-          "welcome": null,
-          "daily": null,
-          "redemption": 24,
-          "cash": null
-        },
-        "knownAttributeCount": 1,
-        "missingAttributes": [
-          "welcome",
-          "daily",
-          "cash"
-        ],
-        "position": 7
-      },
-      {
         "slug": "dorados",
         "name": "Dorados",
         "favicon": "/assets/favicons/dorados.jpg",
@@ -2986,7 +2917,7 @@
           "daily",
           "cash"
         ],
-        "position": 8
+        "position": 7
       },
       {
         "slug": "pulsz",
@@ -2997,6 +2928,55 @@
         "productMode": "unverified",
         "welcome": null,
         "daily": null,
+        "redemption": null,
+        "cash": null,
+        "generalMinimum": null,
+        "lastCheckedAt": "2026-09-24T06:31:53.431Z",
+        "welcomeGroup": 2,
+        "sortValues": {
+          "welcome": null,
+          "daily": null,
+          "redemption": null,
+          "cash": null
+        },
+        "knownAttributeCount": 0,
+        "missingAttributes": [
+          "welcome",
+          "daily",
+          "redemption",
+          "cash"
+        ],
+        "position": 8
+      },
+      {
+        "slug": "stake-us",
+        "name": "Stake.us",
+        "favicon": "/assets/favicons/stake-us.png",
+        "url": "/redemption-times/stake-us/",
+        "visitUrl": "/go/stake-us/",
+        "productMode": "sweepstakes",
+        "welcome": null,
+        "daily": {
+          "label": "Amount not verified",
+          "note": "",
+          "sourceUrl": "https://stake.us/policies/terms",
+          "recordId": "82468a019d1e20de6537",
+          "value": null,
+          "upperValue": null,
+          "unit": "SC",
+          "stage": null,
+          "comparison": null,
+          "observedAt": "2026-09-23T06:40:29.223Z",
+          "conditions": [
+            "Claim Stake Cash once per day by logging into the Customer Account and claiming the daily bonus.",
+            "The published text does not state the Stake Cash amount."
+          ],
+          "status": "retained",
+          "lastCheckedAt": "2026-09-24T06:31:53.431Z",
+          "firstObservedAt": "2026-09-23T06:40:29.223Z",
+          "lastChangedAt": "2026-09-23T06:40:29.223Z",
+          "comparable": false
+        },
         "redemption": null,
         "cash": null,
         "generalMinimum": null,
@@ -3099,7 +3079,7 @@
     "coverage": {
       "welcome": 6,
       "daily": 0,
-      "redemption": 5,
+      "redemption": 4,
       "cash": 6
     }
   },

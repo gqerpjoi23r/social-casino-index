@@ -5,9 +5,10 @@ import { hash } from "./core.mjs";
 const forbidden = /(?:^|\/)(?:login|signin|sign-in|register|signup|sign-up|logout|checkout|payment|deposit|withdraw|account|cart|go|api)(?:\/|$)/i;
 const gamePage = /(?:^|\/)(?:games?|slots?)(?:\/|$)/i;
 const relevant = /bonus|promo|offer|welcome|reward|daily|package|sweep|redeem|redemption|terms|rules|faq|help|support|\.pdf$/i;
+const asset = /\.(?:zip|gz|exe|dmg|apk|png|jpe?g|gif|webp|svg|ico|mp[34]|woff2?|ttf|css|js)$/i;
 function relevantSource(link) {
   const pathname = new URL(link).pathname;
-  return relevant.test(pathname) && !forbidden.test(pathname) && !gamePage.test(pathname) &&
+  return relevant.test(pathname) && !asset.test(pathname) && !forbidden.test(pathname) && !gamePage.test(pathname) &&
     !/[?&](?:action|token|session|redirect|return|affiliate|ref)=/i.test(link);
 }
 export function publicAddress(address) {
@@ -48,10 +49,16 @@ export function discover(links, source, operatorId, hosts) {
       url, discoveredFrom: source.id, depth: (source.depth || 0) + 1, purpose: "discovered_terms_or_offer" }));
 }
 export function needsRendering(result, source) {
+  if (result.status === "unsupported_content") return false;
   if (result.status !== "ok") return result.status !== "login_required";
   return result.text.length < 800 || /enable javascript|javascript (?:is required|disabled)|loading\.\.\./i.test(result.text) ||
     (/home|promo|offer|welcome|package/.test(source.id) &&
       !/\d[\d,.]*\s*(?:SC\b|sweeps? coins?)|\bSC\s*\d/i.test(result.text));
+}
+
+export function retryFullContent(result, options = {}) {
+  // Full-page rendering cannot resolve an access block or a region notice.
+  return result?.status === "ok" && options.retryFullContent === true;
 }
 export function sourceQueues(operators, config, previous = {}) {
   return operators.map(operator => {

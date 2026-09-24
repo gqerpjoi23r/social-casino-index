@@ -33,12 +33,14 @@
     "zonko": ["zonko-daily", "zonko-promotions", "zonko-notice", "zonko-home"],
     "chumba": ["chumba-promotions", "chumba-home", "chumba-redeem"],
     "pulsz": ["pulsz-home", "pulsz-bank", "pulsz-terms"],
-    "stake-us": ["stake-home", "stake-coins", "stake-redeem", "stake-terms"],
+    "stake-us": ["stake-home", "stake-rollover", "stake-redeem", "stake-terms"],
     "wow-vegas": ["wow-free-sc", "wow-promotions", "wow-promo", "wow-redemption-time", "wow-redeem"],
     "mcluck": ["mcluck-home", "mcluck-promotions", "mcluck-redemption-time", "mcluck-redemption-minimum"],
     "sweetsweeps": ["sweetsweeps-home", "sweetsweeps-terms"]
   },
   "sourceOptions": {
+    "chumba-home": { "retryFullContent": true },
+    "lucky-bunny-home": { "retryFullContent": true },
     "mcluck-promotions": { "retryFullContent": true },
     "jackpota-promotions": { "retryFullContent": true }
   }

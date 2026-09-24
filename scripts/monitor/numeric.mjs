@@ -4,7 +4,7 @@ import { hash } from "./core.mjs";
 import { readCapture, saveJson } from "./archive.mjs";
 import { NUMERIC_VERSION, EXTRACTION_SCHEMA } from "./schema.mjs";
 import { deterministicExtract, checkExtraction, attachProvenance, comparableOffer, changeSignals, retainUnconfirmed, mergeDailyCandidates } from "./numeric-core.mjs";
-import { RequestUsage } from "./providers.mjs";
+import { RequestUsage, supportedContent } from "./providers.mjs";
 
 const directory = process.argv[2];
 if (!directory) throw new Error("Usage: node scripts/monitor/numeric.mjs <capture directory>");
@@ -21,7 +21,7 @@ if (previous) saveJson(directory, "previous-numeric.json", previous);
 const result = { schemaVersion: NUMERIC_VERSION, runId: manifest.runId,
   capturedAt: manifest.startedAt, extractedAt: new Date().toISOString(), publicationStatus: "staged", extractorVersion: NUMERIC_VERSION,
   model: modelEnabled ? process.env.MONITOR_MODEL : null, operators: [], events: [] };
-const evaluation = { runId: manifest.runId, operators: [], rejected: [], modelErrors: [],
+const evaluation = { runId: manifest.runId, operators: [], rejected: [], recovered: [], skippedSources: [], modelErrors: [],
   checkedNumbers: 0, modelCalls: 0, replayEvents: 0,
   limitation: "Schema, quote and numeric grounding checks are not semantic accuracy. New validated records publish as automated_unreviewed." };
 
@@ -42,6 +42,7 @@ A minimum is at_least, a maximum is up_to. Ranges use value and upperValue. Play
 Use greater_than for "over" an age, not at_least. One month is value=1 unit=months, not one day. A virtual Visa card uses virtual_card, not debit_card.
 Extract every tier row's processing time and cap separately with the tier and daily/monthly scope. Use stage=processing for an explicit processing window. Processing is not automatically transfer; use unspecified unless the stage is explicit. A time to receive winnings after request is end_to_end. Keep separate approval time claims.
 Time claims are published promises, NOT measured results. Do not use testimonials, examples, jackpot amounts or marketing purchase discounts as payout policies.
+One redemption request per 24 hours is a request-frequency restriction, not a processing duration. Capture it as a restrictions statement, not a redemption_time fact.
 Verification requirements, state exclusions and closure clauses are statements with exact quotes. Never assert legal status; only summarize what the operator says.
 Do not extract article dates as policy values or game counts as offers. Limit to 12 offers, 30 facts and 8 statements per operator.`;
 
@@ -57,7 +58,13 @@ for (const operator of operators) {
       evaluation.modelErrors.push({ operator: operator.slug, error: "archive_corrupt" });
       break;
     }
-    if (capture.operatorId === operator.slug && capture.status === "ok") bySource.set(capture.sourceId, { ...capture, archiveKey: entry.archiveKey });
+    if (capture.operatorId === operator.slug && capture.status === "ok") {
+      if (!supportedContent(Buffer.from(capture.text), "text/plain")) {
+        evaluation.skippedSources.push({ operator: operator.slug, sourceId: capture.sourceId, reason: "unsupported_content" });
+        continue;
+      }
+      bySource.set(capture.sourceId, { ...capture, archiveKey: entry.archiveKey });
+    }
   }
   const pages = [...bySource.values()];
   const deterministic = checkExtraction(deterministicExtract(pages), pages);
@@ -131,6 +138,7 @@ for (const operator of operators) {
       note: "Arithmetic on an unreviewed advertised package, not a guaranteed cash value or redeemable return." })),
   });
   evaluation.rejected.push(...selected.rejected.map(item => ({ operator: operator.slug, ...item })));
+  evaluation.recovered.push(...(selected.recovered || []).map(item => ({ operator: operator.slug, ...item })));
   const numbers = records.facts.reduce((sum, item) => sum + 1 + Number(item.upperValue !== null), 0) + records.offers.reduce((sum, item) => sum +
     ["priceUsd", "immediateSc", "totalSc", "goldCoins", "advertisedExtraPercent", "advertisedDiscountPercent", "durationDays", "intervalHours"].filter(key => item[key] !== null).length, 0);
   evaluation.checkedNumbers += numbers;

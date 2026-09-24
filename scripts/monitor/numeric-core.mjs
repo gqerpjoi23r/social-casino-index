@@ -1,5 +1,6 @@
 import { normalize, hash, extract } from "./core.mjs";
 import { emptyExtraction, validateExtraction } from "./schema.mjs";
+import { isRequestFrequency } from "./redemption-semantics.mjs";
 
 const number = text => Number(text.replace(/,/g, ""));
 const decimal = "(\\d[\\d,]*(?:\\.\\d+)?)";
@@ -74,7 +75,9 @@ export function checkExtraction(data, pages) {
   if (!validateExtraction(data)) throw new Error(`invalid_extraction_schema:${JSON.stringify(validateExtraction.errors)}`);
   const accepted = emptyExtraction();
   const rejected = [];
-  for (const kind of Object.keys(accepted)) for (const item of data[kind]) {
+  const recovered = [];
+  for (const kind of Object.keys(accepted)) for (const original of data[kind]) {
+    const item = { ...original };
     const page = pages.find(page => page.sourceId === item.sourceId);
     let reason = !page ? "unknown_source" : !normalize(page.text).includes(normalize(item.quote)) ? "unsupported_quote" : null;
     if (kind === "offers" && item.immediateSc !== null && item.totalSc !== null && item.immediateSc > item.totalSc) reason = "immediate_exceeds_total";
@@ -102,10 +105,15 @@ export function checkExtraction(data, pages) {
     for (const match of normalizedQuote.matchAll(/(\d+(?:\.\d+)?)\s*(million|thousand|m|k)\b/gi)) {
       supportedNumbers.push(Number(match[1]) * (/^(million|m)$/i.test(match[2]) ? 1000000 : 1000));
     }
-    if (numericValues.some(([key, value]) => value !== null && !supportedNumbers.includes(value) &&
+    const unsupported = numericValues.filter(([key, value]) => value !== null && !supportedNumbers.includes(value) &&
         !(kind === "offers" && key === "intervalHours" && value === 24 && /daily|every day|once per day|each day/i.test(item.quote)) &&
         !(kind === "offers" && key === "priceUsd" && value === 0 && item.purchaseRequired === false &&
-          /\bfree\b|\bno purchase (?:is )?(?:required|necessary|needed)\b/i.test(item.quote)))) {
+          /\bfree\b|\bno purchase (?:is )?(?:required|necessary|needed)\b/i.test(item.quote)));
+    if (!reason && kind === "offers" && unsupported.length === 1 && unsupported[0][0] === "totalSc" &&
+        item.immediateSc !== null && item.priceUsd > 0 && item.purchaseRequired === true &&
+        ["first_purchase", "purchase_package"].includes(item.kind)) {
+      item.totalSc = null;
+    } else if (unsupported.length) {
       reason = "number_not_in_quote";
     }
     // A price discount is not extra coin allocation, even when its number matches.
@@ -122,10 +130,15 @@ export function checkExtraction(data, pages) {
     if (kind === "offers" && /handwritten|by mail|mail code/i.test(item.quote) && item.immediateSc !== null) {
       reason = "mail_credit_not_immediate";
     }
+    if (kind === "facts" && item.field === "redemption_time" && isRequestFrequency(item)) reason = "request_frequency_not_duration";
     if (reason) rejected.push({ kind, item, reason });
-    else accepted[kind].push({ ...item, quote: normalize(item.quote) });
+    else {
+      if (kind === "offers" && original.totalSc !== null && item.totalSc === null)
+        recovered.push({ kind, item: original, field: "totalSc", reason: "unsupported_total_omitted" });
+      accepted[kind].push({ ...item, quote: normalize(item.quote) });
+    }
   }
-  return { accepted, rejected };
+  return { accepted, rejected, recovered };
 }
 
 export function mergeDailyCandidates(selected, deterministic) {

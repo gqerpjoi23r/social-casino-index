@@ -15,6 +15,26 @@ const operator = (slug, records, change = {}) => ({ slug, name: slug, productMod
 const model = operators => buildBenchmarks({ operators }, [], now);
 const row = records => model([operator("a", records)]).toplist.rows[0];
 
+test("typical processing ranges remain comparable and retain their qualifier", () => {
+  const result = row([record({ recordType: "facts", field: "redemption_time", value: 3,
+    upperValue: 5, comparison: "typical", unit: "business_days", stage: "processing", method: "cash" })]);
+  assert.equal(result.redemption.label, "Typically 3-5 business days");
+  assert.equal(result.sortValues.redemption, 120);
+});
+test("a one-request-per-day limit is not processing speed, including retained records", () => {
+  for (const freshness of ["captured_unreviewed", "not_reconfirmed"]) {
+    const result = row([record({ recordType: "facts", field: "redemption_time", value: 24,
+      comparison: "exact", unit: "hours", stage: "processing", method: "unspecified", freshness,
+      basis: "one Prize redemption request per Customer Account",
+      conditions: ["Only one Prize redemption request is processed per Customer Account in any 24-hour period."] })]);
+    assert.equal(result.redemption, null);
+    assert.equal(result.sortValues.redemption, null);
+  }
+  assert.equal(row([record({ recordType: "facts", field: "redemption_time", value: 24,
+    comparison: "up_to", unit: "hours", stage: "processing", method: "cash",
+    basis: "A redemption request is processed within 24 hours." })]).sortValues.redemption, 24);
+});
+
 test("one list includes incomplete operators without invented scores", () => {
   const result = model([operator("b", [record({ immediateSc: 1 })]), operator("a", [record({})]),
     operator("c", []), operator("entertainment", [], { productMode: "entertainment_only" })]);

@@ -53,6 +53,15 @@ async function responseBody(response) {
   return Buffer.concat(chunks);
 }
 
+export function supportedContent(bytes, contentType) {
+  if (bytes.subarray(0, 4).toString() === "%PDF") return true;
+  if (/^(?:image|audio|video)\//i.test(contentType) ||
+      /(?:zip|gzip|octet-stream|javascript|font)/i.test(contentType)) return false;
+  const sample = bytes.subarray(0, 8192).toString("utf8");
+  return !/[\u0000-\u0008\u000e-\u001f]/u.test(sample) &&
+    (sample.match(/\uFFFD/g) || []).length < Math.max(3, sample.length * 0.01);
+}
+
 export async function retrieve(url, provider, env = process.env, options = {}) {
   let response;
   const signal = AbortSignal.timeout(provider === "direct" ? 25000 : 70000);
@@ -98,6 +107,10 @@ export async function retrieve(url, provider, env = process.env, options = {}) {
   }
   const bytes = await responseBody(response);
   const contentType = response.headers.get("content-type") || "text/html";
+  if (!supportedContent(bytes, contentType)) {
+    return { body: "", text: "", contentType, finalUrl: provider === "direct" ? response.url : url,
+      httpStatus: response.status, links: [], status: "unsupported_content" };
+  }
   let text;
   let body;
   let pdfBase64 = null;
