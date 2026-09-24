@@ -11740,6 +11740,43 @@
           "completePackage": false,
           "firstObservedAt": "2026-09-11T12:45:06.737Z",
           "lastChangedAt": null
+        },
+        {
+          "sourceId": "yay-signup",
+          "name": "Yay Casino Sign Up Bonus",
+          "kind": "signup",
+          "priceUsd": null,
+          "immediateSc": 1,
+          "totalSc": 12,
+          "goldCoins": 120000,
+          "advertisedExtraPercent": null,
+          "advertisedDiscountPercent": null,
+          "extraPercentComparison": null,
+          "durationDays": 7,
+          "intervalHours": null,
+          "purchaseRequired": false,
+          "promoCode": null,
+          "offerStatus": "available",
+          "expiresAt": null,
+          "conditions": [
+            "New players only. No purchase required.",
+            "Registration alone awards 5,000 GC + 1 SC.",
+            "The stated up-to-12-SC package includes separate phone verification, email/SMS opt-in, first daily claim and gameplay steps.",
+            "The new-player spin challenge requires 150 spins in SC mode within the first 7 days and awards 80,000 GC + 8 SC.",
+            "20 free spins are valued at 0.1 SC per spin; their value is not included in immediate SC."
+          ],
+          "id": "bc8f7e1fbb4ded73ba90",
+          "sourceUrl": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
+          "capturedAt": "2026-09-24T10:36:41.663Z",
+          "extractor": "saved-evidence-review:2.5.0",
+          "reviewStatus": "reviewed",
+          "recordType": "offers",
+          "runId": "2026-09-24T10-29-34-240Z-35987472986-1",
+          "freshness": "captured_unreviewed",
+          "lastConfirmedAt": null,
+          "completePackage": false,
+          "firstObservedAt": "2026-09-24T10:36:41.663Z",
+          "lastChangedAt": "2026-09-24T10:36:41.663Z"
         }
       ],
       "unknownValues": {

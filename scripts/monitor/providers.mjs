@@ -19,12 +19,15 @@ export function linksFromHtml(html, url) {
 
 export function firecrawlOptions(url, onlyMainContent = true) {
   return { url, formats: ["markdown", "html", "rawHtml", "links"], onlyMainContent,
-    maxAge: 0, timeout: 60000, location: { country: "US" }, proxy: "basic" };
+    maxAge: 0, timeout: 60000, location: { country: "US" }, proxy: "auto" };
 }
 
 export class RequestUsage {
-  constructor() {
+  constructor(initial = {}) {
     this.calls = { direct: 0, firecrawl: 0, brightdata: 0, model: 0 };
+    for (const key of Object.keys(this.calls)) {
+      if (Number.isInteger(initial[key]) && initial[key] >= 0) this.calls[key] = initial[key];
+    }
     this.firecrawlCreditsReported = 0;
     this.firecrawlResponsesWithCredits = 0;
   }

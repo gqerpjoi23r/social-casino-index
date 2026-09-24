@@ -60,7 +60,14 @@ export function retryFullContent(result, options = {}) {
   // Full-page rendering cannot resolve an access block or a region notice.
   return result?.status === "ok" && options.retryFullContent === true;
 }
-export function sourceQueues(operators, config, previous = {}) {
+export function recoverySource(source, missing = ["welcome", "daily", "redemption", "cash"]) {
+  const topic = `${source.url} ${source.purpose || ""}`;
+  const patterns = { welcome: /welcome|sign.?up|offer|promo|package/i, daily: /daily|reward|bonus|promo/i,
+    redemption: /redeem|redemption|payout|processing/i, cash: /redeem|redemption|minimum|cash|prize/i };
+  return source.depth > 0 && missing.some(field => patterns[field]?.test(topic));
+}
+
+export function sourceQueues(operators, config, previous = {}, missingByOperator = {}) {
   return operators.map(operator => {
     const comparisonIds = new Set(config.comparisonSources?.[operator.slug] || []);
     const seeds = [...operator.sources, ...(config.additionalSources || []).filter(s => s.operatorId === operator.slug)]
@@ -74,7 +81,8 @@ export function sourceQueues(operators, config, previous = {}) {
       return url && relevantSource(url);
     })]) {
       const url = safeUrl(source.url, hosts);
-      if (url && !byUrl.has(url)) byUrl.set(url, { ...source, url });
+      if (url && !byUrl.has(url)) byUrl.set(url, { ...source, url,
+        recoverySource: recoverySource(source, missingByOperator[operator.slug]) });
     }
     const queue = [...byUrl.values()].sort((a, b) =>
       Number(Boolean(b.comparisonSource)) - Number(Boolean(a.comparisonSource)) ||
@@ -82,4 +90,14 @@ export function sourceQueues(operators, config, previous = {}) {
       (a.depth || 0) - (b.depth || 0) || a.id.localeCompare(b.id));
     return { operator, hosts, queue, checked: { ...prior.checked }, attempted: 0, sources: [] };
   });
+}
+
+// Complete comparison seeds before links targeting missing fields, then general sources.
+export function nextSource(item, queues) {
+  if (item.attempted >= 8) return null;
+  const priority = source => source.comparisonSource ? 0 : source.recoverySource ? 1 : 2;
+  const active = queues.filter(queue => queue.attempted < 8);
+  const tier = Math.min(...active.flatMap(queue => queue.queue.map(priority)));
+  const index = item.queue.findIndex(source => priority(source) === tier);
+  return index < 0 ? null : item.queue.splice(index, 1)[0];
 }

@@ -4,7 +4,8 @@ import { FIELDS, VERSION, hash, extract, validQuotes, aggregate } from "./core.m
 import { RequestUsage, retrieve, modelExtract } from "./providers.mjs";
 import { archiveCapture, saveJson, uploadDirectory } from "./archive.mjs";
 import { baselineScope, pagePurpose } from "./state-core.mjs";
-import { sourceQueues, discover, needsRendering, retryFullContent } from "./discovery.mjs";
+import { sourceQueues, discover, needsRendering, retryFullContent, nextSource, recoverySource } from "./discovery.mjs";
+import { buildBenchmarks } from "./benchmarks.mjs";
 
 const root = process.cwd();
 const read = (path, fallback) => existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : fallback;
@@ -28,14 +29,17 @@ const records = [];
 const events = [];
 const metrics = { attempted: 0, readable: 0, failed: 0, deterministicFields: 0, modelFields: 0, cached: 0 };
 let count = 0;
-const queues = sourceQueues(operators, config, previous);
+const missing = Object.fromEntries(buildBenchmarks(read("src/_data/numeric.json", { operators: [] }), operators)
+  .toplist.rows.map(row => [row.slug, row.missingAttributes]));
+const queues = sourceQueues(operators, config, previous, missing);
 const discovery = {};
 // One source per operator per round prevents one large site exhausting the run.
 while (count < 50 && queues.some(item => item.attempted < 8 && item.queue.length)) {
   for (const item of queues) {
     if (count >= 50 || item.attempted >= 8 || !item.queue.length) continue;
     const { operator, hosts, sources } = item;
-    const source = item.queue.shift();
+    const source = nextSource(item, queues);
+    if (!source) continue;
     item.attempted++;
     count++;
     metrics.attempted++;
@@ -87,7 +91,10 @@ while (count < 50 && queues.some(item => item.attempted < 8 && item.queue.length
     if (result?.status === "ok") {
       const seen = new Set([...item.queue.map(s => s.url), ...sources.map(s => s.url), url]);
       for (const found of discover(result.links, source, operator.slug, hosts)) {
-        if (!seen.has(found.url)) { item.queue.push(found); seen.add(found.url); }
+        if (!seen.has(found.url)) {
+          item.queue.push({ ...found, recoverySource: recoverySource(found, missing[operator.slug]) });
+          seen.add(found.url);
+        }
       }
     }
     const record = { id: source.id, url, finalUrl: result?.finalUrl || url, checkedAt: observedAt,

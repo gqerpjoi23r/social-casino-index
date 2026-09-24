@@ -1,34 +1,29 @@
 ---
 layout: base.njk
 title: "Sweepstakes Casino Redemption Times Compared"
-description: "Compare published payout times, first-redemption checks, payment methods and minimum redemptions across ten social casinos."
+description: "Compare published payout times, first-redemption checks, payment methods and minimum redemptions across monitored social casinos."
 permalink: "/redemption-times/"
 tags: ["guides"]
 guideType: "Comparison"
 status: "published"
 publishedAt: "2026-09-09"
-updatedAt: "2026-09-18"
+updatedAt: "2026-09-24"
 authorId: "alex-rowan"
 reviewer: "Social Casino Index research team"
 primaryQuery: "sweepstakes casino redemption times"
 disclosure: "affiliate"
 ---
+{% from "current-comparison.njk" import currentComparison %}
 <main><article class="wrap py-10">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Redemption times</span></li></ol></nav>
-  <p class="eyebrow">10-operator payout index</p>
+  <p class="eyebrow">Published payout terms</p>
   <h1 class="page-title">Sweepstakes Casino Redemption Times</h1>
   <p class="lede">Compare the full payout path: published timing, first-redemption verification, payment rail and minimum request. Each row links to a dated operator record.</p>
   <div class="answer-first"><span class="af-label">Redemption timing</span><p>A redemption has three parts: identity and eligibility checks, operator review, and payment delivery. Compare each operator's published time, method and minimum below. These are dated published terms, not measured payouts or a fastest-operator ranking.</p></div>
   <h2 id="how-redemption-works">How redemption works</h2>
   <p>Check eligibility, complete verification, confirm your redeemable balance and method-specific minimum, then submit a request through the operator's redemption screen. Approval and delivery are separate stages. Read the <a href="/guides/how-to-redeem-sweeps-coins/">step-by-step Sweeps Coins redemption guide</a>.</p>
   <h2 id="by-method">Published payout times, methods and minimums</h2>
-  <div class="table-scroll" tabindex="0" role="region" aria-label="Published redemption comparison">
-    <table class="data redemption-requirements redemption-comparison">
-      <caption>Operator terms accessed September 2026. “Not publicly verified” means the field was not available in a stable public source.</caption>
-      <thead><tr><th>Operator</th><th>Published timing</th><th>First redemption</th><th>Methods</th><th>Minimum</th><th>Evidence reviewed</th></tr></thead>
-      <tbody>{% for op in operators %}<tr><th><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></th><td>{{ op.publishedEstimate }}</td><td>{{ op.firstRedemption }}</td><td>{{ op.methods }}</td><td>{{ op.minRedemption }}</td><td><a href="/redemption-times/{{ op.slug }}/#sources">{{ op.verifiedAt | readableDate }}</a></td></tr>{% endfor %}</tbody>
-    </table>
-  </div>
+  {{ currentComparison(benchmarks.operators) }}
   <h2>How to choose</h2>
   <div class="signposts">
     <div class="signpost"><h3>First payout</h3><p>Prioritize clear identity-check requirements and a published first-redemption window.</p></div>
@@ -37,5 +32,5 @@ disclosure: "affiliate"
     <div class="signpost"><h3>Payment preference</h3><p><a href="/guides/sweepstakes-casino-redemption-methods/">Compare bank, gift-card and crypto methods</a>.</p></div>
   </div>
   <h2>Download and methodology</h2>
-  <p>Download the <a href="/assets/data/operators-2026.1.json">JSON dataset</a> or <a href="/assets/data/redemption-times-2026.1.csv">CSV dataset</a>. Read the <a href="/research/sweepstakes-casino-redemption-times/">full redemption research</a> for process details and the source register.</p>
+  <p>Download the <a href="/updates/leaderboard.json">current comparison JSON</a> or <a href="/updates/comparison.csv">current comparison CSV</a>. Read the <a href="/research/sweepstakes-casino-redemption-times/">full redemption research</a> for process details and the source register.</p>
 </article></main>

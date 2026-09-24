@@ -1,4 +1,4 @@
-import { orderToplist } from "../../src/assets/toplist-order.js";
+import { orderToplist, SORTS } from "../../src/assets/toplist-order.js";
 import { isRequestFrequency } from "./redemption-semantics.mjs";
 import { dailyQualifierText } from "./daily-semantics.mjs";
 
@@ -8,7 +8,7 @@ const text = record => [record.name, record.basis, ...(record.conditions || [])]
 const newest = records => [...records].sort((a, b) =>
   Date.parse(dated(b)) - Date.parse(dated(a)) || a.sourceUrl.localeCompare(b.sourceUrl));
 
-function evidence(record, label, note, snapshot) {
+export function evidence(record, label, note, snapshot = {}) {
   const source = snapshot.coverage?.find(source => source.id === record.sourceId);
   return {
     label, note, sourceUrl: record.sourceUrl, recordId: record.id,
@@ -29,18 +29,28 @@ function dailyReward(operator, snapshot, offers) {
       note: "No purchase required", comparable: true };
   }
   const candidates = newest(offers.filter(record => record.kind === "recurring_daily" &&
-    record.purchaseRequired === false));
+    record.purchaseRequired !== true));
   const initial = candidates.find(record => record.immediateSc != null &&
     /first daily|first (?:day|login|claim)|day (?:one|1)/i.test(
       [record.name, record.basis, ...(record.conditions || [])].filter(Boolean).map(dailyQualifierText).join(" ")));
   if (initial) return { ...evidence(initial, `${number(initial.immediateSc)} SC first claim`,
     "Later daily amounts unverified", snapshot), comparable: false };
-  const recurring = candidates[0];
+  const variable = candidates.find(record => /increas|grows|progressive|streak|varies|variable|surprise|random/i.test(text(record)));
+  if (variable) {
+    const increasing = /increas|grows|progressive|streak/i.test(text(variable));
+    return { ...evidence(variable, increasing ? "Increasing daily reward" : "Variable daily reward",
+      "Fixed daily SC not established", snapshot), comparable: false };
+  }
+  const recurring = candidates.find(record => !/gold coins?/i.test(text(record)) ||
+    /sweeps?(?:takes)? coins?|\bSC\b|stake cash/i.test(text(record))) || candidates[0];
   if (!recurring) return null;
-  return { ...evidence(recurring, "Amount not verified", "", snapshot), comparable: false };
+  const goldOnly = /gold coins?/i.test(text(recurring)) &&
+    !/sweeps?(?:takes)? coins?|\bSC\b|stake cash/i.test(text(recurring));
+  return { ...evidence(recurring, goldOnly ? "Gold Coins only" : "Daily login reward",
+    goldOnly ? "No redeemable SC established" : "Amount not published in collected terms", snapshot), comparable: false };
 }
 
-function redemptionTime(snapshot, records) {
+export function redemptionTime(snapshot, records) {
   const units = { hours: "hours", business_days: "business days", calendar_days: "calendar days",
     days_unspecified: "days (type unspecified)" };
   const stages = { processing: "Processing", approval: "Approval",
@@ -86,7 +96,7 @@ export function buildToplist(operators, numeric, latestRecords, now) {
     const records = snapshot.records || [];
     const offers = latestRecords(records, record => record.recordType === "offers", now);
     const signup = operator.metrics.signup;
-    const purchase = operator.metrics.purchase20 || operator.metrics.purchase;
+    const purchase = operator.metrics.purchase;
     const welcome = signup ? {
       ...signup,
       label: `${signup.label} free`,
@@ -96,9 +106,14 @@ export function buildToplist(operators, numeric, latestRecords, now) {
           `${number(signup.totalSc)} SC total${signup.durationDays ? ` over ${number(signup.durationDays)} days` : " in stages"}` :
         "On signup; no purchase",
     } : purchase ? { ...purchase, note: purchase.kind === "first_purchase" ? "First purchase" : "Regular purchase package" } : null;
+    if (signup && /\bopt.in\b|consent to receive/i.test((signup.conditions || []).join(" "))) {
+      welcome.note += signup.totalSc > signup.immediateSc ?
+        "; opt-in needed for full reward" : "; marketing opt-in required";
+    }
     const row = { slug: operator.slug, name: operator.name, favicon: operator.favicon,
       url: operator.url, visitUrl: `/go/${operator.slug}/`,
-      productMode: operator.productMode, welcome,
+      productMode: operator.productMode, welcome, signup: signup ? { ...welcome } : null,
+      purchase: purchase || null,
       daily: dailyReward(operator, snapshot, offers),
       redemption: operator.productMode === "entertainment_only" ? null :
         redemptionTime(snapshot, latestRecords(records, record =>
@@ -107,19 +122,27 @@ export function buildToplist(operators, numeric, latestRecords, now) {
       lastCheckedAt: snapshot.lastAttempt || null };
     row.welcomeGroup = signup ? 0 : purchase ? 1 : 2;
     row.sortValues = {
-      welcome: signup?.value ?? purchase?.value ?? null,
+      welcome: signup?.value ?? null,
+      purchase: purchase?.value ?? null,
       daily: row.daily?.comparable ? row.daily.value : null,
       redemption: row.redemption?.sortHours ?? null,
       cash: row.cash?.value ?? null,
     };
-    row.knownAttributeCount = Object.values(row.sortValues).filter(value => Number.isFinite(value)).length;
-    row.missingAttributes = Object.keys(row.sortValues).filter(key => row.sortValues[key] === null);
+    // Signup and paid packages are separate sorts within one offers category.
+    const comparable = { welcome: Boolean(signup || purchase), daily: row.sortValues.daily !== null,
+      redemption: row.sortValues.redemption !== null, cash: row.sortValues.cash !== null };
+    row.knownAttributeCount = Object.values(comparable).filter(Boolean).length;
+    row.missingAttributes = Object.keys(comparable).filter(key => !comparable[key]);
+    row.homepageEligible = row.productMode !== "entertainment_only" && row.knownAttributeCount >= 2;
     return row;
   });
   const ordered = orderToplist(rows);
   ordered.forEach((row, index) => { row.position = index + 1; });
-  return { version: "single-toplist-2", attributeCount: 4,
-    lastCheckedAt: numeric?.lastAttemptedAt || null, rows: ordered,
+  const homepageRows = ordered.filter(row => row.homepageEligible).map((row, index) => ({ ...row, position: index + 1 }));
+  return { version: "player-first-3", attributeCount: 4, defaultSort: "welcome",
+    lastCheckedAt: numeric?.lastAttemptedAt || null, rows: ordered, homepageRows,
+    sorts: Object.entries(SORTS).map(([key, sort]) => ({ key, ...sort,
+      available: homepageRows.some(row => Number.isFinite(row.sortValues[key])) })),
     coverage: Object.fromEntries(["welcome", "daily", "redemption", "cash"].map(key =>
-      [key, rows.filter(row => row.sortValues[key] !== null).length])) };
+      [key, rows.filter(row => !row.missingAttributes.includes(key)).length])) };
 }

@@ -13,7 +13,13 @@ budget. A run does not guarantee that every field or source was readable.
 - Firecrawl requests `markdown`, `html`, `rawHtml` and `links` together, with
   `onlyMainContent: true` and `maxAge: 0`. A source-specific
   `sourceOptions[id].onlyMainContent: false` can retain surrounding content.
-- At most 50 sources, 35 Firecrawl calls, 12 model calls and 40 minutes per run.
+- At most 50 sources, 45 Firecrawl calls, 12 model calls and 40 minutes per run.
+- Firecrawl uses automatic proxy fallback. Account-only content stays excluded.
+- Comparison seeds run first across all operators. Discovered official sources
+  targeting missing fields run next, before general refreshes, within the
+  eight-source/operator cap.
+- One optional quote-repair request per run uses the same saved captures and
+  validation rules. Primary extraction and repair share the 12-call model cap.
 - The configured dollar allowances are provisional reservations, not billing guarantees.
 - No accounts, purchases, review scraping, or eligibility circumvention.
 - Numeric extraction uses `gpt-5.6-terra` through the configured Azure endpoint.
@@ -22,8 +28,8 @@ budget. A run does not guarantee that every field or source was readable.
 ## Source selection
 
 The source registry is `src/_data/operators.json`; URL overrides are in
-`data/monitor/config.json`. Each run checks only those configured URLs, not a
-complete site crawl. Captured links support later manual discovery. There is no
+`data/monitor/config.json`. Bounded official-link discovery extends those seeds;
+this is not a complete site crawl. There is no
 guarantee that a public page contains the latest, personalized or account-only offer.
 The manifest records requested and final URLs, provider, status and capture time.
 A capture date is not an offer start date or a verified page-update date.
@@ -110,9 +116,17 @@ conditions with the previous source/category snapshot, not extraction IDs or
 capture dates. An initial observation has no change date. Failed checks preserve
 these dates. These describe observed evidence, not an operator's effective date.
 
+All current operator comparison tables and `/updates/comparison.csv` consume
+the same evidence model as `/updates/leaderboard.json`. Registry fields own
+identity, eligibility, affiliate links and funded-test records, not current
+offer or policy values. Versioned `/assets/data/` editions are immutable.
+
 The publication summary reports per-operator numeric comparison coverage.
 `comparison-coverage.json` records unresolved fields in the private run directory.
 An incomplete report emits a workflow warning: readable pages or valid extraction
-alone do not mean the homepage contains comparable values. The homepage defaults
-to coverage-first order, with in-place sorting that ignores coverage for each
-individual attribute.
+alone do not mean the homepage contains comparable values. Homepage admission
+requires two of four categories (offers, daily SC, processing, cash). Signup and
+paid packages are one admission category but separate sorts. The default sort
+is immediate free signup SC, descending; unknowns last and ties alphabetical.
+Daily descriptions do not become numeric daily coverage. Hidden homepage rows
+remain monitored and available to relevant specialist comparisons.
