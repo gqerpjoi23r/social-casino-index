@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-24 - Preserve improving daily-reward wording after refresh
+- Recognize "rewards become better with more days" as an increasing daily reward, without assigning fixed SC or admitting another operator.
+- Production refresh read 47/50 sources with 38 Firecrawl and 12 model requests. One repair recovered two YAY records; no fixed daily amount was established.
+- Lucky Bunny's new packages do not establish immediate SC and supersede its older comparison value. Five operators now qualify for the homepage. Access and numeric gaps remain tracked in issue #14.
+
 ## 2026-09-24 - Player-first comparisons and one current evidence model
 - Require two of four comparison categories for homepage admission; rank by immediate free signup SC, not completeness. Keep paid SC-per-dollar sorting separate, unknowns last, and all operators monitored.
 - Left-align names and values, move positions/logos right, and place Terms below each entry. Describe supported variable daily rewards without inventing a fixed SC amount.

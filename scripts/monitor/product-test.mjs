@@ -54,6 +54,12 @@ test("descriptive rewards remain useful without inventing daily SC", () => {
   assert.equal(model.toplist.homepageRows[0].daily.label, "Increasing daily reward");
   assert.equal(model.toplist.homepageRows[0].knownAttributeCount, 2);
   assert.equal(model.toplist.homepageRows[0].sortValues.daily, null);
+  for (const condition of ["Rewards become better with more days logged in.",
+    "The more days you log in, the better the rewards become!"]) {
+    const refreshed = build([operator("a", [signup(1), cash(10), { ...daily, conditions: [condition] }])]);
+    assert.equal(refreshed.toplist.homepageRows[0].daily.label, "Increasing daily reward");
+    assert.equal(refreshed.toplist.homepageRows[0].sortValues.daily, null);
+  }
 });
 test("signup ranking uses the registration step, not the total of optional tasks", () => {
   const quote = "Free signup bonus up to 12 SC. Sign Up Click 'Join Now' and complete the quick registration form. You'll receive: 5,000 GC + 1 SC 2 Opt In to Email Updates: 1 SC. First daily claim: 1 SC.";

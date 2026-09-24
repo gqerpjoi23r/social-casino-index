@@ -2346,8 +2346,8 @@
           "kind": "first_purchase"
         },
         "daily": {
-          "label": "Daily login reward",
-          "note": "Amount not published in collected terms",
+          "label": "Increasing daily reward",
+          "note": "Fixed daily SC not established",
           "sourceUrl": "https://www.zonko.com/promotions/daily-bonus/",
           "recordId": "54ab63931f84fa42dd20",
           "value": null,
@@ -5987,8 +5987,8 @@
           "kind": "first_purchase"
         },
         "daily": {
-          "label": "Daily login reward",
-          "note": "Amount not published in collected terms",
+          "label": "Increasing daily reward",
+          "note": "Fixed daily SC not established",
           "sourceUrl": "https://www.zonko.com/promotions/daily-bonus/",
           "recordId": "54ab63931f84fa42dd20",
           "value": null,
@@ -6674,8 +6674,8 @@
           "kind": "first_purchase"
         },
         "daily": {
-          "label": "Daily login reward",
-          "note": "Amount not published in collected terms",
+          "label": "Increasing daily reward",
+          "note": "Fixed daily SC not established",
           "sourceUrl": "https://www.zonko.com/promotions/daily-bonus/",
           "recordId": "54ab63931f84fa42dd20",
           "value": null,
@@ -8700,8 +8700,8 @@
           "kind": "first_purchase"
         },
         "daily": {
-          "label": "Daily login reward",
-          "note": "Amount not published in collected terms",
+          "label": "Increasing daily reward",
+          "note": "Fixed daily SC not established",
           "sourceUrl": "https://www.zonko.com/promotions/daily-bonus/",
           "recordId": "54ab63931f84fa42dd20",
           "value": null,
