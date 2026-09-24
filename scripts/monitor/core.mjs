@@ -34,8 +34,12 @@ export function readableText(body, type = "text/html") {
 
 export function accessStatus(text, url = "", status = 200) {
   if (status === 401 || /\/(?:login|sign-in)(?:[/?#]|$)/i.test(url)) return "login_required";
+  // Embedded widget notices do not invalidate the surrounding public page.
+  const content = text.split("\n").filter(line =>
+    !/^(?:recaptcha(?: requires verification)?|protected by recaptcha)[.!]?$/i.test(line.replace(/\*/g, "").trim())).join("\n");
   if (status === 403 || status === 429 ||
-      /just a moment|verify you are human|checking your browser|captcha|access denied|attention required.*cloudflare/i.test(text.slice(0, 3000))) return "blocked";
+      /just a moment|verify you are human|checking your browser|captcha|access denied|attention required.*cloudflare/i.test(content.slice(0, 3000)) ||
+      (/captcha/i.test(text.slice(0, 3000)) && content.trim().length < 150)) return "blocked";
   if (status >= 400) return "http_error";
   if (/\/geo-block|\/restricted(?:[/?#]|$)/i.test(url) ||
       (/not available in your (?:region|location|country)|access from your (?:region|location|country).*restricted/i.test(text) && text.length < 3000)) return "region_notice";

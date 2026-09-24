@@ -61,6 +61,9 @@ test("daily free amounts survive deterministic extraction and numeric qualificat
     "Claim 1 SC as your daily bonus. No purchase required.",
     "Claim 1 SC as your daily bonus. No purchase is required.",
     "Claim 0.5 Sweepstakes Coins every day as a free reward.",
+    "Claim 1 free SC once per day on your first daily login.",
+    "Claim 1 free SC on your first login each day.",
+    "Claim 0.5 free SC on your first log-in of every day.",
   ]) {
     const result = checkExtraction(deterministicExtract(pages(text)), pages(text));
     assert.equal(result.rejected.length, 0);
@@ -75,6 +78,11 @@ test("daily parser never turns paid, capped, staged or GC-only claims into fixed
     "Claim 10,000 free Gold Coins as your daily bonus.",
     "Claim 1 SC daily with a purchase.",
     "Claim 1 free SC as your daily VIP bonus.",
+    "Claim 1 free SC on your first daily claim only. Log in every day.",
+    "Claim 1 free SC on your first daily claim only, then log in every day.",
+    "Claim 1 free SC once per day on your first daily login during the first 7 days.",
+    "Claim up to 5 free SC once per day on your first daily login.",
+    "Claim 1 free SC once per day on your first daily login with a purchase.",
   ]) assert.equal(deterministicExtract(pages(text)).offers.filter(o =>
     o.kind === "recurring_daily" && o.purchaseRequired === false).length, 0);
   const unknown = deterministicExtract(pages("Claim 1 SC as your daily bonus."));

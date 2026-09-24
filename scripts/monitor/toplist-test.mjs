@@ -58,6 +58,13 @@ test("daily first claims, recurring amounts and paid passes stay distinct", () =
   assert.equal(row([record({ kind: "paid_pass", intervalHours: 24 })]).daily, null);
   assert.equal(row([record({ kind: "recurring_daily", immediateSc: null, totalSc: null })]).daily.label, "Amount not verified");
 });
+test("unranked recurring claim timing is not displayed as a first-ever reward", () => {
+  const result = row([record({ kind: "recurring_daily", immediateSc: 1,
+    conditions: ["Claim once per day on your first daily login.", "Reward varies by day."] })]);
+  assert.equal(result.daily.label, "Amount not verified");
+  assert.equal(result.daily.comparable, false);
+  assert.equal(result.sortValues.daily, null);
+});
 test("signup stages, cheap paid packages and cash methods stay explicit", () => {
   const staged = row([record({ immediateSc: 2, totalSc: 5, durationDays: 3 })]).welcome;
   assert.equal(staged.label, "2 SC free");

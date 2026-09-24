@@ -1,5 +1,6 @@
 import { orderToplist } from "../../src/assets/toplist-order.js";
 import { isRequestFrequency } from "./redemption-semantics.mjs";
+import { dailyQualifierText } from "./daily-semantics.mjs";
 
 const number = value => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(value);
 const dated = record => record.lastConfirmedAt || record.capturedAt;
@@ -30,7 +31,8 @@ function dailyReward(operator, snapshot, offers) {
   const candidates = newest(offers.filter(record => record.kind === "recurring_daily" &&
     record.purchaseRequired === false));
   const initial = candidates.find(record => record.immediateSc != null &&
-    /first daily|first (?:day|login|claim)|day (?:one|1)/i.test(text(record)));
+    /first daily|first (?:day|login|claim)|day (?:one|1)/i.test(
+      [record.name, record.basis, ...(record.conditions || [])].filter(Boolean).map(dailyQualifierText).join(" ")));
   if (initial) return { ...evidence(initial, `${number(initial.immediateSc)} SC first claim`,
     "Later daily amounts unverified", snapshot), comparable: false };
   const recurring = candidates[0];

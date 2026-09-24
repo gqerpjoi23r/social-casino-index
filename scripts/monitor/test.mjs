@@ -41,6 +41,23 @@ test("block pages and login redirects are not observations", () => {
   assert.equal(accessStatus(text, "https://example.com/login"), "login_required");
   assert.equal(accessStatus(text, "", 500), "http_error");
 });
+test("embedded reCAPTCHA notices preserve substantive public evidence", () => {
+  const widget = "Log-in Sign-up\nreCAPTCHA\nRecaptcha requires verification.\nprotected by **reCAPTCHA**\n";
+  const page = widget + text;
+  assert.equal(accessStatus(page), "ok");
+  assert.deepEqual(extract(page).minimum, extract(text).minimum);
+  assert.equal(accessStatus(widget), "blocked");
+  assert.equal(accessStatus(page, "", 403), "blocked");
+  assert.equal(accessStatus(page, "", 429), "blocked");
+  assert.equal(accessStatus(page, "https://example.com/login"), "login_required");
+  assert.equal(accessStatus(page, "", 500), "http_error");
+});
+test("substantial challenge pages and non-widget captcha instructions remain blocked", () => {
+  for (const notice of ["Please verify you are human", "Just a moment", "Checking your browser",
+    "Access denied", "Please complete the CAPTCHA to continue", "reCAPTCHA verification failed"]) {
+    assert.equal(accessStatus(`${notice}\n${text.repeat(30)}`), "blocked");
+  }
+});
 test("baseline, repeat, change and failed-source retention", () => {
   const first = aggregate(operator, [source], null, "2026-09-10T01:00:00Z");
   assert.ok(first.events.every(e => e.type === "baseline"));

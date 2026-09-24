@@ -251,6 +251,33 @@ test("daily qualifiers in the offer name also exclude it from fixed daily sortin
   assert.equal(result.toplist.rows[0].sortValues.daily, null);
   assert.equal(result.toplist.rows[0].knownAttributeCount, 0);
 });
+test("the first login each day is a recurring claim, not an introductory reward", () => {
+  for (const condition of [
+    "You can claim the promotion once per day on your first daily login.",
+    "Claim your reward on your first login each day.",
+    "Claim your reward on your first log-in of every day.",
+  ]) {
+    const input = record({ kind: "recurring_daily", intervalHours: 24, conditions: [condition] });
+    const before = JSON.stringify(input);
+    const result = model([op("a", [input])]);
+    assert.equal(result.operators[0].metrics.daily.value, 5);
+    assert.equal(result.toplist.rows[0].daily.label, "5 SC daily");
+    assert.equal(result.toplist.rows[0].sortValues.daily, 5);
+    assert.equal(result.toplist.rows[0].knownAttributeCount, 1);
+    assert.deepEqual(result.operators[0].metrics.daily.conditions, [condition]);
+    assert.equal(JSON.stringify(input), before);
+    for (const qualifier of ["First claim only.", "Random reward.", "Seven-day streak reward.",
+      "Claim up to 5 SC.", "First day only."]) {
+      const restricted = model([op("a", [{ ...input, conditions: [condition, qualifier] }])]);
+      assert.equal(restricted.operators[0].metrics.daily, null);
+      assert.equal(restricted.toplist.rows[0].sortValues.daily, null);
+    }
+  }
+  const initial = record({ kind: "recurring_daily", conditions: ["First daily claim only. Log in every day."] });
+  assert.equal(model([op("a", [initial])]).operators[0].metrics.daily, null);
+  initial.conditions = ["First daily claim only, then log in every day."];
+  assert.equal(model([op("a", [initial])]).operators[0].metrics.daily, null);
+});
 test("cash needs explicit method evidence; gifts and USD are not SC cash minima", () => {
   const base = record({ recordType: "facts", field: "redemption_minimum", method: "general", value: 50, unit: "SC", comparison: "at_least" });
   assert.equal(model([op("a", [base])]).operators[0].metrics.cash, null);

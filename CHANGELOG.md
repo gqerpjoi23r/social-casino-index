@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-24 - Recover public pages and recurring first-login rewards
+- Keep substantive public pages readable when they contain standard embedded reCAPTCHA notices. Preserve actual challenge, HTTP block and login detection.
+- Treat explicitly first-login-each-day wording consistently in extraction, benefit ranking and homepage labels. Preserve original quotes and continue excluding first-ever, paid, variable and streak rewards.
+- Numeric extractor is 2.4.3. No new operators, ranking policy, request budgets or absence penalties; deploy and run the existing daily workflow to measure recovery.
+- Verify 114 monitor tests, full release, saved-capture reclassification, and seven benchmarks plus eleven profiles across desktop/mobile, keyboard and no-JavaScript checks. Generated output and existing observations are unchanged before the fresh run.
+
 ## 2026-09-23 - Evidence-led collection recovery
 - Audit 44 comparison attributes against the verified September 23 archive; replay cached extraction and run an isolated 11-source direct probe without paid calls or production writes. Findings and remaining operator gaps are in `data/monitor/collection-recovery.md`.
 - Exclude binary assets from discovery, retrieval and archived extraction. Restrict full-content retries to configured sources with readable first renders; retain useful Chumba/Lucky Bunny paths and existing request caps.
