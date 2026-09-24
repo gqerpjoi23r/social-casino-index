@@ -1,4 +1,5 @@
 import { buildToplist } from "./toplist.mjs";
+import { dailyQualifierText } from "./daily-semantics.mjs";
 
 export const METHODOLOGY_VERSION = "published-benefits-1";
 const amount = value => typeof value === "number" && Number.isFinite(value) && value >= 0;
@@ -85,7 +86,7 @@ function operatorMetrics(operator, now, purchaseBudget) {
     daily: choose(offers("recurring_daily").filter(r => r.purchaseRequired === false &&
       (!r.intervalHours || r.intervalHours === 24) &&
       !/\bfirst daily\b|\bfirst (?:day|login|claim)\b|\bday (?:one|1)\b|\bincreas|\bgrows\b|\bup to\b|\bvar(?:ies|y|iable)\b|\brandom\b|\bstreak\b/i.test(
-        [r.name, r.basis, ...(r.conditions || [])].filter(Boolean).join(" "))),
+        [r.name, r.basis, ...(r.conditions || [])].filter(Boolean).map(dailyQualifierText).join(" "))),
     "daily", r => r.immediateSc, r => `${number(r.immediateSc)} SC`, () => "Recurring daily reward. No purchase needed."),
   };
   for (const [key, budget] of [["purchase", purchaseBudget], ["purchase10", 10], ["purchase20", 20]]) {

@@ -1,6 +1,6 @@
 import Ajv from "ajv";
 
-export const NUMERIC_VERSION = "2.4.2";
+export const NUMERIC_VERSION = "2.4.3";
 const nullableNumber = { type: ["number", "null"], minimum: 0 };
 const nullableString = { type: ["string", "null"] };
 const strings = { type: "array", items: { type: "string" } };

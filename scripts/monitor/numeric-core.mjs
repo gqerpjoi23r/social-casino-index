@@ -1,6 +1,7 @@
 import { normalize, hash, extract } from "./core.mjs";
 import { emptyExtraction, validateExtraction } from "./schema.mjs";
 import { isRequestFrequency } from "./redemption-semantics.mjs";
+import { dailyQualifierText } from "./daily-semantics.mjs";
 
 const number = text => Number(text.replace(/,/g, ""));
 const decimal = "(\\d[\\d,]*(?:\\.\\d+)?)";
@@ -37,7 +38,7 @@ export function deterministicExtract(pages) {
         });
       }
       // A redemption cap on a page mentioning "daily" is not a daily reward.
-      const dailyText = quote.replace(/\bno purchase (?:is )?(?:required|necessary|needed)\b/gi, "");
+      const dailyText = dailyQualifierText(quote).replace(/\bno purchase (?:is )?(?:required|necessary|needed)\b/gi, "");
       const freeDaily = /\bfree\b|\bno purchase (?:is )?(?:required|necessary|needed)\b/i.test(quote) &&
         !/not free|not (?:a )?free|free spins?|free trial|purchase (?:is )?required|must purchas|after purchas|when you buy/i.test(dailyText);
       if (sc.length === 1 && !dollars.length && /daily|every 24 hours|every day|each day/i.test(quote) &&
