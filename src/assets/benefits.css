@@ -1,4 +1,17 @@
 .benefit-intro{padding:2rem 0 1.25rem;border-bottom:1px solid #46524d}
+.current-comparison .benefit-source{font-size:12px}
+.current-comparison .benefit-value{font-size:15px}
+.current-comparison .benefit-note{font-size:12px}
+.current-comparison td,.current-comparison th{overflow-wrap:anywhere}
+@media(max-width:760px){
+  .current-comparison,.current-comparison tbody{display:block;width:100%}
+  .current-comparison thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .current-comparison tbody tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:20px 0;border-bottom:1px solid #46524d}
+  .current-comparison tbody th{grid-column:1/-1}
+  .current-comparison tbody td,.current-comparison tbody th{display:block;border:0;padding:0;min-width:0;width:auto}
+  .current-comparison td::before{content:attr(data-label);display:block;font-size:12px;color:#b8c7be;margin-bottom:6px}
+  .current-comparison .benefit-evidence summary{min-height:44px;padding:10px 0}
+}
 .toplist-page .benefit-intro{padding:1.6rem 0 1rem}
 .toplist-heading{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.5rem;padding:1.25rem 0 .8rem}
 .toplist-heading h2{font-size:1.2rem;font-weight:600;margin:0}

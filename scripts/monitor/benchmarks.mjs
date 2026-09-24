@@ -1,5 +1,6 @@
 import { buildToplist } from "./toplist.mjs";
 import { dailyQualifierText } from "./daily-semantics.mjs";
+import { attachProductViews } from "./product-view.mjs";
 
 export const METHODOLOGY_VERSION = "published-benefits-1";
 const amount = value => typeof value === "number" && Number.isFinite(value) && value >= 0;
@@ -162,8 +163,10 @@ export function buildBenchmarks(numeric, registry = [], now = Date.now(), purcha
     return [{ slug, url: `/compare/${slug}/`, title: `${pair[0].name} vs ${pair[1].name}`,
       operators: pair.map(op => ({ name: op.name, url: op.url })), sections }];
   });
+  const toplist = buildToplist(operators, numeric, latestRecords, now);
+  attachProductViews(operators, numeric, toplist, latestRecords, now);
   return { schemaVersion: 1, methodologyVersion: METHODOLOGY_VERSION, comparisons,
     generatedAt: numeric?.lastSuccessfulRefresh || null, operators, benchmarks,
-    toplist: buildToplist(operators, numeric, latestRecords, now),
+    toplist,
     ranked: operators.filter(op => op.rank !== null), incomplete: operators.filter(op => op.rank === null) };
 }

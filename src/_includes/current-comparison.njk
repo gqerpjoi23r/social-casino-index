@@ -1,0 +1,19 @@
+{% macro currentComparison(operators) %}
+{% from "benefit-row.njk" import evidence %}
+<div class="table-scroll" tabindex="0" role="region" aria-label="Current published comparison">
+  <table class="data current-comparison">
+    <caption>Current operator evidence. Cash and gift cards are separate; processing windows are not measured payouts.</caption>
+    <thead><tr><th scope="col">Operator</th><th scope="col">Published processing</th><th scope="col">Cash minimum</th><th scope="col">Gift-card minimum</th><th scope="col">Methods in evidence</th></tr></thead>
+    <tbody>{% for op in operators %}
+      <tr data-current-operator="{{ op.slug }}">
+        <th scope="row"><a href="{{ op.url }}">{{ op.name }}</a></th>
+        {% for key, label in {redemption: "Published processing", cash: "Cash minimum", gift: "Gift-card minimum"} %}
+        <td data-current-metric="{{ key }}" data-label="{{ label }}"{% if op.product[key] %} data-record-id="{{ op.product[key].recordId }}"{% endif %}>
+          {% if op.product[key] %}{{ evidence(op.product[key], true) }}{% else %}Not verified{% endif %}
+        </td>{% endfor %}
+        <td data-label="Methods in evidence">{% if op.product.methods.length %}{{ op.product.methods | join(", ") }}{% else %}Not verified{% endif %}</td>
+      </tr>
+    {% endfor %}</tbody>
+  </table>
+</div>
+{% endmacro %}

@@ -1,71 +1,62 @@
 {% macro cell(value) %}
-{% if value and value.label != "Amount not verified" %}
+{% if value %}
   <strong class="toplist-value">{{ value.label | escape }}</strong>
-  {%- if value.note %}<span class="toplist-note">{{ value.note | escape }}</span>{% endif %}
-{% else %}<span class="toplist-unknown">{{ value.label if value else "Not verified" }}</span>{% endif %}
+  {% if value.note %}<span class="toplist-note">{{ value.note | escape }}</span>{% endif %}
+{% else %}<span class="toplist-unknown">Not verified</span>{% endif %}
 {% endmacro %}
 <section class="toplist" id="all-operators" aria-labelledby="leaderboard-heading">
   <div class="toplist-heading">
-    <div class="toplist-title"><h2 id="leaderboard-heading">The toplist <span class="toplist-count">{{ benchmarks.toplist.rows.length }}</span></h2>
+    <div class="toplist-title"><h2 id="leaderboard-heading">Compare offers <span class="toplist-count">{{ benchmarks.toplist.homepageRows.length }}</span></h2>
     {% if benchmarks.toplist.lastCheckedAt %}<span class="toplist-checked">Last checked <time datetime="{{ benchmarks.toplist.lastCheckedAt }}">{{ benchmarks.toplist.lastCheckedAt | readableDate }}</time></span>{% endif %}</div>
     <div class="toplist-controls">
-    <label class="home-state"><i class="ph ph-map-pin" aria-hidden="true"></i><span class="sr-only">Your state</span>
-      <select data-state-picker aria-label="Your state">{% for s in states %}<option value="{{ s.code }}"{% if not s.code %} disabled selected{% endif %}>{{ s.name if s.code else "Your state" }}</option>{% endfor %}</select>
-    </label>
-    <label class="toplist-sort" hidden>Sort
-      <select id="toplist-sort">
-        <option value="" disabled selected hidden>Sort by</option>
-        <option value="welcome">Welcome offer</option>
-        <option value="daily">Daily reward</option>
-        <option value="redemption">Redemption time</option>
-        <option value="cash">Cash minimum</option>
-      </select>
-    </label>
+      <label class="home-state"><i class="ph ph-map-pin" aria-hidden="true"></i><span class="sr-only">Your state</span>
+        <select data-state-picker aria-label="Your state">{% for s in states %}<option value="{{ s.code }}"{% if not s.code %} disabled selected{% endif %}>{{ s.name if s.code else "Your state" }}</option>{% endfor %}</select>
+      </label>
+      <label class="toplist-sort" hidden><span class="sr-only">Sort by</span>
+        <select id="toplist-sort">{% for sort in benchmarks.toplist.sorts %}
+          <option value="{{ sort.key }}"{% if sort.key == "welcome" %} selected{% endif %}{% if not sort.available %} disabled{% endif %}>{{ sort.label }}</option>
+        {% endfor %}</select>
+      </label>
     </div>
   </div>
-  <p id="toplist-sort-status" class="sr-only" aria-live="polite"></p>
-  <table class="toplist-table">
-    <caption class="sr-only">US social casino offers, daily rewards and published redemption terms</caption>
-    <thead><tr><th scope="col">#</th><th scope="col">Casino</th>
-      {%- for key, label in {welcome: "Welcome offer", daily: "Daily reward", redemption: "Redemption time", cash: "Cash minimum"} %}
-      <th scope="col" aria-sort="none"><button type="button" data-sort-key="{{ key }}" disabled>{{ label }} <i class="ph ph-arrows-down-up" aria-hidden="true"></i></button></th>
-      {%- endfor %}
-      <th scope="col"><span class="sr-only">Visit</span></th></tr></thead>
-    <tbody>
-      {%- for operator in benchmarks.toplist.rows %}
-      <tr data-operator="{{ operator.slug }}" data-sort="{{ {slug: operator.slug, name: operator.name, position: operator.position, productMode: operator.productMode, knownAttributeCount: operator.knownAttributeCount, welcomeGroup: operator.welcomeGroup, sortValues: operator.sortValues} | json | escape }}">
-        <td class="toplist-position">{{ operator.position }}</td>
-        <th scope="row" class="toplist-name">
-          <a class="benefit-brand" href="{{ operator.url }}">{% if operator.favicon %}<img src="{{ operator.favicon }}" alt="" width="32" height="32">{% else %}<span class="operator-monogram" aria-hidden="true">{{ operator.name | first }}</span>{% endif %}<span>{{ operator.name | escape }}</span></a>
-          <span class="toplist-coverage">{{ operator.knownAttributeCount }}/{{ benchmarks.toplist.attributeCount }} attributes sourced</span>
-          <details class="toplist-sources">
-            <summary>Sources &amp; terms</summary>
-            <div class="toplist-evidence">
-            <span>{{ operator.knownAttributeCount }} of {{ benchmarks.toplist.attributeCount }} comparable attributes</span>
-            {%- for key in ["welcome", "daily", "redemption", "cash"] %}{% set value = operator[key] %}{% if value %}
-              <div class="toplist-source">
-                <a href="{{ value.sourceUrl | escape }}" rel="noopener">{{ value.label | escape }}</a>
+  <p id="toplist-sort-status" class="sr-only" aria-live="polite">Sorted by highest free signup offer.</p>
+  <ol class="toplist-list" data-active-sort="welcome">
+    {% for operator in benchmarks.toplist.homepageRows %}
+    <li class="toplist-item" data-operator="{{ operator.slug }}" data-sort="{{ {slug: operator.slug, name: operator.name, sortValues: operator.sortValues} | json | escape }}">
+      <div class="toplist-identity">
+        <h3 class="toplist-name"><a class="benefit-brand" href="{{ operator.url }}">{{ operator.name | escape }}</a></h3>
+        <div class="toplist-mark"><span class="toplist-position" aria-label="List position">{{ operator.position }}</span>
+          {% if operator.favicon %}<img src="{{ operator.favicon }}" alt="" width="36" height="36">{% else %}<span class="operator-monogram" aria-hidden="true">{{ operator.name | first }}</span>{% endif %}
+        </div>
+      </div>
+      <dl class="toplist-values">
+        {% for key, label in {signup: "Free signup", purchase: "Purchase deal", daily: "Daily reward", redemption: "Published processing", cash: "Cash minimum"} %}
+        <div class="toplist-metric" data-metric="{{ key }}"><dt>{{ label }}</dt><dd>{{ cell(operator[key]) }}</dd></div>
+        {% endfor %}
+      </dl>
+      <div class="toplist-footer">
+        <details class="toplist-sources">
+          <summary>Terms</summary>
+          <div class="toplist-evidence">
+            {% for key, label in {signup: "Free signup", purchase: "Purchase deal", daily: "Daily reward", redemption: "Published processing", cash: "Cash minimum"} %}
+            {% set value = operator[key] %}{% if value %}
+              <section class="toplist-source" data-record-id="{{ value.recordId }}">
+                <h4>{{ label }}</h4><a href="{{ value.sourceUrl | escape }}" rel="noopener">{{ value.label | escape }}</a>
                 <span>Observed <time datetime="{{ value.observedAt }}">{{ value.observedAt | readableDate }}</time>{% if value.status == "retained" %} · Previous observation{% endif %}</span>
-                {%- if value.lastChangedAt %}<span>Change observed <time datetime="{{ value.lastChangedAt }}">{{ value.lastChangedAt | readableDate }}</time></span>{% endif %}
-                {%- if value.promoCode %}<span>Code: {{ value.promoCode | escape }}</span>{% endif %}
-                {%- if value.conditions.length %}<ul>{% for condition in value.conditions %}<li>{{ condition | escape }}</li>{% endfor %}</ul>{% endif %}
-              </div>
-            {%- endif %}{% endfor %}
-            {%- if operator.generalMinimum %}<div class="toplist-source"><a href="{{ operator.generalMinimum.sourceUrl | escape }}" rel="noopener">General minimum: {{ operator.generalMinimum.label }}</a><span>Cash method unverified</span></div>{% endif %}
-            {%- if operator.productMode == "entertainment_only" %}<span>Entertainment-only coins have no cash value.</span>{% endif %}
+                {% if value.lastChangedAt %}<span>Change observed <time datetime="{{ value.lastChangedAt }}">{{ value.lastChangedAt | readableDate }}</time></span>{% endif %}
+                {% if value.promoCode %}<span>Code: {{ value.promoCode | escape }}</span>{% endif %}
+                {% if value.conditions.length %}<ul>{% for condition in value.conditions %}<li>{{ condition | escape }}</li>{% endfor %}</ul>{% endif %}
+              </section>
+            {% endif %}{% endfor %}
+            <p>{{ operator.knownAttributeCount }} of 4 comparison categories supported. Signup and purchase deals form one offers category.</p>
             <a href="{{ operator.url }}">Full operator record</a>
-            </div>
-          </details>
-        </th>
-        <td data-label="Welcome offer">{{ cell(operator.welcome) }}</td>
-        <td data-label="Daily reward">{{ cell(operator.daily) }}</td>
-        <td data-label="Redemption time">{{ cell(operator.redemption) }}</td>
-        <td data-label="Cash minimum">{% if operator.productMode == "entertainment_only" %}<span class="toplist-unknown">Not applicable</span>{% elif operator.cash %}<strong class="toplist-value">{{ operator.cash.label }}</strong>{% else %}<span class="toplist-unknown">Not verified</span>{% endif %}</td>
-        <td class="toplist-action"><a class="toplist-visit" href="{{ operator.visitUrl }}" aria-label="Visit {{ operator.name | escape }}" title="Visit {{ operator.name | escape }}"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></td>
-      </tr>
-      {%- endfor %}
-    </tbody>
-  </table>
-  <p class="toplist-footnote">SC = Sweepstakes Coins. Published times, not measured payouts. <a href="/bonuses/cash-redemption-minimums/">Compare the lowest cash redemption minimums</a> · <a href="/methodology/#homepage-order">How we order the list</a> · <a href="/updates/">Daily checks</a></p>
+          </div>
+        </details>
+        <a class="toplist-visit" href="{{ operator.visitUrl }}" aria-label="Visit {{ operator.name | escape }}"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+    </li>
+    {% else %}<li>No operators currently meet the comparison requirements. <a href="/redemption-times/">Operator records</a></li>{% endfor %}
+  </ol>
+  <p class="toplist-footnote">SC = Sweepstakes Coins. Published times, not measured payouts. <a href="/bonuses/cash-redemption-minimums/">Compare cash minimums</a> · <a href="/methodology/#homepage-order">How we order the list</a> · <a href="/updates/">Daily checks</a></p>
 </section>
 <script type="module" src="/assets/toplist-sort.js"></script>

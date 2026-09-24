@@ -96,6 +96,16 @@ jobs:
         run: node scripts/monitor/publish.mjs "$CAPTURE_PATH"
       - name: Validate refreshed observations
         run: npm run monitor:test
+      - name: Preserve product impact and gap reports
+        if: always() && steps.capture.outputs.capture_path != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-impact
+          path: |
+            ${{ steps.capture.outputs.capture_path }}/product-impact.md
+            ${{ steps.capture.outputs.capture_path }}/comparison-coverage.json
+          if-no-files-found: ignore
+          retention-days: 30
       - run: npm run release
       - name: Commit validated observations
         id: commit

@@ -7,7 +7,7 @@ tags: ["guides"]
 guideType: "Explainer"
 status: "published"
 publishedAt: "2026-09-18"
-updatedAt: "2026-09-18"
+updatedAt: "2026-09-24"
 authorId: "alex-rowan"
 reviewer: "Social Casino Index research team"
 primaryQuery: "how to redeem Sweeps Coins for cash"
@@ -26,6 +26,7 @@ eleventyComputed:
     publisher:
       "@id": "https://socialcasinoindex.com/#org"
 ---
+{% from "current-comparison.njk" import currentComparison %}
 <main><article class="wrap py-10">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/guides/">Guides</a></li><li><span aria-current="page">Redeem Sweeps Coins</span></li></ol></nav>
   <h1 class="page-title">How to Redeem Sweeps Coins for Cash</h1>
@@ -46,11 +47,7 @@ eleventyComputed:
 
   <h2 id="operator-requirements">Operator minimums, methods and timing</h2>
   <p>The table uses our existing reviewed records, not a fresh review of each operator. Unknown values remain unknown. The evidence date and source register show what supports each record.</p>
-  <div class="table-scroll" tabindex="0" role="region" aria-label="Operator redemption requirements"><table class="data redemption-requirements">
-    <caption>Dated published terms. Not funded-test results.</caption>
-    <thead><tr><th scope="col">Operator</th><th scope="col">Minimum redemption</th><th scope="col">Methods</th><th scope="col">Published timing</th><th scope="col">Evidence reviewed</th></tr></thead>
-    <tbody>{% for op in operators %}<tr><th scope="row"><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></th><td>{{ op.minRedemption }}</td><td>{{ op.methods }}</td><td>{{ op.publishedEstimate }}</td><td><a href="/redemption-times/{{ op.slug }}/#sources">{{ op.verifiedAt | readableDate }}</a></td></tr>{% endfor %}</tbody>
-  </table></div>
+  {{ currentComparison(benchmarks.operators) }}
 
   <h2>Why might a request not be available?</h2>
   <p>Check incomplete verification, the redeemable balance, method-specific minimums and account or location restrictions. A balance alone does not establish eligibility for a prize. Use the operator's support channel to resolve account-specific issues; do not submit identity documents to this site.</p>
@@ -58,5 +55,5 @@ eleventyComputed:
   <p>This dataset does not establish a universal instant payout. Identity checks, request approval and final delivery are different stages. Read the <a href="/redemption-times/">published timing comparison</a> and <a href="/guides/sweepstakes-casino-redemption-methods/">payment-method guide</a> before comparing estimates.</p>
   <h2 id="sources">Sources and data</h2>
   <p id="process-source"><a href="https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/" rel="noopener">YAY Casino: How to Redeem Your Sweeps Coins</a>. Process guidance reviewed September 18, 2026. Operator instructions describe that operator's process, not a guarantee of payout.</p>
-  <p>Each table row links to its dated source register. Download the existing <a href="/assets/data/operators-2026.1.json">operator JSON</a> or <a href="/assets/data/redemption-times-2026.1.csv">redemption CSV</a>. See the <a href="/methodology/">methodology</a> for the distinction between published terms and funded tests.</p>
+  <p>Each table row links to its dated source register. Download the existing <a href="/updates/leaderboard.json">current comparison JSON</a> or <a href="/updates/comparison.csv">current comparison CSV</a>. See the <a href="/methodology/">methodology</a> for the distinction between published terms and funded tests.</p>
 </article></main>

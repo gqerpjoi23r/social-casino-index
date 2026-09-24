@@ -7,7 +7,7 @@ tags: ["guides"]
 guideType: "Guide"
 status: "published"
 publishedAt: "2026-09-09"
-updatedAt: "2026-09-10"
+updatedAt: "2026-09-24"
 authorId: "alex-rowan"
 reviewer: "Social Casino Index research team"
 primaryQuery: "sweepstakes casino bank transfer redemption"
@@ -55,6 +55,7 @@ eleventyComputed:
               "@type": "Answer"
               text: "Chumba's redemption page and Pulsz's online-banking help describe bank redemptions. Pulsz's current product scope needs clarification against its general terms. Check the source-linked records and current cashier for eligibility."
 ---
+{% from "current-comparison.njk" import currentComparison %}
 <main><article class="wrap py-10">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/guides/">Guides</a></li><li><a href="/guides/sweepstakes-casino-redemption-methods/">Redemption methods</a></li><li><span aria-current="page">Bank transfer</span></li></ol></nav>
   <h1 class="page-title">Sweepstakes Casino Bank Transfer Redemptions</h1>
@@ -62,14 +63,7 @@ eleventyComputed:
   <div class="answer-first"><span class="af-label">Direct answer</span><p>There is no verified common end-to-end timeframe in our current records. Chumba's redemption page and Pulsz's online-banking help describe bank redemptions; Pulsz's product scope needs clarification against its general terms. Review the individual record before relying on a method.</p></div>
 
   <h2>Published bank-transfer information</h2>
-  <div class="table-scroll"><table class="data">
-    <thead><tr><th>Operator</th><th>Methods</th><th>Published timing</th><th>Minimum</th></tr></thead>
-    <tbody>
-      {% for op in operators %}{% if op.slug == "chumba" or op.slug == "pulsz" %}
-      <tr><th><a href="/redemption-times/{{ op.slug }}/">{{ op.name }}</a></th><td>{{ op.methods }}</td><td>{{ op.publishedEstimate }}</td><td>{{ op.playerValue.cashMinimum.display }}</td></tr>
-      {% endif %}{% endfor %}
-    </tbody>
-  </table></div>
+  {{ currentComparison(benchmarks.operators) }}
 
   <h2>How a bank-transfer redemption works</h2>
   <ul class="tick-list">

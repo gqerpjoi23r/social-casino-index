@@ -8,6 +8,17 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const version = process.argv[2] || "2026.1";
+// Published editions are immutable. Current exports come from the shared model.
+const editionFiles = ["redemption-times", "player-value", "operators"].map((name, index) =>
+  join(root, "src/assets/data", `${name}-${version}.${index === 2 ? "json" : "csv"}`));
+if (!process.argv[2]) {
+  const { existsSync } = await import("node:fs");
+  if (!editionFiles.every(existsSync)) throw new Error("Historical edition missing; restore it instead of regenerating it");
+  console.log(`Preserved historical edition ${version}`);
+  process.exit(0);
+}
+const { existsSync } = await import("node:fs");
+if (editionFiles.some(existsSync)) throw new Error(`Edition ${version} already exists`);
 
 const operators = JSON.parse(
   readFileSync(join(root, "src/_data/operators.json"), "utf8")

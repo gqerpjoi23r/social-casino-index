@@ -14,6 +14,15 @@ Format:
 
 ---
 
+## 2026-09-24 - Player-first comparisons and one current evidence model
+- Require two of four comparison categories for homepage admission; rank by immediate free signup SC, not completeness. Keep paid SC-per-dollar sorting separate, unknowns last, and all operators monitored.
+- Left-align names and values, move positions/logos right, and place Terms below each entry. Describe supported variable daily rewards without inventing a fixed SC amount.
+- Feed eight current comparison pages, profiles and a current CSV from the shared evidence model. Preserve versioned downloads and remove stale registry-value rendering.
+- Use automatic Firecrawl fallback and prioritize comparison seeds, then discovered official sources. One optional captured-quote repair shares the existing model limit; numeric extractor is 2.5.0.
+- Add product-impact summaries and field-gap diagnoses to publication. Existing request ceilings, affiliate gates, observation dates, roster and Lovd prompts remain unchanged.
+- Correct YAY's immediate signup from 4 to 1 SC against its saved September 24 registration-step breakdown; retain the up-to-12-SC task package and dated history. Prevent optional task totals from becoming immediate signup amounts.
+- Verify 129 monitor tests, full release, five homepage viewport widths, all seven benchmarks, eleven profiles, eight migrated comparisons, keyboard/no-JavaScript use and CSV parity. Historical exports remain byte-identical.
+
 ## 2026-09-24 - Correct offer interpretation found by the live refresh
 - The fresh run recovered 48/50 readable sources, up from 37/50. Numeric extraction exposed an ambiguous McLuck signup banner and omitted explicit WOW first-day and instant-purchase allocations.
 - Keep generic signup/chance-to-win banners as promotions unless free signup is established. Recover explicitly quoted day-one and instant-delivery SC without calculating totals or overwriting an existing amount; apply banner qualification to retained public records too.

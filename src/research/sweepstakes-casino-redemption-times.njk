@@ -1,14 +1,14 @@
 ---
 layout: base.njk
 title: "How Long Do Sweepstakes Casino Redemptions Take?"
-description: "Published redemption times, verification requirements, methods and minimums across ten social casinos, with source-linked operator records."
+description: "Published redemption times, verification requirements, methods and minimums across monitored social casinos, with source-linked operator records."
 permalink: "/research/sweepstakes-casino-redemption-times/"
 tags: ["guides"]
 guideType: "Article"
 ogType: "article"
 status: "published"
 publishedAt: "2026-09-08"
-updatedAt: "2026-09-10"
+updatedAt: "2026-09-24"
 authorId: "alex-rowan"
 reviewer: "Social Casino Index research team"
 primaryQuery: "how long do sweepstakes casino redemptions take"
@@ -25,7 +25,7 @@ eleventyComputed:
       - "@type": "Article"
         "@id": "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/#article"
         headline: "How Long Do Sweepstakes Casino Redemptions Take?"
-        description: "Published redemption times, verification requirements, methods and minimums across ten social casinos, with source-linked operator records."
+        description: "Published redemption times, verification requirements, methods and minimums across monitored social casinos, with source-linked operator records."
         datePublished: "2026-09-08"
         dateModified: "2026-09-10"
         mainEntityOfPage: "https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/"
@@ -92,6 +92,7 @@ eleventyComputed:
         ]
 ---
 
+{% from "current-comparison.njk" import currentComparison %}
 <main>
 <article class="wrap">
 
@@ -134,50 +135,13 @@ eleventyComputed:
   </nav>
 
   <h2 id="comparison">Operator comparison</h2>
-  <p>The table separates what operators publish from what we have measured. The observed column stays empty until a funded test completes; we do not fill it with estimates.</p>
+  <p>The table uses current operator evidence. Published processing windows are not measured payouts; funded-test records remain separate on operator profiles.</p>
 
-  <div class="table-scroll">
-    <table class="data">
-      <caption>Published redemption terms vs observed funded-test results, September 2026.</caption>
-      <thead>
-        <tr>
-          <th scope="col">Operator</th>
-          <th scope="col">Published estimate</th>
-          <th scope="col">First redemption</th>
-          <th scope="col">Methods</th>
-          <th scope="col">Minimum</th>
-          <th scope="col">Funded test</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for op in operators %}
-        <tr>
-          <th scope="row">{{ op.name }}</th>
-          <td>{{ op.publishedEstimate }}</td>
-          <td>{{ op.firstRedemption }}</td>
-          <td>{{ op.methods }}</td>
-          <td class="num">{{ op.minRedemption }}</td>
-          <td>
-            {% if op.testStatus == "completed" %}
-              <span class="badge complete">Completed</span> {{ op.observedResult }}
-            {% else %}
-              <span class="badge pending">Pending</span>
-            {% endif %}
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+  {{ currentComparison(benchmarks.operators) }}
 
   <p>We do not rank a "fastest" operator until at least three comparable funded tests have completed. The table separates operator claims from observed results so a short processing promise is not presented as a complete end-to-end payout time.</p>
 
-  <h3>Terms effective dates</h3>
-  <ul class="compact-list">
-    {% for op in operators %}
-      {% if op.termsEffective %}<li><strong>{{ op.name }}:</strong> {{ op.termsEffective | readableDate }}</li>{% endif %}
-    {% endfor %}
-  </ul>
+  <p>Observation dates describe when we captured evidence, not when an operator's terms took effect.</p>
 
   <h2 id="stages">The four stages of a redemption</h2>
   <p>Separate a redemption into these stages when checking a published estimate. A number that covers only processing does not establish the total time from request to receipt.</p>
@@ -216,7 +180,7 @@ eleventyComputed:
   <p>Funded testing follows the site <a href="/methodology/">methodology</a>: we fund accounts with our own money, request redemptions as ordinary players, and record the time from request to funds received, split into the four stages above. No operator is told it is being tested. When funded tests complete, their observed timings are added to the comparison table and to the downloadable dataset as separate rows.</p>
 
   <h2 id="versions">Versions and data</h2>
-  <p>The underlying published-terms dataset is available as CSV. Each edition is versioned by date; the current edition is listed first.</p>
+  <p><a href="/updates/comparison.csv">Current comparison CSV</a> · <a href="/updates/leaderboard.json">Current comparison JSON</a>. The edition below is a preserved historical snapshot, not the current comparison.</p>
   <div class="table-scroll">
     <table class="data">
       <thead>
@@ -230,8 +194,8 @@ eleventyComputed:
       <tbody>
         <tr>
           <th scope="row">2026.1</th>
-          <td>{{ updatedAt | readableDate }}</td>
-          <td class="num">{{ operators | length }} published terms</td>
+          <td>Historical edition 2026.1</td>
+          <td class="num">Published terms at edition time</td>
           <td><a href="/assets/data/redemption-times-2026.1.csv" download>Download CSV</a></td>
         </tr>
       </tbody>
@@ -244,23 +208,23 @@ eleventyComputed:
       <p style="margin:0;">Alex Rowan, Social Casino Index (2026). <cite>“How Long Do Sweepstakes Casino Redemptions Take?”</cite> Version 2026.1. <a href="https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/">https://socialcasinoindex.com/research/sweepstakes-casino-redemption-times/</a></p>
     </div>
     <div class="card-foot">
-      <p>Data: <a href="/assets/data/redemption-times-2026.1.csv" download>redemption-times-2026.1.csv</a> (published terms, retrieved {{ updatedAt | readableDate }}).</p>
+      <p>Historical data: <a href="/assets/data/redemption-times-2026.1.csv" download>redemption-times-2026.1.csv</a>. Each row contains its original access date.</p>
     </div>
   </div>
 
   <h2 id="sources">Source register</h2>
   <p>Every figure in this index traces to one of the operator documents below, with the date we accessed it.</p>
   <ol class="sources">
-    {% for op in operators %}
-      {% for s in op.sources %}
-      <li><strong>{{ op.name }}</strong> — {{ s.label }}. <a href="{{ s.url }}" rel="noopener">{{ s.url | replace("https://", "") | replace("http://", "") }}</a>. <span class="accessed">Accessed {{ s.accessed | readableDate }}.</span>{% if op.termsEffective %} Terms effective {{ op.termsEffective | readableDate }}.{% endif %}</li>
+    {% for op in benchmarks.operators %}
+      {% for s in op.product.sources %}
+      <li><strong>{{ op.name }}</strong> · <a href="{{ s.url }}" rel="noopener">{{ s.url | replace("https://", "") }}</a>. <span class="accessed">Last attempted {{ s.checkedAt | readableDate }}. {{ s.status | replace("_", " ") }}.</span></li>
       {% endfor %}
     {% endfor %}
   </ol>
 
   <h2 id="change-log">Change log</h2>
   <ul class="changelog">
-    <li>{{ updatedAt | readableDate }}: Expanded the official-source comparison to ten operators and added individual, source-linked operator records. Funded testing remains in progress.</li>
+    <li>{{ updatedAt | readableDate }}: Current comparison values now use the shared published evidence. Historical downloads retain their original contents and dates.</li>
   </ul>
 
   <p class="byline mt-8"><a href="/disclosure/">Affiliate disclosure</a> · <a href="/methodology/">Site methodology</a> · Written by <a href="/authors/alex-rowan/">Alex Rowan</a></p>

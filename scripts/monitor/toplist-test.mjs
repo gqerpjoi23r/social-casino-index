@@ -56,12 +56,12 @@ test("daily first claims, recurring amounts and paid passes stay distinct", () =
   assert.equal(initial.daily.label, "1 SC first claim");
   assert.equal(initial.daily.note, "Later daily amounts unverified");
   assert.equal(row([record({ kind: "paid_pass", intervalHours: 24 })]).daily, null);
-  assert.equal(row([record({ kind: "recurring_daily", immediateSc: null, totalSc: null })]).daily.label, "Amount not verified");
+  assert.equal(row([record({ kind: "recurring_daily", immediateSc: null, totalSc: null })]).daily.label, "Daily login reward");
 });
 test("unranked recurring claim timing is not displayed as a first-ever reward", () => {
   const result = row([record({ kind: "recurring_daily", immediateSc: 1,
     conditions: ["Claim once per day on your first daily login.", "Reward varies by day."] })]);
-  assert.equal(result.daily.label, "Amount not verified");
+  assert.equal(result.daily.label, "Variable daily reward");
   assert.equal(result.daily.comparable, false);
   assert.equal(result.sortValues.daily, null);
 });
@@ -74,7 +74,9 @@ test("signup stages, cheap paid packages and cash methods stay explicit", () => 
   assert.equal(tasks.note, "Up to 12 SC with 7-day tasks");
   const paid = row([record({ kind: "purchase_package", priceUsd: 4.99, immediateSc: 5 }),
     record({ id: "large", kind: "purchase_package", priceUsd: 499.99, immediateSc: 510 })]);
-  assert.equal(paid.welcome.label, "5 SC for $4.99");
+  assert.equal(paid.welcome.label, "510 SC for $499.99");
+  assert.equal(paid.sortValues.welcome, null);
+  assert.equal(paid.purchase.priceUsd, 499.99);
   assert.equal(paid.welcome.note, "Regular purchase package");
   const general = row([record({ recordType: "facts", field: "redemption_minimum", value: 50,
     unit: "SC", comparison: "at_least", method: "general" })]);
@@ -124,23 +126,23 @@ test("new unknown timings supersede an old numeric promise", () => {
 test("new daily unknown supersedes an old amount, not counted as zero", () => {
   const daily = record({ kind: "recurring_daily", intervalHours: 24 });
   const result = row([daily, { ...daily, capturedAt: "2026-09-22T06:00:00Z", immediateSc: null, totalSc: null }]);
-  assert.equal(result.daily.label, "Amount not verified");
+  assert.equal(result.daily.label, "Daily login reward");
   assert.equal(result.sortValues.daily, null);
 });
 
-test("default promotes completeness, but a single strong attribute wins its own sort", () => {
+test("default ranks free signup only; completeness is an admission rule", () => {
   const cash = value => record({ id: "cash", recordType: "facts", field: "redemption_minimum",
     method: "cash", comparison: "at_least", value, unit: "SC" });
   const rows = model([
     operator("complete", [record({}), cash(100), record({ id: "daily", kind: "recurring_daily", intervalHours: 24 })]),
-    operator("one-strong", [cash(10)]), operator("unknown", []),
+    operator("one-strong", [record({ immediateSc: 10, totalSc: 10 })]), operator("unknown", []),
   ]).toplist.rows;
-  assert.equal(rows[0].slug, "complete");
-  assert.equal(rows[0].knownAttributeCount, 3);
-  assert.equal(orderToplist(rows, "cash")[0].slug, "one-strong");
+  assert.equal(rows[0].slug, "one-strong");
+  assert.equal(rows.find(r => r.slug === "complete").knownAttributeCount, 3);
+  assert.equal(orderToplist(rows, "cash")[0].slug, "complete");
   assert.equal(orderToplist(rows, "cash").at(-1).slug, "unknown");
   assert.equal(orderToplist(rows, "cash", "desc").at(-1).slug, "unknown");
-  assert.equal(orderToplist(rows, "default")[0].slug, "complete");
+  assert.equal(orderToplist(rows)[0].slug, "one-strong");
 });
 test("daily sort ignores first claims, Gold Coins, and unquantified advertising", () => {
   const rows = model([

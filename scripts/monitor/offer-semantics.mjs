@@ -16,8 +16,17 @@ export function qualifySignupBanner(record) {
 
 export function recoverOfferSemantics(record) {
   const result = qualifySignupBanner(record);
-  if (result.immediateSc !== null || !result.quote) return result;
+  if (!result.quote) return result;
   const quote = text(result.quote);
+  if (result.kind === "signup") {
+    const registration = quote.match(/\bsign up\s+click\b.{0,200}?\bregistration form\.\s*you['’]ll receive:\s*([^.!?\n]{1,100}?\bSC\b)/i)?.[1];
+    const values = amounts(registration);
+    if (values.length === 1 && !/\bup to\b|\brandom\b|\bchance\b/i.test(registration) &&
+        (result.totalSc === null || values[0] <= result.totalSc)) {
+      return { ...result, immediateSc: values[0] };
+    }
+  }
+  if (result.immediateSc !== null) return result;
   if (result.kind === "signup") {
     const firstDay = quote.match(/\bday\s+1\s*:\s*(.*?)(?=\bday\s+\d+\s*:|$)/i)?.[1];
     const values = amounts(firstDay);

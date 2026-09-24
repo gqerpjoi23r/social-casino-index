@@ -38,10 +38,20 @@ A green release means content schema, sitemap and SEO checks all pass.
   operator. Keep published benefits separate from observed payout results.
 - A collection failure is not operator opacity. Retain dated evidence; only
   source-backed absence reviews can reduce a disclosure component.
-- Homepage default order uses comparable attribute count, as requested by the
-  user. Missing attributes lower coverage placement, not a trust/disclosure
-  score. Column sorting ignores coverage and puts the best supported value
-  first, with unknown values last. Keep one homepage list.
+- Product promise: help visitors compare actual deals and terms, not our scraper
+  coverage. Every homepage entry needs two comparable categories out of offers,
+  recurring daily SC, published processing, and cash minimum. Free signup and
+  paid packages count once together for admission, but are NEVER mixed in sorting.
+- Default to highest immediate no-purchase signup SC. Offer independent purchase
+  value, daily SC, processing and cash-minimum sorts; unknowns last, ties by name.
+  Completeness is only admission, never a customer-facing quality ranking.
+- All current comparisons and exports use the shared evidence model. Registry
+  identity, affiliate, eligibility and funded-test metadata stay separate.
+  Historical download editions are immutable, not current-data fallbacks.
+- Show useful supported daily descriptions without counting variable rewards,
+  first claims or Gold Coins as fixed daily SC. Keep Terms below each entry.
+- Releases must report changed visible operators, order, values and unresolved
+  fields. Passing collection/tests alone is not evidence of product usefulness.
 - No affiliate links in article copy; operator CTAs only behind the state
   gate (`/go/` + `src/assets/eligibility.js`).
 - `docs/` is the committed deploy artifact - always produced by the build,

@@ -55,11 +55,11 @@ eleventyComputed:
   <section id="redemption-answer">
     <h2>{{ operator.name }} redemption requirements</h2>
     {% if current.metrics.cash %}<p>Published cash redemption minimum: <strong>{{ current.metrics.cash.label }}</strong>.</p>{% elif current.metrics.general %}<p>Published general redemption minimum: <strong>{{ current.metrics.general.label }}</strong>. A cash-specific threshold is not established by this observation.</p>{% else %}<p>A cash redemption minimum has not been established in the collected evidence.</p>{% endif %}
-    {% for policy in publishedPolicies %}<details class="benefit-evidence"><summary>{{ policy.label | capitalize }}: {{ policy.value }}{% if policy.upperValue %}–{{ policy.upperValue }}{% endif %} {{ policy.unit | replace("_", " ") }} · {{ policy.method | replace("_", " ") }}</summary>
-      <p>{{ policy.basis | escape }}. {{ policy.stage | replace("_", " ") }}.</p>
-      <ul>{% for condition in policy.conditions %}<li>{{ condition | escape }}</li>{% endfor %}</ul>
-      <a href="{{ policy.sourceUrl | escape }}" rel="noopener">Source · {{ policy.observedAt | readableDate }}</a>
-    </details>{% endfor %}
+    {% for policy in current.product.policies %}
+      <section data-policy-record="{{ policy.recordId }}"><h3>{{ policy.field | replace("_", " ") | capitalize }}</h3>{{ evidence(policy, true) }}</section>
+    {% endfor %}
+    {% if current.product.daily and not current.metrics.daily %}<section><h3>Daily reward</h3>{{ evidence(current.product.daily, true) }}</section>{% endif %}
+    {% if current.product.verification.length %}<h3>Identity checks</h3>{% for requirement in current.product.verification %}{{ evidence(requirement, true) }}{% endfor %}{% endif %}
   </section>
   <h2>Funded test status</h2>
   <p>
@@ -95,10 +95,9 @@ eleventyComputed:
   {% endif %}
   <h2 id="sources">Sources and verification</h2>
   <p>
-    <span class="badge {% if operator.verificationStatus == 'verified' %}complete{% else %}pending{% endif %}"><i class="ph ph-seal-check" aria-hidden="true"></i> {{ operator.verificationLabel }}</span>
-    <span class="badge nottested"><i class="ph ph-clock-clockwise" aria-hidden="true"></i> Last checked {{ operator.verifiedAt | readableDate }}</span>
+    {% if current.product.lastCheckedAt %}<span class="badge nottested"><i class="ph ph-clock-clockwise" aria-hidden="true"></i> Last attempted check {{ current.product.lastCheckedAt | readableDate }}</span>{% endif %}
   </p>
   <p class="text-sm text-base-content/60">The review date records the evidence check, not a guarantee that every field was verified. Some public pages were retrieved from a US location to resolve regional access blocks; this does not establish player eligibility. Blocked pages document an evidence gap and do not support numeric claims.</p>
-  <ol class="sources">{% for source in operator.sources %}<li id="source-{{ source.id }}">{{ source.label }}. <a href="{{ source.url }}" rel="noopener">{{ source.url | replace("https://", "") }}</a>. <span class="accessed">Checked {{ source.accessed | readableDate }}.{% if source.access == "bot_blocked" %} Access blocked.{% elif source.access == "region_notice_only" %} Availability notice only; substantive terms unavailable.{% elif source.access == "login_required" %} Login required; rules not reviewed.{% endif %}</span></li>{% endfor %}</ol>
+  <ol class="sources">{% for source in current.product.sources %}<li id="source-{{ source.id }}"><a href="{{ source.url }}" rel="noopener">{{ source.url | replace("https://", "") }}</a>. <span class="accessed">Checked {{ source.checkedAt | readableDate }}. {{ source.status | replace("_", " ") }}.</span></li>{% endfor %}</ol>
   <p class="byline mt-8"><a href="/redemption-times/">Compare all operators</a> · <a href="/methodology/">Methodology</a> · <a href="/disclosure/">Affiliate disclosure</a></p>
 </article></main>
