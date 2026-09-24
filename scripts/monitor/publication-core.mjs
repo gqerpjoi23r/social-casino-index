@@ -1,4 +1,5 @@
 import { stampValueHistory } from "./value-history.mjs";
+import { qualifySignupBanner, recoverOfferSemantics } from "./offer-semantics.mjs";
 
 export function productionRun(manifest, env = process.env) {
   return env.GITHUB_REF === "refs/heads/main" && !env.ARCHIVE_RUN_ID &&
@@ -47,7 +48,8 @@ export function publicNumeric(operators, reviewed, manifest, captures, previous 
           sources: (review.sources || []).map(source => ({ id: source.id, url: source.url })) }];
       }));
       const candidates = ["offers", "facts", "statements"].flatMap(kind =>
-        (current?.[kind] || []).map(record => ({ ...record, recordType: kind })));
+        (current?.[kind] || []).map(record => ({
+          ...(kind === "offers" ? recoverOfferSemantics(record) : record), recordType: kind })));
       const records = (reference?.records || []).map(record => {
         const dependencies = record.supportingPages || [{ sourceId: record.sourceId, textHash: record.textHash }];
         const semanticChange = candidates.some(candidate => candidate.sourceId === record.sourceId &&
@@ -97,7 +99,8 @@ export function publicNumeric(operators, reviewed, manifest, captures, previous 
           checkedAt: manifest.startedAt,
           status: blocked ? "archive_corrupt" : source.status,
           capturedAt: successful.find(page => page.sourceId === source.id)?.capturedAt || null })),
-        records: stampValueHistory(records, prior?.records), unknownValues: {
+        records: stampValueHistory(records.map(record =>
+          record.recordType === "offers" ? qualifySignupBanner(record) : record), prior?.records), unknownValues: {
           firstPurchaseUsd: records.find(record => record.completePackage)?.priceUsd ?? null,
           firstPurchaseSc: records.find(record => record.completePackage)?.immediateSc ?? null,
         },

@@ -29,23 +29,21 @@
               "metric": "signup",
               "value": 2,
               "label": "2 SC",
-              "note": "Immediate. No purchase needed.",
-              "recordId": "61ae1ebd3f87faf23efb",
-              "sourceUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
-              "observedAt": "2026-09-21T21:46:24.480Z",
-              "status": "retained",
-              "firstObservedAt": "2026-09-10T21:21:39.815Z",
-              "lastChangedAt": null,
+              "note": "5 SC total in stages.",
+              "recordId": "b53fd51a74943d57db73",
+              "sourceUrl": "https://www.wowvegas.com/promo-code",
+              "observedAt": "2026-09-24T10:35:50.905Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-24T10:35:50.905Z",
+              "lastChangedAt": "2026-09-24T10:35:50.905Z",
               "conditions": [
-                "Create an account at WOW Vegas.",
-                "Accept the Sweepstakes Rules when prompted during registration.",
-                "Click the “Claim Your Free SC” button.",
-                "Bonus is added upon completion."
+                "Available to claim after sign-up.",
+                "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
               ],
-              "promoCode": null,
+              "promoCode": "WOWBONUS2026",
               "priceUsd": null,
               "immediateSc": 2,
-              "totalSc": 2,
+              "totalSc": 5,
               "durationDays": null,
               "purchaseRequired": false,
               "kind": "signup"
@@ -55,23 +53,23 @@
               "name": "McLuck",
               "url": "/redemption-times/mcluck/",
               "metric": "signup",
-              "value": 60,
-              "label": "60 SC",
+              "value": 2.5,
+              "label": "2.5 SC",
               "note": "Immediate. No purchase needed.",
-              "recordId": "5cbaa05d8fa9e78d54d8",
-              "sourceUrl": "https://blog.mcluck.com/faq/mcluck-redemption-times/",
-              "observedAt": "2026-09-24T10:38:12.595Z",
+              "recordId": "b2643e5e0ea958f4f2de",
+              "sourceUrl": "https://www.mcluck.com/promotions",
+              "observedAt": "2026-09-24T10:34:08.360Z",
               "status": "published",
-              "firstObservedAt": "2026-09-24T10:38:12.595Z",
-              "lastChangedAt": null,
+              "firstObservedAt": "2026-09-24T10:34:08.360Z",
+              "lastChangedAt": "2026-09-24T10:34:08.360Z",
               "conditions": [
-                "Sign up now to get GC 120K \\+ FREE SC 60 \\+ Chance to Win 500 FREE SC",
-                "Chance to Win 500 FREE SC"
+                "Register now to claim your welcome reward.",
+                "This exclusive sign-up reward is just the start of an exciting experience filled with incredible casino promotions."
               ],
               "promoCode": null,
               "priceUsd": null,
-              "immediateSc": 60,
-              "totalSc": 60,
+              "immediateSc": 2.5,
+              "totalSc": 2.5,
               "durationDays": null,
               "purchaseRequired": false,
               "kind": "signup"
@@ -160,23 +158,21 @@
               "metric": "signup",
               "value": 2,
               "label": "2 SC",
-              "note": "Immediate. No purchase needed.",
-              "recordId": "61ae1ebd3f87faf23efb",
-              "sourceUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
-              "observedAt": "2026-09-21T21:46:24.480Z",
-              "status": "retained",
-              "firstObservedAt": "2026-09-10T21:21:39.815Z",
-              "lastChangedAt": null,
+              "note": "5 SC total in stages.",
+              "recordId": "b53fd51a74943d57db73",
+              "sourceUrl": "https://www.wowvegas.com/promo-code",
+              "observedAt": "2026-09-24T10:35:50.905Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-24T10:35:50.905Z",
+              "lastChangedAt": "2026-09-24T10:35:50.905Z",
               "conditions": [
-                "Create an account at WOW Vegas.",
-                "Accept the Sweepstakes Rules when prompted during registration.",
-                "Click the “Claim Your Free SC” button.",
-                "Bonus is added upon completion."
+                "Available to claim after sign-up.",
+                "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
               ],
-              "promoCode": null,
+              "promoCode": "WOWBONUS2026",
               "priceUsd": null,
               "immediateSc": 2,
-              "totalSc": 2,
+              "totalSc": 5,
               "durationDays": null,
               "purchaseRequired": false,
               "kind": "signup"
@@ -206,6 +202,186 @@
               "durationDays": null,
               "purchaseRequired": false,
               "kind": "signup"
+            }
+          ]
+        },
+        {
+          "id": "purchase",
+          "title": "Purchase value",
+          "url": "/bonuses/purchase-value/",
+          "rows": [
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "purchase",
+              "value": 3.003003003003003,
+              "label": "30 SC for $9.99",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "2ca990e803d31fa27c76",
+              "sourceUrl": "https://www.wowvegas.com/promo-code",
+              "observedAt": "2026-09-24T10:35:50.905Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-24T10:35:50.905Z",
+              "lastChangedAt": "2026-09-24T10:35:50.905Z",
+              "conditions": [
+                "First purchase only.",
+                "Normally $29.99.",
+                "Instant coin delivery is stated."
+              ],
+              "promoCode": "WOWBONUS2026",
+              "priceUsd": 9.99,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            },
+            {
+              "slug": "chumba",
+              "name": "Chumba Casino",
+              "url": "/redemption-times/chumba/",
+              "metric": "purchase",
+              "value": 3,
+              "label": "30 SC for $10",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "a45d7ab2ba3af2192a09",
+              "sourceUrl": "https://www.chumbacasino.com/",
+              "observedAt": "2026-09-24T10:31:05.432Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-24T06:33:54.011Z",
+              "lastChangedAt": "2026-09-24T06:33:54.011Z",
+              "conditions": [
+                "Exclusive first-time offer.",
+                "GC10M for $10 plus FREE SC30."
+              ],
+              "promoCode": null,
+              "priceUsd": 10,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            }
+          ]
+        },
+        {
+          "id": "purchase10",
+          "title": "Purchase bonuses at $10 or less",
+          "url": "/bonuses/bonuses-under-10-dollars/",
+          "rows": [
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "purchase10",
+              "value": 3.003003003003003,
+              "label": "30 SC for $9.99",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "2ca990e803d31fa27c76",
+              "sourceUrl": "https://www.wowvegas.com/promo-code",
+              "observedAt": "2026-09-24T10:35:50.905Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-24T10:35:50.905Z",
+              "lastChangedAt": "2026-09-24T10:35:50.905Z",
+              "conditions": [
+                "First purchase only.",
+                "Normally $29.99.",
+                "Instant coin delivery is stated."
+              ],
+              "promoCode": "WOWBONUS2026",
+              "priceUsd": 9.99,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            },
+            {
+              "slug": "chumba",
+              "name": "Chumba Casino",
+              "url": "/redemption-times/chumba/",
+              "metric": "purchase10",
+              "value": 3,
+              "label": "30 SC for $10",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "a45d7ab2ba3af2192a09",
+              "sourceUrl": "https://www.chumbacasino.com/",
+              "observedAt": "2026-09-24T10:31:05.432Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-24T06:33:54.011Z",
+              "lastChangedAt": "2026-09-24T06:33:54.011Z",
+              "conditions": [
+                "Exclusive first-time offer.",
+                "GC10M for $10 plus FREE SC30."
+              ],
+              "promoCode": null,
+              "priceUsd": 10,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            }
+          ]
+        },
+        {
+          "id": "purchase20",
+          "title": "Purchase bonuses at $20 or less",
+          "url": "/bonuses/bonuses-under-20-dollars/",
+          "rows": [
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "purchase20",
+              "value": 3.003003003003003,
+              "label": "30 SC for $9.99",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "2ca990e803d31fa27c76",
+              "sourceUrl": "https://www.wowvegas.com/promo-code",
+              "observedAt": "2026-09-24T10:35:50.905Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-24T10:35:50.905Z",
+              "lastChangedAt": "2026-09-24T10:35:50.905Z",
+              "conditions": [
+                "First purchase only.",
+                "Normally $29.99.",
+                "Instant coin delivery is stated."
+              ],
+              "promoCode": "WOWBONUS2026",
+              "priceUsd": 9.99,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            },
+            {
+              "slug": "chumba",
+              "name": "Chumba Casino",
+              "url": "/redemption-times/chumba/",
+              "metric": "purchase20",
+              "value": 3,
+              "label": "30 SC for $10",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "a45d7ab2ba3af2192a09",
+              "sourceUrl": "https://www.chumbacasino.com/",
+              "observedAt": "2026-09-24T10:31:05.432Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-24T06:33:54.011Z",
+              "lastChangedAt": "2026-09-24T06:33:54.011Z",
+              "conditions": [
+                "Exclusive first-time offer.",
+                "GC10M for $10 plus FREE SC30."
+              ],
+              "promoCode": null,
+              "priceUsd": 10,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
             }
           ]
         },
@@ -268,6 +444,214 @@
   ],
   "generatedAt": "2026-09-24T10:40:03.878Z",
   "operators": [
+    {
+      "slug": "wow-vegas",
+      "name": "WOW Vegas",
+      "productMode": "sweepstakes",
+      "favicon": "/assets/favicons/wow-vegas.png",
+      "url": "/redemption-times/wow-vegas/",
+      "metrics": {
+        "signup": {
+          "metric": "signup",
+          "value": 2,
+          "label": "2 SC",
+          "note": "5 SC total in stages.",
+          "recordId": "b53fd51a74943d57db73",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "Available to claim after sign-up.",
+            "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 5,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
+        "welcome": {
+          "metric": "welcome",
+          "value": 5,
+          "label": "5 SC",
+          "note": "No purchase needed.",
+          "recordId": "b53fd51a74943d57db73",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "Available to claim after sign-up.",
+            "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 5,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
+        "staged": {
+          "metric": "staged",
+          "value": 5,
+          "label": "5 SC",
+          "note": "2 SC immediate; remainder in stages.",
+          "recordId": "b53fd51a74943d57db73",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "Available to claim after sign-up.",
+            "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 5,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
+        "cash": {
+          "metric": "cash",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "a35519efaaed4773afb8",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+          "observedAt": "2026-09-24T06:41:54.544Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-10T21:21:50.392Z",
+          "lastChangedAt": "2026-09-22T12:37:43.153Z",
+          "conditions": [
+            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "general": null,
+        "gift": {
+          "metric": "gift",
+          "value": 20,
+          "label": "20 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "c8abcce14b7d83789a79",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+          "observedAt": "2026-09-24T06:41:54.544Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-22T06:40:22.482Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "daily": null,
+        "purchase": {
+          "metric": "purchase",
+          "value": 3.003003003003003,
+          "label": "30 SC for $9.99",
+          "note": "3 SC per $1. First purchase only.",
+          "recordId": "2ca990e803d31fa27c76",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "First purchase only.",
+            "Normally $29.99.",
+            "Instant coin delivery is stated."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": 9.99,
+          "immediateSc": 30,
+          "totalSc": 30,
+          "durationDays": null,
+          "purchaseRequired": true,
+          "kind": "first_purchase"
+        },
+        "purchase10": {
+          "metric": "purchase10",
+          "value": 3.003003003003003,
+          "label": "30 SC for $9.99",
+          "note": "3 SC per $1. First purchase only.",
+          "recordId": "2ca990e803d31fa27c76",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "First purchase only.",
+            "Normally $29.99.",
+            "Instant coin delivery is stated."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": 9.99,
+          "immediateSc": 30,
+          "totalSc": 30,
+          "durationDays": null,
+          "purchaseRequired": true,
+          "kind": "first_purchase"
+        },
+        "purchase20": {
+          "metric": "purchase20",
+          "value": 3.003003003003003,
+          "label": "30 SC for $9.99",
+          "note": "3 SC per $1. First purchase only.",
+          "recordId": "2ca990e803d31fa27c76",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "First purchase only.",
+            "Normally $29.99.",
+            "Instant coin delivery is stated."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": 9.99,
+          "immediateSc": 30,
+          "totalSc": 30,
+          "durationDays": null,
+          "purchaseRequired": true,
+          "kind": "first_purchase"
+        }
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "partial",
+      "score": 75,
+      "rank": 1,
+      "benefitCount": 5,
+      "componentScores": {
+        "signup": 50,
+        "purchase": 75,
+        "cash": 100
+      },
+      "disclosureCount": 3,
+      "status": "Ranked on published offers"
+    },
     {
       "slug": "chumba",
       "name": "Chumba Casino",
@@ -442,12 +826,12 @@
         "cash": null
       },
       "collectionStatus": "readable",
-      "score": 55.555555555555564,
-      "rank": 1,
+      "score": 50,
+      "rank": 2,
       "benefitCount": 5,
       "componentScores": {
         "signup": 50,
-        "purchase": 66.66666666666667,
+        "purchase": 50,
         "cash": 50
       },
       "disclosureCount": 3,
@@ -462,46 +846,46 @@
       "metrics": {
         "signup": {
           "metric": "signup",
-          "value": 60,
-          "label": "60 SC",
+          "value": 2.5,
+          "label": "2.5 SC",
           "note": "Immediate. No purchase needed.",
-          "recordId": "5cbaa05d8fa9e78d54d8",
-          "sourceUrl": "https://blog.mcluck.com/faq/mcluck-redemption-times/",
-          "observedAt": "2026-09-24T10:38:12.595Z",
+          "recordId": "b2643e5e0ea958f4f2de",
+          "sourceUrl": "https://www.mcluck.com/promotions",
+          "observedAt": "2026-09-24T10:34:08.360Z",
           "status": "published",
-          "firstObservedAt": "2026-09-24T10:38:12.595Z",
-          "lastChangedAt": null,
+          "firstObservedAt": "2026-09-24T10:34:08.360Z",
+          "lastChangedAt": "2026-09-24T10:34:08.360Z",
           "conditions": [
-            "Sign up now to get GC 120K \\+ FREE SC 60 \\+ Chance to Win 500 FREE SC",
-            "Chance to Win 500 FREE SC"
+            "Register now to claim your welcome reward.",
+            "This exclusive sign-up reward is just the start of an exciting experience filled with incredible casino promotions."
           ],
           "promoCode": null,
           "priceUsd": null,
-          "immediateSc": 60,
-          "totalSc": 60,
+          "immediateSc": 2.5,
+          "totalSc": 2.5,
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup"
         },
         "welcome": {
           "metric": "welcome",
-          "value": 60,
-          "label": "60 SC",
+          "value": 2.5,
+          "label": "2.5 SC",
           "note": "No purchase needed.",
-          "recordId": "5cbaa05d8fa9e78d54d8",
-          "sourceUrl": "https://blog.mcluck.com/faq/mcluck-redemption-times/",
-          "observedAt": "2026-09-24T10:38:12.595Z",
+          "recordId": "b2643e5e0ea958f4f2de",
+          "sourceUrl": "https://www.mcluck.com/promotions",
+          "observedAt": "2026-09-24T10:34:08.360Z",
           "status": "published",
-          "firstObservedAt": "2026-09-24T10:38:12.595Z",
-          "lastChangedAt": null,
+          "firstObservedAt": "2026-09-24T10:34:08.360Z",
+          "lastChangedAt": "2026-09-24T10:34:08.360Z",
           "conditions": [
-            "Sign up now to get GC 120K \\+ FREE SC 60 \\+ Chance to Win 500 FREE SC",
-            "Chance to Win 500 FREE SC"
+            "Register now to claim your welcome reward.",
+            "This exclusive sign-up reward is just the start of an exciting experience filled with incredible casino promotions."
           ],
           "promoCode": null,
           "priceUsd": null,
-          "immediateSc": 60,
-          "totalSc": 60,
+          "immediateSc": 2.5,
+          "totalSc": 2.5,
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup"
@@ -559,121 +943,6 @@
         "cash": null
       },
       "collectionStatus": "readable",
-      "score": null,
-      "rank": null,
-      "benefitCount": 4,
-      "componentScores": {},
-      "disclosureCount": 2,
-      "status": "Overall comparison incomplete"
-    },
-    {
-      "slug": "wow-vegas",
-      "name": "WOW Vegas",
-      "productMode": "sweepstakes",
-      "favicon": "/assets/favicons/wow-vegas.png",
-      "url": "/redemption-times/wow-vegas/",
-      "metrics": {
-        "signup": {
-          "metric": "signup",
-          "value": 2,
-          "label": "2 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "61ae1ebd3f87faf23efb",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
-          "observedAt": "2026-09-21T21:46:24.480Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-10T21:21:39.815Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Create an account at WOW Vegas.",
-            "Accept the Sweepstakes Rules when prompted during registration.",
-            "Click the “Claim Your Free SC” button.",
-            "Bonus is added upon completion."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2,
-          "totalSc": 2,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "welcome": {
-          "metric": "welcome",
-          "value": 5,
-          "label": "5 SC",
-          "note": "No purchase needed.",
-          "recordId": "b53fd51a74943d57db73",
-          "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-24T10:35:50.905Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-24T10:35:50.905Z",
-          "lastChangedAt": "2026-09-24T10:35:50.905Z",
-          "conditions": [
-            "Available to claim after sign-up.",
-            "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
-          ],
-          "promoCode": "WOWBONUS2026",
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": 5,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "staged": null,
-        "cash": {
-          "metric": "cash",
-          "value": 50,
-          "label": "50 SC",
-          "note": "Cash redemption minimum.",
-          "recordId": "a35519efaaed4773afb8",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-24T06:41:54.544Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-10T21:21:50.392Z",
-          "lastChangedAt": "2026-09-22T12:37:43.153Z",
-          "conditions": [
-            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "general": null,
-        "gift": {
-          "metric": "gift",
-          "value": 20,
-          "label": "20 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "c8abcce14b7d83789a79",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-24T06:41:54.544Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-22T06:40:22.482Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "daily": null,
-        "purchase": null,
-        "purchase10": null,
-        "purchase20": null
-      },
-      "absences": {
-        "signup": null,
-        "purchase": null,
-        "cash": null
-      },
-      "collectionStatus": "partial",
       "score": null,
       "rank": null,
       "benefitCount": 4,
@@ -1211,34 +1480,6 @@
       "url": "/bonuses/no-purchase-signup-bonuses/",
       "rows": [
         {
-          "slug": "mcluck",
-          "name": "McLuck",
-          "url": "/redemption-times/mcluck/",
-          "favicon": "/assets/favicons/mcluck.jpg",
-          "metric": "signup",
-          "value": 60,
-          "label": "60 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "5cbaa05d8fa9e78d54d8",
-          "sourceUrl": "https://blog.mcluck.com/faq/mcluck-redemption-times/",
-          "observedAt": "2026-09-24T10:38:12.595Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-24T10:38:12.595Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sign up now to get GC 120K \\+ FREE SC 60 \\+ Chance to Win 500 FREE SC",
-            "Chance to Win 500 FREE SC"
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 60,
-          "totalSc": 60,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup",
-          "rank": 1
-        },
-        {
           "slug": "yay-casino",
           "name": "YAY Casino",
           "url": "/redemption-times/yay-casino/",
@@ -1264,6 +1505,34 @@
           "immediateSc": 4,
           "totalSc": 12,
           "durationDays": 7,
+          "purchaseRequired": false,
+          "kind": "signup",
+          "rank": 1
+        },
+        {
+          "slug": "mcluck",
+          "name": "McLuck",
+          "url": "/redemption-times/mcluck/",
+          "favicon": "/assets/favicons/mcluck.jpg",
+          "metric": "signup",
+          "value": 2.5,
+          "label": "2.5 SC",
+          "note": "Immediate. No purchase needed.",
+          "recordId": "b2643e5e0ea958f4f2de",
+          "sourceUrl": "https://www.mcluck.com/promotions",
+          "observedAt": "2026-09-24T10:34:08.360Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:34:08.360Z",
+          "lastChangedAt": "2026-09-24T10:34:08.360Z",
+          "conditions": [
+            "Register now to claim your welcome reward.",
+            "This exclusive sign-up reward is just the start of an exciting experience filled with incredible casino promotions."
+          ],
+          "promoCode": null,
+          "priceUsd": null,
+          "immediateSc": 2.5,
+          "totalSc": 2.5,
+          "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup",
           "rank": 2
@@ -1304,30 +1573,28 @@
           "metric": "signup",
           "value": 2,
           "label": "2 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "61ae1ebd3f87faf23efb",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
-          "observedAt": "2026-09-21T21:46:24.480Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-10T21:21:39.815Z",
-          "lastChangedAt": null,
+          "note": "5 SC total in stages.",
+          "recordId": "b53fd51a74943d57db73",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
           "conditions": [
-            "Create an account at WOW Vegas.",
-            "Accept the Sweepstakes Rules when prompted during registration.",
-            "Click the “Claim Your Free SC” button.",
-            "Bonus is added upon completion."
+            "Available to claim after sign-up.",
+            "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
           ],
-          "promoCode": null,
+          "promoCode": "WOWBONUS2026",
           "priceUsd": null,
           "immediateSc": 2,
-          "totalSc": 2,
+          "totalSc": 5,
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup",
           "rank": 3
         }
       ],
-      "updatedAt": "2026-09-24T10:38:12.595Z"
+      "updatedAt": "2026-09-24T10:35:50.905Z"
     },
     {
       "id": "staged",
@@ -1370,9 +1637,37 @@
           "purchaseRequired": false,
           "kind": "signup",
           "rank": 1
+        },
+        {
+          "slug": "wow-vegas",
+          "name": "WOW Vegas",
+          "url": "/redemption-times/wow-vegas/",
+          "favicon": "/assets/favicons/wow-vegas.png",
+          "metric": "staged",
+          "value": 5,
+          "label": "5 SC",
+          "note": "2 SC immediate; remainder in stages.",
+          "recordId": "b53fd51a74943d57db73",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "Available to claim after sign-up.",
+            "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 5,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup",
+          "rank": 2
         }
       ],
-      "updatedAt": "2026-09-24T06:40:46.815Z"
+      "updatedAt": "2026-09-24T10:35:50.905Z"
     },
     {
       "id": "purchase",
@@ -1416,6 +1711,35 @@
           "rank": 1
         },
         {
+          "slug": "wow-vegas",
+          "name": "WOW Vegas",
+          "url": "/redemption-times/wow-vegas/",
+          "favicon": "/assets/favicons/wow-vegas.png",
+          "metric": "purchase",
+          "value": 3.003003003003003,
+          "label": "30 SC for $9.99",
+          "note": "3 SC per $1. First purchase only.",
+          "recordId": "2ca990e803d31fa27c76",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "First purchase only.",
+            "Normally $29.99.",
+            "Instant coin delivery is stated."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": 9.99,
+          "immediateSc": 30,
+          "totalSc": 30,
+          "durationDays": null,
+          "purchaseRequired": true,
+          "kind": "first_purchase",
+          "rank": 2
+        },
+        {
           "slug": "chumba",
           "name": "Chumba Casino",
           "url": "/redemption-times/chumba/",
@@ -1441,7 +1765,7 @@
           "durationDays": null,
           "purchaseRequired": true,
           "kind": "first_purchase",
-          "rank": 2
+          "rank": 3
         },
         {
           "slug": "lucky-bunny",
@@ -1468,7 +1792,7 @@
           "durationDays": null,
           "purchaseRequired": true,
           "kind": "purchase_package",
-          "rank": 3
+          "rank": 4
         }
       ],
       "updatedAt": "2026-09-24T10:37:01.229Z"
@@ -1485,6 +1809,35 @@
       "anchor": "purchase10",
       "url": "/bonuses/bonuses-under-10-dollars/",
       "rows": [
+        {
+          "slug": "wow-vegas",
+          "name": "WOW Vegas",
+          "url": "/redemption-times/wow-vegas/",
+          "favicon": "/assets/favicons/wow-vegas.png",
+          "metric": "purchase10",
+          "value": 3.003003003003003,
+          "label": "30 SC for $9.99",
+          "note": "3 SC per $1. First purchase only.",
+          "recordId": "2ca990e803d31fa27c76",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "First purchase only.",
+            "Normally $29.99.",
+            "Instant coin delivery is stated."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": 9.99,
+          "immediateSc": 30,
+          "totalSc": 30,
+          "durationDays": null,
+          "purchaseRequired": true,
+          "kind": "first_purchase",
+          "rank": 1
+        },
         {
           "slug": "chumba",
           "name": "Chumba Casino",
@@ -1511,7 +1864,7 @@
           "durationDays": null,
           "purchaseRequired": true,
           "kind": "first_purchase",
-          "rank": 1
+          "rank": 2
         },
         {
           "slug": "lucky-bunny",
@@ -1538,10 +1891,10 @@
           "durationDays": null,
           "purchaseRequired": true,
           "kind": "purchase_package",
-          "rank": 2
+          "rank": 3
         }
       ],
-      "updatedAt": "2026-09-24T10:31:05.432Z"
+      "updatedAt": "2026-09-24T10:35:50.905Z"
     },
     {
       "id": "purchase20",
@@ -1585,6 +1938,35 @@
           "rank": 1
         },
         {
+          "slug": "wow-vegas",
+          "name": "WOW Vegas",
+          "url": "/redemption-times/wow-vegas/",
+          "favicon": "/assets/favicons/wow-vegas.png",
+          "metric": "purchase20",
+          "value": 3.003003003003003,
+          "label": "30 SC for $9.99",
+          "note": "3 SC per $1. First purchase only.",
+          "recordId": "2ca990e803d31fa27c76",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "First purchase only.",
+            "Normally $29.99.",
+            "Instant coin delivery is stated."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": 9.99,
+          "immediateSc": 30,
+          "totalSc": 30,
+          "durationDays": null,
+          "purchaseRequired": true,
+          "kind": "first_purchase",
+          "rank": 2
+        },
+        {
           "slug": "chumba",
           "name": "Chumba Casino",
           "url": "/redemption-times/chumba/",
@@ -1610,7 +1992,7 @@
           "durationDays": null,
           "purchaseRequired": true,
           "kind": "first_purchase",
-          "rank": 2
+          "rank": 3
         },
         {
           "slug": "lucky-bunny",
@@ -1637,7 +2019,7 @@
           "durationDays": null,
           "purchaseRequired": true,
           "kind": "purchase_package",
-          "rank": 3
+          "rank": 4
         }
       ],
       "updatedAt": "2026-09-24T10:37:01.229Z"
@@ -1839,23 +2221,23 @@
         "productMode": "unverified",
         "welcome": {
           "metric": "signup",
-          "value": 60,
-          "label": "60 SC free",
+          "value": 2.5,
+          "label": "2.5 SC free",
           "note": "On signup; no purchase",
-          "recordId": "5cbaa05d8fa9e78d54d8",
-          "sourceUrl": "https://blog.mcluck.com/faq/mcluck-redemption-times/",
-          "observedAt": "2026-09-24T10:38:12.595Z",
+          "recordId": "b2643e5e0ea958f4f2de",
+          "sourceUrl": "https://www.mcluck.com/promotions",
+          "observedAt": "2026-09-24T10:34:08.360Z",
           "status": "published",
-          "firstObservedAt": "2026-09-24T10:38:12.595Z",
-          "lastChangedAt": null,
+          "firstObservedAt": "2026-09-24T10:34:08.360Z",
+          "lastChangedAt": "2026-09-24T10:34:08.360Z",
           "conditions": [
-            "Sign up now to get GC 120K \\+ FREE SC 60 \\+ Chance to Win 500 FREE SC",
-            "Chance to Win 500 FREE SC"
+            "Register now to claim your welcome reward.",
+            "This exclusive sign-up reward is just the start of an exciting experience filled with incredible casino promotions."
           ],
           "promoCode": null,
           "priceUsd": null,
-          "immediateSc": 60,
-          "totalSc": 60,
+          "immediateSc": 2.5,
+          "totalSc": 2.5,
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup"
@@ -1906,7 +2288,7 @@
         "lastCheckedAt": "2026-09-24T10:29:34.240Z",
         "welcomeGroup": 0,
         "sortValues": {
-          "welcome": 60,
+          "welcome": 2.5,
           "daily": null,
           "redemption": 120,
           "cash": 75
@@ -1928,23 +2310,21 @@
           "metric": "signup",
           "value": 2,
           "label": "2 SC free",
-          "note": "On signup; no purchase",
-          "recordId": "61ae1ebd3f87faf23efb",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
-          "observedAt": "2026-09-21T21:46:24.480Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-10T21:21:39.815Z",
-          "lastChangedAt": null,
+          "note": "5 SC total in stages",
+          "recordId": "b53fd51a74943d57db73",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
           "conditions": [
-            "Create an account at WOW Vegas.",
-            "Accept the Sweepstakes Rules when prompted during registration.",
-            "Click the “Claim Your Free SC” button.",
-            "Bonus is added upon completion."
+            "Available to claim after sign-up.",
+            "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
           ],
-          "promoCode": null,
+          "promoCode": "WOWBONUS2026",
           "priceUsd": null,
           "immediateSc": 2,
-          "totalSc": 2,
+          "totalSc": 5,
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup"
@@ -2692,6 +3072,214 @@
   },
   "ranked": [
     {
+      "slug": "wow-vegas",
+      "name": "WOW Vegas",
+      "productMode": "sweepstakes",
+      "favicon": "/assets/favicons/wow-vegas.png",
+      "url": "/redemption-times/wow-vegas/",
+      "metrics": {
+        "signup": {
+          "metric": "signup",
+          "value": 2,
+          "label": "2 SC",
+          "note": "5 SC total in stages.",
+          "recordId": "b53fd51a74943d57db73",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "Available to claim after sign-up.",
+            "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 5,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
+        "welcome": {
+          "metric": "welcome",
+          "value": 5,
+          "label": "5 SC",
+          "note": "No purchase needed.",
+          "recordId": "b53fd51a74943d57db73",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "Available to claim after sign-up.",
+            "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 5,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
+        "staged": {
+          "metric": "staged",
+          "value": 5,
+          "label": "5 SC",
+          "note": "2 SC immediate; remainder in stages.",
+          "recordId": "b53fd51a74943d57db73",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "Available to claim after sign-up.",
+            "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": null,
+          "immediateSc": 2,
+          "totalSc": 5,
+          "durationDays": null,
+          "purchaseRequired": false,
+          "kind": "signup"
+        },
+        "cash": {
+          "metric": "cash",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Cash redemption minimum.",
+          "recordId": "a35519efaaed4773afb8",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+          "observedAt": "2026-09-24T06:41:54.544Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-10T21:21:50.392Z",
+          "lastChangedAt": "2026-09-22T12:37:43.153Z",
+          "conditions": [
+            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "general": null,
+        "gift": {
+          "metric": "gift",
+          "value": 20,
+          "label": "20 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "c8abcce14b7d83789a79",
+          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+          "observedAt": "2026-09-24T06:41:54.544Z",
+          "status": "retained",
+          "firstObservedAt": "2026-09-22T06:40:22.482Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "daily": null,
+        "purchase": {
+          "metric": "purchase",
+          "value": 3.003003003003003,
+          "label": "30 SC for $9.99",
+          "note": "3 SC per $1. First purchase only.",
+          "recordId": "2ca990e803d31fa27c76",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "First purchase only.",
+            "Normally $29.99.",
+            "Instant coin delivery is stated."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": 9.99,
+          "immediateSc": 30,
+          "totalSc": 30,
+          "durationDays": null,
+          "purchaseRequired": true,
+          "kind": "first_purchase"
+        },
+        "purchase10": {
+          "metric": "purchase10",
+          "value": 3.003003003003003,
+          "label": "30 SC for $9.99",
+          "note": "3 SC per $1. First purchase only.",
+          "recordId": "2ca990e803d31fa27c76",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "First purchase only.",
+            "Normally $29.99.",
+            "Instant coin delivery is stated."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": 9.99,
+          "immediateSc": 30,
+          "totalSc": 30,
+          "durationDays": null,
+          "purchaseRequired": true,
+          "kind": "first_purchase"
+        },
+        "purchase20": {
+          "metric": "purchase20",
+          "value": 3.003003003003003,
+          "label": "30 SC for $9.99",
+          "note": "3 SC per $1. First purchase only.",
+          "recordId": "2ca990e803d31fa27c76",
+          "sourceUrl": "https://www.wowvegas.com/promo-code",
+          "observedAt": "2026-09-24T10:35:50.905Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-24T10:35:50.905Z",
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "conditions": [
+            "First purchase only.",
+            "Normally $29.99.",
+            "Instant coin delivery is stated."
+          ],
+          "promoCode": "WOWBONUS2026",
+          "priceUsd": 9.99,
+          "immediateSc": 30,
+          "totalSc": 30,
+          "durationDays": null,
+          "purchaseRequired": true,
+          "kind": "first_purchase"
+        }
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "partial",
+      "score": 75,
+      "rank": 1,
+      "benefitCount": 5,
+      "componentScores": {
+        "signup": 50,
+        "purchase": 75,
+        "cash": 100
+      },
+      "disclosureCount": 3,
+      "status": "Ranked on published offers"
+    },
+    {
       "slug": "chumba",
       "name": "Chumba Casino",
       "productMode": "sweepstakes",
@@ -2865,12 +3453,12 @@
         "cash": null
       },
       "collectionStatus": "readable",
-      "score": 55.555555555555564,
-      "rank": 1,
+      "score": 50,
+      "rank": 2,
       "benefitCount": 5,
       "componentScores": {
         "signup": 50,
-        "purchase": 66.66666666666667,
+        "purchase": 50,
         "cash": 50
       },
       "disclosureCount": 3,
@@ -2887,46 +3475,46 @@
       "metrics": {
         "signup": {
           "metric": "signup",
-          "value": 60,
-          "label": "60 SC",
+          "value": 2.5,
+          "label": "2.5 SC",
           "note": "Immediate. No purchase needed.",
-          "recordId": "5cbaa05d8fa9e78d54d8",
-          "sourceUrl": "https://blog.mcluck.com/faq/mcluck-redemption-times/",
-          "observedAt": "2026-09-24T10:38:12.595Z",
+          "recordId": "b2643e5e0ea958f4f2de",
+          "sourceUrl": "https://www.mcluck.com/promotions",
+          "observedAt": "2026-09-24T10:34:08.360Z",
           "status": "published",
-          "firstObservedAt": "2026-09-24T10:38:12.595Z",
-          "lastChangedAt": null,
+          "firstObservedAt": "2026-09-24T10:34:08.360Z",
+          "lastChangedAt": "2026-09-24T10:34:08.360Z",
           "conditions": [
-            "Sign up now to get GC 120K \\+ FREE SC 60 \\+ Chance to Win 500 FREE SC",
-            "Chance to Win 500 FREE SC"
+            "Register now to claim your welcome reward.",
+            "This exclusive sign-up reward is just the start of an exciting experience filled with incredible casino promotions."
           ],
           "promoCode": null,
           "priceUsd": null,
-          "immediateSc": 60,
-          "totalSc": 60,
+          "immediateSc": 2.5,
+          "totalSc": 2.5,
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup"
         },
         "welcome": {
           "metric": "welcome",
-          "value": 60,
-          "label": "60 SC",
+          "value": 2.5,
+          "label": "2.5 SC",
           "note": "No purchase needed.",
-          "recordId": "5cbaa05d8fa9e78d54d8",
-          "sourceUrl": "https://blog.mcluck.com/faq/mcluck-redemption-times/",
-          "observedAt": "2026-09-24T10:38:12.595Z",
+          "recordId": "b2643e5e0ea958f4f2de",
+          "sourceUrl": "https://www.mcluck.com/promotions",
+          "observedAt": "2026-09-24T10:34:08.360Z",
           "status": "published",
-          "firstObservedAt": "2026-09-24T10:38:12.595Z",
-          "lastChangedAt": null,
+          "firstObservedAt": "2026-09-24T10:34:08.360Z",
+          "lastChangedAt": "2026-09-24T10:34:08.360Z",
           "conditions": [
-            "Sign up now to get GC 120K \\+ FREE SC 60 \\+ Chance to Win 500 FREE SC",
-            "Chance to Win 500 FREE SC"
+            "Register now to claim your welcome reward.",
+            "This exclusive sign-up reward is just the start of an exciting experience filled with incredible casino promotions."
           ],
           "promoCode": null,
           "priceUsd": null,
-          "immediateSc": 60,
-          "totalSc": 60,
+          "immediateSc": 2.5,
+          "totalSc": 2.5,
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup"
@@ -2984,121 +3572,6 @@
         "cash": null
       },
       "collectionStatus": "readable",
-      "score": null,
-      "rank": null,
-      "benefitCount": 4,
-      "componentScores": {},
-      "disclosureCount": 2,
-      "status": "Overall comparison incomplete"
-    },
-    {
-      "slug": "wow-vegas",
-      "name": "WOW Vegas",
-      "productMode": "sweepstakes",
-      "favicon": "/assets/favicons/wow-vegas.png",
-      "url": "/redemption-times/wow-vegas/",
-      "metrics": {
-        "signup": {
-          "metric": "signup",
-          "value": 2,
-          "label": "2 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "61ae1ebd3f87faf23efb",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676733-sign-up-bonus-how-it-works",
-          "observedAt": "2026-09-21T21:46:24.480Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-10T21:21:39.815Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Create an account at WOW Vegas.",
-            "Accept the Sweepstakes Rules when prompted during registration.",
-            "Click the “Claim Your Free SC” button.",
-            "Bonus is added upon completion."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2,
-          "totalSc": 2,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "welcome": {
-          "metric": "welcome",
-          "value": 5,
-          "label": "5 SC",
-          "note": "No purchase needed.",
-          "recordId": "b53fd51a74943d57db73",
-          "sourceUrl": "https://www.wowvegas.com/promo-code",
-          "observedAt": "2026-09-24T10:35:50.905Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-24T10:35:50.905Z",
-          "lastChangedAt": "2026-09-24T10:35:50.905Z",
-          "conditions": [
-            "Available to claim after sign-up.",
-            "The stated SC and WOW Coins are split across Day 1, Day 2, and Day 3."
-          ],
-          "promoCode": "WOWBONUS2026",
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": 5,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "staged": null,
-        "cash": {
-          "metric": "cash",
-          "value": 50,
-          "label": "50 SC",
-          "note": "Cash redemption minimum.",
-          "recordId": "a35519efaaed4773afb8",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-24T06:41:54.544Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-10T21:21:50.392Z",
-          "lastChangedAt": "2026-09-22T12:37:43.153Z",
-          "conditions": [
-            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "general": null,
-        "gift": {
-          "metric": "gift",
-          "value": 20,
-          "label": "20 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "c8abcce14b7d83789a79",
-          "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-09-24T06:41:54.544Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-22T06:40:22.482Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Blue WOW Coins cannot be redeemed, as they have no monetary value."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "daily": null,
-        "purchase": null,
-        "purchase10": null,
-        "purchase20": null
-      },
-      "absences": {
-        "signup": null,
-        "purchase": null,
-        "cash": null
-      },
-      "collectionStatus": "partial",
       "score": null,
       "rank": null,
       "benefitCount": 4,

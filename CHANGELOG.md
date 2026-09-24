@@ -14,6 +14,13 @@ Format:
 
 ---
 
+## 2026-09-24 - Correct offer interpretation found by the live refresh
+- The fresh run recovered 48/50 readable sources, up from 37/50. Numeric extraction exposed an ambiguous McLuck signup banner and omitted explicit WOW first-day and instant-purchase allocations.
+- Keep generic signup/chance-to-win banners as promotions unless free signup is established. Recover explicitly quoted day-one and instant-delivery SC without calculating totals or overwriting an existing amount; apply banner qualification to retained public records too.
+- Recheck the saved run without new collection, preserving capture dates and private originals. Numeric extractor is 2.4.4; operator roster and absence policy are unchanged.
+- Correct five public records against run `2026-09-24T10-29-34-240Z-35987472986-1`; recover WOW's staged and purchase benchmarks and return McLuck to its dedicated 2.5 SC signup reward. Benchmark coverage remains six operators and 16 homepage attributes, with zero fixed daily amounts.
+- Verify 118 monitor tests, full release, and all seven benchmarks/eleven profiles across desktop/mobile, keyboard and no-JavaScript checks.
+
 ## 2026-09-24 - Recover public pages and recurring first-login rewards
 - Keep substantive public pages readable when they contain standard embedded reCAPTCHA notices. Preserve actual challenge, HTTP block and login detection.
 - Treat explicitly first-login-each-day wording consistently in extraction, benefit ranking and homepage labels. Preserve original quotes and continue excluding first-ever, paid, variable and streak rewards.
