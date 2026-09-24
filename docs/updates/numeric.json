@@ -34375,7 +34375,7 @@
           "name": "Welcome Sign-Up Bonus",
           "kind": "signup",
           "priceUsd": null,
-          "immediateSc": null,
+          "immediateSc": 2,
           "totalSc": 5,
           "goldCoins": 250000,
           "advertisedExtraPercent": null,
@@ -34402,14 +34402,15 @@
           "lastConfirmedAt": null,
           "completePackage": false,
           "firstObservedAt": "2026-09-24T10:35:50.905Z",
-          "lastChangedAt": "2026-09-24T10:35:50.905Z"
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "semanticCorrectionVersion": "2.4.4"
         },
         {
           "sourceId": "wow-promo",
           "name": "First Purchase Bonus",
           "kind": "first_purchase",
           "priceUsd": 9.99,
-          "immediateSc": null,
+          "immediateSc": 30,
           "totalSc": 30,
           "goldCoins": 1500000,
           "advertisedExtraPercent": null,
@@ -34437,7 +34438,8 @@
           "lastConfirmedAt": null,
           "completePackage": false,
           "firstObservedAt": "2026-09-24T10:35:50.905Z",
-          "lastChangedAt": "2026-09-24T10:35:50.905Z"
+          "lastChangedAt": "2026-09-24T10:35:50.905Z",
+          "semanticCorrectionVersion": "2.4.4"
         },
         {
           "sourceId": "wow-promo",
@@ -39005,9 +39007,9 @@
         {
           "sourceId": "mcluck-redemption-minimum",
           "name": "Sign-up offer",
-          "kind": "signup",
+          "kind": "promotion",
           "priceUsd": null,
-          "immediateSc": 60,
+          "immediateSc": null,
           "totalSc": 60,
           "goldCoins": 120000,
           "advertisedExtraPercent": null,
@@ -39015,7 +39017,7 @@
           "extraPercentComparison": null,
           "durationDays": null,
           "intervalHours": null,
-          "purchaseRequired": false,
+          "purchaseRequired": null,
           "promoCode": null,
           "offerStatus": "unknown",
           "expiresAt": null,
@@ -39034,14 +39036,15 @@
           "lastConfirmedAt": null,
           "completePackage": false,
           "firstObservedAt": "2026-09-24T10:36:02.717Z",
-          "lastChangedAt": "2026-09-24T10:36:02.717Z"
+          "lastChangedAt": "2026-09-24T10:36:02.717Z",
+          "semanticCorrectionVersion": "2.4.4"
         },
         {
           "sourceId": "mcluck-redemption-time",
           "name": "Sign-up offer",
-          "kind": "signup",
+          "kind": "promotion",
           "priceUsd": null,
-          "immediateSc": 60,
+          "immediateSc": null,
           "totalSc": 60,
           "goldCoins": 120000,
           "advertisedExtraPercent": null,
@@ -39049,7 +39052,7 @@
           "extraPercentComparison": null,
           "durationDays": null,
           "intervalHours": null,
-          "purchaseRequired": false,
+          "purchaseRequired": null,
           "promoCode": null,
           "offerStatus": "unknown",
           "expiresAt": null,
@@ -39068,7 +39071,8 @@
           "lastConfirmedAt": null,
           "completePackage": false,
           "firstObservedAt": "2026-09-24T10:38:12.595Z",
-          "lastChangedAt": null
+          "lastChangedAt": null,
+          "semanticCorrectionVersion": "2.4.4"
         },
         {
           "sourceId": "mcluck-welcome",
@@ -39681,9 +39685,9 @@
         {
           "sourceId": "mcluck-redemption-minimum",
           "name": "Sign-up offer: GC 120K + FREE SC 60",
-          "kind": "signup",
+          "kind": "promotion",
           "priceUsd": null,
-          "immediateSc": 60,
+          "immediateSc": null,
           "totalSc": 60,
           "goldCoins": 120000,
           "advertisedExtraPercent": null,
@@ -39710,7 +39714,8 @@
           "lastConfirmedAt": null,
           "completePackage": false,
           "firstObservedAt": "2026-09-24T06:40:06.119Z",
-          "lastChangedAt": "2026-09-24T06:40:06.119Z"
+          "lastChangedAt": "2026-09-24T06:40:06.119Z",
+          "semanticCorrectionVersion": "2.4.4"
         },
         {
           "sourceId": "mcluck-promotions",

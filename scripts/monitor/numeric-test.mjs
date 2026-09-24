@@ -12,6 +12,41 @@ import { baselineKey, usableRun } from "./state-core.mjs";
 import { emptyExtraction } from "./schema.mjs";
 
 const pages = text => [{ sourceId: "faq", text }];
+test("recover explicit first-day and instant-delivery allocations without inventing totals", () => {
+  const quote = "Welcome reward SC 8. Day 1: 100,000 Gold Coins + SC 3 Day 2: SC 5";
+  const base = deterministicExtract(pages("Buy 30 SC for $9.99.")).offers[0];
+  const input = { ...base, kind: "signup", quote, priceUsd: null, immediateSc: null,
+    totalSc: 8, purchaseRequired: false, conditions: [quote] };
+  const run = item => checkExtraction({ ...emptyExtraction(), offers: [item] }, pages(item.quote));
+  const output = run(input);
+  assert.equal(output.accepted.offers[0].immediateSc, 3);
+  assert.equal(output.recovered[0].field, "immediateSc");
+  assert.equal(input.immediateSc, null);
+  for (const changed of ["Welcome reward SC 8.", "Welcome reward SC 8. Day 1: 100 Gold Coins.",
+    "Welcome reward SC 8. Day 1: Up to SC 3."])
+    assert.equal(run({ ...input, quote: changed, conditions: [changed] }).accepted.offers[0].immediateSc, null);
+  const paid = "First purchase: 30 SC for $9.99 (normally $29.99). Instant coin delivery.";
+  const purchase = { ...base, kind: "first_purchase", quote: paid, immediateSc: null, conditions: [paid] };
+  assert.equal(run(purchase).accepted.offers[0].immediateSc, 30);
+  assert.equal(run({ ...purchase, quote: `${paid} Remaining rewards over 7 days.` }).accepted.offers[0].immediateSc, null);
+  assert.equal(run({ ...purchase, quote: `${paid} Plus SC 10.` }).accepted.offers[0].immediateSc, null);
+  assert.equal(run({ ...purchase, quote: paid.replace("Instant coin delivery.", "") }).accepted.offers[0].immediateSc, null);
+  assert.equal(run({ ...input, immediateSc: 5 }).accepted.offers[0].immediateSc, 5);
+  assert.equal(checkExtraction({ ...emptyExtraction(), offers: [input] }, pages("Unrelated page.")).accepted.offers.length, 0);
+});
+test("a generic sign-up banner does not establish a no-purchase immediate reward", () => {
+  const quote = "Sign up now to get GC 100K + FREE SC 40 + Chance to Win 200 FREE SC";
+  const base = deterministicExtract(pages("Buy 40 SC for $20.")).offers[0];
+  const input = { ...base, quote, kind: "signup", priceUsd: null, purchaseRequired: false, conditions: [quote] };
+  const run = item => checkExtraction({ ...emptyExtraction(), offers: [item] }, pages(item.quote)).accepted.offers[0];
+  assert.equal(run(input).kind, "promotion");
+  assert.equal(run(input).purchaseRequired, null);
+  assert.equal(run(input).immediateSc, null);
+  assert.equal(run(input).totalSc, 40);
+  assert.equal(run({ ...input, quote: `${quote}. No purchase necessary.` }).kind, "signup");
+  const reward = "Register to claim your welcome reward of FREE SC 40.";
+  assert.equal(run({ ...input, quote: reward, conditions: [reward] }).kind, "signup");
+});
 test("collection excludes binary assets and reserves full rendering for evidence-backed sources", () => {
   assert.equal(supportedContent(Buffer.from("PK\u0003\u0004\u0000"), "application/zip"), false);
   assert.equal(supportedContent(Buffer.from("hello\u0000world"), "text/html"), false);

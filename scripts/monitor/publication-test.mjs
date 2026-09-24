@@ -19,6 +19,35 @@ const extract = record => ({ operators: [{ slug: "operator-0", facts: [record] }
 const publish = (reference = reviewed, pages = [page], previous = null, extracted = null) =>
   publicNumeric(operators, reference, manifest, pages, previous, extracted);
 
+test("publication also qualifies old banner records retained after a failed collection", () => {
+  const banner = { ...claim, recordType: "offers", kind: "signup", immediateSc: 40, totalSc: 40,
+    purchaseRequired: false, conditions: ["Sign up now to get FREE SC 40 + Chance to Win 200 FREE SC"] };
+  const previous = { operators: [{ slug: "operator-0", records: [banner] }] };
+  const record = publish({ operators: [] }, [], previous).operators[0].records[0];
+  assert.equal(record.kind, "promotion");
+  assert.equal(record.immediateSc, null);
+  assert.equal(record.purchaseRequired, null);
+  assert.equal(record.capturedAt, banner.capturedAt);
+  assert.equal(banner.kind, "signup");
+});
+
+test("publication repairs explicit allocations from an older private baseline before sanitizing", () => {
+  const offer = { id: "instant", sourceId: "terms", textHash: "hash", kind: "first_purchase",
+    priceUsd: 10, immediateSc: null, totalSc: 30, purchaseRequired: true, durationDays: null,
+    quote: "Buy 30 SC for $10. Instant coin delivery.", conditions: ["First purchase only."],
+    capturedAt: page.capturedAt };
+  const extracted = { operators: [{ slug: "operator-0", offers: [offer] }] };
+  const first = publish({ operators: [] }, [page], null, extracted);
+  const second = publish({ operators: [] }, [], first, extracted);
+  for (const result of [first, second]) {
+    const record = result.operators[0].records.find(record => record.id === offer.id);
+    assert.equal(record.immediateSc, 30);
+    assert.equal(record.quote, undefined);
+    assert.equal(record.capturedAt, offer.capturedAt);
+  }
+  assert.equal(offer.immediateSc, null);
+});
+
 test("all ten operators remain public during partial collection and model failure", () => {
   const result = publish();
   assert.equal(result.operators.length, 10);
