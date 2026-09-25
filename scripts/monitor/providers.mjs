@@ -22,8 +22,17 @@ export function firecrawlOptions(url, onlyMainContent = true) {
     maxAge: 0, timeout: 60000, location: { country: "US" }, proxy: "auto" };
 }
 
+export function monitorLimits(operatorCount = 11) {
+  if (!Number.isInteger(operatorCount) || operatorCount < 1 || operatorCount > 24) {
+    throw new Error("operator_capacity_out_of_range");
+  }
+  const added = Math.max(0, operatorCount - 11);
+  return { direct: 50 + added * 5, firecrawl: 45 + added * 5, brightdata: 10, model: 12 + added };
+}
+
 export class RequestUsage {
-  constructor(initial = {}) {
+  constructor(initial = {}, operatorCount = 11) {
+    this.limits = monitorLimits(operatorCount);
     this.calls = { direct: 0, firecrawl: 0, brightdata: 0, model: 0 };
     for (const key of Object.keys(this.calls)) {
       if (Number.isInteger(initial[key]) && initial[key] >= 0) this.calls[key] = initial[key];
@@ -32,7 +41,7 @@ export class RequestUsage {
     this.firecrawlResponsesWithCredits = 0;
   }
   reserve(provider) {
-    const caps = { direct: 50, firecrawl: 45, brightdata: 10, model: 12 };
+    const caps = this.limits;
     if (!(provider in caps) || this.calls[provider] >= caps[provider]) return false;
     this.calls[provider]++;
     return true;

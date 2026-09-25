@@ -3,7 +3,7 @@
 The daily GitHub Actions workflow checks the configured operators at 06:17 UTC.
 Use `workflow_dispatch` for an additional run. Schedules can start late.
 Configured `comparisonSources` run before general discoveries, oldest first
-within each group. All configured core sources fit the current 50-source run
+within each group. All configured core sources fit the roster-sized run
 budget. A run does not guarantee that every field or source was readable.
 
 ## Collection
@@ -13,19 +13,31 @@ budget. A run does not guarantee that every field or source was readable.
 - Firecrawl requests `markdown`, `html`, `rawHtml` and `links` together, with
   `onlyMainContent: true` and `maxAge: 0`. A source-specific
   `sourceOptions[id].onlyMainContent: false` can retain surrounding content.
-- At most 50 sources, 45 Firecrawl calls, 12 model calls and 40 minutes per run.
+- For up to 11 operators: at most 50 sources, 45 Firecrawl calls and 12 model
+  calls. Each additional admitted operator adds five source/Firecrawl requests
+  and one model request. The 13-operator roster has limits of 60/55/14.
+  Limits are saved in each run. The workflow has a 60-minute timeout.
+  More than 24 operators requires an explicit capacity review.
 - Firecrawl uses automatic proxy fallback. Account-only content stays excluded.
 - Comparison seeds run first across all operators. Discovered official sources
   targeting missing fields run next, before general refreshes, within the
   eight-source/operator cap.
 - One optional quote-repair request per run uses the same saved captures and
-  validation rules. Primary extraction and repair share the 12-call model cap.
+  validation rules. Primary extraction and repair share the roster-sized model
+  cap; one primary request per operator is reserved before repair.
 - The configured dollar allowances are provisional reservations, not billing guarantees.
 - No accounts, purchases, review scraping, or eligibility circumvention.
 - Numeric extraction uses `gpt-5.6-terra` through the configured Azure endpoint.
   GitHub Actions makes the call; Lambda is not required. Bright Data remains disabled.
 
 ## Source selection
+
+Manual `screen_candidates` runs use `data/monitor/candidates.json`, with every
+candidate's seed checked before discovered pages. They use the same pipeline
+and private archive, but a separate baseline scope. They cannot publish,
+advance production state or deploy. Archived runs preserve their exact candidate
+roster. Admission still requires human confirmation of the sweepstakes product
+and two supported comparison categories. No accounts or purchases are needed.
 
 The source registry is `src/_data/operators.json`; URL overrides are in
 `data/monitor/config.json`. Bounded official-link discovery extends those seeds;
@@ -130,3 +142,5 @@ paid packages are one admission category but separate sorts. The default sort
 is immediate free signup SC, descending; unknowns last and ties alphabetical.
 Daily descriptions do not become numeric daily coverage. Hidden homepage rows
 remain monitored and available to relevant specialist comparisons.
+Non-partners link to their evidence profiles instead of an invented commercial
+visit route. Affiliate status does not affect admission or order.

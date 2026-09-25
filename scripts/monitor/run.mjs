@@ -21,9 +21,14 @@ mkdirSync("data/monitor/runs", { recursive: true });
 const operators = read(process.env.MONITOR_OPERATORS_FILE || "src/_data/operators.json", []);
 const previous = read(process.env.MONITOR_PREVIOUS_STATE || "src/_data/monitor.json", { operators: [], sources: {}, spending: [], runs: [] });
 const config = read("data/monitor/config.json", {});
+if (manifest.scope.startsWith("screening-")) {
+  // Establish every candidate's seeds before spending the trial on discoveries.
+  config.comparisonSources = Object.fromEntries(operators.map(operator =>
+    [operator.slug, operator.sources.map(source => source.id)]));
+}
 saveJson(output, "operators-config.json", operators);
 saveJson(output, "sources-config.json", config);
-const usage = new RequestUsage();
+const usage = new RequestUsage({}, operators.length);
 const sourceCache = { ...(previous.sources || {}) };
 const records = [];
 const events = [];
@@ -34,9 +39,9 @@ const missing = Object.fromEntries(buildBenchmarks(read("src/_data/numeric.json"
 const queues = sourceQueues(operators, config, previous, missing);
 const discovery = {};
 // One source per operator per round prevents one large site exhausting the run.
-while (count < 50 && queues.some(item => item.attempted < 8 && item.queue.length)) {
+while (count < usage.limits.direct && queues.some(item => item.attempted < 8 && item.queue.length)) {
   for (const item of queues) {
-    if (count >= 50 || item.attempted >= 8 || !item.queue.length) continue;
+    if (count >= usage.limits.direct || item.attempted >= 8 || !item.queue.length) continue;
     const { operator, hosts, sources } = item;
     const source = nextSource(item, queues);
     if (!source) continue;
@@ -160,6 +165,7 @@ const summary = {
   changes: events.filter(event => event.type !== "baseline").length,
   baselines: events.filter(event => event.type === "baseline").length,
   providerCalls: usage.calls,
+  requestLimits: usage.limits,
   firecrawlCreditsReported: usage.firecrawlResponsesWithCredits ? usage.firecrawlCreditsReported : null,
   firecrawlResponsesWithCredits: usage.firecrawlResponsesWithCredits,
 };

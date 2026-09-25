@@ -54,7 +54,8 @@ try {
       const footer = await item.locator(".toplist-footer").boundingBox();
       const values = await item.locator(".toplist-values").boundingBox();
       assert.ok(footer.y >= values.y + values.height);
-      assert.equal(await item.locator(".toplist-visit").getAttribute("href"), row.visitUrl);
+      assert.equal(await item.locator(".toplist-visit").getAttribute("href"), row.visitUrl || row.url);
+      assert.equal(await item.locator(".toplist-visit span").innerText(), row.visitUrl ? "Visit" : "Details");
       for (const key of ["signup", "purchase", "daily", "redemption", "cash"]) {
         if (row[key]) assert.ok((await item.locator(`[data-metric="${key}"]`).innerText()).includes(row[key].label));
       }

@@ -173,7 +173,7 @@ try {
   assert.equal(await page.locator("html").getAttribute("data-theme"), "dark");
   assert.equal(await page.locator('link[href="/assets/home.css"]').count(), 0);
   for (const row of data.toplist.rows) {
-    assert.equal((await fetch(`${base}${row.visitUrl}`)).status, 200, `Missing visit route: ${row.slug}`);
+    assert.equal((await fetch(`${base}${row.visitUrl || row.url}`)).status, 200, `Missing operator route: ${row.slug}`);
   }
   const gate = await browser.newContext();
   const gatePage = await gate.newPage();

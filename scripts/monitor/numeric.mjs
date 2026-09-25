@@ -14,7 +14,7 @@ const manifest = read(join(directory, "manifest.json"));
 const operators = read(existsSync(join(directory, "operators-config.json")) ? join(directory, "operators-config.json") : "src/_data/operators.json");
 const ledger = existsSync(join(directory, "usage.json")) ? read(join(directory, "usage.json")) : {};
 const collectionModelCalls = ledger.collectionModelCalls ?? ledger.calls?.model ?? 0;
-const usageCounter = new RequestUsage({ ...ledger.calls, model: collectionModelCalls });
+const usageCounter = new RequestUsage({ ...ledger.calls, model: collectionModelCalls }, operators.length);
 let repairAttempted = false;
 const modelEnabled = process.env.MONITOR_USE_MODEL === "true";
 const cacheOnly = process.env.MONITOR_CACHE_ONLY === "true";
@@ -49,6 +49,7 @@ A minimum is at_least, a maximum is up_to. Ranges use value and upperValue. Play
 Use greater_than for "over" an age, not at_least. One month is value=1 unit=months, not one day. A virtual Visa card uses virtual_card, not debit_card.
 Extract every tier row's processing time and cap separately with the tier and daily/monthly scope. Use stage=processing for an explicit processing window. Processing is not automatically transfer; use unspecified unless the stage is explicit. A time to receive winnings after request is end_to_end. Keep separate approval time claims.
 Time claims are published promises, NOT measured results. Do not use testimonials, examples, jackpot amounts or marketing purchase discounts as payout policies.
+An explicit "processing time after approval" is a transfer stage, not pre-approval processing. Preserve the separate approval window and its exceptions.
 One redemption request per 24 hours is a request-frequency restriction, not a processing duration. Capture it as a restrictions statement, not a redemption_time fact.
 Verification requirements, state exclusions and closure clauses are statements with exact quotes. Never assert legal status; only summarize what the operator says.
 Do not extract article dates as policy values or game counts as offers. Limit to 12 offers, 30 facts and 8 statements per operator.`;
@@ -136,7 +137,7 @@ for (const operator of operators) {
   const targets = repairTargets(selected.rejected);
   const remainingOperators = operators.length - operators.indexOf(operator) - 1;
   if (modelEnabled && modelConfigured && targets.length && !repairAttempted &&
-      ["extracted", "replayed"].includes(modelStatus) && usageCounter.calls.model + remainingOperators < 12) {
+      ["extracted", "replayed"].includes(modelStatus) && usageCounter.calls.model + remainingOperators < usageCounter.limits.model) {
     repairAttempted = true;
     const sourceIds = new Set(targets.map(target => target.item.sourceId));
     const repairRequest = { ...{
@@ -212,7 +213,7 @@ for (const key of Object.keys(evaluation.tokens)) evaluation.tokens[key] += eval
 evaluation.schemaValid = true;
 saveJson(directory, "numeric.json", result);
 saveJson(directory, "numeric-evaluation.json", evaluation);
-saveJson(directory, "usage.json", { ...ledger, collectionModelCalls, calls: usageCounter.calls });
+saveJson(directory, "usage.json", { ...ledger, collectionModelCalls, calls: usageCounter.calls, limits: usageCounter.limits });
 const summary = [
   "## Numeric extraction (staged, not published)", "",
   `Numbers with source grounding: ${evaluation.checkedNumbers}. Model errors: ${evaluation.modelErrors.length}. Rejected records: ${evaluation.rejected.length}.`,

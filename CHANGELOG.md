@@ -14,6 +14,13 @@ Format:
 
 ---
 
+## 2026-09-25 - Admit evidence-backed expansion and scale daily capacity
+- Add Spree and Crown Coins to the shared registry with official offer/help sources; no invented affiliate destinations, state eligibility or duplicate current-value store.
+- Size collection and model request limits to the roster so new operators receive extraction capacity. Keep round-robin priority sources and the eight-source/operator cap.
+- Keep post-approval transfers separate from approval/processing, including saved-record projection. Extractor is 2.5.1; unverified product modes cannot qualify for the homepage.
+- Non-partners get a Details link to their evidence profile. Default free-signup sorting and the two-category admission threshold are unchanged.
+- Candidate trials remain isolated. A further four-candidate screen is staged; live comparison counts await the first production refresh of the expanded roster.
+
 ## 2026-09-25 - Screen expansion candidates without publication
 - Add an isolated candidate roster and a manual screening mode using the existing collector, extraction and private archive.
 - Candidate runs cannot publish observations, deploy Pages or advance the production baseline. Homepage admission rules remain unchanged.

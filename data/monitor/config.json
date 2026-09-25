@@ -4,6 +4,7 @@
     "chumba-notice": "https://www.chumbacasino.com/getting-started/redeem-prizes"
   },
   "allowedHosts": {
+    "crown-coins": ["crowncoinscasino.com", "help.crowncoinscasino.com"],
     "sweetsweeps": ["www.sweetsweeps.com", "sweetsweeps.com"],
     "lucky-bunny": ["luckybunny.fun", "www.luckybunny.fun"],
     "zonko": ["zonko.com", "www.zonko.com"],
@@ -26,6 +27,8 @@
     { "operatorId": "mcluck", "id": "mcluck-promotions", "url": "https://www.mcluck.com/promotions", "purpose": "promotions_index", "discoveredFrom": "mcluck-home" }
   ],
   "comparisonSources": {
+    "crown-coins": ["crown-signup", "crown-faq", "crown-prize-help", "crown-daily"],
+    "spree": ["spree-home", "spree-rules"],
     "jackpota": ["jackpota-home", "jackpota-promotions"],
     "lucky-bunny": ["lucky-bunny-home"],
     "yay-casino": ["yay-daily", "yay-signup", "yay-rules", "yay-redemption-guide"],
