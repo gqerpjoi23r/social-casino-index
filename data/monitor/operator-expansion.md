@@ -57,9 +57,15 @@ model calls, with no model errors. None of these four candidates qualified.
 | Punt | The first-purchase banner describes dollars of unspecified coins, not an SC allocation. The 100 SC threshold is general; payment into a bank account is end-to-end timing, not a separately bounded processing window. Its rules and terms also disagree on playthrough. |
 | MegaBonanza | Three readable pages, including current terms, do not establish useful numeric offers or redemption policies. A readable games catalogue is not comparison evidence. |
 
-The normal production refresh for the thirteen-operator registry was dispatched
-as workflow run `36126079181`. Final publication and visible-count checks remain
-pending.
+The first normal production refresh, workflow run `36126079181`, completed and
+deployed successfully. It read 58/60 sources, used 39 Firecrawl and 14 model calls,
+and had zero model errors. Both Spree and Crown Coins qualified from the normal
+production extraction, without importing screening results into public data.
+
+After the classification review below, workflow run `36128138165` completed and
+deployed on main. Run `2026-09-25T11-13-20-124Z-36128138165-1` read 58/60 sources,
+used 41 Firecrawl and 14 model calls, and had zero model errors. The corrected
+registry classifications now reach the shared current model.
 
 ## Existing roster classification review
 
@@ -78,6 +84,44 @@ Only product classification changes. No numeric evidence, observation dates,
 state eligibility, or affiliate relationships are inferred or edited. The
 ordinary publisher projects registry classification into the shared current
 model; the two-category minimum and free-signup default remain unchanged.
+McLuck's homepage and Zonko's FAQ reconfirmed the classification in the first
+September 25 production run.
+
+The final display review also found an older Lucky Bunny record labelled
+end-to-end despite an explicit after-approval basis. Extraction and projection
+now classify that wording as transfer, not request-to-receipt. This does not
+change its offer/cash admission, any numeric amount, or the saved source dates.
+
+## Product outcome
+
+Eight homepage comparisons, up from six before expansion; thirteen operators
+remain monitored. The default is still highest immediate free signup SC, with
+alphabetical ties and unknown signup amounts last:
+
+1. McLuck: 2.5 SC.
+2. Spree: 2.5 SC.
+3. Chumba Casino: 2 SC.
+4. Crown Coins: 2 SC.
+5. WOW Vegas: 2 SC.
+6. YAY Casino: 1 SC.
+7. Lucky Bunny: no verified free signup amount.
+8. Zonko: no verified free signup amount.
+
+Spree adds the 30 SC / $9.99 first package, 0.3 fixed daily SC and 100 SC cash
+minimum. Crown Coins adds the typical 24-72-hour approval window with the
+seven-day exception retained in Terms; its cash minimum and daily amount remain
+unverified. Fixed daily SC is still established only for Spree among these eight.
+Chumba, Spree, YAY and Lucky Bunny have no qualifying processing display in the
+final build. All missing fields stay explicit rather than becoming zero.
+
+The five monitored operators outside the homepage are Dorados (only processing
+qualifies), Jackpota (entertainment-only), Pulsz, Stake.us and SweetSweeps
+(insufficient comparable numeric evidence). Twelve homepage entries have not
+been reached. There is no six- or eight-row display cap.
+
+The same current model feeds the homepage, seven benchmarks, thirteen profiles,
+eight other current comparison pages, and the current CSV. Historical editions
+remain unchanged. No separate offer table or parallel collection path was added.
 
 ## Pipeline safeguards
 
@@ -95,10 +139,13 @@ model; the two-category minimum and free-signup default remain unchanged.
 
 ## Verification
 
-- 134 monitor/gate tests passed.
+- 136 monitor/gate tests passed.
 - Full release validation passed.
 - Homepage tested at five widths with all sorts, Terms, alignment, icons and
   JavaScript disabled; eight current comparison pages and CSV parity passed.
 - Seven benchmarks and thirteen profiles passed desktop/mobile, keyboard,
   image and no-JavaScript checks.
-- First production refresh and final visible-count verification remain pending.
+- Both production refreshes deployed successfully; the classification refresh
+  published all thirteen operators and eight eligible homepage comparisons.
+- Final eight-row build passed both browser suites, including expanded Terms
+  screenshots, all sorts, and cross-page/CSV evidence parity.

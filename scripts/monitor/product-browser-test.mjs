@@ -68,10 +68,14 @@ try {
     await terms.locator("summary").focus();
     await page.keyboard.press("Enter");
     assert.equal(await terms.evaluate(element => element.open), true);
-    const first = await page.locator(".toplist-item").first().boundingBox();
-    const next = await page.locator(".toplist-item").nth(1).boundingBox();
+    const [first, next] = await page.locator(".toplist-item").evaluateAll(items =>
+      items.slice(0, 2).map(item => {
+        const rect = item.getBoundingClientRect();
+        return { y: rect.y, height: rect.height };
+      }));
     assert.ok(next.y >= first.y + first.height - 1, "Terms overlap next operator");
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+    await page.screenshot({ path: `${output}/terms-${width}.png`, fullPage: true });
     await page.keyboard.press("Escape");
     assert.equal(await terms.evaluate(element => element.open), false);
     if (width <= 390) {

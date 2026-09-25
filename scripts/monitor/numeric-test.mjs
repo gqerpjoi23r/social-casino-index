@@ -22,6 +22,11 @@ test("extraction preserves post-approval delivery as transfer rather than proces
   assert.equal(result.accepted.facts[0].stage, "transfer");
   assert.equal(result.recovered[0].reason, "post_approval_transfer");
   assert.equal(item.stage, "processing");
+  const retained = { ...item, stage: "end_to_end",
+    basis: "IBT / ACH delivery after the redemption request is approved" };
+  const qualified = checkExtraction({ ...emptyExtraction(), facts: [retained] }, pages(quote));
+  assert.equal(qualified.accepted.facts[0].stage, "transfer");
+  assert.equal(retained.stage, "end_to_end");
 });
 test("recover explicit first-day and instant-delivery allocations without inventing totals", () => {
   const quote = "Welcome reward SC 8. Day 1: 100,000 Gold Coins + SC 3 Day 2: SC 5";

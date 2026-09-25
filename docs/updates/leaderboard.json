@@ -3145,26 +3145,7 @@
           "lastChangedAt": null,
           "comparable": false
         },
-        "redemption": {
-          "label": "Up to 5 business days",
-          "note": "Request to receipt; cash",
-          "sourceUrl": "https://luckybunny.fun/page/sweepstake-rules/",
-          "recordId": "c1b4b93c2779ae5244dd",
-          "value": 5,
-          "upperValue": null,
-          "unit": "business_days",
-          "stage": "end_to_end",
-          "comparison": "up_to",
-          "observedAt": "2026-09-24T10:38:43.174Z",
-          "conditions": [
-            "Bank or payment-processor fees for receiving funds are excluded."
-          ],
-          "status": "retained",
-          "lastCheckedAt": null,
-          "firstObservedAt": "2026-09-24T10:38:43.174Z",
-          "lastChangedAt": "2026-09-24T10:38:43.174Z",
-          "sortHours": null
-        },
+        "redemption": null,
         "cash": {
           "metric": "cash",
           "value": 100,
@@ -3280,27 +3261,6 @@
             "lastCheckedAt": null,
             "firstObservedAt": "2026-09-24T10:36:33.867Z",
             "lastChangedAt": "2026-09-24T10:36:33.867Z"
-          },
-          {
-            "field": "redemption_time",
-            "label": "Up to 5 business days",
-            "note": "Request to receipt; cash",
-            "sourceUrl": "https://luckybunny.fun/page/sweepstake-rules/",
-            "recordId": "c1b4b93c2779ae5244dd",
-            "value": 5,
-            "upperValue": null,
-            "unit": "business_days",
-            "stage": "end_to_end",
-            "comparison": "up_to",
-            "observedAt": "2026-09-24T10:38:43.174Z",
-            "conditions": [
-              "Bank or payment-processor fees for receiving funds are excluded."
-            ],
-            "status": "retained",
-            "lastCheckedAt": null,
-            "firstObservedAt": "2026-09-24T10:38:43.174Z",
-            "lastChangedAt": "2026-09-24T10:38:43.174Z",
-            "sortHours": null
           }
         ]
       }
@@ -7643,26 +7603,7 @@
           "lastChangedAt": null,
           "comparable": false
         },
-        "redemption": {
-          "label": "Up to 5 business days",
-          "note": "Request to receipt; cash",
-          "sourceUrl": "https://luckybunny.fun/page/sweepstake-rules/",
-          "recordId": "c1b4b93c2779ae5244dd",
-          "value": 5,
-          "upperValue": null,
-          "unit": "business_days",
-          "stage": "end_to_end",
-          "comparison": "up_to",
-          "observedAt": "2026-09-24T10:38:43.174Z",
-          "conditions": [
-            "Bank or payment-processor fees for receiving funds are excluded."
-          ],
-          "status": "retained",
-          "lastCheckedAt": null,
-          "firstObservedAt": "2026-09-24T10:38:43.174Z",
-          "lastChangedAt": "2026-09-24T10:38:43.174Z",
-          "sortHours": null
-        },
+        "redemption": null,
         "cash": {
           "metric": "cash",
           "value": 100,
@@ -8908,26 +8849,7 @@
           "lastChangedAt": null,
           "comparable": false
         },
-        "redemption": {
-          "label": "Up to 5 business days",
-          "note": "Request to receipt; cash",
-          "sourceUrl": "https://luckybunny.fun/page/sweepstake-rules/",
-          "recordId": "c1b4b93c2779ae5244dd",
-          "value": 5,
-          "upperValue": null,
-          "unit": "business_days",
-          "stage": "end_to_end",
-          "comparison": "up_to",
-          "observedAt": "2026-09-24T10:38:43.174Z",
-          "conditions": [
-            "Bank or payment-processor fees for receiving funds are excluded."
-          ],
-          "status": "retained",
-          "lastCheckedAt": null,
-          "firstObservedAt": "2026-09-24T10:38:43.174Z",
-          "lastChangedAt": "2026-09-24T10:38:43.174Z",
-          "sortHours": null
-        },
+        "redemption": null,
         "cash": {
           "metric": "cash",
           "value": 100,
@@ -11655,26 +11577,7 @@
           "lastChangedAt": null,
           "comparable": false
         },
-        "redemption": {
-          "label": "Up to 5 business days",
-          "note": "Request to receipt; cash",
-          "sourceUrl": "https://luckybunny.fun/page/sweepstake-rules/",
-          "recordId": "c1b4b93c2779ae5244dd",
-          "value": 5,
-          "upperValue": null,
-          "unit": "business_days",
-          "stage": "end_to_end",
-          "comparison": "up_to",
-          "observedAt": "2026-09-24T10:38:43.174Z",
-          "conditions": [
-            "Bank or payment-processor fees for receiving funds are excluded."
-          ],
-          "status": "retained",
-          "lastCheckedAt": null,
-          "firstObservedAt": "2026-09-24T10:38:43.174Z",
-          "lastChangedAt": "2026-09-24T10:38:43.174Z",
-          "sortHours": null
-        },
+        "redemption": null,
         "cash": {
           "metric": "cash",
           "value": 100,
@@ -11790,27 +11693,6 @@
             "lastCheckedAt": null,
             "firstObservedAt": "2026-09-24T10:36:33.867Z",
             "lastChangedAt": "2026-09-24T10:36:33.867Z"
-          },
-          {
-            "field": "redemption_time",
-            "label": "Up to 5 business days",
-            "note": "Request to receipt; cash",
-            "sourceUrl": "https://luckybunny.fun/page/sweepstake-rules/",
-            "recordId": "c1b4b93c2779ae5244dd",
-            "value": 5,
-            "upperValue": null,
-            "unit": "business_days",
-            "stage": "end_to_end",
-            "comparison": "up_to",
-            "observedAt": "2026-09-24T10:38:43.174Z",
-            "conditions": [
-              "Bank or payment-processor fees for receiving funds are excluded."
-            ],
-            "status": "retained",
-            "lastCheckedAt": null,
-            "firstObservedAt": "2026-09-24T10:38:43.174Z",
-            "lastChangedAt": "2026-09-24T10:38:43.174Z",
-            "sortHours": null
           }
         ]
       }
