@@ -1,6 +1,9 @@
 import { hash } from "./core.mjs";
 
 export function baselineScope(env = process.env) {
+  if (env.MONITOR_OPERATORS_FILE && env.MONITOR_OPERATORS_FILE !== "src/_data/operators.json") {
+    return `screening-${hash(env.MONITOR_OPERATORS_FILE).slice(0, 16)}`;
+  }
   return env.GITHUB_REF === "refs/heads/main" ? "production" :
     `trial-${hash(env.GITHUB_REF || "local").slice(0, 16)}`;
 }

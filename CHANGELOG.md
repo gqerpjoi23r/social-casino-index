@@ -14,6 +14,10 @@ Format:
 
 ---
 
+## 2026-09-25 - Screen expansion candidates without publication
+- Add an isolated candidate roster and a manual screening mode using the existing collector, extraction and private archive.
+- Candidate runs cannot publish observations, deploy Pages or advance the production baseline. Homepage admission rules remain unchanged.
+
 ## 2026-09-24 - Preserve improving daily-reward wording after refresh
 - Recognize "rewards become better with more days" as an increasing daily reward, without assigning fixed SC or admitting another operator.
 - Production refresh read 47/50 sources with 38 Firecrawl and 12 model requests. One repair recovered two YAY records; no fixed daily amount was established.
