@@ -4,8 +4,9 @@ export function isRequestFrequency(record) {
     /\b(?:one|1)\s+(?:prize\s+)?redemption request\b[\s\S]{0,100}\bonce (?:every|per)\b/i.test(text);
 }
 export function qualifyRedemptionTiming(record) {
-  if (record.field === "redemption_time" && ["processing", "unspecified"].includes(record.stage) &&
-      /\b(?:after|following)\s+approval\b/i.test(record.basis || "")) {
+  const afterApproval = /\b(?:after|following)\s+(?:(?:the\s+)?(?:redemption\s+)?request\s+)?approval\b|\bafter\s+(?:the\s+)?(?:redemption\s+)?request\s+(?:is|has been)\s+approved\b/i;
+  if (record.field === "redemption_time" && ["processing", "unspecified", "end_to_end"].includes(record.stage) &&
+      afterApproval.test(record.basis || "")) {
     return { ...record, stage: "transfer" };
   }
   return record;

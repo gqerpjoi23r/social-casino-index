@@ -48,6 +48,23 @@ test("a one-request-per-day limit is not processing speed, including retained re
     comparison: "up_to", unit: "hours", stage: "processing", method: "cash",
     basis: "A redemption request is processed within 24 hours." })]).sortValues.redemption, 24);
 });
+test("retained post-approval windows cannot be labelled request to receipt", () => {
+  for (const basis of [
+    "prize or cash after redemption request approval and all verification requirements are satisfied",
+    "Prize delivery after the redemption request is approved",
+    "Cash delivery after the request has been approved",
+  ]) {
+    const result = row([record({ recordType: "facts", field: "redemption_time", value: 5,
+      comparison: "up_to", unit: "business_days", stage: "end_to_end", method: "cash",
+      freshness: "not_reconfirmed", basis })]);
+    assert.equal(result.redemption, null);
+    assert.equal(result.sortValues.redemption, null);
+  }
+  const complete = row([record({ recordType: "facts", field: "redemption_time", value: 5,
+    comparison: "up_to", unit: "business_days", stage: "end_to_end", method: "cash",
+    basis: "Full time from request submission to receipt, including approval and bank transfer" })]);
+  assert.equal(complete.redemption.note, "Request to receipt; cash");
+});
 
 test("one list includes incomplete operators without invented scores", () => {
   const result = model([operator("b", [record({ immediateSc: 1 })]), operator("a", [record({})]),

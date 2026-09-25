@@ -14,6 +14,13 @@ Format:
 
 ---
 
+## 2026-09-25 - Keep retained post-approval timing out of total-time claims
+- Classify explicit delivery after redemption-request approval as transfer even when an older extraction labelled it end-to-end. This removes Lucky Bunny's misleading request-to-receipt display without changing its offer/cash admission.
+- Apply the same rule to future extraction and current saved-record projection. Extractor is 2.5.2; genuine full request-to-receipt windows remain visible.
+- Measure adjacent rows in one browser frame to avoid scroll-related false overlap failures, and capture expanded Terms at every tested width.
+- Final main refresh read 58/60 sources with 41 Firecrawl and 14 model calls, no model errors. Eight homepage comparisons now qualify, up from six before adding Spree and Crown Coins; thirteen remain monitored.
+- Verify 136 tests, release checks and both browser suites against the eight-row build. The expansion report records the exact order, new values, remaining fields and the gap to twelve.
+
 ## 2026-09-25 - Complete candidate screening and review stale product classifications
 - Complete the second four-candidate screening with 18/21 readable sources and no model errors. None has two reliable comparable categories; retain the Spree/Crown additions without padding the homepage.
 - Review archived official evidence and correct stale unverified product-type labels for McLuck, Zonko and Lucky Bunny. Keep numeric values, source dates, affiliate/state metadata and admission thresholds unchanged.
