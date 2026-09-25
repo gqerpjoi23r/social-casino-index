@@ -125,6 +125,8 @@ test("conflicting reviewed records remain unresolved", () => {
 
 test("branch and archive-only runs cannot publish or advance production", () => {
   assert.equal(productionRun(manifest, { GITHUB_REF: "refs/heads/main" }), true);
+  assert.equal(productionRun(manifest, { GITHUB_REF: "refs/heads/main",
+    MONITOR_OPERATORS_FILE: "data/monitor/candidates.json" }), false);
   assert.equal(productionRun(manifest, { GITHUB_REF: "refs/heads/feature" }), false);
   assert.equal(productionRun(manifest, { GITHUB_REF: "refs/heads/main", ARCHIVE_RUN_ID: "old" }), false);
   assert.equal(productionRun({ ...manifest, scope: "branch" }, { GITHUB_REF: "refs/heads/main" }), false);

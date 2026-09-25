@@ -3,6 +3,7 @@ import { qualifySignupBanner, recoverOfferSemantics } from "./offer-semantics.mj
 
 export function productionRun(manifest, env = process.env) {
   return env.GITHUB_REF === "refs/heads/main" && !env.ARCHIVE_RUN_ID &&
+    (!env.MONITOR_OPERATORS_FILE || env.MONITOR_OPERATORS_FILE === "src/_data/operators.json") &&
     manifest.scope === "production" && !manifest.reextractedFrom;
 }
 

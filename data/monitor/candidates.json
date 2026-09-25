@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "crown-coins",
+    "name": "Crown Coins",
+    "playerValue": { "productMode": "unverified" },
+    "sources": [{ "id": "crown-coins-home", "url": "https://crowncoinscasino.com/" }]
+  },
+  {
+    "slug": "realprize",
+    "name": "RealPrize",
+    "playerValue": { "productMode": "unverified" },
+    "sources": [{ "id": "realprize-home", "url": "https://realprize.com/" }]
+  },
+  {
+    "slug": "modo",
+    "name": "Modo",
+    "playerValue": { "productMode": "unverified" },
+    "sources": [{ "id": "modo-home", "url": "https://modo.us/" }]
+  },
+  {
+    "slug": "hello-millions",
+    "name": "Hello Millions",
+    "playerValue": { "productMode": "unverified" },
+    "sources": [{ "id": "hello-millions-home", "url": "https://www.hellomillions.com/" }]
+  },
+  {
+    "slug": "chanced",
+    "name": "Chanced",
+    "playerValue": { "productMode": "unverified" },
+    "sources": [{ "id": "chanced-home", "url": "https://chanced.com/" }]
+  },
+  {
+    "slug": "playfame",
+    "name": "PlayFame",
+    "playerValue": { "productMode": "unverified" },
+    "sources": [{ "id": "playfame-home", "url": "https://www.playfame.com/" }]
+  },
+  {
+    "slug": "spinblitz",
+    "name": "SpinBlitz",
+    "playerValue": { "productMode": "unverified" },
+    "sources": [{ "id": "spinblitz-home", "url": "https://www.spinblitz.com/" }]
+  },
+  {
+    "slug": "rolling-riches",
+    "name": "Rolling Riches",
+    "playerValue": { "productMode": "unverified" },
+    "sources": [{ "id": "rolling-riches-home", "url": "https://www.rollingriches.com/" }]
+  },
+  {
+    "slug": "sportzino",
+    "name": "Sportzino",
+    "playerValue": { "productMode": "unverified" },
+    "sources": [{ "id": "sportzino-home", "url": "https://sportzino.com/" }]
+  },
+  {
+    "slug": "zula",
+    "name": "Zula",
+    "playerValue": { "productMode": "unverified" },
+    "sources": [{ "id": "zula-home", "url": "https://www.zulacasino.com/" }]
+  }
+]

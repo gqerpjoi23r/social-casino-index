@@ -18,7 +18,7 @@ if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, `captur
 const manifest = { schemaVersion: 1, runId, scope: baselineScope(), startedAt: observedAt, captures: [], sources: [] };
 saveJson(output, "manifest.json", manifest);
 mkdirSync("data/monitor/runs", { recursive: true });
-const operators = read("src/_data/operators.json", []);
+const operators = read(process.env.MONITOR_OPERATORS_FILE || "src/_data/operators.json", []);
 const previous = read(process.env.MONITOR_PREVIOUS_STATE || "src/_data/monitor.json", { operators: [], sources: {}, spending: [], runs: [] });
 const config = read("data/monitor/config.json", {});
 saveJson(output, "operators-config.json", operators);
