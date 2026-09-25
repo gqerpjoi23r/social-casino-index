@@ -37,16 +37,47 @@ Additional direct captures and model checks are archived under
 | PlayFame / SpinBlitz | Readable pages do not establish two useful numeric comparison categories. |
 | Chanced | Cash threshold is disclosed. Daily amount is unspecified; generic promotional banners are not immediate free signup offers. |
 | Rolling Riches | Its linked public PDF discloses a cash threshold. A six-hour reward has no collected amount; request-frequency limits are not processing times. |
-| Sportzino / Zula | Offer pages are readable. Staged/task rewards must not become immediate signup totals; generic educational redemption examples are not operator-specific policies. Additional numeric evaluation pending. |
+| Sportzino | Welcome offer found, but daily SC is the first day of an increasing login streak, not a fixed daily amount. No second qualifying category was established. The GC notation also caused an extraction rejection; recovering it would not change admission. |
+| Zula | Hold: homepage daily claim is 10 SC, while the dedicated daily promotion says 1 SC. Do not pick the larger claim or silently resolve the conflict. No independent qualifying cash/processing category was established. |
 | Fortune Coins / Fortune Wins | The old domain redirects to Fortune Wins. FC is a different denomination; do not silently copy its amounts into SC comparisons. |
 | Funrize | Initial direct request blocked; not admitted. |
 | DingDingDing | Initial hostname resolution failed; not admitted. |
 | SweepSlots | Initial TLS certificate validation failed; no bypass attempted. |
 | Sweeptastic | Its own homepage says it is now a review site, not an operator. |
 
-A second rendered batch is configured for LuckyLand Casino, Legendz, Punt and
-MegaBonanza. Their initial direct checks were region-limited or blocked.
-This file will record the completed screening and production outcome.
+The second rendered screening run is
+`2026-09-25T10-42-22-461Z-36125367483-1`.
+It completed successfully: 21 sources, 18 readable, 21 Firecrawl calls and five
+model calls, with no model errors. None of these four candidates qualified.
+
+| Candidate | Finding at screening |
+| --- | --- |
+| LuckyLand Casino | The 2 SC welcome offer does not explicitly establish free, immediate signup qualification. Its daily bonus has no published amount in the captured pages. Browser-reviewed official help discloses a 50 SC cash minimum, but approval uses unspecified day units and bank transfer is a separate stage; these do not establish two comparable categories. Do not import LuckyLand Slots offers into this separate brand. |
+| Legendz | A 3 SC welcome claim is combined with a first-purchase offer; free/immediate qualification is unclear. Daily rewards have no amount, and collected help pages establish no qualifying cash minimum or processing window. |
+| Punt | The first-purchase banner describes dollars of unspecified coins, not an SC allocation. The 100 SC threshold is general; payment into a bank account is end-to-end timing, not a separately bounded processing window. Its rules and terms also disagree on playthrough. |
+| MegaBonanza | Three readable pages, including current terms, do not establish useful numeric offers or redemption policies. A readable games catalogue is not comparison evidence. |
+
+The normal production refresh for the thirteen-operator registry was dispatched
+as workflow run `36126079181`. Final publication and visible-count checks remain
+pending.
+
+## Existing roster classification review
+
+The new explicit sweepstakes admission check exposed stale September 10
+`unverified` registry labels. These are classification omissions, not missing
+numeric comparisons. Correct the registry labels for the following operators,
+using already archived official evidence:
+
+| Operator | Classification evidence |
+| --- | --- |
+| McLuck | Homepage captured September 24 at 22:05 UTC in run `2026-09-24T22-03-36-894Z-36065157612-1`: describes no-purchase Sweepstakes Coins and redeemable cash/gift-card prizes. |
+| Zonko | Official FAQ captured September 24 at 22:08 UTC in that same run: explicitly describes Zonko's sweepstakes model and free entry methods. |
+| Lucky Bunny | Official sweepstakes rules captured September 24 at 10:38 UTC in run `2026-09-24T10-29-34-240Z-35987472986-1`: separates entertainment-only Standard Play from Promotional Play using redeemable Sweep Coins. |
+
+Only product classification changes. No numeric evidence, observation dates,
+state eligibility, or affiliate relationships are inferred or edited. The
+ordinary publisher projects registry classification into the shared current
+model; the two-category minimum and free-signup default remain unchanged.
 
 ## Pipeline safeguards
 
