@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-25 - Complete candidate screening and review stale product classifications
+- Complete the second four-candidate screening with 18/21 readable sources and no model errors. None has two reliable comparable categories; retain the Spree/Crown additions without padding the homepage.
+- Review archived official evidence and correct stale unverified product-type labels for McLuck, Zonko and Lucky Bunny. Keep numeric values, source dates, affiliate/state metadata and admission thresholds unchanged.
+- Run the expanded production pipeline and verify its publication before closing the expansion report.
+
 ## 2026-09-25 - Admit evidence-backed expansion and scale daily capacity
 - Add Spree and Crown Coins to the shared registry with official offer/help sources; no invented affiliate destinations, state eligibility or duplicate current-value store.
 - Size collection and model request limits to the roster so new operators receive extraction capacity. Keep round-robin priority sources and the eight-source/operator cap.

@@ -183,7 +183,7 @@
     "faviconExt": ".ico",
     "playerValue": {
       "checkedAt": "2026-09-10",
-      "productMode": "unverified",
+      "productMode": "sweepstakes",
       "signup": {
         "display": "Not verified",
         "value": null,
@@ -554,7 +554,7 @@
     "faviconExt": ".png",
     "playerValue": {
       "checkedAt": "2026-09-10",
-      "productMode": "unverified",
+      "productMode": "sweepstakes",
       "signup": {
         "display": "Not verified",
         "value": null,
@@ -1177,7 +1177,7 @@
     "faviconExt": ".jpg",
     "playerValue": {
       "checkedAt": "2026-09-10",
-      "productMode": "unverified",
+      "productMode": "sweepstakes",
       "signup": {
         "display": "SC amount not stated",
         "value": null,

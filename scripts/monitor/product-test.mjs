@@ -47,6 +47,17 @@ test("signup and purchase are one admission category; ranking ties never use cov
   assert.deepEqual(model.toplist.rows.map(row => row.slug), ["a", "b"]);
   assert.deepEqual(model.toplist.homepageRows.map(row => row.slug), ["a"]);
 });
+test("reviewed sweepstakes registry modes allow admission only with two categories", () => {
+  const registry = JSON.parse(readFileSync("src/_data/operators.json"));
+  const reviewed = ["mcluck", "zonko", "lucky-bunny", "spree", "crown-coins"];
+  for (const slug of reviewed) {
+    const metadata = registry.find(row => row.slug === slug);
+    assert.equal(metadata.playerValue.productMode, "sweepstakes", slug);
+    const model = records => buildBenchmarks({ operators: [{ slug, records }] }, [metadata], now);
+    assert.equal(model([signup(1), cash(50)]).toplist.homepageRows.length, 1, slug);
+    assert.equal(model([signup(1)]).toplist.homepageRows.length, 0, slug);
+  }
+});
 test("descriptive rewards remain useful without inventing daily SC", () => {
   const daily = { ...base, recordType: "offers", kind: "recurring_daily", purchaseRequired: false,
     immediateSc: null, name: "Daily login", conditions: ["Rewards increase with consecutive days."] };
