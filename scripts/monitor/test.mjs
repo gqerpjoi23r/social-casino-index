@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readableText, accessStatus, extract, validQuotes, aggregate } from "./core.mjs";
-import { RequestUsage } from "./providers.mjs";
+import { RequestUsage, monitorLimits } from "./providers.mjs";
 
 const operator = { slug: "fixture", name: "Fixture", playerValue: { productMode: "sweepstakes" } };
 const text = "The minimum redemption is 50 SC for eligible players.\nClaim your daily reward of 0.5 SC every day.\nIdentity verification requires government photo identification.";
@@ -70,10 +70,23 @@ test("baseline, repeat, change and failed-source retention", () => {
   assert.equal(failed.events.length, 0);
 });
 test("request caps remain, dollar ledger is not enforced", () => {
-  const usage = new RequestUsage([{ amount: 999999 }], "2026-09-10");
+  const usage = new RequestUsage([{ amount: 999999 }]);
   for (let i = 0; i < 45; i++) assert.equal(usage.reserve("firecrawl"), true);
   assert.equal(usage.reserve("firecrawl"), false);
   assert.equal(usage.reserve("model"), true);
   usage.record("firecrawl", { metadata: { creditsUsed: 2 } });
   assert.equal(usage.firecrawlCreditsReported, 2);
+});
+test("expanded roster gets bounded collection and one model call per operator plus one repair", () => {
+  assert.deepEqual(monitorLimits(11), { direct: 50, firecrawl: 45, brightdata: 10, model: 12 });
+  assert.deepEqual(monitorLimits(17), { direct: 80, firecrawl: 75, brightdata: 10, model: 18 });
+  const usage = new RequestUsage({}, 17);
+  for (let i = 0; i < 18; i++) assert.equal(usage.reserve("model"), true);
+  assert.equal(usage.reserve("model"), false);
+  const resumed = new RequestUsage({ model: 17, firecrawl: 74 }, 17);
+  assert.equal(resumed.reserve("model"), true);
+  assert.equal(resumed.reserve("model"), false);
+  assert.equal(resumed.reserve("firecrawl"), true);
+  assert.equal(resumed.reserve("firecrawl"), false);
+  for (const count of [0, -1, 1.5, 25, NaN]) assert.throws(() => monitorLimits(count));
 });

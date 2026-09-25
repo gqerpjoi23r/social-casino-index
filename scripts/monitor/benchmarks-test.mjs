@@ -6,7 +6,8 @@ import { buildBenchmarks } from "./benchmarks.mjs";
 import { cashMinimumAnswers } from "./cash-answers.mjs";
 import { signupDetails } from "./signup-details.mjs";
 import nunjucks from "nunjucks";
-import { safeUrl, publicAddress, checkDestination, discover, needsRendering, sourceQueues } from "./discovery.mjs";
+import { safeUrl, publicAddress, checkDestination, discover, needsRendering, sourceQueues, nextSource } from "./discovery.mjs";
+import { monitorLimits } from "./providers.mjs";
 
 const now = Date.parse("2026-09-21T22:00:00Z");
 const record = fields => ({ id: "record", recordType: "offers", kind: "signup",
@@ -337,20 +338,41 @@ test("comparison sources precede generic discoveries even if discoveries were ne
   assert.equal(queue.queue[0].id, "daily");
   assert.equal(queue.queue[1].id, "other");
 });
-test("all configured comparison sources fit within the existing round-robin run budget", () => {
+test("all configured comparison sources fit within the roster-sized round-robin run budget", () => {
   const registry = JSON.parse(readFileSync("src/_data/operators.json"));
   const config = JSON.parse(readFileSync("data/monitor/config.json"));
   const queues = sourceQueues(registry, config);
   const expected = Object.values(config.comparisonSources).flat();
   const visited = [];
-  while (visited.length < 50 && queues.some(q => q.queue.length && q.attempted < 8)) {
+  const limit = monitorLimits(registry.length).direct;
+  while (visited.length < limit && queues.some(q => q.queue.length && q.attempted < 8)) {
     for (const q of queues) {
-      if (visited.length === 50 || q.attempted === 8 || !q.queue.length) continue;
-      visited.push(q.queue.shift().id);
+      if (visited.length === limit || q.attempted === 8 || !q.queue.length) continue;
+      const source = nextSource(q, queues);
+      if (!source) continue;
+      visited.push(source.id);
       q.attempted++;
     }
   }
   for (const id of expected) assert.ok(visited.includes(id), `Priority source missed: ${id}`);
+});
+test("non-partners get profile links without changing comparison eligibility or ordering", () => {
+  const snapshots = [complete("a", 5, 2, 50), complete("b", 2, 2, 100)];
+  const registry = [{ slug: "a", partner: false }, { slug: "b", partner: true }];
+  const first = buildBenchmarks({ operators: snapshots }, registry, now);
+  assert.deepEqual(first.toplist.homepageRows.map(row => row.slug), ["a", "b"]);
+  assert.equal(first.toplist.homepageRows[0].visitUrl, null);
+  assert.equal(first.toplist.homepageRows[0].url, "/redemption-times/a/");
+  assert.equal(first.toplist.homepageRows[1].visitUrl, "/go/b/");
+  registry.forEach(operator => { operator.partner = !operator.partner; });
+  const second = buildBenchmarks({ operators: snapshots }, registry, now);
+  assert.deepEqual(second.toplist.homepageRows.map(row => row.slug), ["a", "b"]);
+});
+test("an unverified product mode cannot qualify merely by having two numeric categories", () => {
+  const snapshot = { ...complete("candidate", 5, 2, 50), productMode: "unverified" };
+  const result = model([snapshot]);
+  assert.equal(result.toplist.rows[0].knownAttributeCount, 2);
+  assert.equal(result.toplist.homepageRows.length, 0);
 });
 test("persisted game discoveries are removed without filtering explicit source seeds", () => {
   const input = [{ slug: "a", sources: [

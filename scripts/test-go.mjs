@@ -26,7 +26,9 @@ test("visit gate preserves closed states and requires an actual selected state",
 });
 test("all visit stubs load the valid shared gate or retain availability-only fallback", () => {
   const operators = JSON.parse(readFileSync("src/_data/operators.json"));
-  for (const op of operators) assert.ok(readdirSync("src/go").includes(op.slug), `Missing visit route: ${op.slug}`);
+  for (const op of operators.filter(op => op.partner)) {
+    assert.ok(readdirSync("src/go").includes(op.slug), `Missing partner visit route: ${op.slug}`);
+  }
   for (const slug of readdirSync("src/go")) {
     const $ = load(readFileSync(`src/go/${slug}/index.html`, "utf8"));
     assert.equal($('meta[name="robots"]').attr("content"), "noindex, nofollow");

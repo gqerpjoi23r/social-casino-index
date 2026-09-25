@@ -3,3 +3,10 @@ export function isRequestFrequency(record) {
   return /\bonly (?:one|1|a single)\s+(?:prize\s+)?redemption request\b[\s\S]{0,160}\b(?:per|every|any|in a)\b[\s\S]{0,40}\b(?:hours?|days?)\b/i.test(text) ||
     /\b(?:one|1)\s+(?:prize\s+)?redemption request\b[\s\S]{0,100}\bonce (?:every|per)\b/i.test(text);
 }
+export function qualifyRedemptionTiming(record) {
+  if (record.field === "redemption_time" && ["processing", "unspecified"].includes(record.stage) &&
+      /\b(?:after|following)\s+approval\b/i.test(record.basis || "")) {
+    return { ...record, stage: "transfer" };
+  }
+  return record;
+}

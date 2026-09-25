@@ -12,6 +12,17 @@ import { baselineKey, usableRun } from "./state-core.mjs";
 import { emptyExtraction } from "./schema.mjs";
 
 const pages = text => [{ sourceId: "faq", text }];
+test("extraction preserves post-approval delivery as transfer rather than processing", () => {
+  const base = deterministicExtract(pages("The minimum redemption is 50 SC for eligible players.")).facts[0];
+  const quote = "Processing time after approval: IBT / ACH takes 1-5 business days.";
+  const item = { ...base, field: "redemption_time", value: 1, upperValue: 5,
+    unit: "business_days", comparison: "range", stage: "processing", method: "bank",
+    basis: "IBT / ACH redemption after approval", quote, conditions: [] };
+  const result = checkExtraction({ ...emptyExtraction(), facts: [item] }, pages(quote));
+  assert.equal(result.accepted.facts[0].stage, "transfer");
+  assert.equal(result.recovered[0].reason, "post_approval_transfer");
+  assert.equal(item.stage, "processing");
+});
 test("recover explicit first-day and instant-delivery allocations without inventing totals", () => {
   const quote = "Welcome reward SC 8. Day 1: 100,000 Gold Coins + SC 3 Day 2: SC 5";
   const base = deterministicExtract(pages("Buy 30 SC for $9.99.")).offers[0];
@@ -325,6 +336,8 @@ test("conflicting source claims stay separate and failed pages retain old values
 });
 test("trial pointers are separate and model failures cannot advance baselines", () => {
   assert.notEqual(baselineKey({ GITHUB_REF: "refs/heads/main" }), baselineKey({ GITHUB_REF: "refs/heads/codex/trial" }));
+  assert.notEqual(baselineKey({ GITHUB_REF: "refs/heads/main" }),
+    baselineKey({ GITHUB_REF: "refs/heads/main", MONITOR_OPERATORS_FILE: "data/monitor/candidates.json" }));
   assert.notEqual(baselineKey({ GITHUB_REF: "refs/heads/codex/a" }), baselineKey({ GITHUB_REF: "refs/heads/codex/b" }));
   const manifest = { completedAt: "now", sources: [{ status: "ok" }] };
   const evaluation = { schemaValid: true, modelErrors: [], replayEvents: 0 };

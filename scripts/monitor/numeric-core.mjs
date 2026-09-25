@@ -1,6 +1,6 @@
 import { normalize, hash, extract } from "./core.mjs";
 import { emptyExtraction, validateExtraction } from "./schema.mjs";
-import { isRequestFrequency } from "./redemption-semantics.mjs";
+import { isRequestFrequency, qualifyRedemptionTiming } from "./redemption-semantics.mjs";
 import { dailyQualifierText } from "./daily-semantics.mjs";
 import { recoverOfferSemantics } from "./offer-semantics.mjs";
 
@@ -79,7 +79,8 @@ export function checkExtraction(data, pages) {
   const rejected = [];
   const recovered = [];
   for (const kind of Object.keys(accepted)) for (const original of data[kind]) {
-    const item = { ...(kind === "offers" ? recoverOfferSemantics(original) : original) };
+    const item = { ...(kind === "offers" ? recoverOfferSemantics(original) :
+      kind === "facts" ? qualifyRedemptionTiming(original) : original) };
     const page = pages.find(page => page.sourceId === item.sourceId);
     let reason = !page ? "unknown_source" : !normalize(page.text).includes(normalize(item.quote)) ? "unsupported_quote" : null;
     if (kind === "offers" && item.immediateSc !== null && item.totalSc !== null && item.immediateSc > item.totalSc) reason = "immediate_exceeds_total";
@@ -135,6 +136,9 @@ export function checkExtraction(data, pages) {
     if (kind === "facts" && item.field === "redemption_time" && isRequestFrequency(item)) reason = "request_frequency_not_duration";
     if (reason) rejected.push({ kind, item, reason });
     else {
+      if (kind === "facts" && original.stage !== item.stage) {
+        recovered.push({ kind, item: original, field: "stage", reason: "post_approval_transfer", value: item.stage });
+      }
       if (kind === "offers") for (const field of ["kind", "purchaseRequired", "immediateSc"]) {
         if (original[field] !== item[field])
           recovered.push({ kind, item: original, field, reason: "explicit_offer_semantics", value: item[field] });

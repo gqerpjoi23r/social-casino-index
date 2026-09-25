@@ -27,7 +27,7 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
     env:
       AWS_REGION: eu-north-1
       MONITOR_BUCKET: socialcasinoindex-monitor-349131272959

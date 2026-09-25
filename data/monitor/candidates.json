@@ -1,62 +1,26 @@
 [
   {
-    "slug": "crown-coins",
-    "name": "Crown Coins",
+    "slug": "luckyland",
+    "name": "LuckyLand Casino",
     "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "crown-coins-home", "url": "https://crowncoinscasino.com/" }]
+    "sources": [{ "id": "luckyland-home", "url": "https://luckylandcasino.com/" }]
   },
   {
-    "slug": "realprize",
-    "name": "RealPrize",
+    "slug": "legendz",
+    "name": "Legendz",
     "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "realprize-home", "url": "https://realprize.com/" }]
+    "sources": [{ "id": "legendz-home", "url": "https://www.legendz.com/" }]
   },
   {
-    "slug": "modo",
-    "name": "Modo",
+    "slug": "punt",
+    "name": "Punt",
     "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "modo-home", "url": "https://modo.us/" }]
+    "sources": [{ "id": "punt-home", "url": "https://punt.com/" }]
   },
   {
-    "slug": "hello-millions",
-    "name": "Hello Millions",
+    "slug": "megabonanza",
+    "name": "MegaBonanza",
     "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "hello-millions-home", "url": "https://www.hellomillions.com/" }]
-  },
-  {
-    "slug": "chanced",
-    "name": "Chanced",
-    "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "chanced-home", "url": "https://chanced.com/" }]
-  },
-  {
-    "slug": "playfame",
-    "name": "PlayFame",
-    "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "playfame-home", "url": "https://www.playfame.com/" }]
-  },
-  {
-    "slug": "spinblitz",
-    "name": "SpinBlitz",
-    "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "spinblitz-home", "url": "https://www.spinblitz.com/" }]
-  },
-  {
-    "slug": "rolling-riches",
-    "name": "Rolling Riches",
-    "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "rolling-riches-home", "url": "https://www.rollingriches.com/" }]
-  },
-  {
-    "slug": "sportzino",
-    "name": "Sportzino",
-    "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "sportzino-home", "url": "https://sportzino.com/" }]
-  },
-  {
-    "slug": "zula",
-    "name": "Zula",
-    "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "zula-home", "url": "https://www.zulacasino.com/" }]
+    "sources": [{ "id": "megabonanza-home", "url": "https://www.megabonanza.com/" }]
   }
 ]

@@ -21,6 +21,20 @@ test("typical processing ranges remain comparable and retain their qualifier", (
   assert.equal(result.redemption.label, "Typically 3-5 business days");
   assert.equal(result.sortValues.redemption, 120);
 });
+test("post-approval transfers do not displace the separate approval window", () => {
+  const result = row([
+    record({ id: "transfer", recordType: "facts", field: "redemption_time", value: 1,
+      upperValue: 5, comparison: "range", unit: "business_days", stage: "processing",
+      method: "bank", basis: "IBT / ACH redemption after approval" }),
+    record({ id: "approval", recordType: "facts", field: "redemption_time", value: 24,
+      upperValue: 72, comparison: "range", unit: "hours", stage: "approval", method: "general",
+      conditions: ["In some cases, approval may take up to 7 days."] }),
+  ]);
+  assert.equal(result.redemption.label, "24-72 hours");
+  assert.equal(result.redemption.stage, "approval");
+  assert.equal(result.sortValues.redemption, 72);
+  assert.deepEqual(result.redemption.conditions, ["In some cases, approval may take up to 7 days."]);
+});
 test("a one-request-per-day limit is not processing speed, including retained records", () => {
   for (const freshness of ["captured_unreviewed", "not_reconfirmed"]) {
     const result = row([record({ recordType: "facts", field: "redemption_time", value: 24,

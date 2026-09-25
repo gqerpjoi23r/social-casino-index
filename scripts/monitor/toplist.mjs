@@ -1,5 +1,5 @@
 import { orderToplist, SORTS } from "../../src/assets/toplist-order.js";
-import { isRequestFrequency } from "./redemption-semantics.mjs";
+import { isRequestFrequency, qualifyRedemptionTiming } from "./redemption-semantics.mjs";
 import { dailyQualifierText } from "./daily-semantics.mjs";
 
 const number = value => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(value);
@@ -60,7 +60,7 @@ export function redemptionTime(snapshot, records) {
   const methods = { cash: "cash", bank: "bank", debit_card: "debit card",
     general: "method varies", unspecified: "method unspecified" };
   // Some extracted records leave stage unspecified despite an explicit processing basis.
-  const classified = records.map(record => record.stage === "unspecified" &&
+  const classified = records.map(qualifyRedemptionTiming).map(record => record.stage === "unspecified" &&
     /\bprocessing\b/i.test(record.basis || "") &&
     !/\bdelivery\b|\btransfer\b/i.test(record.basis || "") ?
     { ...record, stage: "processing" } : record);
@@ -113,7 +113,7 @@ export function buildToplist(operators, numeric, latestRecords, now) {
         "; opt-in needed for full reward" : "; marketing opt-in required";
     }
     const row = { slug: operator.slug, name: operator.name, favicon: operator.favicon,
-      url: operator.url, visitUrl: `/go/${operator.slug}/`,
+      url: operator.url, visitUrl: operator.partner ? `/go/${operator.slug}/` : null,
       productMode: operator.productMode, welcome, signup: signup ? { ...welcome } : null,
       purchase: purchase || null,
       daily: dailyReward(operator, snapshot, offers),
@@ -135,7 +135,7 @@ export function buildToplist(operators, numeric, latestRecords, now) {
       redemption: row.sortValues.redemption !== null, cash: row.sortValues.cash !== null };
     row.knownAttributeCount = Object.values(comparable).filter(Boolean).length;
     row.missingAttributes = Object.keys(comparable).filter(key => !comparable[key]);
-    row.homepageEligible = row.productMode !== "entertainment_only" && row.knownAttributeCount >= 2;
+    row.homepageEligible = row.productMode === "sweepstakes" && row.knownAttributeCount >= 2;
     return row;
   });
   const ordered = orderToplist(rows);

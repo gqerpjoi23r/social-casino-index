@@ -52,7 +52,8 @@
             <a href="{{ operator.url }}">Full operator record</a>
           </div>
         </details>
-        <a class="toplist-visit" href="{{ operator.visitUrl }}" aria-label="Visit {{ operator.name | escape }}"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        {% if operator.visitUrl %}<a class="toplist-visit" href="{{ operator.visitUrl }}" aria-label="Visit {{ operator.name | escape }}"><span>Visit</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        {% else %}<a class="toplist-visit" href="{{ operator.url }}" aria-label="{{ operator.name | escape }} details"><span>Details</span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>{% endif %}
       </div>
     </li>
     {% else %}<li>No operators currently meet the comparison requirements. <a href="/redemption-times/">Operator records</a></li>{% endfor %}

@@ -636,6 +636,7 @@
       "slug": "wow-vegas",
       "name": "WOW Vegas",
       "productMode": "sweepstakes",
+      "partner": false,
       "favicon": "/assets/favicons/wow-vegas.png",
       "url": "/redemption-times/wow-vegas/",
       "metrics": {
@@ -1189,6 +1190,7 @@
       "slug": "mcluck",
       "name": "McLuck",
       "productMode": "unverified",
+      "partner": false,
       "favicon": "/assets/favicons/mcluck.jpg",
       "url": "/redemption-times/mcluck/",
       "metrics": {
@@ -1725,6 +1727,7 @@
       "slug": "chumba",
       "name": "Chumba Casino",
       "productMode": "sweepstakes",
+      "partner": false,
       "favicon": "/assets/favicons/chumba.png",
       "url": "/redemption-times/chumba/",
       "metrics": {
@@ -2111,6 +2114,7 @@
       "slug": "yay-casino",
       "name": "YAY Casino",
       "productMode": "sweepstakes",
+      "partner": true,
       "favicon": "/assets/favicons/yay-casino.ico",
       "url": "/redemption-times/yay-casino/",
       "metrics": {
@@ -2565,6 +2569,7 @@
       "slug": "lucky-bunny",
       "name": "Lucky Bunny",
       "productMode": "unverified",
+      "partner": true,
       "favicon": "/assets/favicons/lucky-bunny.ico",
       "url": "/redemption-times/lucky-bunny/",
       "metrics": {
@@ -2897,6 +2902,7 @@
       "slug": "zonko",
       "name": "Zonko",
       "productMode": "unverified",
+      "partner": true,
       "favicon": "/assets/favicons/zonko.png",
       "url": "/redemption-times/zonko/",
       "metrics": {
@@ -3300,6 +3306,7 @@
       "slug": "dorados",
       "name": "Dorados",
       "productMode": "sweepstakes",
+      "partner": true,
       "favicon": "/assets/favicons/dorados.jpg",
       "url": "/redemption-times/dorados/",
       "metrics": {
@@ -4126,9 +4133,55 @@
       }
     },
     {
+      "slug": "crown-coins",
+      "name": "Crown Coins",
+      "productMode": "sweepstakes",
+      "partner": false,
+      "favicon": "/assets/favicons/crown-coins.png",
+      "url": "/redemption-times/crown-coins/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": null,
+        "gift": null,
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "pending",
+      "score": null,
+      "rank": null,
+      "benefitCount": 0,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Offer evidence being checked",
+      "product": {
+        "signup": null,
+        "purchase": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "gift": null,
+        "lastCheckedAt": null,
+        "sources": [],
+        "methods": [],
+        "verification": [],
+        "policies": []
+      }
+    },
+    {
       "slug": "jackpota",
       "name": "Jackpota",
       "productMode": "entertainment_only",
+      "partner": true,
       "favicon": "/assets/favicons/jackpota.png",
       "url": "/redemption-times/jackpota/",
       "metrics": {},
@@ -4259,6 +4312,7 @@
       "slug": "pulsz",
       "name": "Pulsz",
       "productMode": "unverified",
+      "partner": false,
       "favicon": "/assets/favicons/pulsz.png",
       "url": "/redemption-times/pulsz/",
       "metrics": {
@@ -4385,9 +4439,55 @@
       }
     },
     {
+      "slug": "spree",
+      "name": "Spree",
+      "productMode": "sweepstakes",
+      "partner": false,
+      "favicon": "/assets/favicons/spree.png",
+      "url": "/redemption-times/spree/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": null,
+        "gift": null,
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "pending",
+      "score": null,
+      "rank": null,
+      "benefitCount": 0,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Offer evidence being checked",
+      "product": {
+        "signup": null,
+        "purchase": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "gift": null,
+        "lastCheckedAt": null,
+        "sources": [],
+        "methods": [],
+        "verification": [],
+        "policies": []
+      }
+    },
+    {
       "slug": "stake-us",
       "name": "Stake.us",
       "productMode": "sweepstakes",
+      "partner": false,
       "favicon": "/assets/favicons/stake-us.png",
       "url": "/redemption-times/stake-us/",
       "metrics": {
@@ -4695,6 +4795,7 @@
       "slug": "sweetsweeps",
       "name": "SweetSweeps",
       "productMode": "unverified",
+      "partner": false,
       "favicon": null,
       "url": "/redemption-times/sweetsweeps/",
       "metrics": {
@@ -5637,7 +5738,7 @@
         "name": "McLuck",
         "favicon": "/assets/favicons/mcluck.jpg",
         "url": "/redemption-times/mcluck/",
-        "visitUrl": "/go/mcluck/",
+        "visitUrl": null,
         "productMode": "unverified",
         "welcome": {
           "metric": "signup",
@@ -5782,7 +5883,7 @@
         "missingAttributes": [
           "daily"
         ],
-        "homepageEligible": true,
+        "homepageEligible": false,
         "position": 1
       },
       {
@@ -5790,7 +5891,7 @@
         "name": "Chumba Casino",
         "favicon": "/assets/favicons/chumba.png",
         "url": "/redemption-times/chumba/",
-        "visitUrl": "/go/chumba/",
+        "visitUrl": null,
         "productMode": "sweepstakes",
         "welcome": {
           "metric": "signup",
@@ -5926,7 +6027,7 @@
         "name": "WOW Vegas",
         "favicon": "/assets/favicons/wow-vegas.png",
         "url": "/redemption-times/wow-vegas/",
-        "visitUrl": "/go/wow-vegas/",
+        "visitUrl": null,
         "productMode": "sweepstakes",
         "welcome": {
           "metric": "signup",
@@ -6245,6 +6346,39 @@
         ],
         "homepageEligible": true,
         "position": 4
+      },
+      {
+        "slug": "crown-coins",
+        "name": "Crown Coins",
+        "favicon": "/assets/favicons/crown-coins.png",
+        "url": "/redemption-times/crown-coins/",
+        "visitUrl": null,
+        "productMode": "sweepstakes",
+        "welcome": null,
+        "signup": null,
+        "purchase": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "generalMinimum": null,
+        "lastCheckedAt": null,
+        "welcomeGroup": 2,
+        "sortValues": {
+          "welcome": null,
+          "purchase": null,
+          "daily": null,
+          "redemption": null,
+          "cash": null
+        },
+        "knownAttributeCount": 0,
+        "missingAttributes": [
+          "welcome",
+          "daily",
+          "redemption",
+          "cash"
+        ],
+        "homepageEligible": false,
+        "position": 5
       },
       {
         "slug": "dorados",
@@ -6334,7 +6468,7 @@
           "cash"
         ],
         "homepageEligible": false,
-        "position": 5
+        "position": 6
       },
       {
         "slug": "jackpota",
@@ -6387,7 +6521,7 @@
           "cash"
         ],
         "homepageEligible": false,
-        "position": 6
+        "position": 7
       },
       {
         "slug": "lucky-bunny",
@@ -6516,15 +6650,15 @@
           "daily",
           "redemption"
         ],
-        "homepageEligible": true,
-        "position": 7
+        "homepageEligible": false,
+        "position": 8
       },
       {
         "slug": "pulsz",
         "name": "Pulsz",
         "favicon": "/assets/favicons/pulsz.png",
         "url": "/redemption-times/pulsz/",
-        "visitUrl": "/go/pulsz/",
+        "visitUrl": null,
         "productMode": "unverified",
         "welcome": null,
         "signup": null,
@@ -6550,14 +6684,47 @@
           "cash"
         ],
         "homepageEligible": false,
-        "position": 8
+        "position": 9
+      },
+      {
+        "slug": "spree",
+        "name": "Spree",
+        "favicon": "/assets/favicons/spree.png",
+        "url": "/redemption-times/spree/",
+        "visitUrl": null,
+        "productMode": "sweepstakes",
+        "welcome": null,
+        "signup": null,
+        "purchase": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "generalMinimum": null,
+        "lastCheckedAt": null,
+        "welcomeGroup": 2,
+        "sortValues": {
+          "welcome": null,
+          "purchase": null,
+          "daily": null,
+          "redemption": null,
+          "cash": null
+        },
+        "knownAttributeCount": 0,
+        "missingAttributes": [
+          "welcome",
+          "daily",
+          "redemption",
+          "cash"
+        ],
+        "homepageEligible": false,
+        "position": 10
       },
       {
         "slug": "stake-us",
         "name": "Stake.us",
         "favicon": "/assets/favicons/stake-us.png",
         "url": "/redemption-times/stake-us/",
-        "visitUrl": "/go/stake-us/",
+        "visitUrl": null,
         "productMode": "sweepstakes",
         "welcome": null,
         "signup": null,
@@ -6603,14 +6770,14 @@
           "cash"
         ],
         "homepageEligible": false,
-        "position": 9
+        "position": 11
       },
       {
         "slug": "sweetsweeps",
         "name": "SweetSweeps",
         "favicon": null,
         "url": "/redemption-times/sweetsweeps/",
-        "visitUrl": "/go/sweetsweeps/",
+        "visitUrl": null,
         "productMode": "unverified",
         "welcome": null,
         "signup": null,
@@ -6636,7 +6803,7 @@
           "cash"
         ],
         "homepageEligible": false,
-        "position": 10
+        "position": 12
       },
       {
         "slug": "zonko",
@@ -6772,170 +6939,17 @@
         "missingAttributes": [
           "daily"
         ],
-        "homepageEligible": true,
-        "position": 11
+        "homepageEligible": false,
+        "position": 13
       }
     ],
     "homepageRows": [
-      {
-        "slug": "mcluck",
-        "name": "McLuck",
-        "favicon": "/assets/favicons/mcluck.jpg",
-        "url": "/redemption-times/mcluck/",
-        "visitUrl": "/go/mcluck/",
-        "productMode": "unverified",
-        "welcome": {
-          "metric": "signup",
-          "value": 2.5,
-          "label": "2.5 SC free",
-          "note": "On signup; no purchase",
-          "recordId": "f2098ef24dd4ac7b6964",
-          "sourceUrl": "https://www.mcluck.com/promotions",
-          "observedAt": "2026-09-25T06:35:42.963Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-25T06:35:42.963Z",
-          "lastChangedAt": "2026-09-25T06:35:42.963Z",
-          "conditions": [
-            "Register now"
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2.5,
-          "totalSc": 2.5,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "signup": {
-          "metric": "signup",
-          "value": 2.5,
-          "label": "2.5 SC free",
-          "note": "On signup; no purchase",
-          "recordId": "f2098ef24dd4ac7b6964",
-          "sourceUrl": "https://www.mcluck.com/promotions",
-          "observedAt": "2026-09-25T06:35:42.963Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-25T06:35:42.963Z",
-          "lastChangedAt": "2026-09-25T06:35:42.963Z",
-          "conditions": [
-            "Register now"
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 2.5,
-          "totalSc": 2.5,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "purchase": {
-          "metric": "purchase",
-          "value": 2.5025025025025025,
-          "label": "25 SC for $9.99",
-          "note": "2.5 SC per $1. First purchase only.",
-          "recordId": "ae511eaa2bd1a6479db8",
-          "sourceUrl": "https://blog.mcluck.com/promo-codes/",
-          "observedAt": "2026-09-25T06:38:05.964Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-25T06:38:05.964Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Available across the first three purchases",
-            "Includes a Free Lucky Wheel Spin"
-          ],
-          "promoCode": "MCLUCKBLOG26",
-          "priceUsd": 9.99,
-          "immediateSc": 25,
-          "totalSc": 25,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "first_purchase"
-        },
-        "daily": {
-          "label": "Daily login reward",
-          "note": "Amount not published in collected terms",
-          "sourceUrl": "https://blog.mcluck.com/promo-codes/",
-          "recordId": "6a038d385d351b67373d",
-          "value": null,
-          "upperValue": null,
-          "unit": "SC",
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-25T06:38:05.964Z",
-          "conditions": [
-            "For existing players",
-            "Login every 24 hours",
-            "Claims free Gold Coins and Sweepstakes Coins"
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-25T06:32:00.576Z",
-          "firstObservedAt": "2026-09-25T06:38:05.964Z",
-          "lastChangedAt": null,
-          "comparable": false
-        },
-        "redemption": {
-          "label": "3-5 business days",
-          "note": "Processing; cash",
-          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
-          "recordId": "8d5514b3dbe01dfdddaa",
-          "value": 3,
-          "upperValue": 5,
-          "unit": "business_days",
-          "stage": "processing",
-          "comparison": "range",
-          "observedAt": "2026-09-25T06:37:04.925Z",
-          "conditions": [
-            "Processing times are estimates and may vary"
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-25T06:32:00.576Z",
-          "firstObservedAt": "2026-09-25T06:37:04.925Z",
-          "lastChangedAt": "2026-09-25T06:37:04.925Z",
-          "sortHours": 120
-        },
-        "cash": {
-          "metric": "cash",
-          "value": 75,
-          "label": "75 SC",
-          "note": "Cash redemption minimum.",
-          "recordId": "4ca11bd65f929d93bc56",
-          "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
-          "observedAt": "2026-09-25T06:37:04.925Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-25T06:37:04.925Z",
-          "lastChangedAt": "2026-09-25T06:37:04.925Z",
-          "conditions": [
-            "Qualifying Sweepstakes Coins required"
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "generalMinimum": null,
-        "lastCheckedAt": "2026-09-25T06:32:00.576Z",
-        "welcomeGroup": 0,
-        "sortValues": {
-          "welcome": 2.5,
-          "purchase": 2.5025025025025025,
-          "daily": null,
-          "redemption": 120,
-          "cash": 75
-        },
-        "knownAttributeCount": 3,
-        "missingAttributes": [
-          "daily"
-        ],
-        "homepageEligible": true,
-        "position": 1
-      },
       {
         "slug": "chumba",
         "name": "Chumba Casino",
         "favicon": "/assets/favicons/chumba.png",
         "url": "/redemption-times/chumba/",
-        "visitUrl": "/go/chumba/",
+        "visitUrl": null,
         "productMode": "sweepstakes",
         "welcome": {
           "metric": "signup",
@@ -7064,14 +7078,14 @@
           "redemption"
         ],
         "homepageEligible": true,
-        "position": 2
+        "position": 1
       },
       {
         "slug": "wow-vegas",
         "name": "WOW Vegas",
         "favicon": "/assets/favicons/wow-vegas.png",
         "url": "/redemption-times/wow-vegas/",
-        "visitUrl": "/go/wow-vegas/",
+        "visitUrl": null,
         "productMode": "sweepstakes",
         "welcome": {
           "metric": "signup",
@@ -7225,7 +7239,7 @@
           "daily"
         ],
         "homepageEligible": true,
-        "position": 3
+        "position": 2
       },
       {
         "slug": "yay-casino",
@@ -7389,274 +7403,7 @@
           "redemption"
         ],
         "homepageEligible": true,
-        "position": 4
-      },
-      {
-        "slug": "lucky-bunny",
-        "name": "Lucky Bunny",
-        "favicon": "/assets/favicons/lucky-bunny.ico",
-        "url": "/redemption-times/lucky-bunny/",
-        "visitUrl": "/go/lucky-bunny/",
-        "productMode": "unverified",
-        "welcome": {
-          "metric": "purchase",
-          "value": 1.0200204004080082,
-          "label": "510 SC for $499.99",
-          "note": "Regular purchase package",
-          "recordId": "1acfb8466f3b3691ced4",
-          "sourceUrl": "https://luckybunny.fun/",
-          "observedAt": "2026-09-25T06:32:33.078Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-25T06:32:33.078Z",
-          "lastChangedAt": "2026-09-25T06:32:33.078Z",
-          "conditions": [
-            "The page labels 510 SC as \"free\" alongside 5,000,000 Gold Coins; both $510 and $499.99 are displayed, with $499.99 presented after $510."
-          ],
-          "promoCode": null,
-          "priceUsd": 499.99,
-          "immediateSc": 510,
-          "totalSc": 510,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "purchase_package"
-        },
-        "signup": null,
-        "purchase": {
-          "metric": "purchase",
-          "value": 1.0200204004080082,
-          "label": "510 SC for $499.99",
-          "note": "1.02 SC per $1. Purchase package.",
-          "recordId": "1acfb8466f3b3691ced4",
-          "sourceUrl": "https://luckybunny.fun/",
-          "observedAt": "2026-09-25T06:32:33.078Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-25T06:32:33.078Z",
-          "lastChangedAt": "2026-09-25T06:32:33.078Z",
-          "conditions": [
-            "The page labels 510 SC as \"free\" alongside 5,000,000 Gold Coins; both $510 and $499.99 are displayed, with $499.99 presented after $510."
-          ],
-          "promoCode": null,
-          "priceUsd": 499.99,
-          "immediateSc": 510,
-          "totalSc": 510,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "purchase_package"
-        },
-        "daily": {
-          "label": "Daily login reward",
-          "note": "Amount not published in collected terms",
-          "sourceUrl": "https://luckybunny.fun/page/sweepstake-rules/",
-          "recordId": "36ac4760686ecae6653b",
-          "value": null,
-          "upperValue": null,
-          "unit": "SC",
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-24T10:38:43.174Z",
-          "conditions": [
-            "A predetermined amount of free Sweep Coins may be available for logging into the Platform each day."
-          ],
-          "status": "retained",
-          "lastCheckedAt": null,
-          "firstObservedAt": "2026-09-24T10:38:43.174Z",
-          "lastChangedAt": null,
-          "comparable": false
-        },
-        "redemption": {
-          "label": "Up to 5 business days",
-          "note": "Request to receipt; cash",
-          "sourceUrl": "https://luckybunny.fun/page/sweepstake-rules/",
-          "recordId": "c1b4b93c2779ae5244dd",
-          "value": 5,
-          "upperValue": null,
-          "unit": "business_days",
-          "stage": "end_to_end",
-          "comparison": "up_to",
-          "observedAt": "2026-09-24T10:38:43.174Z",
-          "conditions": [
-            "Bank or payment-processor fees for receiving funds are excluded."
-          ],
-          "status": "retained",
-          "lastCheckedAt": null,
-          "firstObservedAt": "2026-09-24T10:38:43.174Z",
-          "lastChangedAt": "2026-09-24T10:38:43.174Z",
-          "sortHours": null
-        },
-        "cash": {
-          "metric": "cash",
-          "value": 100,
-          "label": "100 SC",
-          "note": "Cash redemption minimum.",
-          "recordId": "2d8a604e782ae50cd7d8",
-          "sourceUrl": "https://luckybunny.fun/page/sweepstake-rules/",
-          "observedAt": "2026-09-24T10:38:43.174Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-24T10:38:43.174Z",
-          "lastChangedAt": "2026-09-24T10:38:43.174Z",
-          "conditions": [
-            "Participant must accumulate redeemable Sweep Coins."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "generalMinimum": null,
-        "lastCheckedAt": "2026-09-25T06:32:00.576Z",
-        "welcomeGroup": 1,
-        "sortValues": {
-          "welcome": null,
-          "purchase": 1.0200204004080082,
-          "daily": null,
-          "redemption": null,
-          "cash": 100
-        },
-        "knownAttributeCount": 2,
-        "missingAttributes": [
-          "daily",
-          "redemption"
-        ],
-        "homepageEligible": true,
-        "position": 5
-      },
-      {
-        "slug": "zonko",
-        "name": "Zonko",
-        "favicon": "/assets/favicons/zonko.png",
-        "url": "/redemption-times/zonko/",
-        "visitUrl": "/go/zonko/",
-        "productMode": "unverified",
-        "welcome": {
-          "metric": "purchase",
-          "value": 3.25,
-          "label": "65 SC for $20",
-          "note": "First purchase",
-          "recordId": "2874caf413c28c4a7c08",
-          "sourceUrl": "https://www.zonko.com/promotions/",
-          "observedAt": "2026-09-25T06:37:17.590Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-25T06:37:17.590Z",
-          "lastChangedAt": "2026-09-25T06:37:17.590Z",
-          "conditions": [
-            "First purchase of $20 required.",
-            "Includes a spin of the Welcome Wheel for more FREE SC rewards.",
-            "Limited Time Offer."
-          ],
-          "promoCode": null,
-          "priceUsd": 20,
-          "immediateSc": 65,
-          "totalSc": 65,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "first_purchase"
-        },
-        "signup": null,
-        "purchase": {
-          "metric": "purchase",
-          "value": 3.25,
-          "label": "65 SC for $20",
-          "note": "3.25 SC per $1. First purchase only.",
-          "recordId": "2874caf413c28c4a7c08",
-          "sourceUrl": "https://www.zonko.com/promotions/",
-          "observedAt": "2026-09-25T06:37:17.590Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-25T06:37:17.590Z",
-          "lastChangedAt": "2026-09-25T06:37:17.590Z",
-          "conditions": [
-            "First purchase of $20 required.",
-            "Includes a spin of the Welcome Wheel for more FREE SC rewards.",
-            "Limited Time Offer."
-          ],
-          "promoCode": null,
-          "priceUsd": 20,
-          "immediateSc": 65,
-          "totalSc": 65,
-          "durationDays": null,
-          "purchaseRequired": true,
-          "kind": "first_purchase"
-        },
-        "daily": {
-          "label": "Increasing daily reward",
-          "note": "Fixed daily SC not established",
-          "sourceUrl": "https://www.zonko.com/promotions/daily-bonus/",
-          "recordId": "05933869eae59a40b80b",
-          "value": null,
-          "upperValue": null,
-          "unit": "SC",
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-25T06:32:57.197Z",
-          "conditions": [
-            "Log in every day.",
-            "Tap Bonuses from the menu, then head to Daily Bonus to reveal your reward.",
-            "Rewards become better with more days logged in."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-25T06:32:00.576Z",
-          "firstObservedAt": "2026-09-25T06:32:57.197Z",
-          "lastChangedAt": "2026-09-25T06:32:57.197Z",
-          "comparable": false
-        },
-        "redemption": {
-          "label": "Up to 3 business days",
-          "note": "Approval; standard tier",
-          "sourceUrl": "https://www.zonko.com/help/play-rules/",
-          "recordId": "838b977c3dbc1bf74f99",
-          "value": 3,
-          "upperValue": null,
-          "unit": "business_days",
-          "stage": "approval",
-          "comparison": "up_to",
-          "observedAt": "2026-09-22T06:38:54.039Z",
-          "conditions": [
-            "Subject to necessary verification and account security checks.",
-            "May vary depending on verification requirements."
-          ],
-          "status": "retained",
-          "lastCheckedAt": null,
-          "firstObservedAt": "2026-09-22T06:38:54.039Z",
-          "lastChangedAt": null,
-          "sortHours": 72
-        },
-        "cash": {
-          "metric": "cash",
-          "value": 100,
-          "label": "100 SC",
-          "note": "Cash redemption minimum.",
-          "recordId": "df58565f84965a772e5f",
-          "sourceUrl": "https://www.zonko.com/help/play-rules/",
-          "observedAt": "2026-09-22T06:38:54.039Z",
-          "status": "retained",
-          "firstObservedAt": "2026-09-22T06:38:54.039Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Entrants must accumulate and maintain qualifying Sweepstakes Coins associated with their User Account.",
-            "Cash Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin the user chooses to redeem."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "generalMinimum": null,
-        "lastCheckedAt": "2026-09-25T06:32:00.576Z",
-        "welcomeGroup": 1,
-        "sortValues": {
-          "welcome": null,
-          "purchase": 3.25,
-          "daily": null,
-          "redemption": 72,
-          "cash": 100
-        },
-        "knownAttributeCount": 3,
-        "missingAttributes": [
-          "daily"
-        ],
-        "homepageEligible": true,
-        "position": 6
+        "position": 3
       }
     ],
     "sorts": [
@@ -7703,6 +7450,7 @@
       "slug": "wow-vegas",
       "name": "WOW Vegas",
       "productMode": "sweepstakes",
+      "partner": false,
       "favicon": "/assets/favicons/wow-vegas.png",
       "url": "/redemption-times/wow-vegas/",
       "metrics": {
@@ -8256,6 +8004,7 @@
       "slug": "mcluck",
       "name": "McLuck",
       "productMode": "unverified",
+      "partner": false,
       "favicon": "/assets/favicons/mcluck.jpg",
       "url": "/redemption-times/mcluck/",
       "metrics": {
@@ -8792,6 +8541,7 @@
       "slug": "chumba",
       "name": "Chumba Casino",
       "productMode": "sweepstakes",
+      "partner": false,
       "favicon": "/assets/favicons/chumba.png",
       "url": "/redemption-times/chumba/",
       "metrics": {
@@ -9180,6 +8930,7 @@
       "slug": "yay-casino",
       "name": "YAY Casino",
       "productMode": "sweepstakes",
+      "partner": true,
       "favicon": "/assets/favicons/yay-casino.ico",
       "url": "/redemption-times/yay-casino/",
       "metrics": {
@@ -9634,6 +9385,7 @@
       "slug": "lucky-bunny",
       "name": "Lucky Bunny",
       "productMode": "unverified",
+      "partner": true,
       "favicon": "/assets/favicons/lucky-bunny.ico",
       "url": "/redemption-times/lucky-bunny/",
       "metrics": {
@@ -9966,6 +9718,7 @@
       "slug": "zonko",
       "name": "Zonko",
       "productMode": "unverified",
+      "partner": true,
       "favicon": "/assets/favicons/zonko.png",
       "url": "/redemption-times/zonko/",
       "metrics": {
@@ -10369,6 +10122,7 @@
       "slug": "dorados",
       "name": "Dorados",
       "productMode": "sweepstakes",
+      "partner": true,
       "favicon": "/assets/favicons/dorados.jpg",
       "url": "/redemption-times/dorados/",
       "metrics": {
@@ -11195,9 +10949,55 @@
       }
     },
     {
+      "slug": "crown-coins",
+      "name": "Crown Coins",
+      "productMode": "sweepstakes",
+      "partner": false,
+      "favicon": "/assets/favicons/crown-coins.png",
+      "url": "/redemption-times/crown-coins/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": null,
+        "gift": null,
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "pending",
+      "score": null,
+      "rank": null,
+      "benefitCount": 0,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Offer evidence being checked",
+      "product": {
+        "signup": null,
+        "purchase": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "gift": null,
+        "lastCheckedAt": null,
+        "sources": [],
+        "methods": [],
+        "verification": [],
+        "policies": []
+      }
+    },
+    {
       "slug": "jackpota",
       "name": "Jackpota",
       "productMode": "entertainment_only",
+      "partner": true,
       "favicon": "/assets/favicons/jackpota.png",
       "url": "/redemption-times/jackpota/",
       "metrics": {},
@@ -11328,6 +11128,7 @@
       "slug": "pulsz",
       "name": "Pulsz",
       "productMode": "unverified",
+      "partner": false,
       "favicon": "/assets/favicons/pulsz.png",
       "url": "/redemption-times/pulsz/",
       "metrics": {
@@ -11454,9 +11255,55 @@
       }
     },
     {
+      "slug": "spree",
+      "name": "Spree",
+      "productMode": "sweepstakes",
+      "partner": false,
+      "favicon": "/assets/favicons/spree.png",
+      "url": "/redemption-times/spree/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": null,
+        "gift": null,
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "pending",
+      "score": null,
+      "rank": null,
+      "benefitCount": 0,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Offer evidence being checked",
+      "product": {
+        "signup": null,
+        "purchase": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "gift": null,
+        "lastCheckedAt": null,
+        "sources": [],
+        "methods": [],
+        "verification": [],
+        "policies": []
+      }
+    },
+    {
       "slug": "stake-us",
       "name": "Stake.us",
       "productMode": "sweepstakes",
+      "partner": false,
       "favicon": "/assets/favicons/stake-us.png",
       "url": "/redemption-times/stake-us/",
       "metrics": {
@@ -11764,6 +11611,7 @@
       "slug": "sweetsweeps",
       "name": "SweetSweeps",
       "productMode": "unverified",
+      "partner": false,
       "favicon": null,
       "url": "/redemption-times/sweetsweeps/",
       "metrics": {
