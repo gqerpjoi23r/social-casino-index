@@ -65,6 +65,7 @@ test("curated help and PDF seeds run without opening arbitrary API discovery", (
   assert.deepEqual(queue.hosts, ["example.com", "help.example.com"]);
   assert.equal(discover([sources[0].url], sources[1], "fixture", queue.hosts).length, 0);
   assert.equal(discover(["https://unapproved.example/help"], sources[1], "fixture", queue.hosts).length, 0);
+  assert.equal(discover(["https://example.com/promotions"], { ...sources[0], discoverLinks: false }, "fixture", queue.hosts).length, 0);
 });
 test("candidate decisions distinguish absent capture from field exclusion", () => {
   const registry = [{ ...operator, sources: [{ id: "rules", url: "https://example.com/rules", purpose: "sweepstakes_rules" }] }];

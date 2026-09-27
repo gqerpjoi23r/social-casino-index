@@ -53,6 +53,13 @@ substantive following article text before extraction. It does not require a
 numeric amount. Failed heading checks are `article_missing`, not evidence of
 operator nondisclosure.
 
+Sources may set `discoverLinks: false` for a reviewed, curated-only source set.
+Modo and Zula use this mode: all required evidence pages are explicit seeds.
+Zula's detailed registration/task breakdown takes precedence over its broad
+homepage welcome headline. Its inconsistent homepage daily amount is not used
+for numeric comparison; the dedicated daily page remains monitored. Screening
+captures retain the conflicting headline evidence for review.
+
 Every completed numeric report includes `candidate-decisions.json`: four
 category decisions with source URLs/statuses, values, qualifiers and extraction
 rejections. Different values flag a scope/conflict review, not an automatic

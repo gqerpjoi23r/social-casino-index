@@ -4928,6 +4928,51 @@
       }
     },
     {
+      "slug": "modo",
+      "name": "Modo",
+      "productMode": "sweepstakes",
+      "partner": false,
+      "favicon": "/assets/favicons/modo.png",
+      "url": "/redemption-times/modo/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": null,
+        "gift": null,
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "pending",
+      "score": null,
+      "rank": null,
+      "benefitCount": 0,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Offer evidence being checked",
+      "product": {
+        "signup": null,
+        "purchase": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "gift": null,
+        "lastCheckedAt": null,
+        "sources": [],
+        "methods": [],
+        "verification": [],
+        "policies": []
+      }
+    },
+    {
       "slug": "pulsz",
       "name": "Pulsz",
       "productMode": "unverified",
@@ -5457,6 +5502,51 @@
             "lastChangedAt": null
           }
         ],
+        "policies": []
+      }
+    },
+    {
+      "slug": "zula",
+      "name": "Zula Casino",
+      "productMode": "sweepstakes",
+      "partner": false,
+      "favicon": "/assets/favicons/zula.png",
+      "url": "/redemption-times/zula/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": null,
+        "gift": null,
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "pending",
+      "score": null,
+      "rank": null,
+      "benefitCount": 0,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Offer evidence being checked",
+      "product": {
+        "signup": null,
+        "purchase": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "gift": null,
+        "lastCheckedAt": null,
+        "sources": [],
+        "methods": [],
+        "verification": [],
         "policies": []
       }
     }
@@ -7599,6 +7689,39 @@
         "position": 9
       },
       {
+        "slug": "modo",
+        "name": "Modo",
+        "favicon": "/assets/favicons/modo.png",
+        "url": "/redemption-times/modo/",
+        "visitUrl": null,
+        "productMode": "sweepstakes",
+        "welcome": null,
+        "signup": null,
+        "purchase": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "generalMinimum": null,
+        "lastCheckedAt": null,
+        "welcomeGroup": 2,
+        "sortValues": {
+          "welcome": null,
+          "purchase": null,
+          "daily": null,
+          "redemption": null,
+          "cash": null
+        },
+        "knownAttributeCount": 0,
+        "missingAttributes": [
+          "welcome",
+          "daily",
+          "redemption",
+          "cash"
+        ],
+        "homepageEligible": false,
+        "position": 10
+      },
+      {
         "slug": "pulsz",
         "name": "Pulsz",
         "favicon": "/assets/favicons/pulsz.png",
@@ -7629,7 +7752,7 @@
           "cash"
         ],
         "homepageEligible": false,
-        "position": 10
+        "position": 11
       },
       {
         "slug": "stake-us",
@@ -7682,7 +7805,7 @@
           "cash"
         ],
         "homepageEligible": false,
-        "position": 11
+        "position": 12
       },
       {
         "slug": "sweetsweeps",
@@ -7715,7 +7838,7 @@
           "cash"
         ],
         "homepageEligible": false,
-        "position": 12
+        "position": 13
       },
       {
         "slug": "zonko",
@@ -7852,7 +7975,40 @@
           "daily"
         ],
         "homepageEligible": true,
-        "position": 13
+        "position": 14
+      },
+      {
+        "slug": "zula",
+        "name": "Zula Casino",
+        "favicon": "/assets/favicons/zula.png",
+        "url": "/redemption-times/zula/",
+        "visitUrl": null,
+        "productMode": "sweepstakes",
+        "welcome": null,
+        "signup": null,
+        "purchase": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "generalMinimum": null,
+        "lastCheckedAt": null,
+        "welcomeGroup": 2,
+        "sortValues": {
+          "welcome": null,
+          "purchase": null,
+          "daily": null,
+          "redemption": null,
+          "cash": null
+        },
+        "knownAttributeCount": 0,
+        "missingAttributes": [
+          "welcome",
+          "daily",
+          "redemption",
+          "cash"
+        ],
+        "homepageEligible": false,
+        "position": 15
       }
     ],
     "homepageRows": [
@@ -13311,6 +13467,51 @@
       }
     },
     {
+      "slug": "modo",
+      "name": "Modo",
+      "productMode": "sweepstakes",
+      "partner": false,
+      "favicon": "/assets/favicons/modo.png",
+      "url": "/redemption-times/modo/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": null,
+        "gift": null,
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "pending",
+      "score": null,
+      "rank": null,
+      "benefitCount": 0,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Offer evidence being checked",
+      "product": {
+        "signup": null,
+        "purchase": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "gift": null,
+        "lastCheckedAt": null,
+        "sources": [],
+        "methods": [],
+        "verification": [],
+        "policies": []
+      }
+    },
+    {
       "slug": "pulsz",
       "name": "Pulsz",
       "productMode": "unverified",
@@ -13840,6 +14041,51 @@
             "lastChangedAt": null
           }
         ],
+        "policies": []
+      }
+    },
+    {
+      "slug": "zula",
+      "name": "Zula Casino",
+      "productMode": "sweepstakes",
+      "partner": false,
+      "favicon": "/assets/favicons/zula.png",
+      "url": "/redemption-times/zula/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": null,
+        "gift": null,
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "pending",
+      "score": null,
+      "rank": null,
+      "benefitCount": 0,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Offer evidence being checked",
+      "product": {
+        "signup": null,
+        "purchase": null,
+        "daily": null,
+        "redemption": null,
+        "cash": null,
+        "gift": null,
+        "lastCheckedAt": null,
+        "sources": [],
+        "methods": [],
+        "verification": [],
         "policies": []
       }
     }
