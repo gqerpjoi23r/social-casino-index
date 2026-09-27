@@ -64,8 +64,73 @@ must independently extract and publish the qualifying fields.
 - Existing browser suites passed at five homepage widths, all sorts, Terms,
   seven benchmarks, thirteen existing profiles and CSV parity.
 
-Production expansion results will be recorded after the fresh run and live
-checks; registry registration alone is not a completed visible addition.
+## Production Outcome
+
+PRs #26 and #27 are merged. Fresh normal workflow `36296192801` published
+commit `7adcb36` and deployed successfully. It did not reuse the screening
+archive. Collection ran from 05:06:10 to 05:18:26 UTC on September 27.
+
+- 15 registered operators, up from 13.
+- 68/70 readable sources; all seven curated Modo/Zula sources succeeded.
+- 46 Firecrawl calls and 16 model calls, including one repair; no model errors.
+- Downloaded archive verified: 418 files, 116 captures, no corrupt operators.
+- 222 checked passages, zero unsupported passages and zero identical-replay
+  changes. Numeric validation checked 208 numbers; ten records were rejected.
+- Production baseline advanced only after validated publication.
+
+| Player-facing result | Before | After |
+| --- | ---: | ---: |
+| Homepage operators | 8 | 8 |
+| Immediate free signup comparisons | 6 | 6 |
+| Complete purchase comparisons | 6 | 5 |
+| Fixed recurring daily SC comparisons | 1 | 1 |
+| Comparable published processing | 5 | 6 |
+| Cash-minimum comparisons | 7 | 9 |
+
+The before snapshot was the live September 26 refresh. Category counts cover
+the whole monitored roster, not just homepage rows. Offers remain one admission
+category even when both signup and purchase values qualify.
+
+Both additions qualify in production:
+
+| Operator | Published comparison | Remaining gaps |
+| --- | --- | --- |
+| Modo | 50 SC cash minimum; up to 24 hours standard processing; 20 SC gift-card minimum on the specialist comparison | No comparable signup/purchase or fixed daily amount. Bank delivery of up to five business days is separate. Broader rules allow longer processing; published timing is not a funded payout measurement. |
+| Zula Casino | 2 SC initial signup; 10 SC total across welcome tasks; 50 SC cash minimum | No fixed daily amount or comparable processing window. Homepage headline conflict remains unresolved. |
+
+Default homepage order: McLuck, Spree, Chumba Casino, Crown Coins, WOW Vegas,
+Zula Casino, Modo, Zonko.
+
+### Why The Homepage Did Not Grow
+
+YAY Casino and Lucky Bunny left the homepage in this refresh. Both remain
+monitored and have profiles. These losses are not evidence of nondisclosure:
+
+- **YAY: extraction/validation loss.** The readable `yay-signup` capture explicitly
+  assigns 1 SC to registration. The primary model quoted a headline without that
+  allocation. Its repair quoted the allocation but omitted the headline totals
+  it still claimed (12 SC and 120,000 GC), so validation rejected the signup
+  record. One repair succeeded for a different policy record, not this signup.
+  This is a collection-system limitation, not an absent online attribute.
+- **Lucky Bunny: immediate-delivery qualification unresolved.** The readable
+  homepage still has priced packages and SC totals. New extraction leaves
+  `immediateSc` unknown, superseding the prior purchase comparison. The captured
+  package labels do not explicitly establish immediate delivery. Do not report
+  this as a withdrawn offer or restore the old amount merely to increase count.
+
+Keep these specific issues in the existing collection-gap backlog (#14).
+No extra collection, broader crawl or admission-rule change is justified by
+these two losses alone. The six screened candidates remain held for the
+reasons above; the original twelve-homepage-operator target is not reached.
+
+### Live Verification
+
+All 139 monitor tests and release validation passed in production. Both browser
+suites passed against the deployed site: homepage at five widths, all sorts,
+Terms, logos, keyboard/no-JavaScript use, eight shared-data pages, seven
+benchmarks, all 15 profiles and CSV parity. Mobile and desktop screenshots
+were checked. No screening numeric records were imported to make the additions
+qualify.
 
 ## Scraper Concept
 

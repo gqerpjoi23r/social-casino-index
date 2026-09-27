@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-27 - Verify targeted expansion in production
+- Fresh normal run `36296192801` deployed Modo and Zula with independently extracted values: 50-SC cash minima for both, Modo processing up to 24 hours, and Zula initial signup of 2 SC.
+- Roster grows from 13 to 15; cash coverage rises from seven to nine and processing from five to six. Homepage remains eight because YAY loses signup to a quote-validation failure and Lucky Bunny's immediate package delivery remains unestablished. These are not findings of nondisclosure.
+- Verify 68/70 readable sources, 46 Firecrawl and 16 model calls with no model errors, private archive integrity, 139 tests, release and both live browser suites. Record exact results and six held candidates in the targeted expansion report; twelve homepage qualifiers are not yet reached.
+
 ## 2026-09-27 - Onboard Modo and Zula from targeted evidence
 - Add Modo for cash minimum and processing, and Zula for the detailed signup breakdown and cash minimum. No screening figures are copied into current public observations.
 - Use explicit curated-only source sets for these additions. Keep Zula's inconsistent homepage headlines in the screening audit, not the numeric daily/signup rankings; its dedicated daily page remains monitored.
