@@ -69,7 +69,7 @@ export function recoverySource(source, missing = ["welcome", "daily", "redemptio
 
 export function sourceQueues(operators, config, previous = {}, missingByOperator = {}) {
   return operators.map(operator => {
-    const comparisonIds = new Set(config.comparisonSources?.[operator.slug] || []);
+    const comparisonIds = new Set(config.comparisonSources?.[operator.slug] || operator.sources.map(source => source.id));
     const seeds = [...operator.sources, ...(config.additionalSources || []).filter(s => s.operatorId === operator.slug)]
       .map(source => ({ ...source, url: config.sourceOverrides?.[source.id] || source.url,
         comparisonSource: comparisonIds.has(source.id), depth: 0 }));

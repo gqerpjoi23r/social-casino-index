@@ -149,17 +149,33 @@ test("recovery priorities target missing fields and every comparison seed fits t
   assert.equal(recoverySource({ depth: 1, url: "https://example.com/daily-bonus" }, ["cash"]), false);
   const read = path => JSON.parse(readFileSync(path));
   const queues = sourceQueues(read("src/_data/operators.json"), read("data/monitor/config.json"));
+  const limit = new RequestUsage({}, queues.length).limits.direct;
   const expected = queues.flatMap(queue => queue.queue.filter(source => source.comparisonSource).map(source => source.id));
   const selected = [];
-  while (selected.length < 50 && queues.some(queue => queue.attempted < 8 && queue.queue.length)) {
+  while (selected.length < limit && queues.some(queue => queue.attempted < 8 && queue.queue.length)) {
     for (const queue of queues) {
-      if (selected.length >= 50) break;
+      if (selected.length >= limit) break;
       const source = nextSource(queue, queues);
       if (source) { queue.attempted++; selected.push(source); }
     }
   }
   assert.deepEqual(selected.slice(0, expected.length).map(source => source.id).sort(), expected.sort());
   assert.ok(queues.every(queue => queue.attempted <= 8));
+  for (const slug of ["sportzino", "luckyland", "rolling-riches", "high5", "chanced", "fortune-wins"]) {
+    const operator = read("src/_data/operators.json").find(operator => operator.slug === slug);
+    for (const source of operator.sources) assert.ok(selected.some(item => item.id === source.id), source.id);
+  }
+});
+test("new operators need one curated source list, not a second priority configuration", () => {
+  const registry = [{ slug: "new", sources: [{ id: "welcome", url: "https://example.com/welcome" }] },
+    { slug: "old", sources: [{ id: "old-terms", url: "https://old.example/terms" }] }];
+  const prior = { discovery: { old: { queue: [
+    { id: "discovery", url: "https://old.example/bonus", depth: 1 },
+  ] } } };
+  const queues = sourceQueues(registry, {}, prior);
+  assert.equal(nextSource(queues[0], queues).id, "welcome");
+  assert.equal(nextSource(queues[1], queues).id, "old-terms");
+  assert.equal(nextSource(queues[1], queues).id, "discovery");
 });
 test("automatic proxy and shared model budget include repairs", () => {
   assert.equal(firecrawlOptions("https://example.com").proxy, "auto");

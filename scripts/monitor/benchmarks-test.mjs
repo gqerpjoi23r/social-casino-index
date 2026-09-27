@@ -326,7 +326,7 @@ test("persistent discovery queue revisits oldest checks and retains unfinished s
   const input = [{ slug: "a", sources: [{ id: "home", url: "https://example.com/" }] }];
   const previous = { discovery: { a: { checked: { home: "2026-09-21" },
     queue: [{ id: "bonus", url: "https://example.com/bonus", depth: 1 }] } } };
-  const queue = sourceQueues(input, {}, previous)[0];
+  const queue = sourceQueues(input, { comparisonSources: { a: [] } }, previous)[0];
   assert.equal(queue.queue[0].id, "bonus");
   assert.equal(queue.queue.length, 2);
 });
