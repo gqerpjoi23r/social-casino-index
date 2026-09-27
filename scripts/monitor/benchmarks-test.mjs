@@ -29,6 +29,19 @@ const signupHtml = benchmark => templates.renderString(
   '{% from "signup-details.njk" import answer, table, claims %}{{ answer(details) }}{{ table(benchmark, details) }}{{ claims(details) }}',
   { benchmark, details: signupDetails(benchmark) });
 
+test("an unresolved claim cannot rank or revive an older value, but other benefits still list", () => {
+  const operator = complete("a", 55, 2, 50);
+  operator.records[0] = record({ id: "disputed", immediateSc: 55, totalSc: 55,
+    conflict: "Signup terms are inconsistent.", reviewStatus: "unresolved" });
+  operator.records.push(record({ id: "old", immediateSc: 5, totalSc: 5,
+    capturedAt: "2026-09-19T12:00:00Z" }));
+  const result = model([operator]);
+  assert.equal(result.operators[0].metrics.signup, null);
+  assert.equal(result.toplist.homepageRows.length, 1);
+  assert.equal(result.toplist.homepageRows[0].signup, null);
+  assert.equal(result.toplist.homepageRows[0].benefitCount, 2);
+});
+
 test("signup leaders follow the selected initial reward and include all ties", () => {
   const result = model([complete("z", 5, 2, 50), complete("a", 5, 2, 50), complete("b", 2, 2, 50)]);
   const benchmark = result.benchmarks.find(b => b.id === "signup");

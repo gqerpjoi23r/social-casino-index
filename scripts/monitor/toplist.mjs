@@ -32,9 +32,10 @@ function dailyReward(operator, snapshot, offers) {
   }
   const candidates = newest(offers.filter(record => record.kind === "recurring_daily" &&
     record.purchaseRequired !== true));
-  const initial = candidates.find(record => record.immediateSc != null &&
+  const initialClaims = candidates.filter(record => record.immediateSc != null &&
     /first daily|first (?:day|login|claim)|day (?:one|1)/i.test(
       [record.name, record.basis, ...(record.conditions || [])].filter(Boolean).map(dailyQualifierText).join(" ")));
+  const initial = new Set(initialClaims.map(record => record.immediateSc)).size === 1 ? initialClaims[0] : null;
   if (initial) return { ...evidence(initial, `${number(initial.immediateSc)} SC first claim`,
     "Later daily amounts unverified", snapshot), comparable: false };
   const increasingReward = /increas|grows|progressive|streak|better.{0,50}more days|more days.{0,50}better/i;

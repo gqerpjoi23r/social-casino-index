@@ -47,14 +47,13 @@ Each has three to five curated official sources; no broad new crawl.
 | Sportzino | Registration reward, first/streak daily reward, general redemption minimum | General minimum and variable daily benefits need not be cash/fixed-daily sortable |
 | LuckyLand Casino | Advertised welcome package and daily login reward | Unknown purchase condition is displayed instead of hiding the offer |
 | Rolling Riches | General redemption minimum, published delivery window | Delivery does not need to qualify for the processing sort |
-| High 5 Casino | Priced spin offer, daily reward, gift minimum, post-approval delivery | Gift/spin benefits count; conflicting 55-SC cross-promotion is excluded from the curated source set |
+| High 5 Casino | Priced spin offer, daily reward, gift minimum, post-approval delivery | Gift/spin benefits count; the unresolved 55-SC claim is held by evidence review, not by removing the useful daily page |
 | Chanced | Recurring reward and general redemption minimum | General minimum is useful without a cash-method inference |
 | Fortune Wins | Published FC signup breakdown and variable daily reward | Keep FC as FC; old extraction incorrectly mapped it to SC and rejected a duration |
 
-Five qualify in offline projection of the old candidate model output. Fortune
-Wins still needs fresh extraction of its readable signup page. It is onboarded
-to monitoring, not forced onto the homepage. None of the screening numbers is
-copied into current public observations.
+Five qualified in the initial offline projection. The subsequent fresh production
+run qualifies all six, including Fortune Wins. No screening numbers were copied
+into public observations.
 
 ## Before release
 
@@ -81,7 +80,61 @@ parallel value store or configured request limits.
 
 ## Release verification
 
-Pending fresh normal-run publication and final production browser checks.
+Fresh production run `36300901481` completed and deployed on September 27,
+2026. It attempted 100 sources and read 88. Usage: 100 direct requests,
+76 Firecrawl requests (75 reported credits), 21 model calls, 392,262 model
+tokens, zero model errors. The model evaluation checked 294 numeric fields
+and rejected nine records; that is grounding validation, not measured accuracy.
+The saved-source replay found no unsupported quotes across 299 passages.
+Verified archive: 614 files, 174 captures, no corrupt operators.
+
+Homepage grows from eight old-rule entries to **19 of 21 monitored operators**.
+The simpler admission rule alone admitted Dorados, Jackpota, Lucky Bunny and
+YAY. Fresh extraction adds Pulsz and all six new operators. Layout and all
+five sort algorithms remain unchanged.
+
+| Added operator | Benefits now displayed | Important qualification |
+| --- | --- | --- |
+| Sportzino | 2 SC signup; increasing daily reward; 50 SC general minimum | Signup requires registration, email and phone verification. The page's daily header says 1 SC while its day-one table says 0.2 SC, so display the increasing-reward description instead of choosing either number. |
+| LuckyLand Casino | 2 SC signup; daily login reward | Its homepage was readable; two help articles were missing and the rules request failed. Minimum and timing remain unknown. |
+| Rolling Riches | Daily reward; up to 10 business days delivery; 100 SC general minimum | Delivery is after approval, not a processing-sort value. |
+| High 5 Casino | 200 spins for $9.99; daily reward; 3-5 business days bank delivery; 50 SC gift and 100 SC general minima | Free-signup terms remain unresolved. Delivery is after approval. Cash and gift minima count as one benefit area. |
+| Chanced | Recurring reward; USD 100 minimum | Keep USD, not an invented SC conversion. Method is unspecified. |
+| Fortune Wins | 1,000 FC day-one offer; increasing daily reward | This is a task total, not immediate registration. Registration alone is 100 FC; the total requires verification, consents, account connections and the first daily claim. Conditions are displayed under Terms and on the profile. FC is not converted to SC. |
+
+The two operators still outside the homepage:
+
+| Operator | Supported useful areas | Why it is outside |
+| --- | --- | --- |
+| Stake.us | Daily reward (one area) | Readable sources still do not establish a second supported signup, purchase, timing or minimum benefit. This is not a claim that the operator offers none. |
+| SweetSweeps | None | Homepage retrieval is blocked; the readable terms do not provide usable offers or redemption values. This is a capture/content gap, not operator opacity. |
+
+Jackpota is listed with 7,500 Gold Coins and daily Gold Coins, labelled
+entertainment credits at the benefit level. Partner status and link behavior
+are unchanged. Zonko remains listed with dated retained evidence because this
+run received location notices from all seven attempted pages.
+
+Final default order: McLuck, Spree, Chumba Casino, Crown Coins, LuckyLand Casino,
+Sportzino, WOW Vegas, Zula Casino, YAY Casino, Chanced, Dorados, Fortune Wins,
+High 5 Casino, Jackpota, Lucky Bunny, Modo, Pulsz, Rolling Riches, Zonko.
+Of the 15 original operators, fresh data changes only two numeric sort inputs:
+YAY recovers 1 SC signup; Lucky Bunny gains a supported 510 SC / $499.99 package.
+All other original-operator sort inputs are unchanged.
+
+The first fresh publication briefly ranked High 5 using its daily-page
+55-SC cross-promotion. The dedicated signup page describes a paid spin offer;
+this mismatch does not prove that a free reward is unavailable, but its terms
+need confirmation before promoting it as the best free deal. The follow-up
+uses the existing private review reference to mark that claim unresolved.
+It also corrects two extracted processing records against the same page's
+method-specific explanations: Skrill 1-2 and bank 3-5 business days **after
+approval**. Raw captures and their dates remain intact. Repeating the same
+disputed claim does not resolve it; different supported offers still coexist.
+There is no operator-wide ban or additional onboarding gate.
+
+All 153 monitor tests, local release and both browser suites pass: five homepage widths, every sort,
+Terms, keyboard and no-JavaScript behavior, all seven benchmarks, all 21
+profiles, eight shared comparison pages, logos and CSV parity.
 
 The initial expanded run `36300162650` was cancelled during collection, before
 publication. New source lists were not yet classified as priority seeds, so

@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-27 - Verify useful-benefit expansion and correct reviewed claims
+- Fresh run `36300901481` lists 19 of 21 operators, including all six additions. Stake.us has one useful area and SweetSweeps has none; failed retrieval is not a nondisclosure finding.
+- Keep High 5 listed with four benefit areas. Hold its unresolved 55-SC cross-promotion out of comparisons and correct its method-specific delivery windows to after approval, using the existing private review reference and original capture dates.
+- Enforce explicit review corrections for matching evidence; different supported offers can still coexist. Extractor 2.6.1 asks for method-specific timing explanations, not just summary tables. Preserve the homepage layout and all five sorting algorithms.
+- When first-claim amounts disagree, keep the supported daily-reward description instead of choosing an arbitrary number. Sportzino retains its increasing-reward benefit.
+
 ## 2026-09-27 - Keep benefit descriptions denomination-neutral
 - Describe operator profiles as offers and rewards, not universally as SC offers.
 - Descriptive purchase offers point to their claim conditions rather than asserting that every delivery schedule is unknown.

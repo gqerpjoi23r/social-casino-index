@@ -843,11 +843,11 @@
         "cash": null
       },
       "collectionStatus": "partial",
-      "score": 84.44444444444444,
+      "score": 87.03703703703702,
       "rank": 1,
       "benefitCount": 5,
       "componentScores": {
-        "signup": 70,
+        "signup": 77.77777777777777,
         "purchase": 83.33333333333333,
         "cash": 100
       },
@@ -1562,11 +1562,11 @@
         "cash": null
       },
       "collectionStatus": "readable",
-      "score": 72.5925925925926,
+      "score": 75.92592592592592,
       "rank": 2,
       "benefitCount": 6,
       "componentScores": {
-        "signup": 90,
+        "signup": 100,
         "purchase": 83.33333333333333,
         "cash": 44.44444444444444
       },
@@ -2108,11 +2108,11 @@
         "cash": null
       },
       "collectionStatus": "readable",
-      "score": 59.62962962962964,
+      "score": 62.96296296296297,
       "rank": 3,
       "benefitCount": 5,
       "componentScores": {
-        "signup": 90,
+        "signup": 100,
         "purchase": 33.333333333333336,
         "cash": 55.55555555555556
       },
@@ -2747,11 +2747,11 @@
         "cash": null
       },
       "collectionStatus": "readable",
-      "score": 54.81481481481482,
+      "score": 57.40740740740741,
       "rank": 4,
       "benefitCount": 5,
       "componentScores": {
-        "signup": 70,
+        "signup": 77.77777777777777,
         "purchase": 50,
         "cash": 44.44444444444444
       },
@@ -3223,7 +3223,7 @@
         },
         "purchase": {
           "label": "44 SC total + 440,000 Gold Coins",
-          "note": "Credit timing not confirmed",
+          "note": "See purchase and claim conditions",
           "sourceUrl": "https://www.yaycasino.com/blog/top-5-reasons-to-use-yay-casino-promo-codes/",
           "recordId": "5d72f82ad9a9c48d517b",
           "value": null,
@@ -4908,470 +4908,6 @@
       }
     },
     {
-      "slug": "high5",
-      "name": "High 5 Casino",
-      "productMode": "unverified",
-      "partner": false,
-      "favicon": "/assets/favicons/high5.png",
-      "url": "/redemption-times/high5/",
-      "metrics": {
-        "signup": {
-          "metric": "signup",
-          "value": 55,
-          "label": "55 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "9dcfcddce9c03b948e2a",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Includes 400 Diamonds."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 55,
-          "totalSc": 55,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "welcome": {
-          "metric": "welcome",
-          "value": 55,
-          "label": "55 SC",
-          "note": "No purchase needed.",
-          "recordId": "9dcfcddce9c03b948e2a",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Includes 400 Diamonds."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 55,
-          "totalSc": 55,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "staged": null,
-        "cash": null,
-        "general": {
-          "metric": "general",
-          "value": 100,
-          "label": "100 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "recordId": "1de145c5da86ac790132",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "The same instruction states a 50 SC minimum for prize out."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "gift": {
-          "metric": "gift",
-          "value": 50,
-          "label": "50 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "ad73a9fbbe66c5876e8b",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sent via email."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "daily": null,
-        "purchase": null,
-        "purchase10": null,
-        "purchase20": null
-      },
-      "absences": {
-        "signup": null,
-        "purchase": null,
-        "cash": null
-      },
-      "collectionStatus": "readable",
-      "score": null,
-      "rank": null,
-      "benefitCount": 4,
-      "componentScores": {},
-      "disclosureCount": 1,
-      "status": "Overall comparison incomplete",
-      "product": {
-        "signup": {
-          "metric": "signup",
-          "value": 55,
-          "label": "55 SC free",
-          "note": "On signup; no purchase",
-          "recordId": "9dcfcddce9c03b948e2a",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Includes 400 Diamonds."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 55,
-          "totalSc": 55,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "purchase": {
-          "label": "200 Spins for $9.99",
-          "note": "Credit timing not confirmed",
-          "sourceUrl": "https://high5casino.com/promotions/sign-up-bonus/",
-          "recordId": "d7275014f8aba42c1264",
-          "value": null,
-          "upperValue": null,
-          "unit": null,
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-27T06:59:49.655Z",
-          "conditions": [
-            "For new players upon registration.",
-            "Includes 200 Spins On Billionaire’s Bank."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-          "firstObservedAt": "2026-09-27T06:59:49.655Z",
-          "lastChangedAt": null,
-          "kind": "first_purchase",
-          "purchaseRequired": true,
-          "promoCode": null,
-          "priceUsd": 9.99,
-          "immediateSc": null,
-          "totalSc": null,
-          "goldCoins": null,
-          "comparable": false,
-          "rewardType": null
-        },
-        "daily": {
-          "label": "Daily login reward",
-          "note": "Amount not stated",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "recordId": "df6f0b78a4353a898c2c",
-          "value": null,
-          "upperValue": null,
-          "unit": null,
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "conditions": [
-            "Log in every day to claim rewards.",
-            "Includes free Sweeps Coins, Game Coins, and Diamonds; amounts are not stated."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "comparable": false,
-          "rewardType": null
-        },
-        "redemption": {
-          "label": "3-5 business days",
-          "note": "Processing; bank",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "recordId": "e1b6cbb64b144503cf5e",
-          "value": 3,
-          "upperValue": 5,
-          "unit": "business_days",
-          "stage": "processing",
-          "comparison": "range",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "conditions": [
-            "Transfer to a bank account."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "sortHours": 120
-        },
-        "cash": null,
-        "gift": {
-          "metric": "gift",
-          "value": 50,
-          "label": "50 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "ad73a9fbbe66c5876e8b",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sent via email."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "minimum": {
-          "metric": "gift",
-          "value": 50,
-          "label": "50 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "ad73a9fbbe66c5876e8b",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sent via email."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "minima": [
-          {
-            "metric": "gift",
-            "value": 50,
-            "label": "50 SC",
-            "note": "Gift-card redemption minimum.",
-            "recordId": "ad73a9fbbe66c5876e8b",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "status": "published",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null,
-            "conditions": [
-              "Sent via email."
-            ],
-            "priceUsd": null,
-            "immediateSc": null,
-            "totalSc": null,
-            "durationDays": null,
-            "kind": null
-          },
-          {
-            "metric": "general",
-            "value": 100,
-            "label": "100 SC",
-            "note": "General redemption minimum; cash method not established.",
-            "recordId": "1de145c5da86ac790132",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "status": "published",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null,
-            "conditions": [
-              "The same instruction states a 50 SC minimum for prize out."
-            ],
-            "priceUsd": null,
-            "immediateSc": null,
-            "totalSc": null,
-            "durationDays": null,
-            "kind": null
-          }
-        ],
-        "rewardTypes": [
-          "Gift cards"
-        ],
-        "labels": {
-          "signup": "Free signup",
-          "purchase": "Purchase deal",
-          "daily": "Daily reward",
-          "redemption": "Published processing",
-          "minimum": "Redemption minimum"
-        },
-        "benefitCount": 5,
-        "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-        "sources": [
-          {
-            "id": "high5-daily",
-            "url": "https://high5casino.com/promotions/daily-bonus/",
-            "purpose": "daily_reward",
-            "checkedAt": "2026-09-27T06:46:29.963Z",
-            "status": "ok",
-            "capturedAt": "2026-09-27T06:50:27.370Z"
-          },
-          {
-            "id": "high5-redemption",
-            "url": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "purpose": "redemption_help",
-            "checkedAt": "2026-09-27T06:46:29.963Z",
-            "status": "ok",
-            "capturedAt": "2026-09-27T06:54:16.877Z"
-          },
-          {
-            "id": "high5-rules",
-            "url": "https://high5casino.com/helpcenter/legal/",
-            "purpose": "sweepstakes_rules",
-            "checkedAt": "2026-09-27T06:46:29.963Z",
-            "status": "ok",
-            "capturedAt": "2026-09-27T06:57:29.507Z"
-          },
-          {
-            "id": "high5-signup",
-            "url": "https://high5casino.com/promotions/sign-up-bonus/",
-            "purpose": "signup_offer",
-            "checkedAt": "2026-09-27T06:46:29.963Z",
-            "status": "ok",
-            "capturedAt": "2026-09-27T06:59:49.655Z"
-          }
-        ],
-        "methods": [
-          "Bank transfer",
-          "Gift card"
-        ],
-        "verification": [
-          {
-            "label": "Identity verification is required before redemption, including proof of age, eligible U.S. state residency, government-issued ID, and proof of address.",
-            "note": "",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "recordId": "9b559a12b62c2588d81e",
-            "value": null,
-            "upperValue": null,
-            "unit": "SC",
-            "stage": null,
-            "comparison": null,
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "conditions": [],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null
-          }
-        ],
-        "policies": [
-          {
-            "field": "redemption_cap",
-            "label": "Up to 10,000 SC",
-            "note": "Skrill redemption; must make a purchase with Skrill",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "recordId": "ad2947d7bbb8cc61a6e9",
-            "value": 10000,
-            "upperValue": null,
-            "unit": "SC",
-            "stage": "not_applicable",
-            "comparison": "up_to",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "conditions": [
-              "Skrill e-Wallet.",
-              "Fast & secure redemption."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null
-          },
-          {
-            "field": "redemption_time",
-            "label": "1-2 business days",
-            "note": "Processing; method unspecified",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "recordId": "a9825d37c791c6fc3f30",
-            "value": 1,
-            "upperValue": 2,
-            "unit": "business_days",
-            "stage": "processing",
-            "comparison": "range",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "conditions": [
-              "Fast & secure redemption."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null,
-            "sortHours": null
-          },
-          {
-            "field": "redemption_cap",
-            "label": "Up to 10,000 SC",
-            "note": "Trustly bank transfer; available to verified users; Bank transfer",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "recordId": "aa9d9b0e7e0f1cd5751d",
-            "value": 10000,
-            "upperValue": null,
-            "unit": "SC",
-            "stage": "not_applicable",
-            "comparison": "up_to",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "conditions": [
-              "Transfer to a bank account."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null
-          },
-          {
-            "field": "redemption_time",
-            "label": "3-5 business days",
-            "note": "Processing; bank",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "recordId": "e1b6cbb64b144503cf5e",
-            "value": 3,
-            "upperValue": 5,
-            "unit": "business_days",
-            "stage": "processing",
-            "comparison": "range",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "conditions": [
-              "Transfer to a bank account."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null,
-            "sortHours": null
-          },
-          {
-            "field": "redemption_cap",
-            "label": "Up to 250 SC",
-            "note": "Prizeout digital cards; available to verified users; Gift card",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "recordId": "404773b225e39c58b041",
-            "value": 250,
-            "upperValue": null,
-            "unit": "SC",
-            "stage": "not_applicable",
-            "comparison": "up_to",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "conditions": [
-              "Sent via email."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null
-          }
-        ]
-      }
-    },
-    {
       "slug": "crown-coins",
       "name": "Crown Coins",
       "productMode": "sweepstakes",
@@ -6451,8 +5987,8 @@
         },
         "purchase": null,
         "daily": {
-          "label": "1 SC first claim",
-          "note": "Later daily amounts unverified",
+          "label": "Increasing daily reward",
+          "note": "Fixed daily SC not established",
           "sourceUrl": "https://sportzino.com/promotions/promo/daily-login-bonus",
           "recordId": "2a03589627bf89493cae",
           "value": 1,
@@ -6819,6 +6355,454 @@
         "methods": [],
         "verification": [],
         "policies": []
+      }
+    },
+    {
+      "slug": "high5",
+      "name": "High 5 Casino",
+      "productMode": "unverified",
+      "partner": false,
+      "favicon": "/assets/favicons/high5.png",
+      "url": "/redemption-times/high5/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": {
+          "metric": "general",
+          "value": 100,
+          "label": "100 SC",
+          "note": "General redemption minimum; cash method not established.",
+          "recordId": "1de145c5da86ac790132",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "The same instruction states a 50 SC minimum for prize out."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "gift": {
+          "metric": "gift",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "ad73a9fbbe66c5876e8b",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sent via email."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "readable",
+      "score": null,
+      "rank": null,
+      "benefitCount": 2,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Overall comparison incomplete",
+      "product": {
+        "signup": null,
+        "purchase": {
+          "label": "200 Spins for $9.99",
+          "note": "See purchase and claim conditions",
+          "sourceUrl": "https://high5casino.com/promotions/sign-up-bonus/",
+          "recordId": "d7275014f8aba42c1264",
+          "value": null,
+          "upperValue": null,
+          "unit": null,
+          "stage": null,
+          "comparison": null,
+          "observedAt": "2026-09-27T06:59:49.655Z",
+          "conditions": [
+            "For new players upon registration.",
+            "Includes 200 Spins On Billionaire’s Bank."
+          ],
+          "status": "published",
+          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+          "firstObservedAt": "2026-09-27T06:59:49.655Z",
+          "lastChangedAt": null,
+          "kind": "first_purchase",
+          "purchaseRequired": true,
+          "promoCode": null,
+          "priceUsd": 9.99,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
+          "comparable": false,
+          "rewardType": null
+        },
+        "daily": {
+          "label": "Daily login reward",
+          "note": "Amount not stated",
+          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
+          "recordId": "df6f0b78a4353a898c2c",
+          "value": null,
+          "upperValue": null,
+          "unit": null,
+          "stage": null,
+          "comparison": null,
+          "observedAt": "2026-09-27T06:50:27.370Z",
+          "conditions": [
+            "Log in every day to claim rewards.",
+            "Includes free Sweeps Coins, Game Coins, and Diamonds; amounts are not stated."
+          ],
+          "status": "published",
+          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+          "firstObservedAt": "2026-09-27T06:50:27.370Z",
+          "lastChangedAt": null,
+          "comparable": false,
+          "rewardType": null
+        },
+        "redemption": {
+          "label": "3-5 business days",
+          "note": "Delivery after approval; bank",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "recordId": "e1b6cbb64b144503cf5e",
+          "value": 3,
+          "upperValue": 5,
+          "unit": "business_days",
+          "stage": "transfer",
+          "comparison": "range",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "conditions": [
+            "Approved redemptions typically arrive within 3-5 business days.",
+            "Available to verified users."
+          ],
+          "status": "retained",
+          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "sortHours": null
+        },
+        "cash": null,
+        "gift": {
+          "metric": "gift",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "ad73a9fbbe66c5876e8b",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sent via email."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "minimum": {
+          "metric": "gift",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "ad73a9fbbe66c5876e8b",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sent via email."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "minima": [
+          {
+            "metric": "gift",
+            "value": 50,
+            "label": "50 SC",
+            "note": "Gift-card redemption minimum.",
+            "recordId": "ad73a9fbbe66c5876e8b",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "status": "published",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null,
+            "conditions": [
+              "Sent via email."
+            ],
+            "priceUsd": null,
+            "immediateSc": null,
+            "totalSc": null,
+            "durationDays": null,
+            "kind": null
+          },
+          {
+            "metric": "general",
+            "value": 100,
+            "label": "100 SC",
+            "note": "General redemption minimum; cash method not established.",
+            "recordId": "1de145c5da86ac790132",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "status": "published",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null,
+            "conditions": [
+              "The same instruction states a 50 SC minimum for prize out."
+            ],
+            "priceUsd": null,
+            "immediateSc": null,
+            "totalSc": null,
+            "durationDays": null,
+            "kind": null
+          }
+        ],
+        "rewardTypes": [
+          "Gift cards"
+        ],
+        "labels": {
+          "signup": "Welcome offer",
+          "purchase": "Purchase deal",
+          "daily": "Daily reward",
+          "redemption": "Redemption timing",
+          "minimum": "Redemption minimum"
+        },
+        "benefitCount": 4,
+        "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+        "sources": [
+          {
+            "id": "high5-daily",
+            "url": "https://high5casino.com/promotions/daily-bonus/",
+            "purpose": "daily_reward",
+            "checkedAt": "2026-09-27T06:46:29.963Z",
+            "status": "ok",
+            "capturedAt": "2026-09-27T06:50:27.370Z"
+          },
+          {
+            "id": "high5-redemption",
+            "url": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "purpose": "redemption_help",
+            "checkedAt": "2026-09-27T06:46:29.963Z",
+            "status": "ok",
+            "capturedAt": "2026-09-27T06:54:16.877Z"
+          },
+          {
+            "id": "high5-rules",
+            "url": "https://high5casino.com/helpcenter/legal/",
+            "purpose": "sweepstakes_rules",
+            "checkedAt": "2026-09-27T06:46:29.963Z",
+            "status": "ok",
+            "capturedAt": "2026-09-27T06:57:29.507Z"
+          },
+          {
+            "id": "high5-signup",
+            "url": "https://high5casino.com/promotions/sign-up-bonus/",
+            "purpose": "signup_offer",
+            "checkedAt": "2026-09-27T06:46:29.963Z",
+            "status": "ok",
+            "capturedAt": "2026-09-27T06:59:49.655Z"
+          }
+        ],
+        "methods": [
+          "Bank transfer",
+          "Gift card"
+        ],
+        "verification": [
+          {
+            "label": "Identity verification is required before redemption, including proof of age, eligible U.S. state residency, government-issued ID, and proof of address.",
+            "note": "",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "9b559a12b62c2588d81e",
+            "value": null,
+            "upperValue": null,
+            "unit": "SC",
+            "stage": null,
+            "comparison": null,
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [],
+            "status": "published",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null
+          }
+        ],
+        "policies": [
+          {
+            "field": "redemption_time",
+            "label": "1-2 business days",
+            "note": "Delivery after approval; method unspecified",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "a9825d37c791c6fc3f30",
+            "value": 1,
+            "upperValue": 2,
+            "unit": "business_days",
+            "stage": "transfer",
+            "comparison": "range",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Once approved, funds are typically delivered to your Skrill account within 1-2 business days.",
+              "A prior purchase using Skrill is required."
+            ],
+            "status": "retained",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null,
+            "sortHours": null
+          },
+          {
+            "field": "redemption_time",
+            "label": "3-5 business days",
+            "note": "Delivery after approval; bank",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "e1b6cbb64b144503cf5e",
+            "value": 3,
+            "upperValue": 5,
+            "unit": "business_days",
+            "stage": "transfer",
+            "comparison": "range",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Approved redemptions typically arrive within 3-5 business days.",
+              "Available to verified users."
+            ],
+            "status": "retained",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null,
+            "sortHours": null
+          },
+          {
+            "field": "redemption_cap",
+            "label": "Up to 10,000 SC",
+            "note": "Skrill redemption; must make a purchase with Skrill",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "ad2947d7bbb8cc61a6e9",
+            "value": 10000,
+            "upperValue": null,
+            "unit": "SC",
+            "stage": "not_applicable",
+            "comparison": "up_to",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Skrill e-Wallet.",
+              "Fast & secure redemption."
+            ],
+            "status": "published",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null
+          },
+          {
+            "field": "redemption_time",
+            "label": "1-2 business days",
+            "note": "Delivery after approval; method unspecified",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "a9825d37c791c6fc3f30-automated-2026-09-27T06-46-29-963Z-36300901481-1",
+            "value": 1,
+            "upperValue": 2,
+            "unit": "business_days",
+            "stage": "transfer",
+            "comparison": "range",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Once approved, funds are typically delivered to your Skrill account within 1-2 business days.",
+              "A prior purchase using Skrill is required."
+            ],
+            "status": "published",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": "2026-09-27T06:54:16.877Z",
+            "sortHours": null
+          },
+          {
+            "field": "redemption_cap",
+            "label": "Up to 10,000 SC",
+            "note": "Trustly bank transfer; available to verified users; Bank transfer",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "aa9d9b0e7e0f1cd5751d",
+            "value": 10000,
+            "upperValue": null,
+            "unit": "SC",
+            "stage": "not_applicable",
+            "comparison": "up_to",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Transfer to a bank account."
+            ],
+            "status": "published",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null
+          },
+          {
+            "field": "redemption_time",
+            "label": "3-5 business days",
+            "note": "Delivery after approval; bank",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "e1b6cbb64b144503cf5e-automated-2026-09-27T06-46-29-963Z-36300901481-1",
+            "value": 3,
+            "upperValue": 5,
+            "unit": "business_days",
+            "stage": "transfer",
+            "comparison": "range",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Approved redemptions typically arrive within 3-5 business days.",
+              "Available to verified users."
+            ],
+            "status": "published",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": "2026-09-27T06:54:16.877Z",
+            "sortHours": null
+          },
+          {
+            "field": "redemption_cap",
+            "label": "Up to 250 SC",
+            "note": "Prizeout digital cards; available to verified users; Gift card",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "404773b225e39c58b041",
+            "value": 250,
+            "upperValue": null,
+            "unit": "SC",
+            "stage": "not_applicable",
+            "comparison": "up_to",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Sent via email."
+            ],
+            "status": "published",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null
+          }
+        ]
       }
     },
     {
@@ -9070,46 +9054,6 @@
         "policies": [
           {
             "field": "playthrough",
-            "label": "At least 3 multiplier",
-            "note": "Stake Cash received as a bonus alongside a Gold Coin purchase only.",
-            "sourceUrl": "https://help.stake.us/en/articles/6465093-redemption-progress",
-            "recordId": "285721370bcf4a93626d",
-            "value": 3,
-            "upperValue": null,
-            "unit": "multiplier",
-            "stage": "not_applicable",
-            "comparison": "at_least",
-            "observedAt": "2026-09-27T06:55:46.453Z",
-            "conditions": [
-              "Redemption becomes available after the stated playthrough."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-10T21:21:18.963Z",
-            "lastChangedAt": "2026-09-27T05:12:25.240Z"
-          },
-          {
-            "field": "playthrough",
-            "label": "3 multiplier",
-            "note": "All Stake Cash except Stake Cash won through Promotional Play.",
-            "sourceUrl": "https://stake.us/policies/terms",
-            "recordId": "review-34dff45bddba456d34bc",
-            "value": 3,
-            "upperValue": null,
-            "unit": "multiplier",
-            "stage": "not_applicable",
-            "comparison": "exact",
-            "observedAt": "2026-09-27T06:58:28.552Z",
-            "conditions": [
-              "Stake Cash won through Promotional Play is excepted."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-10T21:21:33.666Z",
-            "lastChangedAt": null
-          },
-          {
-            "field": "playthrough",
             "label": "3 multiplier",
             "note": "All Stake Cash except Stake Cash won through Promotional Play must be played three times before prize redemption eligibility.",
             "sourceUrl": "https://stake.us/policies/terms",
@@ -9296,33 +9240,6 @@
       "url": "/bonuses/no-purchase-signup-bonuses/",
       "rows": [
         {
-          "slug": "high5",
-          "name": "High 5 Casino",
-          "url": "/redemption-times/high5/",
-          "favicon": "/assets/favicons/high5.png",
-          "metric": "signup",
-          "value": 55,
-          "label": "55 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "9dcfcddce9c03b948e2a",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Includes 400 Diamonds."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 55,
-          "totalSc": 55,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup",
-          "rank": 1
-        },
-        {
           "slug": "mcluck",
           "name": "McLuck",
           "url": "/redemption-times/mcluck/",
@@ -9348,7 +9265,7 @@
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup",
-          "rank": 2
+          "rank": 1
         },
         {
           "slug": "spree",
@@ -9376,7 +9293,7 @@
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup",
-          "rank": 2
+          "rank": 1
         },
         {
           "slug": "chumba",
@@ -9403,7 +9320,7 @@
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup",
-          "rank": 4
+          "rank": 3
         },
         {
           "slug": "crown-coins",
@@ -9432,7 +9349,7 @@
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup",
-          "rank": 4
+          "rank": 3
         },
         {
           "slug": "luckyland",
@@ -9459,7 +9376,7 @@
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup",
-          "rank": 4
+          "rank": 3
         },
         {
           "slug": "sportzino",
@@ -9488,7 +9405,7 @@
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup",
-          "rank": 4
+          "rank": 3
         },
         {
           "slug": "wow-vegas",
@@ -9518,7 +9435,7 @@
           "durationDays": 3,
           "purchaseRequired": false,
           "kind": "signup",
-          "rank": 4
+          "rank": 3
         },
         {
           "slug": "zula",
@@ -9548,7 +9465,7 @@
           "durationDays": null,
           "purchaseRequired": false,
           "kind": "signup",
-          "rank": 4
+          "rank": 3
         },
         {
           "slug": "yay-casino",
@@ -9576,7 +9493,7 @@
           "durationDays": 7,
           "purchaseRequired": false,
           "kind": "signup",
-          "rank": 10
+          "rank": 9
         }
       ],
       "updatedAt": "2026-09-27T06:58:55.918Z"
@@ -10543,260 +10460,6 @@
     "lastCheckedAt": "2026-09-27T06:46:29.963Z",
     "rows": [
       {
-        "slug": "high5",
-        "name": "High 5 Casino",
-        "favicon": "/assets/favicons/high5.png",
-        "url": "/redemption-times/high5/",
-        "visitUrl": null,
-        "productMode": "unverified",
-        "welcome": {
-          "metric": "signup",
-          "value": 55,
-          "label": "55 SC free",
-          "note": "On signup; no purchase",
-          "recordId": "9dcfcddce9c03b948e2a",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Includes 400 Diamonds."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 55,
-          "totalSc": 55,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "signup": {
-          "metric": "signup",
-          "value": 55,
-          "label": "55 SC free",
-          "note": "On signup; no purchase",
-          "recordId": "9dcfcddce9c03b948e2a",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Includes 400 Diamonds."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 55,
-          "totalSc": 55,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "purchase": {
-          "label": "200 Spins for $9.99",
-          "note": "Credit timing not confirmed",
-          "sourceUrl": "https://high5casino.com/promotions/sign-up-bonus/",
-          "recordId": "d7275014f8aba42c1264",
-          "value": null,
-          "upperValue": null,
-          "unit": null,
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-27T06:59:49.655Z",
-          "conditions": [
-            "For new players upon registration.",
-            "Includes 200 Spins On Billionaire’s Bank."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-          "firstObservedAt": "2026-09-27T06:59:49.655Z",
-          "lastChangedAt": null,
-          "kind": "first_purchase",
-          "purchaseRequired": true,
-          "promoCode": null,
-          "priceUsd": 9.99,
-          "immediateSc": null,
-          "totalSc": null,
-          "goldCoins": null,
-          "comparable": false,
-          "rewardType": null
-        },
-        "daily": {
-          "label": "Daily login reward",
-          "note": "Amount not stated",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "recordId": "df6f0b78a4353a898c2c",
-          "value": null,
-          "upperValue": null,
-          "unit": null,
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "conditions": [
-            "Log in every day to claim rewards.",
-            "Includes free Sweeps Coins, Game Coins, and Diamonds; amounts are not stated."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "comparable": false,
-          "rewardType": null
-        },
-        "redemption": {
-          "label": "3-5 business days",
-          "note": "Processing; bank",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "recordId": "e1b6cbb64b144503cf5e",
-          "value": 3,
-          "upperValue": 5,
-          "unit": "business_days",
-          "stage": "processing",
-          "comparison": "range",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "conditions": [
-            "Transfer to a bank account."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "sortHours": 120
-        },
-        "cash": null,
-        "generalMinimum": {
-          "metric": "general",
-          "value": 100,
-          "label": "100 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "recordId": "1de145c5da86ac790132",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "The same instruction states a 50 SC minimum for prize out."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-        "welcomeGroup": 0,
-        "sortValues": {
-          "welcome": 55,
-          "purchase": null,
-          "daily": null,
-          "redemption": 120,
-          "cash": null
-        },
-        "minima": [
-          {
-            "metric": "gift",
-            "value": 50,
-            "label": "50 SC",
-            "note": "Gift-card redemption minimum.",
-            "recordId": "ad73a9fbbe66c5876e8b",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "status": "published",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null,
-            "conditions": [
-              "Sent via email."
-            ],
-            "priceUsd": null,
-            "immediateSc": null,
-            "totalSc": null,
-            "durationDays": null,
-            "kind": null
-          },
-          {
-            "metric": "general",
-            "value": 100,
-            "label": "100 SC",
-            "note": "General redemption minimum; cash method not established.",
-            "recordId": "1de145c5da86ac790132",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "status": "published",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null,
-            "conditions": [
-              "The same instruction states a 50 SC minimum for prize out."
-            ],
-            "priceUsd": null,
-            "immediateSc": null,
-            "totalSc": null,
-            "durationDays": null,
-            "kind": null
-          }
-        ],
-        "minimum": {
-          "metric": "gift",
-          "value": 50,
-          "label": "50 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "ad73a9fbbe66c5876e8b",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sent via email."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "gift": {
-          "metric": "gift",
-          "value": 50,
-          "label": "50 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "ad73a9fbbe66c5876e8b",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sent via email."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "rewardTypes": [
-          "Gift cards"
-        ],
-        "labels": {
-          "signup": "Free signup",
-          "purchase": "Purchase deal",
-          "daily": "Daily reward",
-          "redemption": "Published processing",
-          "minimum": "Redemption minimum"
-        },
-        "knownAttributeCount": 2,
-        "missingAttributes": [
-          "daily",
-          "cash"
-        ],
-        "benefitCount": 5,
-        "missingBenefits": [],
-        "homepageEligible": true,
-        "position": 1
-      },
-      {
         "slug": "mcluck",
         "name": "McLuck",
         "favicon": "/assets/favicons/mcluck.jpg",
@@ -11046,7 +10709,7 @@
         "benefitCount": 5,
         "missingBenefits": [],
         "homepageEligible": true,
-        "position": 2
+        "position": 1
       },
       {
         "slug": "spree",
@@ -11299,7 +10962,7 @@
         "benefitCount": 5,
         "missingBenefits": [],
         "homepageEligible": true,
-        "position": 3
+        "position": 2
       },
       {
         "slug": "chumba",
@@ -11535,7 +11198,7 @@
           "redemption"
         ],
         "homepageEligible": true,
-        "position": 4
+        "position": 3
       },
       {
         "slug": "crown-coins",
@@ -11734,7 +11397,7 @@
           "purchase"
         ],
         "homepageEligible": true,
-        "position": 5
+        "position": 4
       },
       {
         "slug": "luckyland",
@@ -11845,7 +11508,7 @@
           "minimum"
         ],
         "homepageEligible": true,
-        "position": 6
+        "position": 5
       },
       {
         "slug": "sportzino",
@@ -11904,8 +11567,8 @@
         },
         "purchase": null,
         "daily": {
-          "label": "1 SC first claim",
-          "note": "Later daily amounts unverified",
+          "label": "Increasing daily reward",
+          "note": "Fixed daily SC not established",
           "sourceUrl": "https://sportzino.com/promotions/promo/daily-login-bonus",
           "recordId": "2a03589627bf89493cae",
           "value": 1,
@@ -12014,7 +11677,7 @@
           "redemption"
         ],
         "homepageEligible": true,
-        "position": 7
+        "position": 6
       },
       {
         "slug": "wow-vegas",
@@ -12270,7 +11933,7 @@
         "benefitCount": 5,
         "missingBenefits": [],
         "homepageEligible": true,
-        "position": 8
+        "position": 7
       },
       {
         "slug": "zula",
@@ -12452,7 +12115,7 @@
           "redemption"
         ],
         "homepageEligible": true,
-        "position": 9
+        "position": 8
       },
       {
         "slug": "yay-casino",
@@ -12509,7 +12172,7 @@
         },
         "purchase": {
           "label": "44 SC total + 440,000 Gold Coins",
-          "note": "Credit timing not confirmed",
+          "note": "See purchase and claim conditions",
           "sourceUrl": "https://www.yaycasino.com/blog/top-5-reasons-to-use-yay-casino-promo-codes/",
           "recordId": "5d72f82ad9a9c48d517b",
           "value": null,
@@ -12714,7 +12377,7 @@
         "benefitCount": 5,
         "missingBenefits": [],
         "homepageEligible": true,
-        "position": 10
+        "position": 9
       },
       {
         "slug": "chanced",
@@ -12823,7 +12486,7 @@
           "redemption"
         ],
         "homepageEligible": true,
-        "position": 11
+        "position": 10
       },
       {
         "slug": "dorados",
@@ -12970,7 +12633,7 @@
           "purchase"
         ],
         "homepageEligible": true,
-        "position": 12
+        "position": 11
       },
       {
         "slug": "fortune-wins",
@@ -13069,6 +12732,223 @@
           "purchase",
           "redemption",
           "minimum"
+        ],
+        "homepageEligible": true,
+        "position": 12
+      },
+      {
+        "slug": "high5",
+        "name": "High 5 Casino",
+        "favicon": "/assets/favicons/high5.png",
+        "url": "/redemption-times/high5/",
+        "visitUrl": null,
+        "productMode": "unverified",
+        "welcome": null,
+        "signup": null,
+        "purchase": {
+          "label": "200 Spins for $9.99",
+          "note": "See purchase and claim conditions",
+          "sourceUrl": "https://high5casino.com/promotions/sign-up-bonus/",
+          "recordId": "d7275014f8aba42c1264",
+          "value": null,
+          "upperValue": null,
+          "unit": null,
+          "stage": null,
+          "comparison": null,
+          "observedAt": "2026-09-27T06:59:49.655Z",
+          "conditions": [
+            "For new players upon registration.",
+            "Includes 200 Spins On Billionaire’s Bank."
+          ],
+          "status": "published",
+          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+          "firstObservedAt": "2026-09-27T06:59:49.655Z",
+          "lastChangedAt": null,
+          "kind": "first_purchase",
+          "purchaseRequired": true,
+          "promoCode": null,
+          "priceUsd": 9.99,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
+          "comparable": false,
+          "rewardType": null
+        },
+        "daily": {
+          "label": "Daily login reward",
+          "note": "Amount not stated",
+          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
+          "recordId": "df6f0b78a4353a898c2c",
+          "value": null,
+          "upperValue": null,
+          "unit": null,
+          "stage": null,
+          "comparison": null,
+          "observedAt": "2026-09-27T06:50:27.370Z",
+          "conditions": [
+            "Log in every day to claim rewards.",
+            "Includes free Sweeps Coins, Game Coins, and Diamonds; amounts are not stated."
+          ],
+          "status": "published",
+          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+          "firstObservedAt": "2026-09-27T06:50:27.370Z",
+          "lastChangedAt": null,
+          "comparable": false,
+          "rewardType": null
+        },
+        "redemption": {
+          "label": "3-5 business days",
+          "note": "Delivery after approval; bank",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "recordId": "e1b6cbb64b144503cf5e",
+          "value": 3,
+          "upperValue": 5,
+          "unit": "business_days",
+          "stage": "transfer",
+          "comparison": "range",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "conditions": [
+            "Approved redemptions typically arrive within 3-5 business days.",
+            "Available to verified users."
+          ],
+          "status": "retained",
+          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "sortHours": null
+        },
+        "cash": null,
+        "generalMinimum": {
+          "metric": "general",
+          "value": 100,
+          "label": "100 SC",
+          "note": "General redemption minimum; cash method not established.",
+          "recordId": "1de145c5da86ac790132",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "The same instruction states a 50 SC minimum for prize out."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+        "welcomeGroup": 2,
+        "sortValues": {
+          "welcome": null,
+          "purchase": null,
+          "daily": null,
+          "redemption": null,
+          "cash": null
+        },
+        "minima": [
+          {
+            "metric": "gift",
+            "value": 50,
+            "label": "50 SC",
+            "note": "Gift-card redemption minimum.",
+            "recordId": "ad73a9fbbe66c5876e8b",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "status": "published",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null,
+            "conditions": [
+              "Sent via email."
+            ],
+            "priceUsd": null,
+            "immediateSc": null,
+            "totalSc": null,
+            "durationDays": null,
+            "kind": null
+          },
+          {
+            "metric": "general",
+            "value": 100,
+            "label": "100 SC",
+            "note": "General redemption minimum; cash method not established.",
+            "recordId": "1de145c5da86ac790132",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "status": "published",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null,
+            "conditions": [
+              "The same instruction states a 50 SC minimum for prize out."
+            ],
+            "priceUsd": null,
+            "immediateSc": null,
+            "totalSc": null,
+            "durationDays": null,
+            "kind": null
+          }
+        ],
+        "minimum": {
+          "metric": "gift",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "ad73a9fbbe66c5876e8b",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sent via email."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "gift": {
+          "metric": "gift",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "ad73a9fbbe66c5876e8b",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sent via email."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "rewardTypes": [
+          "Gift cards"
+        ],
+        "labels": {
+          "signup": "Welcome offer",
+          "purchase": "Purchase deal",
+          "daily": "Daily reward",
+          "redemption": "Redemption timing",
+          "minimum": "Redemption minimum"
+        },
+        "knownAttributeCount": 0,
+        "missingAttributes": [
+          "welcome",
+          "daily",
+          "redemption",
+          "cash"
+        ],
+        "benefitCount": 4,
+        "missingBenefits": [
+          "signup"
         ],
         "homepageEligible": true,
         "position": 13
@@ -14165,260 +14045,6 @@
     ],
     "homepageRows": [
       {
-        "slug": "high5",
-        "name": "High 5 Casino",
-        "favicon": "/assets/favicons/high5.png",
-        "url": "/redemption-times/high5/",
-        "visitUrl": null,
-        "productMode": "unverified",
-        "welcome": {
-          "metric": "signup",
-          "value": 55,
-          "label": "55 SC free",
-          "note": "On signup; no purchase",
-          "recordId": "9dcfcddce9c03b948e2a",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Includes 400 Diamonds."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 55,
-          "totalSc": 55,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "signup": {
-          "metric": "signup",
-          "value": 55,
-          "label": "55 SC free",
-          "note": "On signup; no purchase",
-          "recordId": "9dcfcddce9c03b948e2a",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Includes 400 Diamonds."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 55,
-          "totalSc": 55,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "purchase": {
-          "label": "200 Spins for $9.99",
-          "note": "Credit timing not confirmed",
-          "sourceUrl": "https://high5casino.com/promotions/sign-up-bonus/",
-          "recordId": "d7275014f8aba42c1264",
-          "value": null,
-          "upperValue": null,
-          "unit": null,
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-27T06:59:49.655Z",
-          "conditions": [
-            "For new players upon registration.",
-            "Includes 200 Spins On Billionaire’s Bank."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-          "firstObservedAt": "2026-09-27T06:59:49.655Z",
-          "lastChangedAt": null,
-          "kind": "first_purchase",
-          "purchaseRequired": true,
-          "promoCode": null,
-          "priceUsd": 9.99,
-          "immediateSc": null,
-          "totalSc": null,
-          "goldCoins": null,
-          "comparable": false,
-          "rewardType": null
-        },
-        "daily": {
-          "label": "Daily login reward",
-          "note": "Amount not stated",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "recordId": "df6f0b78a4353a898c2c",
-          "value": null,
-          "upperValue": null,
-          "unit": null,
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "conditions": [
-            "Log in every day to claim rewards.",
-            "Includes free Sweeps Coins, Game Coins, and Diamonds; amounts are not stated."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "comparable": false,
-          "rewardType": null
-        },
-        "redemption": {
-          "label": "3-5 business days",
-          "note": "Processing; bank",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "recordId": "e1b6cbb64b144503cf5e",
-          "value": 3,
-          "upperValue": 5,
-          "unit": "business_days",
-          "stage": "processing",
-          "comparison": "range",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "conditions": [
-            "Transfer to a bank account."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "sortHours": 120
-        },
-        "cash": null,
-        "generalMinimum": {
-          "metric": "general",
-          "value": 100,
-          "label": "100 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "recordId": "1de145c5da86ac790132",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "The same instruction states a 50 SC minimum for prize out."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-        "welcomeGroup": 0,
-        "sortValues": {
-          "welcome": 55,
-          "purchase": null,
-          "daily": null,
-          "redemption": 120,
-          "cash": null
-        },
-        "minima": [
-          {
-            "metric": "gift",
-            "value": 50,
-            "label": "50 SC",
-            "note": "Gift-card redemption minimum.",
-            "recordId": "ad73a9fbbe66c5876e8b",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "status": "published",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null,
-            "conditions": [
-              "Sent via email."
-            ],
-            "priceUsd": null,
-            "immediateSc": null,
-            "totalSc": null,
-            "durationDays": null,
-            "kind": null
-          },
-          {
-            "metric": "general",
-            "value": 100,
-            "label": "100 SC",
-            "note": "General redemption minimum; cash method not established.",
-            "recordId": "1de145c5da86ac790132",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "status": "published",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null,
-            "conditions": [
-              "The same instruction states a 50 SC minimum for prize out."
-            ],
-            "priceUsd": null,
-            "immediateSc": null,
-            "totalSc": null,
-            "durationDays": null,
-            "kind": null
-          }
-        ],
-        "minimum": {
-          "metric": "gift",
-          "value": 50,
-          "label": "50 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "ad73a9fbbe66c5876e8b",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sent via email."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "gift": {
-          "metric": "gift",
-          "value": 50,
-          "label": "50 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "ad73a9fbbe66c5876e8b",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sent via email."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "rewardTypes": [
-          "Gift cards"
-        ],
-        "labels": {
-          "signup": "Free signup",
-          "purchase": "Purchase deal",
-          "daily": "Daily reward",
-          "redemption": "Published processing",
-          "minimum": "Redemption minimum"
-        },
-        "knownAttributeCount": 2,
-        "missingAttributes": [
-          "daily",
-          "cash"
-        ],
-        "benefitCount": 5,
-        "missingBenefits": [],
-        "homepageEligible": true,
-        "position": 1
-      },
-      {
         "slug": "mcluck",
         "name": "McLuck",
         "favicon": "/assets/favicons/mcluck.jpg",
@@ -14668,7 +14294,7 @@
         "benefitCount": 5,
         "missingBenefits": [],
         "homepageEligible": true,
-        "position": 2
+        "position": 1
       },
       {
         "slug": "spree",
@@ -14921,7 +14547,7 @@
         "benefitCount": 5,
         "missingBenefits": [],
         "homepageEligible": true,
-        "position": 3
+        "position": 2
       },
       {
         "slug": "chumba",
@@ -15157,7 +14783,7 @@
           "redemption"
         ],
         "homepageEligible": true,
-        "position": 4
+        "position": 3
       },
       {
         "slug": "crown-coins",
@@ -15356,7 +14982,7 @@
           "purchase"
         ],
         "homepageEligible": true,
-        "position": 5
+        "position": 4
       },
       {
         "slug": "luckyland",
@@ -15467,7 +15093,7 @@
           "minimum"
         ],
         "homepageEligible": true,
-        "position": 6
+        "position": 5
       },
       {
         "slug": "sportzino",
@@ -15526,8 +15152,8 @@
         },
         "purchase": null,
         "daily": {
-          "label": "1 SC first claim",
-          "note": "Later daily amounts unverified",
+          "label": "Increasing daily reward",
+          "note": "Fixed daily SC not established",
           "sourceUrl": "https://sportzino.com/promotions/promo/daily-login-bonus",
           "recordId": "2a03589627bf89493cae",
           "value": 1,
@@ -15636,7 +15262,7 @@
           "redemption"
         ],
         "homepageEligible": true,
-        "position": 7
+        "position": 6
       },
       {
         "slug": "wow-vegas",
@@ -15892,7 +15518,7 @@
         "benefitCount": 5,
         "missingBenefits": [],
         "homepageEligible": true,
-        "position": 8
+        "position": 7
       },
       {
         "slug": "zula",
@@ -16074,7 +15700,7 @@
           "redemption"
         ],
         "homepageEligible": true,
-        "position": 9
+        "position": 8
       },
       {
         "slug": "yay-casino",
@@ -16131,7 +15757,7 @@
         },
         "purchase": {
           "label": "44 SC total + 440,000 Gold Coins",
-          "note": "Credit timing not confirmed",
+          "note": "See purchase and claim conditions",
           "sourceUrl": "https://www.yaycasino.com/blog/top-5-reasons-to-use-yay-casino-promo-codes/",
           "recordId": "5d72f82ad9a9c48d517b",
           "value": null,
@@ -16336,7 +15962,7 @@
         "benefitCount": 5,
         "missingBenefits": [],
         "homepageEligible": true,
-        "position": 10
+        "position": 9
       },
       {
         "slug": "chanced",
@@ -16445,7 +16071,7 @@
           "redemption"
         ],
         "homepageEligible": true,
-        "position": 11
+        "position": 10
       },
       {
         "slug": "dorados",
@@ -16592,7 +16218,7 @@
           "purchase"
         ],
         "homepageEligible": true,
-        "position": 12
+        "position": 11
       },
       {
         "slug": "fortune-wins",
@@ -16691,6 +16317,223 @@
           "purchase",
           "redemption",
           "minimum"
+        ],
+        "homepageEligible": true,
+        "position": 12
+      },
+      {
+        "slug": "high5",
+        "name": "High 5 Casino",
+        "favicon": "/assets/favicons/high5.png",
+        "url": "/redemption-times/high5/",
+        "visitUrl": null,
+        "productMode": "unverified",
+        "welcome": null,
+        "signup": null,
+        "purchase": {
+          "label": "200 Spins for $9.99",
+          "note": "See purchase and claim conditions",
+          "sourceUrl": "https://high5casino.com/promotions/sign-up-bonus/",
+          "recordId": "d7275014f8aba42c1264",
+          "value": null,
+          "upperValue": null,
+          "unit": null,
+          "stage": null,
+          "comparison": null,
+          "observedAt": "2026-09-27T06:59:49.655Z",
+          "conditions": [
+            "For new players upon registration.",
+            "Includes 200 Spins On Billionaire’s Bank."
+          ],
+          "status": "published",
+          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+          "firstObservedAt": "2026-09-27T06:59:49.655Z",
+          "lastChangedAt": null,
+          "kind": "first_purchase",
+          "purchaseRequired": true,
+          "promoCode": null,
+          "priceUsd": 9.99,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
+          "comparable": false,
+          "rewardType": null
+        },
+        "daily": {
+          "label": "Daily login reward",
+          "note": "Amount not stated",
+          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
+          "recordId": "df6f0b78a4353a898c2c",
+          "value": null,
+          "upperValue": null,
+          "unit": null,
+          "stage": null,
+          "comparison": null,
+          "observedAt": "2026-09-27T06:50:27.370Z",
+          "conditions": [
+            "Log in every day to claim rewards.",
+            "Includes free Sweeps Coins, Game Coins, and Diamonds; amounts are not stated."
+          ],
+          "status": "published",
+          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+          "firstObservedAt": "2026-09-27T06:50:27.370Z",
+          "lastChangedAt": null,
+          "comparable": false,
+          "rewardType": null
+        },
+        "redemption": {
+          "label": "3-5 business days",
+          "note": "Delivery after approval; bank",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "recordId": "e1b6cbb64b144503cf5e",
+          "value": 3,
+          "upperValue": 5,
+          "unit": "business_days",
+          "stage": "transfer",
+          "comparison": "range",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "conditions": [
+            "Approved redemptions typically arrive within 3-5 business days.",
+            "Available to verified users."
+          ],
+          "status": "retained",
+          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "sortHours": null
+        },
+        "cash": null,
+        "generalMinimum": {
+          "metric": "general",
+          "value": 100,
+          "label": "100 SC",
+          "note": "General redemption minimum; cash method not established.",
+          "recordId": "1de145c5da86ac790132",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "The same instruction states a 50 SC minimum for prize out."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+        "welcomeGroup": 2,
+        "sortValues": {
+          "welcome": null,
+          "purchase": null,
+          "daily": null,
+          "redemption": null,
+          "cash": null
+        },
+        "minima": [
+          {
+            "metric": "gift",
+            "value": 50,
+            "label": "50 SC",
+            "note": "Gift-card redemption minimum.",
+            "recordId": "ad73a9fbbe66c5876e8b",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "status": "published",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null,
+            "conditions": [
+              "Sent via email."
+            ],
+            "priceUsd": null,
+            "immediateSc": null,
+            "totalSc": null,
+            "durationDays": null,
+            "kind": null
+          },
+          {
+            "metric": "general",
+            "value": 100,
+            "label": "100 SC",
+            "note": "General redemption minimum; cash method not established.",
+            "recordId": "1de145c5da86ac790132",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "status": "published",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null,
+            "conditions": [
+              "The same instruction states a 50 SC minimum for prize out."
+            ],
+            "priceUsd": null,
+            "immediateSc": null,
+            "totalSc": null,
+            "durationDays": null,
+            "kind": null
+          }
+        ],
+        "minimum": {
+          "metric": "gift",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "ad73a9fbbe66c5876e8b",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sent via email."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "gift": {
+          "metric": "gift",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "ad73a9fbbe66c5876e8b",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sent via email."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "rewardTypes": [
+          "Gift cards"
+        ],
+        "labels": {
+          "signup": "Welcome offer",
+          "purchase": "Purchase deal",
+          "daily": "Daily reward",
+          "redemption": "Redemption timing",
+          "minimum": "Redemption minimum"
+        },
+        "knownAttributeCount": 0,
+        "missingAttributes": [
+          "welcome",
+          "daily",
+          "redemption",
+          "cash"
+        ],
+        "benefitCount": 4,
+        "missingBenefits": [
+          "signup"
         ],
         "homepageEligible": true,
         "position": 13
@@ -17694,9 +17537,9 @@
       }
     ],
     "coverage": {
-      "welcome": 12,
+      "welcome": 11,
       "daily": 1,
-      "redemption": 7,
+      "redemption": 6,
       "cash": 9
     }
   },
@@ -17908,11 +17751,11 @@
         "cash": null
       },
       "collectionStatus": "partial",
-      "score": 84.44444444444444,
+      "score": 87.03703703703702,
       "rank": 1,
       "benefitCount": 5,
       "componentScores": {
-        "signup": 70,
+        "signup": 77.77777777777777,
         "purchase": 83.33333333333333,
         "cash": 100
       },
@@ -18627,11 +18470,11 @@
         "cash": null
       },
       "collectionStatus": "readable",
-      "score": 72.5925925925926,
+      "score": 75.92592592592592,
       "rank": 2,
       "benefitCount": 6,
       "componentScores": {
-        "signup": 90,
+        "signup": 100,
         "purchase": 83.33333333333333,
         "cash": 44.44444444444444
       },
@@ -19173,11 +19016,11 @@
         "cash": null
       },
       "collectionStatus": "readable",
-      "score": 59.62962962962964,
+      "score": 62.96296296296297,
       "rank": 3,
       "benefitCount": 5,
       "componentScores": {
-        "signup": 90,
+        "signup": 100,
         "purchase": 33.333333333333336,
         "cash": 55.55555555555556
       },
@@ -19812,11 +19655,11 @@
         "cash": null
       },
       "collectionStatus": "readable",
-      "score": 54.81481481481482,
+      "score": 57.40740740740741,
       "rank": 4,
       "benefitCount": 5,
       "componentScores": {
-        "signup": 70,
+        "signup": 77.77777777777777,
         "purchase": 50,
         "cash": 44.44444444444444
       },
@@ -20290,7 +20133,7 @@
         },
         "purchase": {
           "label": "44 SC total + 440,000 Gold Coins",
-          "note": "Credit timing not confirmed",
+          "note": "See purchase and claim conditions",
           "sourceUrl": "https://www.yaycasino.com/blog/top-5-reasons-to-use-yay-casino-promo-codes/",
           "recordId": "5d72f82ad9a9c48d517b",
           "value": null,
@@ -21975,470 +21818,6 @@
       }
     },
     {
-      "slug": "high5",
-      "name": "High 5 Casino",
-      "productMode": "unverified",
-      "partner": false,
-      "favicon": "/assets/favicons/high5.png",
-      "url": "/redemption-times/high5/",
-      "metrics": {
-        "signup": {
-          "metric": "signup",
-          "value": 55,
-          "label": "55 SC",
-          "note": "Immediate. No purchase needed.",
-          "recordId": "9dcfcddce9c03b948e2a",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Includes 400 Diamonds."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 55,
-          "totalSc": 55,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "welcome": {
-          "metric": "welcome",
-          "value": 55,
-          "label": "55 SC",
-          "note": "No purchase needed.",
-          "recordId": "9dcfcddce9c03b948e2a",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Includes 400 Diamonds."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 55,
-          "totalSc": 55,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "staged": null,
-        "cash": null,
-        "general": {
-          "metric": "general",
-          "value": 100,
-          "label": "100 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "recordId": "1de145c5da86ac790132",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "The same instruction states a 50 SC minimum for prize out."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "gift": {
-          "metric": "gift",
-          "value": 50,
-          "label": "50 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "ad73a9fbbe66c5876e8b",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sent via email."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "daily": null,
-        "purchase": null,
-        "purchase10": null,
-        "purchase20": null
-      },
-      "absences": {
-        "signup": null,
-        "purchase": null,
-        "cash": null
-      },
-      "collectionStatus": "readable",
-      "score": null,
-      "rank": null,
-      "benefitCount": 4,
-      "componentScores": {},
-      "disclosureCount": 1,
-      "status": "Overall comparison incomplete",
-      "product": {
-        "signup": {
-          "metric": "signup",
-          "value": 55,
-          "label": "55 SC free",
-          "note": "On signup; no purchase",
-          "recordId": "9dcfcddce9c03b948e2a",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Includes 400 Diamonds."
-          ],
-          "promoCode": null,
-          "priceUsd": null,
-          "immediateSc": 55,
-          "totalSc": 55,
-          "durationDays": null,
-          "purchaseRequired": false,
-          "kind": "signup"
-        },
-        "purchase": {
-          "label": "200 Spins for $9.99",
-          "note": "Credit timing not confirmed",
-          "sourceUrl": "https://high5casino.com/promotions/sign-up-bonus/",
-          "recordId": "d7275014f8aba42c1264",
-          "value": null,
-          "upperValue": null,
-          "unit": null,
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-27T06:59:49.655Z",
-          "conditions": [
-            "For new players upon registration.",
-            "Includes 200 Spins On Billionaire’s Bank."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-          "firstObservedAt": "2026-09-27T06:59:49.655Z",
-          "lastChangedAt": null,
-          "kind": "first_purchase",
-          "purchaseRequired": true,
-          "promoCode": null,
-          "priceUsd": 9.99,
-          "immediateSc": null,
-          "totalSc": null,
-          "goldCoins": null,
-          "comparable": false,
-          "rewardType": null
-        },
-        "daily": {
-          "label": "Daily login reward",
-          "note": "Amount not stated",
-          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-          "recordId": "df6f0b78a4353a898c2c",
-          "value": null,
-          "upperValue": null,
-          "unit": null,
-          "stage": null,
-          "comparison": null,
-          "observedAt": "2026-09-27T06:50:27.370Z",
-          "conditions": [
-            "Log in every day to claim rewards.",
-            "Includes free Sweeps Coins, Game Coins, and Diamonds; amounts are not stated."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-          "firstObservedAt": "2026-09-27T06:50:27.370Z",
-          "lastChangedAt": null,
-          "comparable": false,
-          "rewardType": null
-        },
-        "redemption": {
-          "label": "3-5 business days",
-          "note": "Processing; bank",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "recordId": "e1b6cbb64b144503cf5e",
-          "value": 3,
-          "upperValue": 5,
-          "unit": "business_days",
-          "stage": "processing",
-          "comparison": "range",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "conditions": [
-            "Transfer to a bank account."
-          ],
-          "status": "published",
-          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "sortHours": 120
-        },
-        "cash": null,
-        "gift": {
-          "metric": "gift",
-          "value": 50,
-          "label": "50 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "ad73a9fbbe66c5876e8b",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sent via email."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "minimum": {
-          "metric": "gift",
-          "value": 50,
-          "label": "50 SC",
-          "note": "Gift-card redemption minimum.",
-          "recordId": "ad73a9fbbe66c5876e8b",
-          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-09-27T06:54:16.877Z",
-          "status": "published",
-          "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null,
-          "conditions": [
-            "Sent via email."
-          ],
-          "priceUsd": null,
-          "immediateSc": null,
-          "totalSc": null,
-          "durationDays": null,
-          "kind": null
-        },
-        "minima": [
-          {
-            "metric": "gift",
-            "value": 50,
-            "label": "50 SC",
-            "note": "Gift-card redemption minimum.",
-            "recordId": "ad73a9fbbe66c5876e8b",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "status": "published",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null,
-            "conditions": [
-              "Sent via email."
-            ],
-            "priceUsd": null,
-            "immediateSc": null,
-            "totalSc": null,
-            "durationDays": null,
-            "kind": null
-          },
-          {
-            "metric": "general",
-            "value": 100,
-            "label": "100 SC",
-            "note": "General redemption minimum; cash method not established.",
-            "recordId": "1de145c5da86ac790132",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "status": "published",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null,
-            "conditions": [
-              "The same instruction states a 50 SC minimum for prize out."
-            ],
-            "priceUsd": null,
-            "immediateSc": null,
-            "totalSc": null,
-            "durationDays": null,
-            "kind": null
-          }
-        ],
-        "rewardTypes": [
-          "Gift cards"
-        ],
-        "labels": {
-          "signup": "Free signup",
-          "purchase": "Purchase deal",
-          "daily": "Daily reward",
-          "redemption": "Published processing",
-          "minimum": "Redemption minimum"
-        },
-        "benefitCount": 5,
-        "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-        "sources": [
-          {
-            "id": "high5-daily",
-            "url": "https://high5casino.com/promotions/daily-bonus/",
-            "purpose": "daily_reward",
-            "checkedAt": "2026-09-27T06:46:29.963Z",
-            "status": "ok",
-            "capturedAt": "2026-09-27T06:50:27.370Z"
-          },
-          {
-            "id": "high5-redemption",
-            "url": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "purpose": "redemption_help",
-            "checkedAt": "2026-09-27T06:46:29.963Z",
-            "status": "ok",
-            "capturedAt": "2026-09-27T06:54:16.877Z"
-          },
-          {
-            "id": "high5-rules",
-            "url": "https://high5casino.com/helpcenter/legal/",
-            "purpose": "sweepstakes_rules",
-            "checkedAt": "2026-09-27T06:46:29.963Z",
-            "status": "ok",
-            "capturedAt": "2026-09-27T06:57:29.507Z"
-          },
-          {
-            "id": "high5-signup",
-            "url": "https://high5casino.com/promotions/sign-up-bonus/",
-            "purpose": "signup_offer",
-            "checkedAt": "2026-09-27T06:46:29.963Z",
-            "status": "ok",
-            "capturedAt": "2026-09-27T06:59:49.655Z"
-          }
-        ],
-        "methods": [
-          "Bank transfer",
-          "Gift card"
-        ],
-        "verification": [
-          {
-            "label": "Identity verification is required before redemption, including proof of age, eligible U.S. state residency, government-issued ID, and proof of address.",
-            "note": "",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "recordId": "9b559a12b62c2588d81e",
-            "value": null,
-            "upperValue": null,
-            "unit": "SC",
-            "stage": null,
-            "comparison": null,
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "conditions": [],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null
-          }
-        ],
-        "policies": [
-          {
-            "field": "redemption_cap",
-            "label": "Up to 10,000 SC",
-            "note": "Skrill redemption; must make a purchase with Skrill",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "recordId": "ad2947d7bbb8cc61a6e9",
-            "value": 10000,
-            "upperValue": null,
-            "unit": "SC",
-            "stage": "not_applicable",
-            "comparison": "up_to",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "conditions": [
-              "Skrill e-Wallet.",
-              "Fast & secure redemption."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null
-          },
-          {
-            "field": "redemption_time",
-            "label": "1-2 business days",
-            "note": "Processing; method unspecified",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "recordId": "a9825d37c791c6fc3f30",
-            "value": 1,
-            "upperValue": 2,
-            "unit": "business_days",
-            "stage": "processing",
-            "comparison": "range",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "conditions": [
-              "Fast & secure redemption."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null,
-            "sortHours": null
-          },
-          {
-            "field": "redemption_cap",
-            "label": "Up to 10,000 SC",
-            "note": "Trustly bank transfer; available to verified users; Bank transfer",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "recordId": "aa9d9b0e7e0f1cd5751d",
-            "value": 10000,
-            "upperValue": null,
-            "unit": "SC",
-            "stage": "not_applicable",
-            "comparison": "up_to",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "conditions": [
-              "Transfer to a bank account."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null
-          },
-          {
-            "field": "redemption_time",
-            "label": "3-5 business days",
-            "note": "Processing; bank",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "recordId": "e1b6cbb64b144503cf5e",
-            "value": 3,
-            "upperValue": 5,
-            "unit": "business_days",
-            "stage": "processing",
-            "comparison": "range",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "conditions": [
-              "Transfer to a bank account."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null,
-            "sortHours": null
-          },
-          {
-            "field": "redemption_cap",
-            "label": "Up to 250 SC",
-            "note": "Prizeout digital cards; available to verified users; Gift card",
-            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-            "recordId": "404773b225e39c58b041",
-            "value": 250,
-            "upperValue": null,
-            "unit": "SC",
-            "stage": "not_applicable",
-            "comparison": "up_to",
-            "observedAt": "2026-09-27T06:54:16.877Z",
-            "conditions": [
-              "Sent via email."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-27T06:54:16.877Z",
-            "lastChangedAt": null
-          }
-        ]
-      }
-    },
-    {
       "slug": "crown-coins",
       "name": "Crown Coins",
       "productMode": "sweepstakes",
@@ -23518,8 +22897,8 @@
         },
         "purchase": null,
         "daily": {
-          "label": "1 SC first claim",
-          "note": "Later daily amounts unverified",
+          "label": "Increasing daily reward",
+          "note": "Fixed daily SC not established",
           "sourceUrl": "https://sportzino.com/promotions/promo/daily-login-bonus",
           "recordId": "2a03589627bf89493cae",
           "value": 1,
@@ -23886,6 +23265,454 @@
         "methods": [],
         "verification": [],
         "policies": []
+      }
+    },
+    {
+      "slug": "high5",
+      "name": "High 5 Casino",
+      "productMode": "unverified",
+      "partner": false,
+      "favicon": "/assets/favicons/high5.png",
+      "url": "/redemption-times/high5/",
+      "metrics": {
+        "signup": null,
+        "welcome": null,
+        "staged": null,
+        "cash": null,
+        "general": {
+          "metric": "general",
+          "value": 100,
+          "label": "100 SC",
+          "note": "General redemption minimum; cash method not established.",
+          "recordId": "1de145c5da86ac790132",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "The same instruction states a 50 SC minimum for prize out."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "gift": {
+          "metric": "gift",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "ad73a9fbbe66c5876e8b",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sent via email."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "daily": null,
+        "purchase": null,
+        "purchase10": null,
+        "purchase20": null
+      },
+      "absences": {
+        "signup": null,
+        "purchase": null,
+        "cash": null
+      },
+      "collectionStatus": "readable",
+      "score": null,
+      "rank": null,
+      "benefitCount": 2,
+      "componentScores": {},
+      "disclosureCount": 0,
+      "status": "Overall comparison incomplete",
+      "product": {
+        "signup": null,
+        "purchase": {
+          "label": "200 Spins for $9.99",
+          "note": "See purchase and claim conditions",
+          "sourceUrl": "https://high5casino.com/promotions/sign-up-bonus/",
+          "recordId": "d7275014f8aba42c1264",
+          "value": null,
+          "upperValue": null,
+          "unit": null,
+          "stage": null,
+          "comparison": null,
+          "observedAt": "2026-09-27T06:59:49.655Z",
+          "conditions": [
+            "For new players upon registration.",
+            "Includes 200 Spins On Billionaire’s Bank."
+          ],
+          "status": "published",
+          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+          "firstObservedAt": "2026-09-27T06:59:49.655Z",
+          "lastChangedAt": null,
+          "kind": "first_purchase",
+          "purchaseRequired": true,
+          "promoCode": null,
+          "priceUsd": 9.99,
+          "immediateSc": null,
+          "totalSc": null,
+          "goldCoins": null,
+          "comparable": false,
+          "rewardType": null
+        },
+        "daily": {
+          "label": "Daily login reward",
+          "note": "Amount not stated",
+          "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
+          "recordId": "df6f0b78a4353a898c2c",
+          "value": null,
+          "upperValue": null,
+          "unit": null,
+          "stage": null,
+          "comparison": null,
+          "observedAt": "2026-09-27T06:50:27.370Z",
+          "conditions": [
+            "Log in every day to claim rewards.",
+            "Includes free Sweeps Coins, Game Coins, and Diamonds; amounts are not stated."
+          ],
+          "status": "published",
+          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+          "firstObservedAt": "2026-09-27T06:50:27.370Z",
+          "lastChangedAt": null,
+          "comparable": false,
+          "rewardType": null
+        },
+        "redemption": {
+          "label": "3-5 business days",
+          "note": "Delivery after approval; bank",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "recordId": "e1b6cbb64b144503cf5e",
+          "value": 3,
+          "upperValue": 5,
+          "unit": "business_days",
+          "stage": "transfer",
+          "comparison": "range",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "conditions": [
+            "Approved redemptions typically arrive within 3-5 business days.",
+            "Available to verified users."
+          ],
+          "status": "retained",
+          "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "sortHours": null
+        },
+        "cash": null,
+        "gift": {
+          "metric": "gift",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "ad73a9fbbe66c5876e8b",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sent via email."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "minimum": {
+          "metric": "gift",
+          "value": 50,
+          "label": "50 SC",
+          "note": "Gift-card redemption minimum.",
+          "recordId": "ad73a9fbbe66c5876e8b",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "observedAt": "2026-09-27T06:54:16.877Z",
+          "status": "published",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null,
+          "conditions": [
+            "Sent via email."
+          ],
+          "priceUsd": null,
+          "immediateSc": null,
+          "totalSc": null,
+          "durationDays": null,
+          "kind": null
+        },
+        "minima": [
+          {
+            "metric": "gift",
+            "value": 50,
+            "label": "50 SC",
+            "note": "Gift-card redemption minimum.",
+            "recordId": "ad73a9fbbe66c5876e8b",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "status": "published",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null,
+            "conditions": [
+              "Sent via email."
+            ],
+            "priceUsd": null,
+            "immediateSc": null,
+            "totalSc": null,
+            "durationDays": null,
+            "kind": null
+          },
+          {
+            "metric": "general",
+            "value": 100,
+            "label": "100 SC",
+            "note": "General redemption minimum; cash method not established.",
+            "recordId": "1de145c5da86ac790132",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "status": "published",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null,
+            "conditions": [
+              "The same instruction states a 50 SC minimum for prize out."
+            ],
+            "priceUsd": null,
+            "immediateSc": null,
+            "totalSc": null,
+            "durationDays": null,
+            "kind": null
+          }
+        ],
+        "rewardTypes": [
+          "Gift cards"
+        ],
+        "labels": {
+          "signup": "Welcome offer",
+          "purchase": "Purchase deal",
+          "daily": "Daily reward",
+          "redemption": "Redemption timing",
+          "minimum": "Redemption minimum"
+        },
+        "benefitCount": 4,
+        "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+        "sources": [
+          {
+            "id": "high5-daily",
+            "url": "https://high5casino.com/promotions/daily-bonus/",
+            "purpose": "daily_reward",
+            "checkedAt": "2026-09-27T06:46:29.963Z",
+            "status": "ok",
+            "capturedAt": "2026-09-27T06:50:27.370Z"
+          },
+          {
+            "id": "high5-redemption",
+            "url": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "purpose": "redemption_help",
+            "checkedAt": "2026-09-27T06:46:29.963Z",
+            "status": "ok",
+            "capturedAt": "2026-09-27T06:54:16.877Z"
+          },
+          {
+            "id": "high5-rules",
+            "url": "https://high5casino.com/helpcenter/legal/",
+            "purpose": "sweepstakes_rules",
+            "checkedAt": "2026-09-27T06:46:29.963Z",
+            "status": "ok",
+            "capturedAt": "2026-09-27T06:57:29.507Z"
+          },
+          {
+            "id": "high5-signup",
+            "url": "https://high5casino.com/promotions/sign-up-bonus/",
+            "purpose": "signup_offer",
+            "checkedAt": "2026-09-27T06:46:29.963Z",
+            "status": "ok",
+            "capturedAt": "2026-09-27T06:59:49.655Z"
+          }
+        ],
+        "methods": [
+          "Bank transfer",
+          "Gift card"
+        ],
+        "verification": [
+          {
+            "label": "Identity verification is required before redemption, including proof of age, eligible U.S. state residency, government-issued ID, and proof of address.",
+            "note": "",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "9b559a12b62c2588d81e",
+            "value": null,
+            "upperValue": null,
+            "unit": "SC",
+            "stage": null,
+            "comparison": null,
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [],
+            "status": "published",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null
+          }
+        ],
+        "policies": [
+          {
+            "field": "redemption_time",
+            "label": "1-2 business days",
+            "note": "Delivery after approval; method unspecified",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "a9825d37c791c6fc3f30",
+            "value": 1,
+            "upperValue": 2,
+            "unit": "business_days",
+            "stage": "transfer",
+            "comparison": "range",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Once approved, funds are typically delivered to your Skrill account within 1-2 business days.",
+              "A prior purchase using Skrill is required."
+            ],
+            "status": "retained",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null,
+            "sortHours": null
+          },
+          {
+            "field": "redemption_time",
+            "label": "3-5 business days",
+            "note": "Delivery after approval; bank",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "e1b6cbb64b144503cf5e",
+            "value": 3,
+            "upperValue": 5,
+            "unit": "business_days",
+            "stage": "transfer",
+            "comparison": "range",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Approved redemptions typically arrive within 3-5 business days.",
+              "Available to verified users."
+            ],
+            "status": "retained",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null,
+            "sortHours": null
+          },
+          {
+            "field": "redemption_cap",
+            "label": "Up to 10,000 SC",
+            "note": "Skrill redemption; must make a purchase with Skrill",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "ad2947d7bbb8cc61a6e9",
+            "value": 10000,
+            "upperValue": null,
+            "unit": "SC",
+            "stage": "not_applicable",
+            "comparison": "up_to",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Skrill e-Wallet.",
+              "Fast & secure redemption."
+            ],
+            "status": "published",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null
+          },
+          {
+            "field": "redemption_time",
+            "label": "1-2 business days",
+            "note": "Delivery after approval; method unspecified",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "a9825d37c791c6fc3f30-automated-2026-09-27T06-46-29-963Z-36300901481-1",
+            "value": 1,
+            "upperValue": 2,
+            "unit": "business_days",
+            "stage": "transfer",
+            "comparison": "range",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Once approved, funds are typically delivered to your Skrill account within 1-2 business days.",
+              "A prior purchase using Skrill is required."
+            ],
+            "status": "published",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": "2026-09-27T06:54:16.877Z",
+            "sortHours": null
+          },
+          {
+            "field": "redemption_cap",
+            "label": "Up to 10,000 SC",
+            "note": "Trustly bank transfer; available to verified users; Bank transfer",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "aa9d9b0e7e0f1cd5751d",
+            "value": 10000,
+            "upperValue": null,
+            "unit": "SC",
+            "stage": "not_applicable",
+            "comparison": "up_to",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Transfer to a bank account."
+            ],
+            "status": "published",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null
+          },
+          {
+            "field": "redemption_time",
+            "label": "3-5 business days",
+            "note": "Delivery after approval; bank",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "e1b6cbb64b144503cf5e-automated-2026-09-27T06-46-29-963Z-36300901481-1",
+            "value": 3,
+            "upperValue": 5,
+            "unit": "business_days",
+            "stage": "transfer",
+            "comparison": "range",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Approved redemptions typically arrive within 3-5 business days.",
+              "Available to verified users."
+            ],
+            "status": "published",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": "2026-09-27T06:54:16.877Z",
+            "sortHours": null
+          },
+          {
+            "field": "redemption_cap",
+            "label": "Up to 250 SC",
+            "note": "Prizeout digital cards; available to verified users; Gift card",
+            "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+            "recordId": "404773b225e39c58b041",
+            "value": 250,
+            "upperValue": null,
+            "unit": "SC",
+            "stage": "not_applicable",
+            "comparison": "up_to",
+            "observedAt": "2026-09-27T06:54:16.877Z",
+            "conditions": [
+              "Sent via email."
+            ],
+            "status": "published",
+            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
+            "firstObservedAt": "2026-09-27T06:54:16.877Z",
+            "lastChangedAt": null
+          }
+        ]
       }
     },
     {
@@ -26135,46 +25962,6 @@
           }
         ],
         "policies": [
-          {
-            "field": "playthrough",
-            "label": "At least 3 multiplier",
-            "note": "Stake Cash received as a bonus alongside a Gold Coin purchase only.",
-            "sourceUrl": "https://help.stake.us/en/articles/6465093-redemption-progress",
-            "recordId": "285721370bcf4a93626d",
-            "value": 3,
-            "upperValue": null,
-            "unit": "multiplier",
-            "stage": "not_applicable",
-            "comparison": "at_least",
-            "observedAt": "2026-09-27T06:55:46.453Z",
-            "conditions": [
-              "Redemption becomes available after the stated playthrough."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-10T21:21:18.963Z",
-            "lastChangedAt": "2026-09-27T05:12:25.240Z"
-          },
-          {
-            "field": "playthrough",
-            "label": "3 multiplier",
-            "note": "All Stake Cash except Stake Cash won through Promotional Play.",
-            "sourceUrl": "https://stake.us/policies/terms",
-            "recordId": "review-34dff45bddba456d34bc",
-            "value": 3,
-            "upperValue": null,
-            "unit": "multiplier",
-            "stage": "not_applicable",
-            "comparison": "exact",
-            "observedAt": "2026-09-27T06:58:28.552Z",
-            "conditions": [
-              "Stake Cash won through Promotional Play is excepted."
-            ],
-            "status": "published",
-            "lastCheckedAt": "2026-09-27T06:46:29.963Z",
-            "firstObservedAt": "2026-09-10T21:21:33.666Z",
-            "lastChangedAt": null
-          },
           {
             "field": "playthrough",
             "label": "3 multiplier",

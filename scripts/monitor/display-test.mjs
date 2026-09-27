@@ -166,14 +166,21 @@ test("budget answers find affordable packages even when a larger package has a b
   assert.match(text, /5 immediate SC per dollar on its \$20 package/);
 });
 
-test("conflicting sources choose the higher welcome total and retain its conditions", () => {
+test("different supported offers choose the higher welcome total and retain its conditions", () => {
   const conditions = ["Verify email", "Claim over three days"];
   const chosen = rows([record({ immediateSc: 8, totalSc: 8 }),
     record({ sourceUrl: "https://example.com/home", immediateSc: 4, totalSc: 12,
-      durationDays: 3, conditions, reviewStatus: "unresolved", conflict: "Different ads" })])[0];
+      durationDays: 3, conditions })])[0];
   assert.equal(chosen.value, "12 SC over 3 days");
   assert.match(chosen.note, /4 SC immediate; total over 3 days/);
   assert.deepEqual(chosen.conditions, conditions);
+});
+
+test("explicitly unresolved offers do not become the headline welcome reward", () => {
+  const chosen = rows([record({ immediateSc: 8, totalSc: 8 }),
+    record({ sourceUrl: "https://example.com/home", immediateSc: 4, totalSc: 12,
+      reviewStatus: "unresolved", conflict: "Offer terms need confirmation" })])[0];
+  assert.equal(chosen.value, "8 SC");
 });
 
 test("latest source snapshot supersedes older higher values and old promo codes", () => {

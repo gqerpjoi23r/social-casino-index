@@ -15,6 +15,16 @@ const operator = (slug, records, change = {}) => ({ slug, name: slug, productMod
 const model = operators => buildBenchmarks({ operators }, [], now);
 const row = records => model([operator("a", records)]).toplist.rows[0];
 
+test("inconsistent first-claim amounts keep the useful daily description instead of picking a number", () => {
+  const result = row([1, 0.2].map((value, index) => record({
+    id: `daily-${index}`, kind: "recurring_daily", name: "Day 1 reward",
+    immediateSc: value, totalSc: null, intervalHours: 24,
+    conditions: ["A progressive seven-day streak; rewards increase each day."],
+  })));
+  assert.equal(result.daily.label, "Increasing daily reward");
+  assert.equal(result.sortValues.daily, null);
+});
+
 test("typical processing ranges remain comparable and retain their qualifier", () => {
   const result = row([record({ recordType: "facts", field: "redemption_time", value: 3,
     upperValue: 5, comparison: "typical", unit: "business_days", stage: "processing", method: "cash" })]);

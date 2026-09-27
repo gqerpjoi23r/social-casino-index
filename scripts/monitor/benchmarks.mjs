@@ -7,7 +7,8 @@ const amount = value => typeof value === "number" && Number.isFinite(value) && v
 const number = value => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(value);
 const date = record => record.lastConfirmedAt || record.capturedAt;
 const total = record => amount(record.totalSc) ? record.totalSc : record.immediateSc;
-const usable = record => !record.states?.length && (!record.scope || record.scope === "general") &&
+const usable = record => !record.conflict && record.reviewStatus !== "unresolved" &&
+  !record.states?.length && (!record.scope || record.scope === "general") &&
   !["withdrawn", "expired"].includes(record.offerStatus);
 
 // Select snapshots before checking amounts: a new unknown must supersede old certainty.

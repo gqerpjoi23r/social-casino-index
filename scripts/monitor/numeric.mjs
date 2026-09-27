@@ -53,6 +53,7 @@ Use greater_than for "over" an age, not at_least. One month is value=1 unit=mont
 Extract every tier row's processing time and cap separately with the tier and daily/monthly scope. Use stage=processing for an explicit processing window. Processing is not automatically transfer; use unspecified unless the stage is explicit. A time to receive winnings after request is end_to_end. Keep separate approval time claims.
 Time claims are published promises, NOT measured results. Do not use testimonials, examples, jackpot amounts or marketing purchase discounts as payout policies.
 An explicit "processing time after approval" is a transfer stage, not pre-approval processing. Preserve the separate approval window and its exceptions.
+Read the method-specific explanation as well as summary tables. If the explanation says funds arrive once approved, capture that passage and classify the window as transfer even when the table calls it "Processing Time".
 One redemption request per 24 hours is a request-frequency restriction, not a processing duration. Capture it as a restrictions statement, not a redemption_time fact.
 Verification requirements, state exclusions and closure clauses are statements with exact quotes. Never assert legal status; only summarize what the operator says.
 Do not extract article dates as policy values or game counts as offers. Limit to 12 offers, 30 facts and 8 statements per operator.`;

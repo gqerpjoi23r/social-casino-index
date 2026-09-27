@@ -76779,7 +76779,7 @@
       "lastAttempt": "2026-09-27T06:46:29.963Z",
       "lastSuccessfulCapture": "2026-09-27T06:59:49.655Z",
       "collectionStatus": "readable",
-      "extractionStatus": "extracted",
+      "extractionStatus": "available",
       "changeStatus": "automated claims published; review pending",
       "disclosureReviews": {},
       "coverage": [
@@ -76841,13 +76841,70 @@
           "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
           "capturedAt": "2026-09-27T06:50:27.370Z",
           "extractor": "gpt-5.6-terra:2.6.0",
-          "reviewStatus": "automated_unreviewed",
+          "reviewStatus": "unresolved",
+          "conflict": "The daily-page signup cross-promotion advertises 55 SC, while the dedicated signup page describes a paid spin offer. The free award's current terms need confirmation; this is not a finding that High 5 offers no free reward.",
           "recordType": "offers",
           "runId": "2026-09-27T06-46-29-963Z-36300901481-1",
-          "freshness": "captured_unreviewed",
-          "lastConfirmedAt": null,
           "completePackage": false,
+          "freshness": "reconfirmed",
+          "lastConfirmedAt": "2026-09-27T06:50:27.370Z",
           "firstObservedAt": "2026-09-27T06:50:27.370Z",
+          "lastChangedAt": null
+        },
+        {
+          "sourceId": "high5-redemption",
+          "field": "redemption_time",
+          "value": 1,
+          "upperValue": 2,
+          "unit": "business_days",
+          "comparison": "range",
+          "method": "unspecified",
+          "stage": "transfer",
+          "states": [],
+          "basis": "Skrill delivery after approval; previous Skrill purchase required",
+          "conditions": [
+            "Once approved, funds are typically delivered to your Skrill account within 1-2 business days.",
+            "A prior purchase using Skrill is required."
+          ],
+          "id": "a9825d37c791c6fc3f30",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "capturedAt": "2026-09-27T06:54:16.877Z",
+          "extractor": "gpt-5.6-terra:2.6.0",
+          "reviewStatus": "reviewed",
+          "recordType": "facts",
+          "runId": "2026-09-27T06-46-29-963Z-36300901481-1",
+          "completePackage": false,
+          "freshness": "not_reconfirmed",
+          "lastConfirmedAt": "2026-09-27T06:54:16.877Z",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
+          "lastChangedAt": null
+        },
+        {
+          "sourceId": "high5-redemption",
+          "field": "redemption_time",
+          "value": 3,
+          "upperValue": 5,
+          "unit": "business_days",
+          "comparison": "range",
+          "method": "bank",
+          "stage": "transfer",
+          "states": [],
+          "basis": "Trustly bank delivery after approval",
+          "conditions": [
+            "Approved redemptions typically arrive within 3-5 business days.",
+            "Available to verified users."
+          ],
+          "id": "e1b6cbb64b144503cf5e",
+          "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
+          "capturedAt": "2026-09-27T06:54:16.877Z",
+          "extractor": "gpt-5.6-terra:2.6.0",
+          "reviewStatus": "reviewed",
+          "recordType": "facts",
+          "runId": "2026-09-27T06-46-29-963Z-36300901481-1",
+          "completePackage": false,
+          "freshness": "not_reconfirmed",
+          "lastConfirmedAt": "2026-09-27T06:54:16.877Z",
+          "firstObservedAt": "2026-09-27T06:54:16.877Z",
           "lastChangedAt": null
         },
         {
@@ -76988,13 +77045,14 @@
           "unit": "business_days",
           "comparison": "range",
           "method": "unspecified",
-          "stage": "processing",
+          "stage": "transfer",
           "states": [],
-          "basis": "Skrill redemption; must make a purchase with Skrill",
+          "basis": "Skrill delivery after approval; previous Skrill purchase required",
           "conditions": [
-            "Fast & secure redemption."
+            "Once approved, funds are typically delivered to your Skrill account within 1-2 business days.",
+            "A prior purchase using Skrill is required."
           ],
-          "id": "a9825d37c791c6fc3f30",
+          "id": "a9825d37c791c6fc3f30-automated-2026-09-27T06-46-29-963Z-36300901481-1",
           "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
           "capturedAt": "2026-09-27T06:54:16.877Z",
           "extractor": "gpt-5.6-terra:2.6.0",
@@ -77005,7 +77063,7 @@
           "lastConfirmedAt": null,
           "completePackage": false,
           "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null
+          "lastChangedAt": "2026-09-27T06:54:16.877Z"
         },
         {
           "sourceId": "high5-redemption",
@@ -77042,13 +77100,14 @@
           "unit": "business_days",
           "comparison": "range",
           "method": "bank",
-          "stage": "processing",
+          "stage": "transfer",
           "states": [],
-          "basis": "Trustly bank transfer; available to verified users",
+          "basis": "Trustly bank delivery after approval",
           "conditions": [
-            "Transfer to a bank account."
+            "Approved redemptions typically arrive within 3-5 business days.",
+            "Available to verified users."
           ],
-          "id": "e1b6cbb64b144503cf5e",
+          "id": "e1b6cbb64b144503cf5e-automated-2026-09-27T06-46-29-963Z-36300901481-1",
           "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
           "capturedAt": "2026-09-27T06:54:16.877Z",
           "extractor": "gpt-5.6-terra:2.6.0",
@@ -77059,7 +77118,7 @@
           "lastConfirmedAt": null,
           "completePackage": false,
           "firstObservedAt": "2026-09-27T06:54:16.877Z",
-          "lastChangedAt": null
+          "lastChangedAt": "2026-09-27T06:54:16.877Z"
         },
         {
           "sourceId": "high5-redemption",
@@ -77248,7 +77307,8 @@
         "firstPurchaseSc": null
       },
       "unknowns": [
-        "No reviewed numeric values"
+        "Free signup award terms need confirmation.",
+        "Pre-approval processing window not established."
       ],
       "completePackages": []
     },
