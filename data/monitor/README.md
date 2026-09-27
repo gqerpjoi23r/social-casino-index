@@ -46,6 +46,19 @@ guarantee that a public page contains the latest, personalized or account-only o
 The manifest records requested and final URLs, provider, status and capture time.
 A capture date is not an offer start date or a verified page-update date.
 
+Candidate seeds include exact official support articles and public rules PDFs,
+including documents under `/api/Document/`; arbitrary API discovery stays
+excluded. An optional `expectedHeading` on a source requires that heading and
+substantive following article text before extraction. It does not require a
+numeric amount. Failed heading checks are `article_missing`, not evidence of
+operator nondisclosure.
+
+Every completed numeric report includes `candidate-decisions.json`: four
+category decisions with source URLs/statuses, values, qualifiers and extraction
+rejections. Different values flag a scope/conflict review, not an automatic
+conflict verdict. A provisional qualifying category does not approve product
+identity or waive human review.
+
 ## Outputs
 
 - `/updates/`: source passages, source availability and dated changes.

@@ -68,7 +68,9 @@ while (count < usage.limits.direct && queues.some(item => item.attempted < 8 && 
       saveJson(output, "usage.json", usage);
       try {
         result = await retrieve(url, provider, process.env, {
-          ...config.sourceOptions?.[source.id], allowedHosts: hosts,
+          ...config.sourceOptions?.[source.id],
+          ...(source.expectedHeading ? { expectedHeading: source.expectedHeading } : {}),
+          allowedHosts: hosts,
           ...(attemptProvider === "firecrawl_full" ? { onlyMainContent: false } : {}),
         });
         usage.record(provider, result);

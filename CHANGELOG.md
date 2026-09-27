@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-27 - Target useful candidate sources and explain missing fields
+- Seed the eight remaining expansion candidates with official offers, redemption help and selected rules PDFs; keep the existing two-category admission rule.
+- Reject location notices and optional expected-heading article failures before extraction. Keep public PDF seeds explicit without opening general API discovery.
+- Add source-to-field decision reports with capture outcomes, accepted values and unresolved reasons; no operator additions or new observations are implied by screening.
+
 ## 2026-09-25 - Keep retained post-approval timing out of total-time claims
 - Classify explicit delivery after redemption-request approval as transfer even when an older extraction labelled it end-to-end. This removes Lucky Bunny's misleading request-to-receipt display without changing its offer/cash admission.
 - Apply the same rule to future extraction and current saved-record projection. Extractor is 2.5.2; genuine full request-to-receipt windows remain visible.

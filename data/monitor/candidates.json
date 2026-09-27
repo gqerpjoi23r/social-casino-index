@@ -1,26 +1,74 @@
 [
   {
-    "slug": "luckyland",
-    "name": "LuckyLand Casino",
-    "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "luckyland-home", "url": "https://luckylandcasino.com/" }]
+    "slug": "modo", "name": "Modo", "playerValue": { "productMode": "unverified" },
+    "sources": [
+      { "id": "modo-cash", "url": "https://support.modo.us/en_us/redeem-sc-to-a-bank-account-or-debit-card-rykrh1gZx", "purpose": "redemption_minimum", "expectedHeading": "What is required to redeem SC to a bank account or debit card?" },
+      { "id": "modo-time", "url": "https://support.modo.us/en_us/how-long-does-sc-redemption-processing-take-HJqtAiElzg", "purpose": "redemption_time", "expectedHeading": "How long does SC redemption processing take?" },
+      { "id": "modo-rules", "url": "https://modo.us/promo-rules.pdf", "purpose": "sweepstakes_rules" },
+      { "id": "modo-daily", "url": "https://support.modo.us/en_us/daily-bonus-HJo7NJWPMl", "purpose": "daily_reward", "expectedHeading": "How do I claim my daily bonus?" }
+    ]
   },
   {
-    "slug": "legendz",
-    "name": "Legendz",
-    "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "legendz-home", "url": "https://www.legendz.com/" }]
+    "slug": "zula", "name": "Zula Casino", "playerValue": { "productMode": "unverified" },
+    "sources": [
+      { "id": "zula-signup", "url": "https://www.zulacasino.com/promotions/promo/zula-casino-sign-up-promotion", "purpose": "signup_offer" },
+      { "id": "zula-rules", "url": "https://www.zulacasino.com/api/Document/ContentPage/sweeps-rules.pdf", "purpose": "sweepstakes_rules" },
+      { "id": "zula-daily", "url": "https://www.zulacasino.com/promotions/promo/daily-login-bonus", "purpose": "daily_reward" },
+      { "id": "zula-home", "url": "https://www.zulacasino.com/", "purpose": "homepage" }
+    ]
   },
   {
-    "slug": "punt",
-    "name": "Punt",
-    "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "punt-home", "url": "https://punt.com/" }]
+    "slug": "sportzino", "name": "Sportzino", "playerValue": { "productMode": "unverified" },
+    "sources": [
+      { "id": "sportzino-signup", "url": "https://sportzino.com/promotions/promo/sign-up-promotion/", "purpose": "signup_offer" },
+      { "id": "sportzino-rules", "url": "https://sportzino.com/api/Document/ContentPage/sweeps-rules.pdf", "purpose": "sweepstakes_rules" },
+      { "id": "sportzino-daily", "url": "https://sportzino.com/promotions/promo/daily-login-bonus/", "purpose": "daily_reward" },
+      { "id": "sportzino-redemption", "url": "https://support.sportzino.com/portal/en/home", "purpose": "redemption_help" }
+    ]
   },
   {
-    "slug": "megabonanza",
-    "name": "MegaBonanza",
-    "playerValue": { "productMode": "unverified" },
-    "sources": [{ "id": "megabonanza-home", "url": "https://www.megabonanza.com/" }]
+    "slug": "luckyland", "name": "LuckyLand Casino", "playerValue": { "productMode": "unverified" },
+    "sources": [
+      { "id": "luckyland-home", "url": "https://luckylandcasino.com/", "purpose": "signup_offer" },
+      { "id": "luckyland-cash", "url": "https://help.luckylandcasino.com/article/LLC-What-you-need-to-know-to-redeem-your-prize", "purpose": "redemption_minimum", "expectedHeading": "What you need to know to redeem your prize" },
+      { "id": "luckyland-time", "url": "https://help.luckylandcasino.com/article/LLC-How-long-do-redemptions-take-to-process", "purpose": "redemption_time", "expectedHeading": "How long do redemptions take to process?" },
+      { "id": "luckyland-rules", "url": "https://luckylandcasino.com/legal/sweeps-rules", "purpose": "sweepstakes_rules" }
+    ]
+  },
+  {
+    "slug": "rolling-riches", "name": "Rolling Riches", "playerValue": { "productMode": "unverified" },
+    "sources": [
+      { "id": "rolling-riches-home", "url": "https://www.rollingriches.com/", "purpose": "signup_offer" },
+      { "id": "rolling-riches-cash", "url": "https://rollingricheshelp.zendesk.com/hc/en-us/articles/20922084007949-What-is-the-minimum-amount-of-Sweepstake-Coins-I-can-redeem-for-a-prize", "purpose": "redemption_minimum" },
+      { "id": "rolling-riches-time", "url": "https://rollingricheshelp.zendesk.com/hc/en-us/articles/35847661821837-What-redemption-options-does-Rolling-Riches-have", "purpose": "redemption_time" },
+      { "id": "rolling-riches-methods", "url": "https://rollingricheshelp.zendesk.com/hc/en-us/articles/20922390069645-Does-Rolling-Riches-offer-cash-and-gift-cards-for-redemption", "purpose": "redemption_help" },
+      { "id": "rolling-riches-rules", "url": "https://s3.us-west-1.amazonaws.com/aws.rollingriches.com/rollingriches/PDFs/Rolling+Riches+Terms+and+Conditions+FINAL+1-19+Paysafe.pdf", "purpose": "sweepstakes_rules" }
+    ]
+  },
+  {
+    "slug": "high5", "name": "High 5 Casino", "playerValue": { "productMode": "unverified" },
+    "sources": [
+      { "id": "high5-signup", "url": "https://high5casino.com/promotions/sign-up-bonus/", "purpose": "signup_offer" },
+      { "id": "high5-redemption", "url": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/", "purpose": "redemption_help" },
+      { "id": "high5-daily", "url": "https://high5casino.com/promotions/daily-bonus/", "purpose": "daily_reward" },
+      { "id": "high5-rules", "url": "https://high5casino.com/helpcenter/legal/", "purpose": "sweepstakes_rules" }
+    ]
+  },
+  {
+    "slug": "chanced", "name": "Chanced", "playerValue": { "productMode": "unverified" },
+    "sources": [
+      { "id": "chanced-home", "url": "https://chanced.com/", "purpose": "signup_offer" },
+      { "id": "chanced-cash", "url": "https://chanced.com/payment-faq/", "purpose": "redemption_help" },
+      { "id": "chanced-rules", "url": "https://chanced.com/sweeps-rules/", "purpose": "sweepstakes_rules" }
+    ]
+  },
+  {
+    "slug": "fortune-wins", "name": "Fortune Wins", "playerValue": { "productMode": "unverified" },
+    "sources": [
+      { "id": "fortune-wins-signup", "url": "https://fortunewins.com/promotions/promo/sign-up-bonus", "purpose": "signup_offer" },
+      { "id": "fortune-wins-daily", "url": "https://fortunewins.com/promotions/promo/daily-bonus", "purpose": "daily_reward" },
+      { "id": "fortune-wins-terms", "url": "https://fortunewins.com/terms-and-conditions", "purpose": "sweepstakes_rules" },
+      { "id": "fortune-wins-home", "url": "https://fortunewins.com/", "purpose": "homepage" }
+    ]
   }
 ]

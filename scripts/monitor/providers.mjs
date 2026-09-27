@@ -110,7 +110,7 @@ export async function retrieve(url, provider, env = process.env, options = {}) {
         creditsUsed: data.data.metadata?.creditsUsed ?? null },
       requestOptions: firecrawlOptions(url, options.onlyMainContent ?? true),
       httpStatus: data.data.metadata?.statusCode ?? null,
-      status: accessStatus(text, finalUrl, data.data.metadata?.statusCode || 200) };
+      status: accessStatus(text, finalUrl, data.data.metadata?.statusCode || 200, options) };
   } else {
     response = await fetch("https://api.brightdata.com/request", {
       method: "POST", signal, headers: { "Content-Type": "application/json", Authorization: `Bearer ${env.BRIGHTDATA_API_KEY}` },
@@ -144,7 +144,7 @@ export async function retrieve(url, provider, env = process.env, options = {}) {
   return { body, text, contentType, finalUrl, pdfBase64, httpStatus: response.status,
     html: contentType.includes("html") ? body : null,
     links: contentType.includes("html") ? linksFromHtml(body, finalUrl) : [],
-    status: accessStatus(text, finalUrl, response.status) };
+    status: accessStatus(text, finalUrl, response.status, options) };
 }
 
 export async function modelExtract(text, fields, env = process.env) {
