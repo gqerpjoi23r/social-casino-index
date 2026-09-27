@@ -26,6 +26,7 @@ export function latestRecords(records, predicate, now = Date.now()) {
 function fact(record, metric, value, label, note = "") {
   return {
     metric, value, label, note, recordId: record.id, sourceUrl: record.sourceUrl,
+    method: record.method || null, unit: record.unit || "SC",
     observedAt: date(record), status: record.freshness === "not_reconfirmed" ? "retained" : "published",
     firstObservedAt: record.firstObservedAt || record.capturedAt, lastChangedAt: record.lastChangedAt || null,
     valueChangedAt: record.valueChangedAt || null,
@@ -96,7 +97,9 @@ function operatorMetrics(operator, now, purchaseBudget) {
   for (const [key, budget] of [["purchase", purchaseBudget], ["purchase10", 10], ["purchase20", 20]]) {
     metrics[key] = choose(packs.filter(r => r.priceUsd <= budget), key, r => r.immediateSc / r.priceUsd,
       r => `${number(r.immediateSc)} SC for $${number(r.priceUsd)}`,
-      r => `${number(r.immediateSc / r.priceUsd)} SC per $1. ${r.kind === "first_purchase" ? "First purchase only." : "Purchase package."}`);
+      r => `${number(r.immediateSc / r.priceUsd)} SC per $1. ${r.kind === "first_purchase" ?
+        /first (?:three|3) purchases/i.test((r.conditions || []).join(" ")) ?
+          "First package in a three-purchase welcome offer." : "First purchase only." : "Purchase package."}`);
   }
   return metrics;
 }

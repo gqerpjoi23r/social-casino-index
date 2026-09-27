@@ -374,7 +374,7 @@ test("non-partners get profile links without changing comparison eligibility or 
   const registry = [{ slug: "a", partner: false }, { slug: "b", partner: true }];
   const first = buildBenchmarks({ operators: snapshots }, registry, now);
   assert.deepEqual(first.toplist.homepageRows.map(row => row.slug), ["a", "b"]);
-  assert.equal(first.toplist.homepageRows[0].visitUrl, null);
+  assert.equal(first.toplist.homepageRows[0].visitUrl, "/go/a/");
   assert.equal(first.toplist.homepageRows[0].url, "/redemption-times/a/");
   assert.equal(first.toplist.homepageRows[1].visitUrl, "/go/b/");
   registry.forEach(operator => { operator.partner = !operator.partner; });

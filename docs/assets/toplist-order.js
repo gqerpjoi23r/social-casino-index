@@ -17,5 +17,7 @@ export function compareAttribute(a, b, key, direction = SORTS[key]?.direction) {
 
 export function orderToplist(rows, key = "welcome", direction = SORTS[key]?.direction) {
   return [...rows].sort((a, b) => compareAttribute(a, b, key, direction) ||
+    (key === "welcome" && valid(a.sortValues?.welcome) && valid(b.sortValues?.welcome) ?
+      (b.benefitCount || 0) - (a.benefitCount || 0) : 0) ||
     a.name.localeCompare(b.name, "en") || a.slug.localeCompare(b.slug, "en"));
 }

@@ -17,7 +17,7 @@ export function evidence(record, label, note, snapshot = {}) {
     label, note, sourceUrl: record.sourceUrl, recordId: record.id,
     value: record.value ?? record.immediateSc ?? null,
     upperValue: record.upperValue ?? null, unit: record.unit || "SC",
-    stage: record.stage || null, comparison: record.comparison || null,
+    stage: record.stage || null, method: record.method || null, comparison: record.comparison || null,
     observedAt: dated(record), conditions: record.conditions || [],
     status: record.freshness === "not_reconfirmed" ? "retained" : "published",
     lastCheckedAt: source?.checkedAt || (source ? snapshot.lastAttempt : null),
@@ -176,7 +176,7 @@ export function buildToplist(operators, numeric, latestRecords, now) {
         "; opt-in needed for full reward" : "; marketing opt-in required";
     }
     const row = { slug: operator.slug, name: operator.name, favicon: operator.favicon,
-      url: operator.url, visitUrl: operator.partner ? `/go/${operator.slug}/` : null,
+      url: operator.url, visitUrl: `/go/${operator.slug}/`,
       productMode: operator.productMode, welcome, signup: signup ? { ...welcome } : offerDisplay(snapshot, offers, "signup"),
       purchase: purchase || offerDisplay(snapshot, offers, "purchase"),
       daily: dailyReward(operator, snapshot, offers),
@@ -215,13 +215,13 @@ export function buildToplist(operators, numeric, latestRecords, now) {
     row.benefitCount = benefits.length;
     row.missingBenefits = BENEFIT_KEYS.filter(key => !row[key]);
     row.homepageEligible = row.benefitCount >= 2;
-    row.presentation = presentToplist(row, now);
+    row.presentation = presentToplist(row, now, numeric?.lastAttemptedAt);
     return row;
   });
   const ordered = orderToplist(rows);
   ordered.forEach((row, index) => { row.position = index + 1; });
   const homepageRows = ordered.filter(row => row.homepageEligible).map((row, index) => ({ ...row, position: index + 1 }));
-  return { version: "useful-benefits-1", attributeCount: 4, benefitAreaCount: 5, defaultSort: "welcome",
+  return { version: "useful-benefits-2", attributeCount: 4, benefitAreaCount: 5, defaultSort: "welcome",
     lastCheckedAt: numeric?.lastAttemptedAt || null, rows: ordered, homepageRows,
     sorts: Object.entries(SORTS).map(([key, sort]) => ({ key, ...sort,
       available: homepageRows.some(row => Number.isFinite(row.sortValues[key])) })),

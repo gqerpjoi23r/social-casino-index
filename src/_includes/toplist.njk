@@ -1,7 +1,7 @@
 {% macro cell(value) %}
 {% if value %}
-  <strong class="toplist-value">{{ value.label | escape }}</strong>
-  {% if value.note %}<span class="toplist-note">{{ value.note | escape }}</span>{% endif %}
+  <strong class="toplist-value">{{ value.displayLabel | escape }}</strong>
+  {% if value.displayNote %}<span class="toplist-note">{{ value.displayNote | escape }}</span>{% endif %}
 {% else %}<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>{% endif %}
 {% endmacro %}
 <section class="toplist" id="all-operators" aria-labelledby="leaderboard-heading">
@@ -9,21 +9,23 @@
     <div class="toplist-title"><h2 id="leaderboard-heading">Compare offers <span class="toplist-count">{{ benchmarks.toplist.homepageRows.length }}</span></h2>
     {% if benchmarks.toplist.lastCheckedAt %}<span class="toplist-checked">Last checked <time datetime="{{ benchmarks.toplist.lastCheckedAt }}">{{ benchmarks.toplist.lastCheckedAt | readableDate }}</time></span>{% endif %}</div>
     <div class="toplist-controls">
-      <label class="home-state"><i class="ph ph-map-pin" aria-hidden="true"></i><span class="sr-only">Your state</span>
+      <label class="home-state toplist-select"><i class="ph ph-map-pin i-lead" aria-hidden="true"></i><span class="sr-only">Your state</span>
         <select data-state-picker aria-label="Your state">{% for s in states %}<option value="{{ s.code }}"{% if not s.code %} disabled selected{% endif %}>{{ s.name if s.code else "Your state" }}</option>{% endfor %}</select>
+        <i class="ph ph-caret-down i-caret" aria-hidden="true"></i>
       </label>
-      <label class="toplist-sort" hidden><span class="sr-only">Sort by</span>
+      <label class="toplist-sort toplist-select" hidden><i class="ph ph-sort-descending i-lead" aria-hidden="true"></i><span class="sr-only">Sort by</span>
         <select id="toplist-sort">{% for sort in benchmarks.toplist.sorts %}
-          <option value="{{ sort.key }}"{% if sort.key == "welcome" %} selected{% endif %}{% if not sort.available %} disabled{% endif %}>{{ {welcome: "Free bonus", purchase: "Purchase deal", daily: "Daily reward", redemption: "Published processing", cash: "Cash minimum"}[sort.key] }}</option>
+          <option value="{{ sort.key }}"{% if sort.key == "welcome" %} selected{% endif %}{% if not sort.available %} disabled{% endif %}>{{ {welcome: "Free bonus", purchase: "Purchase deal", daily: "Daily reward", redemption: "Processing", cash: "Cash minimum"}[sort.key] }}</option>
         {% endfor %}</select>
+        <i class="ph ph-caret-down i-caret" aria-hidden="true"></i>
       </label>
     </div>
   </div>
   <p id="toplist-sort-status" class="sr-only" aria-live="polite">Sorted by highest free signup offer.</p>
-  <div class="toplist-columns" aria-hidden="true"><span>Casino</span><div><span data-column="welcome">Free coins</span><span data-column="purchase">Purchase deal</span><span data-column="cash">Cash out from</span><span data-column="redemption">Published timing</span></div><span></span></div>
+  <div class="toplist-columns" aria-hidden="true"><span>Casino</span><span class="is-active" data-column="welcome">Free coins</span><span data-column="purchase">Purchase deal</span><span data-column="cash">Cash out from</span><span data-column="redemption">Payout time</span><span></span></div>
   <ol class="toplist-list" data-active-sort="welcome">
     {% for operator in benchmarks.toplist.homepageRows %}
-    <li class="toplist-item{% if operator.presentation.compact %} toplist-compact{% endif %}" data-operator="{{ operator.slug }}" data-sort="{{ {slug: operator.slug, name: operator.name, sortValues: operator.sortValues} | json | escape }}" value="{{ operator.position }}">
+    <li class="toplist-item{% if operator.presentation.compact %} toplist-compact{% endif %}" data-operator="{{ operator.slug }}" data-sort="{{ {slug: operator.slug, name: operator.name, sortValues: operator.sortValues, benefitCount: operator.benefitCount} | json | escape }}" value="{{ operator.position }}">
       {% if loop.first or operator.presentation.compact and not benchmarks.toplist.homepageRows[loop.index0 - 1].presentation.compact %}
       <h3 class="toplist-group">{{ "No free Sweeps Coins confirmed" if operator.presentation.compact else "Free Sweeps Coins at sign-up" }}</h3>
       {% endif %}
@@ -34,42 +36,59 @@
             <span class="toplist-position" aria-label="Position {{ operator.position }}">{{ operator.position }}</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="{{ operator.url }}">{{ operator.name | escape }}</a>
-            {% if operator.rewardTypes.length %}<span class="toplist-reward-types">{{ operator.rewardTypes | join(" · ") | escape }}</span>{% endif %}
           </h3>
         </div>
-        <p class="toplist-sentence">{{ operator.presentation.summary | escape }}.</p>
+        {% if operator.presentation.badges.length %}
+        <ul class="toplist-badges" aria-label="{{ operator.name | escape }} highlights">
+          {% for badge in operator.presentation.badges %}<li class="badge{% if badge.tone != 'plain' %} badge--{{ badge.tone }}{% endif %}" title="{{ badge.title | escape }}"{% if badge.icon == "calendar-check" %} data-daily{% endif %}><i class="ph ph-{{ badge.icon }}" aria-hidden="true"></i>{{ badge.label | escape }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+        <p class="toplist-sentence">{{ operator.presentation.summary | escape }}</p>
         <dl class="toplist-values">
           {% for field in operator.presentation.fields %}
           <div class="toplist-metric" data-metric="{{ field.key }}"><dt>{{ field.label }}</dt><dd>
             {{ cell(field.value) }}
-            {% if field.gift %}<span class="toplist-note">Gift cards from {{ field.gift.label | escape }}</span>{% endif %}
-            {% if field.key == "signup" and operator.daily %}<span class="toplist-daily" data-metric="daily">{{ operator.daily.label | escape }}</span>{% endif %}
+            {% if field.gift %}<span class="toplist-note">Gift cards from {{ field.gift.displayLabel | escape }}</span>{% endif %}
           </dd></div>
           {% endfor %}
         </dl>
         <div class="toplist-footer">
-          {% for offer in operator.presentation.codes %}<button class="toplist-code" type="button" data-copy-code="{{ offer.code | escape }}" aria-label="Copy {{ operator.name | escape }} code {{ offer.code | escape }}" title="{{ offer.label | escape }}"><i class="ph ph-copy" aria-hidden="true"></i><span>{{ offer.code | escape }}</span></button>{% endfor %}
-          {% if operator.visitUrl %}<a class="toplist-visit" href="{{ operator.visitUrl }}" rel="sponsored noopener" aria-label="Visit {{ operator.name | escape }}"><span>Visit<span class="toplist-mobile-name"> {{ operator.name | escape }}</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-          {% else %}<a class="toplist-visit" href="{{ operator.url }}" aria-label="{{ operator.name | escape }} details"><span>Details<span class="toplist-mobile-name">: {{ operator.name | escape }}</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>{% endif %}
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          {% for offer in operator.presentation.codes %}<button class="toplist-code" type="button" data-copy-code="{{ offer.code | escape }}" aria-label="Copy {{ operator.name | escape }} code {{ offer.code | escape }}" title="{{ offer.label | escape }}"><span class="lbl">Code</span><b>{{ offer.code | escape }}</b><i class="ph ph-copy" aria-hidden="true"></i><span class="toplist-copy-status sr-only" role="status"></span></button>{% endfor %}
+          <a class="toplist-visit" href="{{ operator.visitUrl }}" rel="sponsored noopener" aria-label="Visit {{ operator.name | escape }}"><span>Visit<span class="toplist-mobile-name"> {{ operator.name | escape }}</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for {{ operator.name | escape }}" title="Terms and sources for {{ operator.name | escape }}"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
-          {% for value in operator.presentation.terms %}
-          <section class="toplist-source" data-record-id="{{ value.recordId }}">
-            <h4>{{ value.heading }}</h4>
-            <p><strong>{{ value.label | escape }}</strong>{% if value.note %} · {{ value.note | escape }}{% endif %}{% if value.condition %}. {{ value.condition | escape }}{% endif %}</p>
-            <p class="toplist-source-meta"><a href="{{ value.sourceUrl | escape }}" rel="noopener">Operator source</a> · Observed <time datetime="{{ value.observedAt }}">{{ value.observedAt | readableDate }}</time>{% if value.status == "retained" %} · Previous observation{% endif %}{% if value.recentChangeAt %} · Value changed <time datetime="{{ value.recentChangeAt }}">{{ value.recentChangeAt | readableDate }}</time>{% endif %}</p>
-          </section>
+          <h4>{{ operator.name | escape }} terms and sources</h4>
+          <dl class="toplist-terms">
+          {% for term in operator.presentation.terms %}
+          <div class="toplist-term">
+            <dt>{{ term.heading }}</dt><dd>
+            {% for value in term.values %}
+            <div class="toplist-source" data-record-id="{{ value.recordId }}">
+              <span class="term-value">{% if term.key == "minimum" %}{{ value.methodLabel }}: {% endif %}{{ value.displayLabel | escape }}</span>
+              {% if value.displayNote or value.condition %}<span class="term-detail">{{ value.displayNote | escape }}{% if value.displayNote and value.condition %}. {% endif %}{{ value.condition | escape }}</span>{% endif %}
+              <span class="term-source"><a href="{{ value.sourceUrl | escape }}" rel="noopener" title="Observed {{ value.observedAt | readableDate }}">{{ value.sourceDomain }}</a>
+              {% if value.stale %}<span class="term-stale">Last seen <time datetime="{{ value.observedAt }}">{{ value.observedAt | shortDate }}</time></span>{% else %}<time class="sr-only" datetime="{{ value.observedAt }}">Observed {{ value.observedAt | readableDate }}</time>{% endif %}
+              {% if value.recentChangeAt %}<span>Changed <time datetime="{{ value.recentChangeAt }}">{{ value.recentChangeAt | shortDate }}</time></span>{% endif %}</span>
+            </div>
+            {% endfor %}
+            </dd>
+          </div>
           {% endfor %}
+          </dl>
           <a class="toplist-full-link" href="{{ operator.url }}">Full {{ operator.name | escape }} page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
     </li>
     {% else %}<li>No operators currently meet the comparison requirements. <a href="/redemption-times/">Operator records</a></li>{% endfor %}
   </ol>
-  <p class="toplist-footnote">A dash means we have not confirmed this detail. SC = Sweepstakes Coins. Gold Coins are entertainment credits. Published times, not measured payouts. <a href="/bonuses/cash-redemption-minimums/">Compare cash minimums</a> · <a href="/methodology/#homepage-order">How we order the list</a> · <a href="/updates/">Daily checks</a></p>
+  <ul class="toplist-legend">
+    <li><span class="badge badge--perk"><i class="ph ph-timer" aria-hidden="true"></i> &le;3 days</span> Published estimate of up to 3 days; badge names the stage. Business days where stated.</li>
+    <li><span class="badge badge--perk"><i class="ph ph-arrow-line-down" aria-hidden="true"></i> Low minimum</span> Cash minimum of 50 SC or less.</li>
+    <li><span class="badge badge--perk"><i class="ph ph-calendar-check" aria-hidden="true"></i> Daily SC</span> A fixed daily amount, not a first claim or variable reward.</li>
+  </ul>
+  <p class="toplist-footnote">A dash means we have not confirmed this detail. SC = Sweepstakes Coins. Gold Coin offers are for entertainment, not redeemable SC. Times are published estimates, not measured payouts. Equal free-signup amounts put more supported benefit areas first. <a href="/methodology/#homepage-order">How we order the list</a></p>
 </section>
 <script type="module" src="/assets/toplist-sort.js"></script>

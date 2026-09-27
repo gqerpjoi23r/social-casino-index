@@ -45,9 +45,10 @@ A green release means content schema, sitemap and SEO checks all pass.
   benefit, not the whole operator: entertainment credits can be listed but NEVER
   converted to SC or ranked as redeemable value. Generic praise does not count.
 - Default to highest immediate no-purchase signup SC. Offer independent purchase
-  value, daily SC, processing and cash-minimum sorts; unknowns last, ties by name.
-  Useful-benefit admission is separate from numeric sorting; never use
-  completeness as a customer-facing quality ranking.
+  value, daily SC, processing and cash-minimum sorts; unknowns last. Equal known
+  signup amounts use supported benefit-area count, then name. Other sorts and
+  unknown signup values use name ties. Count each of the five areas once.
+  Benefit coverage is only a default-sort tie-break, never an overall quality score.
 - All current comparisons and exports use the shared evidence model. Registry
   identity, affiliate, eligibility and funded-test metadata stay separate.
   Historical download editions are immutable, not current-data fallbacks.
@@ -57,5 +58,8 @@ A green release means content schema, sitemap and SEO checks all pass.
   fields. Passing collection/tests alone is not evidence of product usefulness.
 - No affiliate links in article copy; operator CTAs only behind the state
   gate (`/go/` + `src/assets/eligibility.js`).
+- Reuse `src/assets/design-system.css` for shared fonts, colors, navigation and
+  controls. Newsreader is for page/section headings; Archivo is for body text
+  and controls. Keep homepage text at least 12px and layouts page-specific.
 - `docs/` is the committed deploy artifact - always produced by the build,
   never hand-edited.

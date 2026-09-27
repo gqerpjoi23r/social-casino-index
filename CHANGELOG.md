@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-27 - Apply toplist v2 and shared visual language
+- Break equal confirmed free-signup amounts by supported benefit-area count, then name. WOW Vegas moves from seventh to third; other sorts, numeric values and the 19-operator homepage roster stay unchanged.
+- Adopt the supplied v2 layout and shared Newsreader/Archivo typography, colors, navigation and controls. Keep existing layouts on guides, benchmarks and operator pages; remove superseded homepage CSS.
+- Add factual benefit/catch/prize badges, cleaner display copy, grouped minimum terms and dated source labels. Keep approval/processing distinct from total payout, and clarify McLuck's first package within a three-purchase offer.
+- Generate Visit routes from registry destinations, including non-partner homepages, preserving previous destinations and state gates. See `data/monitor/toplist-v2-2026-09-27.md` for verification and unchanged data gaps.
+
 ## 2026-09-27 - Make published comparisons easier to scan and cite
 - Rebuild the toplist as four labelled facts, compact default rows for non-numeric signup offers, independent source/code controls, and full-row profile links. Preserve admission, five numeric sorts, partner destinations and state gates.
 - Broaden existing operator URLs with sourced summaries, additional offers, method-specific requirements, FAQs and offer history. Lead benchmarks with useful answers instead of funded-test limitations.

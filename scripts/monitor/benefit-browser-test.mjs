@@ -145,7 +145,9 @@ try {
   assert.equal(await plain.locator(".home-menu nav").isVisible(), true);
   await plain.locator(".toplist-sources summary").first().click();
   assert.equal(await plain.locator(".toplist-sources").first().evaluate(element => element.open), true);
-  await plain.locator(`.toplist-footnote a[href="${cashPath}"]`).click();
+  await plain.locator('.toplist-footnote a[href="/methodology/#homepage-order"]').click();
+  assert.equal(new URL(plain.url()).pathname, "/methodology/");
+  await plain.goto(`${base}${cashPath}`);
   assert.equal(new URL(plain.url()).pathname, cashPath);
   assert.equal(await plain.locator("#lowest-cash-minimum").isVisible(), true);
   assert.equal(await plain.locator('[data-answer="cash-below-50"]').isVisible(), true);

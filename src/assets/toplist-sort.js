@@ -21,6 +21,7 @@ if (list && select) {
     });
     list.dataset.activeSort = key;
     document.querySelector(".toplist").dataset.activeSort = key;
+    document.querySelectorAll("[data-column]").forEach(column => column.classList.toggle("is-active", column.dataset.column === key));
     document.querySelector("#toplist-sort-status").textContent = `Sorted by ${SORTS[key].label}.`;
   });
   select.closest("label").hidden = false;

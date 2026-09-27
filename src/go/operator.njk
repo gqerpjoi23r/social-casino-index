@@ -1,0 +1,28 @@
+---
+pagination:
+  data: visits
+  size: 1
+  alias: visit
+permalink: "/go/{{ visit.slug }}/index.html"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="refresh" content="2;url=/availability/">
+<title>Visit {{ visit.name | escape }} | Social Casino Index</title>
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/design-system.css">
+</head>
+<body class="site-ui">
+<main class="wrap pt-16">
+  <h1 class="page-title">Visit {{ visit.name | escape }}</h1>
+  <p data-go-msg>Checking your selected state before opening the casino.</p>
+  <noscript><p><a href="/availability/">Continue to state availability</a>.</p></noscript>
+</main>
+{% if visit.destination %}<script src="/assets/go.js" data-go-destination="{{ visit.destination | escape }}" data-go-closed="{{ visit.closed | json | escape }}" defer></script>{% endif %}
+</body>
+</html>
