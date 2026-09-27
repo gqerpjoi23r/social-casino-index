@@ -27,6 +27,8 @@
     { "operatorId": "mcluck", "id": "mcluck-promotions", "url": "https://www.mcluck.com/promotions", "purpose": "promotions_index", "discoveredFrom": "mcluck-home" }
   ],
   "comparisonSources": {
+    "modo": ["modo-cash", "modo-time", "modo-rules", "modo-daily"],
+    "zula": ["zula-signup", "zula-rules", "zula-daily"],
     "crown-coins": ["crown-signup", "crown-faq", "crown-prize-help", "crown-daily"],
     "spree": ["spree-home", "spree-rules"],
     "jackpota": ["jackpota-home", "jackpota-promotions"],

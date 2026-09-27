@@ -42,7 +42,7 @@ export async function checkDestination(value, hosts, resolver = lookup) {
   return url;
 }
 export function discover(links, source, operatorId, hosts) {
-  if ((source.depth || 0) >= 2) return [];
+  if (source.discoverLinks === false || (source.depth || 0) >= 2) return [];
   return [...new Set(links || [])].map(link => safeUrl(link, hosts)).filter(Boolean)
     .filter(relevantSource)
     .sort().slice(0, 100).map(url => ({ id: `${operatorId}-discovered-${hash(url).slice(0, 12)}`,

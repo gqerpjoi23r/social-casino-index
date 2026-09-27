@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-27 - Onboard Modo and Zula from targeted evidence
+- Add Modo for cash minimum and processing, and Zula for the detailed signup breakdown and cash minimum. No screening figures are copied into current public observations.
+- Use explicit curated-only source sets for these additions. Keep Zula's inconsistent homepage headlines in the screening audit, not the numeric daily/signup rankings; its dedicated daily page remains monitored.
+- Preserve unknown eligibility, non-partner Details links, existing ranking and admission rules. Production publication and visible gains require the fresh normal run.
+
 ## 2026-09-27 - Target useful candidate sources and explain missing fields
 - Seed the eight remaining expansion candidates with official offers, redemption help and selected rules PDFs; keep the existing two-category admission rule.
 - Reject location notices and optional expected-heading article failures before extraction. Keep public PDF seeds explicit without opening general API discovery.
