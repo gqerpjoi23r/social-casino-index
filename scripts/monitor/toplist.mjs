@@ -7,6 +7,8 @@ const dated = record => record.lastConfirmedAt || record.capturedAt;
 const text = record => [record.name, record.basis, ...(record.conditions || [])].filter(Boolean).join(" ");
 const newest = records => [...records].sort((a, b) =>
   Date.parse(dated(b)) - Date.parse(dated(a)) || a.sourceUrl.localeCompare(b.sourceUrl));
+const amount = value => Number.isFinite(value) && value > 0;
+export const BENEFIT_KEYS = ["signup", "purchase", "daily", "redemption", "minimum"];
 
 export function evidence(record, label, note, snapshot = {}) {
   const source = snapshot.coverage?.find(source => source.id === record.sourceId);
@@ -48,17 +50,20 @@ function dailyReward(operator, snapshot, offers) {
   if (!recurring) return null;
   const goldOnly = /gold coins?/i.test(text(recurring)) &&
     !/sweeps?(?:takes)? coins?|\bSC\b|stake cash/i.test(text(recurring));
-  return { ...evidence(recurring, goldOnly ? "Gold Coins only" : "Daily login reward",
-    goldOnly ? "No redeemable SC established" : "Amount not published in collected terms", snapshot), comparable: false };
+  return { ...evidence(recurring, goldOnly ? "Daily Gold Coins" : "Daily login reward",
+    goldOnly ? "Entertainment credits" : "Amount not stated", snapshot), comparable: false,
+    unit: goldOnly ? "GC" : null,
+    rewardType: goldOnly ? "Entertainment credits" : null };
 }
 
-export function redemptionTime(snapshot, records) {
+export function redemptionTime(snapshot, records, { display = false } = {}) {
   const units = { hours: "hours", business_days: "business days", calendar_days: "calendar days",
-    days_unspecified: "days (type unspecified)" };
+    days_unspecified: "days (type unspecified)", ...(display ? { months: "months" } : {}) };
   const stages = { processing: "Processing", approval: "Approval",
-    end_to_end: "Request to receipt" };
+    end_to_end: "Request to receipt", ...(display ? { transfer: "Delivery after approval", unspecified: "Stage unspecified" } : {}) };
   const methods = { cash: "cash", bank: "bank", debit_card: "debit card",
-    general: "method varies", unspecified: "method unspecified" };
+    general: "method varies", unspecified: "method unspecified",
+    ...(display ? { gift_card: "gift card", crypto: "cryptocurrency", virtual_card: "virtual card" } : {}) };
   // Some extracted records leave stage unspecified despite an explicit processing basis.
   const classified = records.map(qualifyRedemptionTiming).map(record => record.stage === "unspecified" &&
     /\bprocessing\b/i.test(record.basis || "") &&
@@ -72,7 +77,7 @@ export function redemptionTime(snapshot, records) {
     (record.comparison !== "range" || (Number.isFinite(record.upperValue) && record.upperValue >= record.value)) &&
     !/verification process|provide requested|complete required|automatically declined/i.test(record.basis || "") &&
     (!/VIP|account tier|membership tier/i.test(text(record)) || /\bstandard\b|\bVIP\s*0\b|\bRising\b/i.test(text(record)))));
-  const priorities = ["processing", "approval", "end_to_end"];
+  const priorities = ["processing", "approval", "end_to_end", "transfer", "unspecified"];
   candidates.sort((a, b) => priorities.indexOf(a.stage) - priorities.indexOf(b.stage) ||
     (a.method === "unspecified" || a.method === "general") - (b.method === "unspecified" || b.method === "general"));
   const record = candidates[0];
@@ -84,11 +89,61 @@ export function redemptionTime(snapshot, records) {
   const unit = record.unit === "hours" && /\bbusiness hours\b/i.test(text(record)) ? "business hours" : units[record.unit];
   const result = evidence(record, `${value} ${unit}`, `${stages[record.stage]}; ${tier}`, snapshot);
   // Sort only a bounded processing/approval estimate, never a delivery time or minimum wait.
-  result.sortHours = ["processing", "approval"].includes(record.stage) &&
+  result.sortHours = !display && ["processing", "approval"].includes(record.stage) &&
     !["at_least", "greater_than"].includes(record.comparison) && record.unit !== "days_unspecified" &&
     unit !== "business hours" ?
     (record.upperValue ?? record.value) * (record.unit === "hours" ? 1 : 24) : null;
   return result;
+}
+
+function offerDisplay(snapshot, offers, kind) {
+  const candidates = newest(offers.filter(record => kind === "signup" ? record.kind === "signup" :
+    ["first_purchase", "purchase_package", "paid_pass"].includes(record.kind)));
+  for (const record of candidates) {
+    const foreignReward = !amount(record.totalSc) && !amount(record.immediateSc) &&
+      [record.name, ...(record.conditions || [])].filter(Boolean).map(value =>
+        value.match(/\b\d[\d,]*(?:\.\d+)?\s*(?:FC|Fortune Coins?)\b/i)?.[0]).find(Boolean);
+    const rewards = foreignReward ? [foreignReward] : [amount(record.totalSc) ? `${number(record.totalSc)} SC total` :
+      amount(record.immediateSc) ? `${number(record.immediateSc)} SC` : null,
+    amount(record.goldCoins) ? `${number(record.goldCoins)} Gold Coins` : null].filter(Boolean);
+    if (!rewards.length && amount(record.advertisedExtraPercent))
+      rewards.push(`${record.extraPercentComparison === "up_to" ? "Up to " : ""}${number(record.advertisedExtraPercent)}% extra coins`);
+    // A named offer alone is advertising, not a concrete player benefit.
+    if (!rewards.length) {
+      for (const description of [record.name, ...(record.conditions || [])].filter(Boolean)) {
+        const reward = description.match(/\b(?:\d[\d,]*(?:\.\d+)?\s*(?:FC|Fortune Coins?|credits?|tokens?|reward points?|spins?)|free spins?|daily spins?|coinback|cashback)\b/i);
+        if (reward && !/\b(?:no|not|without)\s+(?:any\s+)?$/i.test(description.slice(0, reward.index))) {
+          rewards.push(reward[0]); break;
+        }
+      }
+    }
+    if (!rewards.length) continue;
+    const note = [kind === "purchase" ? "Credit timing not confirmed" :
+      record.purchaseRequired === false ? "No purchase required; see claim conditions" :
+        record.purchaseRequired === true ? "Purchase required" : "Purchase requirement unconfirmed",
+    /\bup to\b/i.test(text(record)) ? "Advertised maximum; conditions apply" : null].filter(Boolean).join(". ");
+    return { ...evidence(record, `${rewards.join(" + ")}${amount(record.priceUsd) ? ` for $${number(record.priceUsd)}` : ""}`, note, snapshot),
+      kind: record.kind, purchaseRequired: record.purchaseRequired, promoCode: record.promoCode,
+      priceUsd: record.priceUsd, immediateSc: record.immediateSc, totalSc: record.totalSc,
+      goldCoins: record.goldCoins, comparable: false,
+      unit: foreignReward ? "FC" : amount(record.totalSc) || amount(record.immediateSc) ? "SC" : amount(record.goldCoins) ? "GC" : null,
+      rewardType: amount(record.goldCoins) && !foreignReward && !amount(record.totalSc) && !amount(record.immediateSc) ? "Entertainment credits" : null };
+  }
+  return null;
+}
+
+function minimumDisplay(snapshot, facts, metrics) {
+  const values = [metrics.cash, metrics.gift, metrics.general].filter(Boolean);
+  // Preserve currencies and methods that cannot join the SC-only cash benchmark.
+  if (!values.length) {
+    const record = newest(facts.filter(record => record.field === "redemption_minimum" &&
+      amount(record.value) && ["SC", "USD"].includes(record.unit) &&
+      ["exact", "at_least"].includes(record.comparison)))[0];
+    if (record) values.push(evidence(record, `${number(record.value)} ${record.unit}`,
+      `${({ gift_card: "Gift-card", bank: "Bank", cash: "Cash", crypto: "Cryptocurrency",
+        virtual_card: "Virtual-card" })[record.method] || "Method unspecified"} minimum; see conditions`, snapshot));
+  }
+  return values;
 }
 
 export function buildToplist(operators, numeric, latestRecords, now) {
@@ -97,6 +152,7 @@ export function buildToplist(operators, numeric, latestRecords, now) {
     const snapshot = snapshots.get(operator.slug) || {};
     const records = snapshot.records || [];
     const offers = latestRecords(records, record => record.recordType === "offers", now);
+    const facts = latestRecords(records, record => record.recordType === "facts", now);
     const signup = operator.metrics.signup;
     const purchase = operator.metrics.purchase;
     const welcome = signup ? {
@@ -114,12 +170,10 @@ export function buildToplist(operators, numeric, latestRecords, now) {
     }
     const row = { slug: operator.slug, name: operator.name, favicon: operator.favicon,
       url: operator.url, visitUrl: operator.partner ? `/go/${operator.slug}/` : null,
-      productMode: operator.productMode, welcome, signup: signup ? { ...welcome } : null,
-      purchase: purchase || null,
+      productMode: operator.productMode, welcome, signup: signup ? { ...welcome } : offerDisplay(snapshot, offers, "signup"),
+      purchase: purchase || offerDisplay(snapshot, offers, "purchase"),
       daily: dailyReward(operator, snapshot, offers),
-      redemption: operator.productMode === "entertainment_only" ? null :
-        redemptionTime(snapshot, latestRecords(records, record =>
-          record.recordType === "facts" && record.field === "redemption_time", now)),
+      redemption: redemptionTime(snapshot, facts),
       cash: operator.metrics.cash || null, generalMinimum: operator.metrics.general || null,
       lastCheckedAt: snapshot.lastAttempt || null };
     row.welcomeGroup = signup ? 0 : purchase ? 1 : 2;
@@ -130,18 +184,32 @@ export function buildToplist(operators, numeric, latestRecords, now) {
       redemption: row.redemption?.sortHours ?? null,
       cash: row.cash?.value ?? null,
     };
-    // Signup and paid packages are separate sorts within one offers category.
+    row.redemption ||= redemptionTime(snapshot, facts, { display: true });
+    row.minima = minimumDisplay(snapshot, facts, operator.metrics);
+    row.minimum = row.minima[0] || null;
+    row.gift = operator.metrics.gift || null;
+    row.rewardTypes = [...new Set([
+      row.cash ? "Cash prizes" : null, row.gift ? "Gift cards" : null,
+      ...["signup", "purchase", "daily"].map(key => row[key]?.rewardType),
+    ].filter(Boolean))];
+    row.labels = { signup: signup ? "Free signup" : "Welcome offer", purchase: "Purchase deal",
+      daily: "Daily reward", redemption: ["transfer", "end_to_end", "unspecified"].includes(row.redemption?.stage) ?
+        "Redemption timing" : "Published processing", minimum: "Redemption minimum" };
+    // Numeric coverage is diagnostic only; listing uses the five visible benefits.
     const comparable = { welcome: Boolean(signup || purchase), daily: row.sortValues.daily !== null,
       redemption: row.sortValues.redemption !== null, cash: row.sortValues.cash !== null };
     row.knownAttributeCount = Object.values(comparable).filter(Boolean).length;
     row.missingAttributes = Object.keys(comparable).filter(key => !comparable[key]);
-    row.homepageEligible = row.productMode === "sweepstakes" && row.knownAttributeCount >= 2;
+    const benefits = BENEFIT_KEYS.filter(key => row[key]);
+    row.benefitCount = benefits.length;
+    row.missingBenefits = BENEFIT_KEYS.filter(key => !row[key]);
+    row.homepageEligible = row.benefitCount >= 2;
     return row;
   });
   const ordered = orderToplist(rows);
   ordered.forEach((row, index) => { row.position = index + 1; });
   const homepageRows = ordered.filter(row => row.homepageEligible).map((row, index) => ({ ...row, position: index + 1 }));
-  return { version: "player-first-3", attributeCount: 4, defaultSort: "welcome",
+  return { version: "useful-benefits-1", attributeCount: 4, benefitAreaCount: 5, defaultSort: "welcome",
     lastCheckedAt: numeric?.lastAttemptedAt || null, rows: ordered, homepageRows,
     sorts: Object.entries(SORTS).map(([key, sort]) => ({ key, ...sort,
       available: homepageRows.some(row => Number.isFinite(row.sortValues[key])) })),

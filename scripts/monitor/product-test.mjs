@@ -41,11 +41,12 @@ test("homepage admits two categories, preserves full roster and defaults to free
   assert.deepEqual(orderToplist(orderToplist(model.toplist.homepageRows, "cash")).map(row => row.slug), ["big", "small", "paid"]);
   assert.equal(model.toplist.sorts.find(sort => sort.key === "daily").available, false);
 });
-test("signup and purchase are one admission category; ranking ties never use coverage", () => {
+test("signup and purchase are separate useful benefits; ranking ties never use coverage", () => {
   const model = build([operator("b", [signup(3), paid]), operator("a", [signup(3), cash(50)])]);
   assert.equal(model.toplist.rows.find(row => row.slug === "b").knownAttributeCount, 1);
   assert.deepEqual(model.toplist.rows.map(row => row.slug), ["a", "b"]);
-  assert.deepEqual(model.toplist.homepageRows.map(row => row.slug), ["a"]);
+  assert.deepEqual(model.toplist.homepageRows.map(row => row.slug), ["a", "b"]);
+  assert.equal(model.toplist.rows.find(row => row.slug === "b").benefitCount, 2);
 });
 test("reviewed sweepstakes registry modes allow admission only with two categories", () => {
   const registry = JSON.parse(readFileSync("src/_data/operators.json"));
@@ -70,6 +71,42 @@ test("descriptive rewards remain useful without inventing daily SC", () => {
     const refreshed = build([operator("a", [signup(1), cash(10), { ...daily, conditions: [condition] }])]);
     assert.equal(refreshed.toplist.homepageRows[0].daily.label, "Increasing daily reward");
     assert.equal(refreshed.toplist.homepageRows[0].sortValues.daily, null);
+  }
+});
+test("entertainment credits and descriptive purchase benefits qualify without numeric conversion", () => {
+  const gold = { ...signup(null), goldCoins: 7500 };
+  const daily = { ...base, id: "daily-gold", recordType: "offers", kind: "recurring_daily",
+    immediateSc: null, totalSc: null, purchaseRequired: false, name: "Daily Gold Coins" };
+  const credits = { ...paid, immediateSc: null, totalSc: null, priceUsd: 9.99,
+    name: "200 spins welcome package", conditions: ["Purchase required; no SC amount is stated."] };
+  const result = build([{ ...operator("gold", [gold, daily]), productMode: "entertainment_only" },
+    operator("spins", [credits, cash(50)])]);
+  assert.equal(result.toplist.homepageRows.length, 2);
+  const goldRow = result.toplist.rows.find(row => row.slug === "gold");
+  assert.equal(goldRow.signup.label, "7,500 Gold Coins");
+  assert.deepEqual(goldRow.rewardTypes, ["Entertainment credits"]);
+  assert.ok(Object.values(goldRow.sortValues).every(value => value === null));
+  const spins = result.toplist.rows.find(row => row.slug === "spins");
+  assert.equal(spins.purchase.label, "200 spins for $9.99");
+  assert.equal(spins.sortValues.purchase, null);
+  assert.ok(comparisonCsv(result).includes("200 spins for $9.99"));
+});
+test("cash and gift thresholds count once, and general minimums never become cash-sort values", () => {
+  const gift = { ...cash(20), id: "gift", method: "gift_card" };
+  assert.equal(build([operator("minimums", [cash(50), gift])]).toplist.homepageRows.length, 0);
+  const result = build([operator("a", [signup(1), { ...cash(50), method: "general" }])]);
+  assert.equal(result.toplist.homepageRows.length, 1);
+  assert.equal(result.toplist.homepageRows[0].minimum.label, "50 SC");
+  assert.equal(result.toplist.homepageRows[0].sortValues.cash, null);
+});
+test("generic offer names do not admit empty operators; unfamiliar denominations stay descriptive", () => {
+  const vague = { ...signup(null), name: "Great welcome offer" };
+  assert.equal(build([operator("a", [vague, cash(50)])]).toplist.homepageRows.length, 0);
+  for (const name of ["1,000 FC welcome", "50 reward points"]) {
+    const result = build([operator("a", [{ ...vague, name }, cash(50)])]).toplist.rows[0];
+    assert.equal(result.homepageEligible, true);
+    assert.equal(result.sortValues.welcome, null);
+    assert.ok(!result.signup.label.includes(" SC"));
   }
 });
 test("signup ranking uses the registration step, not the total of optional tasks", () => {

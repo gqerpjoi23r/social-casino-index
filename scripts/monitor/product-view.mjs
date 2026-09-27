@@ -15,14 +15,16 @@ export function attachProductViews(operators, numeric, toplist, latestRecords, n
     operator.product = {
       signup: row.signup, purchase: row.purchase, daily: row.daily, redemption: row.redemption,
       cash: row.cash, gift: operator.metrics.gift || null,
+      minimum: row.minimum, minima: row.minima, rewardTypes: row.rewardTypes,
+      labels: row.labels, benefitCount: row.benefitCount,
       lastCheckedAt: snapshot.lastAttempt || null,
       sources: snapshot.coverage || [],
       methods: [...new Set(facts.filter(record => ["redemption_time", "redemption_minimum"].includes(record.field) &&
         !isRequestFrequency(record)).map(record => methodNames[record.method]).filter(Boolean))],
       verification: verification.map(record => evidence(record, record.summary, "", snapshot)),
       policies: facts.filter(record => ["playthrough", "redemption_cap"].includes(record.field) ||
-        record.field === "redemption_time" && redemptionTime(snapshot, [record])).map(record => {
-        if (record.field === "redemption_time") return { field: record.field, ...redemptionTime(snapshot, [record]) };
+        record.field === "redemption_time" && redemptionTime(snapshot, [record], { display: true })).map(record => {
+        if (record.field === "redemption_time") return { field: record.field, ...redemptionTime(snapshot, [record], { display: true }) };
         const prefix = { up_to: "Up to ", at_least: "At least ", greater_than: "Over ", typical: "Typically " }[record.comparison] || "";
         return { field: record.field, ...evidence(record,
           `${prefix}${number(record.value)}${record.upperValue != null ? `-${number(record.upperValue)}` : ""} ${record.unit.replaceAll("_", " ")}`,
@@ -34,8 +36,9 @@ export function attachProductViews(operators, numeric, toplist, latestRecords, n
 
 export function comparisonCsv(model) {
   const columns = ["operator", "attribute", "label", "note", "source_url", "observed_at", "status", "record_id", "conditions"];
-  const rows = model.operators.flatMap(operator => ["signup", "purchase", "daily", "redemption", "cash", "gift"].flatMap(key => {
+  const rows = model.operators.flatMap(operator => ["signup", "purchase", "daily", "redemption", "cash", "gift", "minimum"].flatMap(key => {
     const value = operator.product[key];
+    if (key === "minimum" && [operator.product.cash, operator.product.gift].some(item => item?.recordId === value?.recordId)) return [];
     return value ? [[operator.name, key, value.label, value.note || "", value.sourceUrl,
       value.observedAt, value.status, value.recordId, (value.conditions || []).join(" | ")]] : [];
   }));

@@ -1,4 +1,5 @@
 import test from "node:test";
+import { evidenceNumbers } from "./number-evidence.mjs";
 import assert from "node:assert/strict";
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -258,7 +259,45 @@ test("explicit million amounts are grounded without inventing arithmetic", () =>
   data.offers[0].goldCoins = 1500000;
   assert.equal(checkExtraction(data, input).accepted.offers.length, 1);
   data.offers[0].goldCoins = 1500001;
-  assert.equal(checkExtraction(data, input).rejected[0].reason, "number_not_in_quote");
+  const recovered = checkExtraction(data, input);
+  assert.equal(recovered.accepted.offers[0].goldCoins, null);
+  assert.equal(recovered.accepted.offers[0].immediateSc, 30);
+});
+test("written numbers support grounding, not arithmetic or combined independent numbers", () => {
+  for (const [text, value] of [["five SC", 5], ["twenty-one SC", 21],
+    ["one hundred and fifty SC", 150], ["two thousand five hundred SC", 2500],
+    ["one million two hundred thousand GC", 1200000], ["1.5 million Gold Coins", 1500000],
+    ["once", 1], ["twice", 2]]) {
+    assert.ok(evidenceNumbers(text).includes(value), text);
+  }
+  assert.ok(!evidenceNumbers("one and two rewards").includes(3));
+  assert.ok(!evidenceNumbers("five to ten SC").includes(15));
+  const input = pages("The minimum redemption is five SC for cash prizes.");
+  const data = deterministicExtract(pages("The minimum redemption is 5 SC for cash prizes."));
+  data.facts[0].quote = input[0].text;
+  assert.equal(checkExtraction(data, input).accepted.facts[0].value, 5);
+});
+test("partial recovery removes unsupported optional amounts from labels and conditions too", () => {
+  const input = pages("Buy this package for $9.99 and receive 30 SC. New players only.");
+  const data = deterministicExtract(input);
+  Object.assign(data.offers[0], { totalSc: 300, goldCoins: 999999,
+    name: "300 SC welcome", conditions: ["New players receive 300 SC and 999999 Gold Coins."] });
+  const result = checkExtraction(data, input);
+  assert.equal(result.rejected.length, 0);
+  assert.equal(result.accepted.offers[0].immediateSc, 30);
+  assert.equal(result.accepted.offers[0].totalSc, null);
+  assert.deepEqual(result.accepted.offers[0].conditions, [input[0].text]);
+  assert.equal(result.accepted.offers[0].name, "Published offer");
+});
+test("an unfamiliar coin amount never enters SC fields just because its number is grounded", () => {
+  const input = pages("Sign up free to receive 100 FC welcome credits.");
+  const data = deterministicExtract(pages("Buy this package for $10 and receive 100 SC."));
+  Object.assign(data.offers[0], { quote: input[0].text, name: "100 FC welcome credits",
+    kind: "signup", priceUsd: null, purchaseRequired: false, conditions: [input[0].text] });
+  const offer = checkExtraction(data, input).accepted.offers[0];
+  assert.equal(offer.immediateSc, null);
+  assert.equal(offer.totalSc, null);
+  assert.ok(offer.conditions[0].includes("100 FC"));
 });
 test("abbreviated coin quantities do not discard a complete priced SC offer", () => {
   for (const [quantity, amount] of [["10M", 10000000], ["120K", 120000], ["1.5M", 1500000]]) {
@@ -270,7 +309,9 @@ test("abbreviated coin quantities do not discard a complete priced SC offer", ()
     assert.equal(result.accepted.offers[0].priceUsd, 10);
     assert.equal(result.accepted.offers[0].immediateSc, 30);
     data.offers[0].goldCoins = amount + 1;
-    assert.equal(checkExtraction(data, input).rejected[0].reason, "number_not_in_quote");
+    const recovered = checkExtraction(data, input);
+    assert.equal(recovered.accepted.offers[0].goldCoins, null);
+    assert.equal(recovered.accepted.offers[0].immediateSc, 30);
   }
 });
 test("months and strict ages cannot pass as days and inclusive ages", () => {

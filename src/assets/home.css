@@ -115,3 +115,5 @@ html:not(.js) .home-state { display: none; }
   .home-page .home-promise { font-size: 16px; }
   .home-page .toplist-sort select { font-size: 14px; }
 }
+.toplist-reward-types { display: block; margin-top: 4px; font: 400 11px/1.4 var(--font-body, sans-serif); color: var(--home-muted, #a6b5af); letter-spacing: 0; }
+.toplist-metric dd > .toplist-note + .toplist-value { margin-top: 6px; }

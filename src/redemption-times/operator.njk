@@ -8,7 +8,7 @@ layout: base.njk
 tags: ["operatorPages"]
 ogType: "article"
 eleventyComputed:
-  title: "{{ operator.name }} Free SC, Offers and Redemption Requirements"
+  title: "{{ operator.name }} Offers and Redemption Requirements"
   description: "{{ operator.name }} signup SC, first-purchase offer, redemption minimums and playthrough, with source-linked conditions and published payout terms."
   jsonld:
     "@context": "https://schema.org"
@@ -43,22 +43,30 @@ eleventyComputed:
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/redemption-times/">Redemption times</a></li><li><span aria-current="page">{{ operator.name }}</span></li></ol></nav>
   <p class="eyebrow">Operator record · Published benefits</p>
   <h1 class="page-title">{{ operator.name }} Offers and Redemption Requirements</h1>
-  <p class="lede">{% if current.productMode == "entertainment_only" %}Entertainment-only Gold Coin play. These coins are not included in the cash-benefit benchmarks.{% else %}Published offers and redemption requirements, with the source and observation date attached to each figure.{% endif %}</p>
+  <p class="lede">Published offers and redemption requirements, with sources and observation dates. Gold Coins are entertainment credits, not redeemable Sweeps Coins.</p>
+  {% if current.product.rewardTypes.length %}<p class="text-sm">{{ current.product.rewardTypes | join(" · ") | escape }}</p>{% endif %}
   {% if current.rank %}<p>Published-offer rank <strong>{{ current.rank }}</strong> · Score {{ current.score | round(1) }}/100. <a href="/methodology/#published-offers">How we compare</a>.</p>{% endif %}
   <div class="benefit-detail-grid">
-  {% for key, label in { signup: "Immediate free signup", welcome: "Advertised welcome reward", staged: "Staged free welcome reward", purchase: "Purchase package", daily: "Recurring daily reward", cash: "Cash redemption minimum", general: "General redemption minimum", gift: "Gift-card minimum" } %}
-    {% if current.metrics[key] %}<section data-metric="{{ key }}"><h2>{{ label }}</h2>{{ evidence(current.metrics[key]) }}</section>{% endif %}
+  {% for key, label in current.product.labels %}
+    {% if current.product[key] %}<section data-product-metric="{{ key }}"><h2>{{ label }}</h2>
+      {% if key == "minimum" %}{% for value in current.product.minima %}{{ evidence(value, true) }}{% endfor %}
+      {% else %}{{ evidence(current.product[key], true) }}{% endif %}
+    </section>{% endif %}
+  {% endfor %}
+  {% for key, label in { welcome: "Additional welcome offer", staged: "Staged welcome offer" } %}
+    {% if current.metrics[key] and current.metrics[key].recordId != current.product.signup.recordId and (key != "staged" or current.metrics[key].recordId != current.metrics.welcome.recordId) %}
+      <section data-metric="{{ key }}"><h2>{{ label }}</h2>{{ evidence(current.metrics[key]) }}</section>
+    {% endif %}
   {% endfor %}
   </div>
-  {% if not current.benefitCount %}<p>{{ current.status }}. Missing collected values do not establish that an operator lacks an offer.</p>{% endif %}
+  {% if not current.product.benefitCount %}<p>Offer evidence is being checked. Missing collected values do not establish that an operator lacks an offer.</p>{% endif %}
   <nav class="benefit-nav" aria-label="Bonus benchmarks">{% for benchmark in benchmarks.benchmarks %}{% if current.metrics[benchmark.id] %}<a href="{{ benchmark.url }}">Compare {{ benchmark.title | lower }}</a>{% endif %}{% endfor %}</nav>
   <section id="redemption-answer">
     <h2>{{ operator.name }} redemption requirements</h2>
     {% if current.metrics.cash %}<p>Published cash redemption minimum: <strong>{{ current.metrics.cash.label }}</strong>.</p>{% elif current.metrics.general %}<p>Published general redemption minimum: <strong>{{ current.metrics.general.label }}</strong>. A cash-specific threshold is not established by this observation.</p>{% else %}<p>A cash redemption minimum has not been established in the collected evidence.</p>{% endif %}
     {% for policy in current.product.policies %}
-      <section data-policy-record="{{ policy.recordId }}"><h3>{{ policy.field | replace("_", " ") | capitalize }}</h3>{{ evidence(policy, true) }}</section>
+      {% if policy.recordId != current.product.redemption.recordId %}<section data-policy-record="{{ policy.recordId }}"><h3>{{ policy.field | replace("_", " ") | capitalize }}</h3>{{ evidence(policy, true) }}</section>{% endif %}
     {% endfor %}
-    {% if current.product.daily and not current.metrics.daily %}<section><h3>Daily reward</h3>{{ evidence(current.product.daily, true) }}</section>{% endif %}
     {% if current.product.verification.length %}<h3>Identity checks</h3>{% for requirement in current.product.verification %}{{ evidence(requirement, true) }}{% endfor %}{% endif %}
   </section>
   <h2>Funded test status</h2>

@@ -2,8 +2,9 @@ import { buildBenchmarks, latestRecords } from "./benchmarks.mjs";
 
 export function comparisonCoverage(numeric, registry, evaluation = null) {
   const { toplist } = buildBenchmarks(numeric, registry);
-  const operators = toplist.rows.filter(row => row.productMode !== "entertainment_only").map(row => ({
+  const operators = toplist.rows.map(row => ({
     slug: row.slug, comparable: row.knownAttributeCount, total: toplist.attributeCount,
+    benefits: row.benefitCount, missingBenefits: row.missingBenefits, homepageEligible: row.homepageEligible,
     missing: row.missingAttributes,
     diagnostics: row.missingAttributes.map(field => {
       const snapshot = numeric.operators.find(operator => operator.slug === row.slug);

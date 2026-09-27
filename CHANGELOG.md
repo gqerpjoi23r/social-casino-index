@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-27 - List useful benefits without changing numeric sorts
+- Separate useful-benefit admission from numeric comparison. Require two of five displayed areas; allow concrete text, gift minima and clearly labelled entertainment credits without converting them to SC or changing any of the five sorts.
+- Keep one collector and shared evidence model. Support written-number grounding and partial optional-amount recovery, remove duplicate profile sections, and expose operator-level benefit gaps.
+- Add six curated operator source sets and Jackpota promotions. Do not import screening figures. Saved production data yields 12 homepage entries instead of eight; fresh normal-run results will be recorded in the useful-benefit release report.
+
 ## 2026-09-27 - Verify targeted expansion in production
 - Fresh normal run `36296192801` deployed Modo and Zula with independently extracted values: 50-SC cash minima for both, Modo processing up to 24 hours, and Zula initial signup of 2 SC.
 - Roster grows from 13 to 15; cash coverage rises from seven to nine and processing from five to six. Homepage remains eight because YAY loses signup to a quote-validation failure and Lucky Bunny's immediate package delivery remains unestablished. These are not findings of nondisclosure.

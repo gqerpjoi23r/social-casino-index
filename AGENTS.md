@@ -39,12 +39,15 @@ A green release means content schema, sitemap and SEO checks all pass.
 - A collection failure is not operator opacity. Retain dated evidence; only
   source-backed absence reviews can reduce a disclosure component.
 - Product promise: help visitors compare actual deals and terms, not our scraper
-  coverage. Every homepage entry needs two comparable categories out of offers,
-  recurring daily SC, published processing, and cash minimum. Free signup and
-  paid packages count once together for admission, but are NEVER mixed in sorting.
+  coverage. Every homepage entry needs two supported useful benefit areas out of
+  signup, purchase, daily reward, redemption timing, and redemption minimum.
+  Descriptive benefits count. Cash/gift minima count once together. Classify the
+  benefit, not the whole operator: entertainment credits can be listed but NEVER
+  converted to SC or ranked as redeemable value. Generic praise does not count.
 - Default to highest immediate no-purchase signup SC. Offer independent purchase
   value, daily SC, processing and cash-minimum sorts; unknowns last, ties by name.
-  Completeness is only admission, never a customer-facing quality ranking.
+  Useful-benefit admission is separate from numeric sorting; never use
+  completeness as a customer-facing quality ranking.
 - All current comparisons and exports use the shared evidence model. Registry
   identity, affiliate, eligibility and funded-test metadata stay separate.
   Historical download editions are immutable, not current-data fallbacks.

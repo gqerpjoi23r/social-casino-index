@@ -23,8 +23,11 @@ export function candidateReport(extracted, registry, manifest, evaluation) {
       const snapshot = numeric.operators.find(operator => operator.slug === row.slug);
       const configured = registry.find(operator => operator.slug === row.slug)?.sources || [];
       const sources = manifest.sources.filter(source => source.operatorId === row.slug);
-      return { slug: row.slug, productMode: row.productMode, comparable: row.knownAttributeCount,
+      return { slug: row.slug, name: row.name, productMode: row.productMode, comparable: row.knownAttributeCount,
         homepageEligible: row.homepageEligible,
+        benefitCount: row.benefitCount, missingBenefits: row.missingBenefits,
+        benefits: Object.entries(row.labels).map(([key, label]) => ({ key, label,
+          evidence: key === "minimum" ? row.minima : row[key] ? [row[key]] : [] })),
         fields: fields.map(field => {
           const records = latestRecords(snapshot.records, record => relevant(record, field));
           const attempts = sources.filter(source => sourceRelevant(source, field));
@@ -56,11 +59,13 @@ export function candidateReport(extracted, registry, manifest, evaluation) {
 }
 
 export function candidateMarkdown(report) {
-  return ["## Candidate field decisions", "", report.note, "",
-    "| Operator | Category | Value | Outcome |",
-    "| --- | --- | --- | --- |",
-    ...report.operators.flatMap(operator => operator.fields.map(field =>
-      `| ${operator.slug} | ${field.field} | ${field.value ?? "Not qualified"} | ${field.reasons.join("; ")} |`)),
+  const display = (operator, key) => (operator.benefits.find(benefit => benefit.key === key)?.evidence || [])
+    .map(value => `${value.label} (${value.note || "See conditions"})`.replaceAll("|", "/")).join("; ") || "Not established";
+  return ["## Candidate benefit decisions", "", report.note, "",
+    "| Operator | Welcome | Purchase | Daily | Timing | Minimum | Listing |",
+    "| --- | --- | --- | --- | --- | --- | --- |",
+    ...report.operators.map(operator =>
+      `| ${operator.name || operator.slug} | ${["signup", "purchase", "daily", "redemption", "minimum"].map(key => display(operator, key)).join(" | ")} | ${operator.homepageEligible ? "Two useful areas established" : `Only ${operator.benefitCount} useful area(s) established`} |`),
     "", "See candidate-decisions.json for source URLs, capture statuses, extracted values and rejection reasons.",
     "Not found in checked sources is not a finding of operator nondisclosure.", ""].join("\n");
 }

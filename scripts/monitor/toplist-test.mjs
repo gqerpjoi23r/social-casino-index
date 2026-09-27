@@ -57,7 +57,8 @@ test("retained post-approval windows cannot be labelled request to receipt", () 
     const result = row([record({ recordType: "facts", field: "redemption_time", value: 5,
       comparison: "up_to", unit: "business_days", stage: "end_to_end", method: "cash",
       freshness: "not_reconfirmed", basis })]);
-    assert.equal(result.redemption, null);
+    assert.equal(result.redemption.note, "Delivery after approval; cash");
+    assert.equal(result.redemption.status, "retained");
     assert.equal(result.sortValues.redemption, null);
   }
   const complete = row([record({ recordType: "facts", field: "redemption_time", value: 5,
@@ -121,10 +122,16 @@ test("redemption times retain stage, units and standard tier; exclude misleading
   assert.equal(row([timing]).redemption.label, "Up to 3 business days");
   assert.equal(row([timing]).redemption.note, "Processing; standard tier");
   for (const change of [
-    { stage: "unspecified", basis: "Unspecified redemption window" }, { method: "virtual_card" }, { method: "gift_card" },
+    { stage: "unspecified", basis: "Unspecified redemption window" }, { method: "virtual_card" },
+    { method: "gift_card" }, { unit: "months" },
+  ]) {
+    assert.ok(row([{ ...timing, ...change }]).redemption);
+    assert.equal(row([{ ...timing, ...change }]).sortValues.redemption, null);
+  }
+  for (const change of [
     { basis: "VIP4 processing time" }, { basis: "Verification process after receiving documents" },
     { basis: "Time to provide requested information before automatically declined" },
-    { unit: "months" }, { comparison: "range", upperValue: null },
+    { comparison: "range", upperValue: null },
   ]) assert.equal(row([{ ...timing, ...change }]).redemption, null);
 });
 test("explicit processing basis restores unclassified stages without substituting transfer time", () => {
@@ -135,7 +142,8 @@ test("explicit processing basis restores unclassified stages without substitutin
     basis: "Skrill delivery time.", conditions: ["Up to 24 business hours."] };
   assert.equal(row([base, transfer]).redemption.label, "Up to 3 business days");
   assert.equal(row([base, transfer]).redemption.note, "Processing; Rising-Silver tiers");
-  assert.equal(row([transfer]).redemption, null);
+  assert.match(row([transfer]).redemption.note, /Delivery after approval/);
+  assert.equal(row([transfer]).sortValues.redemption, null);
   const cash = { ...base, method: "cash", comparison: "range", upperValue: 5,
     basis: "Cash prize redemption processing timeline." };
   const generic = { ...cash, id: "generic", method: "general", value: 10, upperValue: null,

@@ -37,7 +37,7 @@ candidate's seed checked before discovered pages. They use the same pipeline
 and private archive, but a separate baseline scope. They cannot publish,
 advance production state or deploy. Archived runs preserve their exact candidate
 roster. Admission still requires human confirmation of the sweepstakes product
-and two supported comparison categories. No accounts or purchases are needed.
+and two supported useful benefit areas. No accounts or purchases are needed.
 
 The source registry is `src/_data/operators.json`; URL overrides are in
 `data/monitor/config.json`. Bounded official-link discovery extends those seeds;
@@ -157,10 +157,26 @@ The publication summary reports per-operator numeric comparison coverage.
 `comparison-coverage.json` records unresolved fields in the private run directory.
 An incomplete report emits a workflow warning: readable pages or valid extraction
 alone do not mean the homepage contains comparable values. Homepage admission
-requires two of four categories (offers, daily SC, processing, cash). Signup and
-paid packages are one admission category but separate sorts. The default sort
+requires two of five benefit areas (signup, purchase, daily reward, timing,
+redemption minimum). Concrete descriptions count; cash and gift thresholds count
+once together. Benefit-level labels replace operator-wide exclusion. The default sort
 is immediate free signup SC, descending; unknowns last and ties alphabetical.
 Daily descriptions do not become numeric daily coverage. Hidden homepage rows
 remain monitored and available to relevant specialist comparisons.
 Non-partners link to their evidence profiles instead of an invented commercial
 visit route. Affiliate status does not affect admission or order.
+
+## Product principles and collector
+
+Show useful supported information, even when it cannot support numeric sorting.
+Keep the five sorts, full prices, currencies, timing stages and source dates.
+Do not treat missing capture or rejected extraction as absent operator information.
+Written numbers can ground amounts without changing original quotes. If an
+optional total or GC amount is unsupported, retain an independently supported
+SC allocation and remove the unsupported number from its explanatory text too.
+
+One pipeline: selected official pages/PDFs -> direct fetch with existing
+Firecrawl fallback -> archived text -> one structured extraction -> source
+checks -> shared display and numeric-sort views. No new services, whole-site
+crawler, parallel value store or request budgets. Prefer three to five useful
+source pages; use rules PDFs only where they fill an important gap.

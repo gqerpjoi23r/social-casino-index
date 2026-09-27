@@ -126,9 +126,11 @@ try {
   }
   for (const op of data.operators) {
     await page.goto(`${base}${op.url}`);
-    for (const [key, metric] of Object.entries(op.metrics)) {
-      if (!metric || ["purchase10", "purchase20"].includes(key)) continue;
-      assert.ok((await page.locator(`[data-metric="${key}"]`).innerText()).includes(metric.label), `${op.slug}/${key}`);
+    for (const key of Object.keys(op.product.labels)) {
+      const metrics = key === "minimum" ? op.product.minima : [op.product[key]].filter(Boolean);
+      for (const metric of metrics) {
+        assert.ok((await page.locator(`[data-product-metric="${key}"]`).innerText()).includes(metric.label), `${op.slug}/${key}`);
+      }
     }
   }
   const noJs = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
