@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-09-27 - Make published comparisons easier to scan and cite
+- Rebuild the toplist as four labelled facts, compact default rows for non-numeric signup offers, independent source/code controls, and full-row profile links. Preserve admission, five numeric sorts, partner destinations and state gates.
+- Broaden existing operator URLs with sourced summaries, additional offers, method-specific requirements, FAQs and offer history. Lead benchmarks with useful answers instead of funded-test limitations.
+- Exclude explicitly expired calendar-date promotions through the shared evidence projection; retain their history. Separate structured value changes from condition-text churn and suppress untrusted old change badges.
+- Use supported redemption methods for prize badges and add Rolling Riches' official favicon. Keep missing prices, unspecified prize methods and FC-to-SC equivalence unconfirmed; see the combined-release report.
+
 ## 2026-09-27 - Verify useful-benefit expansion and correct reviewed claims
 - Fresh run `36300901481` lists 19 of 21 operators, including all six additions. Stake.us has one useful area and SweetSweeps has none; failed retrieval is not a nondisclosure finding.
 - Keep High 5 listed with four benefit areas. Hold its unresolved 55-SC cross-promotion out of comparisons and correct its method-specific delivery windows to after approval, using the existing private review reference and original capture dates.

@@ -5,6 +5,7 @@ import { buildBenchmarks } from "./benchmarks.mjs";
 import { stampValueHistory } from "./value-history.mjs";
 import { orderToplist } from "../../src/assets/toplist-order.js";
 import { comparisonCoverage } from "./coverage.mjs";
+import { statedOfferEnd, expiryTime } from "./offer-expiry.mjs";
 
 const now = Date.parse("2026-09-22T12:00:00Z");
 const record = change => ({ id: "record", sourceId: "home", sourceUrl: "https://example.com/",
@@ -14,6 +15,61 @@ const operator = (slug, records, change = {}) => ({ slug, name: slug, productMod
   records, ...change });
 const model = operators => buildBenchmarks({ operators }, [], now);
 const row = records => model([operator("a", records)]).toplist.rows[0];
+
+test("explicit calendar expiry removes old promotions without removing the operator", () => {
+  assert.equal(statedOfferEnd("Promotion Dates: July 1-27, 2026."), "2026-07-27");
+  assert.equal(statedOfferEnd("Offer Period: April 22 \u2013 April 30, 2026."), "2026-04-30");
+  assert.equal(statedOfferEnd("Offer ends February 30, 2026."), null);
+  assert.equal(statedOfferEnd("Article published July 27, 2026."), null);
+  assert.equal(statedOfferEnd("Expires July 27."), null);
+  assert.equal(expiryTime("2026-09-22"), Date.parse("2026-09-23T12:00:00Z"));
+  const result = model([operator("a", [record({}), record({ id: "expired", sourceId: "promo",
+    kind: "first_purchase", immediateSc: 25, totalSc: 25, priceUsd: 9.99, promoCode: "JULY",
+    conditions: ["Promotion Dates: July 1-27, 2026."] })])]);
+  assert.equal(result.toplist.rows[0].purchase, null);
+  assert.equal(result.toplist.rows[0].signup.label, "2 SC free");
+  assert.equal(result.operators[0].product.expiredOffers.length, 1);
+});
+
+test("presentation keeps useful descriptions and excludes them from numeric signup grouping", () => {
+  const result = row([record({ immediateSc: null, totalSc: null, goldCoins: 1000 }),
+    record({ sourceId: "daily", kind: "recurring_daily", immediateSc: null, totalSc: null })]);
+  assert.equal(result.presentation.compact, true);
+  assert.match(result.presentation.summary, /Gold Coins/);
+  assert.equal(result.homepageEligible, true);
+  assert.equal(result.presentation.fields.length, 4);
+  assert.equal(result.sortValues.welcome, null);
+});
+
+test("cash and lower gift minima are presented separately and published methods supply badges", () => {
+  const result = row([
+    record({ recordType: "facts", field: "redemption_minimum", id: "cash", value: 100, unit: "SC", method: "cash", comparison: "exact" }),
+    record({ recordType: "facts", field: "redemption_minimum", id: "gift", value: 10, unit: "SC", method: "gift_card", comparison: "exact" }),
+  ]);
+  const minimum = result.presentation.fields.find(field => field.key === "minimum");
+  assert.equal(minimum.value.label, "100 SC");
+  assert.equal(minimum.gift.label, "10 SC");
+  assert.deepEqual(result.rewardTypes, ["Cash prizes", "Gift cards"]);
+  const bank = row([record({ recordType: "facts", field: "redemption_time", value: 3,
+    unit: "business_days", stage: "transfer", method: "bank", comparison: "up_to" })]);
+  assert.deepEqual(bank.rewardTypes, ["Cash prizes"]);
+  assert.equal(bank.cash, null);
+});
+
+test("value badges ignore prose churn and untrusted historical change dates", () => {
+  const previous = stampValueHistory([record({ conditions: ["One reward per person."] })]);
+  const same = stampValueHistory([record({ id: "new", conditions: ["Each person can claim once."],
+    capturedAt: "2026-09-22T06:00:00Z" })], previous);
+  assert.equal(same[0].valueChangedAt, null);
+  const changed = stampValueHistory([{ ...same[0], immediateSc: 3 }], same);
+  assert.equal(changed[0].valueChangedAt, "2026-09-22T06:00:00Z");
+  assert.equal(row(changed).presentation.terms[0].recentChangeAt, changed[0].valueChangedAt);
+  assert.equal(row([record({ lastChangedAt: "2026-09-22T06:00:00Z" })]).presentation.terms[0].recentChangeAt, null);
+  assert.equal(row([record({ valueChangedAt: "2026-09-01T06:00:00Z" })]).presentation.terms[0].recentChangeAt, null);
+  const priced = stampValueHistory([record({ kind: "first_purchase", priceUsd: 20 })]);
+  const repriced = stampValueHistory([record({ kind: "first_purchase", priceUsd: 10, capturedAt: "2026-09-22T06:00:00Z" })], priced);
+  assert.equal(repriced[0].valueChangedAt, "2026-09-22T06:00:00Z");
+});
 
 test("inconsistent first-claim amounts keep the useful daily description instead of picking a number", () => {
   const result = row([1, 0.2].map((value, index) => record({

@@ -4,6 +4,7 @@ import { isRequestFrequency, qualifyRedemptionTiming } from "./redemption-semant
 import { dailyQualifierText } from "./daily-semantics.mjs";
 import { recoverOfferSemantics } from "./offer-semantics.mjs";
 import { evidenceNumbers } from "./number-evidence.mjs";
+import { statedOfferEnd } from "./offer-expiry.mjs";
 
 const number = text => Number(text.replace(/,/g, ""));
 const decimal = "(\\d[\\d,]*(?:\\.\\d+)?)";
@@ -93,7 +94,7 @@ export function checkExtraction(data, pages) {
     }
     if (kind === "offers" && item.immediateSc !== null && item.totalSc !== null && item.immediateSc > item.totalSc) reason = "immediate_exceeds_total";
     if (kind === "offers" && item.priceUsd === 0 && item.purchaseRequired === true) reason = "purchase_with_zero_price";
-    if (kind === "offers" && item.expiresAt !== null &&
+    if (kind === "offers" && item.expiresAt !== null && item.expiresAt !== statedOfferEnd(item.quote) &&
       (!/^\d{4}-\d{2}-\d{2}T.+(?:Z|[+-]\d{2}:\d{2})$/.test(item.expiresAt) ||
         !Number.isFinite(Date.parse(item.expiresAt)) || !item.quote.includes(item.expiresAt))) reason = "unsupported_offer_expiry";
     if (kind === "offers" && ["withdrawn", "expired"].includes(item.offerStatus) &&

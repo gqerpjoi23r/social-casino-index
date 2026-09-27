@@ -15,9 +15,12 @@ if (list && select) {
     orderToplist(rows, key).forEach((row, index) => {
       const element = elements.get(row.slug);
       element.querySelector(".toplist-position").textContent = index + 1;
+      element.querySelector(".toplist-position").setAttribute("aria-label", `Position ${index + 1}`);
+      element.value = index + 1;
       list.append(element);
     });
     list.dataset.activeSort = key;
+    document.querySelector(".toplist").dataset.activeSort = key;
     document.querySelector("#toplist-sort-status").textContent = `Sorted by ${SORTS[key].label}.`;
   });
   select.closest("label").hidden = false;

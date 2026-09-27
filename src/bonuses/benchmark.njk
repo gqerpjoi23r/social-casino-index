@@ -7,7 +7,7 @@ pagination:
 layout: base.njk
 permalink: "/bonuses/{{ benchmark.slug }}/"
 publishedAt: "2026-09-21"
-updatedAt: "2026-09-23"
+updatedAt: "2026-09-27"
 eleventyComputed:
   title: "{{ benchmark.title }}"
   description: "{{ benchmark.question }} Compare published amounts, conditions and dated operator sources."
@@ -22,7 +22,7 @@ eleventyComputed:
 {% if benchmark.id == "cash" %}{% set answers = benchmarks | cashMinimumAnswers %}{% endif %}
 <main><article class="wrap">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/bonuses/">Bonus benchmarks</a></li><li aria-current="page">{{ benchmark.title }}</li></ol></nav>
-  <header class="benefit-intro"><h1>{{ benchmark.title }}</h1><p>{{ benchmark.explanation }}</p></header>
+  <header class="benefit-intro"><h1>{{ benchmark.title }}</h1></header>
   <h2 class="mt-6 text-xl">{{ benchmark.question }}</h2>
   {% if benchmark.id == "cash" %}
 {{ lowestAnswer(answers) }}
@@ -31,7 +31,8 @@ eleventyComputed:
   {% elif benchmark.rows.length %}
   <p class="benefit-answer">{% for row in benchmark.rows %}{% if row.rank == 1 %}<a href="{{ row.url }}">{{ row.name }}</a>: <strong>{{ row.label }}</strong>. {{ row.note }} {% endif %}{% endfor %}These are the leading published figures within this comparison.</p>
   {% endif %}
-  {% if signup %}{{ signupTable(benchmark, signup) }}{% else %}{{ benchmarkTable(benchmark, benchmark.id == "cash") }}{% endif %}
+  <p class="benefit-policy">{{ benchmark.explanation }}</p>
+  {% if signup %}{{ signupTable(benchmark, signup) }}{% else %}{{ benchmarkTable(benchmark, benchmark.id == "cash" or benchmark.id == "purchase") }}{% endif %}
   <p class="benefit-policy">Observed dates and conditions are attached to each offer. Published benefits, not tested payouts. <a href="/methodology/#published-offers">How we rank</a> · <a href="/updates/leaderboard.json">Benchmark data</a>.</p>
 {% if benchmark.id == "cash" %}{{ followupAnswers(answers) }}{% endif %}{% if signup %}{{ signupClaims(signup) }}{% endif %}
   <h2 class="mt-8 text-xl">Compare another benefit</h2>

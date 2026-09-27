@@ -19,4 +19,20 @@
   // A dismissed or obsolete state cookie must not leave the picker blank.
   const state = document.querySelector("[data-state-picker]");
   if (state && state.selectedIndex < 0) state.selectedIndex = 0;
+  document.querySelectorAll("[data-copy-code]").forEach(button => {
+    button.addEventListener("click", async () => {
+      const label = button.querySelector("span");
+      const status = button.closest(".toplist-footer").querySelector('[role="status"]');
+      try {
+        await navigator.clipboard.writeText(button.dataset.copyCode);
+        label.textContent = "Copied";
+        status.textContent = `Copied ${button.dataset.copyCode}`;
+        clearTimeout(button.copyTimer);
+        button.copyTimer = setTimeout(() => { label.textContent = button.dataset.copyCode; }, 1800);
+      } catch {
+        status.classList.remove("sr-only");
+        status.textContent = "Press and hold to copy";
+      }
+    });
+  });
 })();

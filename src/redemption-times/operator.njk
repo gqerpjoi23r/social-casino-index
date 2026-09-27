@@ -42,10 +42,10 @@ eleventyComputed:
 <main><article class="wrap py-10">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/redemption-times/">Redemption times</a></li><li><span aria-current="page">{{ operator.name }}</span></li></ol></nav>
   <p class="eyebrow">Operator record · Published benefits</p>
-  <h1 class="page-title">{{ operator.name }} Offers and Redemption Requirements</h1>
-  <p class="lede">Published offers and redemption requirements, with sources and observation dates. Gold Coins are entertainment credits, not redeemable Sweeps Coins.</p>
+  <h1 class="page-title">{{ operator.name }}</h1>
+  <p class="lede">{{ current.product.summary | escape }}</p>
+  <p class="benefit-policy">Operator-published terms, not measured payouts. Gold Coins are entertainment credits, not redeemable Sweeps Coins.</p>
   {% if current.product.rewardTypes.length %}<p class="text-sm">{{ current.product.rewardTypes | join(" · ") | escape }}</p>{% endif %}
-  {% if current.rank %}<p>Published-offer rank <strong>{{ current.rank }}</strong> · Score {{ current.score | round(1) }}/100. <a href="/methodology/#published-offers">How we compare</a>.</p>{% endif %}
   <div class="benefit-detail-grid">
   {% for key, label in current.product.labels %}
     {% if current.product[key] %}<section data-product-metric="{{ key }}"><h2>{{ label }}</h2>
@@ -53,21 +53,22 @@ eleventyComputed:
       {% else %}{{ evidence(current.product[key], true) }}{% endif %}
     </section>{% endif %}
   {% endfor %}
-  {% for key, label in { welcome: "Additional welcome offer", staged: "Staged welcome offer" } %}
-    {% if current.metrics[key] and current.metrics[key].recordId != current.product.signup.recordId and (key != "staged" or current.metrics[key].recordId != current.metrics.welcome.recordId) %}
-      <section data-metric="{{ key }}"><h2>{{ label }}</h2>{{ evidence(current.metrics[key]) }}</section>
-    {% endif %}
-  {% endfor %}
   </div>
+  {% if current.product.additionalOffers.length %}
+  <section id="additional-offers"><h2>More {{ operator.name }} offers</h2>
+    {% for offer in current.product.additionalOffers %}<section class="operator-offer"><h3>{{ offer.kind | replace("_", " ") | capitalize }}</h3>{{ evidence(offer, true) }}</section>{% endfor %}
+  </section>
+  {% endif %}
   {% if not current.product.benefitCount %}<p>Offer evidence is being checked. Missing collected values do not establish that an operator lacks an offer.</p>{% endif %}
   <nav class="benefit-nav" aria-label="Bonus benchmarks">{% for benchmark in benchmarks.benchmarks %}{% if current.metrics[benchmark.id] %}<a href="{{ benchmark.url }}">Compare {{ benchmark.title | lower }}</a>{% endif %}{% endfor %}</nav>
   <section id="redemption-answer">
-    <h2>{{ operator.name }} redemption requirements</h2>
-    {% if current.metrics.cash %}<p>Published cash redemption minimum: <strong>{{ current.metrics.cash.label }}</strong>.</p>{% elif current.metrics.general %}<p>Published general redemption minimum: <strong>{{ current.metrics.general.label }}</strong>. A cash-specific threshold is not established by this observation.</p>{% else %}<p>A cash redemption minimum has not been established in the collected evidence.</p>{% endif %}
+    <h2>Redemption methods and requirements</h2>
+    {% if current.product.methods.length %}<p>Published methods: {{ current.product.methods | join(", ") | escape }}.</p>{% endif %}
     {% for policy in current.product.policies %}
       {% if policy.recordId != current.product.redemption.recordId %}<section data-policy-record="{{ policy.recordId }}"><h3>{{ policy.field | replace("_", " ") | capitalize }}</h3>{{ evidence(policy, true) }}</section>{% endif %}
     {% endfor %}
     {% if current.product.verification.length %}<h3>Identity checks</h3>{% for requirement in current.product.verification %}{{ evidence(requirement, true) }}{% endfor %}{% endif %}
+    {% if current.product.fees.length %}<h3>Fees</h3>{% for fee in current.product.fees %}{{ evidence(fee, true) }}{% endfor %}{% endif %}
   </section>
   <h2>Funded test status</h2>
   <p>
@@ -98,7 +99,7 @@ eleventyComputed:
   <div class="cta-box" data-cta-operator="{{ operator.slug }}">
     <p class="cta-title">Check {{ operator.name }}</p>
     <p class="cta-msg">Confirm your state and the live offer before creating an account.</p>
-    <a class="cta-btn" href="/go/{{ operator.slug }}/">Visit {{ operator.name }} <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    <a class="cta-btn" href="/go/{{ operator.slug }}/" rel="sponsored noopener">Visit {{ operator.name }} <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
   </div>
   {% endif %}
   <h2 id="sources">Sources and verification</h2>
@@ -107,5 +108,16 @@ eleventyComputed:
   </p>
   <p class="text-sm text-base-content/60">The review date records the evidence check, not a guarantee that every field was verified. Some public pages were retrieved from a US location to resolve regional access blocks; this does not establish player eligibility. Blocked pages document an evidence gap and do not support numeric claims.</p>
   <ol class="sources">{% for source in current.product.sources %}<li id="source-{{ source.id }}"><a href="{{ source.url }}" rel="noopener">{{ source.url | replace("https://", "") }}</a>. <span class="accessed">Checked {{ source.checkedAt | readableDate }}. {{ source.status | replace("_", " ") }}.</span></li>{% endfor %}</ol>
+  {% if current.product.history.length or current.product.expiredOffers.length %}
+  <section id="change-history"><h2>Offer history</h2>
+    {% for change in current.product.history %}<p><time datetime="{{ change.at }}">{{ change.at | readableDate }}</time>: {{ change.field | replace("_", " ") }} value changed. <a href="{{ change.sourceUrl | escape }}">Operator source</a>.</p>{% endfor %}
+    {% for offer in current.product.expiredOffers %}<p>{{ offer.name | escape }}: offer ended <time datetime="{{ offer.ended }}">{{ offer.ended | readableDate }}</time>. <a href="{{ offer.sourceUrl | escape }}">Historical source</a>. Not included in current comparisons.</p>{% endfor %}
+  </section>
+  {% endif %}
+  {% if current.product.faqs.length %}
+  <section id="questions"><h2>{{ operator.name }} questions</h2>
+    {% for faq in current.product.faqs %}<section><h3>{{ faq.question | escape }}</h3><p>{{ faq.answer | escape }}</p><p class="benefit-source"><a href="{{ faq.value.sourceUrl | escape }}">Operator source</a> · Observed <time datetime="{{ faq.value.observedAt }}">{{ faq.value.observedAt | readableDate }}</time></p></section>{% endfor %}
+  </section>
+  {% endif %}
   <p class="byline mt-8"><a href="/redemption-times/">Compare all operators</a> · <a href="/methodology/">Methodology</a> · <a href="/disclosure/">Affiliate disclosure</a></p>
 </article></main>
