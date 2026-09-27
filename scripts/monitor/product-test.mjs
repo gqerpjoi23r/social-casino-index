@@ -114,6 +114,16 @@ test("generic offer names do not admit empty operators; unfamiliar denominations
     assert.ok(!result.signup.label.includes(" SC"));
   }
 });
+test("USD gift minimum remains visible beside SC cash without conversion or duplicate export", () => {
+  const model = build([operator("a", [signup(1), cash(50), {
+    ...cash(10), id: "usd-gift", method: "gift_card", unit: "USD",
+  }])]);
+  const row = model.toplist.homepageRows[0];
+  assert.deepEqual(row.minima.map(value => value.label), ["50 SC", "10 USD"]);
+  assert.equal(row.sortValues.cash, 50);
+  assert.ok(comparisonCsv(model).includes('"10 USD"'));
+  assert.equal(row.benefitCount, 2);
+});
 test("signup ranking uses the registration step, not the total of optional tasks", () => {
   const quote = "Free signup bonus up to 12 SC. Sign Up Click 'Join Now' and complete the quick registration form. You'll receive: 5,000 GC + 1 SC 2 Opt In to Email Updates: 1 SC. First daily claim: 1 SC.";
   const record = { ...signup(4), quote, totalSc: 12 };

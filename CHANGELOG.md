@@ -17,6 +17,7 @@ Format:
 ## 2026-09-27 - Keep benefit descriptions denomination-neutral
 - Describe operator profiles as offers and rewards, not universally as SC offers.
 - Descriptive purchase offers point to their claim conditions rather than asserting that every delivery schedule is unknown.
+- Preserve USD gift minima beside SC cash minima without conversion; keep both in the same benefit area and export.
 
 ## 2026-09-27 - Preserve all displayed redemption minima in exports
 - Export each selected cash, gift and general minimum once, matching the homepage and profile evidence. A cash threshold no longer hides a separate general threshold from the current CSV.
