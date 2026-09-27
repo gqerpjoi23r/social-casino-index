@@ -36,12 +36,16 @@ export function attachProductViews(operators, numeric, toplist, latestRecords, n
 
 export function comparisonCsv(model) {
   const columns = ["operator", "attribute", "label", "note", "source_url", "observed_at", "status", "record_id", "conditions"];
-  const rows = model.operators.flatMap(operator => ["signup", "purchase", "daily", "redemption", "cash", "gift", "minimum"].flatMap(key => {
-    const value = operator.product[key];
-    if (key === "minimum" && [operator.product.cash, operator.product.gift].some(item => item?.recordId === value?.recordId)) return [];
-    return value ? [[operator.name, key, value.label, value.note || "", value.sourceUrl,
-      value.observedAt, value.status, value.recordId, (value.conditions || []).join(" | ")]] : [];
-  }));
+  const rows = model.operators.flatMap(operator => {
+    const values = ["signup", "purchase", "daily", "redemption"].map(key => [key, operator.product[key]]);
+    for (const value of operator.product.minima) {
+      const key = ["cash", "gift"].find(key => operator.product[key]?.recordId === value.recordId) || "minimum";
+      values.push([key, value]);
+    }
+    return values.filter(([, value]) => value).map(([key, value]) =>
+      [operator.name, key, value.label, value.note || "", value.sourceUrl,
+        value.observedAt, value.status, value.recordId, (value.conditions || []).join(" | ")]);
+  });
   const escape = value => `"${String(value ?? "").replaceAll('"', '""')}"`;
   return [columns, ...rows].map(row => row.map(escape).join(",")).join("\n") + "\n";
 }

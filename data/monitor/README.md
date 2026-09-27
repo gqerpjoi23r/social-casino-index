@@ -180,3 +180,6 @@ Firecrawl fallback -> archived text -> one structured extraction -> source
 checks -> shared display and numeric-sort views. No new services, whole-site
 crawler, parallel value store or request budgets. Prefer three to five useful
 source pages; use rules PDFs only where they fill an important gap.
+New operators automatically prioritize their curated registry sources. Existing
+explicit priority overrides remain valid; a second priority list is not required
+for onboarding.

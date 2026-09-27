@@ -81,3 +81,9 @@ parallel value store or configured request limits.
 ## Release verification
 
 Pending fresh normal-run publication and final production browser checks.
+
+The initial expanded run `36300162650` was cancelled during collection, before
+publication. New source lists were not yet classified as priority seeds, so
+existing discovery could delay or exhaust their collection budget. New operators
+now default to their own curated sources; no second configuration list is needed.
+Existing explicit overrides and request limits remain unchanged.
