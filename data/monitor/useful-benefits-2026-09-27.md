@@ -33,7 +33,8 @@ https://www.jackpota.com/ and https://www.jackpota.com/terms-of-service instead
 describe ordinary entertainment credits, while reserving separate promotional
 contests. Do not import competitor amounts or exclude all Jackpota benefits.
 The official promotions page was a loading shell in a direct check and timed
-out waiting for browser network-idle. It is now a normal monitored source.
+out waiting for browser network-idle. It remains a normal monitored source,
+now owned by the registry rather than duplicated in collection configuration.
 
 ## Additions
 
@@ -87,3 +88,6 @@ publication. New source lists were not yet classified as priority seeds, so
 existing discovery could delay or exhaust their collection budget. New operators
 now default to their own curated sources; no second configuration list is needed.
 Existing explicit overrides and request limits remain unchanged.
+The delayed scheduled run `36300297093`, also on the old revision, was cancelled
+before publication so the corrected run could start. Request limits continue
+to scale with the roster using the existing formula.

@@ -118,7 +118,7 @@ function offerDisplay(snapshot, offers, kind) {
       }
     }
     if (!rewards.length) continue;
-    const note = [kind === "purchase" ? "Credit timing not confirmed" :
+    const note = [kind === "purchase" ? "See purchase and claim conditions" :
       record.purchaseRequired === false ? "No purchase required; see claim conditions" :
         record.purchaseRequired === true ? "Purchase required" : "Purchase requirement unconfirmed",
     /\bup to\b/i.test(text(record)) ? "Advertised maximum; conditions apply" : null].filter(Boolean).join(". ");

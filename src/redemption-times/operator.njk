@@ -9,14 +9,14 @@ tags: ["operatorPages"]
 ogType: "article"
 eleventyComputed:
   title: "{{ operator.name }} Offers and Redemption Requirements"
-  description: "{{ operator.name }} signup SC, first-purchase offer, redemption minimums and playthrough, with source-linked conditions and published payout terms."
+  description: "{{ operator.name }} welcome offers, daily rewards and redemption requirements, with source-linked conditions and observation dates."
   jsonld:
     "@context": "https://schema.org"
     "@graph":
       - "@type": "Article"
         "@id": "https://socialcasinoindex.com/redemption-times/{{ operator.slug }}/#article"
         headline: "{{ operator.name }} Offers and Redemption Requirements"
-        description: "{{ operator.name }} signup SC, first-purchase offer, redemption minimums and playthrough, with source-linked conditions."
+        description: "{{ operator.name }} welcome offers, daily rewards and redemption requirements, with source-linked conditions."
         datePublished: "{{ operator.verifiedAt }}"
         dateModified: "{{ operator.verifiedAt | latestDate(contentDates.operatorPages, benchmarks.generatedAt, '2026-09-21') }}"
         mainEntityOfPage: "https://socialcasinoindex.com/redemption-times/{{ operator.slug }}/"
