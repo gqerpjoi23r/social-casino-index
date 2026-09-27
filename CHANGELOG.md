@@ -14,6 +14,10 @@ Format:
 
 ---
 
+## 2026-09-27 - Preserve all displayed redemption minima in exports
+- Export each selected cash, gift and general minimum once, matching the homepage and profile evidence. A cash threshold no longer hides a separate general threshold from the current CSV.
+- Numeric sort inputs remain unchanged across all 15 pre-expansion operators.
+
 ## 2026-09-27 - List useful benefits without changing numeric sorts
 - Separate useful-benefit admission from numeric comparison. Require two of five displayed areas; allow concrete text, gift minima and clearly labelled entertainment credits without converting them to SC or changing any of the five sorts.
 - Keep one collector and shared evidence model. Support written-number grounding and partial optional-amount recovery, remove duplicate profile sections, and expose operator-level benefit gaps.

@@ -98,6 +98,11 @@ test("cash and gift thresholds count once, and general minimums never become cas
   assert.equal(result.toplist.homepageRows.length, 1);
   assert.equal(result.toplist.homepageRows[0].minimum.label, "50 SC");
   assert.equal(result.toplist.homepageRows[0].sortValues.cash, null);
+  const mixed = build([operator("mixed", [cash(50), gift, { ...cash(100), id: "general", method: "general" }])]);
+  const csv = comparisonCsv(mixed);
+  for (const minimum of mixed.operators[0].product.minima) {
+    assert.equal(csv.split("\n").filter(line => line.includes(`"${minimum.recordId}"`)).length, 1, minimum.recordId);
+  }
 });
 test("generic offer names do not admit empty operators; unfamiliar denominations stay descriptive", () => {
   const vague = { ...signup(null), name: "Great welcome offer" };
