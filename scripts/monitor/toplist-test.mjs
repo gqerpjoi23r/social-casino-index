@@ -6,6 +6,7 @@ import { stampValueHistory } from "./value-history.mjs";
 import { orderToplist } from "../../src/assets/toplist-order.js";
 import { comparisonCoverage } from "./coverage.mjs";
 import { statedOfferEnd, expiryTime } from "./offer-expiry.mjs";
+import { displayFact, presentToplist } from "./toplist-presentation.mjs";
 
 const now = Date.parse("2026-09-22T12:00:00Z");
 const record = change => ({ id: "record", sourceId: "home", sourceUrl: "https://example.com/",
@@ -15,6 +16,76 @@ const operator = (slug, records, change = {}) => ({ slug, name: slug, productMod
   records, ...change });
 const model = operators => buildBenchmarks({ operators }, [], now);
 const row = records => model([operator("a", records)]).toplist.rows[0];
+
+test("only equal known signup rewards use benefit coverage before alphabetical ties", () => {
+  const make = (name, amount, count) => ({ name, slug: name, benefitCount: count,
+    sortValues: { welcome: amount, purchase: 2, daily: 1, redemption: 72, cash: 50 } });
+  const rows = [make("a-thin", 2, 2), make("z-full", 2, 5), make("b-full", 2, 5),
+    make("large", 3, 2), make("a-unknown", null, 2), make("z-unknown", null, 5)];
+  assert.deepEqual(orderToplist(rows).map(row => row.slug),
+    ["large", "b-full", "z-full", "a-thin", "a-unknown", "z-unknown"]);
+  for (const sort of ["purchase", "daily", "redemption", "cash"])
+    assert.deepEqual(orderToplist(rows, sort).map(row => row.slug), [...rows].map(row => row.slug).sort());
+});
+
+test("presentation badges use supported thresholds, name timing stages and preserve tone order", () => {
+  const records = [
+    record({ totalSc: 5, conditions: ["Opt-in needed for the full bonus."] }),
+    record({ id: "cash", recordType: "facts", field: "redemption_minimum",
+      method: "cash", value: 50, unit: "SC", comparison: "at_least" }),
+    record({ id: "time", recordType: "facts", field: "redemption_time",
+      stage: "processing", method: "cash", value: 3, unit: "business_days", comparison: "up_to" }),
+    record({ id: "daily", kind: "recurring_daily", intervalHours: 24, immediateSc: 0.3, totalSc: 0.3 }),
+  ];
+  const result = row(records);
+  assert.deepEqual(result.presentation.badges.map(b => b.label),
+    ["Processing \u22643 days", "Low minimum", "Daily 0.3 SC", "Opt-in for full bonus", "Cash prizes"]);
+  assert.deepEqual(result.presentation.badges.map(b => b.tone), ["perk", "perk", "perk", "warn", "plain"]);
+  for (const change of [{ value: 4 }, { unit: "days_unspecified" }, { comparison: "at_least" },
+    { stage: "transfer" }, { unit: "hours", conditions: ["Within 24 business hours."], value: 24 }]) {
+    const changed = row(records.map(r => r.id === "time" ? { ...r, ...change } : r));
+    assert.equal(changed.presentation.badges.some(b => b.icon === "timer"), false, JSON.stringify(change));
+  }
+  for (const change of [{ value: 51 }, { method: "general" }, { method: "gift_card" }, { unit: "USD" }]) {
+    const changed = row(records.map(r => r.id === "cash" ? { ...r, ...change } : r));
+    assert.equal(changed.presentation.badges.some(b => b.label === "Low minimum"), false, JSON.stringify(change));
+  }
+  const variable = row(records.map(r => r.id === "daily" ? { ...r, conditions: ["Reward varies by day."] } : r));
+  assert.equal(variable.presentation.badges.some(b => b.icon === "calendar-check"), false);
+});
+
+test("presentation cleans labels without changing underlying evidence or losing term qualifiers", () => {
+  const original = { label: "Typically 10 days (type unspecified)", note: "Delivery after approval; bank",
+    stage: "transfer", method: "bank" };
+  const display = displayFact(original, "redemption");
+  assert.equal(display.displayLabel, "About 10 days");
+  assert.equal(display.displayNote, "After approval");
+  assert.match(display.detailNote, /After approval. By bank/);
+  assert.equal(display.label, original.label);
+  assert.equal(displayFact({ label: "2.5 SC free", purchaseRequired: false }, "signup").displayLabel, "2.5 SC");
+  const purchase = displayFact({ label: "25 SC for $9.99", priceUsd: 9.99,
+    note: "2.5 SC per $1. First package in a three-purchase welcome offer." }, "purchase");
+  assert.equal(purchase.displayNote, "2.5 SC per $1");
+  assert.match(purchase.detailNote, /First of 3 welcome offers/);
+  const bundle = displayFact({ label: "44 SC total + 440,000 Gold Coins", totalSc: 44 }, "purchase");
+  assert.equal(bundle.displayLabel, "44 SC bundle");
+  assert.equal(bundle.displayNote, "Price not stated");
+  assert.equal(displayFact({ label: "100 USD", method: "general" }, "minimum").displayLabel, "$100");
+});
+
+test("terms group cash and gift minima once and show older capture dates", () => {
+  const result = row([record({}), ...["cash", "gift_card"].map((method, i) =>
+    record({ id: method, recordType: "facts", field: "redemption_minimum",
+      value: i ? 10 : 75, method, unit: "SC", comparison: "at_least" }))]);
+  const terms = result.presentation.terms.filter(term => term.key === "minimum");
+  assert.equal(terms.length, 1);
+  assert.equal(terms[0].heading, "Cash out from");
+  assert.equal(terms[0].values.length, 2);
+  const presented = checked => presentToplist(result, now, checked).terms[0].values[0];
+  assert.equal(presented("2026-09-21T23:00:00Z").stale, false);
+  assert.equal(presented("2026-09-22T06:00:00Z").stale, true);
+  assert.equal(presented("2026-09-21T23:00:00Z").sourceDomain, "example.com");
+});
 
 test("explicit calendar expiry removes old promotions without removing the operator", () => {
   assert.equal(statedOfferEnd("Promotion Dates: July 1-27, 2026."), "2026-07-27");
@@ -35,7 +106,7 @@ test("presentation keeps useful descriptions and excludes them from numeric sign
   const result = row([record({ immediateSc: null, totalSc: null, goldCoins: 1000 }),
     record({ sourceId: "daily", kind: "recurring_daily", immediateSc: null, totalSc: null })]);
   assert.equal(result.presentation.compact, true);
-  assert.match(result.presentation.summary, /Gold Coins/);
+  assert.match(result.presentation.summary, /1,000 GC/);
   assert.equal(result.homepageEligible, true);
   assert.equal(result.presentation.fields.length, 4);
   assert.equal(result.sortValues.welcome, null);
@@ -63,9 +134,9 @@ test("value badges ignore prose churn and untrusted historical change dates", ()
   assert.equal(same[0].valueChangedAt, null);
   const changed = stampValueHistory([{ ...same[0], immediateSc: 3 }], same);
   assert.equal(changed[0].valueChangedAt, "2026-09-22T06:00:00Z");
-  assert.equal(row(changed).presentation.terms[0].recentChangeAt, changed[0].valueChangedAt);
-  assert.equal(row([record({ lastChangedAt: "2026-09-22T06:00:00Z" })]).presentation.terms[0].recentChangeAt, null);
-  assert.equal(row([record({ valueChangedAt: "2026-09-01T06:00:00Z" })]).presentation.terms[0].recentChangeAt, null);
+  assert.equal(row(changed).presentation.terms[0].values[0].recentChangeAt, changed[0].valueChangedAt);
+  assert.equal(row([record({ lastChangedAt: "2026-09-22T06:00:00Z" })]).presentation.terms[0].values[0].recentChangeAt, null);
+  assert.equal(row([record({ valueChangedAt: "2026-09-01T06:00:00Z" })]).presentation.terms[0].values[0].recentChangeAt, null);
   const priced = stampValueHistory([record({ kind: "first_purchase", priceUsd: 20 })]);
   const repriced = stampValueHistory([record({ kind: "first_purchase", priceUsd: 10, capturedAt: "2026-09-22T06:00:00Z" })], priced);
   assert.equal(repriced[0].valueChangedAt, "2026-09-22T06:00:00Z");

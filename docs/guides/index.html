@@ -27,12 +27,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/benefits.css">
+<link rel="stylesheet" href="/assets/design-system.css">
 <link rel="stylesheet" href="/assets/phosphor/style.css">
 <script>document.documentElement.classList.add('js');</script>
 <script src="/assets/analytics.js" defer></script>
 
 </head>
-<body class="bg-base-100 font-sans text-[17px] leading-relaxed text-base-content antialiased">
+<body class="site-ui bg-base-100 font-sans text-base-content antialiased">
 
 <div class="state-banner js-only" data-state-banner hidden>
   <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-6 py-2">
@@ -50,22 +51,29 @@
   </div>
 </div>
 
-<header class="sticky top-0 z-40 border-b border-base-300 bg-base-100/90 backdrop-blur">
-  <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 px-6 py-3">
-    <a class="flex items-center gap-2.5 font-serif text-[22px] font-semibold text-base-content no-underline" href="/">
-      <i class="ph ph-crown-simple flex-none text-[30px] leading-none text-accent" aria-hidden="true"></i>
-      Social Casino Index
-    </a>
-    <nav class="flex flex-wrap items-center gap-x-5 gap-y-1 text-[14.5px] text-base-content/60" aria-label="Main">
-      <a class="no-underline hover:text-brand" href="/updates/">Daily checks</a>
-      <a class="no-underline hover:text-brand" href="/guides/">Guides</a>
-      <a class="no-underline hover:text-brand" href="/availability/">State availability</a>
-      <a class="no-underline hover:text-brand" href="/about/">About</a>
-      <a class="no-underline hover:text-brand" href="/authors/alex-rowan/">Author</a>
+
+<header class="home-header">
+  <div class="home-header-inner">
+    <a class="home-brand" href="/" aria-label="Social Casino Index home"><i class="ph ph-chart-bar-horizontal" aria-hidden="true"></i><span>Social Casino Index</span></a>
+    <nav class="home-desktop-nav" aria-label="Main">
+      <a href="/updates/">Daily checks</a>
+      <a href="/guides/">Guides</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
     </nav>
+    <details class="home-menu">
+      <summary aria-label="Navigation menu" title="Navigation menu"><i class="ph ph-list" aria-hidden="true"></i></summary>
+      <nav aria-label="Mobile">
+        <a href="/updates/">Daily checks</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/guides/">Guides</a>
+        <a href="/availability/">State availability</a>
+        <a href="/about/">About</a>
+        <a href="/authors/alex-rowan/">Author</a>
+      </nav>
+    </details>
   </div>
 </header>
-
 
 <main>
 <div class="wrap py-10">
@@ -233,5 +241,6 @@
 </footer>
 
 <script src="/assets/eligibility.js" defer></script>
+<script src="/assets/home.js" defer></script>
 </body>
 </html>

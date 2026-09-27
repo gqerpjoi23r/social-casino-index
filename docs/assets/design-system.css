@@ -1,0 +1,78 @@
+/* Shared visual language; page layouts remain owned by their own stylesheets. */
+.site-ui {
+  --bg: #1d232a; --card: #232a31; --sunk: #1a2027; --raised: #262e36;
+  --ink: #e8efeb; --muted: #b4c0ba; --faint: #95a29c;
+  --line: #343e46; --line-strong: #46524d;
+  --link: #93c5fd; --link-hover: #bfdbfe; --active: #c1f0d6;
+  --gold: #f4cb67; --focus: #fbbf24;
+  --perk-bg: rgb(52 211 153 / .12); --perk-bd: rgb(52 211 153 / .32); --perk-fg: #a7f3d0;
+  --warn-bg: rgb(251 191 36 / .10); --warn-bd: rgb(251 191 36 / .32); --warn-fg: #fcd34d;
+  --color-base-100: var(--bg); --color-base-200: var(--sunk); --color-base-300: var(--line);
+  --color-base-content: var(--ink);
+  font: 400 16px/1.6 Archivo, ui-sans-serif, system-ui, sans-serif;
+  color: var(--ink); background: var(--bg); color-scheme: dark; letter-spacing: 0;
+}
+.site-ui *, .site-ui *::before, .site-ui *::after { letter-spacing: 0; }
+.site-ui a { color: var(--link); text-underline-offset: 3px; }
+.site-ui a:hover { color: var(--link-hover); }
+.site-ui :is(a, button, summary, select):focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.site-ui :is(button, select) { font-family: Archivo, ui-sans-serif, system-ui, sans-serif; }
+.site-ui select { background-color: var(--raised); color: var(--ink); border-color: var(--line-strong); min-height: 44px; }
+.site-ui :is(.page-title, .benefit-intro h1) { font: 500 40px/1.1 Newsreader, Georgia, serif; color: var(--ink); }
+.site-ui main :is(h2, h3):not(.toplist-name):not(.toplist-heading h2) { font-family: Newsreader, Georgia, serif; font-weight: 600; color: var(--ink); }
+.site-ui main h2 { font-size: 24px; line-height: 1.25; }
+.site-ui main h3 { font-size: 21px; line-height: 1.3; }
+.site-ui .lede { font-size: 17px; line-height: 1.6; color: var(--muted); }
+.site-ui :is(.fine, .byline, .crumbs, .crumbs a, .crumbs [aria-current], .accessed, .sources .accessed,
+  .benefit-policy, .benefit-note, .benefit-source, .benefit-count, .benefit-table caption, .benefit-directory-meta,
+  .value-condition, .value-unknown, .stat-note, .stat-label, .eligibility-note) { color: var(--muted); }
+.site-ui :is(.benefit-note, .benefit-source, .benefit-policy, .benefit-evidence, .byline, .accessed) { font-size: 13px; line-height: 1.5; }
+.site-ui :is(.benefit-value, .value-number, .num, .term-value) { font-variant-numeric: tabular-nums; }
+.site-ui .benefit-value { font-size: 17px; }
+.site-ui .benefit-detail-grid h2 { font-size: 21px; }
+.site-ui .badge {
+  display: inline-flex; align-items: center; gap: 5px; min-height: 24px; height: auto;
+  padding: 4px 8px; border: 1px solid var(--line-strong); border-radius: 6px;
+  color: var(--muted); font: 600 12px/1.2 Archivo, sans-serif; background: transparent;
+}
+.site-ui .badge--perk { background: var(--perk-bg); border-color: var(--perk-bd); color: var(--perk-fg); }
+.site-ui :is(.badge--warn, .badge.pending) { background: var(--warn-bg); border-color: var(--warn-bd); color: var(--warn-fg); }
+.site-ui :is(.badge.complete, .badge.completed) { color: var(--perk-fg); border-color: var(--perk-bd); }
+.site-ui .badge.nottested { color: var(--muted); }
+.site-ui .badge i { font-size: 12px; flex: none; }
+.site-ui .benefit-brand { font: 600 18px/1.3 Archivo, sans-serif; color: var(--ink); }
+.site-ui .cta-box a.cta-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px;
+  padding: 8px 14px; background: rgb(147 197 253 / .14); border: 1px solid rgb(147 197 253 / .42);
+  border-radius: 8px; color: #dbeafe; font-size: 15px; font-weight: 600;
+}
+.site-ui .cta-box.is-blocked a.cta-btn { display: none; }
+.site-ui .state-banner { background: var(--sunk); border-color: var(--line-strong); }
+.site-ui .state-banner button { min-width: 44px; min-height: 44px; }
+.site-ui .home-header { border-bottom: 1px solid var(--line-strong); background: var(--bg); }
+.home-header-inner { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; min-height: 72px; gap: 20px; }
+.site-ui .home-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font: 600 24px/1.2 Newsreader, Georgia, serif; text-decoration: none; }
+.home-brand i { color: var(--link); font-size: 26px; }
+.home-desktop-nav { display: flex; gap: 24px; font-size: 14px; }
+.site-ui .home-desktop-nav a { color: var(--muted); text-decoration: none; }
+.home-menu { display: none; position: relative; }
+.home-menu summary { display: grid; place-items: center; width: 44px; height: 44px; list-style: none; cursor: pointer; font-size: 24px; }
+.home-menu summary::-webkit-details-marker { display: none; }
+.home-menu nav { position: absolute; right: 0; top: 48px; width: 230px; z-index: 50; padding: 8px; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--raised); box-shadow: 0 12px 32px #0006; }
+.home-menu nav a { display: block; padding: 10px 12px; min-height: 44px; font-size: 15px; text-decoration: none; }
+.site-ui footer { color: var(--muted); background: var(--bg); border-color: var(--line-strong); font-size: 14px; }
+.site-ui footer > div { max-width: 1200px; padding: 28px 32px; }
+.site-ui footer .fine, .site-ui footer .fine a { color: var(--muted); }
+.site-ui footer h2 { color: var(--ink); }
+@media (max-width: 760px) {
+  .home-header-inner { padding-inline: 16px; min-height: 60px; gap: 8px; }
+  .site-ui .home-brand { font-size: 21px; gap: 7px; }
+  .home-brand i { font-size: 22px; }
+  .home-desktop-nav { display: none; }
+  .home-menu { display: block; }
+  .site-ui :is(.page-title, .benefit-intro h1) { font-size: 30px; }
+  .site-ui main h2 { font-size: 22px; }
+  .site-ui main h3 { font-size: 20px; }
+  .site-ui .benefit-brand { font-size: 17px; }
+  .site-ui footer > div { padding-inline: 16px; }
+}

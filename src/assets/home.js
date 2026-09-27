@@ -21,14 +21,13 @@
   if (state && state.selectedIndex < 0) state.selectedIndex = 0;
   document.querySelectorAll("[data-copy-code]").forEach(button => {
     button.addEventListener("click", async () => {
-      const label = button.querySelector("span");
-      const status = button.closest(".toplist-footer").querySelector('[role="status"]');
+      const status = button.querySelector('[role="status"]');
+      clearTimeout(button.copyTimer);
       try {
         await navigator.clipboard.writeText(button.dataset.copyCode);
-        label.textContent = "Copied";
-        status.textContent = `Copied ${button.dataset.copyCode}`;
-        clearTimeout(button.copyTimer);
-        button.copyTimer = setTimeout(() => { label.textContent = button.dataset.copyCode; }, 1800);
+        status.classList.remove("sr-only");
+        status.textContent = "Copied";
+        button.copyTimer = setTimeout(() => { status.textContent = ""; status.classList.add("sr-only"); }, 1800);
       } catch {
         status.classList.remove("sr-only");
         status.textContent = "Press and hold to copy";

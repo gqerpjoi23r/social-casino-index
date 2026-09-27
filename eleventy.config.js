@@ -25,6 +25,9 @@ export default function (eleventyConfig) {
       timeZone: "UTC",
     });
   });
+  eleventyConfig.addFilter("shortDate", value => value ? new Date(value).toLocaleDateString("en-US", {
+    month: "short", day: "numeric", timeZone: "UTC",
+  }) : "");
 
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value, null, 2));
   eleventyConfig.addFilter("cashMinimumAnswers", cashMinimumAnswers);

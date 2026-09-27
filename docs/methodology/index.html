@@ -27,12 +27,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/benefits.css">
+<link rel="stylesheet" href="/assets/design-system.css">
 <link rel="stylesheet" href="/assets/phosphor/style.css">
 <script>document.documentElement.classList.add('js');</script>
 <script src="/assets/analytics.js" defer></script>
 
 </head>
-<body class="bg-base-100 font-sans text-[17px] leading-relaxed text-base-content antialiased">
+<body class="site-ui bg-base-100 font-sans text-base-content antialiased">
 
 <div class="state-banner js-only" data-state-banner hidden>
   <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-6 py-2">
@@ -50,22 +51,29 @@
   </div>
 </div>
 
-<header class="sticky top-0 z-40 border-b border-base-300 bg-base-100/90 backdrop-blur">
-  <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 px-6 py-3">
-    <a class="flex items-center gap-2.5 font-serif text-[22px] font-semibold text-base-content no-underline" href="/">
-      <i class="ph ph-crown-simple flex-none text-[30px] leading-none text-accent" aria-hidden="true"></i>
-      Social Casino Index
-    </a>
-    <nav class="flex flex-wrap items-center gap-x-5 gap-y-1 text-[14.5px] text-base-content/60" aria-label="Main">
-      <a class="no-underline hover:text-brand" href="/updates/">Daily checks</a>
-      <a class="no-underline hover:text-brand" href="/guides/">Guides</a>
-      <a class="no-underline hover:text-brand" href="/availability/">State availability</a>
-      <a class="no-underline hover:text-brand" href="/about/">About</a>
-      <a class="no-underline hover:text-brand" href="/authors/alex-rowan/">Author</a>
+
+<header class="home-header">
+  <div class="home-header-inner">
+    <a class="home-brand" href="/" aria-label="Social Casino Index home"><i class="ph ph-chart-bar-horizontal" aria-hidden="true"></i><span>Social Casino Index</span></a>
+    <nav class="home-desktop-nav" aria-label="Main">
+      <a href="/updates/">Daily checks</a>
+      <a href="/guides/">Guides</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
     </nav>
+    <details class="home-menu">
+      <summary aria-label="Navigation menu" title="Navigation menu"><i class="ph ph-list" aria-hidden="true"></i></summary>
+      <nav aria-label="Mobile">
+        <a href="/updates/">Daily checks</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/guides/">Guides</a>
+        <a href="/availability/">State availability</a>
+        <a href="/about/">About</a>
+        <a href="/authors/alex-rowan/">Author</a>
+      </nav>
+    </details>
   </div>
 </header>
-
 
 <main>
 <article class="wrap">
@@ -90,12 +98,13 @@
   <p>An explicitly absent benefit or a reviewed disclosure gap earns zero for that component, without claiming that a missing amount is numerically zero. We do not redistribute its weight. Overall scores require a supported value or completed absence review for every component. Ties use disclosure completeness, then operator name. A known lack of an offer counts as disclosure; collection failure does not.</p>
   <p>Every bonus benchmark has its own eligibility criteria. Missing redemption information does not exclude an operator from a signup comparison. Staged totals, first-purchase conditions, full purchase prices and gift-card thresholds remain distinct. A no-purchase claim requires explicit support. General thresholds count as cash only when the source explicitly connects them to cash.</p>
   <h2 id="homepage-order">The homepage toplist</h2>
-  <p>The homepage contains one list. An operator needs useful, source-backed information in at least two areas: signup offer, purchase offer, daily reward, redemption timing, or redemption minimum. Concrete descriptions count even when an amount is unknown. Cash and gift-card minimums count as one area. Empty listings and generic marketing claims do not qualify. The listing version is <strong>useful-benefits-1</strong>; the five sorting methods are unchanged.</p>
+  <p>The homepage contains one list. An operator needs useful, source-backed information in at least two areas: signup offer, purchase offer, daily reward, redemption timing, or redemption minimum. Concrete descriptions count even when an amount is unknown. Cash and gift-card minimums count as one area. Empty listings and generic marketing claims do not qualify. The listing version is <strong>useful-benefits-2</strong>.</p>
   <p>We label the benefit rather than excluding an entire operator by product type. Gold Coins and other entertainment credits can be useful for free play, but they are not redeemable Sweeps Coins. We do not convert unfamiliar currencies into SC. A gift-card threshold or a delivery estimate after approval can be displayed with its conditions without entering the cash-minimum or processing sort.</p>
-  <p>The default is highest immediate free signup SC, with an explicit no-purchase requirement. A paid package, staged total or chance to win cannot rank as a free signup reward. Completeness never determines placement. Row numbers are list positions, not overall casino ratings or measured payout ranks.</p>
-  <p>Best purchase value ranks immediate SC per dollar using the full stated price, without a price cap. First-purchase restrictions remain visible; the budget-specific pages compare packages under their own price ceilings. Each sort uses only its selected benefit, with unknown values last and alphabetical ties. Daily sorting is disabled when no fixed recurring amounts qualify. Variable rewards and first claims can still be described, but do not count as fixed daily SC.</p>
+  <p>The default is highest immediate free signup SC, with an explicit no-purchase requirement. Equal confirmed signup amounts are ordered by the number of supported benefit areas, then by name. Each of the five areas counts once; multiple cash and gift-card thresholds do not add extra weight. This tie-break puts more useful comparisons first, not supposedly better casinos. Unknown signup amounts remain last, alphabetically. A paid package, staged total or chance to win cannot rank as a free signup reward. Row numbers are list positions, not overall casino ratings or measured payout ranks.</p>
+  <p>Best purchase value ranks immediate SC per dollar using the full stated price, without a price cap. First-purchase restrictions remain visible; the budget-specific pages compare packages under their own price ceilings. Apart from the default signup tie-break, each sort uses only its selected benefit, with unknown values last and alphabetical ties. Daily sorting is disabled when no fixed recurring amounts qualify. Variable rewards and first claims remain in the terms and operator pages, but do not count as fixed daily SC.</p>
   <p>Daily sorting uses supported recurring no-purchase SC, not a first claim or staged welcome total. Processing sorting uses the upper end of an explicit processing or approval window, lowest first; nominal days are converted to 24-hour units for ordering. Business-day and calendar-day labels remain visible: this is a comparison of published windows, not predicted arrival dates. Unspecified day types, business-hour-only windows, minimum waits, delivery-only windows and end-to-end claims do not enter the processing sort. Sources and qualifications remain available for each figure.</p>
   <h2>Daily maintenance</h2>
+  <p>Green badges mark published facts: a cash minimum of 50 SC or less, a stated fixed daily SC reward, or a bounded estimate of three days or less. Timing badges name the stage: approval, processing or the full payout. A delivery-after-approval estimate alone never earns a full-payout badge. Business days stay identified in the row and source detail. Amber badges flag offer conditions, such as marketing opt-in or entertainment-only Gold Coin rewards; they do not classify the whole casino.</p>
   <p>The monitor is scheduled daily at 06:17 UTC. Configured comparison sources run before general discovery, so core reward and redemption pages are attempted within the bounded request budget. Remaining sources rotate by oldest check. Each run reports comparable attributes and missing fields separately from page-fetch success. A daily run does not guarantee a fresh value for every field. Failed access retains the previous dated evidence.</p>
   <p>Last checked records the attempted source check. First observed records the first capture of a value. Change observed records a difference from the previous extracted value and its qualifying conditions; an initial observation is not a change. Rechecking an unchanged value does not reset its change date. These are observation dates, not claims about when an operator changed its offer.</p>
   <h2>Missing information and failed checks</h2>
@@ -151,5 +160,6 @@
 </footer>
 
 <script src="/assets/eligibility.js" defer></script>
+<script src="/assets/home.js" defer></script>
 </body>
 </html>

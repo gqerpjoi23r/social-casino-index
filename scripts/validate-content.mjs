@@ -2,6 +2,7 @@
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { execSync } from "node:child_process";
+import { visitRoutes } from "./visit-routes.mjs";
 
 const REQUIRED = [
   "title", "description", "permalink", "status", "publishedAt",
@@ -169,7 +170,8 @@ for (const [index, operator] of operators.entries()) {
   }
   if (operator.partner) {
     try {
-      statSync(join("src/go", operator.slug, "index.html"));
+      statSync("src/go/operator.njk");
+      if (!visitRoutes([operator])[0].destination) throw new Error("Missing destination");
     } catch {
       console.error(`FAIL operators.json ${operator.slug}: partner affiliate route is missing`);
       failures++;

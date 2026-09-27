@@ -1,6 +1,7 @@
 [
   {
     "slug": "jackpota",
+    "visitDestination": "https://www.jackpota.com/",
     "name": "Jackpota",
     "parent": "Silver Social Operations Limited",
     "partner": true,
@@ -148,6 +149,7 @@
   },
   {
     "slug": "lucky-bunny",
+    "visitDestination": "https://luckybunny.fun/",
     "name": "Lucky Bunny",
     "parent": "Not publicly confirmed",
     "partner": true,
@@ -239,6 +241,7 @@
   },
   {
     "slug": "yay-casino",
+    "visitDestination": "https://www.yaycasino.com/",
     "name": "YAY Casino",
     "parent": "Social Gaming LLC",
     "partner": true,
@@ -397,6 +400,7 @@
   },
   {
     "slug": "dorados",
+    "visitDestination": "https://dorados.com/",
     "name": "Dorados",
     "parent": "RAFFLEFY LIMITED",
     "partner": true,
@@ -519,6 +523,7 @@
   },
   {
     "slug": "zonko",
+    "visitDestination": "https://www.zonko.com/",
     "name": "Zonko",
     "parent": "Mamba Limited owns/operates the site; footer names Mamba Limited and Forever Winning LLC as joint service providers.",
     "partner": true,
@@ -610,6 +615,7 @@
   },
   {
     "slug": "chumba",
+    "visitDestination": "https://www.chumbacasino.com/",
     "name": "Chumba Casino",
     "parent": "VGW Malta Limited operates the site; VGW Games Limited operates sweepstakes promotions and prizes.",
     "partner": false,
@@ -717,6 +723,7 @@
   },
   {
     "slug": "pulsz",
+    "visitDestination": "https://www.pulsz.com/",
     "name": "Pulsz",
     "parent": "Not publicly confirmed",
     "partner": false,
@@ -832,6 +839,7 @@
   },
   {
     "slug": "stake-us",
+    "visitDestination": "https://stake.us/",
     "name": "Stake.us",
     "parent": "Not publicly confirmed",
     "partner": false,
@@ -954,6 +962,7 @@
   },
   {
     "slug": "wow-vegas",
+    "visitDestination": "https://www.wowvegas.com/",
     "name": "WOW Vegas",
     "parent": "MW Services Limited and WOWCom Services Inc.",
     "partner": false,
@@ -1092,6 +1101,7 @@
   },
   {
     "slug": "mcluck",
+    "visitDestination": "https://www.mcluck.com/",
     "name": "McLuck",
     "parent": "Not publicly confirmed",
     "partner": false,
@@ -1278,6 +1288,7 @@
   },
   {
     "slug": "spree",
+    "visitDestination": "https://spree.com/",
     "name": "Spree",
     "parent": "Play Spree LTD",
     "partner": false,
@@ -1320,6 +1331,7 @@
   },
   {
     "slug": "crown-coins",
+    "visitDestination": "https://crowncoinscasino.com/",
     "name": "Crown Coins",
     "partner": false,
     "position": 13,
@@ -1364,6 +1376,7 @@
   },
   {
     "slug": "modo",
+    "visitDestination": "https://modo.us/",
     "name": "Modo",
     "partner": false,
     "position": 14,
@@ -1407,6 +1420,7 @@
   },
   {
     "slug": "zula",
+    "visitDestination": "https://www.zulacasino.com/",
     "name": "Zula Casino",
     "partner": false,
     "position": 15,
@@ -1449,6 +1463,7 @@
   },
   {
     "slug": "sportzino", "name": "Sportzino", "partner": false, "position": 16,
+    "visitDestination": "https://sportzino.com/",
     "bestFor": "Published welcome and daily rewards",
     "summary": "Source-backed welcome offers, daily rewards and redemption terms.",
     "offer": "See current source-backed comparison", "games": "Casino-style games",
@@ -1475,6 +1490,7 @@
   },
   {
     "slug": "luckyland", "name": "LuckyLand Casino", "partner": false, "position": 17,
+    "visitDestination": "https://luckylandcasino.com/",
     "bestFor": "Published welcome and daily rewards",
     "summary": "Welcome and daily benefits with separately monitored redemption help.",
     "offer": "See current source-backed comparison", "games": "Casino-style games",
@@ -1502,6 +1518,7 @@
   },
   {
     "slug": "rolling-riches", "name": "Rolling Riches", "partner": false, "position": 18, "faviconExt": ".png",
+    "visitDestination": "https://www.rollingriches.com/",
     "bestFor": "Published redemption terms",
     "summary": "Redemption minimums and timing with explicit method and delivery conditions.",
     "offer": "See current source-backed comparison", "games": "Casino-style games",
@@ -1530,6 +1547,7 @@
   },
   {
     "slug": "high5", "name": "High 5 Casino", "partner": false, "position": 19,
+    "visitDestination": "https://high5casino.com/",
     "bestFor": "Published offers and gift-card redemption",
     "summary": "Dedicated offers, daily rewards and redemption help. Conflicting cross-promotion headlines are not used as free signup amounts.",
     "offer": "See current source-backed comparison", "games": "Casino-style games",
@@ -1557,6 +1575,7 @@
   },
   {
     "slug": "chanced", "name": "Chanced", "partner": false, "position": 20,
+    "visitDestination": "https://chanced.com/",
     "bestFor": "Published recurring rewards and redemption terms",
     "summary": "Official reward and redemption evidence, with method and timing uncertainty kept visible.",
     "offer": "See current source-backed comparison", "games": "Casino-style games",
@@ -1583,6 +1602,7 @@
   },
   {
     "slug": "fortune-wins", "name": "Fortune Wins", "partner": false, "position": 21,
+    "visitDestination": "https://fortunewins.com/",
     "bestFor": "Published FC welcome and daily rewards",
     "summary": "Welcome and daily rewards in their published denomination. FC is not treated as SC.",
     "offer": "See current source-backed comparison", "games": "Casino-style games",

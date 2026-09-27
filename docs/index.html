@@ -27,6 +27,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/benefits.css">
+<link rel="stylesheet" href="/assets/design-system.css">
 <link rel="stylesheet" href="/assets/phosphor/style.css"><link rel="stylesheet" href="/assets/home.css">
 <script>document.documentElement.classList.add('js');</script>
 <script src="/assets/analytics.js" defer></script>
@@ -54,7 +55,7 @@
 }</script>
 
 </head>
-<body class="bg-base-100 font-sans text-[17px] leading-relaxed text-base-content antialiased home-page">
+<body class="site-ui bg-base-100 font-sans text-base-content antialiased home-page">
 
 
 <header class="home-header">
@@ -62,6 +63,7 @@
     <a class="home-brand" href="/" aria-label="Social Casino Index home"><i class="ph ph-chart-bar-horizontal" aria-hidden="true"></i><span>Social Casino Index</span></a>
     <nav class="home-desktop-nav" aria-label="Main">
       <a href="/updates/">Daily checks</a>
+      <a href="/guides/">Guides</a>
       <a href="/methodology/">Methodology</a>
       <a href="/about/">About</a>
     </nav>
@@ -81,17 +83,14 @@
 <main>
 <div class="wrap toplist-page">
   <header class="benefit-intro home-intro">
-    <p class="home-eyebrow">US sweepstakes casino comparison</p>
-    <h1>Social Casino Index</h1>
-    <p class="home-promise">Know the offer. Understand the terms.</p>
-    <p class="home-description">Free signup rewards, coin packages and cash-out terms, checked against operator sources daily.</p>
-    <div class="home-byline"><span>Published by <a href="/about/">Sweeps Brief LLC</a></span><a href="/methodology/">Our methodology <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
+    <h1>Social casino bonuses, compared</h1>
+    <p class="home-description">Compare free coins, purchase deals and cash-out terms before you sign up.</p>
+    <ul class="home-principles">
+      <li><i class="ph ph-clock" aria-hidden="true"></i> Checked daily</li>
+      <li><i class="ph ph-link" aria-hidden="true"></i> Operator sources</li>
+      <li><i class="ph ph-scales" aria-hidden="true"></i> Independent order</li>
+    </ul>
   </header>
-  <div class="home-principles">
-    <span><i class="ph ph-clock" aria-hidden="true"></i> Daily source checks</span>
-    <span><i class="ph ph-link" aria-hidden="true"></i> Source-linked figures</span>
-    <span><i class="ph ph-scales" aria-hidden="true"></i> Affiliate-independent order</span>
-  </div>
   <section id="compare" aria-labelledby="leaderboard-heading">
     
 <section class="toplist" id="all-operators" aria-labelledby="leaderboard-heading">
@@ -99,10 +98,11 @@
     <div class="toplist-title"><h2 id="leaderboard-heading">Compare offers <span class="toplist-count">19</span></h2>
     <span class="toplist-checked">Last checked <time datetime="2026-09-27T06:46:29.963Z">September 27, 2026</time></span></div>
     <div class="toplist-controls">
-      <label class="home-state"><i class="ph ph-map-pin" aria-hidden="true"></i><span class="sr-only">Your state</span>
+      <label class="home-state toplist-select"><i class="ph ph-map-pin i-lead" aria-hidden="true"></i><span class="sr-only">Your state</span>
         <select data-state-picker aria-label="Your state"><option value="" disabled selected>Your state</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="DC">District of Columbia</option></select>
+        <i class="ph ph-caret-down i-caret" aria-hidden="true"></i>
       </label>
-      <label class="toplist-sort" hidden><span class="sr-only">Sort by</span>
+      <label class="toplist-sort toplist-select" hidden><i class="ph ph-sort-descending i-lead" aria-hidden="true"></i><span class="sr-only">Sort by</span>
         <select id="toplist-sort">
           <option value="welcome" selected>Free bonus</option>
         
@@ -110,15 +110,16 @@
         
           <option value="daily">Daily reward</option>
         
-          <option value="redemption">Published processing</option>
+          <option value="redemption">Processing</option>
         
           <option value="cash">Cash minimum</option>
         </select>
+        <i class="ph ph-caret-down i-caret" aria-hidden="true"></i>
       </label>
     </div>
   </div>
   <p id="toplist-sort-status" class="sr-only" aria-live="polite">Sorted by highest free signup offer.</p>
-  <div class="toplist-columns" aria-hidden="true"><span>Casino</span><div><span data-column="welcome">Free coins</span><span data-column="purchase">Purchase deal</span><span data-column="cash">Cash out from</span><span data-column="redemption">Published timing</span></div><span></span></div>
+  <div class="toplist-columns" aria-hidden="true"><span>Casino</span><span class="is-active" data-column="welcome">Free coins</span><span data-column="purchase">Purchase deal</span><span data-column="cash">Cash out from</span><span data-column="redemption">Payout time</span><span></span></div>
   <ol class="toplist-list" data-active-sort="welcome">
     
     <li class="toplist-item" data-operator="mcluck" data-sort="{
@@ -130,7 +131,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: 120,
     &quot;cash&quot;: 75
-  }
+  },
+  &quot;benefitCount&quot;: 5
 }" value="1">
       
       <h3 class="toplist-group">Free Sweeps Coins at sign-up</h3>
@@ -142,31 +144,33 @@
             <span class="toplist-position" aria-label="Position 1">1</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/mcluck/">McLuck</a>
-            <span class="toplist-reward-types">Cash prizes · Gift cards</span>
           </h3>
         </div>
-        <p class="toplist-sentence">2.5 SC free (no purchase); 25 SC for $9.99 (2.5 SC per $1. First purchase only.); Cash out from 75 SC.</p>
+        
+        <ul class="toplist-badges" aria-label="McLuck highlights">
+          <li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li><li class="badge" title="Gift cards"><i class="ph ph-gift" aria-hidden="true"></i>Gift cards</li>
+        </ul>
+        
+        <p class="toplist-sentence">2.5 SC free at sign-up. 25 SC for $9.99 on your first purchase (2.5 SC per $1). Cash out from 75 SC.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Free coins</dt><dd>
             
 
-  <strong class="toplist-value">2.5 SC free</strong>
-  <span class="toplist-note">On signup; no purchase</span>
+  <strong class="toplist-value">2.5 SC</strong>
+  <span class="toplist-note">At sign-up</span>
 
 
             
-            <span class="toplist-daily" data-metric="daily">Daily login reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>First purchase</dt><dd>
             
 
   <strong class="toplist-value">25 SC for $9.99</strong>
-  <span class="toplist-note">2.5 SC per $1. First purchase only.</span>
+  <span class="toplist-note">2.5 SC per $1</span>
 
 
-            
             
           </dd></div>
           
@@ -174,71 +178,113 @@
             
 
   <strong class="toplist-value">75 SC</strong>
-  <span class="toplist-note">Cash redemption minimum.</span>
+  
 
 
             <span class="toplist-note">Gift cards from 10 SC</span>
-            
           </dd></div>
           
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 
-  <strong class="toplist-value">3-5 business days</strong>
-  <span class="toplist-note">Processing; cash</span>
+  <strong class="toplist-value">3-5 days</strong>
+  <span class="toplist-note">Business days</span>
 
 
-            
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
-          <button class="toplist-code" type="button" data-copy-code="MCLUCKBLOG26" aria-label="Copy McLuck code MCLUCKBLOG26" title="25 SC for $9.99"><i class="ph ph-copy" aria-hidden="true"></i><span>MCLUCKBLOG26</span></button>
-          <a class="toplist-visit" href="/redemption-times/mcluck/" aria-label="McLuck details"><span>Details<span class="toplist-mobile-name">: McLuck</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          <button class="toplist-code" type="button" data-copy-code="MCLUCKBLOG26" aria-label="Copy McLuck code MCLUCKBLOG26" title="25 SC for $9.99"><span class="lbl">Code</span><b>MCLUCKBLOG26</b><i class="ph ph-copy" aria-hidden="true"></i><span class="toplist-copy-status sr-only" role="status"></span></button>
+          <a class="toplist-visit" href="/go/mcluck/" rel="sponsored noopener" aria-label="Visit McLuck"><span>Visit<span class="toplist-mobile-name"> McLuck</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for McLuck" title="Terms and sources for McLuck"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>McLuck terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="61400a782ee23ac64bb2">
-            <h4>Free signup</h4>
-            <p><strong>2.5 SC free</strong> · On signup; no purchase. Register now to claim the welcome reward. Exclusive sign-up reward.</p>
-            <p class="toplist-source-meta"><a href="https://www.mcluck.com/promotions" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:52:36.633Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Free signup</dt><dd>
+            
+            <div class="toplist-source" data-record-id="61400a782ee23ac64bb2">
+              <span class="term-value">2.5 SC</span>
+              <span class="term-detail">At sign-up. Register now to claim the welcome reward. Exclusive sign-up reward.</span>
+              <span class="term-source"><a href="https://www.mcluck.com/promotions" rel="noopener" title="Observed September 27, 2026">mcluck.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:52:36.633Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="ae511eaa2bd1a6479db8">
-            <h4>Purchase deal</h4>
-            <p><strong>25 SC for $9.99</strong> · 2.5 SC per $1. First purchase only.. Available across the first three purchases Includes a Free Lucky Wheel Spin</p>
-            <p class="toplist-source-meta"><a href="https://blog.mcluck.com/promo-codes/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-25T06:38:05.964Z">September 25, 2026</time> · Previous observation</p>
-          </section>
+          <div class="toplist-term">
+            <dt>Purchase deal</dt><dd>
+            
+            <div class="toplist-source" data-record-id="ae511eaa2bd1a6479db8">
+              <span class="term-value">25 SC for $9.99</span>
+              <span class="term-detail">2.5 SC per $1. First of 3 welcome offers. Available across the first three purchases. Includes a Free Lucky Wheel Spin.</span>
+              <span class="term-source"><a href="https://blog.mcluck.com/promo-codes/" rel="noopener" title="Observed September 25, 2026">blog.mcluck.com</a>
+              <span class="term-stale">Last seen <time datetime="2026-09-25T06:38:05.964Z">Sep 25</time></span>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="e2ccd2580f7ea8597388">
-            <h4>Redemption minimum</h4>
-            <p><strong>75 SC</strong> · Cash redemption minimum.. Processing times are estimates and may vary.</p>
-            <p class="toplist-source-meta"><a href="https://blog.mcluck.com/faq/minimum-redemption-amount/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:56:11.377Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Cash out from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="e2ccd2580f7ea8597388">
+              <span class="term-value">Cash: 75 SC</span>
+              <span class="term-detail">Processing times are estimates and may vary.</span>
+              <span class="term-source"><a href="https://blog.mcluck.com/faq/minimum-redemption-amount/" rel="noopener" title="Observed September 27, 2026">blog.mcluck.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:56:11.377Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            <div class="toplist-source" data-record-id="11b679e823cfcb3bd1ec">
+              <span class="term-value">Gift cards: 10 SC</span>
+              <span class="term-detail">Gift cards. Processing times are estimates and may vary.</span>
+              <span class="term-source"><a href="https://blog.mcluck.com/faq/minimum-redemption-amount/" rel="noopener" title="Observed September 27, 2026">blog.mcluck.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:56:11.377Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="11b679e823cfcb3bd1ec">
-            <h4>Redemption minimum</h4>
-            <p><strong>10 SC</strong> · Gift-card redemption minimum.. Processing times are estimates and may vary.</p>
-            <p class="toplist-source-meta"><a href="https://blog.mcluck.com/faq/minimum-redemption-amount/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:56:11.377Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Payout time</dt><dd>
+            
+            <div class="toplist-source" data-record-id="302dd8fffffdb493192d">
+              <span class="term-value">3-5 days</span>
+              <span class="term-detail">Business days. Processing. Processing times are estimates and may vary.</span>
+              <span class="term-source"><a href="https://blog.mcluck.com/faq/minimum-redemption-amount/" rel="noopener" title="Observed September 27, 2026">blog.mcluck.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:56:11.377Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="302dd8fffffdb493192d">
-            <h4>Published processing</h4>
-            <p><strong>3-5 business days</strong> · Processing; cash. Processing times are estimates and may vary.</p>
-            <p class="toplist-source-meta"><a href="https://blog.mcluck.com/faq/minimum-redemption-amount/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:56:11.377Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="6a038d385d351b67373d">
+              <span class="term-value">Daily login reward</span>
+              <span class="term-detail">Amount not stated. For existing players. Login every 24 hours. Claims free Gold Coins and Sweepstakes Coins.</span>
+              <span class="term-source"><a href="https://blog.mcluck.com/promo-codes/" rel="noopener" title="Observed September 25, 2026">blog.mcluck.com</a>
+              <span class="term-stale">Last seen <time datetime="2026-09-25T06:38:05.964Z">Sep 25</time></span>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="6a038d385d351b67373d">
-            <h4>Daily reward</h4>
-            <p><strong>Daily login reward</strong> · Amount not stated. For existing players Login every 24 hours Claims free Gold Coins and Sweepstakes Coins</p>
-            <p class="toplist-source-meta"><a href="https://blog.mcluck.com/promo-codes/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-25T06:38:05.964Z">September 25, 2026</time> · Previous observation</p>
-          </section>
-          
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/mcluck/">Full McLuck page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
@@ -253,7 +299,8 @@
     &quot;daily&quot;: 0.3,
     &quot;redemption&quot;: null,
     &quot;cash&quot;: 100
-  }
+  },
+  &quot;benefitCount&quot;: 5
 }" value="2">
       
       <div class="toplist-main">
@@ -263,31 +310,33 @@
             <span class="toplist-position" aria-label="Position 2">2</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/spree/">Spree</a>
-            <span class="toplist-reward-types">Cash prizes · Gift cards</span>
           </h3>
         </div>
-        <p class="toplist-sentence">2.5 SC free (no purchase); 30 SC for $9.99 (3 SC per $1. First purchase only.); Cash out from 100 SC.</p>
+        
+        <ul class="toplist-badges" aria-label="Spree highlights">
+          <li class="badge badge--perk" title="Daily 0.3 SC" data-daily><i class="ph ph-calendar-check" aria-hidden="true"></i>Daily 0.3 SC</li><li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li><li class="badge" title="Gift cards"><i class="ph ph-gift" aria-hidden="true"></i>Gift cards</li>
+        </ul>
+        
+        <p class="toplist-sentence">2.5 SC free at sign-up. 30 SC for $9.99 on your first purchase (3 SC per $1). Cash out from 100 SC.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Free coins</dt><dd>
             
 
-  <strong class="toplist-value">2.5 SC free</strong>
-  <span class="toplist-note">On signup; no purchase</span>
+  <strong class="toplist-value">2.5 SC</strong>
+  <span class="toplist-note">At sign-up</span>
 
 
             
-            <span class="toplist-daily" data-metric="daily">0.3 SC daily</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>First purchase</dt><dd>
             
 
   <strong class="toplist-value">30 SC for $9.99</strong>
-  <span class="toplist-note">3 SC per $1. First purchase only.</span>
+  <span class="toplist-note">3 SC per $1</span>
 
 
-            
             
           </dd></div>
           
@@ -295,72 +344,280 @@
             
 
   <strong class="toplist-value">100 SC</strong>
-  <span class="toplist-note">Cash redemption minimum.</span>
+  
 
 
             <span class="toplist-note">Gift cards from 10 SC</span>
-            
           </dd></div>
           
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 
-  <strong class="toplist-value">Typically 10 days (type unspecified)</strong>
-  <span class="toplist-note">Delivery after approval; standard tier</span>
+  <strong class="toplist-value">About 10 days</strong>
+  <span class="toplist-note">After approval</span>
 
 
-            
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
           
-          <a class="toplist-visit" href="/redemption-times/spree/" aria-label="Spree details"><span>Details<span class="toplist-mobile-name">: Spree</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          <a class="toplist-visit" href="/go/spree/" rel="sponsored noopener" aria-label="Visit Spree"><span>Visit<span class="toplist-mobile-name"> Spree</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Spree" title="Terms and sources for Spree"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Spree terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="ed97a79586a6390a21c3">
-            <h4>Free signup</h4>
-            <p><strong>2.5 SC free</strong> · On signup; no purchase. For every new player. Sign up and click claim; coins go straight to the account.</p>
-            <p class="toplist-source-meta"><a href="https://spree.com/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:49:01.759Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Free signup</dt><dd>
+            
+            <div class="toplist-source" data-record-id="ed97a79586a6390a21c3">
+              <span class="term-value">2.5 SC</span>
+              <span class="term-detail">At sign-up. For every new player. Sign up and click claim; coins go straight to the account.</span>
+              <span class="term-source"><a href="https://spree.com/" rel="noopener" title="Observed September 27, 2026">spree.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:49:01.759Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="60167d962755a6ea0d11">
-            <h4>Purchase deal</h4>
-            <p><strong>30 SC for $9.99</strong> · 3 SC per $1. First purchase only.. Available on the first purchase. Described as an instant 200% Boost. 30,000 GC and 30 free SC are available right away.</p>
-            <p class="toplist-source-meta"><a href="https://spree.com/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:49:01.759Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Purchase deal</dt><dd>
+            
+            <div class="toplist-source" data-record-id="60167d962755a6ea0d11">
+              <span class="term-value">30 SC for $9.99</span>
+              <span class="term-detail">3 SC per $1. Available on the first purchase. Described as an instant 200% Boost. 30,000 GC and 30 free SC are available right away.</span>
+              <span class="term-source"><a href="https://spree.com/" rel="noopener" title="Observed September 27, 2026">spree.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:49:01.759Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="6dd7bc8a01e7f09d4489">
-            <h4>Redemption minimum</h4>
-            <p><strong>100 SC</strong> · Cash redemption minimum.. Cash Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin redeemed.</p>
-            <p class="toplist-source-meta"><a href="https://spree.com/sweepstakes-rules" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:52:56.784Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Cash out from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="6dd7bc8a01e7f09d4489">
+              <span class="term-value">Cash: 100 SC</span>
+              <span class="term-detail">Cash Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin redeemed.</span>
+              <span class="term-source"><a href="https://spree.com/sweepstakes-rules" rel="noopener" title="Observed September 27, 2026">spree.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:52:56.784Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            <div class="toplist-source" data-record-id="118bad0296bc379f1aa0">
+              <span class="term-value">Gift cards: 10 SC</span>
+              <span class="term-detail">Gift cards. Gift Card Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin redeemed.</span>
+              <span class="term-source"><a href="https://spree.com/sweepstakes-rules" rel="noopener" title="Observed September 27, 2026">spree.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:52:56.784Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="118bad0296bc379f1aa0">
-            <h4>Redemption minimum</h4>
-            <p><strong>10 SC</strong> · Gift-card redemption minimum.. Gift Card Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin redeemed.</p>
-            <p class="toplist-source-meta"><a href="https://spree.com/sweepstakes-rules" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:52:56.784Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Payout time</dt><dd>
+            
+            <div class="toplist-source" data-record-id="0d94b848bd16646ed0ac">
+              <span class="term-value">About 10 days</span>
+              <span class="term-detail">After approval. By bank. The redemption time is not always the same and may be quicker sometimes.</span>
+              <span class="term-source"><a href="https://spree.com/blog/guides/how-to-earn-and-redeem-spree-coins" rel="noopener" title="Observed September 27, 2026">spree.com</a>
+              <time class="sr-only" datetime="2026-09-27T07:02:40.042Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="0d94b848bd16646ed0ac">
-            <h4>Redemption timing</h4>
-            <p><strong>Typically 10 days (type unspecified)</strong> · Delivery after approval; standard tier. The redemption time is not always the same and may be quicker sometimes.</p>
-            <p class="toplist-source-meta"><a href="https://spree.com/blog/guides/how-to-earn-and-redeem-spree-coins" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T07:02:40.042Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="85d717bf1e353b28cab2">
+              <span class="term-value">0.3 SC</span>
+              <span class="term-detail">Every day. SC reward is 0.3 every day; players using GC can claim 2,000 GC daily. Claim via the ‘Claim Daily Coins’ button.</span>
+              <span class="term-source"><a href="https://spree.com/" rel="noopener" title="Observed September 27, 2026">spree.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:49:01.759Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="85d717bf1e353b28cab2">
-            <h4>Daily reward</h4>
-            <p><strong>0.3 SC daily</strong> · No purchase required. SC reward is 0.3 every day; players using GC can claim 2,000 GC daily. Claim via the ‘Claim Daily Coins’ button.</p>
-            <p class="toplist-source-meta"><a href="https://spree.com/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:49:01.759Z">September 27, 2026</time></p>
-          </section>
-          
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/spree/">Full Spree page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </details>
+    </li>
+    
+    <li class="toplist-item" data-operator="wow-vegas" data-sort="{
+  &quot;slug&quot;: &quot;wow-vegas&quot;,
+  &quot;name&quot;: &quot;WOW Vegas&quot;,
+  &quot;sortValues&quot;: {
+    &quot;welcome&quot;: 2,
+    &quot;purchase&quot;: 3.003003003003003,
+    &quot;daily&quot;: null,
+    &quot;redemption&quot;: 72,
+    &quot;cash&quot;: 50
+  },
+  &quot;benefitCount&quot;: 5
+}" value="3">
+      
+      <div class="toplist-main">
+        <div class="toplist-identity">
+          <div class="toplist-mark">
+            <img src="/assets/favicons/wow-vegas.png" alt="" width="40" height="40">
+            <span class="toplist-position" aria-label="Position 3">3</span>
+          </div>
+          <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/wow-vegas/">WOW Vegas</a>
+          </h3>
+        </div>
+        
+        <ul class="toplist-badges" aria-label="WOW Vegas highlights">
+          <li class="badge badge--perk" title="Processing: Up to 3 business days. Processing; Rising-Silver tiers"><i class="ph ph-timer" aria-hidden="true"></i>Processing ≤3 days</li><li class="badge badge--perk" title="Low minimum"><i class="ph ph-arrow-line-down" aria-hidden="true"></i>Low minimum</li><li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li><li class="badge" title="Gift cards"><i class="ph ph-gift" aria-hidden="true"></i>Gift cards</li>
+        </ul>
+        
+        <p class="toplist-sentence">2 SC free at sign-up. 30 SC for $9.99 on your first purchase (3 SC per $1). Cash out from 50 SC.</p>
+        <dl class="toplist-values">
+          
+          <div class="toplist-metric" data-metric="signup"><dt>Free coins</dt><dd>
+            
+
+  <strong class="toplist-value">2 SC</strong>
+  <span class="toplist-note">5 SC total over 3 days</span>
+
+
+            
+          </dd></div>
+          
+          <div class="toplist-metric" data-metric="purchase"><dt>First purchase</dt><dd>
+            
+
+  <strong class="toplist-value">30 SC for $9.99</strong>
+  <span class="toplist-note">3 SC per $1</span>
+
+
+            
+          </dd></div>
+          
+          <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
+            
+
+  <strong class="toplist-value">50 SC</strong>
+  
+
+
+            <span class="toplist-note">Gift cards from 20 SC</span>
+          </dd></div>
+          
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
+            
+
+  <strong class="toplist-value">Up to 3 days</strong>
+  <span class="toplist-note">Business days</span>
+
+
+            
+          </dd></div>
+          
+        </dl>
+        <div class="toplist-footer">
+          <button class="toplist-code" type="button" data-copy-code="WOWBONUS2026" aria-label="Copy WOW Vegas code WOWBONUS2026" title="2 SC free"><span class="lbl">Code</span><b>WOWBONUS2026</b><i class="ph ph-copy" aria-hidden="true"></i><span class="toplist-copy-status sr-only" role="status"></span></button>
+          <a class="toplist-visit" href="/go/wow-vegas/" rel="sponsored noopener" aria-label="Visit WOW Vegas"><span>Visit<span class="toplist-mobile-name"> WOW Vegas</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <details class="toplist-sources">
+        <summary aria-label="Terms and sources for WOW Vegas" title="Terms and sources for WOW Vegas"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
+        <div class="toplist-evidence">
+          <h4>WOW Vegas terms and sources</h4>
+          <dl class="toplist-terms">
+          
+          <div class="toplist-term">
+            <dt>Free signup</dt><dd>
+            
+            <div class="toplist-source" data-record-id="96d8483854cc2b8eb5c2">
+              <span class="term-value">2 SC</span>
+              <span class="term-detail">5 SC total over 3 days. Available to claim after sign-up. Day 1 provides 150,000 WOW Coins + SC 2. Day 2 provides 50,000 WOW Coins + SC 1.5. Day 3 provides 50,000 WOW Coins + SC 1.5.</span>
+              <span class="term-source"><a href="https://www.wowvegas.com/promo-code" rel="noopener" title="Observed September 27, 2026">wowvegas.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:52:23.151Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
+          
+          <div class="toplist-term">
+            <dt>Purchase deal</dt><dd>
+            
+            <div class="toplist-source" data-record-id="c0f232c625356c2c24b0">
+              <span class="term-value">30 SC for $9.99</span>
+              <span class="term-detail">3 SC per $1. Normally $29.99. 67% discount on first purchase. Instant coin delivery. Unlock VIP rewards faster.</span>
+              <span class="term-source"><a href="https://www.wowvegas.com/promo-code" rel="noopener" title="Observed September 27, 2026">wowvegas.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:52:23.151Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
+          
+          <div class="toplist-term">
+            <dt>Cash out from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="657702ec5c98f533df6d">
+              <span class="term-value">Cash: 50 SC</span>
+              <span class="term-detail">Blue WOW Coins cannot be redeemed, as they have no monetary value.</span>
+              <span class="term-source"><a href="https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem" rel="noopener" title="Observed September 27, 2026">help.wowvegas.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:58:35.860Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            <div class="toplist-source" data-record-id="487a40e7af2b0419c5f2">
+              <span class="term-value">Gift cards: 20 SC</span>
+              <span class="term-detail">Gift cards. Blue WOW Coins cannot be redeemed, as they have no monetary value.</span>
+              <span class="term-source"><a href="https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem" rel="noopener" title="Observed September 27, 2026">help.wowvegas.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:58:35.860Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
+          
+          <div class="toplist-term">
+            <dt>Payout time</dt><dd>
+            
+            <div class="toplist-source" data-record-id="488b40a69b80fb121d77">
+              <span class="term-value">Up to 3 days</span>
+              <span class="term-detail">Business days. Processing. Within 3 business days.</span>
+              <span class="term-source"><a href="https://help.wowvegas.com/en/articles/10676690-how-long-does-a-redemption-take" rel="noopener" title="Observed September 27, 2026">help.wowvegas.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:59:56.939Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
+          
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="f51819c8f103196ef41a">
+              <span class="term-value">Variable daily reward</span>
+              <span class="term-detail">Fixed daily SC not established. Log in to your WOW Vegas account. Check the Daily Drops section from the homepage or promotions page. No spins, no purchases, just free fun.</span>
+              <span class="term-source"><a href="https://help.wowvegas.com/en/articles/11969957-how-can-i-earn-free-sc-on-wow-vegas" rel="noopener" title="Observed September 27, 2026">help.wowvegas.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:48:28.270Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
+          
+          </dl>
+          <a class="toplist-full-link" href="/redemption-times/wow-vegas/">Full WOW Vegas page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
     </li>
@@ -374,41 +631,44 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: null,
     &quot;cash&quot;: 100
-  }
-}" value="3">
+  },
+  &quot;benefitCount&quot;: 4
+}" value="4">
       
       <div class="toplist-main">
         <div class="toplist-identity">
           <div class="toplist-mark">
             <img src="/assets/favicons/chumba.png" alt="" width="40" height="40">
-            <span class="toplist-position" aria-label="Position 3">3</span>
+            <span class="toplist-position" aria-label="Position 4">4</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/chumba/">Chumba Casino</a>
-            <span class="toplist-reward-types">Cash prizes · Gift cards</span>
           </h3>
         </div>
-        <p class="toplist-sentence">2 SC free (no purchase); 30 SC for $10 (3 SC per $1. First purchase only.); Cash out from 100 SC.</p>
+        
+        <ul class="toplist-badges" aria-label="Chumba Casino highlights">
+          <li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li><li class="badge" title="Gift cards"><i class="ph ph-gift" aria-hidden="true"></i>Gift cards</li>
+        </ul>
+        
+        <p class="toplist-sentence">2 SC free at sign-up. 30 SC for $10 on your first purchase (3 SC per $1). Cash out from 100 SC.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Free coins</dt><dd>
             
 
-  <strong class="toplist-value">2 SC free</strong>
-  <span class="toplist-note">On signup; no purchase</span>
+  <strong class="toplist-value">2 SC</strong>
+  <span class="toplist-note">At sign-up</span>
 
 
             
-            <span class="toplist-daily" data-metric="daily">Daily login reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>First purchase</dt><dd>
             
 
   <strong class="toplist-value">30 SC for $10</strong>
-  <span class="toplist-note">3 SC per $1. First purchase only.</span>
+  <span class="toplist-note">3 SC per $1</span>
 
 
-            
             
           </dd></div>
           
@@ -416,62 +676,96 @@
             
 
   <strong class="toplist-value">100 SC</strong>
-  <span class="toplist-note">Cash redemption minimum.</span>
+  
 
 
             <span class="toplist-note">Gift cards from 10 SC</span>
-            
           </dd></div>
           
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
-            
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
           
-          <a class="toplist-visit" href="/redemption-times/chumba/" aria-label="Chumba Casino details"><span>Details<span class="toplist-mobile-name">: Chumba Casino</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          <a class="toplist-visit" href="/go/chumba/" rel="sponsored noopener" aria-label="Visit Chumba Casino"><span>Visit<span class="toplist-mobile-name"> Chumba Casino</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Chumba Casino" title="Terms and sources for Chumba Casino"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Chumba Casino terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="111dba37dd5b44e20a7a">
-            <h4>Free signup</h4>
-            <p><strong>2 SC free</strong> · On signup; no purchase. Sign up to claim the welcome offer.</p>
-            <p class="toplist-source-meta"><a href="https://www.chumbacasino.com/promotions" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:51:59.069Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Free signup</dt><dd>
+            
+            <div class="toplist-source" data-record-id="111dba37dd5b44e20a7a">
+              <span class="term-value">2 SC</span>
+              <span class="term-detail">At sign-up. Sign up to claim the welcome offer.</span>
+              <span class="term-source"><a href="https://www.chumbacasino.com/promotions" rel="noopener" title="Observed September 27, 2026">chumbacasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:51:59.069Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="005f54885171f7ccfa0a">
-            <h4>Purchase deal</h4>
-            <p><strong>30 SC for $10</strong> · 3 SC per $1. First purchase only.. First-time offer. Includes FREE SC30.</p>
-            <p class="toplist-source-meta"><a href="https://www.chumbacasino.com/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:47:58.184Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Purchase deal</dt><dd>
+            
+            <div class="toplist-source" data-record-id="005f54885171f7ccfa0a">
+              <span class="term-value">30 SC for $10</span>
+              <span class="term-detail">3 SC per $1. First-time offer. Includes FREE SC30.</span>
+              <span class="term-source"><a href="https://www.chumbacasino.com/" rel="noopener" title="Observed September 27, 2026">chumbacasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:47:58.184Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="71dd3d981f2a34fedc7f">
-            <h4>Redemption minimum</h4>
-            <p><strong>100 SC</strong> · Cash redemption minimum.. If it is your first time to redeem, you need to re-verify your phone number. Identity verification and banking-information validation are required to redeem prizes.</p>
-            <p class="toplist-source-meta"><a href="https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:55:26.718Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Cash out from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="71dd3d981f2a34fedc7f">
+              <span class="term-value">Cash: 100 SC</span>
+              <span class="term-detail">If it is your first time to redeem, you need to re-verify your phone number. Identity verification and banking-information validation are required to redeem prizes.</span>
+              <span class="term-source"><a href="https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize" rel="noopener" title="Observed September 27, 2026">help.chumbacasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:55:26.718Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            <div class="toplist-source" data-record-id="4594baf7502b8e59b606">
+              <span class="term-value">Gift cards: 10 SC</span>
+              <span class="term-detail">Gift cards. If it is your first time to redeem, you need to re-verify your phone number. Identity verification and banking-information validation are required to redeem prizes.</span>
+              <span class="term-source"><a href="https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize" rel="noopener" title="Observed September 27, 2026">help.chumbacasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:55:26.718Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="4594baf7502b8e59b606">
-            <h4>Redemption minimum</h4>
-            <p><strong>10 SC</strong> · Gift-card redemption minimum.. If it is your first time to redeem, you need to re-verify your phone number. Identity verification and banking-information validation are required to redeem prizes.</p>
-            <p class="toplist-source-meta"><a href="https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:55:26.718Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="338c6199acd1287a682c">
+              <span class="term-value">Daily login reward</span>
+              <span class="term-detail">Amount not stated. Log in daily to claim your bonus.</span>
+              <span class="term-source"><a href="https://www.chumbacasino.com/promotions" rel="noopener" title="Observed September 27, 2026">chumbacasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:51:59.069Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="338c6199acd1287a682c">
-            <h4>Daily reward</h4>
-            <p><strong>Daily login reward</strong> · Amount not stated. Log in daily to claim your bonus.</p>
-            <p class="toplist-source-meta"><a href="https://www.chumbacasino.com/promotions" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:51:59.069Z">September 27, 2026</time></p>
-          </section>
-          
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/chumba/">Full Chumba Casino page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
@@ -486,134 +780,35 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: 72,
     &quot;cash&quot;: null
-  }
-}" value="4">
-      
-      <div class="toplist-main">
-        <div class="toplist-identity">
-          <div class="toplist-mark">
-            <img src="/assets/favicons/crown-coins.png" alt="" width="40" height="40">
-            <span class="toplist-position" aria-label="Position 4">4</span>
-          </div>
-          <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/crown-coins/">Crown Coins</a>
-            <span class="toplist-reward-types">Cash prizes</span>
-          </h3>
-        </div>
-        <p class="toplist-sentence">2 SC free (no purchase); 50 SC (General redemption minimum; cash method not established.); 24-72 hours (Approval; method varies).</p>
-        <dl class="toplist-values">
-          
-          <div class="toplist-metric" data-metric="signup"><dt>Free coins</dt><dd>
-            
-
-  <strong class="toplist-value">2 SC free</strong>
-  <span class="toplist-note">On signup; no purchase</span>
-
-
-            
-            <span class="toplist-daily" data-metric="daily">Daily login reward</span>
-          </dd></div>
-          
-          <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
-            
-<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
-
-            
-            
-          </dd></div>
-          
-          <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
-            
-<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
-
-            
-            
-          </dd></div>
-          
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
-            
-
-  <strong class="toplist-value">24-72 hours</strong>
-  <span class="toplist-note">Approval; method varies</span>
-
-
-            
-            
-          </dd></div>
-          
-        </dl>
-        <div class="toplist-footer">
-          
-          <a class="toplist-visit" href="/redemption-times/crown-coins/" aria-label="Crown Coins details"><span>Details<span class="toplist-mobile-name">: Crown Coins</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
-        </div>
-      </div>
-      <details class="toplist-sources">
-        <summary aria-label="Terms and sources for Crown Coins" title="Terms and sources for Crown Coins"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
-        <div class="toplist-evidence">
-          
-          <section class="toplist-source" data-record-id="0b32aea7e0af02b40751">
-            <h4>Free signup</h4>
-            <p><strong>2 SC free</strong> · On signup; no purchase. Available when registering a new account and claiming the welcome bonus. No initial purchase is needed. Sweeps Coins are promotional currency used to play eligible games and may be redeemed for prizes once converted into redeemable coins, subject to the Terms of Service.</p>
-            <p class="toplist-source-meta"><a href="https://help.crowncoinscasino.com/en/articles/9183356-is-there-a-welcome-bonus-available-when-signing-up" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:58:55.918Z">September 27, 2026</time></p>
-          </section>
-          
-          <section class="toplist-source" data-record-id="5cf2c4d6496ca7f2eb0d">
-            <h4>Redemption minimum</h4>
-            <p><strong>50 SC</strong> · General redemption minimum; cash method not established.. Account must be fully verified. Required phone verification, identity verification, or liveness check must be completed. Account must be the primary account and not a duplicate account. Redemptions from duplicate or unverified accounts are not eligible for processing.</p>
-            <p class="toplist-source-meta"><a href="https://help.crowncoinscasino.com/en/articles/12076052-how-do-i-redeem-my-winnings-on-crowncoins-and-address-common-redemption-issues" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:56:17.535Z">September 27, 2026</time></p>
-          </section>
-          
-          <section class="toplist-source" data-record-id="d8bded5aa007def5ba50">
-            <h4>Published processing</h4>
-            <p><strong>24-72 hours</strong> · Approval; method varies. In some cases, approval may take up to 7 days.</p>
-            <p class="toplist-source-meta"><a href="https://help.crowncoinscasino.com/en/articles/11835859-redemption-faqs" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:53:03.272Z">September 27, 2026</time></p>
-          </section>
-          
-          <section class="toplist-source" data-record-id="fae510b2af93af15e22e">
-            <h4>Daily reward</h4>
-            <p><strong>Daily login reward</strong> · Amount not stated. Log in, select Rewards, then select Daily Bonus in the Crown Lounge to view and claim the available daily reward.</p>
-            <p class="toplist-source-meta"><a href="https://help.crowncoinscasino.com/en/articles/9183348-how-to-check-my-daily-bonus-status" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:49:08.004Z">September 27, 2026</time></p>
-          </section>
-          
-          <a class="toplist-full-link" href="/redemption-times/crown-coins/">Full Crown Coins page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-        </div>
-      </details>
-    </li>
-    
-    <li class="toplist-item" data-operator="luckyland" data-sort="{
-  &quot;slug&quot;: &quot;luckyland&quot;,
-  &quot;name&quot;: &quot;LuckyLand Casino&quot;,
-  &quot;sortValues&quot;: {
-    &quot;welcome&quot;: 2,
-    &quot;purchase&quot;: null,
-    &quot;daily&quot;: null,
-    &quot;redemption&quot;: null,
-    &quot;cash&quot;: null
-  }
+  },
+  &quot;benefitCount&quot;: 4
 }" value="5">
       
       <div class="toplist-main">
         <div class="toplist-identity">
           <div class="toplist-mark">
-            <img src="/assets/favicons/luckyland.png" alt="" width="40" height="40">
+            <img src="/assets/favicons/crown-coins.png" alt="" width="40" height="40">
             <span class="toplist-position" aria-label="Position 5">5</span>
           </div>
-          <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/luckyland/">LuckyLand Casino</a>
-            
+          <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/crown-coins/">Crown Coins</a>
           </h3>
         </div>
-        <p class="toplist-sentence">2 SC free (no purchase); Daily login reward.</p>
+        
+        <ul class="toplist-badges" aria-label="Crown Coins highlights">
+          <li class="badge badge--perk" title="Approval: 24-72 hours. Approval; method varies"><i class="ph ph-timer" aria-hidden="true"></i>Approval ≤3 days</li><li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li>
+        </ul>
+        
+        <p class="toplist-sentence">2 SC free at sign-up. Redeem prizes from 50 SC. Approval takes 24-72 hours.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Free coins</dt><dd>
             
 
-  <strong class="toplist-value">2 SC free</strong>
-  <span class="toplist-note">On signup; no purchase</span>
+  <strong class="toplist-value">2 SC</strong>
+  <span class="toplist-note">At sign-up</span>
 
 
             
-            <span class="toplist-daily" data-metric="daily">Daily login reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
@@ -621,49 +816,98 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
+          </dd></div>
+          
+          <div class="toplist-metric" data-metric="minimum"><dt>Redeem from</dt><dd>
+            
+
+  <strong class="toplist-value">50 SC</strong>
+  <span class="toplist-note">Prize type not stated</span>
+
+
             
           </dd></div>
           
-          <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
-<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
-            
-            
-          </dd></div>
-          
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
-            
-<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
+  <strong class="toplist-value">24-72 hours</strong>
+  
 
-            
+
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
           
-          <a class="toplist-visit" href="/redemption-times/luckyland/" aria-label="LuckyLand Casino details"><span>Details<span class="toplist-mobile-name">: LuckyLand Casino</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          <a class="toplist-visit" href="/go/crown-coins/" rel="sponsored noopener" aria-label="Visit Crown Coins"><span>Visit<span class="toplist-mobile-name"> Crown Coins</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
-        <summary aria-label="Terms and sources for LuckyLand Casino" title="Terms and sources for LuckyLand Casino"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
+        <summary aria-label="Terms and sources for Crown Coins" title="Terms and sources for Crown Coins"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Crown Coins terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="a9ccba60a15dbd92eb52">
-            <h4>Free signup</h4>
-            <p><strong>2 SC free</strong> · On signup; no purchase. Exclusive welcome offer.</p>
-            <p class="toplist-source-meta"><a href="https://luckylandcasino.com/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:53:49.180Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Free signup</dt><dd>
+            
+            <div class="toplist-source" data-record-id="0b32aea7e0af02b40751">
+              <span class="term-value">2 SC</span>
+              <span class="term-detail">At sign-up. Available when registering a new account and claiming the welcome bonus. No initial purchase is needed. Sweeps Coins are promotional currency used to play eligible games and may be redeemed for prizes once converted into redeemable coins, subject to the Terms of Service.</span>
+              <span class="term-source"><a href="https://help.crowncoinscasino.com/en/articles/9183356-is-there-a-welcome-bonus-available-when-signing-up" rel="noopener" title="Observed September 27, 2026">help.crowncoinscasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:58:55.918Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="97ed3e2788d831885714">
-            <h4>Daily reward</h4>
-            <p><strong>Daily login reward</strong> · Amount not stated. Claimed as a daily login bonus; no coin amount is stated.</p>
-            <p class="toplist-source-meta"><a href="https://luckylandcasino.com/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:53:49.180Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Redeem from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="5cf2c4d6496ca7f2eb0d">
+              <span class="term-value">Prize minimum: 50 SC</span>
+              <span class="term-detail">Prize type not stated. Account must be fully verified. Required phone verification, identity verification, or liveness check must be completed. Account must be the primary account and not a duplicate account. Redemptions from duplicate or unverified accounts are not eligible for processing.</span>
+              <span class="term-source"><a href="https://help.crowncoinscasino.com/en/articles/12076052-how-do-i-redeem-my-winnings-on-crowncoins-and-address-common-redemption-issues" rel="noopener" title="Observed September 27, 2026">help.crowncoinscasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:56:17.535Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <a class="toplist-full-link" href="/redemption-times/luckyland/">Full LuckyLand Casino page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          <div class="toplist-term">
+            <dt>Payout time</dt><dd>
+            
+            <div class="toplist-source" data-record-id="d8bded5aa007def5ba50">
+              <span class="term-value">24-72 hours</span>
+              <span class="term-detail">Approval. In some cases, approval may take up to 7 days.</span>
+              <span class="term-source"><a href="https://help.crowncoinscasino.com/en/articles/11835859-redemption-faqs" rel="noopener" title="Observed September 27, 2026">help.crowncoinscasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:53:03.272Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
+          
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="fae510b2af93af15e22e">
+              <span class="term-value">Daily login reward</span>
+              <span class="term-detail">Amount not stated. Log in, select Rewards, then select Daily Bonus in the Crown Lounge to view and claim the available daily reward.</span>
+              <span class="term-source"><a href="https://help.crowncoinscasino.com/en/articles/9183348-how-to-check-my-daily-bonus-status" rel="noopener" title="Observed September 27, 2026">help.crowncoinscasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:49:08.004Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
+          
+          </dl>
+          <a class="toplist-full-link" href="/redemption-times/crown-coins/">Full Crown Coins page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
     </li>
@@ -677,7 +921,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: null,
     &quot;cash&quot;: null
-  }
+  },
+  &quot;benefitCount&quot;: 3
 }" value="6">
       
       <div class="toplist-main">
@@ -687,21 +932,20 @@
             <span class="toplist-position" aria-label="Position 6">6</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/sportzino/">Sportzino</a>
-            
           </h3>
         </div>
-        <p class="toplist-sentence">2 SC free (no purchase); 50 SC (General redemption minimum; cash method not established.); Increasing daily reward.</p>
+        
+        <p class="toplist-sentence">2 SC free at sign-up. Redeem prizes from 50 SC.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Free coins</dt><dd>
             
 
-  <strong class="toplist-value">2 SC free</strong>
+  <strong class="toplist-value">2 SC</strong>
   <span class="toplist-note">Up to 7 SC with tasks</span>
 
 
             
-            <span class="toplist-daily" data-metric="daily">Increasing daily reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
@@ -709,176 +953,81 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
+          </dd></div>
+          
+          <div class="toplist-metric" data-metric="minimum"><dt>Redeem from</dt><dd>
+            
+
+  <strong class="toplist-value">50 SC</strong>
+  <span class="toplist-note">Prize type not stated</span>
+
+
             
           </dd></div>
           
-          <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
-            
-            
-          </dd></div>
-          
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
-            
-<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
-
-            
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
           
-          <a class="toplist-visit" href="/redemption-times/sportzino/" aria-label="Sportzino details"><span>Details<span class="toplist-mobile-name">: Sportzino</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          <a class="toplist-visit" href="/go/sportzino/" rel="sponsored noopener" aria-label="Visit Sportzino"><span>Visit<span class="toplist-mobile-name"> Sportzino</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Sportzino" title="Terms and sources for Sportzino"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Sportzino terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="43be424cddef911c4c9a">
-            <h4>Free signup</h4>
-            <p><strong>2 SC free</strong> · Up to 7 SC with tasks. The required Sign Up, form completion, email verification, and phone verification steps earn 50,000 GC + 2 SC right away. Optional tasks, including Facebook or Google connection and the first daily login bonus, are required to unlock the full 170,000 GC + 7 SC. The welcome bonus is described as a no deposit bonus.</p>
-            <p class="toplist-source-meta"><a href="https://sportzino.com/promotions/promo/sign-up-promotion" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:56:51.609Z">September 27, 2026</time></p>
-          </section>
-          
-          <section class="toplist-source" data-record-id="2d36f4ae86c27aec1032">
-            <h4>Redemption minimum</h4>
-            <p><strong>50 SC</strong> · General redemption minimum; cash method not established.</p>
-            <p class="toplist-source-meta"><a href="https://sportzino.com/api/Document/ContentPage/sweeps-rules.pdf" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:53:34.947Z">September 27, 2026</time></p>
-          </section>
-          
-          <section class="toplist-source" data-record-id="2a03589627bf89493cae">
-            <h4>Daily reward</h4>
-            <p><strong>Increasing daily reward</strong> · Fixed daily SC not established. Log in daily to claim free coins. The stated Day 1 reward is GC 20,000 + 1 SC. Claim window: Every 24 Hours. Streak goal: 7 Days.</p>
-            <p class="toplist-source-meta"><a href="https://sportzino.com/promotions/promo/daily-login-bonus" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:49:50.015Z">September 27, 2026</time></p>
-          </section>
-          
-          <a class="toplist-full-link" href="/redemption-times/sportzino/">Full Sportzino page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-        </div>
-      </details>
-    </li>
-    
-    <li class="toplist-item" data-operator="wow-vegas" data-sort="{
-  &quot;slug&quot;: &quot;wow-vegas&quot;,
-  &quot;name&quot;: &quot;WOW Vegas&quot;,
-  &quot;sortValues&quot;: {
-    &quot;welcome&quot;: 2,
-    &quot;purchase&quot;: 3.003003003003003,
-    &quot;daily&quot;: null,
-    &quot;redemption&quot;: 72,
-    &quot;cash&quot;: 50
-  }
-}" value="7">
-      
-      <div class="toplist-main">
-        <div class="toplist-identity">
-          <div class="toplist-mark">
-            <img src="/assets/favicons/wow-vegas.png" alt="" width="40" height="40">
-            <span class="toplist-position" aria-label="Position 7">7</span>
+          <div class="toplist-term">
+            <dt>Free signup</dt><dd>
+            
+            <div class="toplist-source" data-record-id="43be424cddef911c4c9a">
+              <span class="term-value">2 SC</span>
+              <span class="term-detail">Up to 7 SC with tasks. The required Sign Up, form completion, email verification, and phone verification steps earn 50,000 GC + 2 SC right away. Optional tasks, including Facebook or Google connection and the first daily login bonus, are required to unlock the full 170,000 GC + 7 SC. The welcome bonus is described as a no deposit bonus.</span>
+              <span class="term-source"><a href="https://sportzino.com/promotions/promo/sign-up-promotion" rel="noopener" title="Observed September 27, 2026">sportzino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:56:51.609Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
           </div>
-          <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/wow-vegas/">WOW Vegas</a>
-            <span class="toplist-reward-types">Cash prizes · Gift cards</span>
-          </h3>
-        </div>
-        <p class="toplist-sentence">2 SC free (no purchase); 30 SC for $9.99 (3 SC per $1. First purchase only.); Cash out from 50 SC.</p>
-        <dl class="toplist-values">
           
-          <div class="toplist-metric" data-metric="signup"><dt>Free coins</dt><dd>
+          <div class="toplist-term">
+            <dt>Redeem from</dt><dd>
             
-
-  <strong class="toplist-value">2 SC free</strong>
-  <span class="toplist-note">5 SC total over 3 days</span>
-
-
+            <div class="toplist-source" data-record-id="2d36f4ae86c27aec1032">
+              <span class="term-value">Prize minimum: 50 SC</span>
+              <span class="term-detail">Prize type not stated</span>
+              <span class="term-source"><a href="https://sportzino.com/api/Document/ContentPage/sweeps-rules.pdf" rel="noopener" title="Observed September 27, 2026">sportzino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:53:34.947Z">Observed September 27, 2026</time>
+              </span>
+            </div>
             
-            <span class="toplist-daily" data-metric="daily">Variable daily reward</span>
-          </dd></div>
+            </dd>
+          </div>
           
-          <div class="toplist-metric" data-metric="purchase"><dt>First purchase</dt><dd>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
             
-
-  <strong class="toplist-value">30 SC for $9.99</strong>
-  <span class="toplist-note">3 SC per $1. First purchase only.</span>
-
-
+            <div class="toplist-source" data-record-id="2a03589627bf89493cae">
+              <span class="term-value">Increasing daily reward</span>
+              <span class="term-detail">Fixed daily SC not established. Log in daily to claim free coins. The stated Day 1 reward is GC 20,000 + 1 SC. Claim window: Every 24 Hours. Streak goal: 7 Days.</span>
+              <span class="term-source"><a href="https://sportzino.com/promotions/promo/daily-login-bonus" rel="noopener" title="Observed September 27, 2026">sportzino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:49:50.015Z">Observed September 27, 2026</time>
+              </span>
+            </div>
             
-            
-          </dd></div>
+            </dd>
+          </div>
           
-          <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
-            
-
-  <strong class="toplist-value">50 SC</strong>
-  <span class="toplist-note">Cash redemption minimum.</span>
-
-
-            <span class="toplist-note">Gift cards from 20 SC</span>
-            
-          </dd></div>
-          
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
-            
-
-  <strong class="toplist-value">Up to 3 business days</strong>
-  <span class="toplist-note">Processing; Rising-Silver tiers</span>
-
-
-            
-            
-          </dd></div>
-          
-        </dl>
-        <div class="toplist-footer">
-          <button class="toplist-code" type="button" data-copy-code="WOWBONUS2026" aria-label="Copy WOW Vegas code WOWBONUS2026" title="2 SC free"><i class="ph ph-copy" aria-hidden="true"></i><span>WOWBONUS2026</span></button>
-          <a class="toplist-visit" href="/redemption-times/wow-vegas/" aria-label="WOW Vegas details"><span>Details<span class="toplist-mobile-name">: WOW Vegas</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
-        </div>
-      </div>
-      <details class="toplist-sources">
-        <summary aria-label="Terms and sources for WOW Vegas" title="Terms and sources for WOW Vegas"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
-        <div class="toplist-evidence">
-          
-          <section class="toplist-source" data-record-id="96d8483854cc2b8eb5c2">
-            <h4>Free signup</h4>
-            <p><strong>2 SC free</strong> · 5 SC total over 3 days. Available to claim after sign-up. Day 1 provides 150,000 WOW Coins + SC 2. Day 2 provides 50,000 WOW Coins + SC 1.5. Day 3 provides 50,000 WOW Coins + SC 1.5.</p>
-            <p class="toplist-source-meta"><a href="https://www.wowvegas.com/promo-code" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:52:23.151Z">September 27, 2026</time></p>
-          </section>
-          
-          <section class="toplist-source" data-record-id="c0f232c625356c2c24b0">
-            <h4>Purchase deal</h4>
-            <p><strong>30 SC for $9.99</strong> · 3 SC per $1. First purchase only.. Normally $29.99. 67% discount on first purchase. Instant coin delivery. Unlock VIP rewards faster.</p>
-            <p class="toplist-source-meta"><a href="https://www.wowvegas.com/promo-code" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:52:23.151Z">September 27, 2026</time></p>
-          </section>
-          
-          <section class="toplist-source" data-record-id="657702ec5c98f533df6d">
-            <h4>Redemption minimum</h4>
-            <p><strong>50 SC</strong> · Cash redemption minimum.. Blue WOW Coins cannot be redeemed, as they have no monetary value.</p>
-            <p class="toplist-source-meta"><a href="https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:58:35.860Z">September 27, 2026</time></p>
-          </section>
-          
-          <section class="toplist-source" data-record-id="487a40e7af2b0419c5f2">
-            <h4>Redemption minimum</h4>
-            <p><strong>20 SC</strong> · Gift-card redemption minimum.. Blue WOW Coins cannot be redeemed, as they have no monetary value.</p>
-            <p class="toplist-source-meta"><a href="https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:58:35.860Z">September 27, 2026</time></p>
-          </section>
-          
-          <section class="toplist-source" data-record-id="488b40a69b80fb121d77">
-            <h4>Published processing</h4>
-            <p><strong>Up to 3 business days</strong> · Processing; Rising-Silver tiers. Within 3 business days.</p>
-            <p class="toplist-source-meta"><a href="https://help.wowvegas.com/en/articles/10676690-how-long-does-a-redemption-take" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:59:56.939Z">September 27, 2026</time></p>
-          </section>
-          
-          <section class="toplist-source" data-record-id="f51819c8f103196ef41a">
-            <h4>Daily reward</h4>
-            <p><strong>Variable daily reward</strong> · Fixed daily SC not established. Log in to your WOW Vegas account. Check the Daily Drops section from the homepage or promotions page. No spins, no purchases, just free fun.</p>
-            <p class="toplist-source-meta"><a href="https://help.wowvegas.com/en/articles/11969957-how-can-i-earn-free-sc-on-wow-vegas" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:48:28.270Z">September 27, 2026</time></p>
-          </section>
-          
-          <a class="toplist-full-link" href="/redemption-times/wow-vegas/">Full WOW Vegas page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </dl>
+          <a class="toplist-full-link" href="/redemption-times/sportzino/">Full Sportzino page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
     </li>
@@ -892,31 +1041,35 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: null,
     &quot;cash&quot;: 50
-  }
-}" value="8">
+  },
+  &quot;benefitCount&quot;: 3
+}" value="7">
       
       <div class="toplist-main">
         <div class="toplist-identity">
           <div class="toplist-mark">
             <img src="/assets/favicons/zula.png" alt="" width="40" height="40">
-            <span class="toplist-position" aria-label="Position 8">8</span>
+            <span class="toplist-position" aria-label="Position 7">7</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/zula/">Zula Casino</a>
-            <span class="toplist-reward-types">Cash prizes</span>
           </h3>
         </div>
-        <p class="toplist-sentence">2 SC free (no purchase); Cash out from 50 SC; Daily login reward.</p>
+        
+        <ul class="toplist-badges" aria-label="Zula Casino highlights">
+          <li class="badge badge--perk" title="Low minimum"><i class="ph ph-arrow-line-down" aria-hidden="true"></i>Low minimum</li><li class="badge badge--warn" title="Opt-in for full bonus"><i class="ph ph-info" aria-hidden="true"></i>Opt-in for full bonus</li><li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li>
+        </ul>
+        
+        <p class="toplist-sentence">2 SC free at sign-up. Cash out from 50 SC.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Free coins</dt><dd>
             
 
-  <strong class="toplist-value">2 SC free</strong>
+  <strong class="toplist-value">2 SC</strong>
   <span class="toplist-note">10 SC total in stages; opt-in needed for full reward</span>
 
 
             
-            <span class="toplist-daily" data-metric="daily">Daily login reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
@@ -924,58 +1077,184 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            
           </dd></div>
           
           <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
             
 
   <strong class="toplist-value">50 SC</strong>
-  <span class="toplist-note">Cash redemption minimum.</span>
+  
 
 
-            
             
           </dd></div>
           
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
-            
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
           
-          <a class="toplist-visit" href="/redemption-times/zula/" aria-label="Zula Casino details"><span>Details<span class="toplist-mobile-name">: Zula Casino</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          <a class="toplist-visit" href="/go/zula/" rel="sponsored noopener" aria-label="Visit Zula Casino"><span>Visit<span class="toplist-mobile-name"> Zula Casino</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Zula Casino" title="Terms and sources for Zula Casino"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Zula Casino terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="36dbee1e835d7eb2029b">
-            <h4>Free signup</h4>
-            <p><strong>2 SC free</strong> · 10 SC total in stages; opt-in needed for full reward. Create an account by providing name, address, email, and password. The immediate registration allocation is 20,000 GC and 2 SC; additional allocations require phone verification, email consent, SMS consent, daily login, Facebook, or Google actions. Available only to new players who consent to receive communications. Subject to terms and conditions, available only to players from non-restricted jurisdictions, and bonuses may vary by jurisdiction.</p>
-            <p class="toplist-source-meta"><a href="https://www.zulacasino.com/promotions/promo/zula-casino-sign-up-promotion" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:56:37.838Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Free signup</dt><dd>
+            
+            <div class="toplist-source" data-record-id="36dbee1e835d7eb2029b">
+              <span class="term-value">2 SC</span>
+              <span class="term-detail">10 SC total in stages; opt-in needed for full reward. Create an account by providing name, address, email, and password. The immediate registration allocation is 20,000 GC and 2 SC; additional allocations require phone verification, email consent, SMS consent, daily login, Facebook, or Google actions. Available only to new players who consent to receive communications. Subject to terms and conditions, available only to players from non-restricted jurisdictions, and bonuses may vary by jurisdiction.</span>
+              <span class="term-source"><a href="https://www.zulacasino.com/promotions/promo/zula-casino-sign-up-promotion" rel="noopener" title="Observed September 27, 2026">zulacasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:56:37.838Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="63db7ed34eaa449ae563">
-            <h4>Redemption minimum</h4>
-            <p><strong>50 SC</strong> · Cash redemption minimum.. Per day. The operator may require the participant to use the same payment method used to purchase Gold Coins.</p>
-            <p class="toplist-source-meta"><a href="https://www.zulacasino.com/api/Document/ContentPage/sweeps-rules.pdf" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:53:28.740Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Cash out from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="63db7ed34eaa449ae563">
+              <span class="term-value">Cash: 50 SC</span>
+              <span class="term-detail">Per day. The operator may require the participant to use the same payment method used to purchase Gold Coins.</span>
+              <span class="term-source"><a href="https://www.zulacasino.com/api/Document/ContentPage/sweeps-rules.pdf" rel="noopener" title="Observed September 27, 2026">zulacasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:53:28.740Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="efb6bc6ca3caea10bf38">
-            <h4>Daily reward</h4>
-            <p><strong>Daily login reward</strong> · Amount not stated. Available to eligible registered Zula Casino players. Available right after registration. Claim at the Zula Casino Coin Store once per day. The page states the reward is GC + SC but does not specify amounts.</p>
-            <p class="toplist-source-meta"><a href="https://www.zulacasino.com/promotions/promo/daily-login-bonus" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:49:36.136Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="efb6bc6ca3caea10bf38">
+              <span class="term-value">Daily login reward</span>
+              <span class="term-detail">Amount not stated. Available to eligible registered Zula Casino players. Available right after registration. Claim at the Zula Casino Coin Store once per day. The page states the reward is GC + SC but does not specify amounts.</span>
+              <span class="term-source"><a href="https://www.zulacasino.com/promotions/promo/daily-login-bonus" rel="noopener" title="Observed September 27, 2026">zulacasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:49:36.136Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/zula/">Full Zula Casino page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </details>
+    </li>
+    
+    <li class="toplist-item" data-operator="luckyland" data-sort="{
+  &quot;slug&quot;: &quot;luckyland&quot;,
+  &quot;name&quot;: &quot;LuckyLand Casino&quot;,
+  &quot;sortValues&quot;: {
+    &quot;welcome&quot;: 2,
+    &quot;purchase&quot;: null,
+    &quot;daily&quot;: null,
+    &quot;redemption&quot;: null,
+    &quot;cash&quot;: null
+  },
+  &quot;benefitCount&quot;: 2
+}" value="8">
+      
+      <div class="toplist-main">
+        <div class="toplist-identity">
+          <div class="toplist-mark">
+            <img src="/assets/favicons/luckyland.png" alt="" width="40" height="40">
+            <span class="toplist-position" aria-label="Position 8">8</span>
+          </div>
+          <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/luckyland/">LuckyLand Casino</a>
+          </h3>
+        </div>
+        
+        <p class="toplist-sentence">2 SC free at sign-up.</p>
+        <dl class="toplist-values">
+          
+          <div class="toplist-metric" data-metric="signup"><dt>Free coins</dt><dd>
+            
+
+  <strong class="toplist-value">2 SC</strong>
+  <span class="toplist-note">At sign-up</span>
+
+
+            
+          </dd></div>
+          
+          <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
+            
+<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
+
+            
+          </dd></div>
+          
+          <div class="toplist-metric" data-metric="minimum"><dt>Redeem from</dt><dd>
+            
+<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
+
+            
+          </dd></div>
+          
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
+            
+<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
+
+            
+          </dd></div>
+          
+        </dl>
+        <div class="toplist-footer">
+          
+          <a class="toplist-visit" href="/go/luckyland/" rel="sponsored noopener" aria-label="Visit LuckyLand Casino"><span>Visit<span class="toplist-mobile-name"> LuckyLand Casino</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <details class="toplist-sources">
+        <summary aria-label="Terms and sources for LuckyLand Casino" title="Terms and sources for LuckyLand Casino"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
+        <div class="toplist-evidence">
+          <h4>LuckyLand Casino terms and sources</h4>
+          <dl class="toplist-terms">
+          
+          <div class="toplist-term">
+            <dt>Free signup</dt><dd>
+            
+            <div class="toplist-source" data-record-id="a9ccba60a15dbd92eb52">
+              <span class="term-value">2 SC</span>
+              <span class="term-detail">At sign-up. Exclusive welcome offer.</span>
+              <span class="term-source"><a href="https://luckylandcasino.com/" rel="noopener" title="Observed September 27, 2026">luckylandcasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:53:49.180Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
+          
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="97ed3e2788d831885714">
+              <span class="term-value">Daily login reward</span>
+              <span class="term-detail">Amount not stated. Claimed as a daily login bonus; no coin amount is stated.</span>
+              <span class="term-source"><a href="https://luckylandcasino.com/" rel="noopener" title="Observed September 27, 2026">luckylandcasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:53:49.180Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
+          
+          </dl>
+          <a class="toplist-full-link" href="/redemption-times/luckyland/">Full LuckyLand Casino page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
     </li>
@@ -989,7 +1268,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: null,
     &quot;cash&quot;: 50
-  }
+  },
+  &quot;benefitCount&quot;: 5
 }" value="9">
       
       <div class="toplist-main">
@@ -999,31 +1279,33 @@
             <span class="toplist-position" aria-label="Position 9">9</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/yay-casino/">YAY Casino</a>
-            <span class="toplist-reward-types">Cash prizes</span>
           </h3>
         </div>
-        <p class="toplist-sentence">1 SC free (no purchase); 44 SC total + 440,000 Gold Coins (See purchase and claim conditions); Cash out from 50 SC.</p>
+        
+        <ul class="toplist-badges" aria-label="YAY Casino highlights">
+          <li class="badge badge--perk" title="Low minimum"><i class="ph ph-arrow-line-down" aria-hidden="true"></i>Low minimum</li><li class="badge badge--warn" title="Opt-in needed"><i class="ph ph-info" aria-hidden="true"></i>Opt-in needed</li><li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li>
+        </ul>
+        
+        <p class="toplist-sentence">1 SC free at sign-up. 44 SC bundle on your first purchase (Price not stated). Cash out from 50 SC.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Free coins</dt><dd>
             
 
-  <strong class="toplist-value">1 SC free</strong>
-  <span class="toplist-note">On signup; no purchase; marketing opt-in required</span>
+  <strong class="toplist-value">1 SC</strong>
+  <span class="toplist-note">marketing opt-in required</span>
 
 
             
-            <span class="toplist-daily" data-metric="daily">1 SC first claim</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>First purchase</dt><dd>
             
 
-  <strong class="toplist-value">44 SC total + 440,000 Gold Coins</strong>
-  <span class="toplist-note">See purchase and claim conditions</span>
+  <strong class="toplist-value">44 SC bundle</strong>
+  <span class="toplist-note">Price not stated</span>
 
 
-            
             
           </dd></div>
           
@@ -1031,72 +1313,113 @@
             
 
   <strong class="toplist-value">50 SC</strong>
-  <span class="toplist-note">Cash redemption minimum.</span>
+  
 
 
-            
             
           </dd></div>
           
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 
   <strong class="toplist-value">At least 24 hours</strong>
-  <span class="toplist-note">Processing; method unspecified</span>
+  
 
 
-            
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
-          <button class="toplist-code" type="button" data-copy-code="yaypromo" aria-label="Copy YAY Casino code yaypromo" title="44 SC total + 440,000 Gold Coins"><i class="ph ph-copy" aria-hidden="true"></i><span>yaypromo</span></button>
+          <button class="toplist-code" type="button" data-copy-code="yaypromo" aria-label="Copy YAY Casino code yaypromo" title="44 SC total + 440,000 Gold Coins"><span class="lbl">Code</span><b>yaypromo</b><i class="ph ph-copy" aria-hidden="true"></i><span class="toplist-copy-status sr-only" role="status"></span></button>
           <a class="toplist-visit" href="/go/yay-casino/" rel="sponsored noopener" aria-label="Visit YAY Casino"><span>Visit<span class="toplist-mobile-name"> YAY Casino</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-          
-          <span class="toplist-copy-status sr-only" role="status"></span>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for YAY Casino" title="Terms and sources for YAY Casino"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>YAY Casino terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="3a8c2bf06b14db29dd9b">
-            <h4>Free signup</h4>
-            <p><strong>1 SC free</strong> · On signup; no purchase; marketing opt-in required. Registration requires clicking “Join Now” and completing the quick registration form. Additional rewards require phone verification, email opt-in, SMS opt-in, claiming the first daily bonus, and completing 150 spins in SC mode within the first 7 days.</p>
-            <p class="toplist-source-meta"><a href="https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:57:59.714Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Free signup</dt><dd>
+            
+            <div class="toplist-source" data-record-id="3a8c2bf06b14db29dd9b">
+              <span class="term-value">1 SC</span>
+              <span class="term-detail">marketing opt-in required. Registration requires clicking “Join Now” and completing the quick registration form. Additional rewards require phone verification, email opt-in, SMS opt-in, claiming the first daily bonus, and completing 150 spins in SC mode within the first 7 days.</span>
+              <span class="term-source"><a href="https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion" rel="noopener" title="Observed September 27, 2026">yaycasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:57:59.714Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="5d72f82ad9a9c48d517b">
-            <h4>Purchase deal</h4>
-            <p><strong>44 SC total + 440,000 Gold Coins</strong> · See purchase and claim conditions. Register using promo code yaypromo. The stated benefit includes the welcome bonus. The 150% bonus is stated to apply on the first purchase. Includes 20 free spins on Yay Devil Fire 2, stated as value of 0.1 SC/spin.</p>
-            <p class="toplist-source-meta"><a href="https://www.yaycasino.com/blog/top-5-reasons-to-use-yay-casino-promo-codes/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-26T06:40:39.086Z">September 26, 2026</time> · Previous observation</p>
-          </section>
+          <div class="toplist-term">
+            <dt>Purchase deal</dt><dd>
+            
+            <div class="toplist-source" data-record-id="5d72f82ad9a9c48d517b">
+              <span class="term-value">44 SC bundle</span>
+              <span class="term-detail">Price not stated. Register using promo code yaypromo. The stated benefit includes the welcome bonus. The 150% bonus is stated to apply on the first purchase. Includes 20 free spins on Yay Devil Fire 2, stated as value of 0.1 SC/spin.</span>
+              <span class="term-source"><a href="https://www.yaycasino.com/blog/top-5-reasons-to-use-yay-casino-promo-codes/" rel="noopener" title="Observed September 26, 2026">yaycasino.com</a>
+              <span class="term-stale">Last seen <time datetime="2026-09-26T06:40:39.086Z">Sep 26</time></span>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="8de0d08ea87bff367c11">
-            <h4>Redemption minimum</h4>
-            <p><strong>50 SC</strong> · Cash redemption minimum.. A 1x playthrough requirement must be completed. KYC verification is required before the first redemption.</p>
-            <p class="toplist-source-meta"><a href="https://www.yaycasino.com/blog/understanding-sweeps-coins-your-complete-guide-to-free-sweeps-coins-no-deposit/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-22T09:26:28.942Z">September 22, 2026</time> · Previous observation</p>
-          </section>
+          <div class="toplist-term">
+            <dt>Cash out from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="8de0d08ea87bff367c11">
+              <span class="term-value">Bank: 50 SC</span>
+              <span class="term-detail">A 1x playthrough requirement must be completed. KYC verification is required before the first redemption.</span>
+              <span class="term-source"><a href="https://www.yaycasino.com/blog/understanding-sweeps-coins-your-complete-guide-to-free-sweeps-coins-no-deposit/" rel="noopener" title="Observed September 22, 2026">yaycasino.com</a>
+              <span class="term-stale">Last seen <time datetime="2026-09-22T09:26:28.942Z">Sep 22</time></span>
+              </span>
+            </div>
+            
+            <div class="toplist-source" data-record-id="bdb94c290bbc64aa0e66">
+              <span class="term-value">Prize minimum: 50 SC</span>
+              <span class="term-detail">Prize type not stated. The participant must be verified as an Eligible Participant and personal details must match the Account.</span>
+              <span class="term-source"><a href="https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf" rel="noopener" title="Observed September 27, 2026">yaycasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:54:46.516Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="bdb94c290bbc64aa0e66">
-            <h4>Redemption minimum</h4>
-            <p><strong>50 SC</strong> · General redemption minimum; cash method not established.. The participant must be verified as an Eligible Participant and personal details must match the Account.</p>
-            <p class="toplist-source-meta"><a href="https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:54:46.516Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Payout time</dt><dd>
+            
+            <div class="toplist-source" data-record-id="b4e93009a0887f656fd3">
+              <span class="term-value">At least 24 hours</span>
+              <span class="term-detail">Processing. The source says identity must be verified before the first request. It states a 1x playthrough condition and a minimum redeemable SC are required.</span>
+              <span class="term-source"><a href="https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/" rel="noopener" title="Observed September 27, 2026">yaycasino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:51:18.422Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="b4e93009a0887f656fd3">
-            <h4>Published processing</h4>
-            <p><strong>At least 24 hours</strong> · Processing; method unspecified. The source says identity must be verified before the first request. It states a 1x playthrough condition and a minimum redeemable SC are required.</p>
-            <p class="toplist-source-meta"><a href="https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:51:18.422Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="528db098791723f4e439">
+              <span class="term-value">1 SC first claim</span>
+              <span class="term-detail">Later daily amounts unverified. Complete the quick and free sign-up process. Log into the account daily and go to the Coin Store. The quoted allocation is the first daily bonus.</span>
+              <span class="term-source"><a href="https://www.yaycasino.com/promotions" rel="noopener" title="Observed September 27, 2026">yaycasino.com</a>
+              <span class="term-stale">Last seen <time datetime="2026-09-27T05:16:51.585Z">Sep 27</time></span>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="528db098791723f4e439">
-            <h4>Daily reward</h4>
-            <p><strong>1 SC first claim</strong> · Later daily amounts unverified. Complete the quick and free sign-up process. Log into the account daily and go to the Coin Store. The quoted allocation is the first daily bonus.</p>
-            <p class="toplist-source-meta"><a href="https://www.yaycasino.com/promotions" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T05:16:51.585Z">September 27, 2026</time> · Previous observation</p>
-          </section>
-          
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/yay-casino/">Full YAY Casino page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
@@ -1111,7 +1434,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: null,
     &quot;cash&quot;: null
-  }
+  },
+  &quot;benefitCount&quot;: 2
 }" value="10">
       
       <h3 class="toplist-group">No free Sweeps Coins confirmed</h3>
@@ -1123,10 +1447,10 @@
             <span class="toplist-position" aria-label="Position 10">10</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/chanced/">Chanced</a>
-            
           </h3>
         </div>
-        <p class="toplist-sentence">100 USD (Method unspecified minimum; see conditions); Daily login reward.</p>
+        
+        <p class="toplist-sentence">Redeem prizes from $100.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Welcome offer</dt><dd>
@@ -1134,7 +1458,6 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            <span class="toplist-daily" data-metric="daily">Daily login reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
@@ -1142,48 +1465,66 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
+          </dd></div>
+          
+          <div class="toplist-metric" data-metric="minimum"><dt>Redeem from</dt><dd>
+            
+
+  <strong class="toplist-value">$100</strong>
+  <span class="toplist-note">Prize type not stated</span>
+
+
             
           </dd></div>
           
-          <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
-            
-            
-          </dd></div>
-          
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
-            
-<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
-
-            
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
           
-          <a class="toplist-visit" href="/redemption-times/chanced/" aria-label="Chanced details"><span>Details<span class="toplist-mobile-name">: Chanced</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          <a class="toplist-visit" href="/go/chanced/" rel="sponsored noopener" aria-label="Visit Chanced"><span>Visit<span class="toplist-mobile-name"> Chanced</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Chanced" title="Terms and sources for Chanced"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Chanced terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="3c69cfda158fe0675ca3">
-            <h4>Redemption minimum</h4>
-            <p><strong>100 USD</strong> · Method unspecified minimum; see conditions. Amounts below the threshold are not eligible for prize redemption.</p>
-            <p class="toplist-source-meta"><a href="https://chanced.com/sweeps-rules/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:57:44.634Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Redeem from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="3c69cfda158fe0675ca3">
+              <span class="term-value">Prize minimum: $100</span>
+              <span class="term-detail">Prize type not stated. Amounts below the threshold are not eligible for prize redemption.</span>
+              <span class="term-source"><a href="https://chanced.com/sweeps-rules/" rel="noopener" title="Observed September 27, 2026">chanced.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:57:44.634Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="f50d2169c76badd364e1">
-            <h4>Daily reward</h4>
-            <p><strong>Daily login reward</strong> · Amount not stated. Sign into your Customer Account, click &quot;store&quot;, then &quot;daily boost&quot;, and click the &quot;claim&quot; button. Participants can only claim a Daily Bonus once per day (the clock resets every 24 hours).</p>
-            <p class="toplist-source-meta"><a href="https://chanced.com/sweeps-rules/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:57:44.634Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="f50d2169c76badd364e1">
+              <span class="term-value">Daily login reward</span>
+              <span class="term-detail">Amount not stated. Sign into your Customer Account, click &quot;store&quot;, then &quot;daily boost&quot;, and click the &quot;claim&quot; button. Participants can only claim a Daily Bonus once per day (the clock resets every 24 hours).</span>
+              <span class="term-source"><a href="https://chanced.com/sweeps-rules/" rel="noopener" title="Observed September 27, 2026">chanced.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:57:44.634Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/chanced/">Full Chanced page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
@@ -1198,7 +1539,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: 240,
     &quot;cash&quot;: null
-  }
+  },
+  &quot;benefitCount&quot;: 3
 }" value="11">
       
       <div class="toplist-main">
@@ -1208,10 +1550,14 @@
             <span class="toplist-position" aria-label="Position 11">11</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/dorados/">Dorados</a>
-            <span class="toplist-reward-types">Cash prizes</span>
           </h3>
         </div>
-        <p class="toplist-sentence">100 SC (General redemption minimum; cash method not established.); Up to 10 business days (Processing; method varies); Daily login reward.</p>
+        
+        <ul class="toplist-badges" aria-label="Dorados highlights">
+          <li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li>
+        </ul>
+        
+        <p class="toplist-sentence">Redeem prizes from 100 SC. Processing takes up to 10 business days.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Welcome offer</dt><dd>
@@ -1219,7 +1565,6 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            <span class="toplist-daily" data-metric="daily">Daily login reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
@@ -1227,25 +1572,25 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
+          </dd></div>
+          
+          <div class="toplist-metric" data-metric="minimum"><dt>Redeem from</dt><dd>
+            
+
+  <strong class="toplist-value">100 SC</strong>
+  <span class="toplist-note">Prize type not stated</span>
+
+
             
           </dd></div>
           
-          <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
-            
-<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
-
-            
-            
-          </dd></div>
-          
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 
-  <strong class="toplist-value">Up to 10 business days</strong>
-  <span class="toplist-note">Processing; method varies</span>
+  <strong class="toplist-value">Up to 10 days</strong>
+  <span class="toplist-note">Business days</span>
 
 
-            
             
           </dd></div>
           
@@ -1253,32 +1598,57 @@
         <div class="toplist-footer">
           
           <a class="toplist-visit" href="/go/dorados/" rel="sponsored noopener" aria-label="Visit Dorados"><span>Visit<span class="toplist-mobile-name"> Dorados</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-          
-          <span class="toplist-copy-status sr-only" role="status"></span>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Dorados" title="Terms and sources for Dorados"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Dorados terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="0e7675b7b8208519887f">
-            <h4>Redemption minimum</h4>
-            <p><strong>100 SC</strong> · General redemption minimum; cash method not established.. Amounts below the threshold are not eligible for redemption.</p>
-            <p class="toplist-source-meta"><a href="https://dorados.com/en/sweepstakes-rules" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:51:32.597Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Redeem from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="0e7675b7b8208519887f">
+              <span class="term-value">Prize minimum: 100 SC</span>
+              <span class="term-detail">Prize type not stated. Amounts below the threshold are not eligible for redemption.</span>
+              <span class="term-source"><a href="https://dorados.com/en/sweepstakes-rules" rel="noopener" title="Observed September 27, 2026">dorados.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:51:32.597Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="0d6175b51743d4e46747">
-            <h4>Published processing</h4>
-            <p><strong>Up to 10 business days</strong> · Processing; method varies. The operator may fulfill the redemption through multiple payments over several days rather than a single transaction.</p>
-            <p class="toplist-source-meta"><a href="https://dorados.com/en/sweepstakes-rules" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:51:32.597Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Payout time</dt><dd>
+            
+            <div class="toplist-source" data-record-id="0d6175b51743d4e46747">
+              <span class="term-value">Up to 10 days</span>
+              <span class="term-detail">Business days. Processing. The operator may fulfill the redemption through multiple payments over several days rather than a single transaction.</span>
+              <span class="term-source"><a href="https://dorados.com/en/sweepstakes-rules" rel="noopener" title="Observed September 27, 2026">dorados.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:51:32.597Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="3d0419f3febfe36e85cf">
-            <h4>Daily reward</h4>
-            <p><strong>Daily login reward</strong> · Amount not stated. Log in daily and collect what is available. The reward amount is not stated.</p>
-            <p class="toplist-source-meta"><a href="https://dorados.com/en/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:47:26.982Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="3d0419f3febfe36e85cf">
+              <span class="term-value">Daily login reward</span>
+              <span class="term-detail">Amount not stated. Log in daily and collect what is available. The reward amount is not stated.</span>
+              <span class="term-source"><a href="https://dorados.com/en/" rel="noopener" title="Observed September 27, 2026">dorados.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:47:26.982Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/dorados/">Full Dorados page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
@@ -1293,7 +1663,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: null,
     &quot;cash&quot;: null
-  }
+  },
+  &quot;benefitCount&quot;: 2
 }" value="12">
       
       <div class="toplist-main">
@@ -1303,10 +1674,10 @@
             <span class="toplist-position" aria-label="Position 12">12</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/fortune-wins/">Fortune Wins</a>
-            
           </h3>
         </div>
-        <p class="toplist-sentence">1,000 FC (see claim conditions); Increasing daily reward.</p>
+        
+        <p class="toplist-sentence">1,000 FC welcome reward; purchase requirements are not confirmed.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Welcome offer</dt><dd>
@@ -1317,7 +1688,6 @@
 
 
             
-            <span class="toplist-daily" data-metric="daily">Increasing daily reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
@@ -1325,48 +1695,63 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            
           </dd></div>
           
-          <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
+          <div class="toplist-metric" data-metric="minimum"><dt>Redeem from</dt><dd>
             
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            
           </dd></div>
           
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
-            
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
           
-          <a class="toplist-visit" href="/redemption-times/fortune-wins/" aria-label="Fortune Wins details"><span>Details<span class="toplist-mobile-name">: Fortune Wins</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          <a class="toplist-visit" href="/go/fortune-wins/" rel="sponsored noopener" aria-label="Visit Fortune Wins"><span>Visit<span class="toplist-mobile-name"> Fortune Wins</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Fortune Wins" title="Terms and sources for Fortune Wins"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Fortune Wins terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="785e070ac9ab0e1b62df">
-            <h4>Welcome offer</h4>
-            <p><strong>1,000 FC</strong> · Purchase requirement unconfirmed. Day 1 total requires the listed actions: initial registration, phone verification, email consent, SMS consent, Facebook and Google account connections, and claiming the first-day Daily Login Bonus. Initial Registration awards 20,000 GC + 100 FC; the 1,000 FC denomination is retained in the source wording and is not represented as SC. Daily Login Bonus on the first day is listed as 300,000 GC + 100 FC.</p>
-            <p class="toplist-source-meta"><a href="https://fortunewins.com/promotions/promo/sign-up-bonus" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:54:40.552Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Welcome offer</dt><dd>
+            
+            <div class="toplist-source" data-record-id="785e070ac9ab0e1b62df">
+              <span class="term-value">1,000 FC</span>
+              <span class="term-detail">Purchase requirement unconfirmed. Day 1 total requires the listed actions: initial registration, phone verification, email consent, SMS consent, Facebook and Google account connections, and claiming the first-day Daily Login Bonus. Initial Registration awards 20,000 GC + 100 FC; the 1,000 FC denomination is retained in the source wording and is not represented as SC. Daily Login Bonus on the first day is listed as 300,000 GC + 100 FC.</span>
+              <span class="term-source"><a href="https://fortunewins.com/promotions/promo/sign-up-bonus" rel="noopener" title="Observed September 27, 2026">fortunewins.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:54:40.552Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="67f33b98d8b53336957a">
-            <h4>Daily reward</h4>
-            <p><strong>Increasing daily reward</strong> · Fixed daily SC not established. Free bonus amount is not stated. Claim in the Free Rewards section after logging in and opening the Coin Store. A different free bonus is available each day during a 7-day consecutive-login streak. Missing a day resets progress; completing all 7 days provides a larger grand-final bonus.</p>
-            <p class="toplist-source-meta"><a href="https://fortunewins.com/promotions/promo/daily-bonus" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:50:47.728Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="67f33b98d8b53336957a">
+              <span class="term-value">Increasing daily reward</span>
+              <span class="term-detail">Fixed daily SC not established. Free bonus amount is not stated. Claim in the Free Rewards section after logging in and opening the Coin Store. A different free bonus is available each day during a 7-day consecutive-login streak. Missing a day resets progress; completing all 7 days provides a larger grand-final bonus.</span>
+              <span class="term-source"><a href="https://fortunewins.com/promotions/promo/daily-bonus" rel="noopener" title="Observed September 27, 2026">fortunewins.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:50:47.728Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/fortune-wins/">Full Fortune Wins page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
@@ -1381,7 +1766,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: null,
     &quot;cash&quot;: null
-  }
+  },
+  &quot;benefitCount&quot;: 4
 }" value="13">
       
       <div class="toplist-main">
@@ -1391,10 +1777,14 @@
             <span class="toplist-position" aria-label="Position 13">13</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/high5/">High 5 Casino</a>
-            <span class="toplist-reward-types">Gift cards · Cash prizes</span>
           </h3>
         </div>
-        <p class="toplist-sentence">200 Spins for $9.99 (See purchase and claim conditions); Gift cards from 50 SC; 3-5 business days (Delivery after approval; bank).</p>
+        
+        <ul class="toplist-badges" aria-label="High 5 Casino highlights">
+          <li class="badge" title="Gift cards"><i class="ph ph-gift" aria-hidden="true"></i>Gift cards</li><li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li>
+        </ul>
+        
+        <p class="toplist-sentence">200 Spins for $9.99 on your first purchase. Gift cards from 50 SC. Delivery after approval takes 3-5 business days.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Welcome offer</dt><dd>
@@ -1402,80 +1792,115 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            <span class="toplist-daily" data-metric="daily">Daily login reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>First purchase</dt><dd>
             
 
   <strong class="toplist-value">200 Spins for $9.99</strong>
-  <span class="toplist-note">See purchase and claim conditions</span>
+  
 
 
-            
             
           </dd></div>
           
-          <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
+          <div class="toplist-metric" data-metric="minimum"><dt>Gift cards from</dt><dd>
             
-<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
-            <span class="toplist-note">Gift cards from 50 SC</span>
+  <strong class="toplist-value">50 SC</strong>
+  <span class="toplist-note">Gift cards</span>
+
+
             
           </dd></div>
           
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 
-  <strong class="toplist-value">3-5 business days</strong>
-  <span class="toplist-note">Delivery after approval; bank</span>
+  <strong class="toplist-value">3-5 days</strong>
+  <span class="toplist-note">Business days · After approval</span>
 
 
-            
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
           
-          <a class="toplist-visit" href="/redemption-times/high5/" aria-label="High 5 Casino details"><span>Details<span class="toplist-mobile-name">: High 5 Casino</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          <a class="toplist-visit" href="/go/high5/" rel="sponsored noopener" aria-label="Visit High 5 Casino"><span>Visit<span class="toplist-mobile-name"> High 5 Casino</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for High 5 Casino" title="Terms and sources for High 5 Casino"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>High 5 Casino terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="d7275014f8aba42c1264">
-            <h4>Purchase deal</h4>
-            <p><strong>200 Spins for $9.99</strong> · See purchase and claim conditions. For new players upon registration. Includes 200 Spins On Billionaire’s Bank.</p>
-            <p class="toplist-source-meta"><a href="https://high5casino.com/promotions/sign-up-bonus/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:59:49.655Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Purchase deal</dt><dd>
+            
+            <div class="toplist-source" data-record-id="d7275014f8aba42c1264">
+              <span class="term-value">200 Spins for $9.99</span>
+              <span class="term-detail">First purchase. For new players upon registration. Includes 200 Spins On Billionaire’s Bank.</span>
+              <span class="term-source"><a href="https://high5casino.com/promotions/sign-up-bonus/" rel="noopener" title="Observed September 27, 2026">high5casino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:59:49.655Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="ad73a9fbbe66c5876e8b">
-            <h4>Redemption minimum</h4>
-            <p><strong>50 SC</strong> · Gift-card redemption minimum.. Sent via email.</p>
-            <p class="toplist-source-meta"><a href="https://high5casino.com/helpcenter/how-to-redeem-real-prizes/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:54:16.877Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Gift cards from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="ad73a9fbbe66c5876e8b">
+              <span class="term-value">Gift cards: 50 SC</span>
+              <span class="term-detail">Gift cards. Sent via email.</span>
+              <span class="term-source"><a href="https://high5casino.com/helpcenter/how-to-redeem-real-prizes/" rel="noopener" title="Observed September 27, 2026">high5casino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:54:16.877Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            <div class="toplist-source" data-record-id="1de145c5da86ac790132">
+              <span class="term-value">Prize minimum: 100 SC</span>
+              <span class="term-detail">Prize type not stated. The same instruction states a 50 SC minimum for prize out.</span>
+              <span class="term-source"><a href="https://high5casino.com/helpcenter/how-to-redeem-real-prizes/" rel="noopener" title="Observed September 27, 2026">high5casino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:54:16.877Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="1de145c5da86ac790132">
-            <h4>Redemption minimum</h4>
-            <p><strong>100 SC</strong> · General redemption minimum; cash method not established.. The same instruction states a 50 SC minimum for prize out.</p>
-            <p class="toplist-source-meta"><a href="https://high5casino.com/helpcenter/how-to-redeem-real-prizes/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:54:16.877Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Payout time</dt><dd>
+            
+            <div class="toplist-source" data-record-id="e1b6cbb64b144503cf5e">
+              <span class="term-value">3-5 days</span>
+              <span class="term-detail">Business days. After approval. By bank. Approved redemptions typically arrive within 3-5 business days. Available to verified users.</span>
+              <span class="term-source"><a href="https://high5casino.com/helpcenter/how-to-redeem-real-prizes/" rel="noopener" title="Observed September 27, 2026">high5casino.com</a>
+              <span class="term-stale">Last seen <time datetime="2026-09-27T06:54:16.877Z">Sep 27</time></span>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="e1b6cbb64b144503cf5e">
-            <h4>Redemption timing</h4>
-            <p><strong>3-5 business days</strong> · Delivery after approval; bank. Approved redemptions typically arrive within 3-5 business days. Available to verified users.</p>
-            <p class="toplist-source-meta"><a href="https://high5casino.com/helpcenter/how-to-redeem-real-prizes/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:54:16.877Z">September 27, 2026</time> · Previous observation</p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="df6f0b78a4353a898c2c">
+              <span class="term-value">Daily login reward</span>
+              <span class="term-detail">Amount not stated. Log in every day to claim rewards. Includes free Sweeps Coins, Game Coins, and Diamonds; amounts are not stated.</span>
+              <span class="term-source"><a href="https://high5casino.com/promotions/daily-bonus/" rel="noopener" title="Observed September 27, 2026">high5casino.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:50:27.370Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="df6f0b78a4353a898c2c">
-            <h4>Daily reward</h4>
-            <p><strong>Daily login reward</strong> · Amount not stated. Log in every day to claim rewards. Includes free Sweeps Coins, Game Coins, and Diamonds; amounts are not stated.</p>
-            <p class="toplist-source-meta"><a href="https://high5casino.com/promotions/daily-bonus/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:50:27.370Z">September 27, 2026</time></p>
-          </section>
-          
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/high5/">Full High 5 Casino page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
@@ -1490,7 +1915,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: null,
     &quot;cash&quot;: null
-  }
+  },
+  &quot;benefitCount&quot;: 2
 }" value="14">
       
       <div class="toplist-main">
@@ -1500,21 +1926,24 @@
             <span class="toplist-position" aria-label="Position 14">14</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/jackpota/">Jackpota</a>
-            <span class="toplist-reward-types">Entertainment credits</span>
           </h3>
         </div>
-        <p class="toplist-sentence">7,500 Gold Coins (no purchase); Daily Gold Coins.</p>
+        
+        <ul class="toplist-badges" aria-label="Jackpota highlights">
+          <li class="badge badge--warn" title="The shown Gold Coin offer is for entertainment, not redeemable SC"><i class="ph ph-coins" aria-hidden="true"></i>Gold Coin offer</li>
+        </ul>
+        
+        <p class="toplist-sentence">7,500 GC at sign-up, no purchase needed.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Welcome offer</dt><dd>
             
 
-  <strong class="toplist-value">7,500 Gold Coins</strong>
-  <span class="toplist-note">No purchase required; see claim conditions</span>
+  <strong class="toplist-value">7,500 GC</strong>
+  <span class="toplist-note">At sign-up</span>
 
 
             
-            <span class="toplist-daily" data-metric="daily">Daily Gold Coins</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
@@ -1522,22 +1951,19 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            
           </dd></div>
           
-          <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
+          <div class="toplist-metric" data-metric="minimum"><dt>Redeem from</dt><dd>
             
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            
           </dd></div>
           
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
-            
             
           </dd></div>
           
@@ -1545,26 +1971,43 @@
         <div class="toplist-footer">
           
           <a class="toplist-visit" href="/go/jackpota/" rel="sponsored noopener" aria-label="Visit Jackpota"><span>Visit<span class="toplist-mobile-name"> Jackpota</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-          
-          <span class="toplist-copy-status sr-only" role="status"></span>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Jackpota" title="Terms and sources for Jackpota"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Jackpota terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="4c53ec66dec14269d31c">
-            <h4>Welcome offer</h4>
-            <p><strong>7,500 Gold Coins</strong> · No purchase required; see claim conditions. Create an account now When you sign up within... 04:59</p>
-            <p class="toplist-source-meta"><a href="https://www.jackpota.com/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:46:44.004Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Welcome offer</dt><dd>
+            
+            <div class="toplist-source" data-record-id="4c53ec66dec14269d31c">
+              <span class="term-value">7,500 GC</span>
+              <span class="term-detail">At sign-up. Create an account now. When you sign up within. 04:59.</span>
+              <span class="term-source"><a href="https://www.jackpota.com/" rel="noopener" title="Observed September 27, 2026">jackpota.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:46:44.004Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="0caf9bb823e9a9603f4e">
-            <h4>Daily reward</h4>
-            <p><strong>Daily Gold Coins</strong> · Entertainment credits. Free Gold Coins can be obtained by logging into an account every 24 hours. The amount of Gold Coins is unspecified.</p>
-            <p class="toplist-source-meta"><a href="https://www.jackpota.com/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:46:44.004Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="0caf9bb823e9a9603f4e">
+              <span class="term-value">Daily Gold Coins</span>
+              <span class="term-detail">Entertainment credits. Free Gold Coins can be obtained by logging into an account every 24 hours. The amount of Gold Coins is unspecified.</span>
+              <span class="term-source"><a href="https://www.jackpota.com/" rel="noopener" title="Observed September 27, 2026">jackpota.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:46:44.004Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/jackpota/">Full Jackpota page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
@@ -1579,7 +2022,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: null,
     &quot;cash&quot;: 100
-  }
+  },
+  &quot;benefitCount&quot;: 4
 }" value="15">
       
       <div class="toplist-main">
@@ -1589,10 +2033,14 @@
             <span class="toplist-position" aria-label="Position 15">15</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/lucky-bunny/">Lucky Bunny</a>
-            <span class="toplist-reward-types">Cash prizes</span>
           </h3>
         </div>
-        <p class="toplist-sentence">510 SC for $499.99 (1.02 SC per $1. Purchase package.); Cash out from 100 SC; Up to 5 business days (Request to receipt; bank).</p>
+        
+        <ul class="toplist-badges" aria-label="Lucky Bunny highlights">
+          <li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li>
+        </ul>
+        
+        <p class="toplist-sentence">510 SC for $499.99 in a coin package (1.02 SC per $1). Cash out from 100 SC. Payouts take up to 5 business days.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Welcome offer</dt><dd>
@@ -1600,17 +2048,15 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            <span class="toplist-daily" data-metric="daily">Daily login reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
             
 
   <strong class="toplist-value">510 SC for $499.99</strong>
-  <span class="toplist-note">1.02 SC per $1. Purchase package.</span>
+  <span class="toplist-note">1.02 SC per $1</span>
 
 
-            
             
           </dd></div>
           
@@ -1618,21 +2064,19 @@
             
 
   <strong class="toplist-value">100 SC</strong>
-  <span class="toplist-note">Cash redemption minimum.</span>
+  
 
 
-            
             
           </dd></div>
           
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 
-  <strong class="toplist-value">Up to 5 business days</strong>
-  <span class="toplist-note">Request to receipt; bank</span>
+  <strong class="toplist-value">Up to 5 days</strong>
+  <span class="toplist-note">Business days</span>
 
 
-            
             
           </dd></div>
           
@@ -1640,38 +2084,71 @@
         <div class="toplist-footer">
           
           <a class="toplist-visit" href="/go/lucky-bunny/" rel="sponsored noopener" aria-label="Visit Lucky Bunny"><span>Visit<span class="toplist-mobile-name"> Lucky Bunny</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-          
-          <span class="toplist-copy-status sr-only" role="status"></span>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Lucky Bunny" title="Terms and sources for Lucky Bunny"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Lucky Bunny terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="d50e8ce6d1bfdf7f016f">
-            <h4>Purchase deal</h4>
-            <p><strong>510 SC for $499.99</strong> · 1.02 SC per $1. Purchase package.. Includes 510 free Sweeps Coins with 5,000,000 Gold Coins. The page also displays $510 before $499.99.</p>
-            <p class="toplist-source-meta"><a href="https://luckybunny.fun/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:47:05.498Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Purchase deal</dt><dd>
+            
+            <div class="toplist-source" data-record-id="d50e8ce6d1bfdf7f016f">
+              <span class="term-value">510 SC for $499.99</span>
+              <span class="term-detail">1.02 SC per $1. Includes 510 free Sweeps Coins with 5,000,000 Gold Coins. The page also displays $510 before $499.99.</span>
+              <span class="term-source"><a href="https://luckybunny.fun/" rel="noopener" title="Observed September 27, 2026">luckybunny.fun</a>
+              <time class="sr-only" datetime="2026-09-27T06:47:05.498Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="4cbf336e2e50481b90d2">
-            <h4>Redemption minimum</h4>
-            <p><strong>100 SC</strong> · Cash redemption minimum.</p>
-            <p class="toplist-source-meta"><a href="https://luckybunny.fun/page/sweepstake-rules/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T07:03:07.796Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Cash out from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="4cbf336e2e50481b90d2">
+              <span class="term-value">Cash: 100 SC</span>
+              
+              <span class="term-source"><a href="https://luckybunny.fun/page/sweepstake-rules/" rel="noopener" title="Observed September 27, 2026">luckybunny.fun</a>
+              <time class="sr-only" datetime="2026-09-27T07:03:07.796Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="15112dcd2ce39c5c8829">
-            <h4>Redemption timing</h4>
-            <p><strong>Up to 5 business days</strong> · Request to receipt; bank</p>
-            <p class="toplist-source-meta"><a href="https://luckybunny.fun/page/terms-conditions/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T07:00:45.188Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Payout time</dt><dd>
+            
+            <div class="toplist-source" data-record-id="15112dcd2ce39c5c8829">
+              <span class="term-value">Up to 5 days</span>
+              <span class="term-detail">Business days. Request to receipt. By bank</span>
+              <span class="term-source"><a href="https://luckybunny.fun/page/terms-conditions/" rel="noopener" title="Observed September 27, 2026">luckybunny.fun</a>
+              <time class="sr-only" datetime="2026-09-27T07:00:45.188Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="5a357bb062c08b661459">
-            <h4>Daily reward</h4>
-            <p><strong>Daily login reward</strong> · Amount not stated. A predetermined amount of free Sweep Coins may be available for logging into the Platform each day.</p>
-            <p class="toplist-source-meta"><a href="https://luckybunny.fun/page/sweepstake-rules/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T07:03:07.796Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="5a357bb062c08b661459">
+              <span class="term-value">Daily login reward</span>
+              <span class="term-detail">Amount not stated. A predetermined amount of free Sweep Coins may be available for logging into the Platform each day.</span>
+              <span class="term-source"><a href="https://luckybunny.fun/page/sweepstake-rules/" rel="noopener" title="Observed September 27, 2026">luckybunny.fun</a>
+              <time class="sr-only" datetime="2026-09-27T07:03:07.796Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/lucky-bunny/">Full Lucky Bunny page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
@@ -1686,7 +2163,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: 24,
     &quot;cash&quot;: 50
-  }
+  },
+  &quot;benefitCount&quot;: 3
 }" value="16">
       
       <div class="toplist-main">
@@ -1696,10 +2174,14 @@
             <span class="toplist-position" aria-label="Position 16">16</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/modo/">Modo</a>
-            <span class="toplist-reward-types">Cash prizes · Gift cards</span>
           </h3>
         </div>
-        <p class="toplist-sentence">Cash out from 50 SC; Gift cards from 20 SC; Up to 24 hours (Processing; standard tier).</p>
+        
+        <ul class="toplist-badges" aria-label="Modo highlights">
+          <li class="badge badge--perk" title="Processing: Up to 24 hours. Processing; standard tier"><i class="ph ph-timer" aria-hidden="true"></i>Processing ≤3 days</li><li class="badge badge--perk" title="Low minimum"><i class="ph ph-arrow-line-down" aria-hidden="true"></i>Low minimum</li><li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li><li class="badge" title="Gift cards"><i class="ph ph-gift" aria-hidden="true"></i>Gift cards</li>
+        </ul>
+        
+        <p class="toplist-sentence">Cash out from 50 SC. Processing takes up to 24 hours.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Welcome offer</dt><dd>
@@ -1707,7 +2189,6 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            <span class="toplist-daily" data-metric="daily">Variable daily reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
@@ -1715,72 +2196,99 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            
           </dd></div>
           
           <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
             
 
   <strong class="toplist-value">50 SC</strong>
-  <span class="toplist-note">Cash redemption minimum.</span>
+  
 
 
             <span class="toplist-note">Gift cards from 20 SC</span>
-            
           </dd></div>
           
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 
   <strong class="toplist-value">Up to 24 hours</strong>
-  <span class="toplist-note">Processing; standard tier</span>
+  
 
 
-            
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
           
-          <a class="toplist-visit" href="/redemption-times/modo/" aria-label="Modo details"><span>Details<span class="toplist-mobile-name">: Modo</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          <a class="toplist-visit" href="/go/modo/" rel="sponsored noopener" aria-label="Visit Modo"><span>Visit<span class="toplist-mobile-name"> Modo</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Modo" title="Terms and sources for Modo"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Modo terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="bb02f5dae36fa330d6a3">
-            <h4>Redemption minimum</h4>
-            <p><strong>50 SC</strong> · Cash redemption minimum.. Applies unless otherwise displayed on the Platform.</p>
-            <p class="toplist-source-meta"><a href="https://modo.us/promo-rules.pdf" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:56:23.555Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Cash out from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="bb02f5dae36fa330d6a3">
+              <span class="term-value">Cash: 50 SC</span>
+              <span class="term-detail">Applies unless otherwise displayed on the Platform.</span>
+              <span class="term-source"><a href="https://modo.us/promo-rules.pdf" rel="noopener" title="Observed September 27, 2026">modo.us</a>
+              <time class="sr-only" datetime="2026-09-27T06:56:23.555Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            <div class="toplist-source" data-record-id="d4aca35b9e3f858e4fed">
+              <span class="term-value">Gift cards: 20 SC</span>
+              <span class="term-detail">Gift cards. Applies unless otherwise displayed on the Platform.</span>
+              <span class="term-source"><a href="https://modo.us/promo-rules.pdf" rel="noopener" title="Observed September 27, 2026">modo.us</a>
+              <time class="sr-only" datetime="2026-09-27T06:56:23.555Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            <div class="toplist-source" data-record-id="453c496a783bb8ee2cd1">
+              <span class="term-value">Prize minimum: 50 SC</span>
+              <span class="term-detail">Prize type not stated. A verified account is required. Proof of payment instrument may be required.</span>
+              <span class="term-source"><a href="https://support.modo.us/en_us/redeem-sc-to-a-bank-account-or-debit-card-rykrh1gZx" rel="noopener" title="Observed September 27, 2026">support.modo.us</a>
+              <time class="sr-only" datetime="2026-09-27T06:49:22.415Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="d4aca35b9e3f858e4fed">
-            <h4>Redemption minimum</h4>
-            <p><strong>20 SC</strong> · Gift-card redemption minimum.. Applies unless otherwise displayed on the Platform.</p>
-            <p class="toplist-source-meta"><a href="https://modo.us/promo-rules.pdf" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:56:23.555Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Payout time</dt><dd>
+            
+            <div class="toplist-source" data-record-id="bd9b3bbd517d63dc4b2b">
+              <span class="term-value">Up to 24 hours</span>
+              <span class="term-detail">Processing. By bank. Standard bank ACH or debit card redemptions have no fee. Bank timing follows Modo processing.</span>
+              <span class="term-source"><a href="https://support.modo.us/en_us/how-long-does-sc-redemption-processing-take-HJqtAiElzg" rel="noopener" title="Observed September 27, 2026">support.modo.us</a>
+              <time class="sr-only" datetime="2026-09-27T06:59:13.436Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="453c496a783bb8ee2cd1">
-            <h4>Redemption minimum</h4>
-            <p><strong>50 SC</strong> · General redemption minimum; cash method not established.. A verified account is required. Proof of payment instrument may be required.</p>
-            <p class="toplist-source-meta"><a href="https://support.modo.us/en_us/redeem-sc-to-a-bank-account-or-debit-card-rykrh1gZx" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:49:22.415Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="06b79141a2e6efec11ad">
+              <span class="term-value">Variable daily reward</span>
+              <span class="term-detail">Fixed daily SC not established. Specific number of free Sweepstakes Coins may vary by day and is displayed on the Platform. Sign into the User Account and click Claim on the Daily Logon Reward pop-up. One claim per day; daily clock resets at midnight ET. Wheel Spin events can award a variety of Sweepstakes coins.</span>
+              <span class="term-source"><a href="https://modo.us/promo-rules.pdf" rel="noopener" title="Observed September 27, 2026">modo.us</a>
+              <time class="sr-only" datetime="2026-09-27T06:56:23.555Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="bd9b3bbd517d63dc4b2b">
-            <h4>Published processing</h4>
-            <p><strong>Up to 24 hours</strong> · Processing; standard tier. Standard bank ACH or debit card redemptions have no fee. Bank timing follows Modo processing.</p>
-            <p class="toplist-source-meta"><a href="https://support.modo.us/en_us/how-long-does-sc-redemption-processing-take-HJqtAiElzg" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:59:13.436Z">September 27, 2026</time></p>
-          </section>
-          
-          <section class="toplist-source" data-record-id="06b79141a2e6efec11ad">
-            <h4>Daily reward</h4>
-            <p><strong>Variable daily reward</strong> · Fixed daily SC not established. Specific number of free Sweepstakes Coins may vary by day and is displayed on the Platform. Sign into the User Account and click Claim on the Daily Logon Reward pop-up. One claim per day; daily clock resets at midnight ET. Wheel Spin events can award a variety of Sweepstakes coins.</p>
-            <p class="toplist-source-meta"><a href="https://modo.us/promo-rules.pdf" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:56:23.555Z">September 27, 2026</time></p>
-          </section>
-          
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/modo/">Full Modo page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
@@ -1795,7 +2303,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: null,
     &quot;cash&quot;: null
-  }
+  },
+  &quot;benefitCount&quot;: 2
 }" value="17">
       
       <div class="toplist-main">
@@ -1805,21 +2314,24 @@
             <span class="toplist-position" aria-label="Position 17">17</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/pulsz/">Pulsz</a>
-            <span class="toplist-reward-types">Entertainment credits</span>
           </h3>
         </div>
-        <p class="toplist-sentence">5,000 Gold Coins (no purchase); Daily login reward.</p>
+        
+        <ul class="toplist-badges" aria-label="Pulsz highlights">
+          <li class="badge badge--warn" title="The shown Gold Coin offer is for entertainment, not redeemable SC"><i class="ph ph-coins" aria-hidden="true"></i>Gold Coin offer</li>
+        </ul>
+        
+        <p class="toplist-sentence">5,000 GC at sign-up, no purchase needed.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Welcome offer</dt><dd>
             
 
-  <strong class="toplist-value">5,000 Gold Coins</strong>
-  <span class="toplist-note">No purchase required; see claim conditions</span>
+  <strong class="toplist-value">5,000 GC</strong>
+  <span class="toplist-note">At sign-up</span>
 
 
             
-            <span class="toplist-daily" data-metric="daily">Daily login reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
@@ -1827,48 +2339,63 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            
           </dd></div>
           
-          <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
+          <div class="toplist-metric" data-metric="minimum"><dt>Redeem from</dt><dd>
             
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            
           </dd></div>
           
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
-            
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
           
-          <a class="toplist-visit" href="/redemption-times/pulsz/" aria-label="Pulsz details"><span>Details<span class="toplist-mobile-name">: Pulsz</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          <a class="toplist-visit" href="/go/pulsz/" rel="sponsored noopener" aria-label="Visit Pulsz"><span>Visit<span class="toplist-mobile-name"> Pulsz</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Pulsz" title="Terms and sources for Pulsz"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Pulsz terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="5304cdec2b055de69b0b">
-            <h4>Welcome offer</h4>
-            <p><strong>5,000 Gold Coins</strong> · No purchase required; see claim conditions. Start playing with Pulsz to get 5,000 free Gold Coins. The page says additional Gold Coins may be available via regular competitions, daily login bonuses and big giveaways.</p>
-            <p class="toplist-source-meta"><a href="https://www.pulsz.com/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:52:10.987Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Welcome offer</dt><dd>
+            
+            <div class="toplist-source" data-record-id="5304cdec2b055de69b0b">
+              <span class="term-value">5,000 GC</span>
+              <span class="term-detail">At sign-up. Start playing with Pulsz to get 5,000 free Gold Coins. The page says additional Gold Coins may be available via regular competitions, daily login bonuses and big giveaways.</span>
+              <span class="term-source"><a href="https://www.pulsz.com/" rel="noopener" title="Observed September 27, 2026">pulsz.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:52:10.987Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="c72adcba01f1d752ab85">
-            <h4>Daily reward</h4>
-            <p><strong>Daily login reward</strong> · Amount not stated. The page describes daily login bonuses but does not state a Gold Coin or SC amount. The page also states that Gold Coins may be available through regular competitions and big giveaways.</p>
-            <p class="toplist-source-meta"><a href="https://www.pulsz.com/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:52:10.987Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="c72adcba01f1d752ab85">
+              <span class="term-value">Daily login reward</span>
+              <span class="term-detail">Amount not stated. The page describes daily login bonuses but does not state a Gold Coin or SC amount. The page also states that Gold Coins may be available through regular competitions and big giveaways.</span>
+              <span class="term-source"><a href="https://www.pulsz.com/" rel="noopener" title="Observed September 27, 2026">pulsz.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:52:10.987Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/pulsz/">Full Pulsz page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
@@ -1883,7 +2410,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: null,
     &quot;cash&quot;: null
-  }
+  },
+  &quot;benefitCount&quot;: 3
 }" value="18">
       
       <div class="toplist-main">
@@ -1893,10 +2421,14 @@
             <span class="toplist-position" aria-label="Position 18">18</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/rolling-riches/">Rolling Riches</a>
-            <span class="toplist-reward-types">Cash prizes</span>
           </h3>
         </div>
-        <p class="toplist-sentence">100 SC (General redemption minimum; cash method not established.); Up to 10 business days (Request to receipt; bank); Daily login reward.</p>
+        
+        <ul class="toplist-badges" aria-label="Rolling Riches highlights">
+          <li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li>
+        </ul>
+        
+        <p class="toplist-sentence">Redeem prizes from 100 SC. Payouts take up to 10 business days.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Welcome offer</dt><dd>
@@ -1904,7 +2436,6 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            <span class="toplist-daily" data-metric="daily">Daily login reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>Purchase deal</dt><dd>
@@ -1912,57 +2443,83 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
+          </dd></div>
+          
+          <div class="toplist-metric" data-metric="minimum"><dt>Redeem from</dt><dd>
+            
+
+  <strong class="toplist-value">100 SC</strong>
+  <span class="toplist-note">Prize type not stated</span>
+
+
             
           </dd></div>
           
-          <div class="toplist-metric" data-metric="minimum"><dt>Cash out from</dt><dd>
-            
-<span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
-
-            
-            
-          </dd></div>
-          
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 
-  <strong class="toplist-value">Up to 10 business days</strong>
-  <span class="toplist-note">Request to receipt; bank</span>
+  <strong class="toplist-value">Up to 10 days</strong>
+  <span class="toplist-note">Business days</span>
 
 
-            
             
           </dd></div>
           
         </dl>
         <div class="toplist-footer">
           
-          <a class="toplist-visit" href="/redemption-times/rolling-riches/" aria-label="Rolling Riches details"><span>Details<span class="toplist-mobile-name">: Rolling Riches</span></span><i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-          <span class="toplist-copy-status sr-only" role="status"></span>
+          <a class="toplist-visit" href="/go/rolling-riches/" rel="sponsored noopener" aria-label="Visit Rolling Riches"><span>Visit<span class="toplist-mobile-name"> Rolling Riches</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Rolling Riches" title="Terms and sources for Rolling Riches"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Rolling Riches terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="032129908213eaf79307">
-            <h4>Redemption minimum</h4>
-            <p><strong>100 SC</strong> · General redemption minimum; cash method not established.. Rolling Riches reserves the right to adjust this minimum redemption threshold. Rolling Riches reserves the right to charge Prize redemption processing fees.</p>
-            <p class="toplist-source-meta"><a href="https://s3.us-west-1.amazonaws.com/aws.rollingriches.com/rollingriches/PDFs/Rolling+Riches+Terms+and+Conditions+FINAL+1-19+Paysafe.pdf" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:59:34.502Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Redeem from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="032129908213eaf79307">
+              <span class="term-value">Prize minimum: 100 SC</span>
+              <span class="term-detail">Prize type not stated. Rolling Riches reserves the right to adjust this minimum redemption threshold. Rolling Riches reserves the right to charge Prize redemption processing fees.</span>
+              <span class="term-source"><a href="https://s3.us-west-1.amazonaws.com/aws.rollingriches.com/rollingriches/PDFs/Rolling+Riches+Terms+and+Conditions+FINAL+1-19+Paysafe.pdf" rel="noopener" title="Observed September 27, 2026">s3.us-west-1.amazonaws.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:59:34.502Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="58d3e26b366af2272471">
-            <h4>Redemption timing</h4>
-            <p><strong>Up to 10 business days</strong> · Request to receipt; bank. Delays may occur due to identity verification processes and Payment Mediums requiring additional verification. Redemptions over ten thousand dollars may take longer due to bank security clearance, additional scrutiny, and mandatory fraud checks.</p>
-            <p class="toplist-source-meta"><a href="https://s3.us-west-1.amazonaws.com/aws.rollingriches.com/rollingriches/PDFs/Rolling+Riches+Terms+and+Conditions+FINAL+1-19+Paysafe.pdf" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:59:34.502Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Payout time</dt><dd>
+            
+            <div class="toplist-source" data-record-id="58d3e26b366af2272471">
+              <span class="term-value">Up to 10 days</span>
+              <span class="term-detail">Business days. Request to receipt. By bank. Delays may occur due to identity verification processes and Payment Mediums requiring additional verification. Redemptions over ten thousand dollars may take longer due to bank security clearance, additional scrutiny, and mandatory fraud checks.</span>
+              <span class="term-source"><a href="https://s3.us-west-1.amazonaws.com/aws.rollingriches.com/rollingriches/PDFs/Rolling+Riches+Terms+and+Conditions+FINAL+1-19+Paysafe.pdf" rel="noopener" title="Observed September 27, 2026">s3.us-west-1.amazonaws.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:59:34.502Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="84ec283716579e02356a">
-            <h4>Daily reward</h4>
-            <p><strong>Daily login reward</strong> · Amount not stated. Rolling Riches may give Sweepstakes Coins as a bonus when logging on once every six hours; no amount is stated. Sweepstakes Coins cannot be purchased.</p>
-            <p class="toplist-source-meta"><a href="https://s3.us-west-1.amazonaws.com/aws.rollingriches.com/rollingriches/PDFs/Rolling+Riches+Terms+and+Conditions+FINAL+1-19+Paysafe.pdf" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T06:59:34.502Z">September 27, 2026</time></p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="84ec283716579e02356a">
+              <span class="term-value">Daily login reward</span>
+              <span class="term-detail">Amount not stated. Rolling Riches may give Sweepstakes Coins as a bonus when logging on once every six hours; no amount is stated. Sweepstakes Coins cannot be purchased.</span>
+              <span class="term-source"><a href="https://s3.us-west-1.amazonaws.com/aws.rollingriches.com/rollingriches/PDFs/Rolling+Riches+Terms+and+Conditions+FINAL+1-19+Paysafe.pdf" rel="noopener" title="Observed September 27, 2026">s3.us-west-1.amazonaws.com</a>
+              <time class="sr-only" datetime="2026-09-27T06:59:34.502Z">Observed September 27, 2026</time>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/rolling-riches/">Full Rolling Riches page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
@@ -1977,7 +2534,8 @@
     &quot;daily&quot;: null,
     &quot;redemption&quot;: 72,
     &quot;cash&quot;: 100
-  }
+  },
+  &quot;benefitCount&quot;: 4
 }" value="19">
       
       <div class="toplist-main">
@@ -1987,10 +2545,14 @@
             <span class="toplist-position" aria-label="Position 19">19</span>
           </div>
           <h3 class="toplist-name"><a class="benefit-brand" href="/redemption-times/zonko/">Zonko</a>
-            <span class="toplist-reward-types">Cash prizes</span>
           </h3>
         </div>
-        <p class="toplist-sentence">65 SC for $20 (3.25 SC per $1. First purchase only.); Cash out from 100 SC; Up to 3 business days (Approval; standard tier).</p>
+        
+        <ul class="toplist-badges" aria-label="Zonko highlights">
+          <li class="badge badge--perk" title="Approval: Up to 3 business days. Approval; standard tier"><i class="ph ph-timer" aria-hidden="true"></i>Approval ≤3 days</li><li class="badge" title="Cash prizes"><i class="ph ph-money" aria-hidden="true"></i>Cash prizes</li>
+        </ul>
+        
+        <p class="toplist-sentence">65 SC for $20 on your first purchase (3.25 SC per $1). Cash out from 100 SC. Approval takes up to 3 business days.</p>
         <dl class="toplist-values">
           
           <div class="toplist-metric" data-metric="signup"><dt>Welcome offer</dt><dd>
@@ -1998,17 +2560,15 @@
 <span class="toplist-unknown"><span aria-hidden="true">&mdash;</span><span class="sr-only">Not confirmed</span></span>
 
             
-            <span class="toplist-daily" data-metric="daily">Daily login reward</span>
           </dd></div>
           
           <div class="toplist-metric" data-metric="purchase"><dt>First purchase</dt><dd>
             
 
   <strong class="toplist-value">65 SC for $20</strong>
-  <span class="toplist-note">3.25 SC per $1. First purchase only.</span>
+  <span class="toplist-note">3.25 SC per $1</span>
 
 
-            
             
           </dd></div>
           
@@ -2016,21 +2576,19 @@
             
 
   <strong class="toplist-value">100 SC</strong>
-  <span class="toplist-note">Cash redemption minimum.</span>
+  
 
 
-            
             
           </dd></div>
           
-          <div class="toplist-metric" data-metric="redemption"><dt>Published timing</dt><dd>
+          <div class="toplist-metric" data-metric="redemption"><dt>Payout time</dt><dd>
             
 
-  <strong class="toplist-value">Up to 3 business days</strong>
-  <span class="toplist-note">Approval; standard tier</span>
+  <strong class="toplist-value">Up to 3 days</strong>
+  <span class="toplist-note">Business days</span>
 
 
-            
             
           </dd></div>
           
@@ -2038,45 +2596,83 @@
         <div class="toplist-footer">
           
           <a class="toplist-visit" href="/go/zonko/" rel="sponsored noopener" aria-label="Visit Zonko"><span>Visit<span class="toplist-mobile-name"> Zonko</span></span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-          
-          <span class="toplist-copy-status sr-only" role="status"></span>
         </div>
       </div>
       <details class="toplist-sources">
         <summary aria-label="Terms and sources for Zonko" title="Terms and sources for Zonko"><i class="ph ph-caret-down" aria-hidden="true"></i></summary>
         <div class="toplist-evidence">
+          <h4>Zonko terms and sources</h4>
+          <dl class="toplist-terms">
           
-          <section class="toplist-source" data-record-id="5c0b4b82e937ef80bf80">
-            <h4>Purchase deal</h4>
-            <p><strong>65 SC for $20</strong> · 3.25 SC per $1. First purchase only.. First purchase required. Includes a spin of the Welcome Wheel for more FREE SC rewards. Limited Time Offer.</p>
-            <p class="toplist-source-meta"><a href="https://www.zonko.com/promotions/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T05:13:25.150Z">September 27, 2026</time> · Previous observation</p>
-          </section>
+          <div class="toplist-term">
+            <dt>Purchase deal</dt><dd>
+            
+            <div class="toplist-source" data-record-id="5c0b4b82e937ef80bf80">
+              <span class="term-value">65 SC for $20</span>
+              <span class="term-detail">3.25 SC per $1. First purchase required. Includes a spin of the Welcome Wheel for more FREE SC rewards. Limited Time Offer.</span>
+              <span class="term-source"><a href="https://www.zonko.com/promotions/" rel="noopener" title="Observed September 27, 2026">zonko.com</a>
+              <span class="term-stale">Last seen <time datetime="2026-09-27T05:13:25.150Z">Sep 27</time></span>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="df58565f84965a772e5f">
-            <h4>Redemption minimum</h4>
-            <p><strong>100 SC</strong> · Cash redemption minimum.. Entrants must accumulate and maintain qualifying Sweepstakes Coins associated with their User Account. Cash Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin the user chooses to redeem.</p>
-            <p class="toplist-source-meta"><a href="https://www.zonko.com/help/play-rules/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-22T06:38:54.039Z">September 22, 2026</time> · Previous observation</p>
-          </section>
+          <div class="toplist-term">
+            <dt>Cash out from</dt><dd>
+            
+            <div class="toplist-source" data-record-id="df58565f84965a772e5f">
+              <span class="term-value">Cash: 100 SC</span>
+              <span class="term-detail">Entrants must accumulate and maintain qualifying Sweepstakes Coins associated with their User Account. Cash Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin the user chooses to redeem.</span>
+              <span class="term-source"><a href="https://www.zonko.com/help/play-rules/" rel="noopener" title="Observed September 22, 2026">zonko.com</a>
+              <span class="term-stale">Last seen <time datetime="2026-09-22T06:38:54.039Z">Sep 22</time></span>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="838b977c3dbc1bf74f99">
-            <h4>Published processing</h4>
-            <p><strong>Up to 3 business days</strong> · Approval; standard tier. Subject to necessary verification and account security checks. May vary depending on verification requirements.</p>
-            <p class="toplist-source-meta"><a href="https://www.zonko.com/help/play-rules/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-22T06:38:54.039Z">September 22, 2026</time> · Previous observation</p>
-          </section>
+          <div class="toplist-term">
+            <dt>Payout time</dt><dd>
+            
+            <div class="toplist-source" data-record-id="838b977c3dbc1bf74f99">
+              <span class="term-value">Up to 3 days</span>
+              <span class="term-detail">Business days. Approval. Subject to necessary verification and account security checks. May vary depending on verification requirements.</span>
+              <span class="term-source"><a href="https://www.zonko.com/help/play-rules/" rel="noopener" title="Observed September 22, 2026">zonko.com</a>
+              <span class="term-stale">Last seen <time datetime="2026-09-22T06:38:54.039Z">Sep 22</time></span>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
-          <section class="toplist-source" data-record-id="204bbe2c4330269ce399">
-            <h4>Daily reward</h4>
-            <p><strong>Daily login reward</strong> · Amount not stated. Log in every day. Tap Bonuses from the menu, then head to Daily Bonus to reveal the reward. Rewards become better with more consecutive login days.</p>
-            <p class="toplist-source-meta"><a href="https://www.zonko.com/promotions/daily-bonus/" rel="noopener">Operator source</a> · Observed <time datetime="2026-09-27T05:07:10.773Z">September 27, 2026</time> · Previous observation</p>
-          </section>
+          <div class="toplist-term">
+            <dt>Daily bonus</dt><dd>
+            
+            <div class="toplist-source" data-record-id="204bbe2c4330269ce399">
+              <span class="term-value">Daily login reward</span>
+              <span class="term-detail">Amount not stated. Log in every day. Tap Bonuses from the menu, then head to Daily Bonus to reveal the reward. Rewards become better with more consecutive login days.</span>
+              <span class="term-source"><a href="https://www.zonko.com/promotions/daily-bonus/" rel="noopener" title="Observed September 27, 2026">zonko.com</a>
+              <span class="term-stale">Last seen <time datetime="2026-09-27T05:07:10.773Z">Sep 27</time></span>
+              </span>
+            </div>
+            
+            </dd>
+          </div>
           
+          </dl>
           <a class="toplist-full-link" href="/redemption-times/zonko/">Full Zonko page <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </details>
     </li>
     
   </ol>
-  <p class="toplist-footnote">A dash means we have not confirmed this detail. SC = Sweepstakes Coins. Gold Coins are entertainment credits. Published times, not measured payouts. <a href="/bonuses/cash-redemption-minimums/">Compare cash minimums</a> · <a href="/methodology/#homepage-order">How we order the list</a> · <a href="/updates/">Daily checks</a></p>
+  <ul class="toplist-legend">
+    <li><span class="badge badge--perk"><i class="ph ph-timer" aria-hidden="true"></i> &le;3 days</span> Published estimate of up to 3 days; badge names the stage. Business days where stated.</li>
+    <li><span class="badge badge--perk"><i class="ph ph-arrow-line-down" aria-hidden="true"></i> Low minimum</span> Cash minimum of 50 SC or less.</li>
+    <li><span class="badge badge--perk"><i class="ph ph-calendar-check" aria-hidden="true"></i> Daily SC</span> A fixed daily amount, not a first claim or variable reward.</li>
+  </ul>
+  <p class="toplist-footnote">A dash means we have not confirmed this detail. SC = Sweepstakes Coins. Gold Coin offers are for entertainment, not redeemable SC. Times are published estimates, not measured payouts. Equal free-signup amounts put more supported benefit areas first. <a href="/methodology/#homepage-order">How we order the list</a></p>
 </section>
 <script type="module" src="/assets/toplist-sort.js"></script>
 
@@ -2113,6 +2709,7 @@
   </div>
 </footer>
 
-<script src="/assets/eligibility.js" defer></script><script src="/assets/home.js" defer></script>
+<script src="/assets/eligibility.js" defer></script>
+<script src="/assets/home.js" defer></script>
 </body>
 </html>

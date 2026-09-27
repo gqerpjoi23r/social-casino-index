@@ -41,7 +41,7 @@ test("homepage admits two categories, preserves full roster and defaults to free
   assert.deepEqual(orderToplist(orderToplist(model.toplist.homepageRows, "cash")).map(row => row.slug), ["big", "small", "paid"]);
   assert.equal(model.toplist.sorts.find(sort => sort.key === "daily").available, false);
 });
-test("signup and purchase are separate useful benefits; ranking ties never use coverage", () => {
+test("signup and purchase count separately; equal benefit counts use name ties", () => {
   const model = build([operator("b", [signup(3), paid]), operator("a", [signup(3), cash(50)])]);
   assert.equal(model.toplist.rows.find(row => row.slug === "b").knownAttributeCount, 1);
   assert.deepEqual(model.toplist.rows.map(row => row.slug), ["a", "b"]);

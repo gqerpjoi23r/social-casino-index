@@ -46,22 +46,34 @@ try {
       assert.equal(await page.locator(".toplist-group:visible").count(), sort.key === "welcome" ? 2 : 0);
     }
     await page.selectOption("#toplist-sort", "welcome");
+    const smallText = await page.locator("main *").evaluateAll(elements => elements.filter(element =>
+      [...element.childNodes].some(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim()) &&
+      element.getClientRects().length && !element.closest(".sr-only") &&
+      getComputedStyle(element).visibility !== "hidden" && parseFloat(getComputedStyle(element).fontSize) < 12)
+      .map(element => element.className));
+    assert.deepEqual(smallText, [], `Text below 12px at ${width}`);
     for (const row of data.toplist.homepageRows) {
       const item = page.locator(`[data-operator="${row.slug}"]`);
       assert.equal(await item.locator("summary").getAttribute("aria-label"), `Terms and sources for ${row.name}`);
       const control = await item.locator("summary").boundingBox();
       assert.ok(control.width >= 44 && control.height >= 44);
+      assert.equal(await item.evaluate(element => {
+        const controls = [...element.querySelectorAll(".toplist-code, .toplist-visit, summary")]
+          .map(control => control.getBoundingClientRect());
+        return controls.every((a, index) => controls.slice(index + 1).every(b =>
+          a.right <= b.left + 1 || b.right <= a.left + 1 || a.bottom <= b.top + 1 || b.bottom <= a.top + 1));
+      }), true, `${row.slug} controls overlap at ${width}`);
       assert.equal(await item.locator(".toplist-sentence").isVisible(), row.presentation.compact);
       assert.equal(await item.locator(".toplist-visit").getAttribute("href"), row.visitUrl || row.url);
       assert.equal(await item.locator(".toplist-visit").getAttribute("aria-label"), row.visitUrl ? `Visit ${row.name}` : `${row.name} details`);
       if (row.visitUrl) assert.match(await item.locator(".toplist-visit").getAttribute("rel"), /sponsored/);
       for (const field of row.presentation.fields) {
         const content = await item.locator(`.toplist-metric[data-metric="${field.key}"]`).textContent();
-        if (field.value) assert.ok(content.includes(field.value.label));
+        if (field.value) assert.ok(content.includes(field.value.displayLabel));
         else assert.ok(content.includes("Not confirmed"));
       }
-      for (const value of row.presentation.terms)
-        assert.ok((await item.locator(`.toplist-source[data-record-id="${value.recordId}"]`).textContent()).includes(value.label));
+      for (const term of row.presentation.terms) for (const value of term.values)
+        assert.ok((await item.locator(`.toplist-source[data-record-id="${value.recordId}"]`).textContent()).includes(value.displayLabel));
     }
     for (const image of await page.locator(".toplist-mark img").all()) {
       await image.evaluate(image => image.decode());
@@ -71,6 +83,12 @@ try {
     await terms.locator("summary").focus();
     await page.keyboard.press("Enter");
     assert.equal(await terms.evaluate(element => element.open), true);
+    const visitTarget = page.locator(".toplist-visit").first();
+    await visitTarget.scrollIntoViewIfNeeded();
+    assert.equal(await visitTarget.evaluate(element => {
+      const box = element.getBoundingClientRect();
+      return element.contains(document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2));
+    }), true, `Terms block Visit at ${width}`);
     const [first, next] = await page.locator(".toplist-item").evaluateAll(items =>
       items.slice(0, 2).map(item => {
         const rect = item.getBoundingClientRect();
@@ -133,9 +151,12 @@ try {
     await page.evaluate(() => Object.defineProperty(navigator, "clipboard", { configurable: true,
       value: { writeText: async value => { window.copiedCode = value; } } }));
     const code = await copy.getAttribute("data-copy-code");
+    const dimensions = await page.locator(".toplist-item").first().evaluate(element => element.getBoundingClientRect().height);
     await copy.click();
     assert.equal(await page.evaluate(() => window.copiedCode), code);
-    assert.equal(await copy.locator("span").innerText(), "Copied");
+    assert.equal(await copy.locator(".lbl").innerText(), "Code");
+    assert.equal(await page.locator(".toplist-copy-status:not(.sr-only)").first().innerText(), "Copied");
+    assert.equal(await page.locator(".toplist-item").first().evaluate(element => element.getBoundingClientRect().height), dimensions);
     await page.evaluate(() => Object.defineProperty(navigator, "clipboard", { configurable: true,
       value: { writeText: async () => { throw new Error("Clipboard unavailable"); } } }));
     await copy.click();
