@@ -32,9 +32,10 @@ function dailyReward(operator, snapshot, offers) {
   }
   const candidates = newest(offers.filter(record => record.kind === "recurring_daily" &&
     record.purchaseRequired !== true));
-  const initial = candidates.find(record => record.immediateSc != null &&
+  const initialClaims = candidates.filter(record => record.immediateSc != null &&
     /first daily|first (?:day|login|claim)|day (?:one|1)/i.test(
       [record.name, record.basis, ...(record.conditions || [])].filter(Boolean).map(dailyQualifierText).join(" ")));
+  const initial = new Set(initialClaims.map(record => record.immediateSc)).size === 1 ? initialClaims[0] : null;
   if (initial) return { ...evidence(initial, `${number(initial.immediateSc)} SC first claim`,
     "Later daily amounts unverified", snapshot), comparable: false };
   const increasingReward = /increas|grows|progressive|streak|better.{0,50}more days|more days.{0,50}better/i;
@@ -118,7 +119,7 @@ function offerDisplay(snapshot, offers, kind) {
       }
     }
     if (!rewards.length) continue;
-    const note = [kind === "purchase" ? "Credit timing not confirmed" :
+    const note = [kind === "purchase" ? "See purchase and claim conditions" :
       record.purchaseRequired === false ? "No purchase required; see claim conditions" :
         record.purchaseRequired === true ? "Purchase required" : "Purchase requirement unconfirmed",
     /\bup to\b/i.test(text(record)) ? "Advertised maximum; conditions apply" : null].filter(Boolean).join(". ");
@@ -135,11 +136,15 @@ function offerDisplay(snapshot, offers, kind) {
 function minimumDisplay(snapshot, facts, metrics) {
   const values = [metrics.cash, metrics.gift, metrics.general].filter(Boolean);
   // Preserve currencies and methods that cannot join the SC-only cash benchmark.
-  if (!values.length) {
-    const record = newest(facts.filter(record => record.field === "redemption_minimum" &&
-      amount(record.value) && ["SC", "USD"].includes(record.unit) &&
-      ["exact", "at_least"].includes(record.comparison)))[0];
-    if (record) values.push(evidence(record, `${number(record.value)} ${record.unit}`,
+  const candidates = newest(facts.filter(record => record.field === "redemption_minimum" &&
+    amount(record.value) && record.upperValue == null && ["SC", "USD"].includes(record.unit) &&
+    (record.unit === "USD" || !values.length) && ["exact", "at_least"].includes(record.comparison)));
+  const seen = new Set();
+  for (const record of candidates) {
+    const key = `${record.unit}:${record.method}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    values.push(evidence(record, `${number(record.value)} ${record.unit}`,
       `${({ gift_card: "Gift-card", bank: "Bank", cash: "Cash", crypto: "Cryptocurrency",
         virtual_card: "Virtual-card" })[record.method] || "Method unspecified"} minimum; see conditions`, snapshot));
   }

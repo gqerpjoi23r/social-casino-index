@@ -20,6 +20,20 @@ export function sameEvidence(record, candidate) {
     JSON.stringify([...(record.states || [])].sort()) === JSON.stringify([...(candidate.states || [])].sort());
 }
 
+function applyReviewedCorrections(candidate, records) {
+  const reviewed = records.find(record => record.overrides && record.sourceId === candidate.sourceId &&
+    record.quote && candidate.quote &&
+    (candidate.quote.includes(record.quote) || record.quote.includes(candidate.quote)) &&
+    ["recordType", "kind", "field", "unit", "method", "value", "upperValue",
+      "immediateSc", "totalSc", "priceUsd"].every(key =>
+      (record[key] ?? null) === (candidate[key] ?? null)));
+  if (!reviewed) return candidate;
+  // Repeating a disputed claim is not a resolution. Other corrections need unchanged source text.
+  if (reviewed.conflict) return { ...candidate, conflict: reviewed.conflict };
+  return reviewed.textHash && reviewed.textHash === candidate.textHash ?
+    { ...candidate, ...reviewed.overrides } : candidate;
+}
+
 export function publicNumeric(operators, reviewed, manifest, captures, previous = null, extracted = null, evaluation = null, blockedOperators = [], disclosureReviews = []) {
   return {
     schemaVersion: 1, runId: manifest.runId, lastAttemptedAt: manifest.startedAt,
@@ -49,8 +63,9 @@ export function publicNumeric(operators, reviewed, manifest, captures, previous 
           sources: (review.sources || []).map(source => ({ id: source.id, url: source.url })) }];
       }));
       const candidates = ["offers", "facts", "statements"].flatMap(kind =>
-        (current?.[kind] || []).map(record => ({
-          ...(kind === "offers" ? recoverOfferSemantics(record) : record), recordType: kind })));
+        (current?.[kind] || []).map(record => applyReviewedCorrections({
+          ...(kind === "offers" ? recoverOfferSemantics(record) : record), recordType: kind },
+        reference?.records || [])));
       const records = (reference?.records || []).map(record => {
         const dependencies = record.supportingPages || [{ sourceId: record.sourceId, textHash: record.textHash }];
         const semanticChange = candidates.some(candidate => candidate.sourceId === record.sourceId &&
@@ -76,7 +91,8 @@ export function publicNumeric(operators, reviewed, manifest, captures, previous 
           page.textHash === candidate.textHash) && candidate.reconfirmationStatus !== "not_reconfirmed";
         const id = records.some(record => record.id === candidate.id) ? `${candidate.id}-automated-${manifest.runId}` : candidate.id;
         records.push({ ...sanitizeRecord(candidate), id, recordType: kind, runId: manifest.runId,
-          reviewStatus: "automated_unreviewed", freshness: fresh ? "captured_unreviewed" : "not_reconfirmed",
+          reviewStatus: candidate.conflict ? "unresolved" : "automated_unreviewed",
+          freshness: fresh ? "captured_unreviewed" : "not_reconfirmed",
           lastConfirmedAt: null, completePackage: false });
       }
       for (const old of prior?.records || []) {

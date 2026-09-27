@@ -14,15 +14,26 @@ Format:
 
 ---
 
+## 2026-09-27 - Verify useful-benefit expansion and correct reviewed claims
+- Fresh run `36300901481` lists 19 of 21 operators, including all six additions. Stake.us has one useful area and SweetSweeps has none; failed retrieval is not a nondisclosure finding.
+- Keep High 5 listed with four benefit areas. Hold its unresolved 55-SC cross-promotion out of comparisons and correct its method-specific delivery windows to after approval, using the existing private review reference and original capture dates.
+- Enforce explicit review corrections for matching evidence; different supported offers can still coexist. Extractor 2.6.1 asks for method-specific timing explanations, not just summary tables. Preserve the homepage layout and all five sorting algorithms.
+- When first-claim amounts disagree, keep the supported daily-reward description instead of choosing an arbitrary number. Sportzino retains its increasing-reward benefit.
+
+## 2026-09-27 - Keep benefit descriptions denomination-neutral
+- Describe operator profiles as offers and rewards, not universally as SC offers.
+- Descriptive purchase offers point to their claim conditions rather than asserting that every delivery schedule is unknown.
+- Preserve USD gift minima beside SC cash minima without conversion; keep both in the same benefit area and export.
+
 ## 2026-09-27 - Preserve all displayed redemption minima in exports
 - Export each selected cash, gift and general minimum once, matching the homepage and profile evidence. A cash threshold no longer hides a separate general threshold from the current CSV.
 - Numeric sort inputs remain unchanged across all 15 pre-expansion operators.
-- Default new operators to their curated source list as priority seeds, removing a second onboarding configuration step. Cancel the first expanded refresh before publication and restart after this scheduling fix; no request caps change.
+- Default new operators to their curated source list as priority seeds, removing a second onboarding configuration step. Cancel the first expanded refresh before publication and restart after this scheduling fix; retain the existing roster-scaled request limits.
 
 ## 2026-09-27 - List useful benefits without changing numeric sorts
 - Separate useful-benefit admission from numeric comparison. Require two of five displayed areas; allow concrete text, gift minima and clearly labelled entertainment credits without converting them to SC or changing any of the five sorts.
 - Keep one collector and shared evidence model. Support written-number grounding and partial optional-amount recovery, remove duplicate profile sections, and expose operator-level benefit gaps.
-- Add six curated operator source sets and Jackpota promotions. Do not import screening figures. Saved production data yields 12 homepage entries instead of eight; fresh normal-run results will be recorded in the useful-benefit release report.
+- Add six curated operator source sets and consolidate Jackpota promotions in the registry. Do not import screening figures. Saved production data yields 12 homepage entries instead of eight; fresh normal-run results will be recorded in the useful-benefit release report.
 
 ## 2026-09-27 - Verify targeted expansion in production
 - Fresh normal run `36296192801` deployed Modo and Zula with independently extracted values: 50-SC cash minima for both, Modo processing up to 24 hours, and Zula initial signup of 2 SC.

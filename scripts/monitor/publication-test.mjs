@@ -74,6 +74,41 @@ test("unchanged evidence suppresses only the identical reviewed claim", () => {
   assert.equal(publish(reviewed, [page], null, extract(claim)).operators[0].records.length, 1);
 });
 
+test("unchanged captured claims retain explicit review corrections without changing observations", () => {
+  const correction = { ...claim, stage: "transfer",
+    overrides: { stage: "transfer", basis: "Delivery after approval" }, basis: "Delivery after approval" };
+  const reference = { operators: [{ slug: "operator-0", records: [correction] }] };
+  const records = publish(reference, [page], null, extract({ ...claim, stage: "processing" })).operators[0].records;
+  assert.equal(records.length, 1);
+  assert.equal(records[0].stage, "transfer");
+  assert.equal(records[0].capturedAt, claim.capturedAt);
+  assert.equal(records[0].overrides, undefined);
+  assert.equal(claim.stage, undefined);
+});
+
+test("an unresolved review follows the same captured claim despite new model conditions", () => {
+  const conflict = "Offer terms are inconsistent.";
+  const reference = { operators: [{ slug: "operator-0",
+    records: [{ ...claim, conflict, overrides: { conflict } }] }] };
+  const records = publish(reference, [page], null,
+    extract({ ...claim, conditions: ["Updated model wording"] })).operators[0].records;
+  assert.ok(records.every(record => record.conflict === conflict && record.reviewStatus === "unresolved"));
+  const repeated = publish(reference, [{ ...page, textHash: "updated-page" }], null,
+    extract({ ...claim, textHash: "updated-page", quote: `More context. ${claim.quote}` })).operators[0].records;
+  assert.ok(repeated.every(record => record.conflict === conflict && record.reviewStatus === "unresolved"));
+});
+
+test("review corrections do not transfer to changed source evidence or another amount", () => {
+  const correction = { ...claim, stage: "transfer", overrides: { stage: "transfer" } };
+  const reference = { operators: [{ slug: "operator-0", records: [correction] }] };
+  for (const changes of [{ textHash: "new-hash" }, { value: 100 }, { quote: "A different claim." }]) {
+    const records = publish(reference, [page], null,
+      extract({ ...claim, ...changes, stage: "processing" })).operators[0].records;
+    assert.equal(records.at(-1).stage, "processing");
+    assert.equal(records.at(-1).reviewStatus, "automated_unreviewed");
+  }
+});
+
 test("changed conditions or numeric meaning cannot inherit a reviewed identity", () => {
   for (const change of [{ conditions: ["gift card only"] }, { value: 20 }, { unit: "GC" },
     { goldCoins: 5000 }, { totalSc: 20 }, { advertisedDiscountPercent: 67 }, { method: "gift_card" },
