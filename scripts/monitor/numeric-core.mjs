@@ -3,6 +3,7 @@ import { emptyExtraction, validateExtraction } from "./schema.mjs";
 import { isRequestFrequency, qualifyRedemptionTiming } from "./redemption-semantics.mjs";
 import { dailyQualifierText } from "./daily-semantics.mjs";
 import { recoverOfferSemantics } from "./offer-semantics.mjs";
+import { evidenceNumbers } from "./number-evidence.mjs";
 
 const number = text => Number(text.replace(/,/g, ""));
 const decimal = "(\\d[\\d,]*(?:\\.\\d+)?)";
@@ -83,6 +84,13 @@ export function checkExtraction(data, pages) {
       kind === "facts" ? qualifyRedemptionTiming(original) : original) };
     const page = pages.find(page => page.sourceId === item.sourceId);
     let reason = !page ? "unknown_source" : !normalize(page.text).includes(normalize(item.quote)) ? "unsupported_quote" : null;
+    if (kind === "offers" && /\bFC\b|\bFortune Coins?\b/i.test(item.quote) &&
+        !/\bSC\b|\bSC\d|\bSweeps?(?:takes)? Coins?\b|\bStake Cash\b/i.test(item.quote)) {
+      for (const field of ["immediateSc", "totalSc"]) if (item[field] !== null) {
+        item[field] = null;
+        recovered.push({ kind, item: original, field, reason: "sc_denomination_not_supported" });
+      }
+    }
     if (kind === "offers" && item.immediateSc !== null && item.totalSc !== null && item.immediateSc > item.totalSc) reason = "immediate_exceeds_total";
     if (kind === "offers" && item.priceUsd === 0 && item.purchaseRequired === true) reason = "purchase_with_zero_price";
     if (kind === "offers" && item.expiresAt !== null &&
@@ -102,20 +110,23 @@ export function checkExtraction(data, pages) {
     const numericValues = (kind === "offers" ?
       ["priceUsd", "immediateSc", "totalSc", "goldCoins", "advertisedExtraPercent", "advertisedDiscountPercent", "durationDays", "intervalHours"] :
       kind === "facts" ? ["value", "upperValue"] : []).map(key => [key, item[key]]);
-    const normalizedQuote = normalize(item.quote).replace(/(\d),(?=\d)/g, "$1")
-      .replace(/\bonce\b|\bone time\b/gi, "1").replace(/\btwice\b/gi, "2").replace(/\bthree times\b/gi, "3");
-    const supportedNumbers = [...normalizedQuote.matchAll(/\d+(?:\.\d+)?/g)].map(match => Number(match[0]));
-    for (const match of normalizedQuote.matchAll(/(\d+(?:\.\d+)?)\s*(million|thousand|m|k)\b/gi)) {
-      supportedNumbers.push(Number(match[1]) * (/^(million|m)$/i.test(match[2]) ? 1000000 : 1000));
-    }
+    const supportedNumbers = evidenceNumbers(normalize(item.quote));
     const unsupported = numericValues.filter(([key, value]) => value !== null && !supportedNumbers.includes(value) &&
         !(kind === "offers" && key === "intervalHours" && value === 24 && /daily|every day|once per day|each day/i.test(item.quote)) &&
         !(kind === "offers" && key === "priceUsd" && value === 0 && item.purchaseRequired === false &&
           /\bfree\b|\bno purchase (?:is )?(?:required|necessary|needed)\b/i.test(item.quote)));
-    if (!reason && kind === "offers" && unsupported.length === 1 && unsupported[0][0] === "totalSc" &&
-        item.immediateSc !== null && item.priceUsd > 0 && item.purchaseRequired === true &&
-        ["first_purchase", "purchase_package"].includes(item.kind)) {
-      item.totalSc = null;
+    if (!reason && kind === "offers" && unsupported.length &&
+        unsupported.every(([key]) => ["totalSc", "goldCoins", "advertisedExtraPercent", "advertisedDiscountPercent"].includes(key)) &&
+        item.immediateSc !== null && supportedNumbers.includes(item.immediateSc)) {
+      for (const [field] of unsupported) {
+        item[field] = null;
+        recovered.push({ kind, item: original, field, reason: "unsupported_optional_amount_omitted" });
+      }
+      const omitted = unsupported.map(([, value]) => value);
+      const mentionsOmitted = value => evidenceNumbers(value).some(number => omitted.includes(number));
+      // Keep source conditions, not model prose that still repeats a rejected amount.
+      if (item.conditions.some(mentionsOmitted)) item.conditions = [item.quote];
+      if (mentionsOmitted(item.name)) item.name = "Published offer";
     } else if (unsupported.length) {
       reason = "number_not_in_quote";
     }
@@ -143,8 +154,6 @@ export function checkExtraction(data, pages) {
         if (original[field] !== item[field])
           recovered.push({ kind, item: original, field, reason: "explicit_offer_semantics", value: item[field] });
       }
-      if (kind === "offers" && original.totalSc !== null && item.totalSc === null)
-        recovered.push({ kind, item: original, field: "totalSc", reason: "unsupported_total_omitted" });
       accepted[kind].push({ ...item, quote: normalize(item.quote) });
     }
   }

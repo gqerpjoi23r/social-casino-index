@@ -68,12 +68,21 @@
         "access": "public_rendered"
       },
       {
-        "id": "jackpota-packages",
+      "id": "jackpota-packages",
         "label": "Gold Coin Packages",
         "url": "https://support.jackpota.com/hc/en-us/articles/12669339478812-Gold-Coin-Packages",
         "accessed": "2026-09-10",
         "sourceType": "operator",
-        "access": "bot_blocked"
+      "access": "bot_blocked"
+    },
+    {
+      "id": "jackpota-promotions",
+      "label": "Current promotions and contest terms",
+      "url": "https://www.jackpota.com/promotions",
+      "purpose": "signup_offer",
+      "accessed": "2026-09-27",
+      "sourceType": "operator",
+      "access": "public_rendered"
       }
     ],
     "faviconExt": ".png",
@@ -1430,6 +1439,166 @@
     "playerValue": {
       "checkedAt": "2026-09-27",
       "productMode": "sweepstakes",
+      "signup": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "daily": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "firstPurchase": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "cashMinimum": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "giftCardMinimum": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "playthrough": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] }
+    }
+  },
+  {
+    "slug": "sportzino", "name": "Sportzino", "partner": false, "position": 16,
+    "bestFor": "Published welcome and daily rewards",
+    "summary": "Source-backed welcome offers, daily rewards and redemption terms.",
+    "offer": "See current source-backed comparison", "games": "Casino-style games",
+    "publishedEstimate": "See current source-backed comparison", "firstRedemption": "Not tested", "repeatRedemption": "Not tested",
+    "methods": "See current source-backed comparison", "minRedemption": "See current source-backed comparison",
+    "playthrough": "See current source-backed comparison", "kyc": "See current operator terms",
+    "restrictedStates": [], "availability": "State eligibility has not been independently verified. An empty exclusion list does not establish availability. No commercial visit link.",
+    "verificationStatus": "partial", "verificationLabel": "Operator-published evidence", "verifiedAt": "2026-09-27",
+    "testStatus": "not_tested", "observedResult": null, "strengths": [], "tradeoffs": [], "faviconExt": ".png",
+    "sources": [
+      { "id": "sportzino-signup", "label": "Detailed signup offer", "url": "https://sportzino.com/promotions/promo/sign-up-promotion/", "purpose": "signup_offer", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public" },
+      { "id": "sportzino-daily", "label": "Daily login rewards", "url": "https://sportzino.com/promotions/promo/daily-login-bonus/", "purpose": "daily_reward", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public" },
+      { "id": "sportzino-rules", "label": "Sweepstakes rules", "url": "https://sportzino.com/api/Document/ContentPage/sweeps-rules.pdf", "purpose": "sweepstakes_rules", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public" }
+    ],
+    "playerValue": {
+      "checkedAt": "2026-09-27", "productMode": "unverified",
+      "signup": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "daily": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "firstPurchase": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "cashMinimum": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "giftCardMinimum": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "playthrough": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] }
+    }
+  },
+  {
+    "slug": "luckyland", "name": "LuckyLand Casino", "partner": false, "position": 17,
+    "bestFor": "Published welcome and daily rewards",
+    "summary": "Welcome and daily benefits with separately monitored redemption help.",
+    "offer": "See current source-backed comparison", "games": "Casino-style games",
+    "publishedEstimate": "See current source-backed comparison", "firstRedemption": "Not tested", "repeatRedemption": "Not tested",
+    "methods": "See current source-backed comparison", "minRedemption": "See current source-backed comparison",
+    "playthrough": "See current source-backed comparison", "kyc": "See current operator terms",
+    "restrictedStates": [], "availability": "State eligibility has not been independently verified. An empty exclusion list does not establish availability. No commercial visit link.",
+    "verificationStatus": "partial", "verificationLabel": "Operator-published evidence", "verifiedAt": "2026-09-27",
+    "testStatus": "not_tested", "observedResult": null, "strengths": [], "tradeoffs": [], "faviconExt": ".png",
+    "sources": [
+      { "id": "luckyland-home", "label": "Welcome and daily offers", "url": "https://luckylandcasino.com/", "purpose": "signup_offer", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public_rendered" },
+      { "id": "luckyland-cash", "label": "Redemption requirements", "url": "https://help.luckylandcasino.com/article/LLC-What-you-need-to-know-to-redeem-your-prize", "purpose": "redemption_minimum", "expectedHeading": "What you need to know to redeem your prize", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public_rendered" },
+      { "id": "luckyland-time", "label": "Redemption timing", "url": "https://help.luckylandcasino.com/article/LLC-How-long-do-redemptions-take-to-process", "purpose": "redemption_time", "expectedHeading": "How long do redemptions take to process?", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public_rendered" },
+      { "id": "luckyland-rules", "label": "Sweepstakes rules", "url": "https://luckylandcasino.com/legal/sweeps-rules", "purpose": "sweepstakes_rules", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public_rendered" }
+    ],
+    "playerValue": {
+      "checkedAt": "2026-09-27", "productMode": "unverified",
+      "signup": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "daily": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "firstPurchase": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "cashMinimum": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "giftCardMinimum": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "playthrough": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] }
+    }
+  },
+  {
+    "slug": "rolling-riches", "name": "Rolling Riches", "partner": false, "position": 18,
+    "bestFor": "Published redemption terms",
+    "summary": "Redemption minimums and timing with explicit method and delivery conditions.",
+    "offer": "See current source-backed comparison", "games": "Casino-style games",
+    "publishedEstimate": "See current source-backed comparison", "firstRedemption": "Not tested", "repeatRedemption": "Not tested",
+    "methods": "See current source-backed comparison", "minRedemption": "See current source-backed comparison",
+    "playthrough": "See current source-backed comparison", "kyc": "See current operator terms",
+    "restrictedStates": [], "availability": "State eligibility has not been independently verified. An empty exclusion list does not establish availability. No commercial visit link.",
+    "verificationStatus": "partial", "verificationLabel": "Operator-published evidence", "verifiedAt": "2026-09-27",
+    "testStatus": "not_tested", "observedResult": null, "strengths": [], "tradeoffs": [],
+    "sources": [
+      { "id": "rolling-riches-home", "label": "Published offers", "url": "https://www.rollingriches.com/", "purpose": "signup_offer", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public_rendered" },
+      { "id": "rolling-riches-cash", "label": "Redemption minimum", "url": "https://rollingricheshelp.zendesk.com/hc/en-us/articles/20922084007949-What-is-the-minimum-amount-of-Sweepstake-Coins-I-can-redeem-for-a-prize", "purpose": "redemption_minimum", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public_rendered" },
+      { "id": "rolling-riches-time", "label": "Redemption methods and delivery", "url": "https://rollingricheshelp.zendesk.com/hc/en-us/articles/35847661821837-What-redemption-options-does-Rolling-Riches-have", "purpose": "redemption_time", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public_rendered" },
+      { "id": "rolling-riches-methods", "label": "Cash and gift-card methods", "url": "https://rollingricheshelp.zendesk.com/hc/en-us/articles/20922390069645-Does-Rolling-Riches-offer-cash-and-gift-cards-for-redemption", "purpose": "redemption_help", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public_rendered" },
+      { "id": "rolling-riches-rules", "label": "Prize rules", "url": "https://s3.us-west-1.amazonaws.com/aws.rollingriches.com/rollingriches/PDFs/Rolling+Riches+Terms+and+Conditions+FINAL+1-19+Paysafe.pdf", "purpose": "sweepstakes_rules", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public" }
+    ],
+    "playerValue": {
+      "checkedAt": "2026-09-27", "productMode": "unverified",
+      "signup": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "daily": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "firstPurchase": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "cashMinimum": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "giftCardMinimum": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "playthrough": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] }
+    }
+  },
+  {
+    "slug": "high5", "name": "High 5 Casino", "partner": false, "position": 19,
+    "bestFor": "Published offers and gift-card redemption",
+    "summary": "Dedicated offers, daily rewards and redemption help. Conflicting cross-promotion headlines are not used as free signup amounts.",
+    "offer": "See current source-backed comparison", "games": "Casino-style games",
+    "publishedEstimate": "See current source-backed comparison", "firstRedemption": "Not tested", "repeatRedemption": "Not tested",
+    "methods": "See current source-backed comparison", "minRedemption": "See current source-backed comparison",
+    "playthrough": "See current source-backed comparison", "kyc": "See current operator terms",
+    "restrictedStates": [], "availability": "State eligibility has not been independently verified. An empty exclusion list does not establish availability. No commercial visit link.",
+    "verificationStatus": "partial", "verificationLabel": "Operator-published evidence", "verifiedAt": "2026-09-27",
+    "testStatus": "not_tested", "observedResult": null, "strengths": [], "tradeoffs": [], "faviconExt": ".png",
+    "sources": [
+      { "id": "high5-signup", "label": "Dedicated welcome offer", "url": "https://high5casino.com/promotions/sign-up-bonus/", "purpose": "signup_offer", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public" },
+      { "id": "high5-daily", "label": "Daily rewards", "url": "https://high5casino.com/promotions/daily-bonus/", "purpose": "daily_reward", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public" },
+      { "id": "high5-redemption", "label": "Redemption methods and timing", "url": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/", "purpose": "redemption_help", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public" },
+      { "id": "high5-rules", "label": "Published rules", "url": "https://high5casino.com/helpcenter/legal/", "purpose": "sweepstakes_rules", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public" }
+    ],
+    "playerValue": {
+      "checkedAt": "2026-09-27", "productMode": "unverified",
+      "signup": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "daily": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "firstPurchase": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "cashMinimum": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "giftCardMinimum": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "playthrough": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] }
+    }
+  },
+  {
+    "slug": "chanced", "name": "Chanced", "partner": false, "position": 20,
+    "bestFor": "Published recurring rewards and redemption terms",
+    "summary": "Official reward and redemption evidence, with method and timing uncertainty kept visible.",
+    "offer": "See current source-backed comparison", "games": "Casino-style games",
+    "publishedEstimate": "See current source-backed comparison", "firstRedemption": "Not tested", "repeatRedemption": "Not tested",
+    "methods": "See current source-backed comparison", "minRedemption": "See current source-backed comparison",
+    "playthrough": "See current source-backed comparison", "kyc": "See current operator terms",
+    "restrictedStates": [], "availability": "State eligibility has not been independently verified. An empty exclusion list does not establish availability. No commercial visit link.",
+    "verificationStatus": "partial", "verificationLabel": "Operator-published evidence", "verifiedAt": "2026-09-27",
+    "testStatus": "not_tested", "observedResult": null, "strengths": [], "tradeoffs": [], "faviconExt": ".png",
+    "sources": [
+      { "id": "chanced-home", "label": "Published offers", "url": "https://chanced.com/", "purpose": "signup_offer", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public_rendered" },
+      { "id": "chanced-cash", "label": "Redemption help", "url": "https://chanced.com/payment-faq/", "purpose": "redemption_help", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public_rendered" },
+      { "id": "chanced-rules", "label": "Sweepstakes rules", "url": "https://chanced.com/sweeps-rules/", "purpose": "sweepstakes_rules", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public_rendered" }
+    ],
+    "playerValue": {
+      "checkedAt": "2026-09-27", "productMode": "unverified",
+      "signup": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "daily": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "firstPurchase": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "cashMinimum": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "giftCardMinimum": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
+      "playthrough": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] }
+    }
+  },
+  {
+    "slug": "fortune-wins", "name": "Fortune Wins", "partner": false, "position": 21,
+    "bestFor": "Published FC welcome and daily rewards",
+    "summary": "Welcome and daily rewards in their published denomination. FC is not treated as SC.",
+    "offer": "See current source-backed comparison", "games": "Casino-style games",
+    "publishedEstimate": "See current source-backed comparison", "firstRedemption": "Not tested", "repeatRedemption": "Not tested",
+    "methods": "See current source-backed comparison", "minRedemption": "See current source-backed comparison",
+    "playthrough": "See current source-backed comparison", "kyc": "See current operator terms",
+    "restrictedStates": [], "availability": "State eligibility has not been independently verified. An empty exclusion list does not establish availability. No commercial visit link.",
+    "verificationStatus": "partial", "verificationLabel": "Operator-published evidence", "verifiedAt": "2026-09-27",
+    "testStatus": "not_tested", "observedResult": null, "strengths": [], "tradeoffs": [], "faviconExt": ".png",
+    "sources": [
+      { "id": "fortune-wins-signup", "label": "Detailed FC welcome breakdown", "url": "https://fortunewins.com/promotions/promo/sign-up-bonus", "purpose": "signup_offer", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public" },
+      { "id": "fortune-wins-daily", "label": "Daily reward schedule", "url": "https://fortunewins.com/promotions/promo/daily-bonus", "purpose": "daily_reward", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public" },
+      { "id": "fortune-wins-terms", "label": "Published terms", "url": "https://fortunewins.com/terms-and-conditions", "purpose": "sweepstakes_rules", "discoverLinks": false, "accessed": "2026-09-27", "sourceType": "operator", "access": "public" }
+    ],
+    "playerValue": {
+      "checkedAt": "2026-09-27", "productMode": "unverified",
       "signup": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
       "daily": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },
       "firstPurchase": { "display": "See current evidence", "value": null, "status": "unverified", "conditions": "", "sourceIds": [] },

@@ -56,8 +56,10 @@ try {
       assert.ok(footer.y >= values.y + values.height);
       assert.equal(await item.locator(".toplist-visit").getAttribute("href"), row.visitUrl || row.url);
       assert.equal(await item.locator(".toplist-visit span").innerText(), row.visitUrl ? "Visit" : "Details");
-      for (const key of ["signup", "purchase", "daily", "redemption", "cash"]) {
-        if (row[key]) assert.ok((await item.locator(`[data-metric="${key}"]`).innerText()).includes(row[key].label));
+      for (const key of Object.keys(row.labels)) {
+        const metrics = key === "minimum" ? row.minima : [row[key]].filter(Boolean);
+        for (const metric of metrics)
+          assert.ok((await item.locator(`[data-metric="${key}"]`).innerText()).includes(metric.label));
       }
     }
     for (const image of await page.locator(".toplist-mark img").all()) {

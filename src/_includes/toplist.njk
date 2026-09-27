@@ -24,22 +24,28 @@
     {% for operator in benchmarks.toplist.homepageRows %}
     <li class="toplist-item" data-operator="{{ operator.slug }}" data-sort="{{ {slug: operator.slug, name: operator.name, sortValues: operator.sortValues} | json | escape }}">
       <div class="toplist-identity">
-        <h3 class="toplist-name"><a class="benefit-brand" href="{{ operator.url }}">{{ operator.name | escape }}</a></h3>
+        <h3 class="toplist-name"><a class="benefit-brand" href="{{ operator.url }}">{{ operator.name | escape }}</a>
+          {% if operator.rewardTypes.length %}<span class="toplist-reward-types">{{ operator.rewardTypes | join(" · ") | escape }}</span>{% endif %}
+        </h3>
         <div class="toplist-mark"><span class="toplist-position" aria-label="List position">{{ operator.position }}</span>
           {% if operator.favicon %}<img src="{{ operator.favicon }}" alt="" width="36" height="36">{% else %}<span class="operator-monogram" aria-hidden="true">{{ operator.name | first }}</span>{% endif %}
         </div>
       </div>
       <dl class="toplist-values">
-        {% for key, label in {signup: "Free signup", purchase: "Purchase deal", daily: "Daily reward", redemption: "Published processing", cash: "Cash minimum"} %}
-        <div class="toplist-metric" data-metric="{{ key }}"><dt>{{ label }}</dt><dd>{{ cell(operator[key]) }}</dd></div>
+        {% for key, label in operator.labels %}
+        <div class="toplist-metric" data-metric="{{ key }}"><dt>{{ label }}</dt><dd>
+          {% if key == "minimum" and operator.minima.length %}{% for value in operator.minima %}{{ cell(value) }}{% endfor %}
+          {% else %}{{ cell(operator[key]) }}{% endif %}
+        </dd></div>
         {% endfor %}
       </dl>
       <div class="toplist-footer">
         <details class="toplist-sources">
           <summary>Terms</summary>
           <div class="toplist-evidence">
-            {% for key, label in {signup: "Free signup", purchase: "Purchase deal", daily: "Daily reward", redemption: "Published processing", cash: "Cash minimum"} %}
-            {% set value = operator[key] %}{% if value %}
+            {% for key, label in operator.labels %}
+            {% set values = operator.minima if key == "minimum" else [operator[key]] %}
+            {% for value in values %}{% if value %}
               <section class="toplist-source" data-record-id="{{ value.recordId }}">
                 <h4>{{ label }}</h4><a href="{{ value.sourceUrl | escape }}" rel="noopener">{{ value.label | escape }}</a>
                 <span>Observed <time datetime="{{ value.observedAt }}">{{ value.observedAt | readableDate }}</time>{% if value.status == "retained" %} · Previous observation{% endif %}</span>
@@ -47,8 +53,7 @@
                 {% if value.promoCode %}<span>Code: {{ value.promoCode | escape }}</span>{% endif %}
                 {% if value.conditions.length %}<ul>{% for condition in value.conditions %}<li>{{ condition | escape }}</li>{% endfor %}</ul>{% endif %}
               </section>
-            {% endif %}{% endfor %}
-            <p>{{ operator.knownAttributeCount }} of 4 comparison categories supported. Signup and purchase deals form one offers category.</p>
+            {% endif %}{% endfor %}{% endfor %}
             <a href="{{ operator.url }}">Full operator record</a>
           </div>
         </details>
@@ -58,6 +63,6 @@
     </li>
     {% else %}<li>No operators currently meet the comparison requirements. <a href="/redemption-times/">Operator records</a></li>{% endfor %}
   </ol>
-  <p class="toplist-footnote">SC = Sweepstakes Coins. Published times, not measured payouts. <a href="/bonuses/cash-redemption-minimums/">Compare cash minimums</a> · <a href="/methodology/#homepage-order">How we order the list</a> · <a href="/updates/">Daily checks</a></p>
+  <p class="toplist-footnote">SC = Sweepstakes Coins. Gold Coins are entertainment credits. Published times, not measured payouts. <a href="/bonuses/cash-redemption-minimums/">Compare cash minimums</a> · <a href="/methodology/#homepage-order">How we order the list</a> · <a href="/updates/">Daily checks</a></p>
 </section>
 <script type="module" src="/assets/toplist-sort.js"></script>

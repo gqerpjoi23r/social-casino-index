@@ -44,8 +44,7 @@ const operators = after.toplist.rows.map(row => {
     attributes: ["welcome", "daily", "redemption", "cash"].map(field => {
       const records = latestRecords(snapshot.records || [], record => relevant(record, field));
       const supported = Number.isFinite(row.sortValues[field]);
-      const reason = row.productMode === "entertainment_only" ? "product_mode_excluded" :
-        supported ? "comparable" :
+      const reason = supported ? "comparable" :
           records.some(isRequestFrequency) && field === "redemption" ? "request_frequency_not_duration" :
             !records.length ? sources.some(source => source.status === "ok") ? "no_eligible_record_in_saved_sources" : "collection_unavailable" :
               field === "daily" && records.every(record => record.immediateSc == null) ? "daily_amount_not_established" :

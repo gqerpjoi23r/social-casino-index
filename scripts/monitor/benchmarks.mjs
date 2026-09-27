@@ -112,7 +112,7 @@ export function buildBenchmarks(numeric, registry = [], now = Date.now(), purcha
     const metadata = registryBySlug.get(slug) || {};
     const snapshot = snapshotBySlug.get(slug) || { slug, name: metadata.name, records: [] };
     const mode = snapshot.productMode || metadata.playerValue?.productMode || "unverified";
-    const metrics = mode === "entertainment_only" ? {} : operatorMetrics(snapshot, now, purchaseBudget);
+    const metrics = operatorMetrics(snapshot, now, purchaseBudget);
     return { slug, name: metadata.name || snapshot.name, productMode: mode, partner: metadata.partner === true,
       favicon: metadata.faviconExt ? `/assets/favicons/${slug}${metadata.faviconExt}` : null,
       url: `/redemption-times/${slug}/`, metrics,

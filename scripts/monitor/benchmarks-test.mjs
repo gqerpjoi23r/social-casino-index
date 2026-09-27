@@ -368,11 +368,11 @@ test("non-partners get profile links without changing comparison eligibility or 
   const second = buildBenchmarks({ operators: snapshots }, registry, now);
   assert.deepEqual(second.toplist.homepageRows.map(row => row.slug), ["a", "b"]);
 });
-test("an unverified product mode cannot qualify merely by having two numeric categories", () => {
+test("an operator-level classification cannot hide two supported benefits", () => {
   const snapshot = { ...complete("candidate", 5, 2, 50), productMode: "unverified" };
   const result = model([snapshot]);
   assert.equal(result.toplist.rows[0].knownAttributeCount, 2);
-  assert.equal(result.toplist.homepageRows.length, 0);
+  assert.equal(result.toplist.homepageRows.length, 1);
 });
 test("persisted game discoveries are removed without filtering explicit source seeds", () => {
   const input = [{ slug: "a", sources: [

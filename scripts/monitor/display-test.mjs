@@ -225,13 +225,16 @@ test("totals do not become immediate coins; purchase requirements remain visible
   assert.equal(rows([record({ immediateSc: 10, totalSc: 5 })]).length, 0);
 });
 
-test("invalid dates, sources, amounts, scoped claims and entertainment-only products are excluded", () => {
+test("invalid dates, sources, amounts and scoped claims are excluded, not whole product labels", () => {
   for (const fields of [{ capturedAt: "invalid" }, { capturedAt: "2026-09-16T00:00:00Z" },
     { sourceUrl: "" }, { sourceUrl: "javascript:alert(1)" }, { immediateSc: null, totalSc: null },
     { totalSc: NaN, immediateSc: -1 }, { states: ["FL"] }, { scope: "vip" }]) {
     assert.equal(rows([record(fields)]).length, 0, JSON.stringify(fields));
   }
   const result = comparisonSections({ operators: [operator([record()], { productMode: "entertainment_only" })] }, now);
-  assert.ok(result.every(section => section.groups.every(group => group.rows.length === 0)));
+  assert.ok(result.some(section => section.groups.some(group => group.rows.length > 0)));
+  const gold = comparisonSections({ operators: [operator([record({ immediateSc: null,
+    totalSc: null, goldCoins: 10000 })], { productMode: "entertainment_only" })] }, now);
+  assert.ok(gold.every(section => section.groups.every(group => group.rows.length === 0)));
   assert.ok(comparisonSections(undefined).every(section => section.groups.every(group => group.rows.length === 0)));
 });
