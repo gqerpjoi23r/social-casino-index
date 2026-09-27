@@ -1,6 +1,7 @@
 import { orderToplist, SORTS } from "../../src/assets/toplist-order.js";
 import { isRequestFrequency, qualifyRedemptionTiming } from "./redemption-semantics.mjs";
 import { dailyQualifierText } from "./daily-semantics.mjs";
+import { presentToplist } from "./toplist-presentation.mjs";
 
 const number = value => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(value);
 const dated = record => record.lastConfirmedAt || record.capturedAt;
@@ -22,6 +23,7 @@ export function evidence(record, label, note, snapshot = {}) {
     lastCheckedAt: source?.checkedAt || (source ? snapshot.lastAttempt : null),
     firstObservedAt: record.firstObservedAt || record.capturedAt,
     lastChangedAt: record.lastChangedAt || null,
+    valueChangedAt: record.valueChangedAt || null,
   };
 }
 
@@ -97,7 +99,7 @@ export function redemptionTime(snapshot, records, { display = false } = {}) {
   return result;
 }
 
-function offerDisplay(snapshot, offers, kind) {
+export function offerDisplay(snapshot, offers, kind) {
   const candidates = newest(offers.filter(record => kind === "signup" ? record.kind === "signup" :
     ["first_purchase", "purchase_package", "paid_pass"].includes(record.kind)));
   for (const record of candidates) {
@@ -195,11 +197,15 @@ export function buildToplist(operators, numeric, latestRecords, now) {
     row.gift = operator.metrics.gift || null;
     row.rewardTypes = [...new Set([
       row.cash ? "Cash prizes" : null, row.gift ? "Gift cards" : null,
+      ...facts.filter(record => ["redemption_minimum", "redemption_time"].includes(record.field) &&
+        !isRequestFrequency(record)).map(record =>
+        ["cash", "bank", "debit_card"].includes(record.method) ? "Cash prizes" :
+          record.method === "gift_card" ? "Gift cards" : null),
       ...["signup", "purchase", "daily"].map(key => row[key]?.rewardType),
     ].filter(Boolean))];
     row.labels = { signup: signup ? "Free signup" : "Welcome offer", purchase: "Purchase deal",
-      daily: "Daily reward", redemption: ["transfer", "end_to_end", "unspecified"].includes(row.redemption?.stage) ?
-        "Redemption timing" : "Published processing", minimum: "Redemption minimum" };
+      minimum: "Redemption minimum", redemption: ["transfer", "end_to_end", "unspecified"].includes(row.redemption?.stage) ?
+        "Redemption timing" : "Published processing", daily: "Daily reward" };
     // Numeric coverage is diagnostic only; listing uses the five visible benefits.
     const comparable = { welcome: Boolean(signup || purchase), daily: row.sortValues.daily !== null,
       redemption: row.sortValues.redemption !== null, cash: row.sortValues.cash !== null };
@@ -209,6 +215,7 @@ export function buildToplist(operators, numeric, latestRecords, now) {
     row.benefitCount = benefits.length;
     row.missingBenefits = BENEFIT_KEYS.filter(key => !row[key]);
     row.homepageEligible = row.benefitCount >= 2;
+    row.presentation = presentToplist(row, now);
     return row;
   });
   const ordered = orderToplist(rows);

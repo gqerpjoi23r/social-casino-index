@@ -13,6 +13,13 @@ import { baselineKey, usableRun } from "./state-core.mjs";
 import { emptyExtraction } from "./schema.mjs";
 
 const pages = text => [{ sourceId: "faq", text }];
+test("calendar offer expiry is accepted only when grounded in an explicit end date", () => {
+  const quote = "Buy 25 SC for $9.99. Promotion Dates: July 1-27, 2026.";
+  const base = deterministicExtract(pages(quote)).offers[0];
+  const input = { ...base, quote, expiresAt: "2026-07-27", conditions: ["Promotion Dates: July 1-27, 2026."] };
+  assert.equal(checkExtraction({ ...emptyExtraction(), offers: [input] }, pages(quote)).accepted.offers.length, 1);
+  assert.equal(checkExtraction({ ...emptyExtraction(), offers: [{ ...input, expiresAt: "2026-12-27" }] }, pages(quote)).accepted.offers.length, 0);
+});
 test("extraction preserves post-approval delivery as transfer rather than processing", () => {
   const base = deterministicExtract(pages("The minimum redemption is 50 SC for eligible players.")).facts[0];
   const quote = "Processing time after approval: IBT / ACH takes 1-5 business days.";

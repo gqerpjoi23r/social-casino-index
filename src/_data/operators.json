@@ -1501,7 +1501,7 @@
     }
   },
   {
-    "slug": "rolling-riches", "name": "Rolling Riches", "partner": false, "position": 18,
+    "slug": "rolling-riches", "name": "Rolling Riches", "partner": false, "position": 18, "faviconExt": ".png",
     "bestFor": "Published redemption terms",
     "summary": "Redemption minimums and timing with explicit method and delivery conditions.",
     "offer": "See current source-backed comparison", "games": "Casino-style games",

@@ -1,6 +1,7 @@
 import { buildToplist } from "./toplist.mjs";
 import { dailyQualifierText } from "./daily-semantics.mjs";
 import { attachProductViews } from "./product-view.mjs";
+import { offerExpiry, expiryTime } from "./offer-expiry.mjs";
 
 export const METHODOLOGY_VERSION = "published-benefits-1";
 const amount = value => typeof value === "number" && Number.isFinite(value) && value >= 0;
@@ -19,7 +20,7 @@ export function latestRecords(records, predicate, now = Date.now()) {
   for (const record of matching) newest.set(record.sourceId || record.sourceUrl,
     Math.max(newest.get(record.sourceId || record.sourceUrl) || 0, Date.parse(date(record))));
   return matching.filter(record => newest.get(record.sourceId || record.sourceUrl) === Date.parse(date(record)) &&
-    usable(record) && (!record.expiresAt || Date.parse(record.expiresAt) > now));
+    usable(record) && (!offerExpiry(record) || expiryTime(offerExpiry(record)) > now));
 }
 
 function fact(record, metric, value, label, note = "") {
@@ -27,6 +28,7 @@ function fact(record, metric, value, label, note = "") {
     metric, value, label, note, recordId: record.id, sourceUrl: record.sourceUrl,
     observedAt: date(record), status: record.freshness === "not_reconfirmed" ? "retained" : "published",
     firstObservedAt: record.firstObservedAt || record.capturedAt, lastChangedAt: record.lastChangedAt || null,
+    valueChangedAt: record.valueChangedAt || null,
     conditions: record.conditions || [], promoCode: record.promoCode,
     priceUsd: record.priceUsd ?? null, immediateSc: record.immediateSc ?? null,
     totalSc: total(record) ?? null, durationDays: record.durationDays ?? null,
