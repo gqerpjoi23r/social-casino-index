@@ -15,7 +15,7 @@ budget. A run does not guarantee that every field or source was readable.
   `sourceOptions[id].onlyMainContent: false` can retain surrounding content.
 - For up to 11 operators: at most 50 sources, 45 Firecrawl calls and 12 model
   calls. Each additional admitted operator adds five source/Firecrawl requests
-  and one model request. The 13-operator roster has limits of 60/55/14.
+  and one model request. The 15-operator roster has limits of 70/65/16.
   Limits are saved in each run. The workflow has a 60-minute timeout.
   More than 24 operators requires an explicit capacity review.
 - Firecrawl uses automatic proxy fallback. Account-only content stays excluded.
