@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { candidateReport, candidateMarkdown } from "./candidate-report.mjs";
 
 const directory = process.argv[2];
 if (!directory) throw new Error("Usage: node scripts/monitor/report.mjs <capture directory>");
@@ -22,6 +23,8 @@ if (!existsSync(join(directory, "numeric.json")) || !existsSync(join(directory, 
 const numeric = read("numeric.json");
 const evaluation = read("numeric-evaluation.json");
 const summary = read("summary.json");
+const decisions = candidateReport(numeric, read("operators-config.json"), manifest, evaluation);
+writeFileSync(join(directory, "candidate-decisions.json"), JSON.stringify(decisions, null, 2) + "\n");
 const cell = value => String(value ?? "unknown").replace(/\|/g, "\\|").replace(/\s+/g, " ");
 const numberFields = ["priceUsd", "immediateSc", "totalSc", "goldCoins", "advertisedExtraPercent", "advertisedDiscountPercent", "durationDays", "intervalHours"];
 const totals = key => numeric.operators.reduce((sum, operator) => sum + operator[key].length, 0);
@@ -58,14 +61,14 @@ for (const operator of numeric.operators) {
   const configured = manifest.sources.filter(source => source.operatorId === operator.slug).length;
   lines.push(`| ${cell(operator.name)} | ${row.readableSources}/${configured} | ${row.offers} | ${row.facts} | ${row.statements} | ${row.numericFields} | ${row.rejected} |`);
 }
-lines.push("", "## Evaluation And Limits", "",
+lines.push("", candidateMarkdown(decisions), "", "## Evaluation And Limits", "",
   "Grounding checks validate the JSON schema, verify each quote against its captured page, check that numbers occur in the quote, and reject some incompatible units and interpretations. They do not prove that a number belongs to the right offer, that all qualifiers were retained, or that the source is current.",
   `Deterministic-only output: ${evaluation.operators.reduce((sum, row) => sum + row.deterministicOffers, 0)} offers and ${evaluation.operators.reduce((sum, row) => sum + row.deterministicFacts, 0)} policies. This is insufficient for a purchase-value benchmark.`,
   "The model broadens coverage but still produces unsupported quotes and classification mistakes. A rejected record may contain recoverable information; it is retained below instead of silently repaired.",
   totals("derived") === 0 ? "No complete immediate-purchase package passed the current comparison checks." :
     "Eligible purchase ratios are provisional arithmetic on unreviewed records, not a published benchmark.",
   "Recover rejected records through review or revised extraction from saved captures. A price discount is not an extra-coins percentage. Keep conflicting claims, immediate grants and staged totals separate. Do not compare entertainment-only coins with redeemable SC.",
-  "Only configured public operator URLs were checked. Discovery is not automated; captured links can support later URL review. Login-only, personalized, email, and in-app offers are outside this run.",
+  "Curated public sources run before bounded official-link discovery. This is not a complete site crawl. Login-only, personalized, email, and in-app offers are outside this run.",
   "First numeric observations are baselines. Changes require review; not reconfirmed does not mean expired. Identical replay is a stability test, not a multi-day reliability test.",
   "", "## All Source URLs", "",
   "| Operator | Source ID | Requested URL | Final URL | Status | Provider |",

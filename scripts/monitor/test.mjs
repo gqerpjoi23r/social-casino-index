@@ -2,6 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readableText, accessStatus, extract, validQuotes, aggregate } from "./core.mjs";
 import { RequestUsage, monitorLimits } from "./providers.mjs";
+import { sourceQueues, discover, needsRendering } from "./discovery.mjs";
+import { candidateReport } from "./candidate-report.mjs";
 
 const operator = { slug: "fixture", name: "Fixture", playerValue: { productMode: "sweepstakes" } };
 const text = "The minimum redemption is 50 SC for eligible players.\nClaim your daily reward of 0.5 SC every day.\nIdentity verification requires government photo identification.";
@@ -40,6 +42,42 @@ test("block pages and login redirects are not observations", () => {
   assert.equal(accessStatus("Please verify you are human"), "blocked");
   assert.equal(accessStatus(text, "https://example.com/login"), "login_required");
   assert.equal(accessStatus(text, "", 500), "http_error");
+});
+test("location notices and missing article bodies are not captured articles", () => {
+  const options = { expectedHeading: "How do I redeem?" };
+  assert.equal(accessStatus("We can't detect your location\n" + text), "region_notice");
+  assert.equal(accessStatus(text, "https://example.com/geoblock"), "region_notice");
+  assert.equal(needsRendering({ status: "region_notice" }, { id: "home" }), true);
+  assert.equal(accessStatus("Help Center\n" + "Copyright and footer links. ".repeat(20), "", 200, options), "article_missing");
+  assert.equal(accessStatus("How do I redeem?\nRelated Articles\n" + text, "", 200, options), "article_missing");
+  assert.equal(accessStatus("How do I redeem?\n" + text, "", 200, options), "ok");
+  const noAmounts = "How do I redeem?\nOpen the rewards section in your account and follow the instructions. The available methods depend on the account and will be displayed before you submit.";
+  assert.equal(accessStatus(noAmounts, "", 200, options), "ok");
+  assert.equal(accessStatus(text, "", 403, options), "blocked");
+});
+test("curated help and PDF seeds run without opening arbitrary API discovery", () => {
+  const sources = [
+    { id: "pdf", url: "https://example.com/api/Document/rules.pdf" },
+    { id: "help", url: "https://help.example.com/redeem" },
+  ];
+  const [queue] = sourceQueues([{ ...operator, sources }], { comparisonSources: { fixture: ["pdf", "help"] } });
+  assert.equal(queue.queue.length, 2);
+  assert.deepEqual(queue.hosts, ["example.com", "help.example.com"]);
+  assert.equal(discover([sources[0].url], sources[1], "fixture", queue.hosts).length, 0);
+  assert.equal(discover(["https://unapproved.example/help"], sources[1], "fixture", queue.hosts).length, 0);
+});
+test("candidate decisions distinguish absent capture from field exclusion", () => {
+  const registry = [{ ...operator, sources: [{ id: "rules", url: "https://example.com/rules", purpose: "sweepstakes_rules" }] }];
+  const extracted = { operators: [{ slug: "fixture", offers: [], statements: [], facts: [{
+    id: "minimum", field: "redemption_minimum", value: 50, unit: "SC", method: "general",
+    comparison: "exact", sourceId: "rules", sourceUrl: "https://example.com/rules", capturedAt: "2026-09-01T00:00:00Z",
+  }] }] };
+  const report = candidateReport(extracted, registry, { runId: "test", sources: [{
+    operatorId: "fixture", id: "rules", url: "https://example.com/rules", status: "article_missing",
+  }] }, { rejected: [] });
+  const fields = report.operators[0].fields;
+  assert.ok(fields.find(field => field.field === "cash").reasons.includes("cash_method_unit_or_scope_not_established"));
+  assert.ok(fields.find(field => field.field === "daily").reasons.includes("source_unavailable"));
 });
 test("embedded reCAPTCHA notices preserve substantive public evidence", () => {
   const widget = "Log-in Sign-up\nreCAPTCHA\nRecaptcha requires verification.\nprotected by **reCAPTCHA**\n";

@@ -32,7 +32,7 @@ export function readableText(body, type = "text/html") {
     .map(normalize).filter(Boolean).join("\n");
 }
 
-export function accessStatus(text, url = "", status = 200) {
+export function accessStatus(text, url = "", status = 200, options = {}) {
   if (status === 401 || /\/(?:login|sign-in)(?:[/?#]|$)/i.test(url)) return "login_required";
   // Embedded widget notices do not invalidate the surrounding public page.
   const content = text.split("\n").filter(line =>
@@ -41,9 +41,18 @@ export function accessStatus(text, url = "", status = 200) {
       /just a moment|verify you are human|checking your browser|captcha|access denied|attention required.*cloudflare/i.test(content.slice(0, 3000)) ||
       (/captcha/i.test(text.slice(0, 3000)) && content.trim().length < 150)) return "blocked";
   if (status >= 400) return "http_error";
-  if (/\/geo-block|\/restricted(?:[/?#]|$)/i.test(url) ||
+  if (/\/geo-?block|\/restricted(?:[/?#]|$)/i.test(url) ||
+      /(?:can.t|cannot) detect your location/i.test(text.slice(0, 1000)) ||
       (/not available in your (?:region|location|country)|access from your (?:region|location|country).*restricted/i.test(text) && text.length < 3000)) return "region_notice";
   if (text.length < 150) return "empty";
+  if (options.expectedHeading) {
+    const lines = text.split("\n").map(line => normalize(line).toLowerCase());
+    const heading = normalize(options.expectedHeading).toLowerCase();
+    const index = lines.indexOf(heading);
+    const following = index < 0 ? "" : lines.slice(index + 1).join(" ")
+      .split(/related articles|did this answer|was this article helpful|still have questions|copyright|knowledge detail/)[0];
+    if (index < 0 || following.trim().length < 100) return "article_missing";
+  }
   return "ok";
 }
 
