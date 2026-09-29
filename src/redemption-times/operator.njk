@@ -10,39 +10,13 @@ ogType: "article"
 eleventyComputed:
   title: "{{ operator.name }} Offers and Redemption Requirements"
   description: "{{ operator.name }} welcome offers, daily rewards and redemption requirements, with source-linked conditions and observation dates."
-  jsonld:
-    "@context": "https://schema.org"
-    "@graph":
-      - "@type": "Article"
-        "@id": "https://socialcasinoindex.com/redemption-times/{{ operator.slug }}/#article"
-        headline: "{{ operator.name }} Offers and Redemption Requirements"
-        description: "{{ operator.name }} welcome offers, daily rewards and redemption requirements, with source-linked conditions."
-        datePublished: "{{ operator.verifiedAt }}"
-        dateModified: "{{ operator.verifiedAt | latestDate(contentDates.operatorPages, benchmarks.generatedAt, '2026-09-21') }}"
-        mainEntityOfPage: "https://socialcasinoindex.com/redemption-times/{{ operator.slug }}/"
-        author:
-          "@id": "https://socialcasinoindex.com/#alex-rowan"
-        publisher:
-          "@id": "https://socialcasinoindex.com/#org"
-      - "@type": "BreadcrumbList"
-        itemListElement:
-          - "@type": "ListItem"
-            position: 1
-            name: "Home"
-            item: "https://socialcasinoindex.com/"
-          - "@type": "ListItem"
-            position: 2
-            name: "Redemption times"
-            item: "https://socialcasinoindex.com/redemption-times/"
-          - "@type": "ListItem"
-            position: 3
-            name: "{{ operator.name }}"
 ---
 {% from "benefit-row.njk" import evidence %}
 <main><article class="wrap py-10">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/redemption-times/">Redemption times</a></li><li><span aria-current="page">{{ operator.name }}</span></li></ol></nav>
   <p class="eyebrow">Operator record · Published benefits</p>
   <h1 class="page-title">{{ operator.name }}</h1>
+  <div class="answer-first" id="quick-answer"><span class="af-label">Quick answer</span><p>{{ answer.summary | escape }}</p></div>
   <p class="lede">{{ current.product.summary | escape }}</p>
   <p class="benefit-policy">Operator-published terms, not measured payouts. Gold Coins are entertainment credits, not redeemable Sweeps Coins.</p>
   {% if current.product.rewardTypes.length %}<p class="text-sm">{{ current.product.rewardTypes | join(" · ") | escape }}</p>{% endif %}
@@ -117,7 +91,9 @@ eleventyComputed:
   {% if current.product.faqs.length %}
   <section id="questions"><h2>{{ operator.name }} questions</h2>
     {% for faq in current.product.faqs %}<section><h3>{{ faq.question | escape }}</h3><p>{{ faq.answer | escape }}</p><p class="benefit-source"><a href="{{ faq.value.sourceUrl | escape }}">Operator source</a> · Observed <time datetime="{{ faq.value.observedAt }}">{{ faq.value.observedAt | readableDate }}</time></p></section>{% endfor %}
+    {% if not current.product.redemption %}{% set timingFaq = answer.faqs | last %}<section><h3>{{ timingFaq.question | escape }}</h3><p>{{ timingFaq.answer | escape }}</p></section>{% endif %}
   </section>
   {% endif %}
+  <nav class="benefit-nav" aria-label="Related answers"><a href="/bonuses/sweepstakes-casinos-under-50-sc-redemption/">Casinos with redemptions under 50 SC</a><a href="/redemption-times/by-method/">Payout times by method</a>{% for comparison in benchmarks.comparisons %}{% if operator.slug in comparison.slug %}<a href="{{ comparison.url }}">{{ comparison.title }}</a>{% endif %}{% endfor %}</nav>
   <p class="byline mt-8"><a href="/redemption-times/">Compare all operators</a> · <a href="/methodology/">Methodology</a> · <a href="/disclosure/">Affiliate disclosure</a></p>
 </article></main>

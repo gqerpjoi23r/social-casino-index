@@ -33,6 +33,10 @@ const KEY_PAGES = [
   "methodology/index.html",
   "about/index.html",
   "authors/alex-rowan/index.html",
+  "compare/wow-vegas-vs-mcluck/index.html",
+  "compare/wow-vegas-vs-chumba/index.html",
+  "bonuses/sweepstakes-casinos-under-50-sc-redemption/index.html",
+  "redemption-times/by-method/index.html",
 ];
 
 // State pages (one per closed state).
@@ -64,6 +68,10 @@ const JSONLD_PAGES = [
   "guides/redemption-methods/bank-transfer/index.html",
   "guides/redemption-methods/gift-card/index.html",
   "guides/redemption-methods/crypto/index.html",
+  "compare/wow-vegas-vs-mcluck/index.html",
+  "compare/wow-vegas-vs-chumba/index.html",
+  "bonuses/sweepstakes-casinos-under-50-sc-redemption/index.html",
+  "redemption-times/by-method/index.html",
   ...STATE_PAGES,
 ];
 
@@ -83,6 +91,15 @@ for (const slug of OPERATORS) {
   if (!html) { fail(`missing built operator page: docs/${rel}`); continue; }
   if (!html.includes(`<link rel="canonical" href="${SITE}`)) fail(`canonical missing or off-domain: ${rel}`);
   if (!html.includes('type="application/ld+json"')) fail(`missing JSON-LD: ${rel}`);
+  if (!html.includes(`"@id": "${SITE}/redemption-times/${slug}/#article"`)) fail(`operator JSON-LD has the wrong article id: ${rel}`);
+}
+
+for (const rel of ["compare/wow-vegas-vs-mcluck/index.html", "compare/wow-vegas-vs-chumba/index.html",
+  "bonuses/sweepstakes-casinos-under-50-sc-redemption/index.html", "redemption-times/by-method/index.html",
+  "redemption-times/chumba/index.html", "redemption-times/mcluck/index.html", "redemption-times/wow-vegas/index.html"]) {
+  const html = read(rel);
+  if (html && (!html.includes('id="quick-answer"') || !html.includes("Social Casino Index"))) fail(`missing branded quick answer: ${rel}`);
+  if (html && !html.includes('"@type": "FAQPage"')) fail(`missing FAQ JSON-LD: ${rel}`);
 }
 
 // 4. New state/method pages must appear in the sitemap.
@@ -93,6 +110,9 @@ if (sitemap) {
   }
   for (const m of ["bank-transfer", "gift-card", "crypto"]) {
     if (!sitemap.includes(`/guides/redemption-methods/${m}/`)) fail(`method page missing from sitemap: /guides/redemption-methods/${m}/`);
+  }
+  for (const path of ["/bonuses/sweepstakes-casinos-under-50-sc-redemption/", "/redemption-times/by-method/"]) {
+    if (!sitemap.includes(path)) fail(`answer page missing from sitemap: ${path}`);
   }
 } else {
   fail("docs/sitemap.xml does not exist");
