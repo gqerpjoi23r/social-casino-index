@@ -61,5 +61,12 @@
 .benefit-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2rem}
 .benefit-detail-grid>section{padding:1.25rem 0;border-bottom:1px solid #46524d}
 .benefit-detail-grid h2{font-size:1rem;margin:0 0 .5rem}
+table.data.pair-summary{min-width:42rem}
+table.data.pair-summary th:first-child,table.data.pair-summary td:first-child{width:9rem}
+table.data.pair-summary th:not(:first-child),table.data.pair-summary td:not(:first-child){width:calc((100% - 9rem)/2)}
+table.data.minimum-summary{min-width:46rem}
+table.data.method-timing{min-width:42rem}
+table.data.minimum-summary th:first-child,table.data.method-timing th:first-child{width:10rem}
+table.data.method-timing th:last-child,table.data.method-timing td:last-child{width:11rem}
 @media(max-width:600px){.benefit-intro h1{font-size:1.8rem}.benefit-section-heading{align-items:start;flex-direction:column}.benefit-directory-list article{grid-template-columns:1fr;gap:.5rem}.benefit-detail-grid{grid-template-columns:1fr}.benefit-table th,.benefit-table td{padding:.85rem .4rem}.benefit-brand{min-width:90px}.benefit-brand img{width:24px;height:24px}.benefit-value{font-size:1rem}.benefit-intro{padding-top:1.4rem}}
 @media(max-width:650px){.benefit-overall{min-width:0}.benefit-overall thead{display:none}.benefit-overall tbody{display:block}.benefit-overall tr{display:grid;grid-template-columns:28px minmax(0,1fr);border-bottom:1px solid #46524d}.benefit-overall th,.benefit-overall td{border:0}.benefit-overall td:not(:first-child){grid-column:2}.benefit-overall td:nth-child(3)::before{content:"Free signup"}.benefit-overall td:nth-child(4)::before{content:"Purchase value"}.benefit-overall td:nth-child(5)::before{content:"Cash minimum"}.benefit-overall td:nth-child(n+3)::before{display:block;font-size:.75rem;color:#b8c7be;margin-bottom:.3rem}}

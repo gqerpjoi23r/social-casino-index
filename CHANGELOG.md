@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-09-29 - Add citation-ready answer pages
+- Add a quick answer, side-by-side table and FAQs to WOW Vegas vs McLuck and WOW Vegas vs Chumba, plus quick answers to operator pages. Copy names Social Casino Index next to the dated figures.
+- Publish `/bonuses/sweepstakes-casinos-under-50-sc-redemption/` and `/redemption-times/by-method/` from the shared evidence model. Cash and gift-card thresholds stay separate; method windows keep their stage labels and do not claim a fastest method.
+- Fix operator JSON-LD so every profile uses its own Article ID and headline, and add FAQ schema to the new answer pages and operator pages.
+
 ## 2026-09-27 - Apply toplist v2 and shared visual language
 - Break equal confirmed free-signup amounts by supported benefit-area count, then name. WOW Vegas moves from seventh to third; other sorts, numeric values and the 19-operator homepage roster stay unchanged.
 - Adopt the supplied v2 layout and shared Newsreader/Archivo typography, colors, navigation and controls. Keep existing layouts on guides, benchmarks and operator pages; remove superseded homepage CSS.

@@ -8,17 +8,24 @@ permalink: "/compare/{{ comparison.slug }}/"
 publishedAt: "2026-09-21"
 updatedAt: "2026-09-21"
 eleventyComputed:
-  title: "{{ comparison.title }}: Published Bonus Comparison"
-  description: "Compare {{ comparison.title }} by supported signup bonuses, purchase packages and cash redemption minimums. Dated operator sources and conditions."
-  jsonld:
-    "@context": "https://schema.org"
-    "@type": "CollectionPage"
-    name: "{{ comparison.title }}"
+  title: "{{ comparison.title }}: Cash Minimums, Signup Coins and Offers"
+  description: "{{ comparison.title }} compared by cash redemption minimum, gift-card minimum, free signup coins, first-purchase offer and published processing time."
 ---
 {% from "benefit-row.njk" import evidence %}
 <main><article class="wrap">
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/bonuses/">Bonus benchmarks</a></li><li aria-current="page">{{ comparison.title }}</li></ol></nav>
-<header class="benefit-intro"><h1>{{ comparison.title }}</h1><p>Published benefits compared on the same metric, with full offer conditions and observation dates.</p></header>
+<header class="benefit-intro"><h1>{{ comparison.title }}</h1><p>Cash minimums, signup coins and purchase offers from dated operator sources.</p></header>
+<div class="answer-first" id="quick-answer"><span class="af-label">Quick answer</span><p>{{ answers.summary }}</p></div>
+<section class="benefit-benchmark" aria-labelledby="side-by-side"><h2 id="side-by-side">Side-by-side comparison</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="{{ comparison.title }} side-by-side comparison">
+<table class="data pair-summary"><caption>Checked by Social Casino Index on {{ answers.asOf }}. Published terms, not measured payouts.</caption>
+<thead><tr><th scope="col">Term</th>{% for operator in answers.operators %}<th scope="col"><a href="{{ operator.url }}">{{ operator.name }}</a></th>{% endfor %}</tr></thead>
+<tbody>{% for row in answers.rows %}<tr><th scope="row">{{ row.label }}</th>{% for value in row.values %}<td>{% if value %}<strong>{{ value.label | escape }}</strong>{% if value.note %}<br><span class="benefit-note">{{ value.note | escape }}</span>{% endif %}<br><a class="benefit-source" href="{{ value.sourceUrl | escape }}" rel="noopener">Source, {{ value.observedAt | readableDate }}</a>{% else %}Not established{% endif %}</td>{% endfor %}</tr>{% endfor %}</tbody>
+</table></div></section>
+<section class="benefit-benchmark" id="questions" aria-labelledby="pair-questions"><h2 id="pair-questions">{{ comparison.title }} questions</h2>
+{% for faq in answers.faqs %}<h3>{{ faq.question }}</h3><p>{{ faq.answer }}</p>{% endfor %}
+</section>
+<h2 class="mt-8 text-xl">Evidence and terms</h2>
 {% for section in comparison.sections %}
 <section class="benefit-benchmark"><h2>{{ section.title }}</h2>
 <div class="benefit-detail-grid">{% for row in section.rows %}<section data-operator="{{ row.slug }}"><h3><a href="{{ row.url }}">{{ row.name }}</a></h3>{{ evidence(row) }}</section>{% endfor %}</div>
@@ -28,5 +35,6 @@ eleventyComputed:
 <p>Comparable amounts for both operators have not yet been established. Their individual profiles retain any supported benefits.</p>
 {% endfor %}
 <nav class="benefit-nav" aria-label="Operator profiles">{% for operator in comparison.operators %}<a href="{{ operator.url }}">{{ operator.name }} profile</a>{% endfor %}</nav>
-<p class="benefit-policy">Published terms, not tested payout performance. <a href="/methodology/#published-offers">Methodology</a>.</p>
+<nav class="benefit-nav" aria-label="Related answers"><a href="/bonuses/sweepstakes-casinos-under-50-sc-redemption/">Casinos with redemptions under 50 SC</a><a href="/redemption-times/by-method/">Payout times by method</a><a href="/bonuses/cash-redemption-minimums/">All cash minimums</a></nav>
+<p class="benefit-policy">Published terms, not tested payout performance. Social Casino Index checks operator sources daily. <a href="/methodology/#published-offers">Methodology</a>.</p>
 </article></main>

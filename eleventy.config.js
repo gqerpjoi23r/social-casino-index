@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { cashMinimumAnswers } from "./scripts/monitor/cash-answers.mjs";
 import { signupDetails } from "./scripts/monitor/signup-details.mjs";
 import { comparisonCsv } from "./scripts/monitor/product-view.mjs";
+import { pairAnswers, operatorAnswer, lowRedemption, methodTimings, faqJsonLd } from "./scripts/monitor/answer-pages.mjs";
 
 export default function (eleventyConfig) {
   // Passthrough: files served as-is from the docs/ output.
@@ -33,6 +34,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("cashMinimumAnswers", cashMinimumAnswers);
   eleventyConfig.addFilter("signupDetails", signupDetails);
   eleventyConfig.addFilter("comparisonCsv", comparisonCsv);
+  eleventyConfig.addFilter("pairAnswers", pairAnswers);
+  eleventyConfig.addFilter("operatorAnswer", operatorAnswer);
+  eleventyConfig.addFilter("lowRedemption", lowRedemption);
+  eleventyConfig.addFilter("methodTimings", methodTimings);
+  eleventyConfig.addFilter("faqJsonLd", faqJsonLd);
 
   eleventyConfig.addFilter("limit", (items = [], n = 3) =>
     [...items].slice(0, n),

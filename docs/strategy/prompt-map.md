@@ -143,6 +143,20 @@ These targets cover benefit-specific acquisition queries. They supplement the hi
 | 100 | WOW Vegas versus McLuck signup bonus comparison | /compare/wow-vegas-vs-mcluck/ | COMPARE | P1 |
 | 101 | WOW Vegas versus Chumba cash redemption minimum | /compare/wow-vegas-vs-chumba/ | COMPARE | P1 |
 
+## Citation Pages Added September 29
+
+These targets match active Lovd prompts where AI answers cited or needed current operator numbers.
+
+| # | Prompt | Target URL | Type | Pri |
+|---|--------|-----------|------|-----|
+| 102 | WOW Vegas vs McLuck: compare free signup coins, first-purchase offers, and cash redemption minimums | /compare/wow-vegas-vs-mcluck/#quick-answer | COMPARE | P1 |
+| 103 | WOW Vegas vs Chumba: which has the lower cash redemption minimum and what free signup coins do they offer? | /compare/wow-vegas-vs-chumba/#quick-answer | COMPARE | P1 |
+| 104 | Which sweepstakes casinos let me redeem less than $50, and is that cash or gift cards? | /bonuses/sweepstakes-casinos-under-50-sc-redemption/#quick-answer | BENCH | P1 |
+| 105 | chumba redemption minimum and payout time | /redemption-times/chumba/#quick-answer | OP | P1 |
+| 106 | mcluck redemption minimum and payout time | /redemption-times/mcluck/#quick-answer | OP | P1 |
+| 107 | wow vegas redemption minimum and payout time | /redemption-times/wow-vegas/#quick-answer | OP | P1 |
+| 108 | sweepstakes casino payout times by payment method with stages | /redemption-times/by-method/#quick-answer | HUB-R | P1 |
+
 ## Notes
 
 - Prompt numbering follows the production list; "b" suffixes mark prompts whose
