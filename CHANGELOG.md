@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-10-02 - Target redemption-time searches on operator pages
+- Retitle all operator profiles "{Operator} Redemption Time, Minimum and Methods ({Month Year})", based on Ads/SERP research: operator time and withdrawal terms have the demand. URLs stay unchanged.
+- Add a visible checked date, a per-method minimum/time table with stage labels, a pending/in progress/approved status block and three FAQs (minimum, instant redemptions, pending meaning). FAQs are also in the FAQPage JSON-LD.
+- All copy comes from selected evidence records. No instant or fastest claim is made; missing data shows "Not published".
+
 ## 2026-09-29 - Add citation-ready answer pages
 - Add a quick answer, side-by-side table and FAQs to WOW Vegas vs McLuck and WOW Vegas vs Chumba, plus quick answers to operator pages. Copy names Social Casino Index next to the dated figures.
 - Publish `/bonuses/sweepstakes-casinos-under-50-sc-redemption/` and `/redemption-times/by-method/` from the shared evidence model. Cash and gift-card thresholds stay separate; method windows keep their stage labels and do not claim a fastest method.

@@ -8,14 +8,15 @@ layout: base.njk
 tags: ["operatorPages"]
 ogType: "article"
 eleventyComputed:
-  title: "{{ operator.name }} Offers and Redemption Requirements"
-  description: "{{ operator.name }} welcome offers, daily rewards and redemption requirements, with source-linked conditions and observation dates."
+  title: "{{ pageTitle }}"
+  description: "How long {{ operator.name }} redemptions take, the minimum SC to redeem, payout methods and what pending or approved status means, from dated operator sources."
 ---
 {% from "benefit-row.njk" import evidence %}
 <main><article class="wrap py-10">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/redemption-times/">Redemption times</a></li><li><span aria-current="page">{{ operator.name }}</span></li></ol></nav>
-  <p class="eyebrow">Operator record · Published benefits</p>
-  <h1 class="page-title">{{ operator.name }}</h1>
+  <p class="eyebrow">Operator record · Published redemption terms</p>
+  <h1 class="page-title">{{ operator.name }} Redemption Time, Minimum and Methods</h1>
+  {% if current.product.lastCheckedAt %}<p class="benefit-source">Checked <time datetime="{{ current.product.lastCheckedAt }}">{{ current.product.lastCheckedAt | readableDate }}</time> from operator sources</p>{% endif %}
   <div class="answer-first" id="quick-answer"><span class="af-label">Quick answer</span><p>{{ answer.summary | escape }}</p></div>
   <p class="lede">{{ current.product.summary | escape }}</p>
   <p class="benefit-policy">Operator-published terms, not measured payouts. Gold Coins are entertainment credits, not redeemable Sweeps Coins.</p>
@@ -38,11 +39,22 @@ eleventyComputed:
   <section id="redemption-answer">
     <h2>Redemption methods and requirements</h2>
     {% if current.product.methods.length %}<p>Published methods: {{ current.product.methods | join(", ") | escape }}.</p>{% endif %}
+    {% if redemption.methodRows.length %}
+    <h3 id="redemption-by-method">{{ operator.name }} redemption time and minimum by method</h3>
+    <div class="table-scroll"><table class="data method-timing"><thead><tr><th scope="col">Method</th><th scope="col">Minimum</th><th scope="col">Published time</th><th scope="col">Source</th></tr></thead>
+    <tbody>{% for row in redemption.methodRows %}<tr><th scope="row">{{ row.method }}</th><td>{% if row.minima.length %}{{ row.minima | join(", ") | escape }}{% else %}Not published{% endif %}</td><td>{% if row.times.length %}{% for time in row.times %}<strong>{{ time.label | escape }}</strong> <span class="benefit-note">{{ time.stage }}</span>{% if not loop.last %}<br>{% endif %}{% endfor %}{% else %}Not published{% endif %}</td><td>{% for source in row.sources %}<a class="benefit-source" href="{{ source.url | escape }}" rel="noopener">{{ source.observedAt | readableDate }}</a>{% if not loop.last %}<br>{% endif %}{% endfor %}</td></tr>{% endfor %}</tbody></table></div>
+    <p class="text-sm">Times cover different stages, such as approval or delivery after approval. They are not measured payout times.</p>
+    {% endif %}
     {% for policy in current.product.policies %}
       {% if policy.recordId != current.product.redemption.recordId %}<section data-policy-record="{{ policy.recordId }}"><h3>{{ policy.field | replace("_", " ") | capitalize }}</h3>{{ evidence(policy, true) }}</section>{% endif %}
     {% endfor %}
     {% if current.product.verification.length %}<h3>Identity checks</h3>{% for requirement in current.product.verification %}{{ evidence(requirement, true) }}{% endfor %}{% endif %}
     {% if current.product.fees.length %}<h3>Fees</h3>{% for fee in current.product.fees %}{{ evidence(fee, true) }}{% endfor %}{% endif %}
+  </section>
+  <section id="redemption-status">
+    <h2>{{ operator.name }} redemption status meanings</h2>
+    {% for item in redemption.statuses %}<h3>{{ item.status }}</h3><p>{{ item.meaning }}{% if item.published %} {{ item.published | escape }}{% endif %}</p>{% endfor %}
+    <p class="text-sm">Status names vary between operators. Your account redemption history shows the exact label.</p>
   </section>
   <h2>Funded test status</h2>
   <p>
@@ -88,12 +100,11 @@ eleventyComputed:
     {% for offer in current.product.expiredOffers %}<p>{{ offer.name | escape }}: offer ended <time datetime="{{ offer.ended }}">{{ offer.ended | readableDate }}</time>. <a href="{{ offer.sourceUrl | escape }}">Historical source</a>. Not included in current comparisons.</p>{% endfor %}
   </section>
   {% endif %}
-  {% if current.product.faqs.length %}
   <section id="questions"><h2>{{ operator.name }} questions</h2>
     {% for faq in current.product.faqs %}<section><h3>{{ faq.question | escape }}</h3><p>{{ faq.answer | escape }}</p><p class="benefit-source"><a href="{{ faq.value.sourceUrl | escape }}">Operator source</a> · Observed <time datetime="{{ faq.value.observedAt }}">{{ faq.value.observedAt | readableDate }}</time></p></section>{% endfor %}
     {% if not current.product.redemption %}{% set timingFaq = answer.faqs | last %}<section><h3>{{ timingFaq.question | escape }}</h3><p>{{ timingFaq.answer | escape }}</p></section>{% endif %}
+    {% for faq in redemption.faqs %}<section><h3>{{ faq.question | escape }}</h3><p>{{ faq.answer | escape }}</p></section>{% endfor %}
   </section>
-  {% endif %}
   <nav class="benefit-nav" aria-label="Related answers"><a href="/bonuses/sweepstakes-casinos-under-50-sc-redemption/">Casinos with redemptions under 50 SC</a><a href="/redemption-times/by-method/">Payout times by method</a>{% for comparison in benchmarks.comparisons %}{% if operator.slug in comparison.slug %}<a href="{{ comparison.url }}">{{ comparison.title }}</a>{% endif %}{% endfor %}</nav>
   <p class="byline mt-8"><a href="/redemption-times/">Compare all operators</a> · <a href="/methodology/">Methodology</a> · <a href="/disclosure/">Affiliate disclosure</a></p>
 </article></main>

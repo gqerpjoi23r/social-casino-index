@@ -108,6 +108,83 @@ export function operatorAnswer(model, slug) {
   return { summary: `At ${operator.name}, according to Social Casino Index's check on ${readableDate(product.lastCheckedAt || model.generatedAt)}, ${nameList(parts)}.`, faqs };
 }
 
+const METHOD_LABELS = Object.fromEntries(METHOD_GROUPS.filter(([id]) => id !== "other"));
+const ANY_METHOD = "Any method or not specified";
+const methodLabel = method => METHOD_LABELS[method] || ANY_METHOD;
+const timingHours = value => Number.isFinite(value?.value) && HOURS[value.unit] ?
+  (value.upperValue ?? value.value) * HOURS[value.unit] : null;
+
+// Redemption time, minimum and status answers for operator profiles. Uses only selected evidence records.
+export function operatorRedemption(model, slug) {
+  const operator = operatorBySlug(model, slug);
+  if (!operator?.product) return null;
+  const product = operator.product;
+  const { name } = operator;
+  const times = [product.redemption, ...(product.policies || []).filter(policy => policy.field === "redemption_time")]
+    .filter(Boolean);
+  const minima = product.minima || [];
+  const rows = new Map();
+  const rowFor = method => {
+    const label = methodLabel(method);
+    if (!rows.has(label)) rows.set(label, { method: label, minima: [], times: [], sources: new Map() });
+    return rows.get(label);
+  };
+  const addSource = (row, value) => {
+    const previous = row.sources.get(value.sourceUrl);
+    if (!previous || value.observedAt > previous) row.sources.set(value.sourceUrl, value.observedAt);
+  };
+  for (const value of minima) {
+    const row = rowFor(value.method);
+    if (!row.minima.includes(value.label)) row.minima.push(value.label);
+    addSource(row, value);
+  }
+  for (const value of times) {
+    const row = rowFor(value.method);
+    const stage = STAGES[value.stage] || STAGES.unspecified;
+    if (!row.times.some(item => item.label === value.label && item.stage === stage)) row.times.push({ label: value.label, stage });
+    addSource(row, value);
+  }
+  const order = [ANY_METHOD, ...METHOD_GROUPS.map(([, label]) => label)];
+  const methodRows = [...rows.values()]
+    .map(row => ({ ...row, sources: [...row.sources].map(([url, observedAt]) => ({ url, observedAt })) }))
+    .sort((a, b) => order.indexOf(a.method) - order.indexOf(b.method));
+
+  // Short status summary: distinct windows for one stage, with the generic window first. The table keeps full detail.
+  const stageWindows = stage => {
+    const seen = new Set();
+    return times.filter(value => value.stage === stage)
+      .map(value => ({ value, key: lower(value.label).replace(/^typically /, "") }))
+      .filter(({ key }) => !seen.has(key) && seen.add(key))
+      .sort((a, b) => (a.value.method in METHOD_LABELS) - (b.value.method in METHOD_LABELS))
+      .slice(0, 2)
+      .map(({ value }) => `${inline(value.label)}${value.method in METHOD_LABELS ? ` for ${lower(methodLabel(value.method))}` : ""}`);
+  };
+  const approval = stageWindows("approval");
+  const delivery = stageWindows("transfer");
+  const statuses = [
+    { status: "Pending", meaning: "The request is submitted and waiting for review. Identity verification is often completed at this stage.",
+      published: approval.length ? `${name} publishes approval of ${nameList(approval)}.` : null },
+    { status: "In progress or processing", meaning: "The operator is reviewing or preparing the payment. Some operators use these labels for the same stage as pending.",
+      published: null },
+    { status: "Approved, scheduled or processed", meaning: "The operator has accepted the request and sent it, or will send it, to the payment provider. Delivery time then depends on the method.",
+      published: delivery.length ? `${name} publishes delivery after approval of ${nameList(delivery)}.` : null },
+  ];
+
+  const faqs = [];
+  const askedMinimum = (product.faqs || []).some(faq => /minimum/i.test(faq.question));
+  if (!askedMinimum && minima.length) faqs.push({ question: `What is the minimum redemption at ${name}?`,
+    answer: `According to Social Casino Index's check, ${name} publishes ${nameList(minima.map(value =>
+      `${value.label}${value.method in METHOD_LABELS ? ` for ${lower(methodLabel(value.method))}` : ""}`))}.` });
+  const timed = times.map(value => ({ value, hours: timingHours(value) })).filter(item => item.hours !== null)
+    .sort((a, b) => a.hours - b.hours);
+  faqs.push({ question: `Does ${name} have instant redemptions?`, answer: timed.length ?
+    `None of the ${name} redemption windows collected by Social Casino Index is instant. The shortest published window is ${inline(timed[0].value.label)}${timed[0].value.method in METHOD_LABELS ? ` for ${lower(methodLabel(timed[0].value.method))}` : ""} (${lower(STAGES[timed[0].value.stage] || STAGES.unspecified)}).` :
+    `Social Casino Index has not established a published ${name} processing time from the sources checked, so instant redemptions cannot be confirmed.` });
+  faqs.push({ question: `What does a pending ${name} redemption mean?`,
+    answer: `Pending usually means the request is waiting for review, which can include identity verification.${approval.length ? ` ${name} publishes approval of ${nameList(approval)}.` : ""} Status labels differ between operators, so check the redemption history in your account.` });
+  return { methodRows, statuses, faqs };
+}
+
 export function lowRedemption(model) {
   const rows = (model?.operators || []).filter(operator => operator.product).map(operator => {
     const minima = operator.product.minima || [];
