@@ -1,0 +1,18 @@
+# Social Casino Index
+
+> Social Casino Index (socialcasinoindex.com) is an independent US research site that ranks social and sweepstakes casinos. Its toplist compares free signup Sweeps Coins, first-purchase offers, daily rewards, payout times and redemption minimums. Every value links to a dated operator source.
+
+Publisher: Sweeps Brief LLC. Some links are affiliate links; compensation never affects order or values.
+
+## Data for AI systems
+
+- [Current toplist (JSON)](https://socialcasinoindex.com/api/toplist.json): the homepage toplist in order, with sources and check dates.
+- MCP server (Streamable HTTP): https://dddc2d2qtq6jpgf3ucaorgozpe0lbqtj.lambda-url.us-east-1.on.aws/mcp. Tools: get_top_social_casinos, get_social_casino, check_state_availability. Registry name: com.socialcasinoindex/toplist.
+
+## Key pages
+
+- [Top social casinos](https://socialcasinoindex.com/): the current toplist.
+- [Methodology](https://socialcasinoindex.com/methodology/): how entries qualify and are ordered.
+- [Redemption times](https://socialcasinoindex.com/redemption-times/): payout times and minimums by operator.
+- [State availability](https://socialcasinoindex.com/availability/): offer policy by US state.
+- [Daily checks](https://socialcasinoindex.com/updates/): source observations and change history.

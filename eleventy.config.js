@@ -3,12 +3,15 @@ import { cashMinimumAnswers } from "./scripts/monitor/cash-answers.mjs";
 import { signupDetails } from "./scripts/monitor/signup-details.mjs";
 import { comparisonCsv } from "./scripts/monitor/product-view.mjs";
 import { pairAnswers, operatorAnswer, lowRedemption, methodTimings, faqJsonLd } from "./scripts/monitor/answer-pages.mjs";
+import { aiToplist } from "./scripts/ai-toplist.mjs";
 
 export default function (eleventyConfig) {
   // Passthrough: files served as-is from the docs/ output.
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "CNAME": "CNAME" });
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
+  eleventyConfig.addPassthroughCopy({ "src/llms.txt": "llms.txt" });
+  eleventyConfig.addPassthroughCopy({ "src/.well-known": ".well-known" });
   eleventyConfig.addPassthroughCopy({ "strategy/prompt-map.md": "strategy/prompt-map.md" });
   eleventyConfig.addFilter("latestDate", (...dates) => dates.filter(Boolean).map(date => new Date(date).toISOString().slice(0, 10)).sort().at(-1));
 
@@ -39,6 +42,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("lowRedemption", lowRedemption);
   eleventyConfig.addFilter("methodTimings", methodTimings);
   eleventyConfig.addFilter("faqJsonLd", faqJsonLd);
+  eleventyConfig.addFilter("aiToplist", aiToplist);
 
   eleventyConfig.addFilter("limit", (items = [], n = 3) =>
     [...items].slice(0, n),

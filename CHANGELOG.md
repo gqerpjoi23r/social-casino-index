@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-10-11 - Add MCP server and AI data feed
+- Publish `/api/toplist.json`, a compact projection of the homepage toplist (same order, values, sources and dates) plus state offer policy. Nothing is re-ranked.
+- Add `mcp/`: a stateless Streamable HTTP MCP server on AWS Lambda (`social-casino-index-mcp`, us-east-1) with three read-only tools. Registry name `com.socialcasinoindex/toplist`, verified by `/.well-known/mcp-registry-auth`.
+- Add `/llms.txt` with the entity definition and data endpoints. Keep the public key file and llms.txt on the site; see `mcp/README.md` for redeploys.
+
 ## 2026-10-02 - Target redemption-time searches on operator pages
 - Retitle all operator profiles "{Operator} Redemption Time, Minimum and Methods ({Month Year})", based on Ads/SERP research: operator time and withdrawal terms have the demand. URLs stay unchanged.
 - Add a visible checked date, a per-method minimum/time table with stage labels, a pending/in progress/approved status block and three FAQs (minimum, instant redemptions, pending meaning). FAQs are also in the FAQPage JSON-LD.
