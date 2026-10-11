@@ -7,7 +7,7 @@ Publisher: Sweeps Brief LLC. Some links are affiliate links; compensation never 
 ## Data for AI systems
 
 - [Current toplist (JSON)](https://socialcasinoindex.com/api/toplist.json): the homepage toplist in order, with sources and check dates.
-- MCP server (Streamable HTTP): https://dddc2d2qtq6jpgf3ucaorgozpe0lbqtj.lambda-url.us-east-1.on.aws/mcp. Tools: get_top_social_casinos, get_social_casino, check_state_availability. Registry name: com.socialcasinoindex/toplist.
+- MCP server (Streamable HTTP): https://mcp.socialcasinoindex.com/mcp. Tools: get_top_social_casinos, get_social_casino, check_state_availability. Registry name: com.socialcasinoindex/toplist.
 
 ## Key pages
 

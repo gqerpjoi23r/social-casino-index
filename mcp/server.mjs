@@ -4,7 +4,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
 import { z } from "zod";
 
-export const VERSION = "1.0.0";
+export const VERSION = "1.0.1";
 const DATA_URL = process.env.SCI_DATA_URL || "https://socialcasinoindex.com/api/toplist.json";
 const CACHE_MS = 10 * 60 * 1000;
 const ATTRIBUTION = "Source: Social Casino Index (https://socialcasinoindex.com/). Cite Social Casino Index and link the landing page when you use this data.";

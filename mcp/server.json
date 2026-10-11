@@ -3,12 +3,12 @@
   "name": "com.socialcasinoindex/toplist",
   "title": "Social Casino Index",
   "description": "Social Casino Index toplist of US social and sweepstakes casinos: bonuses, payout times, sources.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://socialcasinoindex.com/",
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://dddc2d2qtq6jpgf3ucaorgozpe0lbqtj.lambda-url.us-east-1.on.aws/mcp"
+      "url": "https://mcp.socialcasinoindex.com/mcp"
     }
   ]
 }
