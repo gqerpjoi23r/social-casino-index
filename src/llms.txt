@@ -7,6 +7,7 @@ Publisher: Sweeps Brief LLC. Some links are affiliate links; compensation never 
 ## Data for AI systems
 
 - [Current toplist (JSON)](https://socialcasinoindex.com/api/toplist.json): the homepage toplist in order, with sources and check dates.
+- [Data and API](https://socialcasinoindex.com/data/): license (CC BY 4.0), citation and field guide. OpenAPI: https://socialcasinoindex.com/api/openapi.json
 - MCP server (Streamable HTTP): https://mcp.socialcasinoindex.com/mcp. Tools: get_top_social_casinos, get_social_casino, check_state_availability. Registry name: com.socialcasinoindex/toplist.
 
 ## Key pages
