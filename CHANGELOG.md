@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-10-11 - Publish data page, license and OpenAPI spec
+- Add `/data/` with Dataset and WebAPI JSON-LD, CC BY 4.0 license, citation format and MCP details; link it from the footer and `llms.txt`.
+- Publish `/api/openapi.json` describing `/api/toplist.json`. The feed validates against it.
+- These back external listings (Hugging Face, Zenodo, Kaggle, public-apis, awesome-remote-mcp-servers); keep the license and URLs stable.
+
 ## 2026-10-11 - Move the MCP endpoint to mcp.socialcasinoindex.com
 - The MCP server is served at `https://mcp.socialcasinoindex.com/mcp` through API Gateway with an ACM certificate. Registry entry `com.socialcasinoindex/toplist` is now version 1.0.1 with the branded URL; `llms.txt` matches.
 - Keep the two NiceNIC CNAME records (`mcp` and the `_e8f8...mcp` validation record); removing the validation record stops certificate renewal.

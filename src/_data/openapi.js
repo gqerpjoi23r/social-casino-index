@@ -1,0 +1,108 @@
+// OpenAPI 3.1 description of /api/toplist.json, published at /api/openapi.json.
+const fact = {
+  type: ["object", "null"],
+  description: "A published operator term. Null when the operator does not publish it.",
+  properties: {
+    label: { type: "string", description: "Display value, for example \"2.5 SC free\"." },
+    note: { type: ["string", "null"] },
+    conditions: { type: "array", items: { type: "string" } },
+    promoCode: { type: "string" },
+    priceUsd: { type: "number" },
+    stage: { type: "string", description: "Payout timing stage, for example processing." },
+    method: { type: "string", description: "Prize method, for example cash or gift_card." },
+    sourceUrl: { type: ["string", "null"], format: "uri" },
+    observedAt: { type: ["string", "null"], format: "date-time" },
+  },
+  required: ["label", "sourceUrl", "observedAt"],
+};
+
+export default {
+  openapi: "3.1.0",
+  info: {
+    title: "Social Casino Index API",
+    version: "1.0.0",
+    summary: "Daily-checked toplist of US social and sweepstakes casinos.",
+    description: "Social Casino Index publishes one toplist of US social and sweepstakes casinos. It compares free signup Sweeps Coins, first-purchase offers, daily rewards, payout times and redemption minimums. Every value links to a dated operator source. Free, no key, CORS enabled.",
+    contact: { name: "Social Casino Index", url: "https://socialcasinoindex.com/data/" },
+    license: { name: "CC BY 4.0", url: "https://creativecommons.org/licenses/by/4.0/" },
+  },
+  externalDocs: { url: "https://socialcasinoindex.com/data/", description: "Data and API documentation" },
+  servers: [{ url: "https://socialcasinoindex.com" }],
+  paths: {
+    "/api/toplist.json": {
+      get: {
+        operationId: "getTopSocialCasinos",
+        summary: "Get the Social Casino Index toplist",
+        description: "Returns the current toplist in homepage order, plus state offer policy.",
+        responses: {
+          200: {
+            description: "Current toplist.",
+            content: { "application/json": { schema: { $ref: "#/components/schemas/Toplist" } } },
+          },
+        },
+      },
+    },
+  },
+  components: {
+    schemas: {
+      Fact: fact,
+      Casino: {
+        type: "object",
+        required: ["position", "name", "slug", "profileUrl"],
+        properties: {
+          position: { type: "integer", minimum: 1 },
+          name: { type: "string" },
+          slug: { type: "string" },
+          profileUrl: { type: "string", format: "uri" },
+          summary: { type: ["string", "null"] },
+          signupBonus: { $ref: "#/components/schemas/Fact" },
+          firstPurchaseOffer: { $ref: "#/components/schemas/Fact" },
+          dailyReward: { $ref: "#/components/schemas/Fact" },
+          payoutTime: { $ref: "#/components/schemas/Fact" },
+          redemptionMinimums: {
+            type: "object",
+            properties: {
+              cash: { $ref: "#/components/schemas/Fact" },
+              giftCard: { $ref: "#/components/schemas/Fact" },
+              general: { $ref: "#/components/schemas/Fact" },
+            },
+          },
+          prizeTypes: { type: "array", items: { type: "string" } },
+          lastCheckedAt: { type: ["string", "null"], format: "date-time" },
+        },
+      },
+      State: {
+        type: "object",
+        required: ["code", "name", "offersBlocked"],
+        properties: {
+          code: { type: "string", description: "Two-letter code." },
+          name: { type: "string" },
+          offersBlocked: { type: "boolean", description: "Site offer policy, not legal advice." },
+          status: { type: "string" },
+          basis: { type: "string" },
+          url: { type: "string", format: "uri" },
+        },
+      },
+      Toplist: {
+        type: "object",
+        required: ["name", "landingPage", "casinos", "states"],
+        properties: {
+          name: { type: "string" },
+          publisher: { type: "object" },
+          description: { type: "string" },
+          landingPage: { type: "string", format: "uri" },
+          methodology: { type: "string", format: "uri" },
+          listingVersion: { type: "string" },
+          order: { type: "string" },
+          generatedAt: { type: "string", format: "date-time" },
+          lastCheckedAt: { type: ["string", "null"], format: "date-time" },
+          disclosure: { type: "string" },
+          responsibleGambling: { type: "string" },
+          offerBlockedStates: { type: "array", items: { type: "string" } },
+          casinos: { type: "array", items: { $ref: "#/components/schemas/Casino" } },
+          states: { type: "array", items: { $ref: "#/components/schemas/State" } },
+        },
+      },
+    },
+  },
+};

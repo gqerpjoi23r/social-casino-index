@@ -1,0 +1,79 @@
+---
+layout: base.njk
+title: "Social Casino Index Data and API"
+description: "Free JSON feed and MCP server for the Social Casino Index toplist of US social and sweepstakes casinos, with sources, dates, license and citation."
+permalink: "/data/"
+publishedAt: "2026-10-11"
+updatedAt: "2026-10-11"
+eleventyComputed:
+  jsonld:
+    "@context": "https://schema.org"
+    "@graph":
+      - "@type": "Dataset"
+        "@id": "https://socialcasinoindex.com/data/#dataset"
+        name: "Social Casino Index toplist"
+        description: "Daily-checked toplist of US social and sweepstakes casinos: free signup Sweeps Coins, first-purchase offers, daily rewards, payout times and redemption minimums, each with a dated operator source. Includes state offer policy."
+        url: "https://socialcasinoindex.com/data/"
+        license: "https://creativecommons.org/licenses/by/4.0/"
+        isAccessibleForFree: true
+        creator:
+          "@id": "https://socialcasinoindex.com/#org"
+        publisher:
+          "@id": "https://socialcasinoindex.com/#org"
+        keywords: ["social casinos", "sweepstakes casinos", "Sweeps Coins", "casino bonuses", "redemption times", "United States"]
+        spatialCoverage: "United States"
+        dateModified: "{{ benchmarks.generatedAt }}"
+        distribution:
+          - "@type": "DataDownload"
+            encodingFormat: "application/json"
+            contentUrl: "https://socialcasinoindex.com/api/toplist.json"
+      - "@type": "WebAPI"
+        "@id": "https://socialcasinoindex.com/data/#api"
+        name: "Social Casino Index API"
+        documentation: "https://socialcasinoindex.com/api/openapi.json"
+        provider:
+          "@id": "https://socialcasinoindex.com/#org"
+      - "@type": "BreadcrumbList"
+        itemListElement:
+          - "@type": "ListItem"
+            position: 1
+            name: "Home"
+            item: "https://socialcasinoindex.com/"
+          - "@type": "ListItem"
+            position: 2
+            name: "Data and API"
+---
+<main>
+<article class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><span aria-current="page">Data and API</span></li>
+    </ol>
+  </nav>
+
+  <h1 class="mb-5 mt-0 font-serif text-4xl font-semibold leading-tight text-base-content sm:text-[2.8rem]">Social Casino Index Data and API</h1>
+
+  <div class="answer-first">
+    <span class="af-label">In short</span>
+    <p><strong>The Social Casino Index toplist is free to use as JSON or through an MCP server.</strong> It has the same order and values as the homepage, and every value links to the dated operator source it came from.</p>
+  </div>
+
+  <h2>JSON feed</h2>
+  <p><a href="/api/toplist.json"><code>https://socialcasinoindex.com/api/toplist.json</code></a> returns the current toplist and state offer policy. It needs no key and allows cross-origin requests. The <a href="/api/openapi.json">OpenAPI description</a> documents every field.</p>
+  <p>Each casino has a position, a one-line summary, and these facts where the operator publishes them: signup bonus, first-purchase offer, daily reward, payout time, and cash, gift-card or general redemption minimums. Each fact carries its source URL and observation time. Last checked: {{ benchmarks.toplist.lastCheckedAt | readableDate }}.</p>
+
+  <h2>MCP server</h2>
+  <p>AI assistants can query the toplist at <code>https://mcp.socialcasinoindex.com/mcp</code> (Streamable HTTP, no authentication). It is listed in the official MCP Registry as <code>com.socialcasinoindex/toplist</code>. Tools:</p>
+  <ul>
+    <li><code>get_top_social_casinos</code>: the toplist in homepage order.</li>
+    <li><code>get_social_casino</code>: one casino by name.</li>
+    <li><code>check_state_availability</code>: the offer policy for a US state.</li>
+  </ul>
+
+  <h2>License and citation</h2>
+  <p>The data is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You may reuse it if you credit Social Casino Index and link this page. Suggested citation:</p>
+  <p><code>Social Casino Index (Sweeps Brief LLC). Social Casino Index toplist. https://socialcasinoindex.com/data/</code></p>
+  <p>Operator names and offer terms belong to the operators. Values describe published terms on the observation date and can change. Order follows the <a href="/methodology/">methodology</a>; affiliate status never affects it. See the <a href="/disclosure/">affiliate disclosure</a>.</p>
+</article>
+</main>
