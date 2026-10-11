@@ -14,6 +14,10 @@ Format:
 
 ---
 
+## 2026-10-11 - Move the MCP endpoint to mcp.socialcasinoindex.com
+- The MCP server is served at `https://mcp.socialcasinoindex.com/mcp` through API Gateway with an ACM certificate. Registry entry `com.socialcasinoindex/toplist` is now version 1.0.1 with the branded URL; `llms.txt` matches.
+- Keep the two NiceNIC CNAME records (`mcp` and the `_e8f8...mcp` validation record); removing the validation record stops certificate renewal.
+
 ## 2026-10-11 - Add MCP server and AI data feed
 - Publish `/api/toplist.json`, a compact projection of the homepage toplist (same order, values, sources and dates) plus state offer policy. Nothing is re-ranked.
 - Add `mcp/`: a stateless Streamable HTTP MCP server on AWS Lambda (`social-casino-index-mcp`, us-east-1) with three read-only tools. Registry name `com.socialcasinoindex/toplist`, verified by `/.well-known/mcp-registry-auth`.

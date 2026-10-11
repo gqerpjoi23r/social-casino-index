@@ -1,7 +1,7 @@
 {
   "name": "social-casino-index-mcp",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for the Social Casino Index toplist of US social and sweepstakes casinos.",
   "type": "module",
   "scripts": {
