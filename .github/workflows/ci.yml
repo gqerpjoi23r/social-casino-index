@@ -25,6 +25,7 @@ jobs:
       - run: npm ci
 
       - run: npm run monitor:test
+      - run: npm run indexnow:test
       - name: Validate and build
         run: npm run release
 

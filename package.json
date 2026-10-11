@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "description": "Static site build for socialcasinoindex.com (11ty, flat HTML output to docs/ for GitHub Pages).",
   "scripts": {
+    "indexnow:test": "node --test scripts/test-indexnow.mjs",
+    "indexnow:submit": "node scripts/indexnow.mjs",
     "monitor:run": "node scripts/monitor/run.mjs",
     "monitor:test": "node --test scripts/monitor/test.mjs scripts/monitor/numeric-test.mjs scripts/monitor/publication-test.mjs scripts/monitor/display-test.mjs scripts/monitor/review-test.mjs scripts/monitor/benchmarks-test.mjs scripts/monitor/toplist-test.mjs scripts/monitor/product-test.mjs scripts/monitor/answer-pages-test.mjs scripts/test-go.mjs",
     "monitor:numeric": "node scripts/monitor/numeric.mjs",

@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ title }} | {{ site.name }}</title>
 <meta name="description" content="{{ description }}">
-<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% if page.url == "/" %}<meta name="msvalidate.01" content="3503B6A92DA9D1642E3E78C70ECB983E">
+{% endif %}<link rel="canonical" href="{{ site.url }}{{ page.url }}">
 {%- if noindex %}
 <meta name="robots" content="noindex, nofollow">
 {%- endif %}

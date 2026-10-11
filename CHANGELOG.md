@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-10-11 - Configure Bing verification and post-deployment IndexNow
+- Publish Bing's homepage ownership tag and a public IndexNow key file. Bing account verification and sitemap submission must be confirmed separately.
+- Notify IndexNow after production deployments using content fingerprints, live-page verification and a saved submission baseline. Pending key validation and failed requests never count as confirmed indexing.
+- No changes to visible operators, order, offers, values or unresolved evidence fields. Test the notification path independently of the site's content pipeline.
+
 ## 2026-10-11 - Publish data page, license and OpenAPI spec
 - Add `/data/` with Dataset and WebAPI JSON-LD, CC BY 4.0 license, citation format and MCP details; link it from the footer and `llms.txt`.
 - Publish `/api/openapi.json` describing `/api/toplist.json`. The feed validates against it.
