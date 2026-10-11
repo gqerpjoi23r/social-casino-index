@@ -1,0 +1,15 @@
+{
+  "name": "social-casino-index-mcp",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MCP server for the Social Casino Index toplist of US social and sweepstakes casinos.",
+  "type": "module",
+  "scripts": {
+    "dev": "node dev.mjs",
+    "test": "node --test test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^4.6.5"
+  }
+}

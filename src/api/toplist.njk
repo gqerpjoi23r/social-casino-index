@@ -1,0 +1,5 @@
+---
+permalink: "/api/toplist.json"
+eleventyExcludeFromCollections: true
+---
+{{ benchmarks | aiToplist(states) | json | safe }}
