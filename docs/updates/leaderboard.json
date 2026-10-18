@@ -689,6 +689,1260 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "mcluck-vs-chumba",
+      "url": "/compare/mcluck-vs-chumba/",
+      "title": "McLuck vs Chumba Casino",
+      "operators": [
+        {
+          "name": "McLuck",
+          "url": "/redemption-times/mcluck/"
+        },
+        {
+          "name": "Chumba Casino",
+          "url": "/redemption-times/chumba/"
+        }
+      ],
+      "sections": [
+        {
+          "id": "signup",
+          "title": "No-purchase signup bonuses",
+          "url": "/bonuses/no-purchase-signup-bonuses/",
+          "rows": [
+            {
+              "slug": "mcluck",
+              "name": "McLuck",
+              "url": "/redemption-times/mcluck/",
+              "metric": "signup",
+              "value": 2.5,
+              "label": "2.5 SC",
+              "note": "Immediate. No purchase needed.",
+              "recordId": "50334a81c3db641bbcd1",
+              "sourceUrl": "https://www.mcluck.com/promotions",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:08:02.723Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:08:02.723Z",
+              "lastChangedAt": "2026-10-18T11:08:02.723Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Register now to claim the welcome reward."
+              ],
+              "promoCode": null,
+              "priceUsd": null,
+              "immediateSc": 2.5,
+              "totalSc": 2.5,
+              "durationDays": null,
+              "purchaseRequired": false,
+              "kind": "signup"
+            },
+            {
+              "slug": "chumba",
+              "name": "Chumba Casino",
+              "url": "/redemption-times/chumba/",
+              "metric": "signup",
+              "value": 2,
+              "label": "2 SC",
+              "note": "Immediate. No purchase needed.",
+              "recordId": "d8c68475709e46c12e14",
+              "sourceUrl": "https://www.chumbacasino.com/promotions",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-09-22T06:39:06.245Z",
+              "status": "retained",
+              "firstObservedAt": "2026-09-22T06:39:06.245Z",
+              "lastChangedAt": null,
+              "valueChangedAt": null,
+              "conditions": [
+                "Sign up to claim the peachy welcome offer.",
+                "The displayed offer is \"GC 2,000,000 + SC 2**\"."
+              ],
+              "promoCode": null,
+              "priceUsd": null,
+              "immediateSc": 2,
+              "totalSc": 2,
+              "durationDays": null,
+              "purchaseRequired": false,
+              "kind": "signup"
+            }
+          ]
+        },
+        {
+          "id": "purchase",
+          "title": "Purchase value",
+          "url": "/bonuses/purchase-value/",
+          "rows": [
+            {
+              "slug": "mcluck",
+              "name": "McLuck",
+              "url": "/redemption-times/mcluck/",
+              "metric": "purchase",
+              "value": 2.5025025025025025,
+              "label": "25 SC for $9.99",
+              "note": "2.5 SC per $1. First purchase only.",
+              "recordId": "87cefda22f4afbd84edd",
+              "sourceUrl": "https://blog.mcluck.com/promo-codes/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-17T10:58:30.974Z",
+              "status": "retained",
+              "firstObservedAt": "2026-10-17T10:58:30.974Z",
+              "lastChangedAt": "2026-10-17T10:58:30.974Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "First-purchase offer.",
+                "Includes a Free Lucky Wheel Spin."
+              ],
+              "promoCode": "MCLUCKBLOG26",
+              "priceUsd": 9.99,
+              "immediateSc": 25,
+              "totalSc": 25,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            },
+            {
+              "slug": "chumba",
+              "name": "Chumba Casino",
+              "url": "/redemption-times/chumba/",
+              "metric": "purchase",
+              "value": 3,
+              "label": "30 SC for $10",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "1cdcfe675937bacb5349",
+              "sourceUrl": "https://www.chumbacasino.com/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:03:21.836Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:03:21.836Z",
+              "lastChangedAt": "2026-10-18T11:03:21.836Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Exclusive first-time offer.",
+                "GC10M for $10 plus FREE SC30."
+              ],
+              "promoCode": null,
+              "priceUsd": 10,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            }
+          ]
+        },
+        {
+          "id": "purchase10",
+          "title": "Purchase bonuses at $10 or less",
+          "url": "/bonuses/bonuses-under-10-dollars/",
+          "rows": [
+            {
+              "slug": "mcluck",
+              "name": "McLuck",
+              "url": "/redemption-times/mcluck/",
+              "metric": "purchase10",
+              "value": 2.5025025025025025,
+              "label": "25 SC for $9.99",
+              "note": "2.5 SC per $1. First purchase only.",
+              "recordId": "87cefda22f4afbd84edd",
+              "sourceUrl": "https://blog.mcluck.com/promo-codes/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-17T10:58:30.974Z",
+              "status": "retained",
+              "firstObservedAt": "2026-10-17T10:58:30.974Z",
+              "lastChangedAt": "2026-10-17T10:58:30.974Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "First-purchase offer.",
+                "Includes a Free Lucky Wheel Spin."
+              ],
+              "promoCode": "MCLUCKBLOG26",
+              "priceUsd": 9.99,
+              "immediateSc": 25,
+              "totalSc": 25,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            },
+            {
+              "slug": "chumba",
+              "name": "Chumba Casino",
+              "url": "/redemption-times/chumba/",
+              "metric": "purchase10",
+              "value": 3,
+              "label": "30 SC for $10",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "1cdcfe675937bacb5349",
+              "sourceUrl": "https://www.chumbacasino.com/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:03:21.836Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:03:21.836Z",
+              "lastChangedAt": "2026-10-18T11:03:21.836Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Exclusive first-time offer.",
+                "GC10M for $10 plus FREE SC30."
+              ],
+              "promoCode": null,
+              "priceUsd": 10,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            }
+          ]
+        },
+        {
+          "id": "purchase20",
+          "title": "Purchase bonuses at $20 or less",
+          "url": "/bonuses/bonuses-under-20-dollars/",
+          "rows": [
+            {
+              "slug": "mcluck",
+              "name": "McLuck",
+              "url": "/redemption-times/mcluck/",
+              "metric": "purchase20",
+              "value": 2.5025025025025025,
+              "label": "25 SC for $9.99",
+              "note": "2.5 SC per $1. First purchase only.",
+              "recordId": "87cefda22f4afbd84edd",
+              "sourceUrl": "https://blog.mcluck.com/promo-codes/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-17T10:58:30.974Z",
+              "status": "retained",
+              "firstObservedAt": "2026-10-17T10:58:30.974Z",
+              "lastChangedAt": "2026-10-17T10:58:30.974Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "First-purchase offer.",
+                "Includes a Free Lucky Wheel Spin."
+              ],
+              "promoCode": "MCLUCKBLOG26",
+              "priceUsd": 9.99,
+              "immediateSc": 25,
+              "totalSc": 25,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            },
+            {
+              "slug": "chumba",
+              "name": "Chumba Casino",
+              "url": "/redemption-times/chumba/",
+              "metric": "purchase20",
+              "value": 3,
+              "label": "30 SC for $10",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "1cdcfe675937bacb5349",
+              "sourceUrl": "https://www.chumbacasino.com/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:03:21.836Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:03:21.836Z",
+              "lastChangedAt": "2026-10-18T11:03:21.836Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Exclusive first-time offer.",
+                "GC10M for $10 plus FREE SC30."
+              ],
+              "promoCode": null,
+              "priceUsd": 10,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            }
+          ]
+        },
+        {
+          "id": "cash",
+          "title": "Cash redemption minimums",
+          "url": "/bonuses/cash-redemption-minimums/",
+          "rows": [
+            {
+              "slug": "mcluck",
+              "name": "McLuck",
+              "url": "/redemption-times/mcluck/",
+              "metric": "cash",
+              "value": 75,
+              "label": "75 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "922efaab54865c07f331",
+              "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+              "method": "cash",
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:11:11.194Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:11:11.194Z",
+              "lastChangedAt": "2026-10-18T11:11:11.194Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Cash and gift card prizes have separate minimum redemption requirements."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            },
+            {
+              "slug": "chumba",
+              "name": "Chumba Casino",
+              "url": "/redemption-times/chumba/",
+              "metric": "cash",
+              "value": 100,
+              "label": "100 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "71dd3d981f2a34fedc7f",
+              "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
+              "method": "unspecified",
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:10:28.434Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-10T21:20:03.804Z",
+              "lastChangedAt": "2026-10-18T11:10:28.434Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "If it is your first time to redeem, you need to re-verify your phone number.",
+                "Identity verification and banking-information validation are required to redeem prizes."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "modo-vs-wow-vegas",
+      "url": "/compare/modo-vs-wow-vegas/",
+      "title": "Modo vs WOW Vegas",
+      "operators": [
+        {
+          "name": "Modo",
+          "url": "/redemption-times/modo/"
+        },
+        {
+          "name": "WOW Vegas",
+          "url": "/redemption-times/wow-vegas/"
+        }
+      ],
+      "sections": [
+        {
+          "id": "cash",
+          "title": "Cash redemption minimums",
+          "url": "/bonuses/cash-redemption-minimums/",
+          "rows": [
+            {
+              "slug": "modo",
+              "name": "Modo",
+              "url": "/redemption-times/modo/",
+              "metric": "cash",
+              "value": 50,
+              "label": "50 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "27073a4d696d7cc1ddcf",
+              "sourceUrl": "https://modo.us/promo-rules.pdf",
+              "method": "cash",
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:11:23.330Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:11:23.330Z",
+              "lastChangedAt": "2026-10-18T11:11:23.330Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Unless otherwise displayed on the Platform."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            },
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "cash",
+              "value": 50,
+              "label": "50 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "a35519efaaed4773afb8",
+              "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+              "method": "general",
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:13:16.291Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-10T21:21:50.392Z",
+              "lastChangedAt": "2026-10-18T11:13:16.291Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Blue WOW Coins cannot be redeemed, as they have no monetary value."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "crown-coins-vs-wow-vegas",
+      "url": "/compare/crown-coins-vs-wow-vegas/",
+      "title": "Crown Coins vs WOW Vegas",
+      "operators": [
+        {
+          "name": "Crown Coins",
+          "url": "/redemption-times/crown-coins/"
+        },
+        {
+          "name": "WOW Vegas",
+          "url": "/redemption-times/wow-vegas/"
+        }
+      ],
+      "sections": [
+        {
+          "id": "signup",
+          "title": "No-purchase signup bonuses",
+          "url": "/bonuses/no-purchase-signup-bonuses/",
+          "rows": [
+            {
+              "slug": "crown-coins",
+              "name": "Crown Coins",
+              "url": "/redemption-times/crown-coins/",
+              "metric": "signup",
+              "value": 2,
+              "label": "2 SC",
+              "note": "Immediate. No purchase needed.",
+              "recordId": "7a39392d7df9ad7fe5ea",
+              "sourceUrl": "https://help.crowncoinscasino.com/en/articles/9183356-is-there-a-welcome-bonus-available-when-signing-up",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:13:34.636Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:13:34.636Z",
+              "lastChangedAt": "2026-10-18T11:13:34.636Z",
+              "valueChangedAt": "2026-10-15T11:41:10.331Z",
+              "conditions": [
+                "Register a new account and claim the welcome bonus.",
+                "No initial purchase is needed."
+              ],
+              "promoCode": null,
+              "priceUsd": null,
+              "immediateSc": 2,
+              "totalSc": 2,
+              "durationDays": null,
+              "purchaseRequired": false,
+              "kind": "signup"
+            },
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "signup",
+              "value": 2,
+              "label": "2 SC",
+              "note": "5 SC total over 3 days.",
+              "recordId": "96d8483854cc2b8eb5c2",
+              "sourceUrl": "https://www.wowvegas.com/promo-code",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:07:49.361Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-10T21:21:44.843Z",
+              "lastChangedAt": "2026-10-18T11:07:49.361Z",
+              "valueChangedAt": "2026-10-18T11:07:49.361Z",
+              "conditions": [
+                "Available to claim after sign-up.",
+                "Day 1 provides 150,000 WOW Coins + SC 2.",
+                "Day 2 provides 50,000 WOW Coins + SC 1.5.",
+                "Day 3 provides 50,000 WOW Coins + SC 1.5."
+              ],
+              "promoCode": "WOWBONUS2026",
+              "priceUsd": null,
+              "immediateSc": 2,
+              "totalSc": 5,
+              "durationDays": 3,
+              "purchaseRequired": false,
+              "kind": "signup"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "spree-vs-mcluck",
+      "url": "/compare/spree-vs-mcluck/",
+      "title": "Spree vs McLuck",
+      "operators": [
+        {
+          "name": "Spree",
+          "url": "/redemption-times/spree/"
+        },
+        {
+          "name": "McLuck",
+          "url": "/redemption-times/mcluck/"
+        }
+      ],
+      "sections": [
+        {
+          "id": "signup",
+          "title": "No-purchase signup bonuses",
+          "url": "/bonuses/no-purchase-signup-bonuses/",
+          "rows": [
+            {
+              "slug": "spree",
+              "name": "Spree",
+              "url": "/redemption-times/spree/",
+              "metric": "signup",
+              "value": 2.5,
+              "label": "2.5 SC",
+              "note": "Immediate. No purchase needed.",
+              "recordId": "ed97a79586a6390a21c3",
+              "sourceUrl": "https://spree.com/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:04:22.713Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:04:22.713Z",
+              "lastChangedAt": "2026-10-18T11:04:22.713Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "For every new player.",
+                "Sign up and click claim; coins go straight to the account."
+              ],
+              "promoCode": null,
+              "priceUsd": null,
+              "immediateSc": 2.5,
+              "totalSc": 2.5,
+              "durationDays": null,
+              "purchaseRequired": false,
+              "kind": "signup"
+            },
+            {
+              "slug": "mcluck",
+              "name": "McLuck",
+              "url": "/redemption-times/mcluck/",
+              "metric": "signup",
+              "value": 2.5,
+              "label": "2.5 SC",
+              "note": "Immediate. No purchase needed.",
+              "recordId": "50334a81c3db641bbcd1",
+              "sourceUrl": "https://www.mcluck.com/promotions",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:08:02.723Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:08:02.723Z",
+              "lastChangedAt": "2026-10-18T11:08:02.723Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Register now to claim the welcome reward."
+              ],
+              "promoCode": null,
+              "priceUsd": null,
+              "immediateSc": 2.5,
+              "totalSc": 2.5,
+              "durationDays": null,
+              "purchaseRequired": false,
+              "kind": "signup"
+            }
+          ]
+        },
+        {
+          "id": "purchase",
+          "title": "Purchase value",
+          "url": "/bonuses/purchase-value/",
+          "rows": [
+            {
+              "slug": "spree",
+              "name": "Spree",
+              "url": "/redemption-times/spree/",
+              "metric": "purchase",
+              "value": 3.003003003003003,
+              "label": "30 SC for $9.99",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "83242636143c7a4b59c3",
+              "sourceUrl": "https://spree.com/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:04:22.713Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:04:22.713Z",
+              "lastChangedAt": "2026-10-18T11:04:22.713Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Available on the first purchase.",
+                "Coins are provided right away.",
+                "Advertised as an instant 200% Boost."
+              ],
+              "promoCode": null,
+              "priceUsd": 9.99,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            },
+            {
+              "slug": "mcluck",
+              "name": "McLuck",
+              "url": "/redemption-times/mcluck/",
+              "metric": "purchase",
+              "value": 2.5025025025025025,
+              "label": "25 SC for $9.99",
+              "note": "2.5 SC per $1. First purchase only.",
+              "recordId": "87cefda22f4afbd84edd",
+              "sourceUrl": "https://blog.mcluck.com/promo-codes/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-17T10:58:30.974Z",
+              "status": "retained",
+              "firstObservedAt": "2026-10-17T10:58:30.974Z",
+              "lastChangedAt": "2026-10-17T10:58:30.974Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "First-purchase offer.",
+                "Includes a Free Lucky Wheel Spin."
+              ],
+              "promoCode": "MCLUCKBLOG26",
+              "priceUsd": 9.99,
+              "immediateSc": 25,
+              "totalSc": 25,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            }
+          ]
+        },
+        {
+          "id": "purchase10",
+          "title": "Purchase bonuses at $10 or less",
+          "url": "/bonuses/bonuses-under-10-dollars/",
+          "rows": [
+            {
+              "slug": "spree",
+              "name": "Spree",
+              "url": "/redemption-times/spree/",
+              "metric": "purchase10",
+              "value": 3.003003003003003,
+              "label": "30 SC for $9.99",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "83242636143c7a4b59c3",
+              "sourceUrl": "https://spree.com/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:04:22.713Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:04:22.713Z",
+              "lastChangedAt": "2026-10-18T11:04:22.713Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Available on the first purchase.",
+                "Coins are provided right away.",
+                "Advertised as an instant 200% Boost."
+              ],
+              "promoCode": null,
+              "priceUsd": 9.99,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            },
+            {
+              "slug": "mcluck",
+              "name": "McLuck",
+              "url": "/redemption-times/mcluck/",
+              "metric": "purchase10",
+              "value": 2.5025025025025025,
+              "label": "25 SC for $9.99",
+              "note": "2.5 SC per $1. First purchase only.",
+              "recordId": "87cefda22f4afbd84edd",
+              "sourceUrl": "https://blog.mcluck.com/promo-codes/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-17T10:58:30.974Z",
+              "status": "retained",
+              "firstObservedAt": "2026-10-17T10:58:30.974Z",
+              "lastChangedAt": "2026-10-17T10:58:30.974Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "First-purchase offer.",
+                "Includes a Free Lucky Wheel Spin."
+              ],
+              "promoCode": "MCLUCKBLOG26",
+              "priceUsd": 9.99,
+              "immediateSc": 25,
+              "totalSc": 25,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            }
+          ]
+        },
+        {
+          "id": "purchase20",
+          "title": "Purchase bonuses at $20 or less",
+          "url": "/bonuses/bonuses-under-20-dollars/",
+          "rows": [
+            {
+              "slug": "spree",
+              "name": "Spree",
+              "url": "/redemption-times/spree/",
+              "metric": "purchase20",
+              "value": 3.003003003003003,
+              "label": "30 SC for $9.99",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "83242636143c7a4b59c3",
+              "sourceUrl": "https://spree.com/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:04:22.713Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:04:22.713Z",
+              "lastChangedAt": "2026-10-18T11:04:22.713Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Available on the first purchase.",
+                "Coins are provided right away.",
+                "Advertised as an instant 200% Boost."
+              ],
+              "promoCode": null,
+              "priceUsd": 9.99,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            },
+            {
+              "slug": "mcluck",
+              "name": "McLuck",
+              "url": "/redemption-times/mcluck/",
+              "metric": "purchase20",
+              "value": 2.5025025025025025,
+              "label": "25 SC for $9.99",
+              "note": "2.5 SC per $1. First purchase only.",
+              "recordId": "87cefda22f4afbd84edd",
+              "sourceUrl": "https://blog.mcluck.com/promo-codes/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-17T10:58:30.974Z",
+              "status": "retained",
+              "firstObservedAt": "2026-10-17T10:58:30.974Z",
+              "lastChangedAt": "2026-10-17T10:58:30.974Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "First-purchase offer.",
+                "Includes a Free Lucky Wheel Spin."
+              ],
+              "promoCode": "MCLUCKBLOG26",
+              "priceUsd": 9.99,
+              "immediateSc": 25,
+              "totalSc": 25,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            }
+          ]
+        },
+        {
+          "id": "cash",
+          "title": "Cash redemption minimums",
+          "url": "/bonuses/cash-redemption-minimums/",
+          "rows": [
+            {
+              "slug": "spree",
+              "name": "Spree",
+              "url": "/redemption-times/spree/",
+              "metric": "cash",
+              "value": 100,
+              "label": "100 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "f23b77eff9e7e5b31526",
+              "sourceUrl": "https://spree.com/sweepstakes-rules",
+              "method": "cash",
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:08:21.152Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:08:21.152Z",
+              "lastChangedAt": "2026-10-18T11:08:21.152Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Cash Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin redeemed."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            },
+            {
+              "slug": "mcluck",
+              "name": "McLuck",
+              "url": "/redemption-times/mcluck/",
+              "metric": "cash",
+              "value": 75,
+              "label": "75 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "922efaab54865c07f331",
+              "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
+              "method": "cash",
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:11:11.194Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:11:11.194Z",
+              "lastChangedAt": "2026-10-18T11:11:11.194Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Cash and gift card prizes have separate minimum redemption requirements."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "yay-casino-vs-wow-vegas",
+      "url": "/compare/yay-casino-vs-wow-vegas/",
+      "title": "YAY Casino vs WOW Vegas",
+      "operators": [
+        {
+          "name": "YAY Casino",
+          "url": "/redemption-times/yay-casino/"
+        },
+        {
+          "name": "WOW Vegas",
+          "url": "/redemption-times/wow-vegas/"
+        }
+      ],
+      "sections": [
+        {
+          "id": "signup",
+          "title": "No-purchase signup bonuses",
+          "url": "/bonuses/no-purchase-signup-bonuses/",
+          "rows": [
+            {
+              "slug": "yay-casino",
+              "name": "YAY Casino",
+              "url": "/redemption-times/yay-casino/",
+              "metric": "signup",
+              "value": 2,
+              "label": "2 SC",
+              "note": "13 SC total over 7 days.",
+              "recordId": "dc30a738f3d9d238b0f7",
+              "sourceUrl": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:12:42.795Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:12:42.795Z",
+              "lastChangedAt": "2026-10-18T11:12:42.795Z",
+              "valueChangedAt": "2026-10-18T11:12:42.795Z",
+              "conditions": [
+                "New players only.",
+                "Registration alone gives 15,000 GC + 2 SC.",
+                "The stated 50,000 GC + 5 SC requires completing registration and consenting to phone and email communications.",
+                "The total includes phone verification, email and SMS opt-ins, a first daily-bonus claim, and a new-player challenge of 150 spins in SC mode within the first 7 days.",
+                "Includes 20 free spins on Yay Devil Fire 2 valued at 0.1 SC per spin.",
+                "Halloween offer wording: “available until 11:59 PM ET on November 1, 2026.”"
+              ],
+              "promoCode": null,
+              "priceUsd": null,
+              "immediateSc": 2,
+              "totalSc": 13,
+              "durationDays": 7,
+              "purchaseRequired": false,
+              "kind": "signup"
+            },
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "signup",
+              "value": 2,
+              "label": "2 SC",
+              "note": "5 SC total over 3 days.",
+              "recordId": "96d8483854cc2b8eb5c2",
+              "sourceUrl": "https://www.wowvegas.com/promo-code",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:07:49.361Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-10T21:21:44.843Z",
+              "lastChangedAt": "2026-10-18T11:07:49.361Z",
+              "valueChangedAt": "2026-10-18T11:07:49.361Z",
+              "conditions": [
+                "Available to claim after sign-up.",
+                "Day 1 provides 150,000 WOW Coins + SC 2.",
+                "Day 2 provides 50,000 WOW Coins + SC 1.5.",
+                "Day 3 provides 50,000 WOW Coins + SC 1.5."
+              ],
+              "promoCode": "WOWBONUS2026",
+              "priceUsd": null,
+              "immediateSc": 2,
+              "totalSc": 5,
+              "durationDays": 3,
+              "purchaseRequired": false,
+              "kind": "signup"
+            }
+          ]
+        },
+        {
+          "id": "staged",
+          "title": "Staged welcome bonuses",
+          "url": "/bonuses/staged-welcome-bonuses/",
+          "rows": [
+            {
+              "slug": "yay-casino",
+              "name": "YAY Casino",
+              "url": "/redemption-times/yay-casino/",
+              "metric": "staged",
+              "value": 13,
+              "label": "13 SC",
+              "note": "2 SC immediate; total over 7 days.",
+              "recordId": "dc30a738f3d9d238b0f7",
+              "sourceUrl": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:12:42.795Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:12:42.795Z",
+              "lastChangedAt": "2026-10-18T11:12:42.795Z",
+              "valueChangedAt": "2026-10-18T11:12:42.795Z",
+              "conditions": [
+                "New players only.",
+                "Registration alone gives 15,000 GC + 2 SC.",
+                "The stated 50,000 GC + 5 SC requires completing registration and consenting to phone and email communications.",
+                "The total includes phone verification, email and SMS opt-ins, a first daily-bonus claim, and a new-player challenge of 150 spins in SC mode within the first 7 days.",
+                "Includes 20 free spins on Yay Devil Fire 2 valued at 0.1 SC per spin.",
+                "Halloween offer wording: “available until 11:59 PM ET on November 1, 2026.”"
+              ],
+              "promoCode": null,
+              "priceUsd": null,
+              "immediateSc": 2,
+              "totalSc": 13,
+              "durationDays": 7,
+              "purchaseRequired": false,
+              "kind": "signup"
+            },
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "staged",
+              "value": 5,
+              "label": "5 SC",
+              "note": "2 SC immediate; total over 3 days.",
+              "recordId": "96d8483854cc2b8eb5c2",
+              "sourceUrl": "https://www.wowvegas.com/promo-code",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:07:49.361Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-10T21:21:44.843Z",
+              "lastChangedAt": "2026-10-18T11:07:49.361Z",
+              "valueChangedAt": "2026-10-18T11:07:49.361Z",
+              "conditions": [
+                "Available to claim after sign-up.",
+                "Day 1 provides 150,000 WOW Coins + SC 2.",
+                "Day 2 provides 50,000 WOW Coins + SC 1.5.",
+                "Day 3 provides 50,000 WOW Coins + SC 1.5."
+              ],
+              "promoCode": "WOWBONUS2026",
+              "priceUsd": null,
+              "immediateSc": 2,
+              "totalSc": 5,
+              "durationDays": 3,
+              "purchaseRequired": false,
+              "kind": "signup"
+            }
+          ]
+        },
+        {
+          "id": "purchase",
+          "title": "Purchase value",
+          "url": "/bonuses/purchase-value/",
+          "rows": [
+            {
+              "slug": "yay-casino",
+              "name": "YAY Casino",
+              "url": "/redemption-times/yay-casino/",
+              "metric": "purchase",
+              "value": 3.6072144288577155,
+              "label": "18 SC for $4.99",
+              "note": "3.61 SC per $1. First purchase only.",
+              "recordId": "8d6665039bd70d447c3d",
+              "sourceUrl": "https://www.yaycasino.com/blog/yay-casino-valentines-day-offers-2026-20-free-spins-sc-8-bonus/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-09-29T06:48:08.019Z",
+              "status": "retained",
+              "firstObservedAt": "2026-09-29T06:48:08.019Z",
+              "lastChangedAt": null,
+              "valueChangedAt": null,
+              "conditions": [
+                "Listed in the First-Time Deposit (FTD) Valentine’s Bonus Offers table.",
+                "Best For: Balanced Play."
+              ],
+              "promoCode": null,
+              "priceUsd": 4.99,
+              "immediateSc": 18,
+              "totalSc": 18,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            },
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "purchase",
+              "value": 3.003003003003003,
+              "label": "30 SC for $9.99",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "51d82fddcf0f5c8f460e",
+              "sourceUrl": "https://www.wowvegas.com/promo-code",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:07:49.361Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:07:49.361Z",
+              "lastChangedAt": "2026-10-18T11:07:49.361Z",
+              "valueChangedAt": "2026-10-18T11:07:49.361Z",
+              "conditions": [
+                "First purchase only.",
+                "Register and enter WOWBONUS2026.",
+                "Normally $29.99.",
+                "Instant coin delivery."
+              ],
+              "promoCode": "WOWBONUS2026",
+              "priceUsd": 9.99,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            }
+          ]
+        },
+        {
+          "id": "purchase10",
+          "title": "Purchase bonuses at $10 or less",
+          "url": "/bonuses/bonuses-under-10-dollars/",
+          "rows": [
+            {
+              "slug": "yay-casino",
+              "name": "YAY Casino",
+              "url": "/redemption-times/yay-casino/",
+              "metric": "purchase10",
+              "value": 3.6072144288577155,
+              "label": "18 SC for $4.99",
+              "note": "3.61 SC per $1. First purchase only.",
+              "recordId": "8d6665039bd70d447c3d",
+              "sourceUrl": "https://www.yaycasino.com/blog/yay-casino-valentines-day-offers-2026-20-free-spins-sc-8-bonus/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-09-29T06:48:08.019Z",
+              "status": "retained",
+              "firstObservedAt": "2026-09-29T06:48:08.019Z",
+              "lastChangedAt": null,
+              "valueChangedAt": null,
+              "conditions": [
+                "Listed in the First-Time Deposit (FTD) Valentine’s Bonus Offers table.",
+                "Best For: Balanced Play."
+              ],
+              "promoCode": null,
+              "priceUsd": 4.99,
+              "immediateSc": 18,
+              "totalSc": 18,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            },
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "purchase10",
+              "value": 3.003003003003003,
+              "label": "30 SC for $9.99",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "51d82fddcf0f5c8f460e",
+              "sourceUrl": "https://www.wowvegas.com/promo-code",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:07:49.361Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:07:49.361Z",
+              "lastChangedAt": "2026-10-18T11:07:49.361Z",
+              "valueChangedAt": "2026-10-18T11:07:49.361Z",
+              "conditions": [
+                "First purchase only.",
+                "Register and enter WOWBONUS2026.",
+                "Normally $29.99.",
+                "Instant coin delivery."
+              ],
+              "promoCode": "WOWBONUS2026",
+              "priceUsd": 9.99,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            }
+          ]
+        },
+        {
+          "id": "purchase20",
+          "title": "Purchase bonuses at $20 or less",
+          "url": "/bonuses/bonuses-under-20-dollars/",
+          "rows": [
+            {
+              "slug": "yay-casino",
+              "name": "YAY Casino",
+              "url": "/redemption-times/yay-casino/",
+              "metric": "purchase20",
+              "value": 3.6072144288577155,
+              "label": "18 SC for $4.99",
+              "note": "3.61 SC per $1. First purchase only.",
+              "recordId": "8d6665039bd70d447c3d",
+              "sourceUrl": "https://www.yaycasino.com/blog/yay-casino-valentines-day-offers-2026-20-free-spins-sc-8-bonus/",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-09-29T06:48:08.019Z",
+              "status": "retained",
+              "firstObservedAt": "2026-09-29T06:48:08.019Z",
+              "lastChangedAt": null,
+              "valueChangedAt": null,
+              "conditions": [
+                "Listed in the First-Time Deposit (FTD) Valentine’s Bonus Offers table.",
+                "Best For: Balanced Play."
+              ],
+              "promoCode": null,
+              "priceUsd": 4.99,
+              "immediateSc": 18,
+              "totalSc": 18,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            },
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "purchase20",
+              "value": 3.003003003003003,
+              "label": "30 SC for $9.99",
+              "note": "3 SC per $1. First purchase only.",
+              "recordId": "51d82fddcf0f5c8f460e",
+              "sourceUrl": "https://www.wowvegas.com/promo-code",
+              "method": null,
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:07:49.361Z",
+              "status": "published",
+              "firstObservedAt": "2026-10-18T11:07:49.361Z",
+              "lastChangedAt": "2026-10-18T11:07:49.361Z",
+              "valueChangedAt": "2026-10-18T11:07:49.361Z",
+              "conditions": [
+                "First purchase only.",
+                "Register and enter WOWBONUS2026.",
+                "Normally $29.99.",
+                "Instant coin delivery."
+              ],
+              "promoCode": "WOWBONUS2026",
+              "priceUsd": 9.99,
+              "immediateSc": 30,
+              "totalSc": 30,
+              "durationDays": null,
+              "purchaseRequired": true,
+              "kind": "first_purchase"
+            }
+          ]
+        },
+        {
+          "id": "cash",
+          "title": "Cash redemption minimums",
+          "url": "/bonuses/cash-redemption-minimums/",
+          "rows": [
+            {
+              "slug": "yay-casino",
+              "name": "YAY Casino",
+              "url": "/redemption-times/yay-casino/",
+              "metric": "cash",
+              "value": 50,
+              "label": "50 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "8de0d08ea87bff367c11",
+              "sourceUrl": "https://www.yaycasino.com/blog/understanding-sweeps-coins-your-complete-guide-to-free-sweeps-coins-no-deposit/",
+              "method": "bank",
+              "unit": "SC",
+              "observedAt": "2026-09-22T09:26:28.942Z",
+              "status": "retained",
+              "firstObservedAt": "2026-09-22T09:26:28.942Z",
+              "lastChangedAt": null,
+              "valueChangedAt": null,
+              "conditions": [
+                "A 1x playthrough requirement must be completed.",
+                "KYC verification is required before the first redemption."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            },
+            {
+              "slug": "wow-vegas",
+              "name": "WOW Vegas",
+              "url": "/redemption-times/wow-vegas/",
+              "metric": "cash",
+              "value": 50,
+              "label": "50 SC",
+              "note": "Cash redemption minimum.",
+              "recordId": "a35519efaaed4773afb8",
+              "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
+              "method": "general",
+              "unit": "SC",
+              "observedAt": "2026-10-18T11:13:16.291Z",
+              "status": "published",
+              "firstObservedAt": "2026-09-10T21:21:50.392Z",
+              "lastChangedAt": "2026-10-18T11:13:16.291Z",
+              "valueChangedAt": null,
+              "conditions": [
+                "Blue WOW Coins cannot be redeemed, as they have no monetary value."
+              ],
+              "priceUsd": null,
+              "immediateSc": null,
+              "totalSc": null,
+              "durationDays": null,
+              "kind": null
+            }
+          ]
+        }
+      ]
     }
   ],
   "generatedAt": "2026-10-18T11:20:44.608Z",

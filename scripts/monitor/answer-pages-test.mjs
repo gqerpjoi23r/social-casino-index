@@ -3,7 +3,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { buildBenchmarks } from "./benchmarks.mjs";
-import { lowRedemption, methodTimings, operatorAnswer, operatorRedemption, pairAnswers } from "./answer-pages.mjs";
+import { lowRedemption, methodTimings, operatorAnswer, signupAnswers, operatorRedemption, pairAnswers } from "./answer-pages.mjs";
 
 const model = buildBenchmarks(JSON.parse(readFileSync("src/_data/numeric.json", "utf8")),
   JSON.parse(readFileSync("src/_data/operators.json", "utf8")));
@@ -21,6 +21,14 @@ test("answer pages reuse selected evidence and name Social Casino Index", () => 
   for (const slug of ["chumba", "mcluck", "wow-vegas"]) assert.match(operatorAnswer(model, slug).summary, /Social Casino Index/);
 });
 
+test("signup answer names every tied leader and separates staged totals", () => {
+  const signup = signupAnswers(model);
+  assert.ok(signup.leaders.length > 0);
+  assert.match(signup.summary, /Social Casino Index/);
+  assert.ok(signup.leaders.every(row => signup.summary.includes(row.name)));
+  assert.ok(signup.staged.every(row => row.totalSc > row.immediateSc));
+});
+
 test("small redemption answer keeps cash and gift-card thresholds separate", () => {
   const low = lowRedemption(model);
   assert.ok(low.rows.length > 0);
@@ -31,6 +39,8 @@ test("small redemption answer keeps cash and gift-card thresholds separate", () 
 
 test("method timing answer labels stages and avoids a fastest claim", () => {
   const timings = methodTimings(model);
+  assert.ok(timings.shortest.length > 0);
+  assert.ok(timings.shortest.every(row => row.stageLabel && row.methodLabel && row.sourceUrl));
   assert.ok(timings.groups.every(group => group.rows.every(row => row.stageLabel && row.sourceUrl && row.observedAt)));
   assert.match(timings.summary, /not like-for-like payout times or a speed ranking/);
   assert.doesNotMatch(timings.summary, /fastest/i);

@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { cashMinimumAnswers } from "./scripts/monitor/cash-answers.mjs";
 import { signupDetails } from "./scripts/monitor/signup-details.mjs";
 import { comparisonCsv } from "./scripts/monitor/product-view.mjs";
-import { pairAnswers, operatorAnswer, lowRedemption, methodTimings, faqJsonLd } from "./scripts/monitor/answer-pages.mjs";
+import { pairAnswers, operatorAnswer, lowRedemption, methodTimings, signupAnswers, faqJsonLd } from "./scripts/monitor/answer-pages.mjs";
 import { aiToplist } from "./scripts/ai-toplist.mjs";
 
 export default function (eleventyConfig) {
@@ -41,6 +41,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("operatorAnswer", operatorAnswer);
   eleventyConfig.addFilter("lowRedemption", lowRedemption);
   eleventyConfig.addFilter("methodTimings", methodTimings);
+  eleventyConfig.addFilter("signupAnswers", signupAnswers);
   eleventyConfig.addFilter("faqJsonLd", faqJsonLd);
   eleventyConfig.addFilter("aiToplist", aiToplist);
 

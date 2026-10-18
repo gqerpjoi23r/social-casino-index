@@ -211,6 +211,29 @@ export function lowRedemption(model) {
     summary: `According to Social Casino Index's check on ${asOf}: ${cashText} ${giftText}` };
 }
 
+export function signupAnswers(model) {
+  const benchmark = model?.benchmarks?.find(item => item.id === "signup");
+  const rows = (benchmark?.rows || []).map(row => ({ ...row,
+    initialLabel: `${number(row.immediateSc ?? row.value)} SC`, totalLabel: `${number(row.totalSc ?? row.value)} SC`,
+    staged: Number(row.totalSc) > Number(row.immediateSc ?? row.value) }));
+  const leaders = rows.filter(row => row.rank === 1);
+  const staged = rows.filter(row => row.staged).sort((a, b) => b.totalSc - a.totalSc || a.name.localeCompare(b.name, "en"));
+  const asOf = readableDate(model.generatedAt);
+  const leaderText = leaders.length ?
+    `${nameList(leaders.map(row => row.name))} ${leaders.length === 1 ? "offers" : "offer"} the most immediate no-purchase signup reward: ${leaders[0].initialLabel}.` :
+    "No comparable no-purchase signup reward has been established yet.";
+  const stagedText = staged.length ?
+    `The largest staged total is ${staged[0].totalLabel} at ${staged[0].name}, but it starts with ${staged[0].initialLabel} and needs later claims or tasks.` :
+    "No larger staged total has been established.";
+  const faqs = [
+    { question: "Which sweepstakes casino gives the most free SC without a purchase?", answer: leaderText },
+    { question: "Is the largest welcome total available immediately?", answer: stagedText },
+    { question: "Do no-purchase bonuses have conditions?", answer: "Yes. Conditions can include registration, identity or phone verification, email opt-ins, daily claims and playthrough before redemption. Check each casino's listed conditions and dated source." },
+  ];
+  return { asOf, rows, leaders, staged, faqs,
+    summary: `According to Social Casino Index's check on ${asOf}: ${leaderText} ${stagedText}` };
+}
+
 export function methodTimings(model) {
   const entries = new Map();
   for (const operator of (model?.operators || []).filter(item => item.product)) {
@@ -218,7 +241,7 @@ export function methodTimings(model) {
     for (const value of values) {
       if (!value || entries.has(value.recordId) || !Number.isFinite(value.value) || !HOURS[value.unit]) continue;
       const method = METHOD_GROUPS.some(([key]) => key === value.method) ? value.method : "other";
-      entries.set(value.recordId, { ...value, method, slug: operator.slug, name: operator.name, url: operator.url,
+      entries.set(value.recordId, { ...value, method, slug: operator.slug, name: operator.name, url: operator.url, cash: operator.product.cash || null,
         stageLabel: STAGES[value.stage] || STAGES.unspecified, hours: (value.upperValue ?? value.value) * HOURS[value.unit] });
     }
   }
@@ -232,7 +255,21 @@ export function methodTimings(model) {
       `${group.label}: from ${inline(first.label)} at ${first.name} (${first.stageLabel.toLowerCase()}) to ${inline(last.label)} at ${last.name} (${last.stageLabel.toLowerCase()})`;
   });
   const asOf = readableDate(model.generatedAt);
-  return { asOf, groups, count: new Set([...entries.values()].map(row => row.slug)).size,
+  const stageRows = [...entries.values()].reduce((map, row) => {
+    const key = `${row.method}:${row.stage}`;
+    const current = map.get(key);
+    if (!current || row.hours < current.hours || (row.hours === current.hours && row.name.localeCompare(current.name, "en") < 0)) map.set(key, row);
+    return map;
+  }, new Map());
+  const shortest = METHOD_GROUPS.filter(([id]) => id !== "other").flatMap(([id, label]) => Object.keys(STAGES).flatMap(stage => {
+    const row = stageRows.get(`${id}:${stage}`);
+    return row ? [{ ...row, methodLabel: label }] : [];
+  }));
+  const within24 = shortest.filter(row => row.hours <= 24).map(row => `${row.name} at ${inline(row.label)} for ${row.methodLabel.toLowerCase()} (${row.stageLabel.toLowerCase()})`);
+  const shortestSummary = within24.length ?
+    `Social Casino Index does not name one fastest casino yet. According to its check on ${readableDate(model.generatedAt)}, the shortest published windows include ${nameList(within24)}. These windows cover different stages and are not measured payouts.` :
+    `Social Casino Index has not established a published payout window of 24 hours or less as of ${readableDate(model.generatedAt)}.`;
+  return { asOf, groups, shortest, shortestSummary, within24, count: new Set([...entries.values()].map(row => row.slug)).size,
     summary: `According to Social Casino Index's check on ${asOf}, published redemption windows by method are: ${described.join("; ")}. These windows cover different stages, so they are not like-for-like payout times or a speed ranking.` };
 }
 

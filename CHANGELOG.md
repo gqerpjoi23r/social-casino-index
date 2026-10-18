@@ -14,6 +14,11 @@ Format:
 
 ---
 
+## 2026-10-18 - Expand AI-cited answer pages
+- Add answer-first signup bonus questions, a stage-aware shortest-payout page and five comparisons: McLuck vs Chumba, Modo vs WOW Vegas, Crown Coins vs WOW Vegas, Spree vs McLuck and YAY vs WOW Vegas.
+- Reposition the under-50-SC page around gift-card redemptions while keeping cash minimums separate. Link all comparison pages from the cited cash-minimum and payout answers.
+- Payout copy names the shortest published windows by method and stage, but does not name a fastest casino or treat published estimates as funded-test results.
+
 ## 2026-10-11 - Configure Bing verification and post-deployment IndexNow
 - Publish Bing's homepage ownership tag and a public IndexNow key file. Bing account verification and sitemap submission must be confirmed separately.
 - Notify IndexNow after production deployments using content fingerprints, live-page verification and a saved submission baseline. Pending key validation and failed requests never count as confirmed indexing.

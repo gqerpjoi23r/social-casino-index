@@ -37,6 +37,13 @@ const KEY_PAGES = [
   "compare/wow-vegas-vs-chumba/index.html",
   "bonuses/sweepstakes-casinos-under-50-sc-redemption/index.html",
   "redemption-times/by-method/index.html",
+  "redemption-times/fastest-sweepstakes-casino-payouts/index.html",
+  "bonuses/no-purchase-signup-bonuses/index.html",
+  "compare/mcluck-vs-chumba/index.html",
+  "compare/modo-vs-wow-vegas/index.html",
+  "compare/crown-coins-vs-wow-vegas/index.html",
+  "compare/spree-vs-mcluck/index.html",
+  "compare/yay-casino-vs-wow-vegas/index.html",
 ];
 
 // State pages (one per closed state).
@@ -72,6 +79,13 @@ const JSONLD_PAGES = [
   "compare/wow-vegas-vs-chumba/index.html",
   "bonuses/sweepstakes-casinos-under-50-sc-redemption/index.html",
   "redemption-times/by-method/index.html",
+  "redemption-times/fastest-sweepstakes-casino-payouts/index.html",
+  "bonuses/no-purchase-signup-bonuses/index.html",
+  "compare/mcluck-vs-chumba/index.html",
+  "compare/modo-vs-wow-vegas/index.html",
+  "compare/crown-coins-vs-wow-vegas/index.html",
+  "compare/spree-vs-mcluck/index.html",
+  "compare/yay-casino-vs-wow-vegas/index.html",
   ...STATE_PAGES,
 ];
 
@@ -96,6 +110,9 @@ for (const slug of OPERATORS) {
 
 for (const rel of ["compare/wow-vegas-vs-mcluck/index.html", "compare/wow-vegas-vs-chumba/index.html",
   "bonuses/sweepstakes-casinos-under-50-sc-redemption/index.html", "redemption-times/by-method/index.html",
+  "redemption-times/fastest-sweepstakes-casino-payouts/index.html", "bonuses/no-purchase-signup-bonuses/index.html",
+  "compare/mcluck-vs-chumba/index.html", "compare/modo-vs-wow-vegas/index.html", "compare/crown-coins-vs-wow-vegas/index.html",
+  "compare/spree-vs-mcluck/index.html", "compare/yay-casino-vs-wow-vegas/index.html",
   "redemption-times/chumba/index.html", "redemption-times/mcluck/index.html", "redemption-times/wow-vegas/index.html"]) {
   const html = read(rel);
   if (html && (!html.includes('id="quick-answer"') || !html.includes("Social Casino Index"))) fail(`missing branded quick answer: ${rel}`);
@@ -111,7 +128,7 @@ if (sitemap) {
   for (const m of ["bank-transfer", "gift-card", "crypto"]) {
     if (!sitemap.includes(`/guides/redemption-methods/${m}/`)) fail(`method page missing from sitemap: /guides/redemption-methods/${m}/`);
   }
-  for (const path of ["/bonuses/sweepstakes-casinos-under-50-sc-redemption/", "/redemption-times/by-method/"]) {
+  for (const path of ["/bonuses/sweepstakes-casinos-under-50-sc-redemption/", "/redemption-times/by-method/", "/redemption-times/fastest-sweepstakes-casino-payouts/", "/compare/mcluck-vs-chumba/", "/compare/modo-vs-wow-vegas/", "/compare/crown-coins-vs-wow-vegas/", "/compare/spree-vs-mcluck/", "/compare/yay-casino-vs-wow-vegas/"]) {
     if (!sitemap.includes(path)) fail(`answer page missing from sitemap: ${path}`);
   }
 } else {

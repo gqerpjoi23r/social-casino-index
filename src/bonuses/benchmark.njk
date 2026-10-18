@@ -11,19 +11,18 @@ updatedAt: "2026-09-27"
 eleventyComputed:
   title: "{{ benchmark.title }}"
   description: "{{ benchmark.question }} Compare published amounts, conditions and dated operator sources."
-  jsonld:
-    "@context": "https://schema.org"
-    "@type": "CollectionPage"
-    name: "{{ benchmark.title }}"
-    description: "{{ benchmark.explanation }}"
 ---
 {% from "benefit-row.njk" import benchmarkTable %}
 {% from "cash-minimum-answers.njk" import lowestAnswer, followupAnswers %}{% from "signup-details.njk" import answer as signupAnswer, table as signupTable, claims as signupClaims %}{% set signup = benchmark | signupDetails %}
 {% if benchmark.id == "cash" %}{% set answers = benchmarks | cashMinimumAnswers %}{% endif %}
+{% if benchmark.id == "signup" %}{% set signupFaq = benchmarks | signupAnswers %}{% endif %}
 <main><article class="wrap">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/bonuses/">Bonus benchmarks</a></li><li aria-current="page">{{ benchmark.title }}</li></ol></nav>
   <header class="benefit-intro"><h1>{{ benchmark.title }}</h1></header>
   <h2 class="mt-6 text-xl">{{ benchmark.question }}</h2>
+  {% if signupFaq %}
+  <div class="answer-first" id="quick-answer"><span class="af-label">Quick answer</span><p>{{ signupFaq.summary }}</p></div>
+  {% endif %}
   {% if benchmark.id == "cash" %}
 {{ lowestAnswer(answers) }}
   {% elif signup %}
@@ -34,7 +33,9 @@ eleventyComputed:
   <p class="benefit-policy">{{ benchmark.explanation }}</p>
   {% if signup %}{{ signupTable(benchmark, signup) }}{% else %}{{ benchmarkTable(benchmark, benchmark.id == "cash" or benchmark.id == "purchase") }}{% endif %}
   <p class="benefit-policy">Observed dates and conditions are attached to each offer. Published benefits, not tested payouts. <a href="/methodology/#published-offers">How we rank</a> · <a href="/updates/leaderboard.json">Benchmark data</a>.</p>
-{% if benchmark.id == "cash" %}{{ followupAnswers(answers) }}<nav class="benefit-nav" aria-label="Related redemption answers"><a href="/bonuses/sweepstakes-casinos-under-50-sc-redemption/">Casinos with redemptions under 50 SC</a><a href="/redemption-times/by-method/">Payout times by method</a><a href="/compare/wow-vegas-vs-mcluck/">WOW Vegas vs McLuck</a></nav>{% endif %}{% if signup %}{{ signupClaims(signup) }}{% endif %}
+{% if benchmark.id == "cash" %}{{ followupAnswers(answers) }}<nav class="benefit-nav" aria-label="Related redemption answers"><a href="/bonuses/sweepstakes-casinos-under-50-sc-redemption/">Gift-card and other redemptions under 50 SC</a><a href="/redemption-times/fastest-sweepstakes-casino-payouts/">Shortest published payout windows</a>{% for comparison in benchmarks.comparisons %}<a href="{{ comparison.url }}">{{ comparison.title }}</a>{% endfor %}</nav>{% endif %}{% if signup %}{{ signupClaims(signup) }}{% endif %}
+{% if signupFaq %}<section class="benefit-benchmark" id="questions" aria-labelledby="signup-questions"><h2 id="signup-questions">No-purchase bonus questions</h2>{% for faq in signupFaq.faqs %}<h3>{{ faq.question }}</h3><p>{{ faq.answer }}</p>{% endfor %}</section>
+<nav class="benefit-nav" aria-label="Signup comparisons">{% for comparison in benchmarks.comparisons %}<a href="{{ comparison.url }}">{{ comparison.title }}</a>{% endfor %}</nav>{% endif %}
   <h2 class="mt-8 text-xl">Compare another benefit</h2>
   <nav class="benefit-nav" aria-label="Bonus benchmarks">{% for item in benchmarks.benchmarks %}{% if item.id != benchmark.id %}<a href="{{ item.url }}">{{ item.title }}</a>{% endif %}{% endfor %}</nav>
 </article></main>

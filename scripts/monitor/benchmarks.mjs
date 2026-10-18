@@ -157,7 +157,8 @@ export function buildBenchmarks(numeric, registry = [], now = Date.now(), purcha
     (a.score === null && b.score === null ? b.benefitCount - a.benefitCount : 0) || a.name.localeCompare(b.name, "en"));
   let rank = 0;
   for (const op of operators) if (op.score !== null) op.rank = ++rank;
-  const comparisons = [["wow-vegas", "mcluck"], ["wow-vegas", "chumba"]].flatMap(slugs => {
+  const comparisons = [["wow-vegas", "mcluck"], ["wow-vegas", "chumba"], ["mcluck", "chumba"],
+    ["modo", "wow-vegas"], ["crown-coins", "wow-vegas"], ["spree", "mcluck"], ["yay-casino", "wow-vegas"]].flatMap(slugs => {
     const pair = slugs.map(slug => operators.find(op => op.slug === slug));
     if (pair.some(op => !op)) return [];
     const slug = slugs.join("-vs-");
