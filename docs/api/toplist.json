@@ -10,8 +10,8 @@
   "methodology": "https://socialcasinoindex.com/methodology/",
   "listingVersion": "useful-benefits-2",
   "order": "Highest immediate no-purchase signup Sweeps Coins (SC) first. Equal amounts break by the number of supported benefit areas, then by name. Affiliate status never affects order.",
-  "generatedAt": "2026-10-19T13:28:42.402Z",
-  "lastCheckedAt": "2026-10-19T13:10:40.657Z",
+  "generatedAt": "2026-10-20T11:50:58.250Z",
+  "lastCheckedAt": "2026-10-20T11:33:39.606Z",
   "disclosure": "Some Social Casino Index links are affiliate links. Compensation never affects order or values.",
   "responsibleGambling": "Players must be 21+ or 18+ depending on state. Help: 1-800-GAMBLER.",
   "offerBlockedStates": [
@@ -41,10 +41,11 @@
         "label": "2.5 SC free",
         "note": "On signup; no purchase",
         "conditions": [
-          "Register to claim the welcome reward."
+          "Every new player receives the instant welcome reward.",
+          "Added to the account automatically upon joining."
         ],
-        "sourceUrl": "https://www.mcluck.com/promotions",
-        "observedAt": "2026-10-19T13:16:28.920Z"
+        "sourceUrl": "https://blog.mcluck.com/promo-codes/mcluck-birthday-promo-code/",
+        "observedAt": "2026-10-20T11:47:15.026Z"
       },
       "firstPurchaseOffer": {
         "label": "25 SC for $9.99",
@@ -62,43 +63,42 @@
         "label": "Daily login reward",
         "note": "Amount not stated",
         "conditions": [
-          "Log in every day to collect free coins.",
-          "Coin denomination and amount are not stated."
+          "Login every 24 hours to claim free Gold Coins and Sweepstakes Coins."
         ],
-        "sourceUrl": "https://www.mcluck.com/",
-        "observedAt": "2026-10-19T13:13:00.054Z"
+        "sourceUrl": "https://blog.mcluck.com/promo-codes/",
+        "observedAt": "2026-10-17T10:58:30.974Z"
       },
       "payoutTime": {
         "label": "3-5 business days",
         "note": "Processing; cash",
         "conditions": [
-          "Typically 3-5 business days."
+          "Processing times are estimates and may vary."
         ],
         "stage": "processing",
         "method": "cash",
         "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
-        "observedAt": "2026-10-19T13:19:25.602Z"
+        "observedAt": "2026-10-20T11:42:09.061Z"
       },
       "redemptionMinimums": {
         "cash": {
           "label": "75 SC",
           "note": "Cash redemption minimum.",
           "conditions": [
-            "Sweepstakes Coins must be qualifying."
+            "Cash and gift card prizes have separate minimum redemption requirements."
           ],
           "method": "cash",
           "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
-          "observedAt": "2026-10-19T13:19:25.602Z"
+          "observedAt": "2026-10-20T11:42:09.061Z"
         },
         "giftCard": {
           "label": "10 SC",
           "note": "Gift-card redemption minimum.",
           "conditions": [
-            "Sweepstakes Coins must be qualifying."
+            "Cash and gift card prizes have separate minimum redemption requirements."
           ],
           "method": "gift_card",
           "sourceUrl": "https://blog.mcluck.com/faq/minimum-redemption-amount/",
-          "observedAt": "2026-10-19T13:19:25.602Z"
+          "observedAt": "2026-10-20T11:42:09.061Z"
         },
         "general": null
       },
@@ -106,7 +106,7 @@
         "Cash prizes",
         "Gift cards"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
       "position": 2,
@@ -119,66 +119,67 @@
         "note": "On signup; no purchase",
         "conditions": [
           "For every new player.",
-          "Sign up and click claim; coins go straight to the account."
+          "Sign up and click claim."
         ],
         "sourceUrl": "https://spree.com/",
-        "observedAt": "2026-10-19T13:13:18.094Z"
+        "observedAt": "2026-10-20T11:35:53.534Z"
       },
       "firstPurchaseOffer": {
         "label": "30 SC for $9.99",
         "note": "3 SC per $1. First purchase only.",
         "conditions": [
-          "Instant 200% Boost on the first purchase.",
+          "Instant 200% Boost on first purchase.",
           "Coins are provided right away."
         ],
         "priceUsd": 9.99,
         "sourceUrl": "https://spree.com/",
-        "observedAt": "2026-10-19T13:13:18.094Z"
+        "observedAt": "2026-10-20T11:35:53.534Z"
       },
       "dailyReward": {
         "label": "0.3 SC daily",
         "note": "No purchase required",
         "conditions": [
-          "Claim every 24 hours using the ‘Claim Daily Coins’ button.",
-          "2,000 GC can be claimed daily when playing in GC."
+          "Claimable every 24 hours.",
+          "Click the ‘Claim Daily Coins’ button.",
+          "No purchase is required."
         ],
         "sourceUrl": "https://spree.com/",
-        "observedAt": "2026-10-19T13:13:18.094Z"
+        "observedAt": "2026-10-20T11:35:53.534Z"
       },
       "payoutTime": {
         "label": "Up to 10 days (type unspecified)",
-        "note": "Request to receipt; cash",
+        "note": "Processing; method varies",
         "conditions": [
-          "Gift cards are described as the fastest redemption option.",
-          "Redemption times are not always the same and the prize might arrive quicker."
+          "Payments over USD$2,500 may take longer due to bank clearance, security and fraud checks.",
+          "Payments over USD$2,500 may be paid in more than one lump sum."
         ],
-        "stage": "end_to_end",
-        "method": "cash",
-        "sourceUrl": "https://spree.com/",
-        "observedAt": "2026-10-17T10:44:07.381Z"
+        "stage": "processing",
+        "method": "general",
+        "sourceUrl": "https://spree.com/sweepstakes-rules",
+        "observedAt": "2026-10-20T11:39:34.598Z"
       },
       "redemptionMinimums": {
         "cash": {
           "label": "100 SC",
           "note": "Cash redemption minimum.",
           "conditions": [
-            "Required before a Cash Prize may be claimed.",
-            "Cash Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin redeemed."
+            "Cash Prize requires qualifying Spree Coins associated with the user account.",
+            "$1.00 USD per qualifying Sweepstakes Coin redeemed."
           ],
           "method": "cash",
           "sourceUrl": "https://spree.com/sweepstakes-rules",
-          "observedAt": "2026-10-19T13:16:47.423Z"
+          "observedAt": "2026-10-20T11:39:34.598Z"
         },
         "giftCard": {
           "label": "10 SC",
           "note": "Gift-card redemption minimum.",
           "conditions": [
-            "Required before a Gift Card Prize may be claimed.",
-            "Gift Card Prize corresponds to $1.00 USD for each qualifying Sweepstakes Coin redeemed."
+            "Gift Card Prize requires qualifying Spree Coins associated with the user account.",
+            "$1.00 USD per qualifying Sweepstakes Coin redeemed."
           ],
           "method": "gift_card",
           "sourceUrl": "https://spree.com/sweepstakes-rules",
-          "observedAt": "2026-10-19T13:16:47.423Z"
+          "observedAt": "2026-10-20T11:39:34.598Z"
         },
         "general": null
       },
@@ -186,7 +187,7 @@
         "Cash prizes",
         "Gift cards"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
       "position": 3,
@@ -199,11 +200,10 @@
         "note": "5 SC total over 3 days",
         "conditions": [
           "Available to claim after sign-up.",
-          "Day 1 provides 150,000 WOW Coins + SC 2; Day 2 provides 50,000 WOW Coins + SC 1.5; Day 3 provides 50,000 WOW Coins + SC 1.5."
+          "Day 1 provides 150,000 WOW Coins + SC 2; Day 2 and Day 3 each provide 50,000 WOW Coins + SC 1.5."
         ],
-        "promoCode": "WOWBONUS2026",
         "sourceUrl": "https://www.wowvegas.com/promo-code",
-        "observedAt": "2026-10-19T13:16:15.346Z"
+        "observedAt": "2026-10-20T11:38:55.770Z"
       },
       "firstPurchaseOffer": {
         "label": "30 SC for $9.99",
@@ -214,10 +214,9 @@
           "Normally $29.99.",
           "Instant coin delivery."
         ],
-        "promoCode": "WOWBONUS2026",
         "priceUsd": 9.99,
         "sourceUrl": "https://www.wowvegas.com/promo-code",
-        "observedAt": "2026-10-19T13:16:15.346Z"
+        "observedAt": "2026-10-20T11:38:55.770Z"
       },
       "dailyReward": {
         "label": "Variable daily reward",
@@ -228,18 +227,18 @@
           "Claim your surprise reward – no spins, no purchases, just free fun!"
         ],
         "sourceUrl": "https://help.wowvegas.com/en/articles/11969957-how-can-i-earn-free-sc-on-wow-vegas",
-        "observedAt": "2026-10-19T13:12:48.870Z"
+        "observedAt": "2026-10-20T11:35:24.175Z"
       },
       "payoutTime": {
         "label": "Up to 3 business days",
         "note": "Processing; Rising-Silver tiers",
         "conditions": [
-          "Within 3 business days."
+          "Processing Times by VIP Status."
         ],
         "stage": "processing",
         "method": "general",
         "sourceUrl": "https://help.wowvegas.com/en/articles/10676690-how-long-does-a-redemption-take",
-        "observedAt": "2026-10-19T13:22:34.393Z"
+        "observedAt": "2026-10-20T11:45:04.890Z"
       },
       "redemptionMinimums": {
         "cash": {
@@ -248,9 +247,9 @@
           "conditions": [
             "Blue WOW Coins cannot be redeemed, as they have no monetary value."
           ],
-          "method": "cash",
+          "method": "general",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-10-19T13:21:31.395Z"
+          "observedAt": "2026-10-20T11:44:04.532Z"
         },
         "giftCard": {
           "label": "20 SC",
@@ -260,7 +259,7 @@
           ],
           "method": "gift_card",
           "sourceUrl": "https://help.wowvegas.com/en/articles/10676686-how-do-i-redeem",
-          "observedAt": "2026-10-19T13:21:31.395Z"
+          "observedAt": "2026-10-20T11:44:04.532Z"
         },
         "general": null
       },
@@ -268,7 +267,7 @@
         "Cash prizes",
         "Gift cards"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
       "position": 4,
@@ -278,17 +277,15 @@
       "summary": "2 SC free at sign-up. 18 SC for $4.99 on your first purchase (3.61 SC per $1). Cash out from 50 SC.",
       "signupBonus": {
         "label": "2 SC free",
-        "note": "Up to 13 SC with 7-day tasks",
+        "note": "On signup; no purchase",
         "conditions": [
-          "New players only.",
-          "Registration alone gives 15,000 GC + 2 SC.",
-          "The stated 50,000 GC + 5 SC requires completing registration and consenting to phone and email communications.",
-          "The total includes phone verification, email and SMS opt-ins, a first daily-bonus claim, and a new-player challenge of 150 spins in SC mode within the first 7 days.",
-          "Includes 20 free spins on Yay Devil Fire 2 valued at 0.1 SC per spin.",
-          "Halloween offer wording: “available until 11:59 PM ET on November 1, 2026.”"
+          "Complete the registration form for the immediate 15,000 GC + 2 SC.",
+          "Phone verification awards 5,000 GC; email and SMS opt-ins each award 10,000 GC + 1 SC.",
+          "The first daily-bonus claim awards 10,000 GC + 1 SC.",
+          "Make 150 spins in SC mode within the first 7 days for 80,000 GC + 8 SC."
         ],
         "sourceUrl": "https://www.yaycasino.com/promotions/promo/social-casino-sign-up-promotion",
-        "observedAt": "2026-10-18T11:12:42.795Z"
+        "observedAt": "2026-10-20T11:43:34.136Z"
       },
       "firstPurchaseOffer": {
         "label": "18 SC for $4.99",
@@ -315,42 +312,39 @@
         "label": "1-3 days (type unspecified)",
         "note": "Request to receipt; virtual card",
         "conditions": [
-          "The page calls this the fastest fiat option.",
-          "The same passage says to wait at least 24 hours for approval and processing after submitting a redemption request."
+          "Visa Virtual Card is described as the fastest fiat option.",
+          "The guide also says to wait at least 24 hours after submitting a redemption request for approval and processing."
         ],
         "stage": "end_to_end",
         "method": "virtual_card",
         "sourceUrl": "https://www.yaycasino.com/blog/how-to-redeem-your-sweeps-coins-at-yay-casino-2026-guide/",
-        "observedAt": "2026-10-19T13:15:13.410Z"
+        "observedAt": "2026-10-20T11:37:47.948Z"
       },
       "redemptionMinimums": {
         "cash": {
           "label": "50 SC",
           "note": "Cash redemption minimum.",
           "conditions": [
-            "A 1x playthrough requirement must be completed.",
-            "KYC verification is required before the first redemption."
+            "Minimum is 50 Sweeps Coins per day.",
+            "Cash prizes are paid in USD for eligible participants; Visa Virtual Cards may be an option for eligible participants using a non-cryptocurrency payment method."
           ],
-          "method": "bank",
-          "sourceUrl": "https://www.yaycasino.com/blog/understanding-sweeps-coins-your-complete-guide-to-free-sweeps-coins-no-deposit/",
-          "observedAt": "2026-09-22T09:26:28.942Z"
+          "method": "general",
+          "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
+          "observedAt": "2026-10-20T11:40:58.785Z"
         },
         "giftCard": null,
         "general": {
           "label": "50 SC",
           "note": "General redemption minimum; cash method not established.",
-          "conditions": [
-            "Per day."
-          ],
           "method": "general",
           "sourceUrl": "https://www.yaycasino.com/api/Document/ContentPage/sweeps-rules.pdf",
-          "observedAt": "2026-10-19T13:18:14.032Z"
+          "observedAt": "2026-10-20T11:40:58.785Z"
         }
       },
       "prizeTypes": [
         "Cash prizes"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
       "position": 5,
@@ -362,22 +356,22 @@
         "label": "2 SC free",
         "note": "On signup; no purchase",
         "conditions": [
-          "Sign up to claim the welcome offer."
+          "Sign up to claim the welcome offer.",
+          "The displayed SC amount includes the source's ** marker."
         ],
         "sourceUrl": "https://www.chumbacasino.com/promotions",
-        "observedAt": "2026-10-19T13:15:53.208Z"
+        "observedAt": "2026-10-20T11:38:33.797Z"
       },
       "firstPurchaseOffer": {
         "label": "30 SC for $10",
         "note": "3 SC per $1. First purchase only.",
         "conditions": [
           "Exclusive first-time offer.",
-          "GC10M for $10 plus FREE SC30.",
           "Claim Now."
         ],
         "priceUsd": 10,
         "sourceUrl": "https://www.chumbacasino.com/",
-        "observedAt": "2026-10-19T13:12:12.397Z"
+        "observedAt": "2026-10-20T11:34:58.778Z"
       },
       "dailyReward": {
         "label": "Daily login reward",
@@ -386,7 +380,7 @@
           "Log in daily to claim your bonus."
         ],
         "sourceUrl": "https://www.chumbacasino.com/promotions",
-        "observedAt": "2026-10-19T13:15:53.208Z"
+        "observedAt": "2026-10-20T11:38:33.797Z"
       },
       "payoutTime": null,
       "redemptionMinimums": {
@@ -399,7 +393,7 @@
           ],
           "method": "unspecified",
           "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-10-19T13:18:45.565Z"
+          "observedAt": "2026-10-20T11:41:29.685Z"
         },
         "giftCard": {
           "label": "10 SC",
@@ -410,7 +404,7 @@
           ],
           "method": "gift_card",
           "sourceUrl": "https://help.chumbacasino.com/article/What-you-need-to-know-to-redeem-your-prize",
-          "observedAt": "2026-10-19T13:18:45.565Z"
+          "observedAt": "2026-10-20T11:41:29.685Z"
         },
         "general": null
       },
@@ -418,7 +412,7 @@
         "Cash prizes",
         "Gift cards"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
       "position": 6,
@@ -430,31 +424,33 @@
         "label": "2 SC free",
         "note": "On signup; no purchase",
         "conditions": [
-          "Register a new account."
+          "Register a new account and claim the welcome bonus.",
+          "No initial purchase is needed."
         ],
         "sourceUrl": "https://help.crowncoinscasino.com/en/articles/9183356-is-there-a-welcome-bonus-available-when-signing-up",
-        "observedAt": "2026-10-19T13:21:48.634Z"
+        "observedAt": "2026-10-20T11:44:21.371Z"
       },
       "firstPurchaseOffer": null,
       "dailyReward": {
         "label": "Daily login reward",
         "note": "Amount not stated",
         "conditions": [
-          "Log in, open Rewards, select Daily Bonus, and claim the available daily reward."
+          "Log in, select Rewards, and open Daily Bonus in the Crown Lounge to view and claim the available daily reward."
         ],
         "sourceUrl": "https://help.crowncoinscasino.com/en/articles/9183348-how-to-check-my-daily-bonus-status",
-        "observedAt": "2026-10-19T13:13:23.657Z"
+        "observedAt": "2026-10-20T11:35:58.790Z"
       },
       "payoutTime": {
         "label": "24-72 hours",
         "note": "Approval; method varies",
         "conditions": [
-          "In some cases, approval may take up to 7 days."
+          "During periods of high volume or if additional verification is required, reviews may take up to 7 days.",
+          "The time to receive funds after approval depends on the selected redemption method."
         ],
         "stage": "approval",
         "method": "general",
-        "sourceUrl": "https://help.crowncoinscasino.com/en/articles/11835859-redemption-faqs",
-        "observedAt": "2026-10-19T13:16:53.125Z"
+        "sourceUrl": "https://help.crowncoinscasino.com/en/articles/12076052-how-do-i-redeem-my-winnings-on-crowncoins-and-address-common-redemption-issues",
+        "observedAt": "2026-10-20T11:42:14.415Z"
       },
       "redemptionMinimums": {
         "cash": null,
@@ -463,17 +459,18 @@
           "label": "50 SC",
           "note": "General redemption minimum; cash method not established.",
           "conditions": [
-            "Account must be fully verified and must not be a duplicate account."
+            "Account must be fully verified, required verification completed, and account must be the primary, non-duplicate account.",
+            "Redemptions from duplicate or unverified accounts are not eligible for processing."
           ],
           "method": "general",
           "sourceUrl": "https://help.crowncoinscasino.com/en/articles/12076052-how-do-i-redeem-my-winnings-on-crowncoins-and-address-common-redemption-issues",
-          "observedAt": "2026-10-19T13:19:31.216Z"
+          "observedAt": "2026-10-20T11:42:14.415Z"
         }
       },
       "prizeTypes": [
         "Cash prizes"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
       "position": 7,
@@ -486,13 +483,12 @@
         "note": "10 SC total in stages; opt-in needed for full reward",
         "conditions": [
           "Initial Registration provides 20,000 GC and 2 SC.",
-          "The stated 120,000 GC and 10 SC total includes phone verification, email consent, SMS consent, daily login, Facebook, and Google actions.",
+          "The stated total includes Phone Verification, Email Consent, SMS Consent, Daily Login, Facebook, and Google actions.",
           "Available only to new players who consent to receive communications.",
-          "The sign-up bonus is credited immediately after successful registration.",
           "No purchase is necessary."
         ],
         "sourceUrl": "https://www.zulacasino.com/promotions/promo/zula-casino-sign-up-promotion",
-        "observedAt": "2026-10-19T13:19:49.930Z"
+        "observedAt": "2026-10-20T11:42:32.250Z"
       },
       "firstPurchaseOffer": null,
       "dailyReward": {
@@ -501,12 +497,11 @@
         "conditions": [
           "Available to eligible registered Zula Casino players.",
           "Available right after registration.",
-          "Claim at the Zula Casino Coin Store once per day.",
-          "The stated reward comprises GC + SC; no amounts are stated.",
-          "Sign-up is free and no purchase is required."
+          "Claim in the Zula Casino Coin Store once per day.",
+          "The page describes the bonus as GC + SC but does not state amounts."
         ],
         "sourceUrl": "https://www.zulacasino.com/promotions/promo/daily-login-bonus",
-        "observedAt": "2026-10-19T13:13:49.459Z"
+        "observedAt": "2026-10-20T11:36:23.191Z"
       },
       "payoutTime": null,
       "redemptionMinimums": {
@@ -514,11 +509,12 @@
           "label": "50 SC",
           "note": "Cash redemption minimum.",
           "conditions": [
-            "The operator reserves the right to require use of the same payment method used to purchase Gold Coins."
+            "Zula Casino states that prizes redeemed for cash are paid in USD.",
+            "It may require a participant redeeming a prize to use the same payment method used to purchase Gold Coins."
           ],
           "method": "cash",
           "sourceUrl": "https://www.zulacasino.com/api/Document/ContentPage/sweeps-rules.pdf",
-          "observedAt": "2026-10-19T13:17:12.023Z"
+          "observedAt": "2026-10-20T11:39:59.187Z"
         },
         "giftCard": null,
         "general": null
@@ -526,10 +522,44 @@
       "prizeTypes": [
         "Cash prizes"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
       "position": 8,
+      "name": "LuckyLand Casino",
+      "slug": "luckyland",
+      "profileUrl": "https://socialcasinoindex.com/redemption-times/luckyland/",
+      "summary": "2 SC free at sign-up.",
+      "signupBonus": {
+        "label": "2 SC free",
+        "note": "On signup; no purchase",
+        "conditions": [
+          "Exclusive welcome gift."
+        ],
+        "sourceUrl": "https://luckylandcasino.com/",
+        "observedAt": "2026-10-20T11:40:15.023Z"
+      },
+      "firstPurchaseOffer": null,
+      "dailyReward": {
+        "label": "Daily login reward",
+        "note": "Amount not stated",
+        "conditions": [
+          "Claimed through daily login; no amount is stated."
+        ],
+        "sourceUrl": "https://luckylandcasino.com/",
+        "observedAt": "2026-10-20T11:40:15.023Z"
+      },
+      "payoutTime": null,
+      "redemptionMinimums": {
+        "cash": null,
+        "giftCard": null,
+        "general": null
+      },
+      "prizeTypes": [],
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
+    },
+    {
+      "position": 9,
       "name": "Sportzino",
       "slug": "sportzino",
       "profileUrl": "https://socialcasinoindex.com/redemption-times/sportzino/",
@@ -538,24 +568,23 @@
         "label": "1 SC free",
         "note": "Up to 7 SC with tasks",
         "conditions": [
-          "Initial registration bonus automatically reflects as 20,000 Gold Coins and 1 Sweeps Coin once logged in.",
-          "The stated total requires tasks including Facebook connection, phone verification, email and SMS consent, first daily login, and Google sign-in.",
-          "All listed tasks are stated to be free."
+          "The immediate registration allocation is 20,000 GC + 1 Sweeps Coin and automatically reflects in the balance once logged in.",
+          "The stated total requires additional tasks: Facebook connection, phone verification, email and SMS consent, first daily login bonus, and Google sign-in.",
+          "All tasks are stated to be free."
         ],
         "sourceUrl": "https://sportzino.com/promotions/promo/sign-up-promotion",
-        "observedAt": "2026-10-19T13:20:02.077Z"
+        "observedAt": "2026-10-20T11:42:45.023Z"
       },
       "firstPurchaseOffer": null,
       "dailyReward": {
         "label": "Increasing daily reward",
         "note": "Fixed daily SC not established",
         "conditions": [
-          "Day 1 reward is stated as GC 20,000 + 1 SC.",
           "Claim window is every 24 hours.",
-          "The streak goal is 7 days."
+          "The stated streak goal is 7 days."
         ],
         "sourceUrl": "https://sportzino.com/promotions/promo/daily-login-bonus",
-        "observedAt": "2026-10-19T13:14:01.818Z"
+        "observedAt": "2026-10-20T11:36:35.050Z"
       },
       "payoutTime": null,
       "redemptionMinimums": {
@@ -566,46 +595,56 @@
           "note": "General redemption minimum; cash method not established.",
           "method": "general",
           "sourceUrl": "https://sportzino.com/api/Document/ContentPage/sweeps-rules.pdf",
-          "observedAt": "2026-10-19T13:17:17.578Z"
+          "observedAt": "2026-10-20T11:40:04.505Z"
         }
       },
       "prizeTypes": [],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
-      "position": 9,
+      "position": 10,
       "name": "Chanced",
       "slug": "chanced",
       "profileUrl": "https://socialcasinoindex.com/redemption-times/chanced/",
-      "summary": "Redeem prizes from $100.",
+      "summary": "Redeem prizes from 100 SC.",
       "signupBonus": null,
       "firstPurchaseOffer": null,
       "dailyReward": {
         "label": "Daily login reward",
         "note": "Amount not stated",
         "conditions": [
-          "Sign into your Customer Account, click \"store\", then \"daily boost\", and click the \"claim\" button.",
-          "Participants can only claim a Daily Bonus once per day; the clock resets every 24 hours.",
-          "The Sweeps Coin amount is not stated."
+          "Sign into the Customer Account, select store then daily boost, and click claim.",
+          "Can be claimed once per day; the clock resets every 24 hours.",
+          "The amount of free Sweeps Coins is not stated."
         ],
         "sourceUrl": "https://chanced.com/sweeps-rules/",
-        "observedAt": "2026-10-18T11:12:28.808Z"
+        "observedAt": "2026-10-20T11:43:21.966Z"
       },
       "payoutTime": null,
       "redemptionMinimums": {
         "cash": null,
         "giftCard": null,
-        "general": null
+        "general": {
+          "label": "100 SC",
+          "note": "General redemption minimum; cash method not established.",
+          "conditions": [
+            "The redeemed prize value must be US$100 or more.",
+            "A Customer Account must have at least 100 Sweeps Coins before requesting redemption."
+          ],
+          "method": "general",
+          "sourceUrl": "https://chanced.com/sweeps-rules/",
+          "observedAt": "2026-10-20T11:43:21.966Z"
+        }
       },
       "prizeTypes": [],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
-      "position": 10,
+      "position": 11,
       "name": "Dorados",
       "slug": "dorados",
       "profileUrl": "https://socialcasinoindex.com/redemption-times/dorados/",
-      "summary": "Redeem prizes from 100 SC. Processing takes up to 10 business days.",
+      "summary": "Redeem prizes from 100 SC. Payouts take up to 10 business days.",
       "signupBonus": null,
       "firstPurchaseOffer": null,
       "dailyReward": {
@@ -620,15 +659,15 @@
       },
       "payoutTime": {
         "label": "Up to 10 business days",
-        "note": "Processing; method varies",
+        "note": "Request to receipt; bank",
         "conditions": [
-          "The operator may fulfill redemption through multiple payments over several days.",
-          "Further delays may result from verification, additional Payment Method checks, or fraud-prevention reviews."
+          "May be fulfilled through multiple payments over several days rather than in a single transaction.",
+          "May be subject to further delays due to incomplete or pending verification, additional payment-method checks, or fraud prevention reviews."
         ],
-        "stage": "processing",
-        "method": "general",
+        "stage": "end_to_end",
+        "method": "bank",
         "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
-        "observedAt": "2026-10-19T13:15:27.607Z"
+        "observedAt": "2026-09-22T06:38:47.921Z"
       },
       "redemptionMinimums": {
         "cash": null,
@@ -637,20 +676,20 @@
           "label": "100 SC",
           "note": "General redemption minimum; cash method not established.",
           "conditions": [
-            "Amounts below the threshold are not eligible for redemption."
+            "Amounts below this threshold are not eligible for redemption."
           ],
           "method": "general",
           "sourceUrl": "https://dorados.com/en/sweepstakes-rules",
-          "observedAt": "2026-10-18T11:07:00.812Z"
+          "observedAt": "2026-10-20T11:38:01.466Z"
         }
       },
       "prizeTypes": [
         "Cash prizes"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
-      "position": 11,
+      "position": 12,
       "name": "Fortune Wins",
       "slug": "fortune-wins",
       "profileUrl": "https://socialcasinoindex.com/redemption-times/fortune-wins/",
@@ -659,26 +698,26 @@
         "label": "5,700 FC",
         "note": "No purchase required; see claim conditions. Advertised maximum; conditions apply",
         "conditions": [
-          "Day 1 total is 700,000 GC + 5,700 FC.",
-          "The listed actions are Phone Verification, Email Consent, first-day Daily Login Bonus claim, and Wheel of Luck.",
-          "The Wheel of Luck entry says “Win up to 5,200 FC.”"
+          "Day 1 total is 700,000 GC + 5,700 FC after completing the listed Day 1 actions: phone verification, email consent, first-day Daily Login Bonus, and Wheel of Luck.",
+          "The stated first-week total is 3,000,000 GC + 7,700 FC and includes the Day 1 bonuses.",
+          "From Day 2 to Day 7, the listed Daily Login Bonus is 1,500,000 GC + 500 FC.",
+          "Refer a Friend is stated as 60,000 GC + 100 FC per friend, up to 5 friends."
         ],
         "sourceUrl": "https://fortunewins.com/promotions/promo/sign-up-bonus",
-        "observedAt": "2026-10-19T13:18:08.442Z"
+        "observedAt": "2026-10-20T11:40:53.406Z"
       },
       "firstPurchaseOffer": null,
       "dailyReward": {
-        "label": "Daily login reward",
-        "note": "Amount not stated",
+        "label": "Increasing daily reward",
+        "note": "Fixed daily SC not established",
         "conditions": [
-          "A free bonus is available every day.",
-          "Claim in the Free Rewards section after logging in and opening the Coin Store.",
-          "Users must log in and claim each day for 7 consecutive days to progress.",
-          "Rewards differ by day; Day 7 is a larger grand-final bonus.",
+          "Log in to FortuneWins.com, open the Coin Store through Get Coins, and claim in Free Rewards.",
+          "A claim is available every day during a 7-consecutive-day streak.",
+          "Rewards differ each day; the Day 7 grand final bonus is described as bigger.",
           "Missing a day resets progress."
         ],
         "sourceUrl": "https://fortunewins.com/promotions/promo/daily-bonus",
-        "observedAt": "2026-10-19T13:14:47.066Z"
+        "observedAt": "2026-10-20T11:37:30.986Z"
       },
       "payoutTime": null,
       "redemptionMinimums": {
@@ -687,44 +726,48 @@
         "general": null
       },
       "prizeTypes": [],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
-      "position": 12,
+      "position": 13,
       "name": "High 5 Casino",
       "slug": "high5",
       "profileUrl": "https://socialcasinoindex.com/redemption-times/high5/",
-      "summary": "200 Spins for $9.99 on your first purchase. Gift cards from 50 SC. Delivery after approval takes 1-2 business days.",
-      "signupBonus": null,
-      "firstPurchaseOffer": {
+      "summary": "200 Spins for $9.99 with a purchase. Gift cards from 50 SC. Delivery after approval takes 1-2 business days.",
+      "signupBonus": {
         "label": "200 Spins for $9.99",
-        "note": "See purchase and claim conditions",
+        "note": "Purchase required",
         "conditions": [
-          "Sign up and claim 200 Spins on Billionaire’s Bank."
+          "Sign up and claim.",
+          "200 Spins are on Billionaire’s Bank."
         ],
         "priceUsd": 9.99,
         "sourceUrl": "https://high5casino.com/promotions/sign-up-bonus/",
-        "observedAt": "2026-10-19T13:22:28.507Z"
+        "observedAt": "2026-10-20T11:44:58.923Z"
       },
+      "firstPurchaseOffer": null,
       "dailyReward": {
         "label": "Daily login reward",
         "note": "Amount not stated",
         "conditions": [
-          "Log in each day to claim free Sweeps Coins; no amount is stated."
+          "Log in every day to claim rewards.",
+          "Rewards are completely free of charge.",
+          "Amounts are not stated."
         ],
         "sourceUrl": "https://high5casino.com/promotions/daily-bonus/",
-        "observedAt": "2026-10-19T13:14:29.299Z"
+        "observedAt": "2026-10-20T11:37:02.651Z"
       },
       "payoutTime": {
         "label": "1-2 business days",
         "note": "Delivery after approval; method unspecified",
         "conditions": [
-          "Often sooner."
+          "Often sooner.",
+          "Must have previously purchased using Skrill."
         ],
         "stage": "transfer",
         "method": "unspecified",
         "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-        "observedAt": "2026-10-19T13:17:47.415Z"
+        "observedAt": "2026-10-20T11:40:34.221Z"
       },
       "redemptionMinimums": {
         "cash": null,
@@ -732,108 +775,80 @@
           "label": "50 SC",
           "note": "Gift-card redemption minimum.",
           "conditions": [
-            "The stated minimum is 50 SC for prize out."
+            "Enter the amount of SC you want to redeem."
           ],
           "method": "gift_card",
           "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-10-19T13:17:47.415Z"
+          "observedAt": "2026-10-20T11:40:34.221Z"
         },
         "general": {
           "label": "100 SC",
           "note": "General redemption minimum; cash method not established.",
           "conditions": [
-            "The stated minimum is 100 SC for real prizes."
+            "Enter the amount of SC you want to redeem."
           ],
-          "method": "general",
+          "method": "unspecified",
           "sourceUrl": "https://high5casino.com/helpcenter/how-to-redeem-real-prizes/",
-          "observedAt": "2026-10-19T13:17:47.415Z"
+          "observedAt": "2026-10-20T11:40:34.221Z"
         }
       },
       "prizeTypes": [
         "Gift cards"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
-      "position": 13,
+      "position": 14,
       "name": "Lucky Bunny",
       "slug": "lucky-bunny",
       "profileUrl": "https://socialcasinoindex.com/redemption-times/lucky-bunny/",
-      "summary": "Redeem prizes from 100 SC. Payouts take up to 5 business days.",
+      "summary": "15 SC for $9.99 in a coin package (1.5 SC per $1). Cash out from 1 SC. Delivery after approval takes up to 5 business days.",
       "signupBonus": null,
-      "firstPurchaseOffer": null,
+      "firstPurchaseOffer": {
+        "label": "15 SC for $9.99",
+        "note": "1.5 SC per $1. Purchase package.",
+        "conditions": [
+          "15 is displayed as “free” with the package."
+        ],
+        "priceUsd": 9.99,
+        "sourceUrl": "https://luckybunny.fun/",
+        "observedAt": "2026-10-20T11:34:09.458Z"
+      },
       "dailyReward": {
         "label": "Daily login reward",
         "note": "Amount not stated",
         "conditions": [
-          "Available for logging into the Platform each day.",
-          "The predetermined Sweep Coin amount is not stated."
+          "A predetermined amount is available for logging into the Platform each day; no amount is stated."
         ],
         "sourceUrl": "https://luckybunny.fun/page/sweepstake-rules/",
-        "observedAt": "2026-10-15T11:46:00.856Z"
+        "observedAt": "2026-10-20T11:47:41.845Z"
       },
       "payoutTime": {
         "label": "Up to 5 business days",
-        "note": "Request to receipt; cash",
+        "note": "Delivery after approval; cash",
         "conditions": [
-          "The window begins after the redemption request is approved and verification requirements are satisfied.",
-          "Bank or payment-processor receiving fees are excluded."
+          "Bank or payment-processor fees for receiving funds are excluded."
         ],
-        "stage": "end_to_end",
+        "stage": "transfer",
         "method": "cash",
         "sourceUrl": "https://luckybunny.fun/page/sweepstake-rules/",
-        "observedAt": "2026-10-15T11:46:00.856Z"
+        "observedAt": "2026-10-20T11:47:41.845Z"
       },
       "redemptionMinimums": {
-        "cash": null,
-        "giftCard": null,
-        "general": {
-          "label": "100 SC",
-          "note": "General redemption minimum; cash method not established.",
-          "conditions": [
-            "The participant must accumulate redeemable Sweep Coins.",
-            "The rule explicitly says redemption is for prizes or cash."
-          ],
-          "method": "general",
+        "cash": {
+          "label": "1 SC",
+          "note": "Cash redemption minimum.",
+          "method": "cash",
           "sourceUrl": "https://luckybunny.fun/page/sweepstake-rules/",
-          "observedAt": "2026-10-15T11:46:00.856Z"
-        }
+          "observedAt": "2026-10-20T11:47:41.845Z"
+        },
+        "giftCard": null,
+        "general": null
       },
       "prizeTypes": [
         "Cash prizes"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
-    },
-    {
-      "position": 14,
-      "name": "LuckyLand Casino",
-      "slug": "luckyland",
-      "profileUrl": "https://socialcasinoindex.com/redemption-times/luckyland/",
-      "summary": "2 SC total + 777,000 GC welcome reward; purchase requirements are not confirmed.",
-      "signupBonus": {
-        "label": "2 SC total + 777,000 Gold Coins",
-        "note": "Purchase requirement unconfirmed",
-        "sourceUrl": "https://luckylandcasino.com/",
-        "observedAt": "2026-10-19T13:17:28.969Z"
-      },
-      "firstPurchaseOffer": null,
-      "dailyReward": {
-        "label": "Daily login reward",
-        "note": "Amount not stated",
-        "conditions": [
-          "Claimed by logging in; no reward amount is stated."
-        ],
-        "sourceUrl": "https://luckylandcasino.com/",
-        "observedAt": "2026-10-19T13:17:28.969Z"
-      },
-      "payoutTime": null,
-      "redemptionMinimums": {
-        "cash": null,
-        "giftCard": null,
-        "general": null
-      },
-      "prizeTypes": [],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
       "position": 15,
@@ -844,48 +859,49 @@
       "signupBonus": null,
       "firstPurchaseOffer": null,
       "dailyReward": {
-        "label": "Daily login reward",
-        "note": "Amount not stated",
+        "label": "Variable daily reward",
+        "note": "Fixed daily SC not established",
         "conditions": [
           "Specific number of free Sweepstakes Coins may vary by day and is displayed on the Platform.",
-          "Sign into the User Account when eligible and click “Claim” in the Daily Logon Reward pop-up.",
-          "Claimable once per day; daily clock resets at midnight ET.",
-          "Wheel Spin events may award a variety of Sweepstakes Coins."
+          "Requires signing into an eligible User Account and clicking Claim on the Daily Logon Reward pop-up.",
+          "May be claimed once per day; daily clock resets at midnight ET.",
+          "Wheel Spin events can award a variety of Sweepstakes Coins."
         ],
         "sourceUrl": "https://modo.us/promo-rules.pdf",
-        "observedAt": "2026-10-19T13:19:36.839Z"
+        "observedAt": "2026-10-20T11:42:19.792Z"
       },
       "payoutTime": {
         "label": "Up to 24 hours",
         "note": "Processing; standard tier",
         "conditions": [
-          "Timing can vary depending on redemption method, verification status, bank processing, holidays, or an additional security review."
+          "Standard bank ACH or debit card redemptions have no fee.",
+          "Timing can vary by redemption method, verification status, bank processing, holidays, or an additional security review."
         ],
         "stage": "processing",
         "method": "bank",
         "sourceUrl": "https://support.modo.us/en_us/how-long-does-sc-redemption-processing-take-HJqtAiElzg",
-        "observedAt": "2026-10-19T13:22:02.726Z"
+        "observedAt": "2026-10-20T11:44:35.323Z"
       },
       "redemptionMinimums": {
         "cash": {
           "label": "50 SC",
           "note": "Cash redemption minimum.",
           "conditions": [
-            "Unless otherwise displayed on the Platform."
+            "Applies unless otherwise displayed on the Platform."
           ],
           "method": "cash",
           "sourceUrl": "https://modo.us/promo-rules.pdf",
-          "observedAt": "2026-10-19T13:19:36.839Z"
+          "observedAt": "2026-10-20T11:42:19.792Z"
         },
         "giftCard": {
           "label": "20 SC",
           "note": "Gift-card redemption minimum.",
           "conditions": [
-            "Unless otherwise displayed on the Platform."
+            "Applies unless otherwise displayed on the Platform."
           ],
           "method": "gift_card",
           "sourceUrl": "https://modo.us/promo-rules.pdf",
-          "observedAt": "2026-10-19T13:19:36.839Z"
+          "observedAt": "2026-10-20T11:42:19.792Z"
         },
         "general": null
       },
@@ -893,38 +909,73 @@
         "Cash prizes",
         "Gift cards"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
       "position": 16,
+      "name": "Pulsz",
+      "slug": "pulsz",
+      "profileUrl": "https://socialcasinoindex.com/redemption-times/pulsz/",
+      "summary": "5,000 GC at sign-up, no purchase needed.",
+      "signupBonus": {
+        "label": "5,000 Gold Coins",
+        "note": "No purchase required; see claim conditions",
+        "conditions": [
+          "Free Gold Coins are stated for starting to play with Pulsz.",
+          "The page says play is free and no purchase is necessary."
+        ],
+        "sourceUrl": "https://www.pulsz.com/",
+        "observedAt": "2026-10-20T11:38:45.550Z"
+      },
+      "firstPurchaseOffer": null,
+      "dailyReward": {
+        "label": "Daily login reward",
+        "note": "Amount not stated",
+        "conditions": [
+          "Advertised as Daily Coin Rewards; no coin denomination or amount is stated."
+        ],
+        "sourceUrl": "https://www.pulsz.com/",
+        "observedAt": "2026-10-20T11:38:45.550Z"
+      },
+      "payoutTime": null,
+      "redemptionMinimums": {
+        "cash": null,
+        "giftCard": null,
+        "general": null
+      },
+      "prizeTypes": [
+        "Entertainment credits"
+      ],
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
+    },
+    {
+      "position": 17,
       "name": "Rolling Riches",
       "slug": "rolling-riches",
       "profileUrl": "https://socialcasinoindex.com/redemption-times/rolling-riches/",
-      "summary": "Cash out from 100 SC. Delivery after approval takes about 24-48 hours.",
+      "summary": "Cash out from 100 SC. Payouts take up to 10 business days.",
       "signupBonus": null,
       "firstPurchaseOffer": null,
       "dailyReward": {
         "label": "Daily login reward",
         "note": "Amount not stated",
         "conditions": [
-          "Rolling Riches may give Sweepstakes Coins as a bonus when logging on once every six hours.",
-          "SWEEPSTAKES COINS CANNOT BE PURCHASED.",
-          "Sweepstakes Coins can also be obtained as a free gift through purchases of various Gold Coin packages or through the free alternative method of entry."
+          "Sweepstakes Coins cannot be purchased.",
+          "Rolling Riches may give Sweepstakes Coins as a bonus when logging on once every six hours."
         ],
         "sourceUrl": "https://s3.us-west-1.amazonaws.com/aws.rollingriches.com/rollingriches/PDFs/Rolling+Riches+Terms+and+Conditions+FINAL+1-19+Paysafe.pdf",
-        "observedAt": "2026-10-19T13:22:21.916Z"
+        "observedAt": "2026-10-20T11:44:52.686Z"
       },
       "payoutTime": {
-        "label": "Typically 24-48 hours",
-        "note": "Delivery after approval; debit card",
+        "label": "Up to 10 business days",
+        "note": "Request to receipt; bank",
         "conditions": [
-          "Timing depends on the player's bank.",
-          "Redemptions are processed Monday through Friday only."
+          "Delays may occur due to identity verification processes and Payment Mediums requiring additional verification."
         ],
-        "stage": "transfer",
-        "method": "debit_card",
-        "sourceUrl": "https://rollingricheshelp.zendesk.com/hc/en-us/articles/35847661821837-What-redemption-options-does-Rolling-Riches-have",
-        "observedAt": "2026-10-19T13:22:45.127Z"
+        "stage": "end_to_end",
+        "method": "bank",
+        "sourceUrl": "https://s3.us-west-1.amazonaws.com/aws.rollingriches.com/rollingriches/PDFs/Rolling+Riches+Terms+and+Conditions+FINAL+1-19+Paysafe.pdf",
+        "observedAt": "2026-10-20T11:44:52.686Z"
       },
       "redemptionMinimums": {
         "cash": {
@@ -947,55 +998,55 @@
           ],
           "method": "unspecified",
           "sourceUrl": "https://rollingricheshelp.zendesk.com/hc/en-us/articles/20922084007949-What-is-the-minimum-amount-of-Sweepstake-Coins-I-can-redeem-for-a-prize",
-          "observedAt": "2026-10-19T13:14:23.739Z"
+          "observedAt": "2026-10-20T11:36:57.096Z"
         }
       },
       "prizeTypes": [
         "Cash prizes"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     },
     {
-      "position": 17,
+      "position": 18,
       "name": "Zonko",
       "slug": "zonko",
       "profileUrl": "https://socialcasinoindex.com/redemption-times/zonko/",
-      "summary": "65 SC for $20 on your first purchase (3.25 SC per $1). Cash out from 100 SC. Approval takes up to 72 hours.",
+      "summary": "65 SC for $20 on your first purchase (3.25 SC per $1). Cash out from 100 SC. Approval takes up to 3 business days.",
       "signupBonus": null,
       "firstPurchaseOffer": {
         "label": "65 SC for $20",
         "note": "3.25 SC per $1. First purchase only.",
         "conditions": [
           "First purchase required.",
-          "Includes a spin of the Welcome Wheel for more free SC rewards.",
-          "Described as a Limited Time Offer."
+          "Includes a spin of the Welcome Wheel for more FREE SC rewards.",
+          "Limited Time Offer."
         ],
         "priceUsd": 20,
         "sourceUrl": "https://www.zonko.com/promotions/",
-        "observedAt": "2026-10-19T13:21:05.827Z"
+        "observedAt": "2026-10-20T11:43:39.851Z"
       },
       "dailyReward": {
-        "label": "Increasing daily reward",
+        "label": "Variable daily reward",
         "note": "Fixed daily SC not established",
         "conditions": [
           "Log in every day.",
-          "Claim through Bonuses, then Daily Bonus.",
-          "Rewards increase with more days logged in and may include exclusive gifts, bigger bonuses, and extra surprises."
+          "Tap Bonuses from the menu, then head to Daily Bonus to reveal your reward.",
+          "Rewards become better with more login days."
         ],
         "sourceUrl": "https://www.zonko.com/promotions/daily-bonus/",
-        "observedAt": "2026-10-19T13:11:48.847Z"
+        "observedAt": "2026-10-20T11:34:35.944Z"
       },
       "payoutTime": {
-        "label": "Up to 72 hours",
-        "note": "Approval; method unspecified",
+        "label": "Up to 3 business days",
+        "note": "Approval; standard tier",
         "conditions": [
-          "After approval, an email confirms the redemption is ready to be processed.",
-          "Prize arrival after approval depends on bank processing times."
+          "Subject to necessary verification and account security checks.",
+          "May vary depending on verification requirements."
         ],
         "stage": "approval",
         "method": "unspecified",
-        "sourceUrl": "https://www.zonko.com/help/faq/",
-        "observedAt": "2026-10-19T13:18:33.543Z"
+        "sourceUrl": "https://www.zonko.com/help/play-rules/",
+        "observedAt": "2026-09-22T06:38:54.039Z"
       },
       "redemptionMinimums": {
         "cash": {
@@ -1015,7 +1066,7 @@
       "prizeTypes": [
         "Cash prizes"
       ],
-      "lastCheckedAt": "2026-10-19T13:10:40.657Z"
+      "lastCheckedAt": "2026-10-20T11:33:39.606Z"
     }
   ],
   "states": [
