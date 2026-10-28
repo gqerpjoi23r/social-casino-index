@@ -1,0 +1,18 @@
+---
+layout: base.njk
+title: "Sweepstakes Casino Comparisons"
+description: "Side-by-side comparisons of sweepstakes casinos: free signup coins, first-purchase offers, cash and gift-card redemption minimums and published processing times."
+permalink: "/compare/"
+publishedAt: "2026-10-28"
+updatedAt: "2026-10-28"
+jsonld:
+  "@context": "https://schema.org"
+  "@type": "CollectionPage"
+  name: "Sweepstakes casino comparisons"
+---
+<main><article class="wrap">
+<header class="benefit-intro"><h1>Sweepstakes casino comparisons</h1><p>Each comparison puts two operators' published terms side by side: free signup coins, first-purchase offers, cash and gift-card redemption minimums and published processing times. Values come from dated operator sources.</p></header>
+<section class="benefit-benchmark"><h2>All comparisons</h2>
+<ul>{% for comparison in benchmarks.comparisons %}<li><a href="{{ comparison.url }}">{{ comparison.title }}</a></li>{% endfor %}</ul>
+</section>
+</article></main>

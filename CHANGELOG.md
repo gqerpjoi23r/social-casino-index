@@ -14,6 +14,12 @@ Format:
 
 ---
 
+## 2026-10-28 - Generate comparisons from shared evidence and add gift-card minimums
+- Publish a comparison page for every non-entertainment pair sharing at least three of signup, purchase, cash, gift and published processing (26 pages, up from 7). The original seven pairs keep their URLs and order; new pairs appear automatically as evidence fills in.
+- Add `/bonuses/gift-card-redemption-minimums/` from the existing gift metric and a `/compare/` index. Related-answer bars link the index instead of listing every pair.
+- Comparison summaries lead with answers established for both operators; partial answers stay in the FAQs. No values, rankings or toplist order change.
+- Why: AI visibility monitoring shows ChatGPT cites `/bonuses/` and comparison answers; the matching prompts were added to monitoring on 2026-10-28.
+
 ## 2026-10-18 - Expand AI-cited answer pages
 - Add answer-first signup bonus questions, a stage-aware shortest-payout page and five comparisons: McLuck vs Chumba, Modo vs WOW Vegas, Crown Coins vs WOW Vegas, Spree vs McLuck and YAY vs WOW Vegas.
 - Reposition the under-50-SC page around gift-card redemptions while keeping cash minimums separate. Link all comparison pages from the cited cash-minimum and payout answers.

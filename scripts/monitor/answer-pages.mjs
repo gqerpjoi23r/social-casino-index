@@ -85,8 +85,16 @@ export function pairAnswers(model, comparison) {
     ["Gift-card minimum", operator => operator.product.gift],
     ["Published processing", operator => operator.product.redemption],
   ].map(([label, pick]) => ({ label, values: pair.map(operator => pick(operator) || null) }));
+  // Lead the summary with answers established for both operators; partial answers follow.
+  const complete = [
+    pair.every(operator => operator.product.cash),
+    pair.every(operator => signupOf(operator)),
+    pair.every(operator => operator.metrics.purchase),
+    pair.every(operator => operator.product.gift),
+  ];
+  const lead = [0, 1, 2, 3].sort((a, b) => complete[b] - complete[a]).slice(0, 3).map(index => faqs[index === 3 ? 3 : index].answer);
   return { asOf, operators: pair.map(operator => ({ slug: operator.slug, name: operator.name, url: operator.url })), rows, faqs,
-    summary: `According to Social Casino Index's check on ${asOf}: ${faqs[0].answer} ${faqs[1].answer} ${faqs[2].answer}` };
+    summary: `According to Social Casino Index's check on ${asOf}: ${lead.join(" ")}` };
 }
 
 export function operatorAnswer(model, slug) {
