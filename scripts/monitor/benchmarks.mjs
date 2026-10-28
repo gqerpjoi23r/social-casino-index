@@ -52,7 +52,33 @@ export const BENCHMARKS = [
     explanation: "Ranked by an explicitly recurring no-purchase daily SC allocation. A first-login reward or a staged welcome bonus is not counted as an every-day reward." },
   { id: "cash", slug: "cash-redemption-minimums", title: "Cash redemption minimums", question: "Which casinos publish the lowest cash redemption minimum?", label: "Minimum SC", icon: "bank", direction: "asc",
     explanation: "Ranked by published cash redemption minimum in SC, lowest first. Gift cards and thresholds without an explicit cash connection are separate. This does not rank payout speed." },
+  { id: "gift", slug: "gift-card-redemption-minimums", title: "Gift-card redemption minimums", question: "Which casinos publish the lowest gift-card redemption minimum?", label: "Minimum SC", icon: "gift", direction: "asc",
+    explanation: "Ranked by published gift-card redemption minimum in SC, lowest first. Cash minimums are ranked separately. This does not rank payout speed." },
 ];
+
+// Comparison pages are published for every pair where both operators carry at
+// least MIN_SHARED_COMPARISON_FIELDS of the five product fields.
+const COMPARISON_FIELDS = ["signup", "purchase", "cash", "gift", "redemption"];
+const MIN_SHARED_COMPARISON_FIELDS = 3;
+const LEGACY_COMPARISONS = [["wow-vegas", "mcluck"], ["wow-vegas", "chumba"], ["mcluck", "chumba"],
+  ["modo", "wow-vegas"], ["crown-coins", "wow-vegas"], ["spree", "mcluck"], ["yay-casino", "wow-vegas"]];
+
+export function comparisonPairs(operators) {
+  const fields = op => COMPARISON_FIELDS.filter(key => op.product?.[key]);
+  const shared = (a, b) => fields(a).filter(key => b.product?.[key]).length;
+  const bySlug = new Map(operators.map(op => [op.slug, op]));
+  const pairs = LEGACY_COMPARISONS.filter(slugs => slugs.every(slug => bySlug.has(slug)));
+  const seen = new Set(pairs.map(slugs => [...slugs].sort().join("|")));
+  const eligible = operators.filter(op => op.productMode !== "entertainment_only" && fields(op).length >= MIN_SHARED_COMPARISON_FIELDS);
+  for (let i = 0; i < eligible.length; i++) for (let j = i + 1; j < eligible.length; j++) {
+    const [a, b] = [eligible[i], eligible[j]];
+    const key = [a.slug, b.slug].sort().join("|");
+    if (seen.has(key) || shared(a, b) < MIN_SHARED_COMPARISON_FIELDS) continue;
+    seen.add(key);
+    pairs.push([a.slug, b.slug]);
+  }
+  return pairs;
+}
 
 function choose(records, metric, score, label, note = () => "", ascending = false) {
   const sorted = records.filter(record => amount(score(record))).sort((a, b) =>
@@ -157,8 +183,9 @@ export function buildBenchmarks(numeric, registry = [], now = Date.now(), purcha
     (a.score === null && b.score === null ? b.benefitCount - a.benefitCount : 0) || a.name.localeCompare(b.name, "en"));
   let rank = 0;
   for (const op of operators) if (op.score !== null) op.rank = ++rank;
-  const comparisons = [["wow-vegas", "mcluck"], ["wow-vegas", "chumba"], ["mcluck", "chumba"],
-    ["modo", "wow-vegas"], ["crown-coins", "wow-vegas"], ["spree", "mcluck"], ["yay-casino", "wow-vegas"]].flatMap(slugs => {
+  const toplist = buildToplist(operators, numeric, latestRecords, now);
+  attachProductViews(operators, numeric, toplist, latestRecords, now);
+  const comparisons = comparisonPairs(operators).flatMap(slugs => {
     const pair = slugs.map(slug => operators.find(op => op.slug === slug));
     if (pair.some(op => !op)) return [];
     const slug = slugs.join("-vs-");
@@ -170,8 +197,6 @@ export function buildBenchmarks(numeric, registry = [], now = Date.now(), purcha
     return [{ slug, url: `/compare/${slug}/`, title: `${pair[0].name} vs ${pair[1].name}`,
       operators: pair.map(op => ({ name: op.name, url: op.url })), sections }];
   });
-  const toplist = buildToplist(operators, numeric, latestRecords, now);
-  attachProductViews(operators, numeric, toplist, latestRecords, now);
   return { schemaVersion: 1, methodologyVersion: METHODOLOGY_VERSION, comparisons,
     generatedAt: numeric?.lastSuccessfulRefresh || null, operators, benchmarks,
     toplist,
